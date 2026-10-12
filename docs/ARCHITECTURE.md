@@ -4,7 +4,8 @@ A Duolingo-style learning game for **investors** of Dragon Capital. Five-minute 
 hearts, leagues and the Rồng DC mascot, built on the structure of
 [`Davronov-Alimardon/duolingo-clone`](https://github.com/Davronov-Alimardon/duolingo-clone).
 
-> Companion docs: [`CURRICULUM.md`](./CURRICULUM.md) (what is taught, mapped to source files) and
+> Companion docs: [`CURRICULUM.md`](./CURRICULUM.md) (the 142-lesson program, generated from `content/outline/`),
+> [`FEATURES.md`](./FEATURES.md) (the full feature list, including AI practice) and
 > [`MINDMAP.md`](./MINDMAP.md) (the whole plan on one page).
 
 ---
@@ -79,6 +80,8 @@ content/
   sources.ts           every citable document, with asOf date
   segments/            dc-funds.ts (A) · my-plan.ts (B) · fund-types.ts (C)
   index.ts             registry, lookups, validateContent() integrity checks
+  outline/             the PLAN: 3 stages · 25 units · 142 lessons · 14 AI scenarios, tested for
+                       source validity and full coverage of the 133 FAQ questions
 drizzle/               generated SQL migrations
 public/mascot/         Rồng DC poses (384px PNG)
 scripts/check-content.ts   CI gate for content PRs
@@ -309,8 +312,8 @@ education, never as a product recommendation.
 
 | Phase | Scope |
 |---|---|
-| **0 · Skeleton** (this repo) | 3 segments, 13 units, 19 lessons, 58 challenges; full game loop; PGlite dev DB; 22 unit tests; E2E-verified |
-| **1 · MVP pilot** (≈6 weeks) | Write remaining lessons from the FAQ/articles (see CURRICULUM backlog); Compliance review; fund-facts table; DragonX SSO; sounds; badges; Postgres + deploy; internal pilot with staff |
+| **0 · Skeleton** (this repo) | 3 segments, 13 units, 19 playable lessons; detailed outline of 142 lessons and 14 AI scenarios; full game loop; PGlite dev DB; unit tests; E2E-verified |
+| **1 · MVP pilot** (≈6 weeks) | Write the outline lessons, Hiểu mình first (see CURRICULUM); 5 AI practice scenarios; Compliance review; fund-facts table; DragonX SSO; sounds; badges; Postgres + deploy; internal pilot with staff |
 | **2 · Public beta** | League groups + weekly cron; push/email streak reminders; unit chests; analytics dashboards; content editor UI |
 | **3 · Integration** | DragonX webview embedding; consented holdings-aware lessons; AI practice chat grounded on the FAQ (prototype's "Luyện tình huống AI") with guardrails |
 

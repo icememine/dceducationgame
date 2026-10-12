@@ -10,7 +10,7 @@ import type { SegmentInput } from "../schema";
 export const dcFunds = {
   id: "dc-funds",
   code: "DC",
-  title: "Quỹ của Dragon Capital",
+  title: "Quỹ DC & DragonX",
   subtitle: "DCDS · DCDE · DCBF · DCIP · DCBA · ETF",
   heartsEnabled: true,
   units: [

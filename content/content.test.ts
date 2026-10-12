@@ -2,8 +2,8 @@ import { describe, expect, it } from "vitest";
 import { findLesson, segments, validateContent } from "./index";
 
 describe("content", () => {
-  it("has the three learning segments in order", () => {
-    expect(segments.map((s) => s.id)).toEqual(["dc-funds", "my-plan", "fund-types"]);
+  it("orders the journey Hiểu mình → Hiểu quỹ → Quỹ DC", () => {
+    expect(segments.map((s) => s.id)).toEqual(["my-plan", "fund-types", "dc-funds"]);
   });
 
   it("passes integrity checks", () => {

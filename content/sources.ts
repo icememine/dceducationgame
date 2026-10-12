@@ -22,6 +22,10 @@ export const sources = [
   { id: "amdd-age-60", title: "Câu chuyện về nhà đầu tư 60 tuổi", file: "AMDD - Content/Câu Chuyện Về Nhà Đầu Tư 60 Tuổi.docx", asOf: "2026-10" },
   { id: "amdd-no-timing", title: "Đầu tư thế nào mà không cần đoán từng nhịp thị trường?", file: "AMDD - Content/Không cần đoán từng nhịp thị trường - ID - 20260820.docx", asOf: "2026-10" },
   { id: "amdd-sell-in-may", title: "Câu chuyện \"Sell in May\" tại thị trường Việt Nam", file: "AMDD - Content/Sell_in_May_DCDS.docx", asOf: "2026-10" },
+  { id: "amdd-investor-day-3", title: "Investor Day 2026: ba điểm nhà đầu tư mới cần quan tâm", file: "AMDD - Content/3 Điểm Nhấn Quan Trọng Dành Cho Nhà Đầu Tư Mới.docx", asOf: "2026-10" },
+  { id: "amdd-study-plan-nam", title: "Kế hoạch du học cho con: bài toán tài chính gia đình (anh Nam)", file: "AMDD - Content/Ke_Hoach_Du_Hoc_Cho_Con_Final.docx", asOf: "2026-10" },
+  { id: "amdd-suitcase", title: "Chiếc vali được xếp trong mười năm", file: "AMDD - Content/Chiec_vali_xep_trong_muoi_nam_du_hoc_ban_don_gian_v3.docx", asOf: "2026-10" },
+  { id: "amdd-waiting", title: "Thị trường còn nhiều biến số, có nên tiếp tục chờ?", file: "AMDD - Content/Đầu tư gì khi lựa chọn nào cũng có vẻ sai - Bản v7.docx", asOf: "2026-10" },
   { id: "dc-risk-quiz", title: "Bộ câu hỏi tự đánh giá (bản nháp, chờ Compliance duyệt)", file: "content/segments/my-plan.ts", asOf: "2026-10" },
 ] as const satisfies readonly Source[];
 

@@ -12,8 +12,8 @@ import type { SegmentInput } from "../schema";
 export const myPlan = {
   id: "my-plan",
   code: "TÔI",
-  title: "Kế hoạch của tôi",
-  subtitle: "Khẩu vị rủi ro · Mục tiêu · Kỷ luật đầu tư",
+  title: "Hiểu mình",
+  subtitle: "Khẩu vị rủi ro · Mục tiêu · Lãi kép · Kỷ luật đầu tư",
   heartsEnabled: false,
   units: [
     {

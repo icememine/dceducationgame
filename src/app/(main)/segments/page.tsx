@@ -14,7 +14,7 @@ export default async function SegmentsPage() {
   const [{ activeSegment }, progress] = await Promise.all([getUserState(userId), getSegmentProgress(userId)]);
   return (
     <div className="flex flex-col gap-3 p-4">
-      <h1 className="text-2xl font-extrabold">Chọn chương trình học</h1>
+      <h1 className="text-2xl font-extrabold">Chọn chặng học</h1>
       {progress.map(({ segment, done, total }) => (
         <form key={segment.id} action={setActiveSegment.bind(null, segment.id)}>
           <button

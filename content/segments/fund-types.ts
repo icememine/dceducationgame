@@ -9,7 +9,7 @@ import type { SegmentInput } from "../schema";
 export const fundTypes = {
   id: "fund-types",
   code: "LOẠI",
-  title: "Các loại quỹ",
+  title: "Hiểu quỹ",
   subtitle: "Tiền tệ · Trái phiếu · Cổ phiếu · Chỉ số · Cân bằng",
   heartsEnabled: true,
   units: [

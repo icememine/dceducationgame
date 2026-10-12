@@ -51,7 +51,7 @@ export default async function ProfilePage() {
           </>
         ) : (
           <>
-            <p className="text-sm text-muted">Làm bài tự đánh giá 4 phút trong chương trình &quot;Kế hoạch của tôi&quot;.</p>
+            <p className="text-sm text-muted">Làm bài tự đánh giá 4 phút trong chặng &quot;Hiểu mình&quot;.</p>
             <Button variant="sky" asChild><Link href="/lesson/b1-risk-check">Tự đánh giá ngay</Link></Button>
           </>
         )}

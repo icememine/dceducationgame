@@ -4,8 +4,8 @@ import { dcFunds } from "./segments/dc-funds";
 import { myPlan } from "./segments/my-plan";
 import { fundTypes } from "./segments/fund-types";
 
-/** Display order on the segment picker: A → B → C. */
-const raw = [dcFunds, myPlan, fundTypes];
+/** Recommended journey: Hiểu mình (B) → Hiểu quỹ (C) → Quỹ DC & DragonX (A). */
+const raw = [myPlan, fundTypes, dcFunds];
 
 export const segments: Segment[] = raw.map((s) => segment.parse(s));
 
