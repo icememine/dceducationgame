@@ -67,6 +67,7 @@ await page.getByText("Điều cần nhớ:").waitFor();
 await shot("04-insight");
 await btn("Tiếp tục").click();
 await pick("Khoảng 2,5 năm"); await page.getByText("Chính xác!").waitFor(); await btn("Tiếp tục").click();
+await page.getByText("Đoán số").waitFor(); await btn("Kiểm tra").click(); await page.getByText("Điều cần nhớ:").waitFor(); await btn("Tiếp tục").click();
 await pick("Tiền cần dùng trong 8 tháng nên ưu tiên thanh khoản và ít biến động"); await page.getByText("Chính xác!").waitFor(); await btn("Tiếp tục").click();
 await page.getByText("Làm lại câu sai").waitFor();
 await pick("Khoảng 180 triệu, tức 12 tháng × 15 triệu chi tiêu"); await page.getByText("Chính xác!").waitFor(); await btn("Tiếp tục").click();

@@ -33,7 +33,7 @@ the team and friendly testers.
 | 7 | Fund-facts expiry test (fails after ~4 months without re-check) | E | ✅ done |
 | 8 | **Công cụ tab**: goal planner (presets from the articles, time to target, monthly amount needed for a chosen year, save to profile) and "25 hay 45 tuổi"; Nhiệm vụ moved to the gift icon | E | ✅ done |
 | 9 | **Interactive lesson types**: "Ba phản ứng" decision simulation (`reaction_sim`) and "Nhà tiên tri" timing game (`timing_game`), seeded and tested in `features/simulations` | E | ✅ done |
-| 10 | **Write the rest of Hiểu mình** from the outline: 9 of ~50 stage-B lessons are built. Drafts by E/C on the formula, review by K | C + K | next |
+| 10 | **Write the rest of Hiểu mình** from the outline: 16 of 57 stage-B outline lessons now have a playable lesson (latest batch: chia thu nhập, tiền thưởng, rủi ro là gì, muốn vs có thể chịu rủi ro, rủi ro hành vi). Drafts on the formula, review by K | C + K | in progress |
 | 11 | **Staging deploy** with Postgres, `CONTENT_PREVIEW=1` for reviewers | E | needs a hosting decision |
 | 12 | Confirm flagged facts: sell-fee tier 1–2 years, NAV time, legacy funds, DIAMOND criteria, past returns | K + C | open |
 | 13 | Prototype screen index: "Tình huống: bán hết khi giảm" (17) should sit under "Luyện tình huống AI" (16) | E | open (small) |

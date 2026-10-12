@@ -2,7 +2,7 @@
 
 > Tài liệu này được sinh tự động từ `content/outline/`. Sửa ở đó rồi chạy `npm run docs:curriculum`.
 
-**3 chặng · 25 phần · 142 bài · 14 tình huống luyện AI.** 23 bài đã có bản chơi được (✅).
+**3 chặng · 25 phần · 142 bài · 14 tình huống luyện AI.** 29 bài đã có bản chơi được (✅).
 
 ## Triết lý
 
@@ -67,10 +67,10 @@ Trước khi đầu tư, cần biết mình có gì, tiêu gì và có lưới a
 
 | Bài | Mục tiêu | Dạng | Nguồn |
 |---|---|---|---|
-| **B1.1** Chia thu nhập thành các ngăn | Chia thu nhập hằng tháng theo mục đích và chọn kênh phù hợp cho từng ngăn. *Công cụ: Chia thu nhập thành các ngăn.* | Câu chuyện, Mô phỏng, Câu hỏi nhanh | Kế hoạch du học cho con: bài toán tài chính gia đình (anh Nam) |
-| **B1.2** Tiền thưởng cũng là tiền lương | Nhận ra tâm lý chia ngăn và có kế hoạch cho các khoản thu ngoài lương. | Câu chuyện, Câu hỏi nhanh, Ra quyết định | Ngày tốt nhất để đầu tư là ngày tiền về tài khoản |
+| **B1.1** Chia thu nhập thành các ngăn ✅ | Chia thu nhập hằng tháng theo mục đích và chọn kênh phù hợp cho từng ngăn. *Công cụ: Chia thu nhập thành các ngăn.* | Câu chuyện, Mô phỏng, Câu hỏi nhanh | Kế hoạch du học cho con: bài toán tài chính gia đình (anh Nam) |
+| **B1.2** Tiền thưởng cũng là tiền lương ✅ | Nhận ra tâm lý chia ngăn và có kế hoạch cho các khoản thu ngoài lương. | Câu chuyện, Câu hỏi nhanh, Ra quyết định | Ngày tốt nhất để đầu tư là ngày tiền về tài khoản |
 | **B1.3** Nếu mất việc hôm nay ✅ | Tự tính số tháng mình sống được không cần thu nhập và đặt mục tiêu quỹ tự do sự nghiệp. *Công cụ: Máy tính quỹ tự do sự nghiệp.* | Câu chuyện, Tính nhanh, Tự đánh giá · cam kết | Nếu mất việc hôm nay, bạn có bao nhiêu quyền lựa chọn? |
-| **B1.4** Bao lâu để có 12 tháng quyền lựa chọn | Chọn mức tích lũy hằng tháng thực tế để đạt quỹ dự phòng. *Công cụ: Máy tính quỹ tự do sự nghiệp.* | Mô phỏng, Đoán số | Nếu mất việc hôm nay, bạn có bao nhiêu quyền lựa chọn? |
+| **B1.4** Bao lâu để có 12 tháng quyền lựa chọn ✅ | Chọn mức tích lũy hằng tháng thực tế để đạt quỹ dự phòng. *Công cụ: Máy tính quỹ tự do sự nghiệp.* | Mô phỏng, Đoán số | Nếu mất việc hôm nay, bạn có bao nhiêu quyền lựa chọn? |
 | **B1.5** Đặt tên cho khoản tiền | Tách riêng và đặt tên quỹ dự phòng để nó không bị tiêu lẫn. *Công cụ: Lập kế hoạch mục tiêu.* | Thẻ kiến thức, Tự đánh giá · cam kết | Nếu mất việc hôm nay, bạn có bao nhiêu quyền lựa chọn? |
 | **B1.6** Kiểm tra: Tiền của tôi | Ôn lại cả phần. | Kiểm tra | Nếu mất việc hôm nay, bạn có bao nhiêu quyền lựa chọn? · Ngày tốt nhất để đầu tư là ngày tiền về tài khoản · Kế hoạch du học cho con: bài toán tài chính gia đình (anh Nam) |
 
@@ -90,12 +90,12 @@ Biết mình chịu được biến động đến đâu trước khi chọn b�
 
 | Bài | Mục tiêu | Dạng | Nguồn |
 |---|---|---|---|
-| **B2.1** Rủi ro nghĩa là gì với bạn? | Phân biệt biến động giá, mất vốn và không đạt mục tiêu. | Thẻ kiến thức, Câu hỏi nhanh | FAQ 9, 23 |
-| **B2.2** Muốn chịu rủi ro và có thể chịu rủi ro | Hiểu vì sao khả năng tài chính và thời gian giới hạn mức rủi ro, dù mình rất muốn mạo hiểm. | Thẻ kiến thức, Tình huống | Kế hoạch du học cho con nên bắt đầu từ đâu? · FAQ 123 |
-| **B2.3** Bài tự đánh giá khẩu vị rủi ro ✅ | Nhận một trong 5 hồ sơ (Bảo toàn → Năng động) và lộ trình học gợi ý. | Tự đánh giá · cam kết | Bộ câu hỏi tự đánh giá (bản nháp, chờ Compliance duyệt) · Nếu mất việc hôm nay, bạn có bao nhiêu quyền lựa chọn? |
+| **B2.1** Rủi ro nghĩa là gì với bạn? ✅ | Phân biệt biến động giá, mất vốn và không đạt mục tiêu. | Thẻ kiến thức, Câu hỏi nhanh | FAQ 9, 23 |
+| **B2.2** Muốn chịu rủi ro và có thể chịu rủi ro ✅ | Hiểu vì sao khả năng tài chính và thời gian giới hạn mức rủi ro, dù mình rất muốn mạo hiểm. | Thẻ kiến thức, Tình huống | Kế hoạch du học cho con nên bắt đầu từ đâu? · FAQ 123 |
+| **B2.3** Đánh giá mức độ chấp nhận rủi ro ✅ | Làm 7 câu theo Risk Scoring Framework v2.3, nhận một trong 5 hồ sơ (Rất thận trọng → Rất mạo hiểm) và xác nhận kết quả. | Tự đánh giá · cam kết | Bộ Đánh Giá Mức Độ Chấp Nhận Rủi Ro Nhà Đầu Tư (v2.3, 12/2025) · Nếu mất việc hôm nay, bạn có bao nhiêu quyền lựa chọn? |
 | **B2.4** Danh mục của bạn vừa giảm 20% | Trải nghiệm cảm giác thua lỗ tạm thời và thấy điều gì xảy ra nếu kiên nhẫn. *Công cụ: Mô phỏng ba phản ứng khi quỹ giảm.* | Mô phỏng, Ra quyết định | Kế hoạch du học cho con: bài toán tài chính gia đình (anh Nam) |
-| **B2.5** Rủi ro lớn nhất là chính mình | Nhận diện FOMO, bán tháo và "mua cao bán thấp". | Câu chuyện, Câu hỏi nhanh, Tìm lỗi sai | DCA là gì? Đầu tư đều đặn và lãi kép · Investor Day 2026: ba điểm nhà đầu tư mới cần quan tâm |
-| **B2.6** Hồ sơ của tôi và lộ trình tiếp theo | Đọc kết quả hồ sơ, hiểu vì sao bị giới hạn, biết khi nào cần làm lại (mỗi 12 tháng hoặc khi hoàn cảnh đổi). | Tự đánh giá · cam kết, Thẻ kiến thức | Bộ câu hỏi tự đánh giá (bản nháp, chờ Compliance duyệt) |
+| **B2.5** Rủi ro lớn nhất là chính mình ✅ | Nhận diện FOMO, bán tháo và "mua cao bán thấp". | Câu chuyện, Câu hỏi nhanh, Tìm lỗi sai | DCA là gì? Đầu tư đều đặn và lãi kép · Investor Day 2026: ba điểm nhà đầu tư mới cần quan tâm |
+| **B2.6** Hồ sơ của tôi và lộ trình tiếp theo | Đọc kết quả hồ sơ, hiểu vì sao bị giới hạn, biết khi nào cần làm lại (mỗi 12 tháng hoặc khi hoàn cảnh đổi). | Tự đánh giá · cam kết, Thẻ kiến thức | Bộ Đánh Giá Mức Độ Chấp Nhận Rủi Ro Nhà Đầu Tư (v2.3, 12/2025) |
 
 <details><summary>Số liệu và ý chính cần dạy</summary>
 

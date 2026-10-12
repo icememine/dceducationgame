@@ -28,7 +28,7 @@ export const sources = [
   { id: "amdd-study-plan-nam", title: "Kế hoạch du học cho con: bài toán tài chính gia đình (anh Nam)", file: "AMDD - Content/Ke_Hoach_Du_Hoc_Cho_Con_Final.docx", asOf: "2026-10" },
   { id: "amdd-suitcase", title: "Chiếc vali được xếp trong mười năm", file: "AMDD - Content/Chiec_vali_xep_trong_muoi_nam_du_hoc_ban_don_gian_v3.docx", asOf: "2026-10" },
   { id: "amdd-waiting", title: "Thị trường còn nhiều biến số, có nên tiếp tục chờ?", file: "AMDD - Content/Đầu tư gì khi lựa chọn nào cũng có vẻ sai - Bản v7.docx", asOf: "2026-10" },
-  { id: "dc-risk-quiz", title: "Bộ câu hỏi tự đánh giá (bản nháp, chờ Compliance duyệt)", file: "content/segments/my-plan.ts", asOf: "2026-10", internal: true },
+  { id: "dc-risk-quiz", title: "Bộ Đánh Giá Mức Độ Chấp Nhận Rủi Ro Nhà Đầu Tư (v2.3, 12/2025)", file: "2025-12_Risk_Scoring_Framework_VN_Final.docx", asOf: "2025-12", internal: true },
 ] as const satisfies readonly Source[];
 
 export type SourceId = (typeof sources)[number]["id"];

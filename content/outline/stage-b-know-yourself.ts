@@ -25,6 +25,7 @@ export const stageKnowYourself: OutlineStage = {
           goal: "Chia thu nhập hằng tháng theo mục đích và chọn kênh phù hợp cho từng ngăn.",
           formats: ["story", "sim", "quiz"],
           sources: ["amdd-study-plan-nam"],
+          builtAs: "b1-income-split",
           facts: [
             "Gia đình anh Nam thu nhập 90 triệu/tháng, chia 4 ngăn: sinh hoạt 36 triệu (40%), học phí hiện tại 20 triệu (22%), hưu trí 10 triệu (11%), du học 20–25 triệu (27%)",
             "Học phí hiện tại → quỹ trái phiếu/tiết kiệm; hưu trí → quỹ hưu trí; du học dài hạn → quỹ cổ phiếu",
@@ -37,6 +38,7 @@ export const stageKnowYourself: OutlineStage = {
           goal: "Nhận ra tâm lý chia ngăn và có kế hoạch cho các khoản thu ngoài lương.",
           formats: ["story", "quiz", "decision"],
           sources: ["amdd-best-day"],
+          builtAs: "b1-bonus",
           facts: [
             "Thưởng Tết 50 triệu: qua 21 mùa Tết, đầu tư ngay trong tháng 2 cao hơn khoảng 7% so với chờ 6 tháng",
             "Tâm lý chia ngăn: tiền thưởng, hoa hồng, tiền dự án dễ bị xếp vào ngăn \"để tính sau\"",
@@ -61,6 +63,7 @@ export const stageKnowYourself: OutlineStage = {
           goal: "Chọn mức tích lũy hằng tháng thực tế để đạt quỹ dự phòng.",
           formats: ["sim", "estimate"],
           sources: ["amdd-career-fund"],
+          builtAs: "b1-emergency-first",
           facts: [
             "Giả định 15%/năm: góp 3 / 5 / 10 triệu/tháng đạt 180 triệu sau 3,8 / 2,5 / 1,4 năm",
             "Sau 5 năm: 266 / 443 / 886 triệu, tương đương 1,5 / 2,5 / 5 năm chi tiêu",
@@ -97,6 +100,7 @@ export const stageKnowYourself: OutlineStage = {
           goal: "Phân biệt biến động giá, mất vốn và không đạt mục tiêu.",
           formats: ["concept", "quiz"],
           sources: ["faq:9", "faq:23"],
+          builtAs: "b1-what-is-risk",
           facts: ["Quỹ mở có rủi ro thị trường, lãi suất, tín dụng, thanh khoản và rủi ro từ quyết định đầu tư", "Lợi nhuận quỹ có thể âm trong một số năm"],
         },
         {
@@ -105,6 +109,7 @@ export const stageKnowYourself: OutlineStage = {
           goal: "Hiểu vì sao khả năng tài chính và thời gian giới hạn mức rủi ro, dù mình rất muốn mạo hiểm.",
           formats: ["concept", "scenario"],
           sources: ["faq:123", "amdd-study-abroad"],
+          builtAs: "b1-want-vs-can",
           facts: [
             "Chấp nhận rủi ro cao vẫn cần năng lực tài chính, khoản dự phòng và thời gian đầu tư",
             "Khả năng chấp nhận biến động không thể tách rời thời gian còn lại đến mục tiêu",
@@ -112,8 +117,8 @@ export const stageKnowYourself: OutlineStage = {
         },
         {
           code: "B2.3",
-          title: "Bài tự đánh giá khẩu vị rủi ro",
-          goal: "Nhận một trong 5 hồ sơ (Bảo toàn → Năng động) và lộ trình học gợi ý.",
+          title: "Đánh giá mức độ chấp nhận rủi ro",
+          goal: "Làm 7 câu theo Risk Scoring Framework v2.3, nhận một trong 5 hồ sơ (Rất thận trọng → Rất mạo hiểm) và xác nhận kết quả.",
           formats: ["reflect"],
           sources: ["dc-risk-quiz", "amdd-career-fund"],
           builtAs: "b1-risk-check",
@@ -137,6 +142,7 @@ export const stageKnowYourself: OutlineStage = {
           goal: "Nhận diện FOMO, bán tháo và \"mua cao bán thấp\".",
           formats: ["story", "quiz", "spot"],
           sources: ["amdd-dca", "amdd-investor-day-3"],
+          builtAs: "b1-behaviour",
           facts: [
             "Hơn 90% tài khoản giao dịch cá nhân không có lãi, hoặc lãi dưới 10%/năm",
             "Nguyên nhân chính là hành vi: mua khi đã tăng mạnh vì FOMO, bán tháo khi giảm",
