@@ -1,11 +1,13 @@
 /**
  * Builds prototype/rong-dc-academy.html (one self-contained file) from prototype/src plus
- * the live content: the Q&A library, glossary, fund facts, the AI rules and the voice guide.
+ * the live content: the Q&A library, glossary, fund facts, the risk self-check model, the AI rules
+ * and the voice guide.
  * Edit content/ai/rong-voice.md or the library, then: npm run proto:build
  */
 import { readFileSync, writeFileSync } from "node:fs";
 import { CATEGORIES, glossary, library } from "../content/library";
 import { fundFactsText } from "../content/library/fund-facts-text";
+import { DEFAULT_LEVEL, RISK_NOTES, RISK_QUESTIONS } from "../content/risk";
 import { HARD_RULES } from "../src/features/ai/guardrails";
 
 const src = (f: string) => readFileSync(`prototype/src/${f}`, "utf8");
@@ -17,6 +19,7 @@ const data = {
   fundFacts: fundFactsText(),
   rules: HARD_RULES,
   voice: readFileSync("content/ai/rong-voice.md", "utf8"),
+  risk: { questions: RISK_QUESTIONS, notes: RISK_NOTES, defaultLevel: DEFAULT_LEVEL },
 };
 
 const js = [1, 2, 3, 4].map((i) => src(`app${i}.js`)).join("\n");

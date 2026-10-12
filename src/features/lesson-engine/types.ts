@@ -1,4 +1,4 @@
-import type { Challenge, QuizPattern, RiskDimension, SourceRef } from "@content/schema";
+import type { Challenge, QuizPattern, SourceRef } from "@content/schema";
 
 /** What the browser receives: answer keys, scores and explanations stripped. */
 export type ClientChallenge =
@@ -8,7 +8,7 @@ export type ClientChallenge =
   | { id: string; type: "match"; prompt: string; left: string[]; right: string[] }
   | { id: string; type: "order"; prompt: string; items: string[] }
   | { id: string; type: "numeric"; context: string; prompt: string; unit: string; hint?: string }
-  | { id: string; type: "profile"; prompt: string; dimension: RiskDimension; options: string[] }
+  | { id: string; type: "profile"; prompt: string; options: string[] }
   | {
       id: string;
       type: "goal_planner";
@@ -34,6 +34,4 @@ export type GradeResult = {
   explain?: string;
   /** Only published sources (articles); internal documents are never shown. */
   source?: SourceRef & { title?: string };
-  /** For profile items: the score recorded towards the risk profile. */
-  profileScore?: { dimension: RiskDimension; score: number; max: number };
 };

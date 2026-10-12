@@ -5,7 +5,8 @@ import { Mascot } from "@/components/mascot";
 import { Button } from "@/components/ui/button";
 import { getGoals, getLatestProfile, getUserState } from "@/db/queries";
 import { monthsToTarget, formatDuration } from "@/features/goal-planner/finance";
-import { PROFILE_INFO, type ProfileId } from "@/features/risk-profile/scoring";
+import { profileInfo, type ProfileId, type RiskResult } from "@content/risk";
+import { RiskExplanation } from "@/features/risk-profile/risk-explanation";
 import { getUserId } from "@/lib/auth";
 import { formatVnd } from "@/lib/utils";
 
@@ -16,7 +17,9 @@ const GOAL_NAME: Record<string, string> = {
 export default async function ProfilePage() {
   const userId = await getUserId();
   const [{ user, progress }, risk, goals] = await Promise.all([getUserState(userId), getLatestProfile(userId), getGoals(userId)]);
-  const info = risk ? PROFILE_INFO[risk.profile as ProfileId] : undefined;
+  const info = risk ? profileInfo(risk.profile as ProfileId) : undefined;
+  // Rows written before the rules model (Oct 2026) hold dimension scores instead; they show no explanation.
+  const detail = (risk?.dimensions ?? {}) as Partial<RiskResult>;
   const fundTypes = getSegment("fund-types");
 
   return (
@@ -40,7 +43,14 @@ export default async function ProfilePage() {
                 <p className="text-sm">{info.summary}</p>
               </div>
             </div>
-            {risk?.capped && <p className="rounded-xl bg-gold-soft p-3 text-sm">Thời gian đầu tư hoặc khả năng tài chính đang giới hạn mức rủi ro phù hợp với bạn.</p>}
+            {detail.willing && (
+              <RiskExplanation
+                willingName={profileInfo(detail.willing).name}
+                name={info.name}
+                reasons={(detail.reasons ?? []).map((r) => r.reason)}
+                notes={detail.notes ?? []}
+              />
+            )}
             <p className="text-sm font-bold">Nên học tiếp:</p>
             <ul className="flex flex-wrap gap-2">
               {info.studyUnits.map((id) => (

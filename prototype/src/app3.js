@@ -396,7 +396,7 @@ function vRong() {
   }).join("");
   return `<div class="lesson-top"><button class="iconbtn" data-go="learn" aria-label="Quay lại">${ic("back")}</button>${mascot("study", 36)}<b style="flex:1;font-family:var(--f-display);font-size:18px">Hỏi Rồng</b></div>
     <div class="scroll" id="chatScroll">${aiBanner()}
-      <div class="thread"><div class="msg rong">Chào bạn! Rồng trả lời dựa trên thư viện hỏi đáp của Dragon Capital: phí, thuế, lịch giao dịch, tài khoản và kiến thức đầu tư. Rồng không khuyên mua bán quỹ cụ thể, và không bao giờ hỏi PIN hay OTP của bạn.</div>${thread}</div></div>
+      <div class="thread"><div class="msg rong">Chào anh/chị! Rồng trả lời dựa trên thư viện hỏi đáp của Dragon Capital: phí, thuế, lịch giao dịch, tài khoản và kiến thức đầu tư. Rồng không khuyên mua bán quỹ cụ thể, và không bao giờ hỏi PIN hay OTP của bạn.</div>${thread}</div></div>
     ${!R.busy ? `<div class="starters">${RONG_SUGGEST.map((s) => `<button data-ask="${esc(s)}">${esc(s)}</button>`).join("")}</div>` : ""}
     <form class="compose" id="rongForm"><textarea id="rongIn" rows="1" placeholder="Hỏi về quỹ, phí, giao dịch, kế hoạch…" aria-label="Câu hỏi" ${R.busy ? "disabled" : ""}>${esc(R.draft || "")}</textarea><button class="btn" type="submit" aria-label="Gửi" ${R.busy ? "disabled" : ""}>${ic("send")}</button></form>`;
 }
@@ -409,7 +409,7 @@ function offlineAnswer(q) {
     const s = asked * 2 + words(e.a).filter((w) => qw.has(w)).length * 0.3;
     if (s > bestScore) { bestScore = s; best = e; }
   }
-  const advice = /nên (mua|chọn) quỹ nào|mua quỹ nào/i.test(q) ? "Rồng không chọn quỹ thay bạn. " : "";
+  const advice = /nên (mua|chọn) quỹ nào|mua quỹ nào/i.test(q) ? "Rồng không chọn quỹ thay anh/chị. " : "";
   if (!best || bestScore < 2) return "Rồng chưa có thông tin cho câu này trong thư viện. Bạn có thể liên hệ CSKH@dragoncapital.com, kèm mã lệnh nếu có (không gửi PIN hay OTP).";
   return `${advice}${best.a.length > 1400 ? best.a.slice(0, 1400).replace(/\s\S*$/, "") + "…" : best.a}\n(Bản soạn sẵn: câu trả lời gần nhất trong thư viện.)`;
 }
@@ -436,7 +436,7 @@ ${LIB()}`;
     live.text = text;
   } catch (e) {
     if (["not_granted", "sampling_disabled", "not_declared", "capability_disabled", "capability_removed", "offline"].includes(e.code)) setAi("off");
-    live.text = e.code === "rate_limited" ? "Rồng đang bận một chút, bạn thử lại sau nhé." : offlineAnswer(q);
+    live.text = e.code === "rate_limited" ? "Rồng đang bận một chút, anh/chị thử lại sau nhé." : offlineAnswer(q);
   }
   live.live = false; R.busy = false; render();
 }

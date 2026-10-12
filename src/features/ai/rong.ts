@@ -58,14 +58,14 @@ export function buildRongRequest(question: string, history: ChatTurn[], voice: V
   };
 }
 
-export const REFUSED_REPLY = "Rồng chưa trả lời được câu này. Bạn thử hỏi cách khác, hoặc liên hệ CSKH@dragoncapital.com để được hỗ trợ trực tiếp.";
-export const NO_MATCH_REPLY = "Rồng chưa có thông tin cho câu này trong thư viện. Bạn có thể hỏi CSKH@dragoncapital.com (kèm mã lệnh nếu có, không gửi OTP hay PIN).";
+export const REFUSED_REPLY = "Rồng chưa trả lời được câu này. Anh/chị thử hỏi cách khác, hoặc liên hệ CSKH@dragoncapital.com để được hỗ trợ trực tiếp.";
+export const NO_MATCH_REPLY = "Rồng chưa có thông tin cho câu này trong thư viện. Anh/chị có thể hỏi CSKH@dragoncapital.com (kèm mã lệnh nếu có, không gửi OTP hay PIN).";
 
 /** Used when no API credentials are configured (local dev, demos): the closest library answer. */
 export function offlineRongAnswer(question: string): string {
   const best = searchLibrary(question, 1)[0];
   if (!best) return NO_MATCH_REPLY;
-  const advice = /nên (mua|chọn) quỹ nào|mua quỹ nào/iu.test(question) ? "Rồng không chọn quỹ thay bạn, nhưng đây là cách chọn: " : "";
+  const advice = /nên (mua|chọn) quỹ nào|mua quỹ nào/iu.test(question) ? "Rồng không chọn quỹ thay anh/chị, nhưng đây là cách chọn: " : "";
   return `${advice}${best.a}`;
 }
 

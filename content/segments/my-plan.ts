@@ -1,3 +1,4 @@
+import { RISK_QUESTIONS } from "../risk/risk-model";
 import type { SegmentInput } from "../schema";
 
 /**
@@ -6,7 +7,7 @@ import type { SegmentInput } from "../schema";
  * Sources: AMDD articles (1 tỷ đầu tiên, du học, nhà đầu tư 60 tuổi, quỹ tự do sự nghiệp,
  * DCA, ngày tốt nhất để đầu tư, DCDS 10 năm, Sell in May) + FAQ câu 2, 3, 13, 21, 22.
  *
- * The risk questionnaire is an EDUCATIONAL self-check, not the suitability assessment
+ * The risk questionnaire (content/risk) is an EDUCATIONAL self-check, not the suitability assessment
  * DragonX performs at account opening. Its wording and score bands need Compliance sign-off
  * before launch (source "dc-risk-quiz" is marked as draft).
  */
@@ -38,86 +39,14 @@ export const myPlan = {
               body: "6 câu hỏi giúp bạn hiểu khả năng tài chính, thời gian đầu tư và cảm xúc khi thị trường giảm. Kết quả dùng để gợi ý lộ trình học, không phải khuyến nghị đầu tư.",
               mascot: "explore",
             },
-            {
-              id: "b1-q-horizon",
-              type: "profile",
-              dimension: "horizon",
-              prompt: "Khi nào bạn cần dùng phần lớn khoản tiền này?",
-              options: [
-                { label: "Trong vòng 1 năm", score: 0 },
-                { label: "1 – 3 năm", score: 1 },
-                { label: "3 – 5 năm", score: 2 },
-                { label: "5 – 10 năm", score: 3 },
-                { label: "Hơn 10 năm", score: 4 },
-              ],
+            // Questions, answers and scoring rules: content/risk/risk-model.ts
+            ...RISK_QUESTIONS.map((q) => ({
+              id: q.id,
+              type: "profile" as const,
+              prompt: q.prompt,
+              options: q.options.map((o) => o.label),
               source: { sourceId: "dc-risk-quiz" },
-            },
-            {
-              id: "b1-q-emergency",
-              type: "profile",
-              dimension: "capacity",
-              prompt: "Khoản dự phòng hiện tại đủ cho bạn chi tiêu bao lâu nếu mất thu nhập?",
-              options: [
-                { label: "Chưa có hoặc dưới 1 tháng", score: 0 },
-                { label: "1 – 3 tháng", score: 1 },
-                { label: "3 – 6 tháng", score: 2 },
-                { label: "6 – 12 tháng", score: 3 },
-                { label: "Trên 12 tháng", score: 4 },
-              ],
-              source: { sourceId: "amdd-career-fund" },
-            },
-            {
-              id: "b1-q-income-share",
-              type: "profile",
-              dimension: "capacity",
-              prompt: "Nếu khoản đầu tư giảm một nửa, cuộc sống của bạn bị ảnh hưởng thế nào?",
-              options: [
-                { label: "Rất nặng, tôi cần số tiền đó cho chi tiêu", score: 0 },
-                { label: "Khá nặng, phải hoãn kế hoạch quan trọng", score: 1 },
-                { label: "Có ảnh hưởng nhưng vẫn ổn", score: 3 },
-                { label: "Gần như không ảnh hưởng", score: 4 },
-              ],
-              source: { sourceId: "dc-risk-quiz" },
-            },
-            {
-              id: "b1-q-drawdown",
-              type: "profile",
-              dimension: "tolerance",
-              prompt: "Danh mục của bạn giảm 20% trong 3 tháng. Bạn sẽ…",
-              options: [
-                { label: "Bán hết để không lỗ thêm", score: 0 },
-                { label: "Bán bớt một phần", score: 1 },
-                { label: "Giữ nguyên, tiếp tục kế hoạch", score: 3 },
-                { label: "Mua thêm theo kế hoạch đã định", score: 4 },
-              ],
-              source: { sourceId: "dc-risk-quiz" },
-            },
-            {
-              id: "b1-q-tradeoff",
-              type: "profile",
-              dimension: "tolerance",
-              prompt: "Bạn chọn danh mục nào? (năm tốt nhất / năm tệ nhất, minh họa)",
-              options: [
-                { label: "+7% / +3%", score: 0 },
-                { label: "+12% / −5%", score: 2 },
-                { label: "+20% / −15%", score: 3 },
-                { label: "+35% / −30%", score: 4 },
-              ],
-              source: { sourceId: "dc-risk-quiz" },
-            },
-            {
-              id: "b1-q-knowledge",
-              type: "profile",
-              dimension: "knowledge",
-              prompt: "Bạn đã từng đầu tư sản phẩm nào?",
-              options: [
-                { label: "Chỉ gửi tiết kiệm", score: 0 },
-                { label: "Quỹ trái phiếu hoặc vàng", score: 1 },
-                { label: "Quỹ cổ phiếu hoặc ETF", score: 3 },
-                { label: "Tự giao dịch cổ phiếu nhiều năm", score: 4 },
-              ],
-              source: { sourceId: "dc-risk-quiz" },
-            },
+            })),
           ],
         },
         {

@@ -3,6 +3,7 @@
 import { and, eq, sql } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { findLesson } from "@content/index";
+import { profileInfo, scoreRisk, type ProfileInfo, type RiskChoices } from "@content/risk";
 import { getDb } from "@/db/client";
 import { getCompletedLessonIds, getUserState, pathStatus } from "@/db/queries";
 import { challengeAttempts, lessonSessions, riskProfiles, userProgress, xpEvents } from "@/db/schema";
@@ -10,7 +11,6 @@ import { advanceStreak, lessonXp, localDay } from "@/features/gamification/engin
 import { MAX_HEARTS } from "@/features/gamification/rules";
 import { grade } from "@/features/lesson-engine/grade";
 import type { Answer, GradeResult } from "@/features/lesson-engine/types";
-import { PROFILE_INFO, scoreProfile, type ProfileAnswer } from "@/features/risk-profile/scoring";
 import { getUserId } from "@/lib/auth";
 
 /** Called by the lesson page. Refuses locked lessons; replaying a done lesson = practice. */
@@ -73,7 +73,13 @@ export type LessonSummary = {
   mistakes: number;
   perfect: boolean;
   streak: number;
-  profile?: { id: string; name: string; summary: string; mascot: string; capped: boolean; studyUnits: string[]; relevantFunds: string[] };
+  profile?: ProfileInfo & {
+    /** Profile name the learner said they are willing to take, before limits. */
+    willingName: string;
+    /** Why the result is lower than `willingName` (empty when it isn't). */
+    reasons: string[];
+    notes: string[];
+  };
 };
 
 /**
@@ -106,17 +112,23 @@ export async function completeLesson(sessionId: string): Promise<LessonSummary> 
 
   let profile: LessonSummary["profile"];
   if (loc.lesson.kind === "profile") {
-    const answers: ProfileAnswer[] = [];
+    // Profile options are shown in authored order, so the stored choice is the option index.
+    const choices: RiskChoices = {};
     for (const c of loc.lesson.challenges) {
       if (c.type !== "profile") continue;
       const last = attempts.filter((a) => a.challengeId === c.id).at(-1);
-      if (!last) continue;
-      const r = grade(c, last.answer as Answer);
-      if (r.profileScore) answers.push(r.profileScore);
+      if (last) choices[c.id] = (last.answer as Extract<Answer, { choice: number }>).choice;
     }
-    const result = scoreProfile(answers);
-    await db.insert(riskProfiles).values({ userId, profile: result.profile, dimensions: result.dimensions, capped: result.capped, quizLessonId: loc.lesson.id });
-    profile = { ...PROFILE_INFO[result.profile], capped: result.capped };
+    const result = scoreRisk(choices);
+    await db.insert(riskProfiles).values({
+      userId,
+      profile: result.profile,
+      // Column predates the rules model; it now keeps the full explanation for audit and the profile page.
+      dimensions: { willing: result.willing, reasons: result.reasons, notes: result.notes, choices },
+      capped: result.reasons.length > 0,
+      quizLessonId: loc.lesson.id,
+    });
+    profile = { ...profileInfo(result.profile), willingName: profileInfo(result.willing).name, reasons: result.reasons.map((r) => r.reason), notes: result.notes };
   }
 
   revalidatePath("/", "layout");

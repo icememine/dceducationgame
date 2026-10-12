@@ -21,7 +21,7 @@ export function toClientChallenge(c: Challenge): ClientChallenge {
       return { id: c.id, type: c.type, context: c.context, prompt: c.prompt, unit: c.unit, hint: c.hint };
     case "profile":
       // Self-assessment options keep their authored order (low → high reads naturally).
-      return { id: c.id, type: c.type, prompt: c.prompt, dimension: c.dimension, options: c.options.map((o) => o.label) };
+      return { id: c.id, type: c.type, prompt: c.prompt, options: c.options };
     case "goal_planner":
       return { id: c.id, type: c.type, prompt: c.prompt, goal: c.goal, defaults: c.defaults };
   }
@@ -43,11 +43,10 @@ export function grade(c: Challenge, a: Answer): GradeResult {
     case "goal_planner":
       return { ...base, correct: null };
     case "profile": {
+      // Recorded, not graded: content/risk turns the choices into a profile when the lesson ends.
       const choice = (a as Extract<Answer, { choice: number }>).choice;
-      const opt = c.options[choice];
-      if (!opt) throw new Error(`choice ${choice} out of range for ${c.id}`);
-      const max = Math.max(...c.options.map((o) => o.score));
-      return { ...base, correct: null, profileScore: { dimension: c.dimension, score: opt.score, max } };
+      if (!(choice >= 0 && choice < c.options.length)) throw new Error(`choice ${choice} out of range for ${c.id}`);
+      return { ...base, correct: null };
     }
     case "select":
     case "scenario": {

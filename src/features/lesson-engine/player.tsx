@@ -21,6 +21,7 @@ import {
   SelectView,
   type Draft,
 } from "./challenge-views";
+import { RiskExplanation } from "@/features/risk-profile/risk-explanation";
 import { parseLocaleNumber } from "./grade";
 import type { Answer, ClientChallenge } from "./types";
 
@@ -218,10 +219,10 @@ function Summary({ summary, seconds, onDone }: { summary: LessonSummary; seconds
         <Mascot mood={p ? p.mascot : summary.perfect ? "trophy" : "celebrate"} size={150} />
         {p ? (
           <>
-            <p className="text-sm font-extrabold uppercase tracking-widest text-muted">Khẩu vị rủi ro của bạn</p>
+            <p className="text-sm font-extrabold uppercase tracking-widest text-muted">Mức rủi ro phù hợp với bạn lúc này</p>
             <h1 className="text-3xl font-extrabold text-jade-deep">{p.name}</h1>
             <p>{p.summary}</p>
-            {p.capped && <p className="rounded-xl bg-gold-soft p-3 text-sm">Thời gian đầu tư hoặc khả năng tài chính đang giới hạn mức rủi ro phù hợp.</p>}
+            <RiskExplanation willingName={p.willingName} name={p.name} reasons={p.reasons} notes={p.notes} />
             <p className="text-sm">Lộ trình gợi ý: học tiếp các loại quỹ phù hợp, rồi đọc tài liệu {p.relevantFunds.join(", ")}.</p>
             <Disclaimer />
           </>

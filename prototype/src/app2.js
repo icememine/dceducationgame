@@ -93,17 +93,19 @@ function vRiskIntro() {
     <div class="stack"><button class="btn" data-start="risk">Tự đánh giá ngay</button><button class="linkbtn" data-go="learn">Để sau</button></div></div>`;
 }
 function vRiskResult() {
-  const r = S.risk || { band: 3, dims: { horizon: 75, capacity: 58, tolerance: 75, knowledge: 75 }, capped: true, sample: true };
+  // Results saved by the old scoring (no reasons) are ignored; the learner can retake the check.
+  const r = S.risk && Array.isArray(S.risk.reasons) ? S.risk : { band: 2, willing: 3, reasons: [DATA.risk.questions[0].options[2].reason], notes: [], sample: true };
   const p = PROFILES[r.band];
-  const names = { horizon: "Thời gian", capacity: "Khả năng tài chính", tolerance: "Chịu biến động", knowledge: "Kinh nghiệm" };
+  const why = r.reasons.length
+    ? `<div class="ctx" style="text-align:left">Bạn sẵn sàng ở mức <b>${PROFILES[r.willing].name}</b>, nhưng hoàn cảnh hiện tại phù hợp hơn với mức <b>${p.name}</b>:<ul style="margin:6px 0 0 18px">${r.reasons.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>`
+    : "";
   return `<div class="scroll"><div class="result" style="justify-content:flex-start">
     ${mascot(p.mood, 120)}
-    <span class="q-kind">Khẩu vị rủi ro của bạn${r.sample ? " · dữ liệu mẫu" : ""}</span>
+    <span class="q-kind">Mức rủi ro phù hợp với bạn lúc này${r.sample ? " · dữ liệu mẫu" : ""}</span>
     <h2 style="font-size:30px;color:var(--jade-deep)">${p.name}</h2>
     <p>${p.summary}</p>
     <div class="scale5">${PROFILES.map((x, i) => `<span class="${i === r.band ? "on" : ""}">${x.name}</span>`).join("")}</div>
-    <div class="dims">${Object.entries(names).map(([k, n]) => `<div class="dim"><span>${n}</span><span class="track"><i style="width:${r.dims[k] ?? 0}%"></i></span><b>${r.dims[k] ?? 0}</b></div>`).join("")}</div>
-    ${r.capped ? `<div class="ctx" style="text-align:left">Bạn sẵn sàng chịu rủi ro hơn, nhưng thời gian hoặc khoản dự phòng đang giới hạn mức phù hợp. Rồng xếp bạn theo mức thấp hơn.</div>` : ""}
+    ${why}${r.notes.map((n) => `<div class="ctx" style="text-align:left">${esc(n)}</div>`).join("")}
     <div class="card" style="margin:0;width:100%;text-align:left"><b>Lộ trình gợi ý cho bạn</b>
       <div style="display:flex;flex-wrap:wrap;gap:6px">${p.units.map((u) => `<span class="chip" style="background:var(--sky-soft);color:var(--sky-deep)">${esc(u)}</span>`).join("")}</div>
       <span style="font-size:13.5px">Quỹ DC nên đọc tài liệu: <b>${p.funds}</b></span></div>

@@ -85,14 +85,8 @@ const SRC = {
   quiz: "Bộ câu hỏi tự đánh giá (bản nháp)",
 };
 
-const RISK_ITEMS = [
-  { dim: "horizon", prompt: "Khi nào bạn cần dùng phần lớn khoản tiền này?", opts: [["Trong vòng 1 năm", 0], ["1 – 3 năm", 1], ["3 – 5 năm", 2], ["5 – 10 năm", 3], ["Hơn 10 năm", 4]] },
-  { dim: "capacity", prompt: "Khoản dự phòng hiện tại đủ cho bạn chi tiêu bao lâu nếu mất thu nhập?", opts: [["Chưa có hoặc dưới 1 tháng", 0], ["1 – 3 tháng", 1], ["3 – 6 tháng", 2], ["6 – 12 tháng", 3], ["Trên 12 tháng", 4]] },
-  { dim: "capacity", prompt: "Nếu khoản đầu tư giảm một nửa, cuộc sống của bạn bị ảnh hưởng thế nào?", opts: [["Rất nặng, tôi cần số tiền đó", 0], ["Khá nặng, phải hoãn kế hoạch lớn", 1], ["Có ảnh hưởng nhưng vẫn ổn", 3], ["Gần như không ảnh hưởng", 4]] },
-  { dim: "tolerance", prompt: "Danh mục của bạn giảm 20% trong 3 tháng. Bạn sẽ…", opts: [["Bán hết để không lỗ thêm", 0], ["Bán bớt một phần", 1], ["Giữ nguyên, tiếp tục kế hoạch", 3], ["Mua thêm theo kế hoạch đã định", 4]] },
-  { dim: "tolerance", prompt: "Bạn chọn danh mục nào? (năm tốt nhất / năm tệ nhất, minh họa)", opts: [["+7% / +3%", 0], ["+12% / −5%", 2], ["+20% / −15%", 3], ["+35% / −30%", 4]] },
-  { dim: "knowledge", prompt: "Bạn đã từng đầu tư sản phẩm nào?", opts: [["Chỉ gửi tiết kiệm", 0], ["Quỹ trái phiếu hoặc vàng", 1], ["Quỹ cổ phiếu hoặc ETF", 3], ["Tự giao dịch cổ phiếu nhiều năm", 4]] },
-];
+/** Questions and rules come from content/risk/risk-model.ts (injected by npm run proto:build). */
+const RISK_ITEMS = DATA.risk.questions.map((q) => ({ id: q.id, prompt: q.prompt, opts: q.options.map((o) => [o.label]) }));
 const PROFILES = [
   { id: "bao-toan", name: "Bảo toàn", mood: "save", summary: "Ưu tiên giữ vốn và thanh khoản, chấp nhận lợi nhuận thấp hơn.", units: ["C2 · Quỹ thị trường tiền tệ", "C3 · Quỹ trái phiếu"], funds: "DCIP, DCBF" },
   { id: "than-trong", name: "Thận trọng", mood: "study", summary: "Chấp nhận biến động nhỏ để có thu nhập ổn định hơn tiền gửi.", units: ["C3 · Quỹ trái phiếu", "C7 · Quỹ cân bằng"], funds: "DCBF, DCIP, DCBA" },
@@ -100,18 +94,26 @@ const PROFILES = [
   { id: "tang-truong", name: "Tăng trưởng", mood: "analyze", summary: "Mục tiêu dài hạn, chịu được những đợt giảm đáng kể.", units: ["C4 · Quỹ cổ phiếu", "C5 · Quỹ chỉ số & ETF", "C7 · Quỹ cân bằng"], funds: "DCDE, DCDS, DCBA" },
   { id: "nang-dong", name: "Năng động", mood: "fight", summary: "Chấp nhận biến động lớn để tìm tăng trưởng vốn dài hạn.", units: ["C4 · Quỹ cổ phiếu", "C5 · Quỹ chỉ số & ETF"], funds: "DCDS, DCDE, ETF" },
 ];
-function scoreRisk(answers) {
-  const dims = {};
-  for (const d of ["capacity", "tolerance", "horizon", "knowledge"]) {
-    const items = RISK_ITEMS.map((q, i) => [q, answers[i]]).filter(([q, a]) => q.dim === d && a != null);
-    const max = items.reduce((s, [q]) => s + Math.max(...q.opts.map((o) => o[1])), 0);
-    if (max) dims[d] = Math.round((items.reduce((s, [q, a]) => s + q.opts[a][1], 0) / max) * 100);
+/* risk-score:start (mirror of content/risk/score.ts; prototype.test.ts checks they agree) */
+function scoreRiskModel(model, choices) {
+  const pick = (id) => { const q = model.questions.find((x) => x.id === id), i = choices[id]; return q && i != null ? q.options[i] : undefined; };
+  let sum = 0, weights = 0;
+  for (const q of model.questions) {
+    const level = pick(q.id)?.level;
+    if (q.kind !== "willingness" || level == null) continue;
+    sum += level * (q.weight ?? 1); weights += q.weight ?? 1;
   }
-  const avg = (...xs) => { const v = xs.filter((x) => x != null); return v.length ? v.reduce((a, b) => a + b, 0) / v.length : 50; };
-  const band = (p) => (p < 20 ? 0 : p < 40 ? 1 : p < 60 ? 2 : p < 80 ? 3 : 4);
-  const will = band(avg(dims.tolerance, dims.tolerance, dims.knowledge));
-  const able = band(Math.min(dims.capacity ?? 100, dims.horizon ?? 100));
-  return { band: Math.min(will, able), dims, capped: able < will };
+  const willing = weights ? Math.round(sum / weights) : model.defaultLevel;
+  const reasons = model.questions.flatMap((q) => { const o = pick(q.id); return o?.cap != null && o.cap < willing ? [{ questionId: q.id, cap: o.cap, reason: o.reason ?? "" }] : []; }).sort((x, y) => x.cap - y.cap);
+  const notes = model.notes.filter((n) => { const h = pick(n.high)?.level, l = pick(n.low)?.level; return h != null && l != null && h - l >= n.gap; }).map((n) => n.note);
+  return { final: reasons[0]?.cap ?? willing, willing, reasons, notes };
+}
+/* risk-score:end */
+function scoreRisk(answers) {
+  const choices = {};
+  DATA.risk.questions.forEach((q, i) => { if (answers[i] != null) choices[q.id] = answers[i]; });
+  const r = scoreRiskModel(DATA.risk, choices);
+  return { band: r.final, willing: r.willing, reasons: r.reasons.map((x) => x.reason), notes: r.notes };
 }
 
 const LESSONS = {

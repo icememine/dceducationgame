@@ -39,7 +39,7 @@ export async function POST(req: Request) {
         await logAiMessage({ userId, surface: "rong", question, answer: text, mode: step.value.mode, model: step.value.model, flags });
       } catch (e) {
         console.error("rong", e);
-        controller.enqueue(encoder.encode((full ? "\n\n" : "") + "Rồng đang bận một chút, bạn thử lại sau nhé."));
+        controller.enqueue(encoder.encode((full ? "\n\n" : "") + "Rồng đang bận một chút, anh/chị thử lại sau nhé."));
       } finally {
         controller.close();
       }

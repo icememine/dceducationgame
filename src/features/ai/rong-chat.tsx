@@ -45,7 +45,7 @@ export function RongChat() {
       }
       write(stripSourceLine(answer));
     } catch {
-      write("Rồng đang bận một chút, bạn thử lại sau nhé.");
+      write("Rồng đang bận một chút, anh/chị thử lại sau nhé.");
     } finally {
       setBusy(false);
     }
@@ -56,8 +56,8 @@ export function RongChat() {
       <div className="flex items-start gap-3">
         <Mascot mood="study" size={48} />
         <p className="rounded-2xl rounded-tl-sm bg-jade-soft p-3 text-[15px]">
-          Chào bạn! Rồng trả lời từ thư viện hỏi đáp của Dragon Capital: phí, thuế, lịch giao dịch, tài khoản và kiến thức đầu tư.
-          Rồng không chọn quỹ thay bạn và không bao giờ hỏi OTP hay PIN.
+          Chào anh/chị! Rồng trả lời từ thư viện hỏi đáp của Dragon Capital: phí, thuế, lịch giao dịch, tài khoản và kiến thức đầu tư.
+          Rồng không chọn quỹ thay anh/chị và không bao giờ hỏi OTP hay PIN.
         </p>
       </div>
       <ol className="flex flex-col gap-3" aria-live="polite">

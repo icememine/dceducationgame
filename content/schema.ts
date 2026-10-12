@@ -105,15 +105,15 @@ export const scenarioChallenge = z.object({
   explain: insight,
 });
 
-export const riskDimension = z.enum(["capacity", "tolerance", "horizon", "knowledge"]);
-
-/** Self-assessment item: no right answer, each option carries a score. */
+/**
+ * Self-assessment item: no right answer. Options are labels only; what each answer means
+ * (willingness level or limit) lives in content/risk/risk-model.ts, keyed by the item id.
+ */
 export const profileChallenge = z.object({
   ...base,
   type: z.literal("profile"),
   prompt: z.string(),
-  dimension: riskDimension,
-  options: z.array(z.object({ label: z.string(), score: z.number().int().min(0).max(4) })).min(2),
+  options: z.array(z.string()).min(2),
 });
 
 export const goalKind = z.enum(["first-billion", "education", "retirement", "emergency", "custom"]);
@@ -193,5 +193,4 @@ export type Segment = z.infer<typeof segment>;
 export type SegmentInput = z.input<typeof segment>;
 export type Source = z.infer<typeof source>;
 export type QuizPattern = z.infer<typeof quizPattern>;
-export type RiskDimension = z.infer<typeof riskDimension>;
 export type GoalKind = z.infer<typeof goalKind>;

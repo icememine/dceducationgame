@@ -43,7 +43,7 @@ describe("lesson engine", () => {
     expect(grade(o, { type: "order", order: [...shownOrder].reverse() }).correct).toBe(false);
   });
 
-  it("grades numeric answers with tolerance and records profile scores", () => {
+  it("grades numeric answers with tolerance and records profile choices", () => {
     const n: Challenge = {
       id: "t-double",
       type: "numeric",
@@ -58,7 +58,8 @@ describe("lesson engine", () => {
     expect(grade(n, { type: "numeric", value: 20 }).correct).toBe(false);
 
     const p = challenge("b1-risk-check", "b1-q-horizon");
-    expect(grade(p, { type: "profile", choice: 4 })).toMatchObject({ correct: null, profileScore: { dimension: "horizon", score: 4, max: 4 } });
+    expect(grade(p, { type: "profile", choice: 4 }).correct).toBeNull();
+    expect(() => grade(p, { type: "profile", choice: 9 })).toThrow();
   });
 
   it("never cites internal documents to the learner", () => {
