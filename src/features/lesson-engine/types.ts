@@ -1,0 +1,39 @@
+import type { Challenge, RiskDimension, SourceRef } from "@content/schema";
+
+/** What the browser receives: answer keys, scores and explanations stripped. */
+export type ClientChallenge =
+  | { id: string; type: "info"; title: string; body: string; mascot?: string }
+  | { id: string; type: "select"; prompt: string; context?: string; options: string[] }
+  | { id: string; type: "scenario"; prompt: string; persona: { name: string; meta?: string }; says: string; options: string[] }
+  | { id: string; type: "true_false"; prompt: string }
+  | { id: string; type: "match"; prompt: string; left: string[]; right: string[] }
+  | { id: string; type: "order"; prompt: string; items: string[] }
+  | { id: string; type: "numeric"; prompt: string; context?: string; unit: string; hint?: string }
+  | { id: string; type: "profile"; prompt: string; dimension: RiskDimension; options: string[] }
+  | {
+      id: string;
+      type: "goal_planner";
+      prompt: string;
+      goal: Extract<Challenge, { type: "goal_planner" }>["goal"];
+      defaults: Extract<Challenge, { type: "goal_planner" }>["defaults"];
+    };
+
+/** Positions refer to the SHUFFLED lists the client was shown. */
+export type Answer =
+  | { type: "info" }
+  | { type: "select" | "scenario" | "profile"; choice: number }
+  | { type: "true_false"; value: boolean }
+  | { type: "match"; pairs: number[] }
+  | { type: "order"; order: number[] }
+  | { type: "numeric"; value: number }
+  | { type: "goal_planner"; target: number; monthly: number; initial: number; annualReturn: number };
+
+export type GradeResult = {
+  /** null = ungraded item (info card, self-assessment, planner). */
+  correct: boolean | null;
+  correctAnswer?: string;
+  explain?: string;
+  source?: SourceRef & { title?: string };
+  /** For profile items: the score recorded towards the risk profile. */
+  profileScore?: { dimension: RiskDimension; score: number; max: number };
+};

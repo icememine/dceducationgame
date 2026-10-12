@@ -1,0 +1,327 @@
+import type { SegmentInput } from "../schema";
+
+/**
+ * Segment A — Quỹ DC.
+ * Source: "Tư vấn sản phẩm và hỗ trợ nhà đầu tư" (FAQ, 135 câu). Each lesson cites the
+ * question number it is built from so reviewers can check the wording against the FAQ.
+ * Fee tables and cut-off times are deliberately NOT hard-coded: the FAQ warns they change.
+ * Questions that need them should read from a dated fund-facts table (see ARCHITECTURE.md).
+ */
+export const dcFunds = {
+  id: "dc-funds",
+  code: "DC",
+  title: "Quỹ của Dragon Capital",
+  subtitle: "DCDS · DCDE · DCBF · DCIP · DCBA · ETF",
+  heartsEnabled: true,
+  units: [
+    {
+      id: "a1-open-fund-101",
+      title: "Phần 1 · Quỹ mở 101",
+      description: "CCQ, NAV và ai giữ tiền của bạn",
+      color: "jade",
+      mascot: "study",
+      lessons: [
+        {
+          id: "a1-ccq-nav",
+          title: "CCQ & NAV",
+          challenges: [
+            {
+              id: "a1-ccq-nav-info",
+              type: "info",
+              title: "Chứng chỉ quỹ là gì?",
+              body: "Chứng chỉ quỹ (CCQ) xác nhận bạn sở hữu một phần vốn góp trong quỹ. Bạn sở hữu phần vốn trong quỹ, không trực tiếp đứng tên từng cổ phiếu hay trái phiếu trong danh mục.",
+              mascot: "study",
+              source: { sourceId: "faq", locator: "Câu 134" },
+            },
+            {
+              id: "a1-nav-def",
+              type: "select",
+              prompt: "NAV/CCQ là gì?",
+              options: [
+                "Giá trị tài sản ròng của quỹ chia cho số CCQ đang lưu hành",
+                "Tổng số tiền nhà đầu tư đã nộp vào quỹ",
+                "Giá cổ phiếu lớn nhất trong danh mục",
+                "Mức lợi nhuận quỹ cam kết mỗi năm",
+              ],
+              answer: 0,
+              explain: "NAV = tổng tài sản trừ nghĩa vụ phải trả. Chia cho số CCQ đang lưu hành ra NAV/CCQ.",
+              source: { sourceId: "faq", locator: "Thuật ngữ" },
+            },
+            {
+              id: "a1-nav-expensive",
+              type: "true_false",
+              prompt: "Quỹ có NAV/CCQ cao hơn là quỹ đắt hơn và tốt hơn.",
+              answer: false,
+              explain: "NAV/CCQ khác nhau do thời điểm thành lập, lịch sử hoạt động và các đợt phân phối. Hãy so sánh tổng lợi nhuận cùng kỳ và mức rủi ro.",
+              source: { sourceId: "faq", locator: "Câu 16" },
+            },
+            {
+              id: "a1-new-units",
+              type: "true_false",
+              prompt: "Khi quỹ mở phát hành thêm CCQ theo NAV, NAV/CCQ của nhà đầu tư hiện hữu tự động giảm.",
+              answer: false,
+              explain: "Tài sản và số CCQ cùng tăng tương ứng, nên phát hành ở mức NAV không tự động làm giảm NAV/CCQ.",
+              source: { sourceId: "faq", locator: "Câu 19" },
+            },
+            {
+              id: "a1-terms-match",
+              type: "match",
+              prompt: "Nối thuật ngữ với ý nghĩa",
+              left: ["CCQ", "NAV", "DCA", "ETF"],
+              right: [
+                "Đầu tư khoản cố định theo lịch định kỳ",
+                "Chứng chỉ quỹ",
+                "Quỹ có CCQ niêm yết, giao dịch trên sàn",
+                "Tổng tài sản trừ nghĩa vụ phải trả",
+              ],
+              pairs: [1, 3, 0, 2],
+              source: { sourceId: "faq", locator: "Thuật ngữ" },
+            },
+          ],
+        },
+        {
+          id: "a1-who-holds-money",
+          title: "Ai giữ tiền của bạn?",
+          challenges: [
+            {
+              id: "a1-supervisor-role",
+              type: "select",
+              prompt: "Ngân hàng giám sát làm gì?",
+              options: [
+                "Lưu ký tài sản quỹ, giám sát giao dịch và xác nhận NAV",
+                "Quyết định quỹ mua cổ phiếu nào",
+                "Bảo đảm nhà đầu tư không bị lỗ",
+                "Trả lãi cho nhà đầu tư hằng tháng",
+              ],
+              answer: 0,
+              explain: "Ngân hàng giám sát kiểm tra tuân thủ, giám sát giao dịch và xác nhận NAV; báo cáo tài chính năm được kiểm toán độc lập.",
+              source: { sourceId: "faq", locator: "Câu 4" },
+            },
+            {
+              id: "a1-supervisor-guarantee",
+              type: "true_false",
+              prompt: "Vì có ngân hàng giám sát nên vốn của bạn được bảo đảm.",
+              answer: false,
+              explain: "Cơ chế giám sát tăng minh bạch và bảo vệ quyền lợi nhà đầu tư, nhưng không bảo đảm vốn hay lợi nhuận.",
+              source: { sourceId: "faq", locator: "Câu 4" },
+            },
+            {
+              id: "a1-transfer-scenario",
+              type: "scenario",
+              prompt: "Bạn nên làm gì?",
+              persona: { name: "Người tự xưng tư vấn viên", meta: "Nhắn tin qua Zalo" },
+              says: "Anh/chị chuyển tiền vào tài khoản cá nhân của em, em đặt lệnh mua DCDS giúp cho nhanh nhé.",
+              options: [
+                "Chuyển luôn cho tiện",
+                "Từ chối. Chỉ chuyển theo hướng dẫn thanh toán hiển thị cho lệnh, kiểm tra đúng tên thụ hưởng",
+                "Chuyển một nửa để thử trước",
+              ],
+              answer: 1,
+              explain: "Không chuyển tiền mua quỹ vào tài khoản cá nhân của người tư vấn. Kiểm tra tên thụ hưởng, tài khoản nhận, số tiền và nội dung chuyển khoản.",
+              source: { sourceId: "faq", locator: "Câu 5" },
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: "a2-dc-fund-family",
+      title: "Phần 2 · Gia đình quỹ DC",
+      description: "Mỗi quỹ đầu tư vào đâu, hợp với mục tiêu nào",
+      color: "sky",
+      mascot: "analyze",
+      lessons: [
+        {
+          id: "a2-meet-the-funds",
+          title: "Làm quen các quỹ",
+          challenges: [
+            {
+              id: "a2-fund-match",
+              type: "match",
+              prompt: "Nối quỹ với tài sản đầu tư chính",
+              left: ["DCDS", "DCDE", "DCBF", "DCBA"],
+              right: [
+                "Trái phiếu, thu nhập cố định",
+                "Cổ phiếu, chiến lược năng động",
+                "Kết hợp cổ phiếu và trái phiếu",
+                "Cổ phiếu doanh nghiệp trả cổ tức tốt",
+              ],
+              pairs: [1, 3, 0, 2],
+              source: { sourceId: "faq", locator: "Câu 1, 16, 34" },
+            },
+            {
+              id: "a2-volatility-order",
+              type: "order",
+              prompt: "Sắp xếp theo mức biến động thường thấy, từ thấp đến cao",
+              items: ["DCBF (trái phiếu)", "DCBA (cân bằng)", "DCDS (cổ phiếu)"],
+              explain: "Quỹ thu nhập cố định thường biến động thấp hơn quỹ cổ phiếu; quỹ cân bằng nằm giữa. Không quỹ nào bảo đảm đồng thời an toàn vốn và lợi nhuận cao.",
+              source: { sourceId: "faq", locator: "Câu 1" },
+            },
+            {
+              id: "a2-monthly-interest",
+              type: "true_false",
+              prompt: "Quỹ cổ phiếu trả lãi cố định hằng tháng giống tiền gửi.",
+              answer: false,
+              explain: "DCDE hướng đến phân phối cổ tức tiền mặt theo phương án được duyệt, nhưng không cam kết thu nhập hằng tháng.",
+              source: { sourceId: "faq", locator: "Câu 14" },
+            },
+            {
+              id: "a2-dividend-nav",
+              type: "numeric",
+              prompt: "NAV/CCQ sau ngày chốt quyền là bao nhiêu?",
+              context: "NAV/CCQ của DCDE là 25.000 đ. Quỹ phân phối cổ tức 1.300 đ/CCQ. Giả sử các yếu tố khác không đổi.",
+              answer: 23700,
+              tolerance: 0,
+              unit: "đ",
+              explain: "NAV/CCQ giảm tương ứng 1.300 đ, khoản này chuyển thành tiền bạn nhận. Đây không phải lỗ đầu tư.",
+              source: { sourceId: "faq", locator: "Câu 106" },
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: "a3-orders-and-fees",
+      title: "Phần 3 · Đặt lệnh & thời gian nắm giữ",
+      description: "Giá khớp, phí bán theo lô, tiền thực nhận",
+      color: "gold",
+      mascot: "save",
+      lessons: [
+        {
+          id: "a3-order-basics",
+          title: "Lệnh mua bán quỹ mở",
+          challenges: [
+            {
+              id: "a3-price-known",
+              type: "true_false",
+              prompt: "Khi đặt lệnh mua quỹ mở, bạn biết chính xác giá khớp như khi mua cổ phiếu.",
+              answer: false,
+              explain: "Lệnh thực hiện theo NAV/CCQ của kỳ giao dịch hợp lệ. Giá hiển thị lúc đặt lệnh không mặc nhiên là giá thực hiện.",
+              source: { sourceId: "faq", locator: "Câu 30" },
+            },
+            {
+              id: "a3-fifo-scenario",
+              type: "scenario",
+              prompt: "Câu nào đúng?",
+              persona: { name: "Chị Hương", meta: "Mua 100 CCQ tháng 10/2024 và 100 CCQ tháng 11/2024" },
+              says: "Tháng 10/2026 chị bán 150 CCQ. Thời gian nắm giữ tính từ lần mua đầu tiên đúng không?",
+              options: [
+                "Đúng, cả 150 CCQ tính từ tháng 10/2024",
+                "Không. Mỗi lần mua tính riêng; 100 CCQ đợt đầu bán trước, 50 CCQ còn lại thuộc đợt tháng 11/2024",
+                "Hệ thống bán CCQ mua sau cùng trước",
+              ],
+              answer: 1,
+              explain: "Thời gian nắm giữ tính riêng cho từng lần mua. Với nguyên tắc FIFO, CCQ mua sớm hơn được bán trước, nên một lệnh bán có thể gồm nhiều lô với mức phí khác nhau.",
+              source: { sourceId: "faq", locator: "Câu 10" },
+            },
+            {
+              id: "a3-estimate-vs-actual",
+              type: "select",
+              prompt: "Vì sao số tiền tạm tính khi đặt bán khác số tiền thực nhận?",
+              options: [
+                "NAV áp dụng khi thực hiện lệnh khác NAV hiển thị, cộng phí, thuế và làm tròn",
+                "Ứng dụng luôn tính sai",
+                "Quỹ giữ lại một phần tiền bán",
+              ],
+              answer: 0,
+              source: { sourceId: "faq", locator: "Câu 33" },
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: "a4-reading-performance",
+      title: "Phần 4 · Đọc hiệu suất",
+      description: "Tính lợi nhuận, CAGR, so sánh đúng kỳ",
+      color: "violet",
+      mascot: "analyze",
+      lessons: [
+        {
+          id: "a4-returns",
+          title: "Tính lợi nhuận",
+          challenges: [
+            {
+              id: "a4-period-return",
+              type: "numeric",
+              prompt: "Lợi nhuận kỳ là bao nhiêu %?",
+              context: "Đầu kỳ: 100 triệu. Cuối kỳ: 112 triệu. Nhận phân phối trong kỳ: 3 triệu. Không mua bán thêm.",
+              answer: 15,
+              tolerance: 0.05,
+              unit: "%",
+              hint: "(Cuối kỳ + phân phối − đầu kỳ) / đầu kỳ",
+              explain: "(112 + 3 − 100) / 100 = 15%.",
+              source: { sourceId: "faq", locator: "Câu 31" },
+            },
+            {
+              id: "a4-double-5y",
+              type: "numeric",
+              prompt: "Muốn gấp đôi vốn trong 5 năm, cần lợi nhuận kép khoảng bao nhiêu %/năm?",
+              answer: 14.9,
+              tolerance: 0.2,
+              unit: "%/năm",
+              hint: "2^(1/5) − 1",
+              explain: "Khoảng 14,9%/năm, trước phí và thuế. Đây là mục tiêu cần chấp nhận rủi ro đáng kể và không được bảo đảm.",
+              source: { sourceId: "faq", locator: "Câu 21" },
+            },
+            {
+              id: "a4-fixed-return",
+              type: "true_false",
+              prompt: "Lợi nhuận hằng năm của quỹ là cố định.",
+              answer: false,
+              explain: "Lợi nhuận thay đổi theo kết quả đầu tư và có thể âm trong một số năm. Kết quả quá khứ không bảo đảm tương lai.",
+              source: { sourceId: "faq", locator: "Câu 23" },
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: "a5-dragonx-safety",
+      title: "Phần 5 · DragonX & an toàn tài khoản",
+      description: "OTP, PIN, cuộc gọi giả mạo",
+      color: "coral",
+      mascot: "fight",
+      lessons: [
+        {
+          id: "a5-stay-safe",
+          title: "Giữ tài khoản an toàn",
+          challenges: [
+            {
+              id: "a5-otp",
+              type: "select",
+              prompt: "Bạn nhận được OTP dù không thao tác gì. Làm gì?",
+              options: [
+                "Không cung cấp OTP, liên hệ kênh hỗ trợ chính thức, đổi PIN nếu nghi lộ thông tin",
+                "Gửi OTP cho người vừa gọi để họ kiểm tra",
+                "Bỏ qua, không cần làm gì",
+              ],
+              answer: 0,
+              source: { sourceId: "faq", locator: "Câu 92" },
+            },
+            {
+              id: "a5-caller-id",
+              type: "true_false",
+              prompt: "Số gọi đến hiển thị tên Dragon Capital là đủ để tin đó là nhân viên thật.",
+              answer: false,
+              explain: "Tên hiển thị không đủ để xác nhận. Gọi lại số chính thức. Nhân viên không cần PIN hay OTP của bạn.",
+              source: { sourceId: "faq", locator: "Câu 116" },
+            },
+            {
+              id: "a5-bad-link",
+              type: "order",
+              prompt: "Lỡ nhấn đường dẫn lạ: sắp xếp các bước theo thứ tự nên làm",
+              items: [
+                "Ngừng tương tác, không nhập thêm PIN/OTP",
+                "Liên hệ hỗ trợ từ một thiết bị an toàn",
+                "Đổi thông tin bảo mật qua kênh chính thức",
+                "Kiểm tra lệnh và tài khoản thụ hưởng",
+              ],
+              source: { sourceId: "faq", locator: "Câu 120" },
+            },
+          ],
+        },
+      ],
+    },
+  ],
+} satisfies SegmentInput;
