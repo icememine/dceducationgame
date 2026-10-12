@@ -5,7 +5,7 @@ import type { Segment } from "@content/schema";
 import { localDay, regenerateHearts } from "@/features/gamification/engine";
 import { questProgress } from "@/features/gamification/quests";
 import { getDb } from "./client";
-import { challengeAttempts, goals, lessonSessions, riskProfiles, userProgress, users, xpEvents } from "./schema";
+import { aiMessages, challengeAttempts, goals, lessonSessions, riskProfiles, userProgress, users, xpEvents } from "./schema";
 
 export async function ensureUser(userId: string) {
   const db = await getDb();
@@ -118,4 +118,18 @@ export async function getLatestProfile(userId: string) {
 export async function getGoals(userId: string) {
   const db = await getDb();
   return db.select().from(goals).where(eq(goals.userId, userId)).orderBy(desc(goals.createdAt));
+}
+
+export async function logAiMessage(row: {
+  userId: string;
+  surface: "rong" | "coach" | "persona";
+  question: string;
+  answer: string;
+  mode: "ai" | "offline";
+  model?: string;
+  flags: string[];
+}) {
+  await ensureUser(row.userId);
+  const db = await getDb();
+  await db.insert(aiMessages).values(row);
 }

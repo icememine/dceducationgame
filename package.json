@@ -13,9 +13,12 @@
     "content:check": "tsx scripts/check-content.ts",
     "db:generate": "drizzle-kit generate",
     "db:studio": "drizzle-kit studio",
-    "docs:curriculum": "tsx scripts/gen-curriculum.ts"
+    "docs:curriculum": "tsx scripts/gen-curriculum.ts",
+    "e2e:golden": "node e2e/golden-path.mjs",
+    "proto:build": "tsx scripts/build-prototype.ts"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "0.133.0",
     "@electric-sql/pglite": "0.3.8",
     "@radix-ui/react-slot": "^1.2.3",
     "class-variance-authority": "0.7.1",
@@ -39,6 +42,7 @@
     "drizzle-kit": "0.31.4",
     "eslint": "9.36.0",
     "eslint-config-next": "15.5.27",
+    "playwright-core": "1.64.0",
     "postcss": "8.5.6",
     "tailwindcss": "3.4.17",
     "tsx": "4.20.5",

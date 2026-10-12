@@ -1,12 +1,13 @@
 "use client";
 
-import { Home, Target, Trophy, User } from "lucide-react";
+import { Home, MessageCircle, Target, Trophy, User } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 const TABS = [
   { href: "/learn", label: "Học", icon: Home },
+  { href: "/rong", label: "Hỏi Rồng", icon: MessageCircle },
   { href: "/leaderboard", label: "Xếp hạng", icon: Trophy },
   { href: "/quests", label: "Nhiệm vụ", icon: Target },
   { href: "/profile", label: "Hồ sơ", icon: User },
@@ -15,7 +16,7 @@ const TABS = [
 export function TabBar() {
   const path = usePathname();
   return (
-    <nav className="sticky bottom-0 z-10 grid grid-cols-4 border-t-2 border-line bg-surface">
+    <nav className="sticky bottom-0 z-10 grid grid-cols-5 border-t-2 border-line bg-surface">
       {TABS.map(({ href, label, icon: Icon }) => {
         const active = path.startsWith(href);
         return (

@@ -101,3 +101,24 @@ export const goals = pgTable("goals", {
   annualReturn: real("annual_return").notNull(),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 });
+
+/**
+ * Every AI answer (Hỏi Rồng now; coach and role-play later), kept for Compliance review and
+ * for building evals from real questions. `flags` come from features/ai/guardrails.ts.
+ */
+export const aiMessages = pgTable(
+  "ai_messages",
+  {
+    id: serial("id").primaryKey(),
+    userId: text("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
+    surface: text("surface").notNull(),
+    question: text("question").notNull(),
+    answer: text("answer").notNull(),
+    /** "ai" (model answered) or "offline" (library fallback, no API credentials). */
+    mode: text("mode").notNull(),
+    model: text("model"),
+    flags: jsonb("flags").notNull().default([]),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("ai_messages_user_idx").on(t.userId, t.createdAt)],
+);

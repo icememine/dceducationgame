@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm test
+      - run: npm run content:check
+      - run: npm run build
+
+  golden-path:
+    needs: check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx -y playwright@1.64.0 install --with-deps chromium
+      - run: npm run build
+      # No ANTHROPIC_API_KEY here: Hỏi Rồng answers from the library, so the run is free and deterministic.
+      - run: npx next start -p 3100 &
+      - run: npx -y wait-on@8.0.4 http://localhost:3100 --timeout 120000
+      - run: BASE_URL=http://localhost:3100 npm run e2e:golden -- e2e-shots
+      - if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: golden-path-screenshots
+          path: e2e-shots

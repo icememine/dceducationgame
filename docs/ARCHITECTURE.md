@@ -5,8 +5,39 @@ hearts, leagues and the Rồng DC mascot, built on the structure of
 [`Davronov-Alimardon/duolingo-clone`](https://github.com/Davronov-Alimardon/duolingo-clone).
 
 > Companion docs: [`CURRICULUM.md`](./CURRICULUM.md) (the 142-lesson program, generated from `content/outline/`),
-> [`FEATURES.md`](./FEATURES.md) (the full feature list, including AI practice) and
-> [`MINDMAP.md`](./MINDMAP.md) (the whole plan on one page).
+> [`FEATURES.md`](./FEATURES.md) (the full feature list, including AI practice),
+> [`MINDMAP.md`](./MINDMAP.md) (the whole plan on one page), [`QUIZ_FORMULA.md`](./QUIZ_FORMULA.md),
+> [`GOLDEN_PATH.md`](./GOLDEN_PATH.md) and [`PLAN.md`](./PLAN.md) (what to build next).
+
+---
+
+## 0. Review, October 2026
+
+**What held up.** Content-as-code with Zod validation and tests absorbed two large rewrites (the quiz
+formula and the merged FAQ library) without touching the database or the lesson engine. Server-side
+grading, deterministic shuffling, pure domain modules and the auth seam (`getUserId()`) need no change.
+
+**What changed since the skeleton.**
+
+| Area | Before | Now |
+|---|---|---|
+| Questions | 9 types, free-form `select`, `true_false` | 8 types; every graded item is **context → question → 3 options → insight** with a pattern tag, enforced by the schema (`true_false` removed) |
+| Facts | "don't hard-code fees" (planned table) | `content/library/fund-facts.ts` is the single source; tests check the numbers quoted in lessons |
+| FAQ | one 133-question document, cited as "Câu N" | `content/library`: 208 investor-facing Q&As in 17 categories + 45-term glossary, merged from both FAQ documents; every source row merged or excluded with a reason |
+| Sources | shown under every explanation | only published articles are shown; internal documents (`internal: true`) stay in the audit trail |
+| AI | prototype only | `src/features/ai` + `/api/rong` + `/rong` page: guardrails in code, voice in `content/ai/rong-voice.md`, answers logged to `ai_messages` |
+| Prototype | hand-built in a scratch folder | sources in `prototype/src`, built from live content with `npm run proto:build` |
+| Quality gates | unit tests | + CI workflow and an end-to-end golden path on a production build |
+
+**Gaps and risks, in priority order** (each has an item in [`PLAN.md`](./PLAN.md)):
+
+1. **No eval for AI answers.** Voice and prompt changes are judged by eye. Build the Hỏi Rồng eval set before tuning tone.
+2. **Two lesson definitions.** The prototype's lessons are hand-written JS, separate from `content/segments`; they will drift. Generate one from the other.
+3. **Content volume.** 19 of 142 outlined lessons are built; the outline is the bottleneck, not the engine.
+4. **AI practice is prototype-only.** The role-play and coach (the feature the business liked most) are not in the app yet.
+5. **Guardrail flags are logged, not acted on.** Compliance needs a review page; `/api/rong` needs a per-user cap.
+6. **Voice mismatch.** Library answers are written in CS voice ("anh/chị"); Rồng speaks to "bạn". The model rephrases; the offline fallback does not.
+7. **Identity and hosting** are still the dev cookie and PGlite.
 
 ---
 
@@ -16,7 +47,8 @@ hearts, leagues and the Rồng DC mascot, built on the structure of
 |---|---|
 | **Investor365 Learn prototype** (artifact) | UX and visual system: phone-first column, jade / gold / coral / sky tokens, Baloo 2 + Nunito, chunky "3D" buttons, zig-zag lesson path, units, chest/trophy nodes, hearts, streak, quests, leagues ("Hạng Ngọc Bích"), result screen, and **"Nguồn: …" under every explanation**. Question types: select, true/false, match, calc, scenario. The prototype targets *staff*; this game targets *investors*, so roles become experience levels, and colleague/branch leaderboards become nickname-only ones. |
 | **Rồng DC** (10 mascot renders) | `public/mascot/*.png`, one pose per meaning: `explore` onboarding · `study` concepts · `grow` compounding/DCA · `analyze` numbers · `save` safety/emergency fund · `fight` streak/motivation · `celebrate` XP · `trophy` unit done/league · `gift` chests/quests · `sad` wrong answer/out of hearts/market drop. |
-| **Tư vấn sản phẩm hoàn chỉnh** (FAQ, 135 Q&A) | Segment A: Quỹ DC. Every question cites "Câu N". |
+| **Tư vấn sản phẩm hoàn chỉnh** (FAQ, 133 Q&A) + **FAQ Tư vấn IS** (CS workbook: quỹ mở, ETF, thuật ngữ) | Merged into the Q&A library (`content/library`) that feeds Segment A and Hỏi Rồng; the IS workbook supplies the real fees, tax and schedules (`fund-facts.ts`). |
+| **Công thức Quiz Giáo dục Đầu tư** | The house formula every graded question follows (`docs/QUIZ_FORMULA.md`). |
 | **AMDD – Content** (16 articles) | Segment B: risk self-assessment, goals (1 tỷ đầu tiên, du học, nghỉ hưu, quỹ tự do sự nghiệp), discipline (DCA, timing, Sell in May, DCDS 10 năm). |
 | **Articles W5** (MMF, Index, Active vs Passive, Bond, Balanced) | Segment C: fund types. Banners and thumbnails can be used as unit covers. |
 | **duolingo-clone repo** | Architecture template: Next.js App Router, server actions, Drizzle + Postgres, course → unit → lesson → challenge hierarchy, hearts/points, practice-to-refill, quests, leaderboard, marketing/main/lesson route groups. The repo has **no licence file**, so it is used as a structural reference only and the code here is written from scratch. |
@@ -29,7 +61,7 @@ hearts, leagues and the Rồng DC mascot, built on the structure of
 | Drizzle + Neon Postgres | Drizzle + **any Postgres**; **embedded PGlite** when `DATABASE_URL` is empty | Zero-setup local dev; production DB can be hosted in Vietnam if data rules require |
 | Courses/units/lessons/challenges as **DB rows**, edited via react-admin | **Content-as-code** (`/content/*.ts`, Zod-validated), DB stores only learner state | Every wording change goes through a PR = audit trail for Compliance. No migrations to add a lesson. |
 | Serial integer ids | **Stable string ids** (`a1-ccq-nav`) | Content can be reordered without breaking progress |
-| 2 challenge types (SELECT, ASSIST) | **9 types**: info, select, true_false, match, order, numeric, scenario, profile, goal_planner | Finance needs calculation, scenarios, self-assessment and planners |
+| 2 challenge types (SELECT, ASSIST) | **8 types**: info, select (formula quiz), match, order, numeric, scenario, profile, goal_planner | Finance needs scenarios, self-assessment and planners; every graded question has a context |
 | Correct option sent to the browser; client decides | **Server-side grading**; options shuffled deterministically; answer keys never leave the server | XP and leaderboards can't be forged |
 | Lesson complete = all challenge rows done | **Lesson sessions** + attempt log; server verifies completion and "perfect" from stored attempts | Integrity + analytics on which questions confuse investors |
 | Clerk auth | **Auth adapter** (`src/lib/auth.ts`): anonymous dev cookie now, DragonX SSO (OIDC) later | Investors already have DragonX identities |
@@ -50,11 +82,13 @@ flowchart LR
     RSC["Server components<br/>(read-only queries)"]
     Actions["Server actions<br/>startLessonSession · submitAnswer · completeLesson<br/>completeOnboarding · setActiveSegment · saveGoal"]
     Engine["Domain modules (pure TS, unit-tested)<br/>lesson-engine/grade · gamification · risk-profile · goal-planner"]
+    AI["AI layer (features/ai)<br/>guardrails · voice · rong.ts<br/>POST /api/rong (streamed)"]
     Auth["Auth adapter<br/>(dev cookie → DragonX OIDC)"]
   end
 
-  Content[("content/*.ts<br/>segments → units → lessons → challenges<br/>+ sources registry<br/>(git = audit trail)")]
-  DB[("Postgres / PGlite<br/>users · user_progress · lesson_sessions<br/>challenge_attempts · xp_events · risk_profiles · goals")]
+  Content[("content/*.ts<br/>segments → units → lessons → challenges<br/>library (Q&A, fund facts, glossary)<br/>ai/rong-voice.md · sources<br/>(git = audit trail)")]
+  Claude["Claude API<br/>(claude-opus-5-5)"]
+  DB[("Postgres / PGlite<br/>users · user_progress · lesson_sessions<br/>challenge_attempts · xp_events · risk_profiles · goals<br/>ai_messages")]
   DragonX["DragonX<br/>(deep links now; SSO + account link later)"]
   CMS["Content team + Compliance<br/>(PR review, content:check in CI)"]
 
@@ -67,6 +101,10 @@ flowchart LR
   Engine --> Content
   Actions --> DB
   RSC --> DB
+  UI --> AI
+  AI --> Content
+  AI --> Claude
+  AI --> DB
   UI -. CTA .-> DragonX
   Auth -. later .-> DragonX
   CMS --> Content
@@ -80,11 +118,15 @@ content/
   sources.ts           every citable document, with asOf date
   segments/            dc-funds.ts (A) · my-plan.ts (B) · fund-types.ts (C)
   index.ts             registry, lookups, validateContent() integrity checks
+  library/             Q&A library (faq-products, faq-services), glossary, fund-facts (+ text form), search
+  ai/rong-voice.md     Rồng's tone and mood, edited by the content team
   outline/             the PLAN: 3 stages · 25 units · 142 lessons · 14 AI scenarios, tested for
                        source validity and full coverage of the 133 FAQ questions
 drizzle/               generated SQL migrations
 public/mascot/         Rồng DC poses (384px PNG)
 scripts/check-content.ts   CI gate for content PRs
+scripts/build-prototype.ts builds prototype/rong-dc-academy.html from prototype/src + content
+e2e/golden-path.mjs        end-to-end golden path (CI)
 src/
   app/                 routes (see §8)
   actions/             server actions: lesson.ts, user.ts
@@ -94,6 +136,7 @@ src/
     gamification/      rules.ts (all tunables), engine.ts (xp, hearts, streak, leagues), quests.ts
     risk-profile/      scoring.ts (willingness capped by ability → 5 profiles)
     goal-planner/      finance.ts (FV, months-to-target, required monthly, CAGR)
+    ai/                guardrails.ts (fixed rules + reply review), voice.ts, rong.ts (request, stream, offline), rong-chat.tsx
   components/          button (3D), mascot, status-bar, tab-bar, disclaimer
   lib/                 auth.ts, utils.ts
 ```
@@ -104,28 +147,27 @@ src/
 Segment  { id, code, title, subtitle, heartsEnabled, units[] }
 └ Unit   { id, title, description, color, mascot, lessons[] }
   └ Lesson { id, title, kind: standard | profile | checkpoint, xp, minutes, challenges[] }
-    └ Challenge (discriminated union on `type`) + { id, explain?, source? { sourceId, locator } }
+    └ Challenge (discriminated union on `type`) + { id, explain? (the INSIGHT), source? { sourceId, locator } }
 ```
 
 | Type | Learner does | Graded | Example |
 |---|---|---|---|
 | `info` | reads a teaching card with a mascot pose | no | "Chứng chỉ quỹ là gì?" |
-| `select` | picks one option | yes | NAV/CCQ là gì? |
-| `true_false` | Đúng / Sai | yes | "Ngân hàng giám sát bảo đảm vốn" |
+| `select` | reads a context, answers one question from 3 options; `pattern` = prediction / why / misconception / decision | yes | "Chị Lan chi tiêu 15 triệu/tháng… quỹ dự phòng cần bao nhiêu?" |
 | `match` | pairs left ↔ right | yes | fund ↔ asset class |
 | `order` | puts items in sequence | yes | volatility low → high; steps after a phishing click |
-| `numeric` | types a number (accepts `126,05`, `23.700`) | yes, with tolerance | NAV after a 1.300 đ dividend |
-| `scenario` | answers a customer-style chat | yes | FIFO holding-period question |
+| `numeric` | types a number after a context (accepts `126,05`, `23.700`); one easy step only | yes, with tolerance | (not used in current lessons) |
+| `scenario` | answers a customer-style chat; `says` is the context, 3 options, insight | yes | FIFO holding-period question |
 | `profile` | self-assessment, each option scored | no (feeds risk profile) | "Danh mục giảm 20%, bạn sẽ…" |
 | `goal_planner` | enters target / monthly / return; sees projection | no (saves a goal) | "1 tỷ đầu tiên" |
 
 **Rules enforced by `validateContent()`** (runs in tests and `npm run content:check`): unique ids across all
-content, answer indexes in range, match pairs form a permutation, graded questions must cite a source, every
-source id resolves, profile lessons contain only profile/info items.
+content, answer indexes in range, quiz options distinct, match pairs form a permutation, graded questions must
+cite a source, every source id resolves, profile lessons contain only profile/info items. The schema itself
+requires a context and an insight (20–320 characters) and exactly 3 options on every `select` and `scenario`.
 
-**Time-sensitive facts** (fee tables, cut-off times, NAV) must not be hard-coded into question text; the FAQ
-itself warns they change. Next step: a dated `fund-facts` table (fund, field, value, asOf, source) that
-question templates read from, with an expiry alert.
+**Time-sensitive facts** (fee tables, cut-off times, NAV) live in `content/library/fund-facts.ts` with
+`FACTS_AS_OF`. Lessons may quote them; `library.test.ts` fails if a quoted number disagrees with the table.
 
 ### Content workflow
 
@@ -183,6 +225,7 @@ erDiagram
   users ||--o{ xp_events : earns
   users ||--o{ risk_profiles : "self-assesses"
   users ||--o{ goals : plans
+  users ||--o{ ai_messages : asks
 
   users {
     text id PK
@@ -246,6 +289,16 @@ erDiagram
     real initial
     real annual_return
   }
+  ai_messages {
+    serial id PK
+    text user_id
+    text surface
+    text question
+    text answer
+    text mode
+    text model
+    jsonb flags
+  }
 ```
 
 `lesson_id` / `challenge_id` are content ids (strings), not foreign keys. `xp_events` is an append-only ledger:
@@ -280,12 +333,15 @@ education, never as a product recommendation.
 | `/segments` | Switch between A / B / C with progress |
 | `/lesson/[lessonId]` | Lesson player (practice mode if already completed) |
 | `/quests` · `/leaderboard` · `/profile` | Daily quests · weekly league · risk profile, goals, DragonX CTA |
+| `/rong` | Hỏi Rồng chat |
+| `POST /api/rong` | Streams Rồng's answer (Claude, or the library when no API key); logs to `ai_messages` |
 
 ## 9. Compliance and trust guardrails
 
-- Every graded question cites a source document and locator; the player shows it under the explanation.
+- Every graded question cites a source document and locator; the player shows it only for published articles. Internal documents (FAQ, library, draft risk quiz) are never shown to learners.
 - Disclaimer component wherever numbers, funds or projections appear; returns in planners are labelled as assumptions.
-- No hard-coded fees or cut-off times; dated fund facts with expiry (planned).
+- Fees and cut-off times come from the dated fund-facts table; expiry check planned.
+- AI: fixed rules in `features/ai/guardrails.ts` (no fund recommendations, no promised returns, never ask for OTP/PIN, no invented numbers, no source lines) always precede the editable voice guide; every answer is checked for flags and logged in `ai_messages`; declined requests fall back server-side (`fallbacks: "default"`).
 - The risk quiz is educational and distinct from the DragonX suitability assessment; wording and score bands need sign-off (`dc-risk-quiz` source is marked draft).
 - Risk-profile output links to *learning*, and lists funds only as "documents to read".
 - Leaderboards are nickname-only; linking a DragonX account requires explicit consent (`users.dragonx_ref`).
@@ -310,12 +366,8 @@ education, never as a product recommendation.
 
 ## 12. Roadmap
 
-| Phase | Scope |
-|---|---|
-| **0 · Skeleton** (this repo) | 3 segments, 13 units, 19 playable lessons; detailed outline of 142 lessons and 14 AI scenarios; full game loop; PGlite dev DB; unit tests; E2E-verified |
-| **1 · MVP pilot** (≈6 weeks) | Write the outline lessons, Hiểu mình first (see CURRICULUM); 5 AI practice scenarios; Compliance review; fund-facts table; DragonX SSO; sounds; badges; Postgres + deploy; internal pilot with staff |
-| **2 · Public beta** | League groups + weekly cron; push/email streak reminders; unit chests; analytics dashboards; content editor UI |
-| **3 · Integration** | DragonX webview embedding; consented holdings-aware lessons; AI practice chat grounded on the FAQ (prototype's "Luyện tình huống AI") with guardrails |
+See [`PLAN.md`](./PLAN.md): P0 (voice, Hỏi Rồng eval set, fact confirmation, limits), P1 (Hiểu mình lessons,
+one lesson source, AI practice in the app, Compliance review page), P2 (DragonX SSO, hosting, analytics, pilot).
 
 ## 13. Open questions for the business
 
