@@ -3,7 +3,8 @@
 import { QUIZ_PATTERNS } from "@content/schema";
 import { Mascot } from "@/components/mascot";
 import { cn, formatVnd } from "@/lib/utils";
-import { formatDuration, monthsToTarget, projection } from "@/features/goal-planner/finance";
+import { formatDuration, monthsToTarget } from "@/features/goal-planner/finance";
+import { ProjectionChart } from "@/features/goal-planner/projection-chart";
 import type { ClientChallenge } from "./types";
 
 /** Learner's in-progress answer, keyed by the challenge type the player is showing. */
@@ -229,8 +230,6 @@ export function GoalPlannerView({ c, draft, setDraft, locked }: ViewProps<"goal_
   const set = (k: keyof typeof plan, v: number) => setDraft({ plan: { ...plan, [k]: v } });
   const months = monthsToTarget(plan, plan.target);
   const years = Math.min(40, Math.max(1, Math.ceil(months / 12) || 10));
-  const pts = projection(plan, years);
-  const max = Math.max(...pts.map((p) => p.value), plan.target);
   return (
     <>
       <h2 className="text-xl font-extrabold">{c.prompt}</h2>
@@ -253,16 +252,7 @@ export function GoalPlannerView({ c, draft, setDraft, locked }: ViewProps<"goal_
         <p className="font-display text-3xl font-extrabold">{formatDuration(months)}</p>
         {Number.isFinite(months) && <p className="text-sm">Bạn góp khoảng {formatVnd(plan.initial + plan.monthly * months)}, phần còn lại từ lãi kép.</p>}
       </div>
-      {/* Minimal bar chart: contributed vs projected value per year. */}
-      <div className="flex h-28 items-end gap-1" aria-label="Biểu đồ tích lũy theo năm">
-        {pts.slice(1).map((p) => (
-          <div key={p.year} className="relative flex-1" title={`Năm ${p.year}: ${formatVnd(p.value)}`}>
-            <div className="w-full rounded-t bg-jade" style={{ height: `${(p.value / max) * 112}px` }} />
-            <div className="absolute bottom-0 w-full rounded-t bg-gold/80" style={{ height: `${(p.contributed / max) * 112}px` }} />
-          </div>
-        ))}
-      </div>
-      <p className="text-xs text-muted"><span className="font-bold text-gold-deep">■</span> Vốn góp · <span className="font-bold text-jade-deep">■</span> Giá trị minh họa. Giả định, không phải cam kết.</p>
+      <ProjectionChart plan={plan} years={years} target={plan.target} />
     </>
   );
 }

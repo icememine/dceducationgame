@@ -28,6 +28,13 @@ await btn("Tôi muốn nhiều rủi ro hơn").click(); await page.getByRole("ch
 await btn("Xác nhận").click(); await page.getByText("Bạn đã chọn mức cao hơn kết quả đánh giá").waitFor();
 if (!(await page.getByRole("heading", { name: "Khá mạo hiểm" }).isVisible())) errors.push("higher should give Khá mạo hiểm");
 await shot("00-risk-final");
+// Công cụ: planner preset + save, then the 25 vs 45 tool; the goal shows on the profile.
+await page.goto(B + "/learn"); await page.getByRole("link", { name: "Công cụ" }).click(); await page.waitForURL("**/tools**");
+await btn("Du học cho con").click();
+await page.getByText("Thời gian ước tính").waitFor(); await shot("00-tools-planner");
+await btn("Lưu mục tiêu").click(); await btn("Đã lưu vào hồ sơ").waitFor();
+await page.getByRole("link", { name: "25 hay 45 tuổi" }).click(); await page.getByText("chỉ góp nhiều hơn").waitFor(); await shot("00-tools-start-early");
+await page.goto(B + "/profile"); await page.getByText("Du học cho con").waitFor();
 // Estimate lesson
 await page.goto(B + "/lesson/b4-compound-30y"); await btn("Tiếp tục").click();
 await page.getByText("Đoán số").waitFor(); await shot("01-estimate");

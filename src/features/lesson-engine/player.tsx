@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState, useTransition } from "react";
 import { completeLesson, startLessonSession, submitAnswer, type LessonSummary, type SubmitResult } from "@/actions/lesson";
 import { saveGoal } from "@/actions/user";
-import { Disclaimer } from "@/components/disclaimer";
 import { Mascot } from "@/components/mascot";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";

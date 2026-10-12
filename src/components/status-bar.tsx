@@ -1,4 +1,4 @@
-import { ChevronDown, Flame, Heart, Zap } from "lucide-react";
+import { ChevronDown, Flame, Gift, Heart, Zap } from "lucide-react";
 import Link from "next/link";
 import type { Segment } from "@content/schema";
 
@@ -16,6 +16,7 @@ export function StatusBar({ segment, streak, xp, hearts }: { segment: Segment; s
         {segment.heartsEnabled && (
           <span className="flex items-center gap-1 text-coral" title="Tim"><Heart className="h-5 w-5 fill-current" />{hearts}</span>
         )}
+        <Link href="/quests" aria-label="Nhiệm vụ hôm nay" className="text-violet"><Gift className="h-5 w-5" /></Link>
       </div>
     </header>
   );

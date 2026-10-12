@@ -1,15 +1,15 @@
 "use client";
 
-import { Home, MessageCircle, Target, Trophy, User } from "lucide-react";
+import { Calculator, Home, MessageCircle, Trophy, User } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 const TABS = [
   { href: "/learn", label: "Học", icon: Home },
+  { href: "/tools", label: "Công cụ", icon: Calculator },
   { href: "/rong", label: "Hỏi Rồng", icon: MessageCircle },
   { href: "/leaderboard", label: "Xếp hạng", icon: Trophy },
-  { href: "/quests", label: "Nhiệm vụ", icon: Target },
   { href: "/profile", label: "Hồ sơ", icon: User },
 ];
 

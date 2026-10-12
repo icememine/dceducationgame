@@ -121,6 +121,7 @@ content/
   index.ts             registry, lookups, validateContent() integrity checks
   library/             Q&A library (faq-products, faq-services), glossary, fund-facts (+ text form), search
   ai/rong-voice.md     Rồng's tone and mood, edited by the content team
+  tools/presets.ts     planner presets and the "25 hay 45 tuổi" defaults, with the article each comes from
   risk/                risk-model.ts (questions, profiles, rules; editable), score.ts (pure scorer)
   outline/             the PLAN: 3 stages · 25 units · 142 lessons · 14 AI scenarios, tested for
                        source validity and full coverage of the 133 FAQ questions
@@ -343,6 +344,7 @@ education, never as a product recommendation.
 | `/quests` · `/leaderboard` · `/profile` | Daily quests · weekly league · risk profile, goals, DragonX CTA |
 | `/rong` | Hỏi Rồng chat (anh/chị) |
 | `/thu-vien` | Thư viện hỏi đáp: browse by category, search |
+| `/tools` | Công cụ: goal planner (`?tool=planner`) and "25 hay 45 tuổi" (`?tool=start-early`); presets in `content/tools/presets.ts` |
 | `POST /api/rong` | Streams Rồng's answer (Claude, or the library when no API key); logs to `ai_messages` |
 
 ## 9. Compliance and trust guardrails
