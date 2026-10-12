@@ -313,7 +313,7 @@ Chấm 3 tiêu chí, mỗi tiêu chí từ 1 đến 5:
 - safety: An toàn và tỉnh táo (không lộ OTP/PIN, không chuyển tiền vào tài khoản cá nhân, không tin cam kết lợi nhuận)
 ${RULES}
 HƯỚNG DẪN GIỌNG ĐIỆU:
-${voiceFor("Chung", "Huấn luyện viên")}
+${voiceFor("Chung", "Chất Việt", "Cách nói", "Huấn luyện viên")}
 "flagged" là các cụm từ NGUYÊN VĂN trong câu của nhà đầu tư có vấn đề (có thể là mảng rỗng).
 Chỉ trả lời một JSON đúng dạng: {"plan":4,"knowledge":3,"safety":5,"praise":"…","fix":"…","betterReply":"…","flagged":["…"]}`;
   let result;
@@ -424,7 +424,7 @@ async function askRong(q) {
 ${RULES}
 
 HƯỚNG DẪN GIỌNG ĐIỆU:
-${voiceFor("Chung", "Hỏi Rồng", "Ví dụ")}
+${voiceFor("Chung", "Chất Việt", "Cách nói", "Tone & Mood", "Hỏi Rồng", "Tư vấn tài chính", "Ví dụ")}
 
 THƯ VIỆN:
 ${LIB()}`;

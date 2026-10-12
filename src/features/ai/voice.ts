@@ -2,16 +2,28 @@
  * Parses the voice guide (content/ai/rong-voice.md) into its `## …` sections and picks the
  * ones each AI surface needs. Pure: the file is read by `voice-file.ts` on the server.
  */
-export const VOICE_SECTIONS = ["Chung", "Hỏi Rồng", "Huấn luyện viên", "Nhân vật đóng vai", "Ví dụ"] as const;
+export const VOICE_SECTIONS = [
+  "Chung",
+  "Chất Việt",
+  "Cách nói",
+  "Tone & Mood",
+  "Hỏi Rồng",
+  "Huấn luyện viên",
+  "Nhân vật đóng vai",
+  "Tư vấn tài chính",
+  "Ví dụ",
+] as const;
 export type VoiceSection = (typeof VOICE_SECTIONS)[number];
 export type Voice = Partial<Record<VoiceSection, string>>;
 
 /** rong = Hỏi Rồng · coach = chấm luyện tình huống · persona = nhân vật AI đóng vai. */
 export type Surface = "rong" | "coach" | "persona";
 
+// Chất Việt and Cách nói describe how Rồng speaks, so every surface where Rồng talks gets them;
+// the persona speaks as someone else and only gets its own section.
 const SURFACE_SECTIONS: Record<Surface, VoiceSection[]> = {
-  rong: ["Chung", "Hỏi Rồng", "Ví dụ"],
-  coach: ["Chung", "Huấn luyện viên"],
+  rong: ["Chung", "Chất Việt", "Cách nói", "Tone & Mood", "Hỏi Rồng", "Tư vấn tài chính", "Ví dụ"],
+  coach: ["Chung", "Chất Việt", "Cách nói", "Huấn luyện viên"],
   persona: ["Nhân vật đóng vai"],
 };
 

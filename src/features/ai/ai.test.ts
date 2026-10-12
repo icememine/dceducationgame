@@ -14,6 +14,8 @@ describe("voice guide", () => {
 
   it("gives each surface its own sections", () => {
     expect(voiceFor(voice, "rong")).toContain("HỎI RỒNG:");
+    expect(voiceFor(voice, "rong")).toContain("TONE & MOOD:");
+    expect(voiceFor(voice, "coach")).toContain("CÁCH NÓI:");
     expect(voiceFor(voice, "rong")).not.toContain("NHÂN VẬT ĐÓNG VAI:");
     expect(voiceFor(voice, "persona")).not.toContain("CHUNG:");
   });
