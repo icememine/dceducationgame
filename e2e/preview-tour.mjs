@@ -17,6 +17,17 @@ await page.goto(B + "/"); await page.getByRole("link", { name: "Bắt đầu" })
 await page.getByText("Tôi mới bắt đầu").click(); await btn("Tiếp tục").click();
 await page.getByText("Đều đặn").click(); await btn("Tiếp tục").click();
 await page.getByPlaceholder("Ví dụ: Rồng Tích Sản").fill("Rồng M1"); await btn("Bắt đầu học").click(); await page.waitForURL("**/learn");
+// Risk assessment §4.3 ② + §5.1: high score but no experience → Cân bằng; choose higher with acknowledgement.
+await page.goto(B + "/lesson/b1-risk-check"); await btn("Tiếp tục").click();
+for (const o of ["Trên 10 năm", "Cơ hội để đạt lợi nhuận cao", "Mua thêm vì đây là cơ hội tốt", "Mạo hiểm: hơn ±15%", "Có nhiều nguồn thu nhập", "Dưới 5%", "Chưa biết về đầu tư"]) {
+  await page.getByText(o, { exact: true }).click(); await btn("Tiếp tục").click();
+}
+await page.getByText("Rồng điều chỉnh vì:").waitFor();
+if (!(await page.getByRole("heading", { name: "Cân bằng" }).isVisible())) errors.push("override ② should give Cân bằng");
+await btn("Tôi muốn nhiều rủi ro hơn").click(); await page.getByRole("checkbox").check(); await shot("00-risk-higher");
+await btn("Xác nhận").click(); await page.getByText("Bạn đã chọn mức cao hơn kết quả đánh giá").waitFor();
+if (!(await page.getByRole("heading", { name: "Khá mạo hiểm" }).isVisible())) errors.push("higher should give Khá mạo hiểm");
+await shot("00-risk-final");
 // Estimate lesson
 await page.goto(B + "/lesson/b4-compound-30y"); await btn("Tiếp tục").click();
 await page.getByText("Đoán số").waitFor(); await shot("01-estimate");

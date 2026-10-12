@@ -93,25 +93,55 @@ function vRiskIntro() {
     <div class="stack"><button class="btn" data-start="risk">Tự đánh giá ngay</button><button class="linkbtn" data-go="learn">Để sau</button></div></div>`;
 }
 function vRiskResult() {
-  // Results saved by the old scoring (no reasons) are ignored; the learner can retake the check.
-  const r = S.risk && Array.isArray(S.risk.reasons) ? S.risk : { band: 2, willing: 3, reasons: [DATA.risk.questions[0].options[2].reason], notes: [], sample: true };
-  const p = PROFILES[r.band];
-  const why = r.reasons.length
-    ? `<div class="ctx" style="text-align:left">Bạn sẵn sàng ở mức <b>${PROFILES[r.willing].name}</b>, nhưng hoàn cảnh hiện tại phù hợp hơn với mức <b>${p.name}</b>:<ul style="margin:6px 0 0 18px">${r.reasons.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>`
-    : "";
-  return `<div class="scroll"><div class="result" style="justify-content:flex-start">
-    ${mascot(p.mood, 120)}
-    <span class="q-kind">Mức rủi ro phù hợp với bạn lúc này${r.sample ? " · dữ liệu mẫu" : ""}</span>
-    <h2 style="font-size:30px;color:var(--jade-deep)">${p.name}</h2>
-    <p>${p.summary}</p>
-    <div class="scale5">${PROFILES.map((x, i) => `<span class="${i === r.band ? "on" : ""}">${x.name}</span>`).join("")}</div>
-    ${why}${r.notes.map((n) => `<div class="ctx" style="text-align:left">${esc(n)}</div>`).join("")}
-    <div class="card" style="margin:0;width:100%;text-align:left"><b>Lộ trình gợi ý cho bạn</b>
-      <div style="display:flex;flex-wrap:wrap;gap:6px">${p.units.map((u) => `<span class="chip" style="background:var(--sky-soft);color:var(--sky-deep)">${esc(u)}</span>`).join("")}</div>
-      <span style="font-size:13.5px">Quỹ DC nên đọc tài liệu: <b>${p.funds}</b></span></div>
-    <p class="disc">Kết quả mang tính giáo dục, không phải đánh giá mức độ phù hợp khi mở tài khoản và không phải khuyến nghị đầu tư. Làm lại sau 12 tháng hoặc khi hoàn cảnh thay đổi.</p>
+  // Results saved by older scoring (no total) are ignored; the learner can retake the check.
+  const r = S.risk && typeof S.risk.total === "number" ? S.risk : null;
+  if (!r) return `<div class="scroll"><div class="result">${mascot("explore", 120)}<h2>Chưa có hồ sơ rủi ro</h2><p>Làm bài đánh giá 7 câu, 2–3 phút.</p></div></div><div class="foot"><button class="btn" data-start="risk">Đánh giá ngay</button></div>`;
+  const C = DATA.risk.confirmation, name = (id) => PROFILES.find((p) => p.id === id).name;
+  if (r.decision) {
+    const p = PROFILES[riskBand(r)];
+    return `<div class="scroll"><div class="result" style="justify-content:flex-start">
+      ${mascot(p.mood, 120)}
+      <span class="q-kind">Hồ sơ đầu tư của bạn</span>
+      <h2 style="font-size:30px;color:var(--jade-deep)">${p.name}</h2>
+      <p>${p.summary}</p>
+      ${r.decision === "higher" ? `<p class="disc">Bạn đã chọn mức cao hơn kết quả đánh giá và đã xác nhận.</p>` : r.decision === "lower" ? `<p class="disc">Bạn đã chọn mức thấp hơn kết quả đánh giá.</p>` : ""}
+      <div class="scale5">${PROFILES.map((x, i) => `<span class="${i === riskBand(r) ? "on" : ""}">${x.name}</span>`).join("")}</div>
+      <div class="card" style="margin:0;width:100%;text-align:left"><b>Lộ trình gợi ý cho bạn</b>
+        <div style="display:flex;flex-wrap:wrap;gap:6px">${p.units.map((u) => `<span class="chip" style="background:var(--sky-soft);color:var(--sky-deep)">${esc(u)}</span>`).join("")}</div>
+        <span style="font-size:13.5px">Quỹ phù hợp (ví dụ): <b>${p.funds}</b></span></div>
+      <p class="disc">${esc(DATA.risk.disclaimer)}</p>
+    </div></div>
+    <div class="foot"><button class="btn" data-go="learn">Bắt đầu học</button></div>`;
+  }
+  const max = { A: 5, B: 13, C: 8, D: 4 };
+  const lvl = PROFILES.findIndex((p) => p.id === r.profile);
+  const pending = T.riskChoice;
+  return `<div class="scroll"><div class="result" style="justify-content:flex-start;text-align:left">
+    <div class="card" style="margin:0;width:100%"><b style="display:flex;justify-content:space-between">Tổng điểm <span style="font-family:var(--f-display);font-size:22px;color:var(--jade-deep)">${r.total}/30</span></b>
+      <div class="dims">${Object.entries(DATA.risk.sections).map(([k, n]) => `<div class="dim"><span>${esc(n)}</span><span class="track"><i style="width:${(r.sections[k] / max[k]) * 100}%"></i></span><b>${r.sections[k]}/${max[k]}</b></div>`).join("")}</div></div>
+    ${r.inconsistency ? `<div class="ctx">${esc(r.inconsistency)} <button class="linkbtn" data-start="risk">Làm lại bài</button></div>` : ""}
+    <span class="q-kind" style="align-self:center">Hồ sơ đầu tư phù hợp</span>
+    <h2 style="font-size:30px;color:var(--jade-deep);align-self:center">${name(r.profile)}</h2>
+    ${r.overrides.length ? `<div class="ctx">Theo tổng điểm, bạn ở mức <b>${name(r.scored)}</b>. Rồng điều chỉnh vì:<ul style="margin:6px 0 0 18px">${r.overrides.map((o) => `<li>${esc(o.reason)}</li>`).join("")}</ul></div>` : ""}
+    ${r.capacityWarning ? `<div class="ctx" style="background:var(--coral-soft)">${esc(r.capacityWarning)}</div>` : ""}
+    <b>${esc(C.question.replace("{profile}", name(r.profile)))}</b>
+    ${pending ? `<div class="card" style="margin:0;width:100%"><label style="display:flex;gap:8px;font-size:14px"><input type="checkbox" id="riskAck" ${T.riskAck ? "checked" : ""}> <span>${esc(pending === "higher" ? C.acknowledgement : C.capacityAcknowledgement)}</span></label>
+      <button class="btn ${pending === "higher" ? "wrongbtn" : ""}" data-act="riskConfirm" ${T.riskAck ? "" : "disabled"}>Xác nhận</button></div>` : ""}
   </div></div>
-  <div class="foot"><button class="btn" data-go="learn">Bắt đầu học</button></div>`;
+  <div class="foot"><div class="stack" style="width:100%">
+    <button class="btn" data-riskdec="agree">${esc(C.agree)}</button>
+    <div class="grid2"><button class="btn ghost sm" data-riskdec="lower" ${lvl === 0 ? "disabled" : ""}>${esc(C.lower)}</button><button class="btn ghost sm" data-riskdec="higher" ${lvl === PROFILES.length - 1 ? "disabled" : ""}>${esc(C.higher)}</button></div>
+  </div></div>`;
+}
+/** §5: agree keeps, lower/higher move one step; higher (or agree under the capacity warning) needs the checkbox. */
+function decideRisk(decision, acknowledged) {
+  const r = S.risk, lvl = PROFILES.findIndex((p) => p.id === r.profile);
+  const needsAck = decision === "higher" || (!!r.capacityWarning && decision !== "lower");
+  if (needsAck && !acknowledged) { T.riskChoice = decision; T.riskAck = false; return render(); }
+  r.decision = decision;
+  r.final = Math.max(0, Math.min(PROFILES.length - 1, lvl + (decision === "lower" ? -1 : decision === "higher" ? 1 : 0)));
+  T.riskChoice = null; T.riskAck = false;
+  toast("Đã lưu hồ sơ rủi ro");
 }
 
 /* ---------- learn path ---------- */
@@ -237,7 +267,7 @@ function questRows() {
     .map(([i, t, v, m, c]) => `<div class="quest"><span class="qi" style="background:${c}">${ic(i)}</span><div class="body">${t}${qbar(v, m)}</div><span style="color:${v >= m ? "var(--gold-deep)" : "var(--locked-deep)"}">${ic("gift")}</span></div>`).join("");
 }
 function vProfile() {
-  const r = S.risk, p = r ? PROFILES[r.band] : null;
+  const r = S.risk && typeof S.risk.total === "number" ? S.risk : null, p = r ? PROFILES[riskBand(r)] : null;
   return `${statusBar()}<div class="scroll">
     <div class="prof-head">${mascot("explore", 70)}<div><h2 style="font-size:22px">${esc(S.nickname)}</h2><small>Tham gia tháng 10/2026 · mục tiêu ${S.goal || 10} phút/ngày</small></div></div>
     <div class="statgrid">

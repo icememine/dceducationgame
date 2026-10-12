@@ -104,6 +104,7 @@ app.addEventListener("click", (e) => {
   if (d.ask) return askRong(d.ask);
   if (d.toolseg) { S.toolSeg = d.toolseg; return render(); }
   if (d.preset) { const p = PRESETS[d.preset]; S.planner = { kind: d.preset, target: p.target, monthly: p.monthly, initial: p.initial, rate: p.rate }; return render(); }
+  if (d.riskdec) return decideRisk(d.riskdec, false);
   if (d.toast) return toast(d.toast);
   const L = T.lesson;
   if (L && S.screen === "lesson") {
@@ -128,6 +129,7 @@ app.addEventListener("click", (e) => {
     case "buyToday": { const G = L.game; G.picked = G.day ?? 0; G.revealed = true; G.picks.push(G.picked); return render(); }
     case "waitDay": { const G = L.game; G.day = Math.min(19, (G.day ?? 0) + 1); return render(); }
     case "nextRound": { const G = L.game; G.round++; G.day = 0; G.revealed = false; G.picked = null; return render(); }
+    case "riskConfirm": return decideRisk(T.riskChoice, T.riskAck);
     case "refill": T.modal = null; S.hearts = 1; L.hearts = 1; next(); toast("+1 tim nhờ ôn bài cũ"); return render();
     case "coach": return coach();
     case "saveGoal": S.goals.unshift({ label: PRESETS[S.planner.kind]?.label || "Mục tiêu riêng", ...S.planner }); S.goals = S.goals.slice(0, 4); return toast("Đã lưu mục tiêu vào hồ sơ");
@@ -138,6 +140,7 @@ app.addEventListener("input", (e) => {
   if (e.target.id === "estIn" && L) { L.ans = Number(e.target.value); const v = app.querySelector(".est .val"); if (v) v.textContent = `${L.ans.toLocaleString("vi-VN")} ${curItem().unit}`; }
   if (e.target.id === "practiceIn" && T.ai) T.ai.draft = e.target.value;
   if (e.target.id === "rongIn") T.rong.draft = e.target.value;
+  if (e.target.id === "riskAck") { T.riskAck = e.target.checked; render(); }
 });
 app.addEventListener("change", (e) => {
   const k = e.target.dataset;

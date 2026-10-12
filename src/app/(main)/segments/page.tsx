@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 const BLURB: Record<string, string> = {
   "dc-funds": "Sản phẩm, giao dịch, hiệu suất và an toàn tài khoản trên DragonX.",
-  "my-plan": "Tự đánh giá khẩu vị rủi ro, đặt mục tiêu và xây thói quen đầu tư đều đặn.",
+  "my-plan": "Đánh giá mức độ chấp nhận rủi ro, đặt mục tiêu và xây thói quen đầu tư đều đặn.",
   "fund-types": "Tiền tệ, trái phiếu, cổ phiếu, chỉ số, cân bằng: mỗi loại dùng khi nào.",
 };
 

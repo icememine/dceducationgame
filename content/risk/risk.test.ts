@@ -1,71 +1,82 @@
 import { describe, expect, it } from "vitest";
 import { findLesson } from "../index";
-import { RISK_QUESTIONS, scoreRisk, type RiskChoices } from "./index";
+import { applyDecision, BANDS, needsAcknowledgement, RISK_QUESTIONS, scoreRisk, specialCases, type RiskChoices } from "./index";
 
-/** Choice by option label, so tests read like the questionnaire. */
-const answers = (byLabel: Record<string, string>): RiskChoices =>
+/** Answers by points, in question order (Câu 1 … Câu 7), as the framework's scoring sheet reads. */
+const pts = (...points: number[]): RiskChoices =>
   Object.fromEntries(
-    Object.entries(byLabel).map(([id, label]) => {
-      const i = RISK_QUESTIONS.find((q) => q.id === id)!.options.findIndex((o) => o.label === label);
-      if (i < 0) throw new Error(`${id}: no option "${label}"`);
-      return [id, i];
+    RISK_QUESTIONS.map((q, i) => {
+      const idx = q.options.findIndex((o) => o.points === points[i]);
+      if (idx < 0) throw new Error(`Câu ${q.number}: no option worth ${points[i]}`);
+      return [q.id, idx];
     }),
   );
 
-const comfortable = {
-  "b1-q-horizon": "5 – 10 năm",
-  "b1-q-emergency": "3 – 6 tháng",
-  "b1-q-income-share": "Có ảnh hưởng nhưng vẫn ổn",
-  "b1-q-drawdown": "Giữ nguyên, tiếp tục kế hoạch",
-  "b1-q-knowledge": "Chỉ gửi tiết kiệm",
-};
-
-describe("risk self-check", () => {
-  it("gives Tăng trưởng to someone who picks +20% / −15% and keeps the plan (the reported bug)", () => {
-    const r = scoreRisk(answers({ ...comfortable, "b1-q-tradeoff": "+20% / −15%" }));
-    expect(r).toMatchObject({ profile: "tang-truong", willing: "tang-truong", reasons: [], notes: [] });
+describe("risk scoring framework v2.3 · §4", () => {
+  it("adds up the 7 answers (7–30) and splits them by part", () => {
+    expect(scoreRisk(pts(1, 1, 1, 1, 1, 1, 1))).toMatchObject({ total: 7, scored: "rat-than-trong" });
+    const top = scoreRisk(pts(5, 4, 4, 5, 4, 4, 4));
+    expect(top.total).toBe(30);
+    expect(top.sections).toEqual({ A: 5, B: 13, C: 8, D: 4 });
+    expect(top.profile).toBe("rat-mao-hiem");
   });
 
-  it("maps each portfolio choice to its own profile when it is the only willingness answer", () => {
-    const expected = ["bao-toan", "than-trong", "can-bang", "tang-truong", "nang-dong"];
-    const portfolios = RISK_QUESTIONS.find((q) => q.id === "b1-q-tradeoff")!.options;
-    portfolios.forEach((o, i) => {
-      const { "b1-q-drawdown": _skip, ...rest } = { ...comfortable, "b1-q-knowledge": "Quỹ cổ phiếu hoặc ETF" };
-      const r = scoreRisk(answers({ ...rest, "b1-q-tradeoff": o.label }));
-      expect(r.willing, o.label).toBe(expected[i]);
-    });
+  it("maps totals to the §4.2 bands at every boundary", () => {
+    const at = (total: number) => BANDS.find((b) => total >= b.min && total <= b.max)?.profile;
+    expect([8, 9, 13, 14, 18, 19, 23, 24].map(at)).toEqual([
+      "rat-than-trong", "than-trong", "than-trong", "can-bang", "can-bang", "kha-mao-hiem", "kha-mao-hiem", "rat-mao-hiem",
+    ]);
+    // A real answer set landing on 19: 4+3+3+4+2+2+1
+    expect(scoreRisk(pts(4, 3, 3, 4, 2, 2, 1)).total).toBe(19);
   });
 
-  it("explains every limit that lowers the result", () => {
-    const r = scoreRisk(answers({ ...comfortable, "b1-q-horizon": "1 – 3 năm", "b1-q-tradeoff": "+20% / −15%" }));
+  it("① caps a horizon under 1 year at Thận trọng, with the reason", () => {
+    const r = scoreRisk(pts(1, 4, 4, 5, 4, 4, 4));
+    expect(r.scored).toBe("rat-mao-hiem");
     expect(r.profile).toBe("than-trong");
-    expect(r.willing).toBe("tang-truong");
-    expect(r.reasons.map((x) => x.questionId)).toEqual(["b1-q-horizon"]);
-    expect(r.reasons[0].reason).toMatch(/1–3 năm/);
+    expect(r.overrides.map((o) => o.rule)).toEqual(["horizon"]);
   });
 
-  it("never lowers a beginner below Tăng trưởng for lack of experience alone", () => {
-    const r = scoreRisk(answers({ ...comfortable, "b1-q-drawdown": "Mua thêm theo kế hoạch đã định", "b1-q-tradeoff": "+35% / −30%" }));
-    expect(r.profile).toBe("tang-truong");
-    expect(r.reasons).toHaveLength(1);
+  it("② starts a first-time investor at Cân bằng, but never raises a lower result", () => {
+    expect(scoreRisk(pts(5, 4, 4, 5, 4, 4, 1))).toMatchObject({ scored: "rat-mao-hiem", profile: "can-bang" });
+    expect(scoreRisk(pts(2, 2, 2, 2, 2, 2, 1))).toMatchObject({ profile: "than-trong", overrides: [] });
   });
 
-  it("points out contradictory answers", () => {
-    const r = scoreRisk(answers({ ...comfortable, "b1-q-drawdown": "Bán bớt một phần", "b1-q-tradeoff": "+20% / −15%" }));
-    expect(r.profile).toBe("can-bang");
-    expect(r.notes).toHaveLength(1);
+  it("③ warns when over 20% of assets is in a high-risk profile, and requires acknowledgement", () => {
+    const r = scoreRisk(pts(5, 4, 4, 5, 4, 2, 4));
+    expect(r.total).toBe(28);
+    expect(r.capacityWarning).toBeTruthy();
+    expect(needsAcknowledgement(r, "agree")).toBe(true);
+    expect(needsAcknowledgement(r, "lower")).toBe(false);
+    expect(scoreRisk(pts(5, 4, 4, 5, 4, 3, 4)).capacityWarning).toBeUndefined();
   });
 
-  it("is monotonic: a bolder portfolio choice never gives a lower result", () => {
-    const n = RISK_QUESTIONS.find((q) => q.id === "b1-q-tradeoff")!.options.length;
-    const levels = Array.from({ length: n }, (_, i) => scoreRisk({ ...answers(comfortable), "b1-q-tradeoff": i }).willing);
-    const order = ["bao-toan", "than-trong", "can-bang", "tang-truong", "nang-dong"];
-    for (let i = 1; i < n; i++) expect(order.indexOf(levels[i])).toBeGreaterThanOrEqual(order.indexOf(levels[i - 1]));
+  it("④ flags low accepted volatility combined with buying the dip", () => {
+    expect(scoreRisk(pts(3, 3, 4, 2, 3, 3, 2)).inconsistency).toBeTruthy();
+    expect(scoreRisk(pts(3, 3, 4, 3, 3, 3, 2)).inconsistency).toBeUndefined();
+  });
+});
+
+describe("risk scoring framework v2.3 · §5", () => {
+  it("moves one step lower or higher, within the scale", () => {
+    expect(applyDecision("can-bang", "lower")).toBe("than-trong");
+    expect(applyDecision("can-bang", "higher")).toBe("kha-mao-hiem");
+    expect(applyDecision("rat-than-trong", "lower")).toBe("rat-than-trong");
+    expect(applyDecision("rat-mao-hiem", "higher")).toBe("rat-mao-hiem");
+    expect(needsAcknowledgement(scoreRisk(pts(3, 3, 3, 3, 3, 3, 3)), "higher")).toBe(true);
   });
 
-  it("gives every limiting answer a reason, and the lesson asks exactly these questions", () => {
-    for (const q of RISK_QUESTIONS) for (const o of q.options) if (o.cap !== undefined) expect(o.reason, `${q.id}: ${o.label}`).toBeTruthy();
+  it("flags the §5.2 special cases on the confirmed profile", () => {
+    const choices = pts(5, 4, 4, 5, 4, 4, 1);
+    const r = scoreRisk(choices); // Cân bằng after ②
+    expect(specialCases(r, applyDecision(r.profile, "higher"), "higher", choices)).toEqual(["first-time-high-risk", "chose-higher"]);
+    const short = pts(2, 4, 3, 4, 2, 2, 3); // < 3 years, part B = 11
+    expect(specialCases(scoreRisk(short), "kha-mao-hiem", "agree", short)).toEqual(expect.arrayContaining(["short-horizon-high-tolerance", "low-capacity-high-risk"]));
+  });
+
+  it("asks exactly the framework's 7 questions in the lesson, in order", () => {
     const lesson = findLesson("b1-risk-check")!.lesson;
     expect(lesson.challenges.filter((c) => c.type === "profile").map((c) => c.id)).toEqual(RISK_QUESTIONS.map((q) => q.id));
+    expect(RISK_QUESTIONS.map((q) => q.number)).toEqual([1, 2, 3, 4, 5, 6, 7]);
   });
 });

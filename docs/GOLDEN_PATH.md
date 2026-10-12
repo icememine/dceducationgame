@@ -11,13 +11,13 @@ features grow outward from it; if it breaks, nothing ships.
 | # | Investor does | Layers it proves | Where |
 |---|---|---|---|
 | 1 | Opens the app, picks "Tôi mới bắt đầu", a daily goal and a nickname | middleware (anonymous id) → server action → DB (`users`) | `src/app/onboarding`, `actions/user.ts` |
-| 2 | Takes the risk self-check (6 questions, no wrong answers) | content (`profile` items) → lesson engine → `content/risk` rules → DB (`risk_profiles`) | `content/risk`, `features/risk-profile` |
+| 2 | Takes the risk assessment (7 questions, Risk Scoring Framework v2.3) and confirms the result | content (`profile` items) → lesson engine → `content/risk` rules → DB (`risk_profiles`) | `content/risk`, `features/risk-profile` |
 | 3 | Plays "Quỹ dự phòng trước tiên": context → question → 3 options → insight, gets one wrong and redoes it | formula schema → server grading with shuffled options → attempt log → re-queue → completion check → XP and streak | `content/schema.ts`, `features/lesson-engine`, `actions/lesson.ts` |
 | 4 | Opens **Hỏi Rồng** and asks "Bán quỹ sau 2 năm thì mất phí và thuế gì?" | library + fund facts → guardrails + voice guide → Claude (streamed) or library fallback → reply review → DB (`ai_messages`) | `content/library`, `content/ai/rong-voice.md`, `features/ai`, `app/api/rong` |
 
 **Pass criteria** (asserted by `e2e/golden-path.mjs`): each step reaches its screen; the lesson summary shows
-"Hoàn thành bài học!" after the retry; the risk self-check returns Tăng trưởng for its answers (the
-+20% / −15% regression); the Hỏi Rồng answer contains "0,1%" and no "Nguồn:" line; no page
+"Hoàn thành bài học!" after the retry; the risk assessment scores its answers 22/30 → Khá mạo hiểm and
+the confirmation is saved; the Hỏi Rồng answer contains "0,1%" and no "Nguồn:" line; no page
 errors.
 
 ```mermaid

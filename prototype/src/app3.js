@@ -201,7 +201,7 @@ function finish() {
   if (!S.studiedToday) { S.streak++; S.studiedToday = true; }
   const graded = meta.items.filter((q) => !["story", "profile", "decision", "game", "estimate"].includes(q.type)).length;
   T.result = { xp, acc: graded ? Math.round(((graded - [...L.mistakes].length) / graded) * 100) : 100, time: `${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, "0")}`, perfect, title: meta.title };
-  if (meta.profile) { S.risk = scoreRisk(L.profile); S.screen = "riskResult"; T.lesson = null; toast(`+${xp} XP · đã lưu hồ sơ rủi ro`); return; }
+  if (meta.profile) { S.risk = scoreRisk(L.profile); T.riskChoice = null; T.riskAck = false; S.screen = "riskResult"; T.lesson = null; toast(`+${xp} XP · xác nhận hồ sơ của bạn`); return; }
   S.screen = "result"; T.lesson = null;
 }
 function vResult() {

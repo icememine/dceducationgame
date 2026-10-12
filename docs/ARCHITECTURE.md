@@ -22,7 +22,7 @@ grading, deterministic shuffling, pure domain modules and the auth seam (`getUse
 | Area | Before | Now |
 |---|---|---|
 | Questions | 9 types, free-form `select`, `true_false` | 10 types; every graded item is **context → question → 3 options → insight** with a pattern tag, enforced by the schema (`true_false` removed; `estimate` and `spot` added) |
-| Risk self-check | percentage bands, knowledge lowered the result, no explanation | rules model in `content/risk` (willingness level + limits with reasons), result screen explains every limit |
+| Risk self-check | percentage bands, knowledge lowered the result, no explanation | DC **Risk Scoring Framework v2.3** in `content/risk`: 7 questions, total 7–30 → 5 profiles, override rules ①–④, §5 confirmation (agree / one step lower / one step higher with acknowledgement) stored with §5.2 flags for Compliance |
 | Facts | "don't hard-code fees" (planned table) | `content/library/fund-facts.ts` is the single source; tests check the numbers quoted in lessons |
 | FAQ | one 133-question document, cited as "Câu N" | `content/library`: 208 investor-facing Q&As in 17 categories + 45-term glossary, merged from both FAQ documents; every source row merged or excluded with a reason |
 | Sources | shown under every explanation | only published articles are shown; internal documents (`internal: true`) stay in the audit trail |
@@ -322,9 +322,12 @@ weekly leagues and daily quests are window sums over it.
 | Planned | Badges ("Nhà đầu tư hiểu biết"), chests, monthly challenges, certificates, friend referral via DragonX |
 
 **Personalisation loop.** Onboarding asks experience (new / some / DC investor) and picks the starting segment.
-The segment B self-assessment produces one of five profiles (Bảo toàn, Thận trọng, Cân bằng, Tăng trưởng,
-Năng động). Willingness (portfolio choice + drawdown reaction) sets a level; limits (horizon, emergency fund,
-impact of a 30% loss, experience) cap it, each with a reason shown to the learner (`content/risk`). The
+The segment B risk assessment follows DC's Risk Scoring Framework v2.3 (`content/risk/risk-model.ts`): 7
+questions in four parts (time horizon, risk tolerance, risk capacity, knowledge), a total of 7–30 mapped to
+Rất thận trọng · Thận trọng · Cân bằng · Khá mạo hiểm · Rất mạo hiểm, override rules (horizon under 1 year caps
+at Thận trọng; no experience starts at Cân bằng; capacity warning; inconsistency check), then the learner
+confirms. Every step (answers, totals, overrides, decision, acknowledgement, special-case flags) is stored in
+`risk_profiles`. The
 profile recommends **which fund-type units to study next** and which DC fund documents to read. It is framed as
 education, never as a product recommendation.
 
@@ -348,7 +351,7 @@ education, never as a product recommendation.
 - Disclaimer component wherever numbers, funds or projections appear; returns in planners are labelled as assumptions.
 - Fees and cut-off times come from the dated fund-facts table; expiry check planned.
 - AI: fixed rules in `features/ai/guardrails.ts` (no fund recommendations, no promised returns, never ask for OTP/PIN, no invented numbers, no source lines) always precede the editable voice guide; every answer is checked for flags and logged in `ai_messages`; declined requests fall back server-side (`fallbacks: "default"`).
-- The risk self-check is educational and distinct from the DragonX suitability assessment; its questions and rules (`content/risk/risk-model.ts`) need sign-off. Every limit that lowers a result is shown to the learner with its reason.
+- The risk assessment implements the Risk Scoring Framework v2.3 (`content/risk/risk-model.ts`); interpretations the document leaves open are marked "Assumption" there. Overrides are shown with their reason; choosing a higher profile, or agreeing under the capacity warning, requires an acknowledgement that is stored with a timestamp and §5.2 flags.
 - Risk-profile output links to *learning*, and lists funds only as "documents to read".
 - Leaderboards are nickname-only; linking a DragonX account requires explicit consent (`users.dragonx_ref`).
 - Content changes are PR-reviewed; git history is the audit trail.

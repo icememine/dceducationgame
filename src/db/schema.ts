@@ -88,6 +88,17 @@ export const riskProfiles = pgTable("risk_profiles", {
   capped: boolean("capped").notNull(),
   /** Lesson id + content version the answers came from, for audit. */
   quizLessonId: text("quiz_lesson_id").notNull(),
+  /** Risk Scoring Framework version the result was computed with (e.g. "2.3"). */
+  frameworkVersion: text("framework_version"),
+  /** §5 confirmation: agree | lower | higher. Null until the learner confirms. */
+  decision: text("decision"),
+  /** Profile after the learner's decision; the one the app uses. */
+  finalProfile: text("final_profile"),
+  /** Set when the learner ticked the acknowledgement (choosing higher risk, or capacity warning). */
+  acknowledgedAt: timestamp("acknowledged_at", { withTimezone: true }),
+  /** §5.2 special cases for Compliance review. */
+  flags: jsonb("flags").notNull().default([]),
+  confirmedAt: timestamp("confirmed_at", { withTimezone: true }),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 });
 

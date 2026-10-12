@@ -27,7 +27,7 @@ export const myPlan = {
       lessons: [
         {
           id: "b1-risk-check",
-          title: "Tự đánh giá khẩu vị rủi ro",
+          title: "Đánh giá mức độ chấp nhận rủi ro",
           kind: "profile",
           xp: 20,
           minutes: 4,
@@ -36,7 +36,7 @@ export const myPlan = {
               id: "b1-intro",
               type: "info",
               title: "Không có câu trả lời sai",
-              body: "6 câu hỏi giúp bạn hiểu khả năng tài chính, thời gian đầu tư và cảm xúc khi thị trường giảm. Kết quả dùng để gợi ý lộ trình học, không phải khuyến nghị đầu tư.",
+              body: "7 câu hỏi, 2–3 phút: thời gian đầu tư, khả năng chấp nhận rủi ro, năng lực tài chính và kinh nghiệm. Cuối bài, bạn xem điểm và xác nhận hồ sơ của mình. Kết quả chỉ mang tính tham khảo.",
               mascot: "explore",
             },
             // Questions, answers and scoring rules: content/risk/risk-model.ts

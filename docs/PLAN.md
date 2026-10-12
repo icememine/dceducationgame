@@ -11,7 +11,8 @@ Owners: **P** product (you) · **C** content team · **K** Compliance · **E** e
 - **No API key for now.** Hỏi Rồng answers from the library (closest entry). Everything AI-related is built
   so that adding `ANTHROPIC_API_KEY` later switches it on without code changes.
 - **Rồng's voice** (`content/ai/rong-voice.md`) is owned by P and edited later; engineering doesn't touch tone.
-- **Risk self-check** rules live in `content/risk/risk-model.ts` (editable, Compliance sign-off needed).
+- **Risk assessment** follows DC's Risk Scoring Framework v2.3, encoded in `content/risk/risk-model.ts`
+  (7 questions, scoring §4, confirmation §5). Assumptions where the document is silent are marked there.
 - Content is code (TS + Zod), reviewed by pull request; every graded question follows the quiz formula.
 - Fees, tax and schedules live only in `content/library/fund-facts.ts`.
 - Learners never see internal sources; AI compliance rules live in `src/features/ai/guardrails.ts`.
@@ -23,7 +24,7 @@ the team and friendly testers.
 
 | # | Item | Owner | Status |
 |---|---|---|---|
-| 1 | Risk self-check: rules model, explained result, regression in the golden path | E | ✅ done |
+| 1 | Risk assessment on the Risk Scoring Framework v2.3: scoring, overrides, confirmation, Compliance trail | E | ✅ done |
 | 2 | Hỏi Rồng in the app (library answers), daily cap, `ai_messages` log | E | ✅ done |
 | 3 | Thư viện page: browse 17 categories, search, linked from Hỏi Rồng | E | ✅ done |
 | 4 | New interactions: **Đoán số** (estimate slider) and **Tìm câu sai** (spot the wrong statement) | E | ✅ done |

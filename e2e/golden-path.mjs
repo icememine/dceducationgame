@@ -39,20 +39,23 @@ await page.waitForURL("**/learn");
 await shot("01-learn");
 step("onboarding → Hiểu mình path");
 
-// 2. Risk self-check (profile lesson, never costs hearts).
-await page.getByRole("link", { name: "Tự đánh giá khẩu vị rủi ro" }).click();
+// 2. Risk assessment (Risk Scoring Framework v2.3): 7 answers worth 4+3+3+4+3+3+2 = 22 → Khá mạo hiểm,
+//    then the §5 confirmation step.
+await page.getByRole("link", { name: "Đánh giá mức độ chấp nhận rủi ro" }).click();
 await btn("Tiếp tục").click();
-for (const o of ["5 – 10 năm", "6 – 12 tháng", "Có ảnh hưởng nhưng vẫn ổn", "Giữ nguyên, tiếp tục kế hoạch", "+20% / −15%", "Quỹ cổ phiếu hoặc ETF"]) {
+for (const o of ["5 – 10 năm", "Điều bình thường trong đầu tư", "Giữ nguyên và chờ đợi", "Tăng trưởng: khoảng ±15%", "Lương cố định chiếm phần lớn", "5 – 20%", "Có kiến thức về đầu tư"]) {
   await page.getByText(o, { exact: true }).click();
   await btn("Tiếp tục").click();
 }
-await page.getByText("Mức rủi ro phù hợp với bạn lúc này").waitFor();
-// Regression for the reported bug: +20% / −15% with no limiting answers must be Tăng trưởng.
-if (!(await page.getByRole("heading", { name: "Tăng trưởng" }).isVisible())) errors.push("risk result should be Tăng trưởng");
+await page.getByText("Tổng điểm").waitFor();
+if (!/Tổng điểm\s*22\/30/u.test(await page.locator("main").innerText())) errors.push("risk total should be 22/30");
+if (!(await page.getByRole("heading", { name: "Khá mạo hiểm" }).isVisible())) errors.push("risk result should be Khá mạo hiểm");
 await shot("02-profile");
-await btn("Tiếp tục").click();
+await btn("Đồng ý").click();
+await page.getByText("Hồ sơ đầu tư của bạn").waitFor();
+await page.getByRole("link", { name: "Tiếp tục" }).click();
 await page.waitForURL("**/learn");
-step("risk profile saved (Tăng trưởng)");
+step("risk assessment scored (22 → Khá mạo hiểm) and confirmed");
 
 // 3. First formula lesson: context → question → 3 options → insight, one wrong answer re-queued.
 await page.getByRole("link", { name: "Quỹ dự phòng trước tiên" }).click();

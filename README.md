@@ -18,7 +18,7 @@ Plus **Hỏi Rồng**, an AI assistant that answers from the Q&A library in Rồ
 - **Mindmap:** [docs/MINDMAP.md](docs/MINDMAP.md)
 - **Quiz formula:** [docs/QUIZ_FORMULA.md](docs/QUIZ_FORMULA.md) · **Golden path:** [docs/GOLDEN_PATH.md](docs/GOLDEN_PATH.md) · **What's next:** [docs/PLAN.md](docs/PLAN.md)
 - **Rồng's tone and mood:** edit [content/ai/rong-voice.md](content/ai/rong-voice.md)
-- **Risk self-check questions and rules:** edit [content/risk/risk-model.ts](content/risk/risk-model.ts)
+- **Risk assessment (Risk Scoring Framework v2.3):** questions, scoring and rules in [content/risk/risk-model.ts](content/risk/risk-model.ts)
 
 ## Run it
 

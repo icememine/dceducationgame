@@ -23,7 +23,7 @@ import {
   SpotView,
   type Draft,
 } from "./challenge-views";
-import { RiskExplanation } from "@/features/risk-profile/risk-explanation";
+import { RiskConfirm } from "@/features/risk-profile/risk-result";
 import { parseLocaleNumber } from "./grade";
 import type { Answer, ClientChallenge } from "./types";
 
@@ -237,18 +237,14 @@ function Summary({ summary, seconds, onDone }: { summary: LessonSummary; seconds
   return (
     <main className="flex flex-1 flex-col justify-between gap-6 p-6">
       <div className="flex flex-col items-center gap-4 text-center">
-        <Mascot mood={p ? p.mascot : summary.perfect ? "trophy" : "celebrate"} size={150} />
         {p ? (
-          <>
-            <p className="text-sm font-extrabold uppercase tracking-widest text-muted">Mức rủi ro phù hợp với bạn lúc này</p>
-            <h1 className="text-3xl font-extrabold text-jade-deep">{p.name}</h1>
-            <p>{p.summary}</p>
-            <RiskExplanation willingName={p.willingName} name={p.name} reasons={p.reasons} notes={p.notes} />
-            <p className="text-sm">Lộ trình gợi ý: học tiếp các loại quỹ phù hợp, rồi đọc tài liệu {p.relevantFunds.join(", ")}.</p>
-            <Disclaimer />
-          </>
+          // Risk self-check: the learner confirms the result (framework §5) before moving on.
+          <RiskConfirm riskId={p.riskId} result={p.result} />
         ) : (
-          <h1 className="text-2xl font-extrabold">{summary.perfect ? "Hoàn hảo, không sai câu nào!" : "Hoàn thành bài học!"}</h1>
+          <>
+            <Mascot mood={summary.perfect ? "trophy" : "celebrate"} size={150} />
+            <h1 className="text-2xl font-extrabold">{summary.perfect ? "Hoàn hảo, không sai câu nào!" : "Hoàn thành bài học!"}</h1>
+          </>
         )}
         <div className="grid w-full grid-cols-3 gap-2">
           <Tile label="Tổng XP" value={`+${summary.xp}`} cls="bg-gold" />
@@ -256,7 +252,7 @@ function Summary({ summary, seconds, onDone }: { summary: LessonSummary; seconds
           <Tile label="Thời gian" value={`${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, "0")}`} cls="bg-sky" />
         </div>
       </div>
-      <Button onClick={onDone}>Tiếp tục</Button>
+      {!p && <Button onClick={onDone}>Tiếp tục</Button>}
     </main>
   );
 }

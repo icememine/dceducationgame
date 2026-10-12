@@ -87,34 +87,35 @@ const SRC = {
 
 /** Questions and rules come from content/risk/risk-model.ts (injected by npm run proto:build). */
 const RISK_ITEMS = DATA.risk.questions.map((q) => ({ id: q.id, prompt: q.prompt, opts: q.options.map((o) => [o.label]) }));
-const PROFILES = [
-  { id: "bao-toan", name: "Bảo toàn", mood: "save", summary: "Ưu tiên giữ vốn và thanh khoản, chấp nhận lợi nhuận thấp hơn.", units: ["C2 · Quỹ thị trường tiền tệ", "C3 · Quỹ trái phiếu"], funds: "DCIP, DCBF" },
-  { id: "than-trong", name: "Thận trọng", mood: "study", summary: "Chấp nhận biến động nhỏ để có thu nhập ổn định hơn tiền gửi.", units: ["C3 · Quỹ trái phiếu", "C7 · Quỹ cân bằng"], funds: "DCBF, DCIP, DCBA" },
-  { id: "can-bang", name: "Cân bằng", mood: "grow", summary: "Cân bằng giữa tăng trưởng và kiểm soát biến động.", units: ["C7 · Quỹ cân bằng", "C5 · Quỹ chỉ số & ETF"], funds: "DCBA, DCBF, DCDE" },
-  { id: "tang-truong", name: "Tăng trưởng", mood: "analyze", summary: "Mục tiêu dài hạn, chịu được những đợt giảm đáng kể.", units: ["C4 · Quỹ cổ phiếu", "C5 · Quỹ chỉ số & ETF", "C7 · Quỹ cân bằng"], funds: "DCDE, DCDS, DCBA" },
-  { id: "nang-dong", name: "Năng động", mood: "fight", summary: "Chấp nhận biến động lớn để tìm tăng trưởng vốn dài hạn.", units: ["C4 · Quỹ cổ phiếu", "C5 · Quỹ chỉ số & ETF"], funds: "DCDS, DCDE, ETF" },
-];
-/* risk-score:start (mirror of content/risk/score.ts; prototype.test.ts checks they agree) */
+/** Profiles and questionnaire: Risk Scoring Framework v2.3, injected from content/risk/risk-model.ts. */
+const UNIT_LABEL = { "c1-money-market": "Quỹ thị trường tiền tệ", "c2-bond-funds": "Quỹ trái phiếu", "c3-equity-funds": "Quỹ cổ phiếu", "c4-index-passive": "Quỹ chỉ số & ETF", "c5-balanced": "Quỹ cân bằng" };
+const PROFILES = DATA.risk.profiles.map((p) => ({ id: p.id, name: p.name, mood: p.mascot, summary: p.summary, units: p.studyUnits.map((u) => UNIT_LABEL[u] || u), funds: p.funds.join(" · ") }));
+/* risk-score:start (mirror of scoreRisk in content/risk/score.ts; content/risk/prototype-parity.test.ts checks they agree) */
 function scoreRiskModel(model, choices) {
-  const pick = (id) => { const q = model.questions.find((x) => x.id === id), i = choices[id]; return q && i != null ? q.options[i] : undefined; };
-  let sum = 0, weights = 0;
-  for (const q of model.questions) {
-    const level = pick(q.id)?.level;
-    if (q.kind !== "willingness" || level == null) continue;
-    sum += level * (q.weight ?? 1); weights += q.weight ?? 1;
-  }
-  const willing = weights ? Math.round(sum / weights) : model.defaultLevel;
-  const reasons = model.questions.flatMap((q) => { const o = pick(q.id); return o?.cap != null && o.cap < willing ? [{ questionId: q.id, cap: o.cap, reason: o.reason ?? "" }] : []; }).sort((x, y) => x.cap - y.cap);
-  const notes = model.notes.filter((n) => { const h = pick(n.high)?.level, l = pick(n.low)?.level; return h != null && l != null && h - l >= n.gap; }).map((n) => n.note);
-  return { final: reasons[0]?.cap ?? willing, willing, reasons, notes };
+  const ids = model.profiles.map((p) => p.id), level = (p) => ids.indexOf(p);
+  const points = (id) => { const q = model.questions.find((x) => x.id === id), i = choices[id]; return q && i != null ? q.options[i]?.points : undefined; };
+  const sections = { A: 0, B: 0, C: 0, D: 0 };
+  for (const q of model.questions) sections[q.section] += points(q.id) ?? 0;
+  const total = sections.A + sections.B + sections.C + sections.D;
+  const band = model.bands.find((b) => total >= b.min && total <= b.max) ?? (total < model.bands[0].min ? model.bands[0] : model.bands[model.bands.length - 1]);
+  const scored = band.profile;
+  let profile = scored;
+  const overrides = [];
+  const h = model.overrides.horizon, k = model.overrides.knowledge, c = model.overrides.capacity, n = model.overrides.inconsistency;
+  if ((points(h.question) ?? Infinity) <= h.atMost && level(profile) > level(h.maxProfile)) { profile = h.maxProfile; overrides.push({ rule: "horizon", reason: h.reason }); }
+  if ((points(k.question) ?? Infinity) <= k.atMost && level(profile) > level(k.startAt)) { profile = k.startAt; overrides.push({ rule: "knowledge", reason: k.reason }); }
+  const capacityWarning = (points(c.question) ?? Infinity) <= c.atMost && total >= c.totalAtLeast ? c.warning : undefined;
+  const inconsistency = (points(n.lowQuestion) ?? Infinity) <= n.lowAtMost && (points(n.highQuestion) ?? -Infinity) >= n.highAtLeast ? n.message : undefined;
+  return { total, sections, scored, profile, overrides, ...(capacityWarning && { capacityWarning }), ...(inconsistency && { inconsistency }) };
 }
 /* risk-score:end */
 function scoreRisk(answers) {
   const choices = {};
   DATA.risk.questions.forEach((q, i) => { if (answers[i] != null) choices[q.id] = answers[i]; });
   const r = scoreRiskModel(DATA.risk, choices);
-  return { band: r.final, willing: r.willing, reasons: r.reasons.map((x) => x.reason), notes: r.notes };
+  return { ...r, band: PROFILES.findIndex((p) => p.id === r.profile), decision: null };
 }
+const riskBand = (r) => (r.final ?? r.band);
 
 const LESSONS = {
   risk: {

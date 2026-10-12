@@ -7,7 +7,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { CATEGORIES, glossary, library } from "../content/library";
 import { fundFactsText } from "../content/library/fund-facts-text";
-import { DEFAULT_LEVEL, RISK_NOTES, RISK_QUESTIONS } from "../content/risk";
+import { BANDS, CONFIRMATION, DISCLAIMER, OVERRIDES, PROFILES, RISK_QUESTIONS, SECTIONS } from "../content/risk";
 import { HARD_RULES } from "../src/features/ai/guardrails";
 
 const src = (f: string) => readFileSync(`prototype/src/${f}`, "utf8");
@@ -19,7 +19,7 @@ const data = {
   fundFacts: fundFactsText(),
   rules: HARD_RULES,
   voice: readFileSync("content/ai/rong-voice.md", "utf8"),
-  risk: { questions: RISK_QUESTIONS, notes: RISK_NOTES, defaultLevel: DEFAULT_LEVEL },
+  risk: { questions: RISK_QUESTIONS, bands: BANDS, overrides: OVERRIDES, profiles: PROFILES, sections: SECTIONS, confirmation: CONFIRMATION, disclaimer: DISCLAIMER },
 };
 
 const js = [1, 2, 3, 4].map((i) => src(`app${i}.js`)).join("\n");

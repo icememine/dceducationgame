@@ -3,7 +3,7 @@
 import { and, eq, sql } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { findLesson } from "@content/index";
-import { profileInfo, scoreRisk, type ProfileInfo, type RiskChoices } from "@content/risk";
+import { FRAMEWORK, scoreRisk, type RiskChoices, type RiskResult } from "@content/risk";
 import { getDb } from "@/db/client";
 import { getCompletedLessonIds, getUserState, pathStatus } from "@/db/queries";
 import { challengeAttempts, lessonSessions, riskProfiles, userProgress, xpEvents } from "@/db/schema";
@@ -73,13 +73,8 @@ export type LessonSummary = {
   mistakes: number;
   perfect: boolean;
   streak: number;
-  profile?: ProfileInfo & {
-    /** Profile name the learner said they are willing to take, before limits. */
-    willingName: string;
-    /** Why the result is lower than `willingName` (empty when it isn't). */
-    reasons: string[];
-    notes: string[];
-  };
+  /** Risk self-check result, to be confirmed by the learner (framework §5) via confirmRiskProfile. */
+  profile?: { riskId: number; result: RiskResult };
 };
 
 /**
@@ -120,15 +115,19 @@ export async function completeLesson(sessionId: string): Promise<LessonSummary> 
       if (last) choices[c.id] = (last.answer as Extract<Answer, { choice: number }>).choice;
     }
     const result = scoreRisk(choices);
-    await db.insert(riskProfiles).values({
-      userId,
-      profile: result.profile,
-      // Column predates the rules model; it now keeps the full explanation for audit and the profile page.
-      dimensions: { willing: result.willing, reasons: result.reasons, notes: result.notes, choices },
-      capped: result.reasons.length > 0,
-      quizLessonId: loc.lesson.id,
-    });
-    profile = { ...profileInfo(result.profile), willingName: profileInfo(result.willing).name, reasons: result.reasons.map((r) => r.reason), notes: result.notes };
+    const [row] = await db
+      .insert(riskProfiles)
+      .values({
+        userId,
+        profile: result.profile,
+        // Full scoring trail (answers, totals, overrides) for audit; the column name predates the framework.
+        dimensions: { ...result, choices },
+        capped: result.overrides.length > 0,
+        quizLessonId: loc.lesson.id,
+        frameworkVersion: FRAMEWORK.version,
+      })
+      .returning({ id: riskProfiles.id });
+    profile = { riskId: row.id, result };
   }
 
   revalidatePath("/", "layout");
