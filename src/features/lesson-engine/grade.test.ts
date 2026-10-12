@@ -74,6 +74,15 @@ describe("lesson engine", () => {
     expect(grade(s, { type: "spot", choice: (wrong + 1) % 3 }).correct).toBe(false);
   });
 
+  it("accepts well-formed simulation answers and rejects malformed ones", () => {
+    const sim = challenge("b3-reactions", "b3-reactions-sim");
+    expect(grade(sim, { type: "reaction_sim", reactions: ["keep", "pause", "sell"] }).correct).toBeNull();
+    expect(() => grade(sim, { type: "reaction_sim", reactions: ["keep"] })).toThrow();
+    const game = challenge("b3-market-myths", "b3-oracle-game");
+    expect(grade(game, { type: "timing_game", picks: [0, 3, 19, 5, 7] }).correct).toBeNull();
+    expect(() => grade(game, { type: "timing_game", picks: [0, 3, 20, 5, 7] })).toThrow();
+  });
+
   it("never cites internal documents to the learner", () => {
     expect(grade(challenge("a3-order-basics", "a3-sell-after-2y"), { type: "select", choice: 0 }).source).toBeUndefined();
     expect(grade(challenge("b3-dca", "b3-three-years"), { type: "select", choice: 0 }).source?.title).toBe("10 năm đầu tư đều đặn vào DCDS");

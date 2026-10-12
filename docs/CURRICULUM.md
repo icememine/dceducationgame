@@ -2,7 +2,7 @@
 
 > Tài liệu này được sinh tự động từ `content/outline/`. Sửa ở đó rồi chạy `npm run docs:curriculum`.
 
-**3 chặng · 25 phần · 142 bài · 14 tình huống luyện AI.** 22 bài đã có bản chơi được (✅).
+**3 chặng · 25 phần · 142 bài · 14 tình huống luyện AI.** 23 bài đã có bản chơi được (✅).
 
 ## Triết lý
 
@@ -180,7 +180,7 @@ Một kế hoạch chỉ có giá trị nếu duy trì được qua các nhịp 
 | **B5.2** Giá vốn bình quân | Tự tính số CCQ mua được và giá vốn bình quân qua nhiều kỳ. *Công cụ: Mô phỏng DCA và đầu tư một lần.* | Tính nhanh, Mô phỏng | DCA là gì? Đầu tư đều đặn và lãi kép · Không ai đợi giá xăng giảm mới đổ xăng |
 | **B5.3** DCA hay đầu tư một lần? | Chọn cách giải ngân phù hợp với nguồn tiền và khả năng chịu biến động. *Công cụ: Mô phỏng DCA và đầu tư một lần.* | Thẻ kiến thức, Tình huống | FAQ 3, 2, 13, 18 |
 | **B5.4** Ngày tốt nhất để đầu tư | Hiểu vì sao giảm thời gian tiền nằm chờ quan trọng hơn chọn ngày đẹp. | Trò chơi dữ liệu, Câu hỏi nhanh | Ngày tốt nhất để đầu tư là ngày tiền về tài khoản |
-| **B5.5** Trò chơi Nhà tiên tri | Tự chơi chọn ngày mua và thấy chênh lệch chỉ vài phần trăm sau 22 năm. *Công cụ: Trò chơi Nhà tiên tri (chọn ngày mua).* | Trò chơi dữ liệu | Không ai đợi giá xăng giảm mới đổ xăng · Ngày tốt nhất để đầu tư là ngày tiền về tài khoản |
+| **B5.5** Trò chơi Nhà tiên tri ✅ | Tự chơi chọn ngày mua và thấy chênh lệch chỉ vài phần trăm sau 22 năm. *Công cụ: Trò chơi Nhà tiên tri (chọn ngày mua).* | Trò chơi dữ liệu | Không ai đợi giá xăng giảm mới đổ xăng · Ngày tốt nhất để đầu tư là ngày tiền về tài khoản |
 | **B5.6** Ba phản ứng khi quỹ giảm ✅ | So sánh kiên trì, tạm dừng và bán rồi mua lại trên dữ liệu 10 năm. *Công cụ: Mô phỏng ba phản ứng khi quỹ giảm.* | Ra quyết định, Trò chơi dữ liệu | 10 năm đầu tư đều đặn vào DCDS |
 | **B5.7** Điều bạn kiểm soát được | Phân loại các yếu tố kiểm soát được và không kiểm soát được. | Câu hỏi nhanh, Tự đánh giá · cam kết | 10 năm đầu tư đều đặn vào DCDS |
 | **B5.8** DCA linh hoạt và DCA với ETF | Biết có thể đổi số tiền góp và áp dụng tích lũy định kỳ cho ETF. | Thẻ kiến thức, Câu hỏi nhanh | FAQ 129, 7 |

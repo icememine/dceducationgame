@@ -35,6 +35,19 @@ await page.getByText("Thời gian ước tính").waitFor(); await shot("00-tools
 await btn("Lưu mục tiêu").click(); await btn("Đã lưu vào hồ sơ").waitFor();
 await page.getByRole("link", { name: "25 hay 45 tuổi" }).click(); await page.getByText("chỉ góp nhiều hơn").waitFor(); await shot("00-tools-start-early");
 await page.goto(B + "/profile"); await page.getByText("Du học cho con").waitFor();
+// Simulations: three reactions, then the timing game (5 months).
+await page.goto(B + "/lesson/b3-reactions");
+for (const r of ["Tiếp tục góp đều", "Tạm dừng góp, chờ hồi phục", "Bán hết, khi nào hồi lại mới mua"]) await btn(r).click();
+await page.getByText("Kết quả sau 10 năm").waitFor(); await shot("00-sim-result");
+await btn("Xem nhận xét").click(); await page.getByText("Điều dữ liệu cho thấy").waitFor(); await btn("Tiếp tục").click();
+await page.goto(B + "/lesson/b3-market-myths");
+for (let m = 0; m < 5; m++) {
+  await btn("Chờ thêm").click(); await btn("Chờ thêm").click(); if (m === 0) await shot("00-game-day");
+  await btn("Mua hôm nay").click();
+  await btn(m < 4 ? "Tháng tiếp theo" : "Xem kết quả").click();
+}
+await page.getByText("Kết quả 5 tháng").waitFor(); await shot("00-game-result");
+await btn("Xem nhận xét").click(); await page.getByText("Điều dữ liệu cho thấy").waitFor(); await btn("Tiếp tục").click();
 // Estimate lesson
 await page.goto(B + "/lesson/b4-compound-30y"); await btn("Tiếp tục").click();
 await page.getByText("Đoán số").waitFor(); await shot("01-estimate");

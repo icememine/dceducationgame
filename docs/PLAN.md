@@ -32,7 +32,7 @@ the team and friendly testers.
 | 6 | Content preview mode (`CONTENT_PREVIEW=1`) so writers and Compliance can open any lesson | E | ✅ done |
 | 7 | Fund-facts expiry test (fails after ~4 months without re-check) | E | ✅ done |
 | 8 | **Công cụ tab**: goal planner (presets from the articles, time to target, monthly amount needed for a chosen year, save to profile) and "25 hay 45 tuổi"; Nhiệm vụ moved to the gift icon | E | ✅ done |
-| 9 | **Interactive tools as lesson types**: "Ba phản ứng" decision simulation and "Nhà tiên tri" timing game | E | next |
+| 9 | **Interactive lesson types**: "Ba phản ứng" decision simulation (`reaction_sim`) and "Nhà tiên tri" timing game (`timing_game`), seeded and tested in `features/simulations` | E | ✅ done |
 | 10 | **Write the rest of Hiểu mình** from the outline: 9 of ~50 stage-B lessons are built. Drafts by E/C on the formula, review by K | C + K | next |
 | 11 | **Staging deploy** with Postgres, `CONTENT_PREVIEW=1` for reviewers | E | needs a hosting decision |
 | 12 | Confirm flagged facts: sell-fee tier 1–2 years, NAV time, legacy funds, DIAMOND criteria, past returns | K + C | open |

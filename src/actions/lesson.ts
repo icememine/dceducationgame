@@ -87,7 +87,7 @@ export async function completeLesson(sessionId: string): Promise<LessonSummary> 
   if (session.completedAt) throw new Error("Session already completed");
 
   const attempts = await db.select().from(challengeAttempts).where(eq(challengeAttempts.sessionId, sessionId));
-  const graded = loc.lesson.challenges.filter((c) => !["info", "profile", "goal_planner", "estimate"].includes(c.type));
+  const graded = loc.lesson.challenges.filter((c) => !["info", "profile", "goal_planner", "estimate", "reaction_sim", "timing_game"].includes(c.type));
   const missing = graded.filter((c) => !attempts.some((a) => a.challengeId === c.id && a.correct === true));
   if (missing.length) throw new Error(`Lesson not finished: ${missing.map((c) => c.id).join(", ")}`);
   const mistakes = attempts.filter((a) => a.correct === false).length;

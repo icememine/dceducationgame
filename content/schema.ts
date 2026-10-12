@@ -126,6 +126,15 @@ export const spotChallenge = z.object({
   explain: insight,
 });
 
+/**
+ * Interactive simulations (src/features/simulations). Ungraded: the learner plays, then reads
+ * the insight. `context` sets the scene before the simulation starts.
+ *  - reaction_sim: "Ba phản ứng khi quỹ giảm", decide keep/pause/sell at three drawdowns.
+ *  - timing_game:  "Nhà tiên tri", try to buy at the month's low seeing one day at a time.
+ */
+export const reactionSimChallenge = z.object({ ...base, type: z.literal("reaction_sim"), context, explain: insight });
+export const timingGameChallenge = z.object({ ...base, type: z.literal("timing_game"), context, explain: insight });
+
 export const scenarioChallenge = z.object({
   ...base,
   type: z.literal("scenario"),
@@ -173,6 +182,8 @@ export const challenge = z.discriminatedUnion("type", [
   numericChallenge,
   estimateChallenge,
   spotChallenge,
+  reactionSimChallenge,
+  timingGameChallenge,
   scenarioChallenge,
   profileChallenge,
   goalPlannerChallenge,

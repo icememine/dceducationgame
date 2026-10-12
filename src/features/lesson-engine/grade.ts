@@ -1,5 +1,6 @@
 import type { Challenge } from "@content/schema";
 import { sourceById } from "@content/sources";
+import { DROPS, REACTIONS, TIMING_DAYS, TIMING_ROUNDS } from "@/features/simulations/sims";
 import { applyPermutation, permutation } from "./shuffle";
 import type { Answer, ClientChallenge, GradeResult } from "./types";
 
@@ -23,6 +24,10 @@ export function toClientChallenge(c: Challenge): ClientChallenge {
       return { id: c.id, type: c.type, context: c.context, prompt: c.prompt, min: c.min, max: c.max, step: c.step, start: c.start, unit: c.unit };
     case "spot":
       return { id: c.id, type: c.type, context: c.context, prompt: c.prompt, statements: applyPermutation(c.statements, permFor(c, c.statements.length)) };
+    case "reaction_sim":
+      return { id: c.id, type: c.type, context: c.context };
+    case "timing_game":
+      return { id: c.id, type: c.type, context: c.context };
     case "profile":
       // Self-assessment options keep their authored order (low → high reads naturally).
       return { id: c.id, type: c.type, prompt: c.prompt, options: c.options };
@@ -57,6 +62,16 @@ export function grade(c: Challenge, a: Answer): GradeResult {
       const v = (a as Extract<Answer, { value: number }>).value;
       const close = Number.isFinite(v) && Math.abs(v - c.answer) <= Math.abs(c.answer) * c.tolerance;
       return { ...base, correct: close ? true : null, correctAnswer: `${fmt(c.answer)} ${c.unit}`, reveal: c.reveal };
+    }
+    case "reaction_sim": {
+      const r = (a as Extract<Answer, { type: "reaction_sim" }>).reactions;
+      if (r.length !== DROPS.length || !r.every((x) => x in REACTIONS)) throw new Error(`invalid reactions for ${c.id}`);
+      return { ...base, correct: null };
+    }
+    case "timing_game": {
+      const p = (a as Extract<Answer, { type: "timing_game" }>).picks;
+      if (p.length !== TIMING_ROUNDS || !p.every((d) => Number.isInteger(d) && d >= 0 && d < TIMING_DAYS)) throw new Error(`invalid picks for ${c.id}`);
+      return { ...base, correct: null };
     }
     case "spot": {
       const perm = permFor(c, c.statements.length);

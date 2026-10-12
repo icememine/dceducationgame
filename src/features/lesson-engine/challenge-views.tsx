@@ -5,6 +5,7 @@ import { Mascot } from "@/components/mascot";
 import { cn, formatVnd } from "@/lib/utils";
 import { formatDuration, monthsToTarget } from "@/features/goal-planner/finance";
 import { ProjectionChart } from "@/features/goal-planner/projection-chart";
+import type { Reaction } from "@/features/simulations/sims";
 import type { ClientChallenge } from "./types";
 
 /** Learner's in-progress answer, keyed by the challenge type the player is showing. */
@@ -15,10 +16,12 @@ export type Draft = {
   order?: number[];
   text?: string;
   value?: number;
+  reactions?: Reaction[];
+  timing?: { round: number; day: number; picks: number[]; revealed: boolean };
   plan?: { target: number; monthly: number; initial: number; annualReturn: number };
 };
 
-type ViewProps<T extends ClientChallenge["type"]> = {
+export type ViewProps<T extends ClientChallenge["type"]> = {
   c: Extract<ClientChallenge, { type: T }>;
   draft: Draft;
   setDraft: (d: Draft) => void;
@@ -42,7 +45,7 @@ function Options({ options, draft, setDraft, locked, letters }: { options: strin
   );
 }
 
-const Context = ({ text }: { text?: string }) =>
+export const Context = ({ text }: { text?: string }) =>
   text ? <div className="rounded-2xl bg-sunken p-4 text-[15px]">{text}</div> : null;
 
 export function InfoView({ c }: { c: Extract<ClientChallenge, { type: "info" }> }) {

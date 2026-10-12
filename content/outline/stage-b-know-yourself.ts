@@ -435,6 +435,7 @@ export const stageKnowYourself: OutlineStage = {
           goal: "Tự chơi chọn ngày mua và thấy chênh lệch chỉ vài phần trăm sau 22 năm.",
           formats: ["game"],
           sources: ["amdd-petrol", "amdd-best-day"],
+          builtAs: "b3-market-myths",
           facts: [
             "10 triệu/tháng × 265 tháng (5/2004–6/2026), vốn 2,65 tỷ: luôn mua đáy ~11,8 tỷ; theo lịch ~11,4 tỷ; luôn mua đỉnh ~11 tỷ",
             "Người mua theo lịch chỉ thấp hơn người luôn mua đáy ~2,7%; người xui nhất chỉ kém ~3,6%",

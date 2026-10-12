@@ -1,4 +1,5 @@
 import type { Challenge, QuizPattern, SourceRef } from "@content/schema";
+import type { Reaction } from "@/features/simulations/sims";
 
 /** What the browser receives: answer keys, scores and explanations stripped. */
 export type ClientChallenge =
@@ -10,6 +11,8 @@ export type ClientChallenge =
   | { id: string; type: "numeric"; context: string; prompt: string; unit: string; hint?: string }
   | { id: string; type: "estimate"; context: string; prompt: string; min: number; max: number; step: number; start: number; unit: string }
   | { id: string; type: "spot"; context: string; prompt: string; statements: string[] }
+  | { id: string; type: "reaction_sim"; context: string }
+  | { id: string; type: "timing_game"; context: string }
   | { id: string; type: "profile"; prompt: string; options: string[] }
   | {
       id: string;
@@ -26,6 +29,8 @@ export type Answer =
   | { type: "match"; pairs: number[] }
   | { type: "order"; order: number[] }
   | { type: "numeric" | "estimate"; value: number }
+  | { type: "reaction_sim"; reactions: Reaction[] }
+  | { type: "timing_game"; picks: number[] }
   | { type: "goal_planner"; target: number; monthly: number; initial: number; annualReturn: number };
 
 export type GradeResult = {

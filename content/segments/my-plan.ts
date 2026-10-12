@@ -405,11 +405,11 @@ export const myPlan = {
           title: "Ba phản ứng khi quỹ giảm",
           challenges: [
             {
-              id: "b3-reactions-intro",
-              type: "info",
-              title: "10 năm, 10 triệu mỗi tháng",
-              body: "Ba người cùng góp đều cho một mục tiêu 10 năm. Trên đường đi, quỹ có nhiều đợt giảm. Mỗi lần như vậy, mỗi người phản ứng một kiểu. Dữ liệu là kết quả quá khứ của DCDS, chỉ để minh họa.",
-              mascot: "fight",
+              id: "b3-reactions-sim",
+              type: "reaction_sim",
+              context: "Bạn góp đều 10 triệu mỗi tháng cho một mục tiêu 10 năm. Trên đường đi, quỹ có ba đợt giảm và mỗi lần bạn chọn cách phản ứng. Số liệu là mô phỏng minh họa.",
+              explain: "Mỗi lần tạm dừng hay bán ra đều bỏ lỡ những tháng giá rẻ nhất. Dữ liệu thật của DCDS 2016–2026 cũng vậy: kiên trì ~2,21 tỷ, tạm dừng ~2,16 tỷ, bán rồi mua lại ~1,85 tỷ.",
+              source: { sourceId: "amdd-dcds-10y" },
             },
             {
               id: "b3-reactions-lowest",
@@ -443,6 +443,13 @@ export const myPlan = {
           id: "b3-market-myths",
           title: "Không cần đoán thị trường",
           challenges: [
+            {
+              id: "b3-oracle-game",
+              type: "timing_game",
+              context: "Mỗi tháng bạn có 10 triệu để mua CCQ. Bạn thấy giá từng ngày một, như ngoài đời, và chọn một ngày để mua. Thử mua đúng giá thấp nhất tháng, trong 5 tháng.",
+              explain: "Đoán đúng đáy rất khó, và kể cả đoán đúng mọi lần, lợi thế cũng chỉ vài phần trăm. Trên 22 năm dữ liệu DCDS, người luôn mua đáy chỉ hơn người mua theo lịch khoảng 2,7%.",
+              source: { sourceId: "amdd-petrol" },
+            },
             {
               id: "b3-timing-gap",
               type: "select",
