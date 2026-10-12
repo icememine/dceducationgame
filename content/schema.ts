@@ -30,20 +30,36 @@ export const infoCard = z.object({
   mascot: z.string().optional(),
 });
 
+/**
+ * Every graded question follows the house quiz formula (docs/QUIZ_FORMULA.md):
+ * CONTEXT (a situation or a striking number, 1–2 sentences) → QUESTION (one question about
+ * a cause, a result or a decision) → 3 OPTIONS (one right, two built on common
+ * misconceptions) → INSIGHT (`explain`: the financial principle to remember, 1–2 sentences).
+ */
+export const quizPattern = z.enum(["prediction", "why", "misconception", "decision"]);
+
+export const QUIZ_PATTERNS: Record<z.infer<typeof quizPattern>, string> = {
+  prediction: "Dự đoán",
+  why: "Vì sao?",
+  misconception: "Hiểu lầm phổ biến",
+  decision: "Ra quyết định",
+};
+
+/** Limits that keep context and insight to "1–2 câu". */
+export const QUIZ_TEXT_MAX = 320;
+
+const insight = z.string().min(20).max(QUIZ_TEXT_MAX);
+const context = z.string().min(20).max(QUIZ_TEXT_MAX);
+
 export const selectChallenge = z.object({
   ...base,
   type: z.literal("select"),
+  pattern: quizPattern,
+  context,
   prompt: z.string(),
-  context: z.string().optional(),
-  options: z.array(z.string()).min(2),
-  answer: z.number().int().nonnegative(),
-});
-
-export const trueFalseChallenge = z.object({
-  ...base,
-  type: z.literal("true_false"),
-  prompt: z.string(),
-  answer: z.boolean(),
+  options: z.array(z.string()).length(3),
+  answer: z.number().int().min(0).max(2),
+  explain: insight,
 });
 
 export const matchChallenge = z.object({
@@ -64,11 +80,13 @@ export const orderChallenge = z.object({
   items: z.array(z.string()).min(2),
 });
 
+/** "Đoán số": a prediction answered with a number. Keep the arithmetic to one easy step. */
 export const numericChallenge = z.object({
   ...base,
   type: z.literal("numeric"),
+  context,
   prompt: z.string(),
-  context: z.string().optional(),
+  explain: insight,
   answer: z.number(),
   tolerance: z.number().nonnegative(),
   unit: z.string(),
@@ -80,9 +98,11 @@ export const scenarioChallenge = z.object({
   type: z.literal("scenario"),
   prompt: z.string(),
   persona: z.object({ name: z.string(), meta: z.string().optional() }),
-  says: z.string(),
-  options: z.array(z.string()).min(2),
-  answer: z.number().int().nonnegative(),
+  /** What the persona says: the scenario's CONTEXT. */
+  says: context,
+  options: z.array(z.string()).length(3),
+  answer: z.number().int().min(0).max(2),
+  explain: insight,
 });
 
 export const riskDimension = z.enum(["capacity", "tolerance", "horizon", "knowledge"]);
@@ -115,7 +135,6 @@ export const goalPlannerChallenge = z.object({
 export const challenge = z.discriminatedUnion("type", [
   infoCard,
   selectChallenge,
-  trueFalseChallenge,
   matchChallenge,
   orderChallenge,
   numericChallenge,
@@ -160,6 +179,8 @@ export const source = z.object({
   /** Date the facts were last checked against official documents. */
   asOf: z.string(),
   url: z.string().url().optional(),
+  /** Internal documents are kept for the audit trail but never cited to the learner. */
+  internal: z.boolean().optional(),
 });
 
 export type SourceRef = z.infer<typeof sourceRef>;
@@ -171,5 +192,6 @@ export type Unit = z.infer<typeof unit>;
 export type Segment = z.infer<typeof segment>;
 export type SegmentInput = z.input<typeof segment>;
 export type Source = z.infer<typeof source>;
+export type QuizPattern = z.infer<typeof quizPattern>;
 export type RiskDimension = z.infer<typeof riskDimension>;
 export type GoalKind = z.infer<typeof goalKind>;

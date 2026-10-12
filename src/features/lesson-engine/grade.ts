@@ -10,17 +10,15 @@ export function toClientChallenge(c: Challenge): ClientChallenge {
     case "info":
       return { id: c.id, type: c.type, title: c.title, body: c.body, mascot: c.mascot };
     case "select":
-      return { id: c.id, type: c.type, prompt: c.prompt, context: c.context, options: applyPermutation(c.options, permFor(c, c.options.length)) };
+      return { id: c.id, type: c.type, pattern: c.pattern, context: c.context, prompt: c.prompt, options: applyPermutation(c.options, permFor(c, c.options.length)) };
     case "scenario":
       return { id: c.id, type: c.type, prompt: c.prompt, persona: c.persona, says: c.says, options: applyPermutation(c.options, permFor(c, c.options.length)) };
-    case "true_false":
-      return { id: c.id, type: c.type, prompt: c.prompt };
     case "match":
       return { id: c.id, type: c.type, prompt: c.prompt, left: c.left, right: applyPermutation(c.right, permFor(c, c.right.length)) };
     case "order":
       return { id: c.id, type: c.type, prompt: c.prompt, items: applyPermutation(c.items, permFor(c, c.items.length)) };
     case "numeric":
-      return { id: c.id, type: c.type, prompt: c.prompt, context: c.context, unit: c.unit, hint: c.hint };
+      return { id: c.id, type: c.type, context: c.context, prompt: c.prompt, unit: c.unit, hint: c.hint };
     case "profile":
       // Self-assessment options keep their authored order (low → high reads naturally).
       return { id: c.id, type: c.type, prompt: c.prompt, dimension: c.dimension, options: c.options.map((o) => o.label) };
@@ -33,7 +31,8 @@ const fmt = (n: number) => n.toLocaleString("vi-VN");
 
 /** Server-side grading. The client never decides correctness, so XP can't be forged. */
 export function grade(c: Challenge, a: Answer): GradeResult {
-  const src = c.source ? { ...c.source, title: sourceById(c.source.sourceId)?.title } : undefined;
+  const meta = c.source && sourceById(c.source.sourceId);
+  const src = c.source && meta && !("internal" in meta && meta.internal) ? { ...c.source, title: meta.title } : undefined;
   const base = { explain: c.explain, source: src };
   if (a.type !== c.type && !(a.type === "info" && c.type === "info")) {
     throw new Error(`answer type ${a.type} does not match challenge ${c.id} (${c.type})`);
@@ -56,8 +55,6 @@ export function grade(c: Challenge, a: Answer): GradeResult {
       const original = perm[(a as Extract<Answer, { choice: number }>).choice];
       return { ...base, correct: original === c.answer, correctAnswer: c.options[c.answer] };
     }
-    case "true_false":
-      return { ...base, correct: (a as Extract<Answer, { type: "true_false" }>).value === c.answer, correctAnswer: c.answer ? "Đúng" : "Sai" };
     case "match": {
       const perm = permFor(c, c.right.length);
       const pairs = (a as Extract<Answer, { type: "match" }>).pairs;

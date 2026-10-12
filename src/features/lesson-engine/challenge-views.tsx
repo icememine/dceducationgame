@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, X } from "lucide-react";
+import { QUIZ_PATTERNS } from "@content/schema";
 import { Mascot } from "@/components/mascot";
 import { cn, formatVnd } from "@/lib/utils";
 import { formatDuration, monthsToTarget, projection } from "@/features/goal-planner/finance";
@@ -9,7 +9,6 @@ import type { ClientChallenge } from "./types";
 /** Learner's in-progress answer, keyed by the challenge type the player is showing. */
 export type Draft = {
   choice?: number;
-  bool?: boolean;
   pairs?: (number | undefined)[];
   pickedLeft?: number;
   order?: number[];
@@ -54,12 +53,14 @@ export function InfoView({ c }: { c: Extract<ClientChallenge, { type: "info" }> 
   );
 }
 
+/** Formula order: context first, then the one question, then three options. */
 export function SelectView({ c, ...p }: ViewProps<"select">) {
   return (
     <>
-      <h2 className="text-xl font-extrabold">{c.prompt}</h2>
+      <p className="text-xs font-extrabold uppercase tracking-widest text-sky-deep">{QUIZ_PATTERNS[c.pattern]}</p>
       <Context text={c.context} />
-      <Options options={c.options} {...p} />
+      <h2 className="text-xl font-extrabold">{c.prompt}</h2>
+      <Options options={c.options} letters {...p} />
     </>
   );
 }
@@ -76,23 +77,6 @@ export function ScenarioView({ c, ...p }: ViewProps<"scenario">) {
         </div>
       </div>
       <Options options={c.options} letters {...p} />
-    </>
-  );
-}
-
-export function TrueFalseView({ c, draft, setDraft, locked }: ViewProps<"true_false">) {
-  return (
-    <>
-      <p className="text-xs font-extrabold uppercase tracking-widest text-muted">Đúng hay sai?</p>
-      <div className="rounded-2xl bg-sunken p-4 text-lg font-bold">“{c.prompt}”</div>
-      <div className="grid grid-cols-2 gap-3">
-        <button className={cn(opt, "justify-center text-jade-deep")} aria-pressed={draft.bool === true} disabled={locked} onClick={() => setDraft({ bool: true })}>
-          <Check /> Đúng
-        </button>
-        <button className={cn(opt, "justify-center text-coral")} aria-pressed={draft.bool === false} disabled={locked} onClick={() => setDraft({ bool: false })}>
-          <X /> Sai
-        </button>
-      </div>
     </>
   );
 }
@@ -177,8 +161,8 @@ export function OrderView({ c, draft, setDraft, locked }: ViewProps<"order">) {
 export function NumericView({ c, draft, setDraft, locked }: ViewProps<"numeric">) {
   return (
     <>
-      <h2 className="text-xl font-extrabold">{c.prompt}</h2>
       <Context text={c.context} />
+      <h2 className="text-xl font-extrabold">{c.prompt}</h2>
       <label className="flex items-center gap-2 rounded-2xl border-2 border-line bg-sunken p-4 focus-within:border-sky">
         <input inputMode="decimal" autoComplete="off" placeholder="0" disabled={locked} value={draft.text ?? ""}
           onChange={(e) => setDraft({ text: e.target.value })}

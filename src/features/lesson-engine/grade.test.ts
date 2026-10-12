@@ -44,12 +44,26 @@ describe("lesson engine", () => {
   });
 
   it("grades numeric answers with tolerance and records profile scores", () => {
-    const n = challenge("a4-returns", "a4-double-5y");
+    const n: Challenge = {
+      id: "t-double",
+      type: "numeric",
+      context: "Chị Mai muốn số vốn của mình gấp đôi sau 5 năm, không góp thêm.",
+      prompt: "Cần lợi nhuận kép khoảng bao nhiêu %/năm?",
+      answer: 14.9,
+      tolerance: 0.2,
+      unit: "%/năm",
+      explain: "Khoảng 14,9%/năm: lợi nhuận mỗi năm tính trên số vốn đã lớn lên.",
+    };
     expect(grade(n, { type: "numeric", value: 14.87 }).correct).toBe(true);
     expect(grade(n, { type: "numeric", value: 20 }).correct).toBe(false);
 
     const p = challenge("b1-risk-check", "b1-q-horizon");
     expect(grade(p, { type: "profile", choice: 4 })).toMatchObject({ correct: null, profileScore: { dimension: "horizon", score: 4, max: 4 } });
+  });
+
+  it("never cites internal documents to the learner", () => {
+    expect(grade(challenge("a3-order-basics", "a3-sell-after-2y"), { type: "select", choice: 0 }).source).toBeUndefined();
+    expect(grade(challenge("b3-dca", "b3-three-years"), { type: "select", choice: 0 }).source?.title).toBe("10 năm đầu tư đều đặn vào DCDS");
   });
 
   it("parses Vietnamese number formats", () => {

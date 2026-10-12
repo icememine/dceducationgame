@@ -29,7 +29,8 @@ export const lessonsOf = (s: Segment) => s.units.flatMap((u) => u.lessons);
 
 /**
  * Checks Zod can't express: unique IDs across all content, answer indexes in range,
- * match pairs forming a permutation, and every citation resolving to a known source.
+ * distinct quiz options, match pairs forming a permutation, and every citation resolving
+ * to a known source. (Context/insight presence and length are enforced by the schema.)
  * Returns a list of problems; empty means the content is publishable.
  */
 export function validateContent(all: Segment[] = segments): string[] {
@@ -58,6 +59,11 @@ export function validateContent(all: Segment[] = segments): string[] {
           }
           if ((c.type === "select" || c.type === "scenario") && c.answer >= c.options.length) {
             problems.push(`${at}: answer index ${c.answer} out of range`);
+          }
+          if (c.type === "select" || c.type === "scenario") {
+            // Quiz formula: three distinct options and an insight that adds something beyond the right option.
+            if (new Set(c.options).size !== c.options.length) problems.push(`${at}: options must be distinct`);
+            if (c.explain && c.explain.trim() === c.options[c.answer].trim()) problems.push(`${at}: insight must explain, not repeat the answer`);
           }
           if (c.type === "match") {
             const sorted = [...c.pairs].sort((a, b) => a - b);

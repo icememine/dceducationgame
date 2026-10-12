@@ -19,7 +19,6 @@ import {
   ProfileView,
   ScenarioView,
   SelectView,
-  TrueFalseView,
   type Draft,
 } from "./challenge-views";
 import { parseLocaleNumber } from "./grade";
@@ -41,8 +40,6 @@ function toAnswer(c: ClientChallenge, d: Draft): Answer | null {
     case "scenario":
     case "profile":
       return d.choice === undefined ? null : { type: c.type, choice: d.choice };
-    case "true_false":
-      return d.bool === undefined ? null : { type: c.type, value: d.bool };
     case "match":
       return d.pairs?.length === c.left.length && d.pairs.every((p) => p !== undefined) ? { type: c.type, pairs: d.pairs as number[] } : null;
     case "order":
@@ -169,7 +166,6 @@ export function LessonPlayer({ lessonId, lessonTitle, challenges, hearts: initia
         {c.type === "info" && <InfoView c={c} />}
         {c.type === "select" && <SelectView c={c} {...props} />}
         {c.type === "scenario" && <ScenarioView c={c} {...props} />}
-        {c.type === "true_false" && <TrueFalseView c={c} {...props} />}
         {c.type === "match" && <MatchView c={c} {...props} />}
         {c.type === "order" && <OrderView c={c} {...props} />}
         {c.type === "numeric" && <NumericView c={c} {...props} />}
@@ -203,11 +199,11 @@ function Feedback({ result }: { result: SubmitResult | null }) {
       </p>
       <div className="text-sm text-ink">
         {!ok && result.correctAnswer && <p className="mb-1">Đáp án đúng: <b>{result.correctAnswer}</b></p>}
-        {result.explain && <p>{result.explain}</p>}
+        {result.explain && <p><b>Điều cần nhớ: </b>{result.explain}</p>}
       </div>
       {result.source && (
         <p className="flex items-center gap-1.5 text-xs text-muted">
-          <FileText className="h-3.5 w-3.5" />Nguồn: <b>{result.source.title}{result.source.locator && ` · ${result.source.locator}`}</b>
+          <FileText className="h-3.5 w-3.5" />Nguồn: <b>{result.source.title}</b>
         </p>
       )}
     </div>

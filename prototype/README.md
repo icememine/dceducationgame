@@ -5,5 +5,5 @@ self-check, the 3-stage learning path, six playable lessons, the goal planner an
 role-play practice with a coach, Hỏi Rồng, quests, league and profile.
 
 Open it in a browser. AI features call Claude only when the page runs inside the claude.ai artifact viewer
-(`sample` capability); opened locally they fall back to scripted replies and a keyword search over the FAQ.
+(`sample` capability); opened locally they fall back to scripted replies and a keyword search over the Q&A library (`content/library`, exported with `npx tsx scripts/export-library.ts`).
 Simulated NAV series in the lessons are illustrative, not real fund data.

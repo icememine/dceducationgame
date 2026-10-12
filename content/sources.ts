@@ -1,11 +1,13 @@
 import type { Source } from "./schema";
 
 /**
- * Every challenge cites one of these. The player shows "Nguồn: <title>" under each
- * explanation, as in the Investor365 prototype. Bump `asOf` when facts are re-checked.
+ * Every graded challenge cites one of these. The player shows "Nguồn: <title>" under the
+ * insight for published articles only; internal documents (`internal: true`) stay in the
+ * audit trail and are never shown. Bump `asOf` when facts are re-checked.
  */
 export const sources = [
-  { id: "faq", title: "Tư vấn sản phẩm và hỗ trợ nhà đầu tư", file: "Tu_van_san_pham_hoan_chinh.docx", asOf: "2026-10" },
+  { id: "faq", title: "Tư vấn sản phẩm và hỗ trợ nhà đầu tư", file: "Tu_van_san_pham_hoan_chinh.docx", asOf: "2026-10", internal: true },
+  { id: "library", title: "Thư viện hỏi đáp Quỹ DC", file: "content/library (FAQ hoàn chỉnh + FAQ Tư vấn IS)", asOf: "2026-10", internal: true },
   { id: "w5-mmf", title: "W5 Bài 1 · Quỹ thị trường tiền tệ", file: "Articles/W5 Bài 1 - MMF-final.docx", asOf: "2026-10" },
   { id: "w5-index", title: "W5 Bài 2 · Quỹ chỉ số", file: "Articles/W5 Bài 2 Quỹ chỉ số_Index Fund_Final.docx", asOf: "2026-10" },
   { id: "w5-active-passive", title: "W5 Bài 3 · Quỹ chủ động vs thụ động", file: "Articles/W5 Bài 3 Active vs Passive-Final.docx", asOf: "2026-10" },
@@ -26,7 +28,7 @@ export const sources = [
   { id: "amdd-study-plan-nam", title: "Kế hoạch du học cho con: bài toán tài chính gia đình (anh Nam)", file: "AMDD - Content/Ke_Hoach_Du_Hoc_Cho_Con_Final.docx", asOf: "2026-10" },
   { id: "amdd-suitcase", title: "Chiếc vali được xếp trong mười năm", file: "AMDD - Content/Chiec_vali_xep_trong_muoi_nam_du_hoc_ban_don_gian_v3.docx", asOf: "2026-10" },
   { id: "amdd-waiting", title: "Thị trường còn nhiều biến số, có nên tiếp tục chờ?", file: "AMDD - Content/Đầu tư gì khi lựa chọn nào cũng có vẻ sai - Bản v7.docx", asOf: "2026-10" },
-  { id: "dc-risk-quiz", title: "Bộ câu hỏi tự đánh giá (bản nháp, chờ Compliance duyệt)", file: "content/segments/my-plan.ts", asOf: "2026-10" },
+  { id: "dc-risk-quiz", title: "Bộ câu hỏi tự đánh giá (bản nháp, chờ Compliance duyệt)", file: "content/segments/my-plan.ts", asOf: "2026-10", internal: true },
 ] as const satisfies readonly Source[];
 
 export type SourceId = (typeof sources)[number]["id"];
