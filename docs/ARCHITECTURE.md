@@ -21,7 +21,8 @@ grading, deterministic shuffling, pure domain modules and the auth seam (`getUse
 
 | Area | Before | Now |
 |---|---|---|
-| Questions | 9 types, free-form `select`, `true_false` | 8 types; every graded item is **context → question → 3 options → insight** with a pattern tag, enforced by the schema (`true_false` removed) |
+| Questions | 9 types, free-form `select`, `true_false` | 10 types; every graded item is **context → question → 3 options → insight** with a pattern tag, enforced by the schema (`true_false` removed; `estimate` and `spot` added) |
+| Risk self-check | percentage bands, knowledge lowered the result, no explanation | rules model in `content/risk` (willingness level + limits with reasons), result screen explains every limit |
 | Facts | "don't hard-code fees" (planned table) | `content/library/fund-facts.ts` is the single source; tests check the numbers quoted in lessons |
 | FAQ | one 133-question document, cited as "Câu N" | `content/library`: 208 investor-facing Q&As in 17 categories + 45-term glossary, merged from both FAQ documents; every source row merged or excluded with a reason |
 | Sources | shown under every explanation | only published articles are shown; internal documents (`internal: true`) stay in the audit trail |
@@ -61,7 +62,7 @@ grading, deterministic shuffling, pure domain modules and the auth seam (`getUse
 | Drizzle + Neon Postgres | Drizzle + **any Postgres**; **embedded PGlite** when `DATABASE_URL` is empty | Zero-setup local dev; production DB can be hosted in Vietnam if data rules require |
 | Courses/units/lessons/challenges as **DB rows**, edited via react-admin | **Content-as-code** (`/content/*.ts`, Zod-validated), DB stores only learner state | Every wording change goes through a PR = audit trail for Compliance. No migrations to add a lesson. |
 | Serial integer ids | **Stable string ids** (`a1-ccq-nav`) | Content can be reordered without breaking progress |
-| 2 challenge types (SELECT, ASSIST) | **8 types**: info, select (formula quiz), match, order, numeric, scenario, profile, goal_planner | Finance needs scenarios, self-assessment and planners; every graded question has a context |
+| 2 challenge types (SELECT, ASSIST) | **10 types**: info, select (formula quiz), match, order, numeric, estimate, spot, scenario, profile, goal_planner | Finance needs scenarios, self-assessment and planners; every graded question has a context |
 | Correct option sent to the browser; client decides | **Server-side grading**; options shuffled deterministically; answer keys never leave the server | XP and leaderboards can't be forged |
 | Lesson complete = all challenge rows done | **Lesson sessions** + attempt log; server verifies completion and "perfect" from stored attempts | Integrity + analytics on which questions confuse investors |
 | Clerk auth | **Auth adapter** (`src/lib/auth.ts`): anonymous dev cookie now, DragonX SSO (OIDC) later | Investors already have DragonX identities |
@@ -114,12 +115,13 @@ flowchart LR
 
 ```
 content/
-  schema.ts            Zod schemas: segment → unit → lesson → challenge (9 types), sources
+  schema.ts            Zod schemas: segment → unit → lesson → challenge (10 types), sources
   sources.ts           every citable document, with asOf date
   segments/            dc-funds.ts (A) · my-plan.ts (B) · fund-types.ts (C)
   index.ts             registry, lookups, validateContent() integrity checks
   library/             Q&A library (faq-products, faq-services), glossary, fund-facts (+ text form), search
   ai/rong-voice.md     Rồng's tone and mood, edited by the content team
+  risk/                risk-model.ts (questions, profiles, rules; editable), score.ts (pure scorer)
   outline/             the PLAN: 3 stages · 25 units · 142 lessons · 14 AI scenarios, tested for
                        source validity and full coverage of the 133 FAQ questions
 drizzle/               generated SQL migrations
@@ -134,7 +136,7 @@ src/
   features/
     lesson-engine/     grade.ts, shuffle.ts, types.ts, player.tsx, challenge-views.tsx
     gamification/      rules.ts (all tunables), engine.ts (xp, hearts, streak, leagues), quests.ts
-    risk-profile/      scoring.ts (willingness capped by ability → 5 profiles)
+    risk-profile/      risk-explanation.tsx (why the result is what it is); scoring lives in content/risk
     goal-planner/      finance.ts (FV, months-to-target, required monthly, CAGR)
     ai/                guardrails.ts (fixed rules + reply review), voice.ts, rong.ts (request, stream, offline), rong-chat.tsx
   components/          button (3D), mascot, status-bar, tab-bar, disclaimer
@@ -158,7 +160,9 @@ Segment  { id, code, title, subtitle, heartsEnabled, units[] }
 | `order` | puts items in sequence | yes | volatility low → high; steps after a phishing click |
 | `numeric` | types a number after a context (accepts `126,05`, `23.700`); one easy step only | yes, with tolerance | (not used in current lessons) |
 | `scenario` | answers a customer-style chat; `says` is the context, 3 options, insight | yes | FIFO holding-period question |
-| `profile` | self-assessment, each option scored | no (feeds risk profile) | "Danh mục giảm 20%, bạn sẽ…" |
+| `estimate` | "Đoán số": context, then a slider guess; close → "Chính xác!", far → the real number and milestones | no (never costs a heart) | "1 tỷ đầu tư 30 năm thành bao nhiêu?" |
+| `spot` | "Tìm câu sai": three statements from someone in the context, tap the wrong one | yes | "Cứ gửi OTP cho nhân viên hỗ trợ…" |
+| `profile` | self-assessment; labels only, meaning and rules in `content/risk/risk-model.ts` | no (feeds risk profile) | "Danh mục giảm 20%, bạn sẽ…" |
 | `goal_planner` | enters target / monthly / return; sees projection | no (saves a goal) | "1 tỷ đầu tiên" |
 
 **Rules enforced by `validateContent()`** (runs in tests and `npm run content:check`): unique ids across all
@@ -319,7 +323,8 @@ weekly leagues and daily quests are window sums over it.
 
 **Personalisation loop.** Onboarding asks experience (new / some / DC investor) and picks the starting segment.
 The segment B self-assessment produces one of five profiles (Bảo toàn, Thận trọng, Cân bằng, Tăng trưởng,
-Năng động). Willingness (tolerance + knowledge) sets a band, ability (emergency fund + horizon) caps it. The
+Năng động). Willingness (portfolio choice + drawdown reaction) sets a level; limits (horizon, emergency fund,
+impact of a 30% loss, experience) cap it, each with a reason shown to the learner (`content/risk`). The
 profile recommends **which fund-type units to study next** and which DC fund documents to read. It is framed as
 education, never as a product recommendation.
 
@@ -333,7 +338,8 @@ education, never as a product recommendation.
 | `/segments` | Switch between A / B / C with progress |
 | `/lesson/[lessonId]` | Lesson player (practice mode if already completed) |
 | `/quests` · `/leaderboard` · `/profile` | Daily quests · weekly league · risk profile, goals, DragonX CTA |
-| `/rong` | Hỏi Rồng chat |
+| `/rong` | Hỏi Rồng chat (anh/chị) |
+| `/thu-vien` | Thư viện hỏi đáp: browse by category, search |
 | `POST /api/rong` | Streams Rồng's answer (Claude, or the library when no API key); logs to `ai_messages` |
 
 ## 9. Compliance and trust guardrails
@@ -342,7 +348,7 @@ education, never as a product recommendation.
 - Disclaimer component wherever numbers, funds or projections appear; returns in planners are labelled as assumptions.
 - Fees and cut-off times come from the dated fund-facts table; expiry check planned.
 - AI: fixed rules in `features/ai/guardrails.ts` (no fund recommendations, no promised returns, never ask for OTP/PIN, no invented numbers, no source lines) always precede the editable voice guide; every answer is checked for flags and logged in `ai_messages`; declined requests fall back server-side (`fallbacks: "default"`).
-- The risk quiz is educational and distinct from the DragonX suitability assessment; wording and score bands need sign-off (`dc-risk-quiz` source is marked draft).
+- The risk self-check is educational and distinct from the DragonX suitability assessment; its questions and rules (`content/risk/risk-model.ts`) need sign-off. Every limit that lowers a result is shown to the learner with its reason.
 - Risk-profile output links to *learning*, and lists funds only as "documents to read".
 - Leaderboards are nickname-only; linking a DragonX account requires explicit consent (`users.dragonx_ref`).
 - Content changes are PR-reviewed; git history is the audit trail.

@@ -2,7 +2,7 @@
 
 > Tài liệu này được sinh tự động từ `content/outline/`. Sửa ở đó rồi chạy `npm run docs:curriculum`.
 
-**3 chặng · 25 phần · 142 bài · 14 tình huống luyện AI.** 19 bài đã có bản chơi được (✅).
+**3 chặng · 25 phần · 142 bài · 14 tình huống luyện AI.** 22 bài đã có bản chơi được (✅).
 
 ## Triết lý
 
@@ -148,7 +148,7 @@ Thời gian là biến số mạnh nhất mà nhà đầu tư cá nhân kiểm s
 | Bài | Mục tiêu | Dạng | Nguồn |
 |---|---|---|---|
 | **B4.1** Lãi sinh lãi | Giải thích lãi kép và nhận biết khi nào lãi kép bị ngắt. | Thẻ kiến thức, Câu hỏi nhanh | FAQ 38 |
-| **B4.2** 1 tỷ trong 30 năm | Đoán rồi so sánh với con số thật để cảm nhận đường cong lãi kép. *Công cụ: Máy tính lãi kép.* | Đoán số, Mô phỏng | Kế hoạch du học cho con: bài toán tài chính gia đình (anh Nam) |
+| **B4.2** 1 tỷ trong 30 năm ✅ | Đoán rồi so sánh với con số thật để cảm nhận đường cong lãi kép. *Công cụ: Máy tính lãi kép.* | Đoán số, Mô phỏng | Kế hoạch du học cho con: bài toán tài chính gia đình (anh Nam) |
 | **B4.3** 5 triệu mỗi tuần | Thấy góp nhỏ đều đặn trong thời gian dài tạo ra kết quả lớn. *Công cụ: Máy tính lãi kép.* | Đoán số, Mô phỏng | DCA là gì? Đầu tư đều đặn và lãi kép |
 | **B4.4** Bắt đầu năm 25 tuổi hay 45 tuổi | So sánh hai người cùng mức góp, khác thời điểm bắt đầu. *Công cụ: Máy tính lãi kép.* | Mô phỏng, Câu hỏi nhanh | Câu chuyện về nhà đầu tư 60 tuổi · DCA là gì? Đầu tư đều đặn và lãi kép |
 | **B4.5** Ba năm đầu: lãi kép chưa thấy đâu | Chuẩn bị tâm lý cho giai đoạn đầu khi tài khoản chủ yếu là vốn của mình. | Câu chuyện, Đoán số | 10 năm đầu tư đều đặn vào DCDS · Ý nghĩa cột mốc 1 tỷ đồng đầu tiên |
@@ -181,7 +181,7 @@ Một kế hoạch chỉ có giá trị nếu duy trì được qua các nhịp 
 | **B5.3** DCA hay đầu tư một lần? | Chọn cách giải ngân phù hợp với nguồn tiền và khả năng chịu biến động. *Công cụ: Mô phỏng DCA và đầu tư một lần.* | Thẻ kiến thức, Tình huống | FAQ 3, 2, 13, 18 |
 | **B5.4** Ngày tốt nhất để đầu tư | Hiểu vì sao giảm thời gian tiền nằm chờ quan trọng hơn chọn ngày đẹp. | Trò chơi dữ liệu, Câu hỏi nhanh | Ngày tốt nhất để đầu tư là ngày tiền về tài khoản |
 | **B5.5** Trò chơi Nhà tiên tri | Tự chơi chọn ngày mua và thấy chênh lệch chỉ vài phần trăm sau 22 năm. *Công cụ: Trò chơi Nhà tiên tri (chọn ngày mua).* | Trò chơi dữ liệu | Không ai đợi giá xăng giảm mới đổ xăng · Ngày tốt nhất để đầu tư là ngày tiền về tài khoản |
-| **B5.6** Ba phản ứng khi quỹ giảm | So sánh kiên trì, tạm dừng và bán rồi mua lại trên dữ liệu 10 năm. *Công cụ: Mô phỏng ba phản ứng khi quỹ giảm.* | Ra quyết định, Trò chơi dữ liệu | 10 năm đầu tư đều đặn vào DCDS |
+| **B5.6** Ba phản ứng khi quỹ giảm ✅ | So sánh kiên trì, tạm dừng và bán rồi mua lại trên dữ liệu 10 năm. *Công cụ: Mô phỏng ba phản ứng khi quỹ giảm.* | Ra quyết định, Trò chơi dữ liệu | 10 năm đầu tư đều đặn vào DCDS |
 | **B5.7** Điều bạn kiểm soát được | Phân loại các yếu tố kiểm soát được và không kiểm soát được. | Câu hỏi nhanh, Tự đánh giá · cam kết | 10 năm đầu tư đều đặn vào DCDS |
 | **B5.8** DCA linh hoạt và DCA với ETF | Biết có thể đổi số tiền góp và áp dụng tích lũy định kỳ cho ETF. | Thẻ kiến thức, Câu hỏi nhanh | FAQ 129, 7 |
 | **B5.9** Kiểm tra: Kỷ luật | Ôn lại cả phần. | Kiểm tra | Không ai đợi giá xăng giảm mới đổ xăng · Ngày tốt nhất để đầu tư là ngày tiền về tài khoản · 10 năm đầu tư đều đặn vào DCDS |
@@ -465,7 +465,7 @@ Hiểu quy trình để không lo lắng, không chuyển tiền hai lần. Linh
 | **A2.1** Vòng đời một lệnh mua | Sắp xếp các bước: đặt lệnh → chuyển tiền → đối soát → kỳ giao dịch → NAV → CCQ về tài khoản. *Công cụ: Vòng đời một lệnh quỹ mở.* | Mô phỏng, Câu hỏi nhanh | FAQ 5, 108, 44 |
 | **A2.2** Đặt lệnh khi chưa biết giá ✅ | Quyết định mua/bán dựa trên kế hoạch, không dựa vào giá tạm tính. | Thẻ kiến thức, Câu hỏi nhanh | FAQ 12, 30 |
 | **A2.3** Chuyển tiền đúng cách | Kiểm tra tên thụ hưởng, tài khoản, số tiền, nội dung; biết quy định tài khoản chuyển tiền khác. | Tình huống, Tìm lỗi sai | FAQ 5, 52 |
-| **A2.4** Hồ sơ: Đã chuyển tiền mà chưa thấy CCQ | Xử lý đúng ba tình huống: chưa thấy CCQ, chưa xác nhận nhận tiền, chưa có thông báo. | Hồ sơ hỗ trợ | FAQ 43, 44, 45, 49 |
+| **A2.4** Hồ sơ: Đã chuyển tiền mà chưa thấy CCQ ✅ | Xử lý đúng ba tình huống: chưa thấy CCQ, chưa xác nhận nhận tiền, chưa có thông báo. | Hồ sơ hỗ trợ | FAQ 43, 44, 45, 49 |
 | **A2.5** Hồ sơ: Payoo, hủy lệnh và chuyển nhầm quỹ | Biết tiền đi đâu khi chuyển trước, hủy lệnh hoặc chuyển nhầm. | Hồ sơ hỗ trợ | FAQ 50, 54, 128 |
 | **A2.6** Hồ sơ: Ứng dụng báo lỗi khi đặt lệnh | Kiểm tra lịch sử lệnh trước khi thử lại. | Hồ sơ hỗ trợ | FAQ 88 |
 | **A2.7** Bán và nhận tiền | Biết khi nào tiền về, vì sao lệnh bán bị hủy, tiền về tài khoản nào. | Hồ sơ hỗ trợ, Câu hỏi nhanh | FAQ 46, 47, 111 |

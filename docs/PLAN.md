@@ -1,60 +1,62 @@
 # What to build next
 
-Status on 12 Oct 2026: the skeleton runs end to end ([`GOLDEN_PATH.md`](./GOLDEN_PATH.md)), 19 of the
-142 outlined lessons are playable and follow the quiz formula ([`QUIZ_FORMULA.md`](./QUIZ_FORMULA.md)),
-the merged Q&A library has 208 entries, and Hỏi Rồng is live in the app behind an API key. The prototype
-covers more surface than the app (AI role-play, coach, tools) and is now built from the repo.
-
 Owners: **P** product (you) · **C** content team · **K** Compliance · **E** engineering.
 
-## P0: before anyone outside the team sees it (1–2 weeks)
+## Decisions (so we don't reopen them)
 
-| # | Item | Owner | Done when |
-|---|---|---|---|
-| 1 | **Rồng's voice.** Rewrite `content/ai/rong-voice.md` (tone, mood, length, examples), then `npm run proto:build` and try it in the prototype | P | Five sample answers read the way you want |
-| 2 | **Hỏi Rồng eval set.** 40–60 real investor questions (from CS tickets + the library) with the facts each answer must contain and must not contain. A script scores answers; run it before and after every voice or prompt change | E + P | Baseline score recorded; voice changes are measured, not eyeballed |
-| 3 | **Confirm the flagged facts**: sell-fee tier 1–2 years, NAV publishing time, legacy funds (VSF/VFS), DIAMOND criteria, quoted past returns | K + C | `fund-facts.ts` updated, `FACTS_AS_OF` bumped |
-| 4 | **Prototype bug**: in the screen index, "Tình huống: bán hết khi giảm" (17) is a step inside "Luyện tình huống AI" (16), not its own item. The AI group should show two items, Luyện tình huống với AI and Hỏi Rồng, with the scenario as a sub-step | E | Index shows the hierarchy; prototype republished |
-| 5 | **Abuse limits on `/api/rong`**: per-learner daily cap and question length (already capped at 600 chars), friendly message when hit | E | Cap enforced and tested |
-| 6 | **API key in the deploy environment** and a spend alert on the Anthropic workspace | E | Hỏi Rồng answers with the model in staging |
-
-## P1: MVP content and the AI practice (3–5 weeks)
-
-| # | Item | Owner | Done when |
-|---|---|---|---|
-| 7 | **Write the Hiểu mình lessons** from the outline (stage B first, 50 lessons), every graded item on the formula. Then Hiểu quỹ (C) | C, reviewed by K | `npm test` green; each lesson reviewed once by Compliance |
-| 8 | **One lesson source.** Generate the prototype's lessons from `content/segments` instead of the hand-written `LESSONS` in `prototype/src/app1.js`, so the two can't drift | E | Prototype lessons = app lessons |
-| 9 | **Luyện tình huống AI in the app**: persona route (streamed) + coach route (structured JSON scores via `output_config.format`), both using the voice guide sections and guardrails, logged to `ai_messages`. Start with the 5 open scenarios | E | Scenario playable in the app; coach output validated by schema; added to the golden path |
-| 10 | **Compliance review page**: list `ai_messages` with guardrail flags, filter by flag, mark reviewed | E + K | Compliance reviews a week of answers in under an hour |
-| 11 | **Library in Rồng's voice**: the library answers are written for CS staff ("anh/chị"). Either rewrite them for investors ("bạn") or keep CS wording and let the model rephrase (offline fallback then shows CS wording) | P + C | Decision made; offline answers match the chosen voice |
-| 12 | **Thư viện page**: browse and search the library by category (it already powers Hỏi Rồng) | E | Page live, linked from Hỏi Rồng |
-| 13 | **Fund facts expiry**: test fails when `FACTS_AS_OF` is older than 90 days | E | Reminder in CI |
-
-## P2: pilot (4–6 weeks)
-
-| # | Item | Owner | Done when |
-|---|---|---|---|
-| 14 | DragonX SSO behind `getUserId()` (OIDC), anonymous progress merged on first login | E | Pilot users sign in with DragonX |
-| 15 | Postgres + hosting (VN-hosted if required), migrations as a deploy step | E | Staging and production environments |
-| 16 | Funnel analytics: onboarding → first lesson → day-2 return → Hỏi Rồng → DragonX CTA | E + P | Dashboard |
-| 17 | Remaining 3–4 AI scenarios, badges, unit chests, streak reminders | E + C | In pilot build |
-| 18 | Internal pilot with staff, then 100 friendly investors | P | Feedback round closed |
-
-## Decisions already made (so we don't reopen them)
-
-- Content is code (TS + Zod), reviewed by pull request; git history is the audit trail.
-- Every graded question follows the quiz formula; the schema enforces it.
+- **The app is the product; the prototype is frozen for demos.** New features land in the app first. The
+  prototype only gets fixes that testers hit (it already reads the library, the risk model and the voice
+  guide from the repo). Once the app is on a staging URL, testers move to it.
+- **Address form:** Hỏi Rồng and the Q&A library say "anh/chị"; lessons and practice say "bạn".
+- **No API key for now.** Hỏi Rồng answers from the library (closest entry). Everything AI-related is built
+  so that adding `ANTHROPIC_API_KEY` later switches it on without code changes.
+- **Rồng's voice** (`content/ai/rong-voice.md`) is owned by P and edited later; engineering doesn't touch tone.
+- **Risk self-check** rules live in `content/risk/risk-model.ts` (editable, Compliance sign-off needed).
+- Content is code (TS + Zod), reviewed by pull request; every graded question follows the quiz formula.
 - Fees, tax and schedules live only in `content/library/fund-facts.ts`.
-- Learners never see internal sources ("Nguồn: FAQ …").
-- Compliance rules for AI live in code (`src/features/ai/guardrails.ts`); tone lives in `content/ai/rong-voice.md`.
-- Hỏi Rồng sends the whole library (≈117k characters) as one cached system block instead of top-k
-  retrieval. Revisit if the library grows several times larger; `searchLibrary()` is ready as the
-  retrieval step.
+- Learners never see internal sources; AI compliance rules live in `src/features/ai/guardrails.ts`.
+
+## Milestone 1: "Hiểu mình" complete in the app (current)
+
+The first stage a new investor meets, finished end to end in the real app, then put on a staging URL for
+the team and friendly testers.
+
+| # | Item | Owner | Status |
+|---|---|---|---|
+| 1 | Risk self-check: rules model, explained result, regression in the golden path | E | ✅ done |
+| 2 | Hỏi Rồng in the app (library answers), daily cap, `ai_messages` log | E | ✅ done |
+| 3 | Thư viện page: browse 17 categories, search, linked from Hỏi Rồng | E | ✅ done |
+| 4 | New interactions: **Đoán số** (estimate slider) and **Tìm câu sai** (spot the wrong statement) | E | ✅ done |
+| 5 | Prototype lessons ported: "1 tỷ trong 30 năm", "Ba phản ứng khi quỹ giảm", "Hồ sơ: chưa thấy CCQ" | E | ✅ done |
+| 6 | Content preview mode (`CONTENT_PREVIEW=1`) so writers and Compliance can open any lesson | E | ✅ done |
+| 7 | Fund-facts expiry test (fails after ~4 months without re-check) | E | ✅ done |
+| 8 | **Công cụ tab**: goal planner and "25 hay 45 tuổi" compounding calculator as pages (logic exists in `features/goal-planner`) | E | next |
+| 9 | **Interactive tools as lesson types**: "Ba phản ứng" decision simulation and "Nhà tiên tri" timing game | E | next |
+| 10 | **Write the rest of Hiểu mình** from the outline: 9 of ~50 stage-B lessons are built. Drafts by E/C on the formula, review by K | C + K | next |
+| 11 | **Staging deploy** with Postgres, `CONTENT_PREVIEW=1` for reviewers | E | needs a hosting decision |
+| 12 | Confirm flagged facts: sell-fee tier 1–2 years, NAV time, legacy funds, DIAMOND criteria, past returns | K + C | open |
+| 13 | Prototype screen index: "Tình huống: bán hết khi giảm" (17) should sit under "Luyện tình huống AI" (16) | E | open (small) |
+
+## Milestone 2: Hiểu quỹ + AI practice
+
+- Write stage C lessons (fund types), then stage A (DC funds) on the library.
+- **Luyện tình huống AI** in the app: persona + coach routes with the same guardrails and voice; scripted
+  replies and the rule-based coach until the API key arrives (as the prototype does).
+- Compliance review page over `ai_messages` (filter by guardrail flag, mark reviewed).
+- Hỏi Rồng eval set (40–60 real questions with must/must-not facts), ready for when the model is switched on.
+
+## Milestone 3: pilot
+
+- DragonX SSO behind `getUserId()`; anonymous progress merged on first login.
+- Production hosting (VN-hosted if required), migrations as a deploy step, backups.
+- Funnel analytics: onboarding → first lesson → day-2 return → Hỏi Rồng → DragonX CTA.
+- Badges, unit chests, streak reminders; remaining AI scenarios.
+- Internal pilot with staff, then 100 friendly investors.
 
 ## Open questions for the business
 
-1. Who signs off lessons and AI answers, and at what turnaround?
-2. May Hỏi Rồng answer before login, or only for DragonX customers?
-3. Retention period for `ai_messages` (questions may contain personal details)?
-4. Are rewards (fee waivers, gifts) allowed for streaks or leagues?
-5. Web app, DragonX tab, or both at pilot?
+1. Where do we host staging and production (Vercel, a VN cloud, on-prem)? Must learner data stay in Vietnam?
+2. Who signs off lessons, the risk self-check and AI answers, and at what turnaround?
+3. May Hỏi Rồng and the risk check be used before login, or only by DragonX customers?
+4. Retention period for `ai_messages` (questions may contain personal details)?
+5. Are rewards (fee waivers, gifts) allowed for streaks or leagues?

@@ -1,6 +1,7 @@
 "use client";
 
 import { Send } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Mascot } from "@/components/mascot";
 import { cn } from "@/lib/utils";
@@ -33,6 +34,7 @@ export function RongChat() {
     const write = (answer: string) => setTurns((t) => [...t.slice(0, -1), { role: "assistant", text: answer }]);
     try {
       const res = await fetch("/api/rong", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ question, history }) });
+      if (res.status === 429) return write(await res.text());
       if (!res.ok || !res.body) throw new Error(String(res.status));
       const reader = res.body.getReader();
       const decoder = new TextDecoder();
@@ -57,7 +59,8 @@ export function RongChat() {
         <Mascot mood="study" size={48} />
         <p className="rounded-2xl rounded-tl-sm bg-jade-soft p-3 text-[15px]">
           Chào anh/chị! Rồng trả lời từ thư viện hỏi đáp của Dragon Capital: phí, thuế, lịch giao dịch, tài khoản và kiến thức đầu tư.
-          Rồng không chọn quỹ thay anh/chị và không bao giờ hỏi OTP hay PIN.
+          Rồng không chọn quỹ thay anh/chị và không bao giờ hỏi OTP hay PIN.{" "}
+          <Link href="/thu-vien" className="font-bold text-jade-deep underline">Xem thư viện hỏi đáp</Link>
         </p>
       </div>
       <ol className="flex flex-col gap-3" aria-live="polite">

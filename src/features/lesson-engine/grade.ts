@@ -19,6 +19,10 @@ export function toClientChallenge(c: Challenge): ClientChallenge {
       return { id: c.id, type: c.type, prompt: c.prompt, items: applyPermutation(c.items, permFor(c, c.items.length)) };
     case "numeric":
       return { id: c.id, type: c.type, context: c.context, prompt: c.prompt, unit: c.unit, hint: c.hint };
+    case "estimate":
+      return { id: c.id, type: c.type, context: c.context, prompt: c.prompt, min: c.min, max: c.max, step: c.step, start: c.start, unit: c.unit };
+    case "spot":
+      return { id: c.id, type: c.type, context: c.context, prompt: c.prompt, statements: applyPermutation(c.statements, permFor(c, c.statements.length)) };
     case "profile":
       // Self-assessment options keep their authored order (low → high reads naturally).
       return { id: c.id, type: c.type, prompt: c.prompt, options: c.options };
@@ -48,6 +52,17 @@ export function grade(c: Challenge, a: Answer): GradeResult {
       if (!(choice >= 0 && choice < c.options.length)) throw new Error(`choice ${choice} out of range for ${c.id}`);
       return { ...base, correct: null };
     }
+    case "estimate": {
+      // Exploratory: never wrong. Close enough → correct; otherwise null with the real number shown.
+      const v = (a as Extract<Answer, { value: number }>).value;
+      const close = Number.isFinite(v) && Math.abs(v - c.answer) <= Math.abs(c.answer) * c.tolerance;
+      return { ...base, correct: close ? true : null, correctAnswer: `${fmt(c.answer)} ${c.unit}`, reveal: c.reveal };
+    }
+    case "spot": {
+      const perm = permFor(c, c.statements.length);
+      const original = perm[(a as Extract<Answer, { choice: number }>).choice];
+      return { ...base, correct: original === c.answer, correctAnswer: c.statements[c.answer] };
+    }
     case "select":
     case "scenario": {
       const perm = permFor(c, c.options.length);
@@ -67,7 +82,7 @@ export function grade(c: Challenge, a: Answer): GradeResult {
       return { ...base, correct, correctAnswer: c.items.join(" → ") };
     }
     case "numeric": {
-      const v = (a as Extract<Answer, { type: "numeric" }>).value;
+      const v = (a as Extract<Answer, { value: number }>).value;
       return { ...base, correct: Number.isFinite(v) && Math.abs(v - c.answer) <= c.tolerance, correctAnswer: `${fmt(c.answer)} ${c.unit}` };
     }
   }

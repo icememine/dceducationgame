@@ -131,6 +131,7 @@ export const stageDcFunds: OutlineStage = {
           goal: "Xử lý đúng ba tình huống: chưa thấy CCQ, chưa xác nhận nhận tiền, chưa có thông báo.",
           formats: ["case"],
           sources: ["faq:43", "faq:44", "faq:45", "faq:49"],
+          builtAs: "a3-missing-units",
           facts: ["Không đặt lại lệnh hoặc chuyển thêm tiền chỉ vì trạng thái chưa đổi", "Gửi mã lệnh, tên quỹ, thời điểm và chứng từ qua kênh chính thức"],
         },
         {

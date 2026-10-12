@@ -309,6 +309,7 @@ export const stageKnowYourself: OutlineStage = {
           goal: "Đoán rồi so sánh với con số thật để cảm nhận đường cong lãi kép.",
           formats: ["estimate", "sim"],
           sources: ["amdd-study-plan-nam"],
+          builtAs: "b4-compound-30y",
           facts: ["Đầu tư một lần 1 tỷ, giả định 15%/năm: 5 năm → 2 tỷ; 10 năm → 4 tỷ; 20 năm → 16,4 tỷ; 30 năm → 66,2 tỷ"],
           tool: "compound",
         },
@@ -446,6 +447,7 @@ export const stageKnowYourself: OutlineStage = {
           goal: "So sánh kiên trì, tạm dừng và bán rồi mua lại trên dữ liệu 10 năm.",
           formats: ["decision", "game"],
           sources: ["amdd-dcds-10y"],
+          builtAs: "b3-reactions",
           facts: [
             "Cùng góp 1,2 tỷ trong 10 năm vào DCDS: kiên trì ~2,21 tỷ; tạm dừng khi quỹ giảm ~2,16 tỷ (11 lần ra vào); bán rồi mua lại ~1,85 tỷ",
             "Bán ra rồi mua lại ít hơn ~360 triệu, tương đương 3 năm đầu tư",

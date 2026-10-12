@@ -8,6 +8,8 @@ export type ClientChallenge =
   | { id: string; type: "match"; prompt: string; left: string[]; right: string[] }
   | { id: string; type: "order"; prompt: string; items: string[] }
   | { id: string; type: "numeric"; context: string; prompt: string; unit: string; hint?: string }
+  | { id: string; type: "estimate"; context: string; prompt: string; min: number; max: number; step: number; start: number; unit: string }
+  | { id: string; type: "spot"; context: string; prompt: string; statements: string[] }
   | { id: string; type: "profile"; prompt: string; options: string[] }
   | {
       id: string;
@@ -20,16 +22,18 @@ export type ClientChallenge =
 /** Positions refer to the SHUFFLED lists the client was shown. */
 export type Answer =
   | { type: "info" }
-  | { type: "select" | "scenario" | "profile"; choice: number }
+  | { type: "select" | "scenario" | "profile" | "spot"; choice: number }
   | { type: "match"; pairs: number[] }
   | { type: "order"; order: number[] }
-  | { type: "numeric"; value: number }
+  | { type: "numeric" | "estimate"; value: number }
   | { type: "goal_planner"; target: number; monthly: number; initial: number; annualReturn: number };
 
 export type GradeResult = {
   /** null = ungraded item (info card, self-assessment, planner). */
   correct: boolean | null;
   correctAnswer?: string;
+  /** Milestones shown after an estimate. */
+  reveal?: { label: string; value: number }[];
   /** The INSIGHT: the principle to remember. */
   explain?: string;
   /** Only published sources (articles); internal documents are never shown. */

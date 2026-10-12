@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, FileText, Heart, X } from "lucide-react";
+import { Check, FileText, Heart, Sparkles, X } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState, useTransition } from "react";
@@ -13,12 +13,14 @@ import { cn } from "@/lib/utils";
 import {
   GoalPlannerView,
   InfoView,
+  EstimateView,
   MatchView,
   NumericView,
   OrderView,
   ProfileView,
   ScenarioView,
   SelectView,
+  SpotView,
   type Draft,
 } from "./challenge-views";
 import { RiskExplanation } from "@/features/risk-profile/risk-explanation";
@@ -40,7 +42,10 @@ function toAnswer(c: ClientChallenge, d: Draft): Answer | null {
     case "select":
     case "scenario":
     case "profile":
+    case "spot":
       return d.choice === undefined ? null : { type: c.type, choice: d.choice };
+    case "estimate":
+      return { type: c.type, value: d.value ?? c.start };
     case "match":
       return d.pairs?.length === c.left.length && d.pairs.every((p) => p !== undefined) ? { type: c.type, pairs: d.pairs as number[] } : null;
     case "order":
@@ -122,8 +127,8 @@ export function LessonPlayer({ lessonId, lessonTitle, challenges, hearts: initia
           await saveGoal({ kind: c.goal, target: answer.target, monthly: answer.monthly, initial: answer.initial, annualReturn: answer.annualReturn });
         }
         if (r.correct !== false) markSolved();
-        // Ungraded items (self-assessment, planner) skip the feedback panel.
-        if (r.correct === null) return advance();
+        // Ungraded items (self-assessment, planner) skip the feedback panel; an estimate always shows the real number.
+        if (r.correct === null && c.type !== "estimate") return advance();
         setResult(r);
         if (r.outOfHearts) setOutOfHearts(true);
       } catch (e) {
@@ -170,15 +175,17 @@ export function LessonPlayer({ lessonId, lessonTitle, challenges, hearts: initia
         {c.type === "match" && <MatchView c={c} {...props} />}
         {c.type === "order" && <OrderView c={c} {...props} />}
         {c.type === "numeric" && <NumericView c={c} {...props} />}
+        {c.type === "estimate" && <EstimateView c={c} {...props} />}
+        {c.type === "spot" && <SpotView c={c} {...props} />}
         {c.type === "profile" && <ProfileView c={c} {...props} />}
         {c.type === "goal_planner" && <GoalPlannerView c={c} {...props} />}
         {error && <p role="alert" className="rounded-xl bg-coral-soft p-3 text-sm text-coral-deep">{error}</p>}
       </div>
 
       <Feedback result={result} />
-      <div className={cn("p-4", result && (result.correct ? "bg-jade-soft" : "bg-coral-soft"))}>
+      <div className={cn("p-4", result && (result.correct ? "bg-jade-soft" : result.correct === null ? "bg-sky-soft" : "bg-coral-soft"))}>
         <Button
-          variant={result ? (result.correct ? "primary" : "coral") : "primary"}
+          variant={result ? (result.correct ? "primary" : result.correct === null ? "sky" : "coral") : "primary"}
           disabled={!answer || pending || !session}
           onClick={onPrimary}
         >
@@ -190,16 +197,30 @@ export function LessonPlayer({ lessonId, lessonTitle, challenges, hearts: initia
 }
 
 function Feedback({ result }: { result: SubmitResult | null }) {
-  if (!result || result.correct === null) return null;
-  const ok = result.correct;
+  if (!result) return null;
+  // correct === null here means an estimate that wasn't close: not wrong, just "here is the real number".
+  const tone = result.correct ? "ok" : result.correct === null ? "info" : "wrong";
   return (
-    <div role="status" className={cn("flex flex-col gap-2 px-5 pt-4", ok ? "bg-jade-soft text-jade-deep" : "bg-coral-soft text-coral-deep")}>
+    <div
+      role="status"
+      className={cn(
+        "flex flex-col gap-2 px-5 pt-4",
+        tone === "ok" ? "bg-jade-soft text-jade-deep" : tone === "info" ? "bg-sky-soft text-sky-deep" : "bg-coral-soft text-coral-deep",
+      )}
+    >
       <p className="flex items-center gap-2 font-display text-xl font-extrabold">
-        <span className={cn("flex h-7 w-7 items-center justify-center rounded-full text-white", ok ? "bg-jade" : "bg-coral")}>{ok ? <Check className="h-4 w-4" /> : <X className="h-4 w-4" />}</span>
-        {ok ? "Chính xác!" : "Chưa đúng"}
+        <span className={cn("flex h-7 w-7 items-center justify-center rounded-full text-white", tone === "ok" ? "bg-jade" : tone === "info" ? "bg-sky" : "bg-coral")}>
+          {tone === "ok" ? <Check className="h-4 w-4" /> : tone === "info" ? <Sparkles className="h-4 w-4" /> : <X className="h-4 w-4" />}
+        </span>
+        {tone === "ok" ? "Chính xác!" : tone === "info" ? "Chưa sát lắm" : "Chưa đúng"}
       </p>
       <div className="text-sm text-ink">
-        {!ok && result.correctAnswer && <p className="mb-1">Đáp án đúng: <b>{result.correctAnswer}</b></p>}
+        {tone !== "ok" && result.correctAnswer && <p className="mb-1">{tone === "info" ? "Con số thật" : "Đáp án đúng"}: <b>{result.correctAnswer}</b></p>}
+        {result.reveal && (
+          <ul className="mb-2 grid grid-cols-2 gap-1 text-xs">
+            {result.reveal.map((r) => <li key={r.label} className="rounded-lg bg-surface px-2 py-1">{r.label}: <b>{r.value.toLocaleString("vi-VN")}</b></li>)}
+          </ul>
+        )}
         {result.explain && <p><b>Điều cần nhớ: </b>{result.explain}</p>}
       </div>
       {result.source && (

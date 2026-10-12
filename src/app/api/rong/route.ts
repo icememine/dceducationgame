@@ -1,7 +1,7 @@
 import { z } from "zod";
-import { logAiMessage } from "@/db/queries";
+import { countAiMessagesToday, logAiMessage } from "@/db/queries";
 import { reviewReply } from "@/features/ai/guardrails";
-import { RONG_CONFIG, streamRongAnswer } from "@/features/ai/rong";
+import { LIMIT_REPLY, RONG_CONFIG, streamRongAnswer } from "@/features/ai/rong";
 import { loadVoice } from "@/features/ai/voice-file";
 import { getUserId } from "@/lib/auth";
 
@@ -22,6 +22,9 @@ export async function POST(req: Request) {
   if (!parsed.success) return Response.json({ error: "invalid request" }, { status: 400 });
   const { question, history } = parsed.data;
   const userId = await getUserId();
+  if ((await countAiMessagesToday(userId, "rong")) >= RONG_CONFIG.dailyLimit) {
+    return new Response(LIMIT_REPLY, { status: 429, headers: { "content-type": "text/plain; charset=utf-8" } });
+  }
   const encoder = new TextEncoder();
 
   const stream = new ReadableStream<Uint8Array>({

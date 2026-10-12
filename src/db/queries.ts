@@ -46,11 +46,15 @@ export async function getCompletedLessonIds(userId: string): Promise<Set<string>
 export type NodeStatus = "done" | "current" | "locked";
 
 /** Linear unlocking inside a segment, like Duolingo's path. */
-export function pathStatus(segment: Segment, completed: Set<string>) {
+/**
+ * Linear unlock inside a segment. CONTENT_PREVIEW=1 opens every lesson so writers and
+ * Compliance can review any lesson directly (staging only; never in production).
+ */
+export function pathStatus(segment: Segment, completed: Set<string>, preview = process.env.CONTENT_PREVIEW === "1") {
   const ordered = lessonsOf(segment);
   const firstOpen = ordered.findIndex((l) => !completed.has(l.id));
   const status = new Map<string, NodeStatus>();
-  ordered.forEach((l, i) => status.set(l.id, completed.has(l.id) ? "done" : i === firstOpen ? "current" : "locked"));
+  ordered.forEach((l, i) => status.set(l.id, completed.has(l.id) ? "done" : i === firstOpen || preview ? "current" : "locked"));
   return status;
 }
 
@@ -132,4 +136,15 @@ export async function logAiMessage(row: {
   await ensureUser(row.userId);
   const db = await getDb();
   await db.insert(aiMessages).values(row);
+}
+
+/** AI answers this learner received today (Asia/Ho_Chi_Minh, UTC+7 all year), for the daily cap. */
+export async function countAiMessagesToday(userId: string, surface: string, now = new Date()) {
+  const db = await getDb();
+  const start = new Date(`${localDay(now)}T00:00:00+07:00`);
+  const [row] = await db
+    .select({ n: sql<number>`count(*)::int` })
+    .from(aiMessages)
+    .where(and(eq(aiMessages.userId, userId), eq(aiMessages.surface, surface), gte(aiMessages.createdAt, start)));
+  return row?.n ?? 0;
 }

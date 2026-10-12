@@ -46,11 +46,13 @@ for (const o of ["5 – 10 năm", "6 – 12 tháng", "Có ảnh hưởng nhưng 
   await page.getByText(o, { exact: true }).click();
   await btn("Tiếp tục").click();
 }
-await page.getByText("Khẩu vị rủi ro của bạn").waitFor();
+await page.getByText("Mức rủi ro phù hợp với bạn lúc này").waitFor();
+// Regression for the reported bug: +20% / −15% with no limiting answers must be Tăng trưởng.
+if (!(await page.getByRole("heading", { name: "Tăng trưởng" }).isVisible())) errors.push("risk result should be Tăng trưởng");
 await shot("02-profile");
 await btn("Tiếp tục").click();
 await page.waitForURL("**/learn");
-step("risk profile saved");
+step("risk profile saved (Tăng trưởng)");
 
 // 3. First formula lesson: context → question → 3 options → insight, one wrong answer re-queued.
 await page.getByRole("link", { name: "Quỹ dự phòng trước tiên" }).click();

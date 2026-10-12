@@ -62,6 +62,18 @@ describe("lesson engine", () => {
     expect(() => grade(p, { type: "profile", choice: 9 })).toThrow();
   });
 
+  it("treats estimates as exploratory and shuffles spot statements", () => {
+    const e = challenge("b4-compound-30y", "b4-one-billion-30y");
+    expect(grade(e, { type: "estimate", value: 60 }).correct).toBe(true);
+    expect(grade(e, { type: "estimate", value: 10 })).toMatchObject({ correct: null, correctAnswer: "66,2 tỷ" });
+
+    const s = challenge("a3-missing-units", "a3-missing-units-spot") as Extract<Challenge, { type: "spot" }>;
+    const shown = (toClientChallenge(s) as { statements: string[] }).statements;
+    const wrong = shown.indexOf(s.statements[s.answer]);
+    expect(grade(s, { type: "spot", choice: wrong }).correct).toBe(true);
+    expect(grade(s, { type: "spot", choice: (wrong + 1) % 3 }).correct).toBe(false);
+  });
+
   it("never cites internal documents to the learner", () => {
     expect(grade(challenge("a3-order-basics", "a3-sell-after-2y"), { type: "select", choice: 0 }).source).toBeUndefined();
     expect(grade(challenge("b3-dca", "b3-three-years"), { type: "select", choice: 0 }).source?.title).toBe("10 năm đầu tư đều đặn vào DCDS");

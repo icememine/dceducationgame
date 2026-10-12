@@ -23,7 +23,11 @@ export const RONG_CONFIG = {
   /** Earlier turns sent with each question. */
   historyTurns: 6,
   maxQuestionChars: 600,
+  /** Questions per learner per day (Vietnam time). Protects cost once the model is switched on. */
+  dailyLimit: Number(process.env.RONG_DAILY_LIMIT ?? 30),
 };
+
+export const LIMIT_REPLY = "Hôm nay anh/chị đã hỏi Rồng khá nhiều câu rồi. Rồng nghỉ một chút, mai mình nói chuyện tiếp nhé. Cần gấp thì anh/chị liên hệ CSKH@dragoncapital.com.";
 
 export type ChatTurn = { role: "user" | "assistant"; text: string };
 

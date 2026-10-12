@@ -54,6 +54,9 @@ export function validateContent(all: Segment[] = segments): string[] {
           const at = `${l.id}/${c.id}`;
           unique(c.id, `challenge in ${l.id}`);
           if (c.source && !sourceById(c.source.sourceId)) problems.push(`${at}: unknown source "${c.source.sourceId}"`);
+          if (c.type === "estimate" && !(c.min <= c.start && c.start <= c.max && c.min <= c.answer && c.answer <= c.max)) {
+            problems.push(`${at}: start and answer must lie between min and max`);
+          }
           if (c.type !== "info" && c.type !== "profile" && c.type !== "goal_planner" && !c.source) {
             problems.push(`${at}: graded questions must cite a source`);
           }

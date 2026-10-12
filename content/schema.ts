@@ -93,6 +93,39 @@ export const numericChallenge = z.object({
   hint: z.string().optional(),
 });
 
+/**
+ * "Đoán số": a prediction on a slider. Ungraded (no heart lost): a close guess earns
+ * "Chính xác!", a far one shows the real number. `reveal` lists the milestones shown after.
+ */
+export const estimateChallenge = z.object({
+  ...base,
+  type: z.literal("estimate"),
+  context,
+  prompt: z.string(),
+  min: z.number(),
+  max: z.number(),
+  step: z.number().positive(),
+  start: z.number(),
+  unit: z.string(),
+  answer: z.number(),
+  /** Relative tolerance, e.g. 0.25 = within 25% counts as close. */
+  tolerance: z.number().min(0).max(1),
+  reveal: z.array(z.object({ label: z.string(), value: z.number() })).optional(),
+  explain: insight,
+});
+
+/** "Tìm câu sai": someone explains a topic in three statements; the learner taps the wrong one. */
+export const spotChallenge = z.object({
+  ...base,
+  type: z.literal("spot"),
+  context,
+  prompt: z.string(),
+  statements: z.array(z.string()).length(3),
+  /** Index of the WRONG statement. */
+  answer: z.number().int().min(0).max(2),
+  explain: insight,
+});
+
 export const scenarioChallenge = z.object({
   ...base,
   type: z.literal("scenario"),
@@ -138,6 +171,8 @@ export const challenge = z.discriminatedUnion("type", [
   matchChallenge,
   orderChallenge,
   numericChallenge,
+  estimateChallenge,
+  spotChallenge,
   scenarioChallenge,
   profileChallenge,
   goalPlannerChallenge,

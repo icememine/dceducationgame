@@ -135,6 +135,20 @@ export const fundTypes = {
               source: { sourceId: "w5-bond" },
             },
             {
+              id: "c2-spot-bond",
+              type: "spot",
+              context: "Một người bạn giải thích quỹ trái phiếu cho bạn bằng ba câu.",
+              prompt: "Câu nào sai?",
+              statements: [
+                "Quỹ trái phiếu định giá theo thị trường, nên NAV có thể giảm khi lãi suất tăng.",
+                "Quỹ trái phiếu không bao giờ giảm vì trái phiếu luôn trả lãi.",
+                "Đa dạng hóa giúp giảm rủi ro tập trung vào một tổ chức phát hành.",
+              ],
+              answer: 1,
+              explain: "Lãi coupon vẫn được trả, nhưng giá trái phiếu đang lưu hành thay đổi theo lãi suất và rủi ro tín dụng. Quỹ trái phiếu biến động thấp, không phải không biến động.",
+              source: { sourceId: "w5-bond" },
+            },
+            {
               id: "c2-compare",
               type: "match",
               prompt: "Nối kênh đầu tư với đặc điểm an toàn vốn",

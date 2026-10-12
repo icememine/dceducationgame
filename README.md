@@ -18,6 +18,7 @@ Plus **Hỏi Rồng**, an AI assistant that answers from the Q&A library in Rồ
 - **Mindmap:** [docs/MINDMAP.md](docs/MINDMAP.md)
 - **Quiz formula:** [docs/QUIZ_FORMULA.md](docs/QUIZ_FORMULA.md) · **Golden path:** [docs/GOLDEN_PATH.md](docs/GOLDEN_PATH.md) · **What's next:** [docs/PLAN.md](docs/PLAN.md)
 - **Rồng's tone and mood:** edit [content/ai/rong-voice.md](content/ai/rong-voice.md)
+- **Risk self-check questions and rules:** edit [content/risk/risk-model.ts](content/risk/risk-model.ts)
 
 ## Run it
 
@@ -37,6 +38,7 @@ Set `DATABASE_URL` to use a real Postgres instead (migrations in `./drizzle` run
 | `npm run typecheck` · `npm run lint` · `npm run build` | |
 | `npm run db:generate` | Regenerate SQL migrations after editing `src/db/schema.ts` |
 | `npm run e2e:golden` | End-to-end golden path against a running app (`BASE_URL`, default `http://localhost:3100`) |
+| `npm run e2e:preview` | Tour of estimate/spot lessons, Thư viện and the Hỏi Rồng cap (server with `CONTENT_PREVIEW=1 RONG_DAILY_LIMIT=2`) |
 | `npm run proto:build` | Rebuild `prototype/rong-dc-academy.html` from `prototype/src` and the live content (library, voice guide) |
 
 ## Add a lesson

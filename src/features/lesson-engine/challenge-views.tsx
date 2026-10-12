@@ -13,6 +13,7 @@ export type Draft = {
   pickedLeft?: number;
   order?: number[];
   text?: string;
+  value?: number;
   plan?: { target: number; monthly: number; initial: number; annualReturn: number };
 };
 
@@ -170,6 +171,42 @@ export function NumericView({ c, draft, setDraft, locked }: ViewProps<"numeric">
         <span className="font-bold text-muted">{c.unit}</span>
       </label>
       {c.hint && <p className="text-sm text-muted">{c.hint}</p>}
+    </>
+  );
+}
+
+/** "Đoán số": context, question, then a slider; the server says how close it was. */
+export function EstimateView({ c, draft, setDraft, locked }: ViewProps<"estimate">) {
+  const v = draft.value ?? c.start;
+  return (
+    <>
+      <p className="text-xs font-extrabold uppercase tracking-widest text-sky-deep">Đoán số</p>
+      <Context text={c.context} />
+      <h2 className="text-xl font-extrabold">{c.prompt}</h2>
+      <div className="flex flex-col gap-2 rounded-2xl border-2 border-line p-4">
+        <p className="text-center font-display text-3xl font-extrabold text-sky-deep">{v.toLocaleString("vi-VN")} {c.unit}</p>
+        <input type="range" min={c.min} max={c.max} step={c.step} value={v} disabled={locked} aria-label="Con số bạn đoán"
+          onChange={(e) => setDraft({ value: Number(e.target.value) })} className="w-full accent-[rgb(var(--sky))]" />
+        <p className="flex justify-between text-xs text-muted"><span>{c.min} {c.unit}</span><span>{c.max} {c.unit}</span></p>
+      </div>
+    </>
+  );
+}
+
+/** "Tìm câu sai": three statements from someone in the context; tap the wrong one. */
+export function SpotView({ c, draft, setDraft, locked }: ViewProps<"spot">) {
+  return (
+    <>
+      <p className="text-xs font-extrabold uppercase tracking-widest text-coral-deep">Tìm câu sai</p>
+      <Context text={c.context} />
+      <h2 className="text-xl font-extrabold">{c.prompt}</h2>
+      <div className="flex flex-col gap-2.5">
+        {c.statements.map((s, i) => (
+          <button key={i} className={cn(opt, "font-semibold aria-pressed:border-coral aria-pressed:bg-coral-soft")} aria-pressed={draft.choice === i} disabled={locked} onClick={() => setDraft({ choice: i })}>
+            “{s}”
+          </button>
+        ))}
+      </div>
     </>
   );
 }

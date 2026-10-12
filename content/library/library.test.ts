@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { findLesson } from "../index";
 import { FAQ_NUMBERS } from "../outline";
-import { FEES, LIMITS, netProceeds, SELL_EXAMPLE } from "./fund-facts";
+import { FACTS_AS_OF, FEES, LIMITS, netProceeds, SELL_EXAMPLE } from "./fund-facts";
 import { CATEGORIES, excluded, glossary, library, searchLibrary } from "./index";
 
 const vnd = (n: number) => n.toLocaleString("vi-VN");
@@ -35,6 +35,12 @@ describe("Q&A library", () => {
 });
 
 describe("fund facts used in lessons", () => {
+  it("has been re-checked against the official fee schedule in the last 4 months", () => {
+    // A deliberate reminder: when this fails, confirm fees/schedules with Compliance and bump FACTS_AS_OF.
+    const ageDays = (Date.now() - Date.parse(`${FACTS_AS_OF}-01`)) / 86_400_000;
+    expect(ageDays, `FACTS_AS_OF is ${FACTS_AS_OF}`).toBeLessThan(122);
+  });
+
   it("keeps the worked redemption consistent", () => {
     const { gross, pit, sellFee, transferFee, net, units, nav } = SELL_EXAMPLE;
     expect(Math.round(units * nav)).toBe(gross);
