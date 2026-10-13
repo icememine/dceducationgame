@@ -24,11 +24,6 @@ function render() {
   if (sc && key === lastKey && S.screen !== "lesson") sc.scrollTop = top;
   const chat = document.getElementById("chatScroll");
   if (chat) chat.scrollTop = chat.scrollHeight;
-  if (S.screen === "main" && S.tab === "learn" && !T.scrolledPath) {
-    T.scrolledPath = true;
-    const cur = app.querySelector(".node.current");
-    if (cur) cur.scrollIntoView({ block: "center" });
-  }
   if (S.screen === "result" && !T.confettiDone) { T.confettiDone = true; confetti(); }
   lastKey = key;
   save();
@@ -77,6 +72,21 @@ document.getElementById("flowIndex").addEventListener("click", (e) => {
   else S.screen = k;
   render();
 });
+/* ---------- theme: light by default, dark on request; remembered in this browser ---------- */
+const THEME_KEY = "rdc-proto-theme";
+let theme = "light";
+try { if (localStorage.getItem(THEME_KEY) === "dark") theme = "dark"; } catch {}
+function themeSwitch() {
+  return `<div class="theme-switch">${[["light", "Sáng", "Mặc định"], ["dark", "Tối", "Dịu mắt khi tối"]].map(([k, l, n]) => `<button type="button" data-themeset="${k}" aria-pressed="${theme === k}"><span>${l}<small>${n}</small></span></button>`).join("")}</div>`;
+}
+function applyTheme(t) {
+  theme = t;
+  document.documentElement.dataset.theme = t;
+  try { localStorage.setItem(THEME_KEY, t); } catch {}
+  document.getElementById("themeSwitch").innerHTML = themeSwitch();
+}
+applyTheme(theme);
+document.getElementById("themeSwitch").addEventListener("click", (e) => { const b = e.target.closest("[data-themeset]"); if (b) { applyTheme(b.dataset.themeset); render(); } });
 document.getElementById("resetBtn").addEventListener("click", () => {
   try { localStorage.removeItem(KEY); } catch {}
   S = fresh(); T = { lesson: null, modal: null, popover: null, ai: null, rong: { turns: [], busy: false }, result: null, toast: null, scrolledPath: false };
@@ -106,6 +116,7 @@ app.addEventListener("click", (e) => {
   if (d.preset) { const p = PRESETS[d.preset]; S.planner = { kind: d.preset, target: p.target, monthly: p.monthly, initial: p.initial, rate: p.rate }; return render(); }
   if (d.riskdec) return decideRisk(d.riskdec, false);
   if (d.toast) return toast(d.toast);
+  if (d.themeset) { applyTheme(d.themeset); return render(); }
   const L = T.lesson;
   if (L && S.screen === "lesson") {
     const q = curItem();

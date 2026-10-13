@@ -6,7 +6,8 @@ const app = document.getElementById("app");
 
 /* ---------- helpers ---------- */
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
-const mascot = (mood = "explore", size = 96) => `<img class="mascot" src="${M[mood] || M.explore}" width="${size}" height="${size}" alt="">`;
+/** Rồng DC as a small round icon (head-and-shoulders crop in a tinted circle); tone: gold, coral, sky, violet, plain, glass. */
+const mascot = (mood = "explore", size = 44, tone = "") => { const z = Math.min(size, 104); return `<span class="mi ${tone}" style="width:${z}px;height:${z}px" aria-hidden="true"><img src="${M[mood] || M.explore}" alt=""></span>`; };
 const vnd = (n) => {
   if (!isFinite(n)) return "—";
   if (Math.abs(n) >= 1e9) return (n / 1e9).toLocaleString("vi-VN", { maximumFractionDigits: 2 }) + " tỷ";

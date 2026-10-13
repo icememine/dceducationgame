@@ -1,30 +1,36 @@
 <title>Rồng DC Academy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap">
 <style>
-/* Layout: flow index on the left, one phone-sized app on the right; at phone width the app fills the screen and the index becomes a chip row. Tokens from the Investor365 prototype. */
+/* Layout: flow index on the left, one phone-sized app on the right; at phone width the app fills the screen and the index becomes a chip row.
+   Theme "Tư vấn": light by default, dark when <html data-theme="dark"> (toggle in the index and on Hồ sơ). Same tokens as the app (src/app/globals.css). */
 :root{
-  --page:#E8EFEB; --surface:#FFFFFF; --sunken:#F3F7F5; --ink:#15302A; --muted:#5F756D; --line:#D9E4DF;
-  --jade:#16A571; --jade-deep:#0D7D55; --jade-soft:#D8F3E7;
-  --gold:#F0AE2E; --gold-deep:#B07A0D; --gold-soft:#FFF1D2;
-  --coral:#E4474D; --coral-deep:#B3303A; --coral-soft:#FDE3E3;
-  --sky:#2C86D1; --sky-deep:#1D669F; --sky-soft:#DDEEFB;
-  --violet:#7A5BD0; --violet-deep:#5B3FAE; --violet-soft:#ECE6FA;
-  --locked:#E3E9E6; --locked-deep:#C3CEC9; --frame:#15302A; --on-accent:#FFFFFF;
-  --f-display:"Baloo 2","Nunito",ui-rounded,system-ui,sans-serif;
-  --f-body:"Nunito",ui-rounded,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --page:#F3F5F9; --surface:#FFFFFF; --sunken:#EEF1F6; --ink:#0E1421; --muted:#5F6B80; --line:#E3E8F0; --line-strong:#C5CDDA;
+  --jade:#0B8A66; --jade-deep:#086A4F; --jade-soft:#DDF5EC;
+  --gold:#9A6206; --gold-deep:#825204; --gold-soft:#FFF4DC;
+  --coral:#C4323E; --coral-deep:#A02430; --coral-soft:#FCE7E8;
+  --sky:#1D64B4; --sky-deep:#165094; --sky-soft:#E1EDFA;
+  --violet:#664CBE; --violet-deep:#523AA0; --violet-soft:#ECE8FA;
+  --locked:#EEF1F6; --locked-deep:#8C97AB; --frame:#0E1421; --on-accent:#FFFFFF;
+  --primary:#0E1421; --on-primary:#FFFFFF;
+  --hero:#0E1421; --hero-line:#0E1421; --hero-ink:#EEF2F8; --hero-muted:#8C97AB; --hero-accent:#4FD1A5;
+  --f-display:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --page:#08110E; --surface:#111D19; --sunken:#182722; --ink:#E6F0EB; --muted:#93A9A1; --line:#25372F;
-  --jade:#27BF86; --jade-deep:#137E58; --jade-soft:#123A2C; --gold:#F4B840; --gold-deep:#A87310; --gold-soft:#3A2D10;
-  --coral:#F0626A; --coral-deep:#A8323B; --coral-soft:#3D1A1D; --sky:#4C9EE3; --sky-deep:#28689F; --sky-soft:#13283A;
-  --violet:#A58DF0; --violet-deep:#6A50C2; --violet-soft:#2A2246; --locked:#22322C; --locked-deep:#17241F; --frame:#2A3D36; color-scheme:dark;}}
 :root[data-theme="dark"]{
-  --page:#08110E; --surface:#111D19; --sunken:#182722; --ink:#E6F0EB; --muted:#93A9A1; --line:#25372F;
-  --jade:#27BF86; --jade-deep:#137E58; --jade-soft:#123A2C; --gold:#F4B840; --gold-deep:#A87310; --gold-soft:#3A2D10;
-  --coral:#F0626A; --coral-deep:#A8323B; --coral-soft:#3D1A1D; --sky:#4C9EE3; --sky-deep:#28689F; --sky-soft:#13283A;
-  --violet:#A58DF0; --violet-deep:#6A50C2; --violet-soft:#2A2246; --locked:#22322C; --locked-deep:#17241F; --frame:#2A3D36; color-scheme:dark;}
+  --page:#0E1421; --surface:#161D2D; --sunken:#1C2435; --ink:#EEF2F8; --muted:#8C97AB; --line:#24304A; --line-strong:#3A4760;
+  --jade:#4FD1A5; --jade-deep:#7BE0BF; --jade-soft:#163A31;
+  --gold:#E8B04B; --gold-deep:#F0C46E; --gold-soft:#2A2416;
+  --coral:#F06E76; --coral-deep:#F5969B; --coral-soft:#3A1A1E;
+  --sky:#60A5EB; --sky-deep:#8CBEF5; --sky-soft:#16283E;
+  --violet:#A087EB; --violet-deep:#B9A5F5; --violet-soft:#282042;
+  --locked:#1C2435; --locked-deep:#5F6B80; --frame:#2A3550; --on-accent:#0E1421;
+  --primary:#4FD1A5; --on-primary:#0E1421;
+  --hero:#1B2A3A; --hero-line:#27476A; --hero-ink:#EEF2F8; --hero-muted:#8C97AB; --hero-accent:#4FD1A5;
+  color-scheme:dark;
+}
 html,body{height:100%}
 body{background:var(--page);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.45;padding-inline:16px;padding-block:20px;box-sizing:border-box;margin:0}
 *{box-sizing:border-box}
@@ -323,6 +329,131 @@ mark{background:var(--coral-soft);color:inherit;border-bottom:2px solid var(--co
 .qbar i{display:block;height:100%;background:var(--gold);border-radius:999px}
 .qbar span{position:absolute;inset:0;text-align:center;font-size:11px;line-height:16px;font-weight:800}
 .monthly{background:var(--violet);color:var(--on-accent);border-color:var(--violet)}
+
+/* ===== "Tư vấn" style layer: flat, calm components (overrides the rules above) ===== */
+h1,h2,h3,h4{font-weight:700!important}
+.phone{background:var(--page)}
+.btn{border-radius:14px;font-weight:700;letter-spacing:0;text-transform:none;background:var(--primary);color:var(--on-primary);box-shadow:none;transition:opacity .1s}
+.btn:active{transform:none;box-shadow:none;opacity:.85}
+.btn[disabled]{background:var(--sunken);color:var(--muted);box-shadow:none}
+.btn.ghost{background:var(--surface);color:var(--ink);box-shadow:none;border:1px solid var(--line-strong)}
+.btn.coral,.foot .btn.wrongbtn{background:var(--coral);color:var(--on-accent);box-shadow:none}
+.btn.sky,.foot .btn.infobtn{background:var(--sky);color:var(--on-accent);box-shadow:none}
+.btn.gold{background:var(--gold);color:var(--on-accent);box-shadow:none}
+.linkbtn{letter-spacing:0;text-transform:none;font-weight:600}
+.chip{font-weight:600}
+.card{border:1px solid var(--line);border-radius:16px}
+.section-label{font-weight:700;letter-spacing:.1em;font-size:11px}
+.page-h h2{font-size:22px}
+/* mascot: small round head-and-shoulders icon */
+.mi{position:relative;display:inline-block;flex:none;overflow:hidden;border-radius:50%;background:var(--jade-soft)}
+.mi img{position:absolute;width:133%;height:133%;left:-16.5%;top:1%;max-width:none}
+.mi.gold{background:var(--gold-soft)} .mi.coral{background:var(--coral-soft)} .mi.sky{background:var(--sky-soft)} .mi.violet{background:var(--violet-soft)} .mi.plain{background:var(--sunken)} .mi.glass{background:rgba(255,255,255,.1)}
+/* onboarding */
+.bar,.prog,.qbar,.cmp-row .track,.dim .track{background:var(--line)}
+.bar{height:6px}
+.bubble{border:1px solid var(--line);background:var(--surface);font-weight:600}
+.choice,.row-btn,.scen{border:1px solid var(--line);border-bottom-width:1px;border-radius:14px;font-weight:600}
+.choice[aria-pressed="true"],.row-btn[aria-pressed="true"]{border-color:var(--jade);background:var(--jade-soft)}
+.welcome h2{font-size:26px}
+.tagline{font-weight:700;color:var(--jade);letter-spacing:.1em;font-size:12px}
+/* status + tabs */
+.status{padding:12px 14px;border-bottom:1px solid var(--line);background:var(--page)}
+.course-chip{font-weight:700;font-size:19px;padding:4px 2px}
+.course-chip .code{display:none}
+.stat{font-weight:600;color:var(--muted)!important;font-size:13px}
+.stat.gift{width:38px;height:38px;justify-content:center;border:1px solid var(--line);background:var(--surface);border-radius:12px;color:var(--ink)!important;margin-left:4px}
+.tabs{border-top:1px solid var(--line)}
+.tab{font-weight:500;font-size:10.5px;padding:9px 0 11px;gap:4px}
+.tab[aria-current="true"]{color:var(--jade);font-weight:700}
+.tab[aria-current="true"] .ico{color:var(--jade)}
+/* learn: progress card, next-lesson hero, unit header, lesson list */
+.learn{display:flex;flex-direction:column;gap:12px;padding:14px 16px 90px}
+.progress-card{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px}
+.progress-card b{display:block;font-size:15px}
+.progress-card small{color:var(--muted);font-size:13px}
+.ringbox{position:relative;width:60px;height:60px;flex:none}
+.ringbox span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.hero{display:flex;flex-direction:column;gap:9px;background:var(--hero);border:1px solid var(--hero-line);color:var(--hero-ink);border-radius:16px;padding:15px;text-align:left;width:100%}
+.hero .over{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--hero-accent)}
+.hero h3{font-size:18px;line-height:1.3}
+.hero .meta{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:13px;color:var(--hero-muted)}
+.hero .go{flex:none;white-space:nowrap;background:var(--hero-accent);color:#0E1421;font-weight:700;font-size:13px;border-radius:10px;padding:8px 15px}
+.uhead{display:flex;align-items:center;gap:10px;margin-top:10px;padding:0 2px}
+.uhead .t{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}
+.uhead .over{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--jade)}
+.uhead h3{font-size:16.5px;line-height:1.25}
+.uhead .count{flex:none;font-size:12px;font-weight:600;color:var(--muted);background:var(--sunken);border-radius:999px;padding:3px 9px;font-variant-numeric:tabular-nums}
+.uhead .guide{flex:none;width:34px;height:34px;border:1px solid var(--line);background:var(--surface);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--muted)}
+.uhead.locked .over,.uhead.locked h3{color:var(--muted)}
+.ulist{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.lrow{display:flex;align-items:center;gap:11px;width:100%;text-align:left;border:0;border-bottom:1px solid var(--line);background:none;padding:11px 13px;font-size:14px}
+.ulist>div:last-child .lrow{border-bottom:0}
+.lrow:hover{background:var(--sunken)}
+.lrow .mk{width:26px;height:26px;border-radius:8px;flex:none;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:var(--sunken);color:var(--muted)}
+.lrow .mk .ico{width:14px;height:14px}
+.lrow.done .mk{background:var(--jade-soft);color:var(--jade)}
+.lrow.current .mk{background:none;border:2px solid var(--jade);color:var(--jade)}
+.lrow.demo .mk{background:var(--sky-soft);color:var(--sky)}
+.lrow .tt{flex:1;min-width:0}
+.lrow.current .tt{font-weight:600}
+.lrow.locked .tt{color:var(--muted)}
+.lrow .rr{font-size:12px;color:var(--muted)}
+.lrow.current .rr{color:var(--jade);font-weight:600}
+.lrow.demo .rr{color:var(--sky);font-weight:600}
+.pop.inline{position:static;width:auto;margin:0 10px 10px;box-shadow:none;border:1px solid var(--line);background:var(--sunken)}
+.fab{width:56px;height:56px;border:1px solid var(--line);box-shadow:0 8px 20px -10px rgba(0,0,0,.35)}
+.fab span{background:var(--primary);color:var(--on-primary);font-weight:700}
+/* lesson */
+.lesson-top{padding:14px 16px 10px}
+.q-kind{font-weight:700;letter-spacing:.1em;font-size:11px}
+.q h2{font-size:19px}
+.ctx{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px;font-size:14.5px}
+.opt,.tile{border:1px solid var(--line);border-bottom-width:1px;border-radius:14px;font-weight:500;background:var(--surface)}
+.opt .key{border-radius:50%;border:1px solid var(--line-strong);font-weight:600}
+.opt[aria-pressed="true"],.tile[aria-pressed="true"],.sent[aria-pressed="true"]{border-color:var(--jade);background:var(--jade-soft);font-weight:600}
+.opt[aria-pressed="true"] .key{background:var(--jade);border-color:var(--jade);color:var(--on-accent)}
+.spot{background:var(--surface);border:1px solid var(--line)}
+.est .val{font-weight:700;color:var(--ink)}
+.est input[type=range]{accent-color:var(--jade)}
+.calc-row,.compose textarea,.starters button,.goal-chips button,.field .inp{border-width:1px}
+.say{background:var(--surface);border:1px solid var(--line)}
+.foot{border-top:1px solid var(--line);background:var(--surface)}
+.fb-head{font-weight:700;font-size:19px}
+.chartbox{background:var(--surface);border:1px solid var(--line)}
+/* results */
+.rt{border:1px solid var(--line)!important;background:var(--surface)!important;border-radius:14px;text-align:left}
+.rt .lab{color:var(--muted);text-transform:none;font-weight:500;padding:8px 10px 0}
+.rt .val{padding:2px 10px 10px;font-weight:700}
+.day.on i{background:var(--jade)}
+.scale5 span{font-weight:600}
+/* tools */
+.seg{border-radius:12px}
+.seg button{font-weight:600}
+.seg button[aria-pressed="true"]{box-shadow:0 0 0 1px var(--line)}
+.callout{background:var(--jade-soft)}
+.callout .lab{font-weight:700;letter-spacing:.1em;font-size:11px}
+/* AI */
+.msg.me{background:var(--primary);color:var(--on-primary)}
+.msg.them{background:var(--surface);border:1px solid var(--line)}
+.persona,.compose{border-color:var(--line);border-width:1px}
+.coach{border:1px solid var(--violet)}
+/* league / profile */
+.lb{background:var(--surface);border:1px solid var(--line);border-radius:16px;margin:0 16px;padding:0;overflow:hidden}
+.lb li{border-radius:0;border-bottom:1px solid var(--line);padding:9px 12px}
+.lb li:last-child{border-bottom:0}
+.lb .who{font-weight:600}
+.zone{border-top:0;background:var(--jade-soft);margin:0;padding:4px;font-weight:700}
+.sg{border:1px solid var(--line);background:var(--surface)}
+.sg b{font-weight:700}
+.monthly{background:var(--hero);color:var(--hero-ink);border-color:var(--hero-line)}
+.qbar{height:6px} .qbar i{background:var(--jade)} .qbar span{display:none}
+.quest .qi{background:var(--jade-soft)!important;color:var(--jade)}
+.theme-switch{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.theme-switch button{display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:9px 10px;font-weight:600;font-size:13px;text-align:left}
+.theme-switch button[aria-pressed="true"]{border-color:var(--jade);background:var(--jade-soft)}
+.theme-switch small{display:block;color:var(--muted);font-weight:500;font-size:11.5px}
+.index .theme-switch{max-width:240px}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
 </style>
 
@@ -335,6 +466,7 @@ mark{background:var(--coral-soft);color:inherit;border-bottom:2px solid var(--co
       <span id="aiStatus" class="ai-pill">AI: đang kết nối…</span>
       <span>Luyện tình huống AI và Hỏi Rồng gọi Claude thật trên tài khoản của người xem (hỏi phép ở lần đầu). Khi không có AI, bản mẫu dùng câu trả lời soạn sẵn.</span>
       <span>Tên, điểm, bảng xếp hạng là dữ liệu mẫu. Số liệu minh họa trong mô phỏng không phải dữ liệu NAV thật.</span>
+      <span class="theme-switch" id="themeSwitch" role="group" aria-label="Giao diện"></span>
       <button type="button" id="resetBtn">Làm lại từ đầu</button>
     </div>
   </aside>
@@ -350,7 +482,8 @@ const app = document.getElementById("app");
 
 /* ---------- helpers ---------- */
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
-const mascot = (mood = "explore", size = 96) => `<img class="mascot" src="${M[mood] || M.explore}" width="${size}" height="${size}" alt="">`;
+/** Rồng DC as a small round icon (head-and-shoulders crop in a tinted circle); tone: gold, coral, sky, violet, plain, glass. */
+const mascot = (mood = "explore", size = 44, tone = "") => { const z = Math.min(size, 104); return `<span class="mi ${tone}" style="width:${z}px;height:${z}px" aria-hidden="true"><img src="${M[mood] || M.explore}" alt=""></span>`; };
 const vnd = (n) => {
   if (!isFinite(n)) return "—";
   if (Math.abs(n) >= 1e9) return (n / 1e9).toLocaleString("vi-VN", { maximumFractionDigits: 2 }) + " tỷ";
@@ -685,11 +818,9 @@ const unlocked = (code) => { for (const s of STAGES) { const { st } = statusOf(s
 function statusBar() {
   const s = stageOf(S.stage);
   return `<div class="status">
-    <button class="course-chip" data-modal="stages" aria-label="Đổi chặng học"><span class="code">${s.code === "B" ? "1" : s.code === "C" ? "2" : "3"}</span><span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(s.title)}</span>${ic("chev")}</button>
+    <button class="course-chip" data-modal="stages" aria-label="Đổi chặng học"><span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(s.title)}</span>${ic("chev")}</button>
     <div class="stats">
-      <span class="stat fire" title="Chuỗi ngày học">${ic("flame")}${S.streak}</span>
-      <span class="stat xp" title="Tổng XP">${ic("bolt")}${S.xp.toLocaleString("vi-VN")}</span>
-      ${STAGE_META[S.stage].hearts ? `<span class="stat heart" title="Tim">${ic("heart")}${S.hearts}</span>` : ""}
+      ${STAGE_META[S.stage].hearts ? `<span class="stat heart" title="Lượt sai còn lại">${ic("heart")}${S.hearts}</span>` : ""}
       <button class="stat gift" data-modal="quests" title="Nhiệm vụ hôm nay" aria-label="Nhiệm vụ hôm nay">${ic("gift")}</button>
     </div></div>`;
 }
@@ -784,39 +915,49 @@ function decideRisk(decision, acknowledged) {
   toast("Đã lưu hồ sơ rủi ro");
 }
 
-/* ---------- learn path ---------- */
+/* ---------- learn: progress, next lesson, units as lists ---------- */
+const ring = (pct) => { const r = 25, c = 2 * Math.PI * r; return `<div class="ringbox"><svg width="60" height="60" viewBox="0 0 60 60" role="img" aria-label="Hoàn thành ${pct}%"><circle cx="30" cy="30" r="${r}" fill="none" stroke="var(--line)" stroke-width="6"/><circle cx="30" cy="30" r="${r}" fill="none" stroke="var(--jade)" stroke-width="6" stroke-linecap="round" stroke-dasharray="${c}" stroke-dashoffset="${c * (1 - pct / 100)}" transform="rotate(-90 30 30)"/></svg><span>${pct}%</span></div>`; };
+/** Unit codes are like "B1"; the overline shows "Phần N" and the code. */
 function vLearn() {
-  const s = stageOf(S.stage), meta = STAGE_META[S.stage];
-  const { st } = statusOf(S.stage);
-  const zig = [0, -54, -78, -54, 0, 54, 78, 54];
-  let k = 0;
+  const s = stageOf(S.stage);
+  const { st, current, list } = statusOf(S.stage);
+  const doneN = [...st.values()].filter((v) => v === "done").length;
+  const pct = Math.round((doneN / list.length) * 100);
+  let nextUnit = null, nextIdx = 0;
+  s.units.forEach((u, ui) => u.lessons.forEach((l, li) => { if (l.code === current) { nextUnit = { u, ui }; nextIdx = li; } }));
+  const next = current && list.find((l) => l.code === current);
+  const nextDemo = next && DEMO[next.code];
+  const hero = next ? `<button class="hero" ${nextDemo ? `data-start="${nextDemo}"` : `data-node="${next.code}"`}>
+      <span class="over"><span>Tiếp theo · Phần ${nextUnit.ui + 1}, bài ${nextIdx + 1}</span>${mascot(nextUnit.u.mascot, 42, "glass")}</span>
+      <h3>${esc(next.title)}</h3>
+      <span class="meta"><span>${esc(next.goal || "")}</span><span class="go">${nextDemo ? "Tiếp tục" : "Xem bài"}</span></span></button>` : "";
   const units = s.units.map((u, ui) => {
-    const allLocked = u.lessons.every((l) => st.get(l.code) === "locked");
-    const nodes = u.lessons.map((l) => {
-      const i = k++, status = st.get(l.code), open = T.popover === l.code, demo = DEMO[l.code];
-      const icon = status === "locked" ? "lock" : status === "done" ? "check" : /Kiểm tra/.test(l.title) ? "trophy" : "star";
+    const locked = u.lessons.every((l) => st.get(l.code) === "locked");
+    const n = u.lessons.filter((l) => st.get(l.code) === "done").length;
+    const rows = u.lessons.map((l, li) => {
+      const status = st.get(l.code), open = T.popover === l.code, demo = DEMO[l.code];
+      const mk = status === "done" ? ic("check") : /Kiểm tra/.test(l.title) && status === "locked" ? ic("lock") : li + 1;
+      const right = status === "done" ? "Ôn lại" : status === "current" ? (demo ? "+" + LESSONS[demo].xp + " điểm" : "Tiếp theo") : status === "demo" ? "Bài mẫu" : "";
       let pop = "";
       if (open) {
         const playable = !!demo && status !== "locked";
-        pop = `<div class="pop" style="left:${-92 - zig[i % 8] / 3}px">
-          <span class="chip" style="align-self:flex-start">${esc(l.code)}${demo ? " · bài mẫu" : ""}</span>
-          <h4>${esc(l.title)}</h4><p>${esc(l.goal)}</p>
-          ${status === "locked" ? `<button class="btn sm" disabled>Đang khoá</button>` : playable ? `<button class="btn sm" data-start="${demo}">${status === "done" ? "Ôn tập · +5 XP" : "Bắt đầu · +" + LESSONS[demo].xp + " XP"}</button>` : `<button class="btn sm" disabled>Chưa có trong bản mẫu</button><p style="font-size:12px">Thử các bài màu xanh dương, hoặc chọn ở danh sách bên trái.</p>`}
+        pop = `<div class="pop inline">
+          <p>${esc(l.goal)}</p>
+          ${status === "locked" ? `<button class="btn sm" disabled>Đang khoá</button>` : playable ? `<button class="btn sm" data-start="${demo}">${status === "done" ? "Ôn tập · +5 điểm" : "Bắt đầu · +" + LESSONS[demo].xp + " điểm"}</button>` : `<button class="btn sm" disabled>Chưa có trong bản mẫu</button><p style="font-size:12px">Thử các bài có nhãn "Bài mẫu", hoặc chọn ở danh sách bên trái.</p>`}
         </div>`;
       }
-      return `<div class="node-wrap" style="transform:translateX(${zig[i % 8]}px);${open ? "z-index:6" : ""}">
-        ${status === "current" && !open ? `<div class="start-tip">BẮT ĐẦU</div><div class="ring"></div>` : ""}
-        <button class="node ${status}" data-node="${l.code}" aria-label="${esc(l.code + " " + l.title)}">${ic(icon)}</button>
-        <span class="node-label">${esc(l.title)}</span>${pop}</div>`;
+      return `<div><button class="lrow ${status}" data-node="${l.code}" aria-expanded="${open}" aria-label="${esc(l.code + " " + l.title)}"><span class="mk">${mk}</span><span class="tt">${esc(l.title)}</span><span class="rr">${right}</span></button>${pop}</div>`;
     }).join("");
-    const color = meta.color[ui % meta.color.length];
-    return `<div class="unit ${allLocked ? "locked" : ""}" style="background:${color}">
-        <div style="min-width:0"><h3>${esc(u.code)} · ${esc(u.title)}</h3><p>${esc(u.why)}</p></div>
+    return `<div class="uhead ${locked ? "locked" : ""}">${mascot(u.mascot, 40, locked ? "plain" : "")}
+        <div class="t"><span class="over">Phần ${ui + 1} · ${esc(u.code)}</span><h3>${esc(u.title)}</h3></div>
+        <span class="count">${n} / ${u.lessons.length} bài</span>
         <button class="guide" data-guide="${u.code}" aria-label="Sổ tay phần ${esc(u.code)}">${ic("book")}</button></div>
-      <div class="path">${nodes}<div class="path-mascot" aria-hidden="true">${mascot(u.mascot, 78)}</div></div>`;
+      <div class="ulist">${rows}</div>`;
   }).join("");
-  return `${statusBar()}<div class="scroll" id="pathScroll">${units}<div style="height:70px"></div></div>
-    <button class="fab" data-go="rong" aria-label="Hỏi Rồng">${mascot("study", 52)}<span>Hỏi Rồng</span></button>${tabBar()}`;
+  return `${statusBar()}<div class="scroll" id="pathScroll"><div class="learn">
+      <div class="progress-card">${ring(pct)}<div><b>${doneN} trên ${list.length} bài</b><small>Chuỗi ${S.streak} ngày · ${S.xp.toLocaleString("vi-VN")} điểm</small></div></div>
+      ${hero}${units}</div></div>
+    <button class="fab" data-go="rong" aria-label="Hỏi Rồng">${mascot("study", 50)}<span>Hỏi Rồng</span></button>${tabBar()}`;
 }
 
 /* ---------- tools ---------- */
@@ -833,12 +974,12 @@ function plannerChart(p) {
   const max = Math.max(p.target * 1e6, ...pts.map((d) => d.v));
   const w = 320, h = 140, pad = 6, bw = (w - 2 * pad) / years;
   const ty = h - 18 - (p.target * 1e6 / max) * (h - 26);
-  const bars = pts.map((d, i) => { const vh = (d.v / max) * (h - 26), ch = (d.c / max) * (h - 26); const x = pad + i * bw + 1; return `<rect x="${x}" y="${h - 18 - vh}" width="${bw - 2}" height="${vh}" rx="2" fill="var(--jade)"/><rect x="${x}" y="${h - 18 - ch}" width="${bw - 2}" height="${ch}" rx="2" fill="var(--gold)"/>`; }).join("");
+  const bars = pts.map((d, i) => { const vh = (d.v / max) * (h - 26), ch = (d.c / max) * (h - 26); const x = pad + i * bw + 1; return `<rect x="${x}" y="${h - 18 - vh}" width="${bw - 2}" height="${vh}" rx="2" fill="var(--jade)"/><rect x="${x}" y="${h - 18 - ch}" width="${bw - 2}" height="${ch}" rx="2" fill="var(--locked-deep)"/>`; }).join("");
   return `<div class="chartbox"><svg viewBox="0 0 ${w} ${h}" role="img" aria-label="Vốn góp và giá trị minh họa theo năm">${bars}
     <line x1="${pad}" x2="${w - pad}" y1="${ty}" y2="${ty}" stroke="var(--coral)" stroke-dasharray="4 3" stroke-width="1.5"/>
     <text x="${w - pad}" y="${ty - 4}" text-anchor="end" font-size="10" font-weight="800" fill="var(--coral-deep)">Mục tiêu ${vnd(p.target * 1e6)}</text>
     <text x="${pad}" y="${h - 4}" font-size="10" font-weight="700" fill="var(--muted)">Năm 1</text><text x="${w - pad}" y="${h - 4}" text-anchor="end" font-size="10" font-weight="700" fill="var(--muted)">Năm ${years}</text></svg>
-    <div class="legend"><span><i style="background:var(--gold)"></i>Tiền bạn góp</span><span><i style="background:var(--jade)"></i>Giá trị minh họa</span></div></div>`;
+    <div class="legend"><span><i style="background:var(--locked-deep)"></i>Tiền bạn góp</span><span><i style="background:var(--jade)"></i>Giá trị minh họa</span></div></div>`;
 }
 function vTools() {
   const seg = `<div class="seg" role="group" aria-label="Công cụ"><button data-toolseg="planner" aria-pressed="${S.toolSeg === "planner"}">Lập kế hoạch</button><button data-toolseg="compound" aria-pressed="${S.toolSeg === "compound"}">Lãi kép 25 vs 45</button></div>`;
@@ -891,7 +1032,7 @@ const PEOPLE = [["Rồng Tích Sản (bạn)", "explore", null], ["Cá Chép Hó
 function vLeague() {
   const rows = PEOPLE.map(([n, m, x]) => [n, m, x ?? S.weekXp, x == null]).sort((a, b) => b[2] - a[2]);
   const shield = (c, dim) => `<svg class="league ${dim ? "dim" : ""}" viewBox="0 0 42 46" aria-hidden="true"><path d="M21 2 38 8v14c0 11-7.5 18.5-17 22C11.5 40.5 4 33 4 22V8z" fill="${c}"/><path d="M21 12l2.6 5.4 5.9.8-4.3 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z" fill="var(--surface)" opacity=".9"/></svg>`;
-  const list = rows.map((r, i) => `${i === 5 ? `<li style="padding:0"><div class="zone" style="width:100%;margin:2px 0">Vùng lên hạng</div></li>` : ""}<li class="${r[3] ? "me" : ""}"><span class="rk ${i < 3 ? "top" : ""}">${i + 1}</span>${mascot(r[1], 38)}<span class="who">${esc(r[0])}</span><span class="pts">${r[2]} XP</span></li>`).join("");
+  const list = rows.map((r, i) => `${i === 5 ? `<li style="padding:0"><div class="zone" style="width:100%;margin:2px 0">Vùng lên hạng</div></li>` : ""}<li class="${r[3] ? "me" : ""}"><span class="rk ${i < 3 ? "top" : ""}">${i + 1}</span>${mascot(r[1], 38)}<span class="who">${esc(r[0])}</span><span class="pts">${r[2]} điểm</span></li>`).join("");
   return `${statusBar()}<div class="scroll">
     <div class="leagues">${shield("var(--gold-deep)", 1)}${shield("var(--muted)", 1)}${shield("var(--gold)", 1)}${shield("var(--jade)")}${shield("var(--sky)", 1)}${shield("var(--violet)", 1)}</div>
     <div class="page-h" style="align-items:center;text-align:center;padding-top:6px"><h2>Hạng Ngọc Bích</h2><p>Top 5 lên Hạng Lam Ngọc · còn 3 ngày · chỉ hiển thị biệt danh</p></div>
@@ -909,7 +1050,7 @@ function questRows() {
 function vProfile() {
   const r = S.risk && typeof S.risk.total === "number" ? S.risk : null, p = r ? PROFILES[riskBand(r)] : null;
   return `${statusBar()}<div class="scroll">
-    <div class="prof-head">${mascot("explore", 70)}<div><h2 style="font-size:22px">${esc(S.nickname)}</h2><small>Tham gia tháng 10/2026 · mục tiêu ${S.goal || 10} phút/ngày</small></div></div>
+    <div class="prof-head">${mascot("explore", 56)}<div><h2 style="font-size:22px">${esc(S.nickname)}</h2><small>Tham gia tháng 10/2026 · mục tiêu ${S.goal || 10} phút/ngày</small></div></div>
     <div class="statgrid">
       <div class="sg"><span style="color:var(--gold-deep)">${ic("flame")}</span><div><b>${S.streak}</b><small>Ngày liên tiếp</small></div></div>
       <div class="sg"><span style="color:var(--sky)">${ic("bolt")}</span><div><b>${S.xp.toLocaleString("vi-VN")}</b><small>Tổng XP</small></div></div>
@@ -926,6 +1067,8 @@ function vProfile() {
     <div class="card">${S.weak.slice(0, 3).map((w) => `<div class="cert"><span style="color:var(--coral)">${ic("flag")}</span><div class="body"><b>${esc(w.t)}</b><small>${esc(w.s)}</small></div></div>`).join("")}<button class="btn sky sm" data-start="case">Ôn tập nhanh 3 phút</button></div>
     <div class="section-label">Nhiệm vụ hôm nay</div>
     <div class="card">${questRows()}</div>
+    <div class="section-label">Giao diện</div>
+    <div class="card">${themeSwitch()}</div>
     <div class="card" style="background:var(--jade-soft);border-color:var(--jade-soft)"><b>Sẵn sàng bắt đầu?</b><span style="font-size:14px">Tạo mục tiêu \"Đầu tư theo mục tiêu\" và đọc tài liệu quỹ chính thức trên DragonX.</span><button class="btn sm" data-toast="Bản mẫu: nút này mở DragonX">Mở DragonX</button><p class="disc">Nội dung mang tính giáo dục, không phải khuyến nghị đầu tư. Kết quả quá khứ không bảo đảm tương lai.</p></div>
   </div>${tabBar()}`;
 }
@@ -1425,11 +1568,6 @@ function render() {
   if (sc && key === lastKey && S.screen !== "lesson") sc.scrollTop = top;
   const chat = document.getElementById("chatScroll");
   if (chat) chat.scrollTop = chat.scrollHeight;
-  if (S.screen === "main" && S.tab === "learn" && !T.scrolledPath) {
-    T.scrolledPath = true;
-    const cur = app.querySelector(".node.current");
-    if (cur) cur.scrollIntoView({ block: "center" });
-  }
   if (S.screen === "result" && !T.confettiDone) { T.confettiDone = true; confetti(); }
   lastKey = key;
   save();
@@ -1478,6 +1616,21 @@ document.getElementById("flowIndex").addEventListener("click", (e) => {
   else S.screen = k;
   render();
 });
+/* ---------- theme: light by default, dark on request; remembered in this browser ---------- */
+const THEME_KEY = "rdc-proto-theme";
+let theme = "light";
+try { if (localStorage.getItem(THEME_KEY) === "dark") theme = "dark"; } catch {}
+function themeSwitch() {
+  return `<div class="theme-switch">${[["light", "Sáng", "Mặc định"], ["dark", "Tối", "Dịu mắt khi tối"]].map(([k, l, n]) => `<button type="button" data-themeset="${k}" aria-pressed="${theme === k}"><span>${l}<small>${n}</small></span></button>`).join("")}</div>`;
+}
+function applyTheme(t) {
+  theme = t;
+  document.documentElement.dataset.theme = t;
+  try { localStorage.setItem(THEME_KEY, t); } catch {}
+  document.getElementById("themeSwitch").innerHTML = themeSwitch();
+}
+applyTheme(theme);
+document.getElementById("themeSwitch").addEventListener("click", (e) => { const b = e.target.closest("[data-themeset]"); if (b) { applyTheme(b.dataset.themeset); render(); } });
 document.getElementById("resetBtn").addEventListener("click", () => {
   try { localStorage.removeItem(KEY); } catch {}
   S = fresh(); T = { lesson: null, modal: null, popover: null, ai: null, rong: { turns: [], busy: false }, result: null, toast: null, scrolledPath: false };
@@ -1507,6 +1660,7 @@ app.addEventListener("click", (e) => {
   if (d.preset) { const p = PRESETS[d.preset]; S.planner = { kind: d.preset, target: p.target, monthly: p.monthly, initial: p.initial, rate: p.rate }; return render(); }
   if (d.riskdec) return decideRisk(d.riskdec, false);
   if (d.toast) return toast(d.toast);
+  if (d.themeset) { applyTheme(d.themeset); return render(); }
   const L = T.lesson;
   if (L && S.screen === "lesson") {
     const q = curItem();

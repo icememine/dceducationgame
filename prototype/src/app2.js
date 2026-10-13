@@ -45,11 +45,9 @@ const unlocked = (code) => { for (const s of STAGES) { const { st } = statusOf(s
 function statusBar() {
   const s = stageOf(S.stage);
   return `<div class="status">
-    <button class="course-chip" data-modal="stages" aria-label="Đổi chặng học"><span class="code">${s.code === "B" ? "1" : s.code === "C" ? "2" : "3"}</span><span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(s.title)}</span>${ic("chev")}</button>
+    <button class="course-chip" data-modal="stages" aria-label="Đổi chặng học"><span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(s.title)}</span>${ic("chev")}</button>
     <div class="stats">
-      <span class="stat fire" title="Chuỗi ngày học">${ic("flame")}${S.streak}</span>
-      <span class="stat xp" title="Tổng XP">${ic("bolt")}${S.xp.toLocaleString("vi-VN")}</span>
-      ${STAGE_META[S.stage].hearts ? `<span class="stat heart" title="Tim">${ic("heart")}${S.hearts}</span>` : ""}
+      ${STAGE_META[S.stage].hearts ? `<span class="stat heart" title="Lượt sai còn lại">${ic("heart")}${S.hearts}</span>` : ""}
       <button class="stat gift" data-modal="quests" title="Nhiệm vụ hôm nay" aria-label="Nhiệm vụ hôm nay">${ic("gift")}</button>
     </div></div>`;
 }
@@ -144,39 +142,49 @@ function decideRisk(decision, acknowledged) {
   toast("Đã lưu hồ sơ rủi ro");
 }
 
-/* ---------- learn path ---------- */
+/* ---------- learn: progress, next lesson, units as lists ---------- */
+const ring = (pct) => { const r = 25, c = 2 * Math.PI * r; return `<div class="ringbox"><svg width="60" height="60" viewBox="0 0 60 60" role="img" aria-label="Hoàn thành ${pct}%"><circle cx="30" cy="30" r="${r}" fill="none" stroke="var(--line)" stroke-width="6"/><circle cx="30" cy="30" r="${r}" fill="none" stroke="var(--jade)" stroke-width="6" stroke-linecap="round" stroke-dasharray="${c}" stroke-dashoffset="${c * (1 - pct / 100)}" transform="rotate(-90 30 30)"/></svg><span>${pct}%</span></div>`; };
+/** Unit codes are like "B1"; the overline shows "Phần N" and the code. */
 function vLearn() {
-  const s = stageOf(S.stage), meta = STAGE_META[S.stage];
-  const { st } = statusOf(S.stage);
-  const zig = [0, -54, -78, -54, 0, 54, 78, 54];
-  let k = 0;
+  const s = stageOf(S.stage);
+  const { st, current, list } = statusOf(S.stage);
+  const doneN = [...st.values()].filter((v) => v === "done").length;
+  const pct = Math.round((doneN / list.length) * 100);
+  let nextUnit = null, nextIdx = 0;
+  s.units.forEach((u, ui) => u.lessons.forEach((l, li) => { if (l.code === current) { nextUnit = { u, ui }; nextIdx = li; } }));
+  const next = current && list.find((l) => l.code === current);
+  const nextDemo = next && DEMO[next.code];
+  const hero = next ? `<button class="hero" ${nextDemo ? `data-start="${nextDemo}"` : `data-node="${next.code}"`}>
+      <span class="over"><span>Tiếp theo · Phần ${nextUnit.ui + 1}, bài ${nextIdx + 1}</span>${mascot(nextUnit.u.mascot, 42, "glass")}</span>
+      <h3>${esc(next.title)}</h3>
+      <span class="meta"><span>${esc(next.goal || "")}</span><span class="go">${nextDemo ? "Tiếp tục" : "Xem bài"}</span></span></button>` : "";
   const units = s.units.map((u, ui) => {
-    const allLocked = u.lessons.every((l) => st.get(l.code) === "locked");
-    const nodes = u.lessons.map((l) => {
-      const i = k++, status = st.get(l.code), open = T.popover === l.code, demo = DEMO[l.code];
-      const icon = status === "locked" ? "lock" : status === "done" ? "check" : /Kiểm tra/.test(l.title) ? "trophy" : "star";
+    const locked = u.lessons.every((l) => st.get(l.code) === "locked");
+    const n = u.lessons.filter((l) => st.get(l.code) === "done").length;
+    const rows = u.lessons.map((l, li) => {
+      const status = st.get(l.code), open = T.popover === l.code, demo = DEMO[l.code];
+      const mk = status === "done" ? ic("check") : /Kiểm tra/.test(l.title) && status === "locked" ? ic("lock") : li + 1;
+      const right = status === "done" ? "Ôn lại" : status === "current" ? (demo ? "+" + LESSONS[demo].xp + " điểm" : "Tiếp theo") : status === "demo" ? "Bài mẫu" : "";
       let pop = "";
       if (open) {
         const playable = !!demo && status !== "locked";
-        pop = `<div class="pop" style="left:${-92 - zig[i % 8] / 3}px">
-          <span class="chip" style="align-self:flex-start">${esc(l.code)}${demo ? " · bài mẫu" : ""}</span>
-          <h4>${esc(l.title)}</h4><p>${esc(l.goal)}</p>
-          ${status === "locked" ? `<button class="btn sm" disabled>Đang khoá</button>` : playable ? `<button class="btn sm" data-start="${demo}">${status === "done" ? "Ôn tập · +5 XP" : "Bắt đầu · +" + LESSONS[demo].xp + " XP"}</button>` : `<button class="btn sm" disabled>Chưa có trong bản mẫu</button><p style="font-size:12px">Thử các bài màu xanh dương, hoặc chọn ở danh sách bên trái.</p>`}
+        pop = `<div class="pop inline">
+          <p>${esc(l.goal)}</p>
+          ${status === "locked" ? `<button class="btn sm" disabled>Đang khoá</button>` : playable ? `<button class="btn sm" data-start="${demo}">${status === "done" ? "Ôn tập · +5 điểm" : "Bắt đầu · +" + LESSONS[demo].xp + " điểm"}</button>` : `<button class="btn sm" disabled>Chưa có trong bản mẫu</button><p style="font-size:12px">Thử các bài có nhãn "Bài mẫu", hoặc chọn ở danh sách bên trái.</p>`}
         </div>`;
       }
-      return `<div class="node-wrap" style="transform:translateX(${zig[i % 8]}px);${open ? "z-index:6" : ""}">
-        ${status === "current" && !open ? `<div class="start-tip">BẮT ĐẦU</div><div class="ring"></div>` : ""}
-        <button class="node ${status}" data-node="${l.code}" aria-label="${esc(l.code + " " + l.title)}">${ic(icon)}</button>
-        <span class="node-label">${esc(l.title)}</span>${pop}</div>`;
+      return `<div><button class="lrow ${status}" data-node="${l.code}" aria-expanded="${open}" aria-label="${esc(l.code + " " + l.title)}"><span class="mk">${mk}</span><span class="tt">${esc(l.title)}</span><span class="rr">${right}</span></button>${pop}</div>`;
     }).join("");
-    const color = meta.color[ui % meta.color.length];
-    return `<div class="unit ${allLocked ? "locked" : ""}" style="background:${color}">
-        <div style="min-width:0"><h3>${esc(u.code)} · ${esc(u.title)}</h3><p>${esc(u.why)}</p></div>
+    return `<div class="uhead ${locked ? "locked" : ""}">${mascot(u.mascot, 40, locked ? "plain" : "")}
+        <div class="t"><span class="over">Phần ${ui + 1} · ${esc(u.code)}</span><h3>${esc(u.title)}</h3></div>
+        <span class="count">${n} / ${u.lessons.length} bài</span>
         <button class="guide" data-guide="${u.code}" aria-label="Sổ tay phần ${esc(u.code)}">${ic("book")}</button></div>
-      <div class="path">${nodes}<div class="path-mascot" aria-hidden="true">${mascot(u.mascot, 78)}</div></div>`;
+      <div class="ulist">${rows}</div>`;
   }).join("");
-  return `${statusBar()}<div class="scroll" id="pathScroll">${units}<div style="height:70px"></div></div>
-    <button class="fab" data-go="rong" aria-label="Hỏi Rồng">${mascot("study", 52)}<span>Hỏi Rồng</span></button>${tabBar()}`;
+  return `${statusBar()}<div class="scroll" id="pathScroll"><div class="learn">
+      <div class="progress-card">${ring(pct)}<div><b>${doneN} trên ${list.length} bài</b><small>Chuỗi ${S.streak} ngày · ${S.xp.toLocaleString("vi-VN")} điểm</small></div></div>
+      ${hero}${units}</div></div>
+    <button class="fab" data-go="rong" aria-label="Hỏi Rồng">${mascot("study", 50)}<span>Hỏi Rồng</span></button>${tabBar()}`;
 }
 
 /* ---------- tools ---------- */
@@ -193,12 +201,12 @@ function plannerChart(p) {
   const max = Math.max(p.target * 1e6, ...pts.map((d) => d.v));
   const w = 320, h = 140, pad = 6, bw = (w - 2 * pad) / years;
   const ty = h - 18 - (p.target * 1e6 / max) * (h - 26);
-  const bars = pts.map((d, i) => { const vh = (d.v / max) * (h - 26), ch = (d.c / max) * (h - 26); const x = pad + i * bw + 1; return `<rect x="${x}" y="${h - 18 - vh}" width="${bw - 2}" height="${vh}" rx="2" fill="var(--jade)"/><rect x="${x}" y="${h - 18 - ch}" width="${bw - 2}" height="${ch}" rx="2" fill="var(--gold)"/>`; }).join("");
+  const bars = pts.map((d, i) => { const vh = (d.v / max) * (h - 26), ch = (d.c / max) * (h - 26); const x = pad + i * bw + 1; return `<rect x="${x}" y="${h - 18 - vh}" width="${bw - 2}" height="${vh}" rx="2" fill="var(--jade)"/><rect x="${x}" y="${h - 18 - ch}" width="${bw - 2}" height="${ch}" rx="2" fill="var(--locked-deep)"/>`; }).join("");
   return `<div class="chartbox"><svg viewBox="0 0 ${w} ${h}" role="img" aria-label="Vốn góp và giá trị minh họa theo năm">${bars}
     <line x1="${pad}" x2="${w - pad}" y1="${ty}" y2="${ty}" stroke="var(--coral)" stroke-dasharray="4 3" stroke-width="1.5"/>
     <text x="${w - pad}" y="${ty - 4}" text-anchor="end" font-size="10" font-weight="800" fill="var(--coral-deep)">Mục tiêu ${vnd(p.target * 1e6)}</text>
     <text x="${pad}" y="${h - 4}" font-size="10" font-weight="700" fill="var(--muted)">Năm 1</text><text x="${w - pad}" y="${h - 4}" text-anchor="end" font-size="10" font-weight="700" fill="var(--muted)">Năm ${years}</text></svg>
-    <div class="legend"><span><i style="background:var(--gold)"></i>Tiền bạn góp</span><span><i style="background:var(--jade)"></i>Giá trị minh họa</span></div></div>`;
+    <div class="legend"><span><i style="background:var(--locked-deep)"></i>Tiền bạn góp</span><span><i style="background:var(--jade)"></i>Giá trị minh họa</span></div></div>`;
 }
 function vTools() {
   const seg = `<div class="seg" role="group" aria-label="Công cụ"><button data-toolseg="planner" aria-pressed="${S.toolSeg === "planner"}">Lập kế hoạch</button><button data-toolseg="compound" aria-pressed="${S.toolSeg === "compound"}">Lãi kép 25 vs 45</button></div>`;
@@ -251,7 +259,7 @@ const PEOPLE = [["Rồng Tích Sản (bạn)", "explore", null], ["Cá Chép Hó
 function vLeague() {
   const rows = PEOPLE.map(([n, m, x]) => [n, m, x ?? S.weekXp, x == null]).sort((a, b) => b[2] - a[2]);
   const shield = (c, dim) => `<svg class="league ${dim ? "dim" : ""}" viewBox="0 0 42 46" aria-hidden="true"><path d="M21 2 38 8v14c0 11-7.5 18.5-17 22C11.5 40.5 4 33 4 22V8z" fill="${c}"/><path d="M21 12l2.6 5.4 5.9.8-4.3 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z" fill="var(--surface)" opacity=".9"/></svg>`;
-  const list = rows.map((r, i) => `${i === 5 ? `<li style="padding:0"><div class="zone" style="width:100%;margin:2px 0">Vùng lên hạng</div></li>` : ""}<li class="${r[3] ? "me" : ""}"><span class="rk ${i < 3 ? "top" : ""}">${i + 1}</span>${mascot(r[1], 38)}<span class="who">${esc(r[0])}</span><span class="pts">${r[2]} XP</span></li>`).join("");
+  const list = rows.map((r, i) => `${i === 5 ? `<li style="padding:0"><div class="zone" style="width:100%;margin:2px 0">Vùng lên hạng</div></li>` : ""}<li class="${r[3] ? "me" : ""}"><span class="rk ${i < 3 ? "top" : ""}">${i + 1}</span>${mascot(r[1], 38)}<span class="who">${esc(r[0])}</span><span class="pts">${r[2]} điểm</span></li>`).join("");
   return `${statusBar()}<div class="scroll">
     <div class="leagues">${shield("var(--gold-deep)", 1)}${shield("var(--muted)", 1)}${shield("var(--gold)", 1)}${shield("var(--jade)")}${shield("var(--sky)", 1)}${shield("var(--violet)", 1)}</div>
     <div class="page-h" style="align-items:center;text-align:center;padding-top:6px"><h2>Hạng Ngọc Bích</h2><p>Top 5 lên Hạng Lam Ngọc · còn 3 ngày · chỉ hiển thị biệt danh</p></div>
@@ -269,7 +277,7 @@ function questRows() {
 function vProfile() {
   const r = S.risk && typeof S.risk.total === "number" ? S.risk : null, p = r ? PROFILES[riskBand(r)] : null;
   return `${statusBar()}<div class="scroll">
-    <div class="prof-head">${mascot("explore", 70)}<div><h2 style="font-size:22px">${esc(S.nickname)}</h2><small>Tham gia tháng 10/2026 · mục tiêu ${S.goal || 10} phút/ngày</small></div></div>
+    <div class="prof-head">${mascot("explore", 56)}<div><h2 style="font-size:22px">${esc(S.nickname)}</h2><small>Tham gia tháng 10/2026 · mục tiêu ${S.goal || 10} phút/ngày</small></div></div>
     <div class="statgrid">
       <div class="sg"><span style="color:var(--gold-deep)">${ic("flame")}</span><div><b>${S.streak}</b><small>Ngày liên tiếp</small></div></div>
       <div class="sg"><span style="color:var(--sky)">${ic("bolt")}</span><div><b>${S.xp.toLocaleString("vi-VN")}</b><small>Tổng XP</small></div></div>
@@ -286,6 +294,8 @@ function vProfile() {
     <div class="card">${S.weak.slice(0, 3).map((w) => `<div class="cert"><span style="color:var(--coral)">${ic("flag")}</span><div class="body"><b>${esc(w.t)}</b><small>${esc(w.s)}</small></div></div>`).join("")}<button class="btn sky sm" data-start="case">Ôn tập nhanh 3 phút</button></div>
     <div class="section-label">Nhiệm vụ hôm nay</div>
     <div class="card">${questRows()}</div>
+    <div class="section-label">Giao diện</div>
+    <div class="card">${themeSwitch()}</div>
     <div class="card" style="background:var(--jade-soft);border-color:var(--jade-soft)"><b>Sẵn sàng bắt đầu?</b><span style="font-size:14px">Tạo mục tiêu \"Đầu tư theo mục tiêu\" và đọc tài liệu quỹ chính thức trên DragonX.</span><button class="btn sm" data-toast="Bản mẫu: nút này mở DragonX">Mở DragonX</button><p class="disc">Nội dung mang tính giáo dục, không phải khuyến nghị đầu tư. Kết quả quá khứ không bảo đảm tương lai.</p></div>
   </div>${tabBar()}`;
 }

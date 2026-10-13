@@ -9,7 +9,7 @@ content: the Q&A library, glossary, fund facts, the fixed AI rules (`src/feature
 Rồng's voice guide (`content/ai/rong-voice.md`). Edit the voice guide, rebuild, and the prototype's Hỏi Rồng,
 role-play characters and coach all pick up the new tone.
 
-Open it in a browser. AI features call Claude only when the page runs inside the claude.ai artifact viewer
+Open it in a browser. It uses the app's "Tư vấn" style: light by default, dark from the switch in the index (or Hồ sơ → Giao diện), with Rồng DC as small round icons. AI features call Claude only when the page runs inside the claude.ai artifact viewer
 (`sample` capability); opened locally they fall back to scripted replies and a keyword search over the library.
 Simulated NAV series in the lessons are illustrative, not real fund data. Lessons: five hand-built showcase lessons live in `prototype/src/app1.js` (risk check, lãi kép,
 Nhà tiên tri, ba phản ứng, hồ sơ hỗ trợ); every other lesson is converted from `content/segments` at build time
