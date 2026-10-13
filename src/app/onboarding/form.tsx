@@ -3,7 +3,7 @@
 import { ChevronLeft } from "lucide-react";
 import { useState, useTransition } from "react";
 import { completeOnboarding } from "@/actions/user";
-import { Mascot } from "@/components/mascot";
+import { MascotIcon } from "@/components/mascot";
 import { Button } from "@/components/ui/button";
 import { DAILY_GOAL_OPTIONS } from "@/features/gamification/rules";
 import { cn } from "@/lib/utils";
@@ -35,14 +35,14 @@ export function OnboardingForm() {
         </div>
       </div>
       <div className="flex items-center gap-3">
-        <Mascot mood={step === 0 ? "explore" : step === 1 ? "fight" : "celebrate"} size={80} />
+        <MascotIcon mood={step === 0 ? "explore" : step === 1 ? "fight" : "celebrate"} size={64} />
         <div className="rounded-2xl border border-line bg-surface p-3 font-bold">{bubble}</div>
       </div>
 
       <div className="flex flex-1 flex-col gap-3">
         {step === 0 && STARTS.map((s) => (
           <button key={s.id} className={choice} aria-pressed={segmentId === s.id} onClick={() => setSegment(s.id)}>
-            <Mascot mood={s.mood} size={44} />
+            <MascotIcon mood={s.mood} size={44} />
             <span>{s.title}<small className="block font-semibold text-muted">{s.sub}</small></span>
           </button>
         ))}

@@ -1,7 +1,8 @@
 import Link from "next/link";
+import { MascotIcon } from "@/components/mascot";
 import { getSegment } from "@content/index";
 import { Disclaimer } from "@/components/disclaimer";
-import { Award, ChevronRight, Settings } from "lucide-react";
+import { ChevronRight, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getGoals, getLatestProfile, getSegmentProgress, getUserState } from "@/db/queries";
 import { BADGES, badgeInfo } from "@/features/badges/badges";
@@ -41,7 +42,7 @@ export default async function ProfilePage() {
   return (
     <div className="flex flex-col gap-3.5 px-5 pb-8 pt-4">
       <div className="flex items-center gap-3.5">
-        <span className="flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-2xl bg-hero text-lg font-bold text-hero-ink">{user.nickname.trim()[0]?.toUpperCase() ?? "?"}</span>
+        <MascotIcon mood={user.avatar} size={52} />
         <div className="min-w-0 flex-1">
           <h1 className="truncate text-[19px] font-bold">{user.nickname}</h1>
           <p className="text-[13px] text-muted">Mục tiêu học {user.dailyGoalMinutes} phút mỗi ngày</p>
@@ -158,7 +159,7 @@ export default async function ProfilePage() {
         <ul className="grid grid-cols-3 gap-2">
           {BADGES.map((b) => (
             <li key={b.id} className={`flex flex-col items-center gap-1.5 rounded-xl p-2.5 text-center ${earned.has(b.id) ? "bg-gold-soft" : "bg-sunken opacity-60"}`} title={b.description}>
-              <Award className={`h-6 w-6 ${earned.has(b.id) ? "text-gold" : "text-muted"}`} />
+              <MascotIcon mood={b.mascot} size={40} tone={earned.has(b.id) ? "gold" : "plain"} className={earned.has(b.id) ? undefined : "grayscale"} />
               <span className="text-xs font-extrabold leading-tight">{b.title}</span>
             </li>
           ))}
@@ -166,7 +167,7 @@ export default async function ProfilePage() {
             const info = badgeInfo(m.badgeId)!;
             return (
               <li key={m.badgeId} className="flex flex-col items-center gap-1.5 rounded-xl bg-violet-soft p-2.5 text-center" title={info.description}>
-                <Award className="h-6 w-6 text-violet" />
+                <MascotIcon mood={info.mascot} size={40} tone="violet" />
                 <span className="text-xs font-extrabold leading-tight">{info.title}</span>
               </li>
             );

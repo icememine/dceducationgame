@@ -1,6 +1,7 @@
 "use client";
 
-import { Award, Check, FileText, Heart, HeartCrack, Sparkles, X } from "lucide-react";
+import { MascotIcon } from "@/components/mascot";
+import { FileText, Heart, X } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState, useTransition } from "react";
@@ -158,7 +159,7 @@ export function LessonPlayer({ source, lessonTitle, challenges, hearts: initialH
   if (outOfHearts) {
     return (
       <main className="flex flex-1 flex-col items-center justify-center gap-4 p-6 text-center">
-        <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-coral-soft"><HeartCrack className="h-8 w-8 text-coral" /></span>
+        <MascotIcon mood="sad" size={88} tone="coral" />
         <h1 className="text-2xl font-extrabold">Bạn đã hết tim</h1>
         <p className="text-muted">Tim hồi lại theo thời gian. Ôn lại một bài đã học để nhận thêm tim ngay.</p>
         <Button asChild><Link href="/learn">Ôn tập để hồi tim</Link></Button>
@@ -235,9 +236,7 @@ function Feedback({ result, kind }: { result: SubmitResult | null; kind: string 
       )}
     >
       <p className="flex items-center gap-2 font-display text-xl font-extrabold">
-        <span className={cn("flex h-7 w-7 items-center justify-center rounded-full text-on-accent", tone === "ok" ? "bg-jade" : tone === "info" ? "bg-sky" : "bg-coral")}>
-          {tone === "ok" ? <Check className="h-4 w-4" /> : tone === "info" ? <Sparkles className="h-4 w-4" /> : <X className="h-4 w-4" />}
-        </span>
+        <MascotIcon mood={tone === "ok" ? "celebrate" : tone === "info" ? "analyze" : "sad"} size={40} className="bg-surface" />
         {tone === "ok" ? "Chính xác!" : tone === "info" ? (kind === "estimate" ? "Chưa sát lắm" : "Điều dữ liệu cho thấy") : "Chưa đúng"}
       </p>
       <div className="text-sm text-ink">
@@ -269,7 +268,7 @@ function Summary({ summary, seconds, onDone }: { summary: LessonSummary; seconds
           <RiskConfirm riskId={p.riskId} result={p.result} />
         ) : pl ? (
           <>
-            <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-sky-soft"><Award className="h-8 w-8 text-sky" /></span>
+            <MascotIcon mood={pl.unlockIndex > 0 ? "celebrate" : "study"} size={88} tone="sky" />
             <h1 className="text-2xl font-extrabold">Bạn trả lời đúng {pl.score}/{pl.total} câu</h1>
             <p className="text-muted">
               {pl.unlockIndex === 0
@@ -281,7 +280,7 @@ function Summary({ summary, seconds, onDone }: { summary: LessonSummary; seconds
           </>
         ) : (
           <>
-            <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-jade-soft"><Check className="h-8 w-8 text-jade" strokeWidth={3} /></span>
+            <MascotIcon mood={summary.perfect ? "trophy" : "celebrate"} size={88} />
             <h1 className="text-2xl font-extrabold">{summary.perfect ? "Hoàn hảo, không sai câu nào!" : "Hoàn thành bài học!"}</h1>
           </>
         )}
@@ -297,7 +296,7 @@ function Summary({ summary, seconds, onDone }: { summary: LessonSummary; seconds
               const b = badgeInfo(id);
               return b ? (
                 <div key={id} className="flex items-center gap-3">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gold-soft"><Award className="h-5 w-5 text-gold" /></span>
+                  <MascotIcon mood={b.mascot} size={40} tone="gold" />
                   <div><p className="font-extrabold">{b.title}</p><p className="text-xs text-muted">{b.description}</p></div>
                 </div>
               ) : null;

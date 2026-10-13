@@ -1,5 +1,6 @@
 "use client";
 
+import { MascotIcon } from "@/components/mascot";
 import Link from "next/link";
 import { useState, useTransition } from "react";
 import {
@@ -29,6 +30,7 @@ export function ProfileCard({ profile, decision }: { profile: string; decision?:
   if (!p) return null;
   return (
     <div className="flex w-full flex-col items-center gap-2 text-center">
+      <MascotIcon mood={p.mascot} size={72} />
       <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-muted">Hồ sơ đầu tư của bạn</p>
       <h2 className="text-3xl font-extrabold">{p.name}</h2>
       <RiskScale profile={p.id} />

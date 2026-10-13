@@ -1,7 +1,7 @@
 "use client";
 
+import { MascotIcon } from "@/components/mascot";
 import { QUIZ_PATTERNS } from "@content/schema";
-import { Lightbulb } from "lucide-react";
 import { cn, formatVnd } from "@/lib/utils";
 import { formatDuration, monthsToTarget } from "@/features/goal-planner/finance";
 import { ProjectionChart } from "@/features/goal-planner/projection-chart";
@@ -57,7 +57,7 @@ export const Context = ({ text }: { text?: string }) =>
 export function InfoView({ c }: { c: Extract<ClientChallenge, { type: "info" }> }) {
   return (
     <div className="flex flex-col gap-4 rounded-2xl border border-line bg-surface p-5">
-      <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-jade-soft"><Lightbulb className="h-5 w-5 text-jade" /></span>
+      <MascotIcon mood={c.mascot ?? "study"} size={56} />
       <h2 className="text-2xl font-extrabold">{c.title}</h2>
       <p className="text-[16px] leading-relaxed">{c.body}</p>
     </div>

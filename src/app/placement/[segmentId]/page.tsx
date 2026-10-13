@@ -1,7 +1,7 @@
 import Link from "next/link";
+import { MascotIcon } from "@/components/mascot";
 import { notFound } from "next/navigation";
 import { getSegment } from "@content/index";
-import { ClipboardCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { placementItems } from "@/features/placement/placement";
 import { getLatestPlacement } from "@/features/placement/queries";
@@ -18,7 +18,7 @@ export default async function PlacementIntro({ params }: { params: Promise<{ seg
   return (
     <main className="flex flex-1 flex-col justify-between gap-6 p-6">
       <div className="flex flex-col items-center gap-4 text-center">
-        <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-sky-soft"><ClipboardCheck className="h-8 w-8 text-sky" /></span>
+        <MascotIcon mood="study" size={88} tone="sky" />
         <h1 className="text-2xl font-extrabold">Kiểm tra xếp lớp: {segment.title}</h1>
         <p className="text-muted">
           {n} câu, mỗi phần một câu. Trả lời đúng liên tiếp từ đầu thì các bài của những phần đó sẽ mở sẵn, bạn bắt đầu học từ phần còn chưa chắc.

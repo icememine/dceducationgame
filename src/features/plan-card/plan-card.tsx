@@ -1,19 +1,19 @@
 import { Disclaimer } from "@/components/disclaimer";
-import { Mascot } from "@/components/mascot";
+import { MascotIcon } from "@/components/mascot";
 import type { PlanCard } from "./model";
 
 /** The "Bản kế hoạch đầu tư" card. Same content as the SVG in ./svg.ts. */
 export function PlanCardView({ card }: { card: PlanCard }) {
   return (
     <article className="overflow-hidden rounded-2xl border border-line bg-surface">
-      <header className="bg-jade px-4 py-3 text-on-accent">
-        <p className="font-display text-lg font-extrabold uppercase tracking-wide">Bản kế hoạch đầu tư</p>
-        <p className="text-xs font-bold text-jade-soft">Rồng DC Academy</p>
+      <header className="bg-hero px-4 py-3 text-hero-ink">
+        <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-hero-accent">Rồng DC Academy</p>
+        <p className="text-lg font-bold">Bản kế hoạch đầu tư</p>
       </header>
 
       <div className="flex flex-col gap-4 p-4">
         <div className="flex items-center gap-3">
-          <Mascot mood={card.mascot} size={64} />
+          <MascotIcon mood={card.mascot} size={56} />
           <div>
             <h2 className="text-xl font-extrabold">{card.nickname}</h2>
             <p className="text-xs text-muted">Kế hoạch học và đầu tư của mình</p>

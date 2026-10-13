@@ -3,7 +3,7 @@
 import { Send } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { Mascot } from "@/components/mascot";
+import { MascotIcon } from "@/components/mascot";
 import { cn } from "@/lib/utils";
 import { stripSourceLine } from "./guardrails";
 import type { ChatTurn } from "./rong";
@@ -56,7 +56,7 @@ export function RongChat() {
   return (
     <div className="flex flex-col gap-3 p-4">
       <div className="flex items-start gap-3">
-        <Mascot mood="study" size={48} />
+        <MascotIcon mood="study" size={40} />
         <p className="rounded-2xl rounded-tl-sm bg-jade-soft p-3 text-[15px]">
           Chào anh/chị! Rồng trả lời từ thư viện hỏi đáp của Dragon Capital: phí, thuế, lịch giao dịch, tài khoản và kiến thức đầu tư.
           Rồng không chọn quỹ thay anh/chị và không bao giờ hỏi OTP hay PIN.{" "}

@@ -1,5 +1,6 @@
 import { Check, ChevronRight, Lock, RotateCcw, Trophy } from "lucide-react";
 import Link from "next/link";
+import { MascotIcon } from "@/components/mascot";
 import { getPathStatus, getUserState } from "@/db/queries";
 import { getLatestPlacement } from "@/features/placement/queries";
 import { getReviewOverview } from "@/features/review/queries";
@@ -27,7 +28,7 @@ export default async function LearnPage() {
   const userId = await getUserId();
   const { progress, activeSegment } = await getUserState(userId);
   const [status, review, placement] = await Promise.all([getPathStatus(userId, activeSegment), getReviewOverview(userId), getLatestPlacement(userId, activeSegment.id)]);
-  const lessons = activeSegment.units.flatMap((u, ui) => u.lessons.map((l, li) => ({ lesson: l, unitIndex: ui, lessonIndex: li })));
+  const lessons = activeSegment.units.flatMap((u, ui) => u.lessons.map((l, li) => ({ lesson: l, unitIndex: ui, lessonIndex: li, mascot: u.mascot })));
   const done = lessons.filter(({ lesson }) => status.get(lesson.id) === "done").length;
   const pct = lessons.length ? Math.round((done / lessons.length) * 100) : 0;
   const next = lessons.find(({ lesson }) => status.get(lesson.id) === "current");
@@ -44,8 +45,11 @@ export default async function LearnPage() {
 
       {next && (
         <Link href={`/lesson/${next.lesson.id}`} className="flex flex-col gap-2.5 rounded-2xl border border-hero-line bg-hero p-4 text-hero-ink">
+          <span className="flex items-center justify-between gap-3">
           <span className="text-[11px] font-bold uppercase tracking-[0.1em] text-hero-accent">
             {done === 0 ? "Bắt đầu" : "Tiếp theo"} · Phần {next.unitIndex + 1}, bài {next.lessonIndex + 1}
+          </span>
+          <MascotIcon mood={next.mascot} size={44} className="-my-1 bg-white/10" />
           </span>
           <span className="text-[19px] font-bold leading-snug">{next.lesson.title}</span>
           <span className="flex items-center justify-between gap-3">
@@ -77,8 +81,9 @@ export default async function LearnPage() {
         return (
           <section key={unit.id} aria-labelledby={unit.id} className="mt-3 flex flex-col gap-2.5">
             {/* Section header: overline + title on the page background, set apart from the white list card below. */}
-            <header className="flex items-end justify-between gap-3 px-1">
-              <div className="flex min-w-0 flex-col gap-0.5">
+            <header className="flex items-center justify-between gap-3 px-1">
+              <MascotIcon mood={unit.mascot} size={40} tone={locked ? "plain" : "jade"} className={cn(locked && "opacity-60 grayscale")} />
+              <div className="flex min-w-0 flex-1 flex-col gap-0.5">
                 <span className={cn("text-[11px] font-bold uppercase tracking-[0.1em]", locked ? "text-muted" : "text-jade")}>Phần {ui + 1}</span>
                 <h2 id={unit.id} className={cn("text-[17px] font-bold leading-tight", locked && "text-muted")}>{bareTitle(unit.title)}</h2>
               </div>
