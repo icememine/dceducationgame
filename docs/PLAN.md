@@ -43,7 +43,7 @@ the team and friendly testers.
 - Stage C lessons (Hiểu quỹ) are drafted: all 35 outline lessons covered (7 units, 33 lessons). K review open.
 - **Quỹ trái phiếu moved to the advanced program** (outline `content/outline/advanced.ts`, unit NC1). The drafted
   lessons are parked in `content/advanced/bond-funds.ts`; P writes new advanced content later.
-- Write stage A (DC funds) on the library: 5 of 43 outline lessons built so far.
+- Stage A lessons (Quỹ DC & DragonX) are drafted: all 43 outline lessons covered (10 units, 43 lessons, from the Q&A library and fund facts). K review open, starting with the FAQ vs fund-facts conflicts the writers flagged.
 - **Luyện tình huống AI** in the app: persona + coach routes with the same guardrails and voice; scripted
   replies and the rule-based coach until the API key arrives (as the prototype does).
 - Compliance review page over `ai_messages` (filter by guardrail flag, mark reviewed).

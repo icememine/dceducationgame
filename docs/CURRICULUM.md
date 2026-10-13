@@ -2,7 +2,7 @@
 
 > Tài liệu này được sinh tự động từ `content/outline/`. Sửa ở đó rồi chạy `npm run docs:curriculum`.
 
-**3 chặng · 24 phần · 135 bài · 14 tình huống luyện AI.** 97 bài đã có bản chơi được (✅).
+**3 chặng · 24 phần · 135 bài · 14 tình huống luyện AI.** 135 bài đã có bản chơi được (✅).
 
 ## Triết lý
 
@@ -411,13 +411,13 @@ Ghép mỗi quỹ DC với loại quỹ và mục tiêu đã học. Linh vật: 
 | Bài | Mục tiêu | Dạng | Nguồn |
 |---|---|---|---|
 | **A1.1** Bản đồ sản phẩm DC ✅ | Ghép DCDS, DCDE, DCBF, DCIP, DCBA, ETF với loại tài sản và mục tiêu. | Câu hỏi nhanh, Thẻ kiến thức | FAQ 1, 28, 122 |
-| **A1.2** DCDS và DCDE | Phân biệt chiến lược, cổ tức và chỉ số tham chiếu của hai quỹ cổ phiếu. | Thẻ kiến thức, Câu hỏi nhanh | FAQ 16, 124, 115 |
-| **A1.3** Cổ tức DCDE | Tính NAV sau ngày chốt quyền và đọc thông báo phân phối. | Tính nhanh, Câu hỏi nhanh | FAQ 104, 106, 133 |
-| **A1.4** DCBF và DCIP | Hiểu hai quỹ thu nhập cố định, chỉ số tham chiếu và lịch NAV. | Thẻ kiến thức, Câu hỏi nhanh | W5 Bài 4 · Quỹ trái phiếu nâng cao · W5 Bài 1 · Quỹ thị trường tiền tệ · FAQ 113 |
-| **A1.5** DCBA: quỹ cân bằng của DC | Biết DCBA hợp với ai và khác DCDS thế nào cho một mục tiêu dài hạn. | Thẻ kiến thức, Tình huống | Kế hoạch du học cho con nên bắt đầu từ đâu? · FAQ 34 |
-| **A1.6** Đọc báo cáo quỹ | Tìm top khoản đầu tư, tỷ trọng ngành, phân bổ tài sản và ngày chốt số liệu. | Thẻ kiến thức, Câu hỏi nhanh | FAQ 15, 118 |
-| **A1.7** Đã mua theo giới thiệu, giờ muốn xem lại | Rà soát lại khoản đã mua theo mục tiêu, và so sánh công ty quản lý quỹ đúng tiêu chí. | Tình huống, Tự đánh giá · cam kết | FAQ 28, 95 |
-| **A1.8** Kiểm tra: Gia đình quỹ DC | Ôn lại cả phần. | Kiểm tra | FAQ 1, 16, 34 |
+| **A1.2** DCDS và DCDE ✅ | Phân biệt chiến lược, cổ tức và chỉ số tham chiếu của hai quỹ cổ phiếu. | Thẻ kiến thức, Câu hỏi nhanh | FAQ 16, 124, 115 |
+| **A1.3** Cổ tức DCDE ✅ | Tính NAV sau ngày chốt quyền và đọc thông báo phân phối. | Tính nhanh, Câu hỏi nhanh | FAQ 104, 106, 133 |
+| **A1.4** DCBF và DCIP ✅ | Hiểu hai quỹ thu nhập cố định, chỉ số tham chiếu và lịch NAV. | Thẻ kiến thức, Câu hỏi nhanh | W5 Bài 4 · Quỹ trái phiếu nâng cao · W5 Bài 1 · Quỹ thị trường tiền tệ · FAQ 113 |
+| **A1.5** DCBA: quỹ cân bằng của DC ✅ | Biết DCBA hợp với ai và khác DCDS thế nào cho một mục tiêu dài hạn. | Thẻ kiến thức, Tình huống | Kế hoạch du học cho con nên bắt đầu từ đâu? · FAQ 34 |
+| **A1.6** Đọc báo cáo quỹ ✅ | Tìm top khoản đầu tư, tỷ trọng ngành, phân bổ tài sản và ngày chốt số liệu. | Thẻ kiến thức, Câu hỏi nhanh | FAQ 15, 118 |
+| **A1.7** Đã mua theo giới thiệu, giờ muốn xem lại ✅ | Rà soát lại khoản đã mua theo mục tiêu, và so sánh công ty quản lý quỹ đúng tiêu chí. | Tình huống, Tự đánh giá · cam kết | FAQ 28, 95 |
+| **A1.8** Kiểm tra: Gia đình quỹ DC ✅ | Ôn lại cả phần. | Kiểm tra | FAQ 1, 16, 34 |
 
 <details><summary>Số liệu và ý chính cần dạy</summary>
 
@@ -437,13 +437,13 @@ Hiểu quy trình để không lo lắng, không chuyển tiền hai lần. Linh
 
 | Bài | Mục tiêu | Dạng | Nguồn |
 |---|---|---|---|
-| **A2.1** Vòng đời một lệnh mua | Sắp xếp các bước: đặt lệnh → chuyển tiền → đối soát → kỳ giao dịch → NAV → CCQ về tài khoản. *Công cụ: Vòng đời một lệnh quỹ mở.* | Mô phỏng, Câu hỏi nhanh | FAQ 5, 108, 44 |
+| **A2.1** Vòng đời một lệnh mua ✅ | Sắp xếp các bước: đặt lệnh → chuyển tiền → đối soát → kỳ giao dịch → NAV → CCQ về tài khoản. *Công cụ: Vòng đời một lệnh quỹ mở.* | Mô phỏng, Câu hỏi nhanh | FAQ 5, 108, 44 |
 | **A2.2** Đặt lệnh khi chưa biết giá ✅ | Quyết định mua/bán dựa trên kế hoạch, không dựa vào giá tạm tính. | Thẻ kiến thức, Câu hỏi nhanh | FAQ 12, 30 |
-| **A2.3** Chuyển tiền đúng cách | Kiểm tra tên thụ hưởng, tài khoản, số tiền, nội dung; biết quy định tài khoản chuyển tiền khác. | Tình huống, Tìm lỗi sai | FAQ 5, 52 |
+| **A2.3** Chuyển tiền đúng cách ✅ | Kiểm tra tên thụ hưởng, tài khoản, số tiền, nội dung; biết quy định tài khoản chuyển tiền khác. | Tình huống, Tìm lỗi sai | FAQ 5, 52 |
 | **A2.4** Hồ sơ: Đã chuyển tiền mà chưa thấy CCQ ✅ | Xử lý đúng ba tình huống: chưa thấy CCQ, chưa xác nhận nhận tiền, chưa có thông báo. | Hồ sơ hỗ trợ | FAQ 43, 44, 45, 49 |
-| **A2.5** Hồ sơ: Payoo, hủy lệnh và chuyển nhầm quỹ | Biết tiền đi đâu khi chuyển trước, hủy lệnh hoặc chuyển nhầm. | Hồ sơ hỗ trợ | FAQ 50, 54, 128 |
-| **A2.6** Hồ sơ: Ứng dụng báo lỗi khi đặt lệnh | Kiểm tra lịch sử lệnh trước khi thử lại. | Hồ sơ hỗ trợ | FAQ 88 |
-| **A2.7** Bán và nhận tiền | Biết khi nào tiền về, vì sao lệnh bán bị hủy, tiền về tài khoản nào. | Hồ sơ hỗ trợ, Câu hỏi nhanh | FAQ 46, 47, 111 |
+| **A2.5** Hồ sơ: Payoo, hủy lệnh và chuyển nhầm quỹ ✅ | Biết tiền đi đâu khi chuyển trước, hủy lệnh hoặc chuyển nhầm. | Hồ sơ hỗ trợ | FAQ 50, 54, 128 |
+| **A2.6** Hồ sơ: Ứng dụng báo lỗi khi đặt lệnh ✅ | Kiểm tra lịch sử lệnh trước khi thử lại. | Hồ sơ hỗ trợ | FAQ 88 |
+| **A2.7** Bán và nhận tiền ✅ | Biết khi nào tiền về, vì sao lệnh bán bị hủy, tiền về tài khoản nào. | Hồ sơ hỗ trợ, Câu hỏi nhanh | FAQ 46, 47, 111 |
 
 <details><summary>Số liệu và ý chính cần dạy</summary>
 
@@ -462,11 +462,11 @@ Biết chính xác mình trả gì và vì sao tiền bán khác tiền tạm t�
 
 | Bài | Mục tiêu | Dạng | Nguồn |
 |---|---|---|---|
-| **A3.1** Phí nào đã nằm trong NAV | Phân biệt phí quản lý (trong NAV) với phí giao dịch và thuế. | Thẻ kiến thức, Tìm lỗi sai | FAQ 125 |
-| **A3.2** Tuổi của từng lô CCQ | Áp dụng FIFO để biết lô nào được bán trước và chịu phí nào. | Tình huống, Tính nhanh | FAQ 10, 42 |
-| **A3.3** Bán thì bị khấu trừ những gì | Tính tiền thực nhận từ số CCQ, NAV áp dụng, phí bán và thuế (số liệu minh họa). | Tính nhanh, Hồ sơ hỗ trợ | FAQ 127, 33, 48 |
-| **A3.4** Chuyển đổi giữa các quỹ | Hiểu chuyển đổi = bán quỹ nguồn + mua quỹ đích, có thể có phí và thuế. | Thẻ kiến thức, Câu hỏi nhanh | FAQ 53 |
-| **A3.5** Mã giới thiệu có ưu đãi gì? | Không mặc định mã giới thiệu nào cũng có ưu đãi. | Câu hỏi nhanh | FAQ 131 |
+| **A3.1** Phí nào đã nằm trong NAV ✅ | Phân biệt phí quản lý (trong NAV) với phí giao dịch và thuế. | Thẻ kiến thức, Tìm lỗi sai | FAQ 125 |
+| **A3.2** Tuổi của từng lô CCQ ✅ | Áp dụng FIFO để biết lô nào được bán trước và chịu phí nào. | Tình huống, Tính nhanh | FAQ 10, 42 |
+| **A3.3** Bán thì bị khấu trừ những gì ✅ | Tính tiền thực nhận từ số CCQ, NAV áp dụng, phí bán và thuế (số liệu minh họa). | Tính nhanh, Hồ sơ hỗ trợ | FAQ 127, 33, 48 |
+| **A3.4** Chuyển đổi giữa các quỹ ✅ | Hiểu chuyển đổi = bán quỹ nguồn + mua quỹ đích, có thể có phí và thuế. | Thẻ kiến thức, Câu hỏi nhanh | FAQ 53 |
+| **A3.5** Mã giới thiệu có ưu đãi gì? ✅ | Không mặc định mã giới thiệu nào cũng có ưu đãi. | Câu hỏi nhanh | FAQ 131 |
 
 <details><summary>Số liệu và ý chính cần dạy</summary>
 
@@ -482,8 +482,8 @@ Biết chính xác mình trả gì và vì sao tiền bán khác tiền tạm t�
 | Bài | Mục tiêu | Dạng | Nguồn |
 |---|---|---|---|
 | **A4.1** Lợi nhuận kỳ, CAGR và XIRR ✅ | Tính lợi nhuận một khoản đầu tư, tăng trưởng kép và biết khi nào cần XIRR. | Tính nhanh | FAQ 31 |
-| **A4.2** Ba con số lợi nhuận trên DragonX | Phân biệt lợi nhuận đang nắm giữ, đã thực hiện và tổng lợi nhuận có phân phối. | Thẻ kiến thức, Tính nhanh | FAQ 32 |
-| **A4.3** Tài liệu chính thức và giấy xác nhận | Biết xin báo cáo, giấy xác nhận sở hữu (ví dụ cho hồ sơ visa) và lịch sử NAV ở đâu. | Hồ sơ hỗ trợ | FAQ 27, 112, 82 |
+| **A4.2** Ba con số lợi nhuận trên DragonX ✅ | Phân biệt lợi nhuận đang nắm giữ, đã thực hiện và tổng lợi nhuận có phân phối. | Thẻ kiến thức, Tính nhanh | FAQ 32 |
+| **A4.3** Tài liệu chính thức và giấy xác nhận ✅ | Biết xin báo cáo, giấy xác nhận sở hữu (ví dụ cho hồ sơ visa) và lịch sử NAV ở đâu. | Hồ sơ hỗ trợ | FAQ 27, 112, 82 |
 
 <details><summary>Số liệu và ý chính cần dạy</summary>
 
@@ -497,9 +497,9 @@ ETF giao dịch khác quỹ mở; biết điểm khác để tránh nhầm. Linh
 
 | Bài | Mục tiêu | Dạng | Nguồn |
 |---|---|---|---|
-| **A5.1** Hồ sơ: Chưa thấy ETF trên DragonX | Kiểm tra phiên bản ứng dụng và điều kiện kích hoạt tài khoản ETF. | Hồ sơ hỗ trợ | FAQ 11 |
-| **A5.2** Cổ tức trong ETF ảnh hưởng NAV thế nào | Không kết luận cổ tức làm NAV tăng thêm tương ứng. | Thẻ kiến thức, Câu hỏi nhanh | FAQ 35 |
-| **A5.3** Hoán đổi ETF là gì | Phân biệt giao dịch hoán đổi lô lớn với mua ETF trên sàn. | Thẻ kiến thức, Câu hỏi nhanh | FAQ 36, 135 |
+| **A5.1** Hồ sơ: Chưa thấy ETF trên DragonX ✅ | Kiểm tra phiên bản ứng dụng và điều kiện kích hoạt tài khoản ETF. | Hồ sơ hỗ trợ | FAQ 11 |
+| **A5.2** Cổ tức trong ETF ảnh hưởng NAV thế nào ✅ | Không kết luận cổ tức làm NAV tăng thêm tương ứng. | Thẻ kiến thức, Câu hỏi nhanh | FAQ 35 |
+| **A5.3** Hoán đổi ETF là gì ✅ | Phân biệt giao dịch hoán đổi lô lớn với mua ETF trên sàn. | Thẻ kiến thức, Câu hỏi nhanh | FAQ 36, 135 |
 
 ### A6 · Tài khoản và định danh
 
@@ -507,11 +507,11 @@ Giữ hồ sơ đúng để giao dịch không bị gián đoạn. Linh vật: `
 
 | Bài | Mục tiêu | Dạng | Nguồn |
 |---|---|---|---|
-| **A6.1** Mở tài khoản | Biết các cách mở tài khoản, vì sao hồ sơ chưa duyệt, ai được dùng chung số điện thoại. | Hồ sơ hỗ trợ, Câu hỏi nhanh | FAQ 63, 114, 132, 105 |
-| **A6.2** Hồ sơ: Cập nhật căn cước | Xử lý các lỗi thường gặp khi cập nhật căn cước. | Hồ sơ hỗ trợ | FAQ 55, 56, 57, 58, 62, 69 |
-| **A6.3** Hồ sơ: Thay đổi thông tin cá nhân | Hiểu vì sao cần chụp giấy tờ và khuôn mặt, và xử lý khi bị từ chối. | Hồ sơ hỗ trợ | FAQ 59, 60, 67, 70, 71, 72, 81 |
-| **A6.4** Tài khoản nhận tiền, số dư ở nhiều kênh | Biết đổi tài khoản thụ hưởng, gộp số dư, cập nhật khi ở nước ngoài, tài khoản phụ thuộc. | Hồ sơ hỗ trợ, Câu hỏi nhanh | FAQ 68, 119, 93, 94 |
-| **A6.5** Đóng tài khoản | Biết các bước và vì sao có thể cần hồ sơ giấy. | Hồ sơ hỗ trợ | FAQ 61, 126 |
+| **A6.1** Mở tài khoản ✅ | Biết các cách mở tài khoản, vì sao hồ sơ chưa duyệt, ai được dùng chung số điện thoại. | Hồ sơ hỗ trợ, Câu hỏi nhanh | FAQ 63, 114, 132, 105 |
+| **A6.2** Hồ sơ: Cập nhật căn cước ✅ | Xử lý các lỗi thường gặp khi cập nhật căn cước. | Hồ sơ hỗ trợ | FAQ 55, 56, 57, 58, 62, 69 |
+| **A6.3** Hồ sơ: Thay đổi thông tin cá nhân ✅ | Hiểu vì sao cần chụp giấy tờ và khuôn mặt, và xử lý khi bị từ chối. | Hồ sơ hỗ trợ | FAQ 59, 60, 67, 70, 71, 72, 81 |
+| **A6.4** Tài khoản nhận tiền, số dư ở nhiều kênh ✅ | Biết đổi tài khoản thụ hưởng, gộp số dư, cập nhật khi ở nước ngoài, tài khoản phụ thuộc. | Hồ sơ hỗ trợ, Câu hỏi nhanh | FAQ 68, 119, 93, 94 |
+| **A6.5** Đóng tài khoản ✅ | Biết các bước và vì sao có thể cần hồ sơ giấy. | Hồ sơ hỗ trợ | FAQ 61, 126 |
 
 <details><summary>Số liệu và ý chính cần dạy</summary>
 
@@ -527,8 +527,8 @@ Tránh lệnh bị từ chối vì vượt hạn mức. Linh vật: `study`.
 
 | Bài | Mục tiêu | Dạng | Nguồn |
 |---|---|---|---|
-| **A7.1** Hạn mức là gì | Kiểm tra hạn mức trước khi đặt lệnh lớn. | Thẻ kiến thức, Hồ sơ hỗ trợ | FAQ 110, 76 |
-| **A7.2** Hồ sơ: Nâng hạn mức | Đi hết quy trình email → đường dẫn → cuộc gọi video, và xử lý khi hết hạn hoặc không kết nối được. | Hồ sơ hỗ trợ | FAQ 74, 75, 77, 78 |
+| **A7.1** Hạn mức là gì ✅ | Kiểm tra hạn mức trước khi đặt lệnh lớn. | Thẻ kiến thức, Hồ sơ hỗ trợ | FAQ 110, 76 |
+| **A7.2** Hồ sơ: Nâng hạn mức ✅ | Đi hết quy trình email → đường dẫn → cuộc gọi video, và xử lý khi hết hạn hoặc không kết nối được. | Hồ sơ hỗ trợ | FAQ 74, 75, 77, 78 |
 
 <details><summary>Số liệu và ý chính cần dạy</summary>
 
@@ -544,9 +544,9 @@ Kẻ gian nhắm vào nhà đầu tư; phản xạ đúng bảo vệ tài sản.
 | Bài | Mục tiêu | Dạng | Nguồn |
 |---|---|---|---|
 | **A8.1** PIN và OTP ✅ | Xử lý quên PIN, OTP lạ và nguyên tắc không chia sẻ. | Câu hỏi nhanh, Hồ sơ hỗ trợ | FAQ 80, 90, 92 |
-| **A8.2** Cuộc gọi và đường dẫn giả mạo | Nhận diện cuộc gọi giả danh và xử lý khi lỡ nhấn đường dẫn lạ. | Tình huống, Luyện cùng AI | FAQ 116, 120 |
-| **A8.3** Mất điện thoại và đăng nhập | Bảo vệ tài khoản khi mất máy; hiểu yêu cầu đăng nhập lại hoặc cài lại Face ID. | Hồ sơ hỗ trợ | FAQ 85, 89, 91, 79 |
-| **A8.4** Kênh chính thức và tiện ích DragonX | Biết DragonLib, hiển thị thời hạn đầu tư, mã QR thanh toán DCIP, kênh liên hệ chính thức. | Câu hỏi nhanh | FAQ 83, 84, 86, 99 |
+| **A8.2** Cuộc gọi và đường dẫn giả mạo ✅ | Nhận diện cuộc gọi giả danh và xử lý khi lỡ nhấn đường dẫn lạ. | Tình huống, Luyện cùng AI | FAQ 116, 120 |
+| **A8.3** Mất điện thoại và đăng nhập ✅ | Bảo vệ tài khoản khi mất máy; hiểu yêu cầu đăng nhập lại hoặc cài lại Face ID. | Hồ sơ hỗ trợ | FAQ 85, 89, 91, 79 |
+| **A8.4** Kênh chính thức và tiện ích DragonX ✅ | Biết DragonLib, hiển thị thời hạn đầu tư, mã QR thanh toán DCIP, kênh liên hệ chính thức. | Câu hỏi nhanh | FAQ 83, 84, 86, 99 |
 
 <details><summary>Số liệu và ý chính cần dạy</summary>
 
@@ -560,8 +560,8 @@ Chuẩn bị cho những việc lớn của gia đình. Linh vật: `save`.
 
 | Bài | Mục tiêu | Dạng | Nguồn |
 |---|---|---|---|
-| **A9.1** Ủy quyền không phải chuyển quyền sở hữu | Phân biệt ủy quyền giao dịch, chuyển sở hữu và sắp xếp thừa kế. | Thẻ kiến thức, Tình huống | FAQ 64, 73 |
-| **A9.2** Thừa kế và tặng CCQ | Biết thủ tục khi nhà đầu tư qua đời và khi tặng CCQ, kể cả nghĩa vụ thuế. | Hồ sơ hỗ trợ | FAQ 65, 66 |
+| **A9.1** Ủy quyền không phải chuyển quyền sở hữu ✅ | Phân biệt ủy quyền giao dịch, chuyển sở hữu và sắp xếp thừa kế. | Thẻ kiến thức, Tình huống | FAQ 64, 73 |
+| **A9.2** Thừa kế và tặng CCQ ✅ | Biết thủ tục khi nhà đầu tư qua đời và khi tặng CCQ, kể cả nghĩa vụ thuế. | Hồ sơ hỗ trợ | FAQ 65, 66 |
 
 <details><summary>Số liệu và ý chính cần dạy</summary>
 
@@ -575,10 +575,10 @@ Biết công ty quản lý tiền của mình và tiếng nói của nhà đầu
 
 | Bài | Mục tiêu | Dạng | Nguồn |
 |---|---|---|---|
-| **A10.1** Dragon Capital là ai | Biết Dragon Capital Việt Nam thuộc đơn vị nào và công ty mẹ ở đâu. | Thẻ kiến thức, Câu hỏi nhanh | FAQ 97, 98 |
-| **A10.2** Đại hội nhà đầu tư và ban đại diện quỹ | Biết quyền tham dự đại hội và vai trò ban đại diện. | Thẻ kiến thức, Câu hỏi nhanh | FAQ 107, 103 |
-| **A10.3** Liên hệ và chăm sóc | Biết cách liên hệ đúng kênh và chuẩn bị thông tin khi cần hỗ trợ. | Hồ sơ hỗ trợ | FAQ 99, 100 |
-| **A10.4** Kiểm tra cuối chặng: Quỹ DC & DragonX | Đạt ≥ 80% để nhận chứng nhận "Nhà đầu tư DC hiểu biết". | Kiểm tra | FAQ 10, 44, 116, 125 |
+| **A10.1** Dragon Capital là ai ✅ | Biết Dragon Capital Việt Nam thuộc đơn vị nào và công ty mẹ ở đâu. | Thẻ kiến thức, Câu hỏi nhanh | FAQ 97, 98 |
+| **A10.2** Đại hội nhà đầu tư và ban đại diện quỹ ✅ | Biết quyền tham dự đại hội và vai trò ban đại diện. | Thẻ kiến thức, Câu hỏi nhanh | FAQ 107, 103 |
+| **A10.3** Liên hệ và chăm sóc ✅ | Biết cách liên hệ đúng kênh và chuẩn bị thông tin khi cần hỗ trợ. | Hồ sơ hỗ trợ | FAQ 99, 100 |
+| **A10.4** Kiểm tra cuối chặng: Quỹ DC & DragonX ✅ | Đạt ≥ 80% để nhận chứng nhận "Nhà đầu tư DC hiểu biết". | Kiểm tra | FAQ 10, 44, 116, 125 |
 
 <details><summary>Số liệu và ý chính cần dạy</summary>
 

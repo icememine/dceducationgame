@@ -1,8 +1,14 @@
 import type { SegmentInput } from "../../schema";
 import { unit as family } from "./a1-family";
 import { unit as orders } from "./a2-orders";
+import { unit as fees } from "./a3-fees";
 import { unit as performance } from "./a4-performance";
+import { unit as etf } from "./a5-etf";
+import { unit as account } from "./a6-account";
+import { unit as limits } from "./a7-limits";
 import { unit as safety } from "./a8-safety";
+import { unit as ownership } from "./a9-ownership";
+import { unit as dragonCapital } from "./a10-dc";
 
 /**
  * Segment A — Quỹ DC & DragonX. One file per unit, in the order of the outline
@@ -18,5 +24,5 @@ export const dcFunds = {
   title: "Quỹ DC & DragonX",
   subtitle: "Sản phẩm · Đặt lệnh · Phí · Hiệu suất · ETF · Tài khoản · Hạn mức · An toàn · Sở hữu",
   heartsEnabled: true,
-  units: [family, orders, performance, safety],
+  units: [family, orders, fees, performance, etf, account, limits, safety, ownership, dragonCapital],
 } satisfies SegmentInput;

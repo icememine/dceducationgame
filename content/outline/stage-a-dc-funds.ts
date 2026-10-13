@@ -41,6 +41,7 @@ export const stageDcFunds: OutlineStage = {
           formats: ["concept", "quiz"],
           sources: ["faq:16", "faq:124", "faq:115"],
           facts: ["DCDS: năng động, tăng trưởng vốn dài hạn; DCDE: doanh nghiệp nền tảng tốt, trả cổ tức", "DCDS không mặc nhiên luôn lời hơn hay rủi ro hơn DCDE"],
+          builtAs: "a1d-dcds-dcde",
         },
         {
           code: "A1.3",
@@ -52,6 +53,7 @@ export const stageDcFunds: OutlineStage = {
             "Phân phối 1.300 đ/CCQ, các yếu tố khác không đổi → NAV/CCQ giảm tương ứng 1.300 đ; không phải lỗ đầu tư",
             "Mức và lịch chi trả theo phương án được duyệt từng đợt; DCDE đã có các đợt phân phối tiền mặt",
           ],
+          builtAs: "a1d-dcde-dividend",
         },
         {
           code: "A1.4",
@@ -60,6 +62,7 @@ export const stageDcFunds: OutlineStage = {
           formats: ["concept", "quiz"],
           sources: ["faq:113", "w5-bond", "w5-mmf"],
           facts: ["DCBF tham chiếu lãi suất 12 tháng, DCIP tham chiếu lãi suất 3 tháng của 4 ngân hàng", "Kiểm tra ngày NAV đang hiển thị trước khi kết luận dữ liệu sai"],
+          builtAs: "a1d-dcbf-dcip",
         },
         {
           code: "A1.5",
@@ -68,6 +71,7 @@ export const stageDcFunds: OutlineStage = {
           formats: ["concept", "scenario"],
           sources: ["faq:34", "amdd-study-abroad"],
           facts: ["Còn nhiều thời gian, chịu biến động → có thể cân nhắc DCDS; muốn cân bằng hơn → DCBA; gần mục tiêu → chuyển dần sang bảo toàn"],
+          builtAs: "a1d-dcba",
         },
         {
           code: "A1.6",
@@ -76,6 +80,7 @@ export const stageDcFunds: OutlineStage = {
           formats: ["concept", "quiz"],
           sources: ["faq:15", "faq:118"],
           facts: ["Báo cáo phản ánh danh mục tại thời điểm báo cáo, có thể khác danh mục hiện tại"],
+          builtAs: "a1d-fund-report",
         },
         {
           code: "A1.7",
@@ -84,6 +89,7 @@ export const stageDcFunds: OutlineStage = {
           formats: ["scenario", "reflect"],
           sources: ["faq:28", "faq:95"],
           facts: ["So sánh theo chiến lược, rủi ro, hiệu suất cùng kỳ, phí, minh bạch, chất lượng phục vụ; không theo quy mô hay một năm lời cao"],
+          builtAs: "a1d-review-referral",
         },
         {
           code: "A1.8",
@@ -91,6 +97,7 @@ export const stageDcFunds: OutlineStage = {
           goal: "Ôn lại cả phần.",
           formats: ["checkpoint"],
           sources: ["faq:1", "faq:16", "faq:34"],
+          builtAs: "a1d-checkpoint",
         },
       ],
     },
@@ -108,6 +115,7 @@ export const stageDcFunds: OutlineStage = {
           sources: ["faq:5", "faq:108", "faq:44"],
           facts: ["Lệnh hoặc tiền đến sau hạn tiếp nhận có thể chuyển sang kỳ sau", "Chuyển tiền thành công chưa có nghĩa lệnh đã được thực hiện"],
           tool: "order-flow",
+          builtAs: "a2o-order-lifecycle",
         },
         {
           code: "A2.2",
@@ -124,6 +132,7 @@ export const stageDcFunds: OutlineStage = {
           formats: ["scenario", "spot"],
           sources: ["faq:5", "faq:52"],
           facts: ["Không chuyển tiền mua quỹ vào tài khoản cá nhân của người tư vấn"],
+          builtAs: "a2o-transfer-right",
         },
         {
           code: "A2.4",
@@ -141,6 +150,7 @@ export const stageDcFunds: OutlineStage = {
           formats: ["case"],
           sources: ["faq:50", "faq:54", "faq:128"],
           facts: ["Hủy lệnh không có nghĩa tiền được hoàn ngay", "Tiền chuyển cho DCBF không tự trở thành tiền mua DCDS"],
+          builtAs: "a2o-payoo-cancel-wrong-fund",
         },
         {
           code: "A2.6",
@@ -149,6 +159,7 @@ export const stageDcFunds: OutlineStage = {
           formats: ["case"],
           sources: ["faq:88"],
           facts: ["Không lặp lại lệnh hoặc chuyển tiền nhiều lần trước khi xác định trạng thái"],
+          builtAs: "a2o-app-error",
         },
         {
           code: "A2.7",
@@ -157,6 +168,7 @@ export const stageDcFunds: OutlineStage = {
           formats: ["case", "quiz"],
           sources: ["faq:46", "faq:47", "faq:111"],
           facts: ["Thời gian chờ tính từ ngày giao dịch hợp lệ, không nhất thiết từ ngày đặt lệnh", "Không bắt buộc mở tài khoản tại ngân hàng giám sát"],
+          builtAs: "a2o-sell-and-cash",
         },
       ],
     },
@@ -172,6 +184,7 @@ export const stageDcFunds: OutlineStage = {
           goal: "Phân biệt phí quản lý (trong NAV) với phí giao dịch và thuế.",
           formats: ["concept", "spot"],
           sources: ["faq:125"],
+          builtAs: "a3f-fees-in-nav",
         },
         {
           code: "A3.2",
@@ -180,6 +193,7 @@ export const stageDcFunds: OutlineStage = {
           formats: ["scenario", "calc"],
           sources: ["faq:10", "faq:42"],
           facts: ["Thời gian nắm giữ tính riêng từng lần mua; bán một phần không làm lần mua mới hưởng tuổi lô cũ"],
+          builtAs: "a3f-lot-age",
         },
         {
           code: "A3.3",
@@ -188,6 +202,7 @@ export const stageDcFunds: OutlineStage = {
           formats: ["calc", "case"],
           sources: ["faq:127", "faq:33", "faq:48"],
           facts: ["Biểu phí và thuế lấy từ bảng thông tin quỹ có ngày hiệu lực, không dùng tài liệu cũ"],
+          builtAs: "a3f-net-proceeds",
         },
         {
           code: "A3.4",
@@ -195,6 +210,7 @@ export const stageDcFunds: OutlineStage = {
           goal: "Hiểu chuyển đổi = bán quỹ nguồn + mua quỹ đích, có thể có phí và thuế.",
           formats: ["concept", "quiz"],
           sources: ["faq:53"],
+          builtAs: "a3f-switch",
         },
         {
           code: "A3.5",
@@ -202,6 +218,7 @@ export const stageDcFunds: OutlineStage = {
           goal: "Không mặc định mã giới thiệu nào cũng có ưu đãi.",
           formats: ["quiz"],
           sources: ["faq:131"],
+          builtAs: "a3f-referral",
         },
       ],
     },
@@ -226,6 +243,7 @@ export const stageDcFunds: OutlineStage = {
           goal: "Phân biệt lợi nhuận đang nắm giữ, đã thực hiện và tổng lợi nhuận có phân phối.",
           formats: ["concept", "calc"],
           sources: ["faq:32"],
+          builtAs: "a4p-three-returns",
         },
         {
           code: "A4.3",
@@ -233,6 +251,7 @@ export const stageDcFunds: OutlineStage = {
           goal: "Biết xin báo cáo, giấy xác nhận sở hữu (ví dụ cho hồ sơ visa) và lịch sử NAV ở đâu.",
           formats: ["case"],
           sources: ["faq:27", "faq:112", "faq:82"],
+          builtAs: "a4p-official-docs",
         },
       ],
     },
@@ -248,6 +267,7 @@ export const stageDcFunds: OutlineStage = {
           goal: "Kiểm tra phiên bản ứng dụng và điều kiện kích hoạt tài khoản ETF.",
           formats: ["case"],
           sources: ["faq:11"],
+          builtAs: "a5e-etf-missing",
         },
         {
           code: "A5.2",
@@ -255,6 +275,7 @@ export const stageDcFunds: OutlineStage = {
           goal: "Không kết luận cổ tức làm NAV tăng thêm tương ứng.",
           formats: ["concept", "quiz"],
           sources: ["faq:35"],
+          builtAs: "a5e-etf-dividend",
         },
         {
           code: "A5.3",
@@ -262,6 +283,7 @@ export const stageDcFunds: OutlineStage = {
           goal: "Phân biệt giao dịch hoán đổi lô lớn với mua ETF trên sàn.",
           formats: ["concept", "quiz"],
           sources: ["faq:36", "faq:135"],
+          builtAs: "a5e-etf-swap",
         },
       ],
     },
@@ -278,6 +300,7 @@ export const stageDcFunds: OutlineStage = {
           formats: ["case", "quiz"],
           sources: ["faq:63", "faq:114", "faq:132", "faq:105"],
           facts: ["Mua quỹ qua ngân hàng đối tác không biến quỹ thành tiền gửi được bảo đảm"],
+          builtAs: "a6a-open-account",
         },
         {
           code: "A6.2",
@@ -286,6 +309,7 @@ export const stageDcFunds: OutlineStage = {
           formats: ["case"],
           sources: ["faq:55", "faq:56", "faq:57", "faq:58", "faq:62", "faq:69"],
           facts: ["Cập nhật ở MoMo/CAKE không tự cập nhật tài khoản quỹ", "Không gửi ảnh giấy tờ lên kênh công khai"],
+          builtAs: "a6a-id-update",
         },
         {
           code: "A6.3",
@@ -294,6 +318,7 @@ export const stageDcFunds: OutlineStage = {
           formats: ["case"],
           sources: ["faq:59", "faq:60", "faq:67", "faq:70", "faq:71", "faq:72", "faq:81"],
           facts: ["Không xác nhận hồ sơ có thông tin sai; không cung cấp PIN/OTP cho người hỗ trợ"],
+          builtAs: "a6a-info-change",
         },
         {
           code: "A6.4",
@@ -301,6 +326,7 @@ export const stageDcFunds: OutlineStage = {
           goal: "Biết đổi tài khoản thụ hưởng, gộp số dư, cập nhật khi ở nước ngoài, tài khoản phụ thuộc.",
           formats: ["case", "quiz"],
           sources: ["faq:68", "faq:119", "faq:93", "faq:94"],
+          builtAs: "a6a-payout-channels",
         },
         {
           code: "A6.5",
@@ -308,6 +334,7 @@ export const stageDcFunds: OutlineStage = {
           goal: "Biết các bước và vì sao có thể cần hồ sơ giấy.",
           formats: ["case"],
           sources: ["faq:61", "faq:126"],
+          builtAs: "a6a-close-account",
         },
       ],
     },
@@ -324,6 +351,7 @@ export const stageDcFunds: OutlineStage = {
           formats: ["concept", "case"],
           sources: ["faq:110", "faq:76"],
           facts: ["Không mặc định mọi tài khoản có cùng hạn mức; hoàn thành cuộc gọi xác minh chưa chắc hạn mức cập nhật ngay"],
+          builtAs: "a7l-what-is-limit",
         },
         {
           code: "A7.2",
@@ -332,6 +360,7 @@ export const stageDcFunds: OutlineStage = {
           formats: ["case"],
           sources: ["faq:74", "faq:75", "faq:77", "faq:78"],
           facts: ["Chỉ mở đường dẫn từ nguồn đã xác nhận; không dùng đường dẫn người khác chuyển tiếp"],
+          builtAs: "a7l-raise-limit",
         },
       ],
     },
@@ -356,6 +385,7 @@ export const stageDcFunds: OutlineStage = {
           formats: ["scenario", "ai"],
           sources: ["faq:116", "faq:120"],
           facts: ["Tên hiển thị không đủ để xác nhận; gọi lại số chính thức", "Nhân viên không cần PIN/OTP; không chuyển tiền vào tài khoản cá nhân hay cài ứng dụng lạ"],
+          builtAs: "a8s-fake-calls",
         },
         {
           code: "A8.3",
@@ -363,6 +393,7 @@ export const stageDcFunds: OutlineStage = {
           goal: "Bảo vệ tài khoản khi mất máy; hiểu yêu cầu đăng nhập lại hoặc cài lại Face ID.",
           formats: ["case"],
           sources: ["faq:85", "faq:89", "faq:91", "faq:79"],
+          builtAs: "a8s-lost-phone",
         },
         {
           code: "A8.4",
@@ -370,6 +401,7 @@ export const stageDcFunds: OutlineStage = {
           goal: "Biết DragonLib, hiển thị thời hạn đầu tư, mã QR thanh toán DCIP, kênh liên hệ chính thức.",
           formats: ["quiz"],
           sources: ["faq:83", "faq:84", "faq:86", "faq:99"],
+          builtAs: "a8s-official-channels",
         },
       ],
     },
@@ -385,6 +417,7 @@ export const stageDcFunds: OutlineStage = {
           goal: "Phân biệt ủy quyền giao dịch, chuyển sở hữu và sắp xếp thừa kế.",
           formats: ["concept", "scenario"],
           sources: ["faq:64", "faq:73"],
+          builtAs: "a9o-authorization",
         },
         {
           code: "A9.2",
@@ -393,6 +426,7 @@ export const stageDcFunds: OutlineStage = {
           formats: ["case"],
           sources: ["faq:65", "faq:66"],
           facts: ["Không mặc định thuế tặng bằng 10% toàn bộ giá trị"],
+          builtAs: "a9o-inherit-gift",
         },
       ],
     },
@@ -408,6 +442,7 @@ export const stageDcFunds: OutlineStage = {
           goal: "Biết Dragon Capital Việt Nam thuộc đơn vị nào và công ty mẹ ở đâu.",
           formats: ["concept", "quiz"],
           sources: ["faq:97", "faq:98"],
+          builtAs: "a10d-who-is-dc",
         },
         {
           code: "A10.2",
@@ -415,6 +450,7 @@ export const stageDcFunds: OutlineStage = {
           goal: "Biết quyền tham dự đại hội và vai trò ban đại diện.",
           formats: ["concept", "quiz"],
           sources: ["faq:107", "faq:103"],
+          builtAs: "a10d-investor-rights",
         },
         {
           code: "A10.3",
@@ -423,6 +459,7 @@ export const stageDcFunds: OutlineStage = {
           formats: ["case"],
           sources: ["faq:99", "faq:100"],
           facts: ["Gửi mã yêu cầu/mã lệnh, mô tả sự cố, thời điểm; không bao giờ gửi PIN, OTP, mật khẩu"],
+          builtAs: "a10d-contact",
         },
         {
           code: "A10.4",
@@ -430,6 +467,7 @@ export const stageDcFunds: OutlineStage = {
           goal: "Đạt ≥ 80% để nhận chứng nhận \"Nhà đầu tư DC hiểu biết\".",
           formats: ["checkpoint"],
           sources: ["faq:10", "faq:44", "faq:116", "faq:125"],
+          builtAs: "a10d-stage-check",
         },
       ],
     },
