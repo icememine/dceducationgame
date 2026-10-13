@@ -16,7 +16,8 @@
     "docs:curriculum": "tsx scripts/gen-curriculum.ts",
     "e2e:golden": "node e2e/golden-path.mjs",
     "proto:build": "tsx scripts/build-prototype.ts",
-    "e2e:preview": "node e2e/preview-tour.mjs"
+    "e2e:preview": "node e2e/preview-tour.mjs",
+    "e2e:admin": "node e2e/admin-and-plan.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "0.133.0",

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { adminToken, isAdmin } from "@/features/admin/auth";
+import { adminLogout } from "@/actions/admin-session";
+import { adminEnabled, isAdmin } from "@/features/admin/auth";
 
 export const metadata: Metadata = {
   title: "Quản trị · Rồng DC Academy",
@@ -12,7 +13,7 @@ export const dynamic = "force-dynamic";
 
 /** Staff tools. Breaks out of the phone-width column of the root layout. */
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
-  if (!adminToken()) notFound();
+  if (!adminEnabled()) notFound();
   const staff = await isAdmin();
   return (
     <div className="fixed inset-0 z-10 overflow-auto bg-page text-ink">
@@ -21,6 +22,8 @@ export default async function AdminLayout({ children }: { children: React.ReactN
           <Link href="/admin" className="font-extrabold">Quản trị</Link>
           <Link href="/admin/analytics" className="font-bold text-sky-deep hover:underline">Phân tích câu hỏi</Link>
           <Link href="/admin/editor" className="font-bold text-sky-deep hover:underline">Trình soạn thảo</Link>
+          <Link href="/admin/market-sim" className="font-bold text-sky-deep hover:underline">Mô phỏng thị trường giảm</Link>
+          <form action={adminLogout} className="ml-auto"><button className="font-bold text-muted hover:underline">Đăng xuất</button></form>
         </header>
       )}
       <div className="mx-auto max-w-7xl p-4">{children}</div>

@@ -85,3 +85,23 @@ export function isValidReminderHour(h: number): boolean {
 
 /** Words that must never appear in a reminder (no fund marketing). Used by tests. */
 export const FORBIDDEN_REMINDER_WORDS = ["mua", "bán", "quỹ", "chứng chỉ", "đầu tư ngay", "lợi nhuận"];
+
+/**
+ * Market-drop nudge (FEATURES.md 9.3) — SIMULATOR ONLY. The app has no market data, so this is
+ * triggered by staff from /admin/market-sim to rehearse the message, never by a real index move.
+ * Every message is labelled "Mô phỏng" and points to the lesson on staying with the plan; it
+ * never suggests buying or selling.
+ */
+export const MARKET_DROP_LESSON = "b2r-drop-20";
+export const MARKET_DROP_OPTIONS = [10, 15, 20, 30] as const;
+
+export function marketDropNudge(dropPct: number): { kind: "market_drop"; title: string; body: string; href: string; mascot: string } {
+  const pct = Math.round(Math.abs(dropPct));
+  return {
+    kind: "market_drop",
+    title: `[Mô phỏng] Thị trường giảm ${pct}%: bạn sẽ làm gì?`,
+    body: "Đây là tình huống luyện tập, không phải tin thị trường thật. Ôn lại kế hoạch và thời gian đến ngày cần tiền trước khi quyết định.",
+    href: `/lesson/${MARKET_DROP_LESSON}`,
+    mascot: "sad",
+  };
+}

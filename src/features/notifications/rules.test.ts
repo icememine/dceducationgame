@@ -1,5 +1,6 @@
+import { findLesson } from "@content/index";
 import { describe, expect, it } from "vitest";
-import { FORBIDDEN_REMINDER_WORDS, decideReminder, isValidReminderHour, vietnamHour } from "./rules";
+import { FORBIDDEN_REMINDER_WORDS, MARKET_DROP_LESSON, decideReminder, isValidReminderHour, marketDropNudge, vietnamHour } from "./rules";
 
 describe("decideReminder", () => {
   it("skips when already studied and nothing is due", () => {
@@ -65,5 +66,14 @@ describe("isValidReminderHour", () => {
     expect(isValidReminderHour(5)).toBe(false);
     expect(isValidReminderHour(23)).toBe(false);
     expect(isValidReminderHour(7.5)).toBe(false);
+  });
+
+  it("labels the market-drop nudge as a simulation and never prompts trading", () => {
+    const m = marketDropNudge(-20);
+    expect(m.title.startsWith("[Mô phỏng]")).toBe(true);
+    expect(m.title).toContain("20%");
+    expect(m.body).toContain("không phải tin thị trường thật");
+    for (const w of ["mua", "bán ", "bán hết", "chốt lời"]) expect(`${m.title} ${m.body}`.toLowerCase()).not.toContain(w);
+    expect(findLesson(MARKET_DROP_LESSON)).toBeDefined();
   });
 });

@@ -171,7 +171,7 @@ Conversational version of the planner: Rồng asks for the four numbers, then fi
 |---|---|---|---|
 | 9.1 | Nhắc học | Push / email / Zalo at the chosen time | ✅ in-app + Web Push (VAPID); email/Zalo not built · V1 |
 | 9.2 | Chuỗi sắp mất | Evening nudge with mascot `fight` | ✅ (reminder rule) · V1 |
-| 9.3 | Khi thị trường giảm | When the market falls sharply, nudge to the B2.4 / B5.6 lessons instead of a sell button | ☐ needs market data · V1 |
+| 9.3 | Khi thị trường giảm | When the market falls sharply, nudge to the B2.4 / B5.6 lessons instead of a sell button | ◐ simulator only: staff send a labelled "[Mô phỏng]" nudge from /admin/market-sim; no market data, never automatic · V1 |
 | 9.4 | Bài mới tuần này | Each new AMDD article becomes a 3-minute lesson (via 5.4) | V1 |
 
 ## 10. DragonX integration

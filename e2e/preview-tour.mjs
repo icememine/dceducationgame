@@ -104,12 +104,6 @@ for (let i = 0; i < 12; i++) {
   await page.waitForFunction((t) => document.querySelector("main")?.innerText !== t, before);
 }
 await page.getByText(/Bạn trả lời đúng \d+\/\d+ câu/).waitFor(); await shot("17-placement-result");
-// Internal /admin (needs ADMIN_TOKEN on the server; skipped otherwise).
-if (process.env.ADMIN_TOKEN) {
-  await page.goto(B + "/admin?key=" + encodeURIComponent(process.env.ADMIN_TOKEN));
-  await page.goto(B + "/admin/analytics"); await page.getByText(/b1-risk-paper-loss/).first().waitFor(); await shot("18-admin-analytics");
-  await page.goto(B + "/admin/editor?c=b1-risk-paper-loss"); await page.getByText("Tạo bản sửa").first().waitFor(); await shot("19-admin-editor");
-}
 await browser.close();
 if (errors.length) { console.error("FAILED:", errors); process.exit(1); }
 console.log("Preview tour OK");

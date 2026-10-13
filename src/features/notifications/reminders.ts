@@ -81,6 +81,7 @@ export async function runReminders(now = new Date()): Promise<ReminderRunSummary
   // FEATURES 9.3 "Khi thị trường giảm": once a market-data source exists (e.g. a daily
   // VN-Index close), check for a sharp fall here and call notify(userId, { kind: "market_drop",
   // mascot: "sad", href: <B2.4 / B5.6 lesson> }) with a calm, learning-only message
-  // (no buy/sell prompt). Not built: there is no market data in the app yet.
+  // (no buy/sell prompt). Not built: there is no market data in the app yet. Until then the
+  // message exists only as a staff simulator: marketDropNudge() in rules.ts, /admin/market-sim.
   return summary;
 }

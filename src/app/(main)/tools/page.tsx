@@ -7,11 +7,15 @@ import { EduCostTool, RunwayTool } from "@/features/tools/plan-tools";
 import { DrawdownTool, RebalanceTool, SandboxTool } from "@/features/tools/risk-tools";
 import { ScrollActive } from "@/features/tools/scroll-active";
 import { StartEarlyTool } from "@/features/tools/start-early-tool";
+import { profileInfo } from "@content/risk";
+import { getLatestProfile } from "@/db/queries";
+import { getUserId } from "@/lib/auth";
 import { cn } from "@/lib/utils";
 
 export const metadata = { title: "Công cụ" };
 
-type Tool = { id: string; label: string; title: string; render: () => ReactNode };
+type Ctx = { profile?: { id: string; name: string } };
+type Tool = { id: string; label: string; title: string; render: (ctx: Ctx) => ReactNode };
 
 const GROUPS: { label: string; tools: Tool[] }[] = [
   {
@@ -28,7 +32,7 @@ const GROUPS: { label: string; tools: Tool[] }[] = [
     tools: [
       { id: "dca", label: "Góp đều (DCA)", title: "Góp đều hay đầu tư một lần", render: () => <DcaTool /> },
       { id: "fee-impact", label: "Tác động của phí", title: "Tác động của phí theo thời gian", render: () => <FeeImpactTool /> },
-      { id: "age-rule", label: "100 − tuổi", title: "Phân bổ theo quy tắc 100 − tuổi", render: () => <AgeRuleTool /> },
+      { id: "age-rule", label: "100 − tuổi", title: "Phân bổ theo quy tắc 100 − tuổi", render: (ctx) => <AgeRuleTool profile={ctx.profile} /> },
     ],
   },
   {
@@ -50,6 +54,10 @@ const ALL = GROUPS.flatMap((g) => g.tools);
 export default async function ToolsPage({ searchParams }: { searchParams: Promise<{ tool?: string }> }) {
   const { tool } = await searchParams;
   const active = ALL.find((t) => t.id === tool) ?? ALL[0];
+  // Only a confirmed profile from the current framework links to the age rule.
+  const risk = active.id === "age-rule" ? await getLatestProfile(await getUserId()) : undefined;
+  const info = risk?.frameworkVersion && risk.decision ? profileInfo(risk.finalProfile ?? risk.profile) : undefined;
+  const ctx: Ctx = { profile: info ? { id: info.id, name: info.name } : undefined };
   return (
     <div className="flex flex-col gap-4 p-4">
       <h1 className="text-2xl font-extrabold">Công cụ</h1>
@@ -75,7 +83,7 @@ export default async function ToolsPage({ searchParams }: { searchParams: Promis
       </nav>
       <ScrollActive id={active.id} />
       <h2 className="text-xl font-extrabold">{active.title}</h2>
-      {active.render()}
+      {active.render(ctx)}
     </div>
   );
 }

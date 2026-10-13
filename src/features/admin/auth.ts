@@ -1,31 +1,43 @@
 import "server-only";
 import { createHash, timingSafeEqual } from "node:crypto";
 import { cookies } from "next/headers";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 /**
- * Staff-only area (/admin). Access is a shared secret in ADMIN_TOKEN: visiting
- * /admin?key=<token> stores a hash of it in an httpOnly cookie scoped to /admin.
- * Without ADMIN_TOKEN the whole area answers 404.
+ * Staff-only area (/admin): sign in at /admin/login with ADMIN_USERNAME + ADMIN_PASSWORD.
+ * A hash of the credentials is kept in an httpOnly cookie scoped to /admin, so changing the
+ * password signs everyone out. Production without both variables: the whole area is 404.
+ * Development (NODE_ENV !== "production") falls back to the test login in docs/ADMIN_TEST.md.
  */
 export const ADMIN_COOKIE = "dc_admin";
 export const ADMIN_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
+export const DEV_ADMIN = { username: "admin", password: "rong-admin-2026" } as const;
 
-export const adminToken = () => process.env.ADMIN_TOKEN || undefined;
-
-const digest = (token: string) => createHash("sha256").update(`dc-admin:${token}`).digest();
-
-/** Cookie value for the configured token (a hash, so the token itself never sits in the browser). */
-export function adminCookieValue(): string | undefined {
-  const token = adminToken();
-  return token ? digest(token).toString("hex") : undefined;
+export function adminCredentials(): { username: string; password: string } | undefined {
+  const username = process.env.ADMIN_USERNAME;
+  const password = process.env.ADMIN_PASSWORD;
+  if (username && password) return { username, password };
+  return process.env.NODE_ENV === "production" ? undefined : DEV_ADMIN;
 }
 
-/** Constant-time check of a key typed by staff against ADMIN_TOKEN. */
-export function keyMatches(key: string | null | undefined): boolean {
-  const token = adminToken();
-  if (!token || !key) return false;
-  return timingSafeEqual(digest(key), digest(token));
+/** True when the admin area is switched on (credentials configured, or dev). */
+export const adminEnabled = () => !!adminCredentials();
+
+const digest = (s: string) => createHash("sha256").update(`dc-admin:${s}`).digest();
+
+/** Cookie value for the configured login (a hash; the password never sits in the browser). */
+export function adminCookieValue(): string | undefined {
+  const c = adminCredentials();
+  return c ? digest(`${c.username}\n${c.password}`).toString("hex") : undefined;
+}
+
+/** Constant-time check of a typed username + password. */
+export function credentialsMatch(username: string, password: string): boolean {
+  const c = adminCredentials();
+  if (!c) return false;
+  const userOk = timingSafeEqual(digest(username), digest(c.username));
+  const passOk = timingSafeEqual(digest(password), digest(c.password));
+  return userOk && passOk;
 }
 
 function cookieMatches(value: string | undefined): boolean {
@@ -35,13 +47,14 @@ function cookieMatches(value: string | undefined): boolean {
 }
 
 export async function isAdmin(): Promise<boolean> {
-  if (!adminToken()) return false;
+  if (!adminEnabled()) return false;
   return cookieMatches((await cookies()).get(ADMIN_COOKIE)?.value);
 }
 
-/** For pages: 404 unless ADMIN_TOKEN is set and the cookie matches. */
+/** For pages: 404 when the area is off, the login page when not signed in. */
 export async function requireAdmin(): Promise<void> {
-  if (!(await isAdmin())) notFound();
+  if (!adminEnabled()) notFound();
+  if (!(await isAdmin())) redirect("/admin/login");
 }
 
 /** For server actions: throws unless the caller is staff. */

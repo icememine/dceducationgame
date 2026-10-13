@@ -21,11 +21,12 @@ export function Errors({ issues, path }: { issues: Issue[]; path: string }) {
 }
 
 function Label({ label, hint, children }: { label: string; hint?: React.ReactNode; children: React.ReactNode }) {
+  // A real <label>, so each control has an accessible name (screen readers, e2e tests).
   return (
-    <div className="flex flex-col gap-1">
+    <label className="flex flex-col gap-1">
       <span className="flex justify-between text-sm font-extrabold"><span>{label}</span>{hint && <span className="font-normal text-muted">{hint}</span>}</span>
       {children}
-    </div>
+    </label>
   );
 }
 

@@ -21,7 +21,8 @@ export function githubConfig(): GitHubConfig | null {
 export type UnitFile = { path: string; text: string; sha?: string };
 
 async function gh<T>(cfg: GitHubConfig, path: string, init: RequestInit = {}): Promise<T> {
-  const res = await fetch(`https://api.github.com/repos/${cfg.repo}${path}`, {
+  const api = (process.env.GITHUB_API_URL || "https://api.github.com").replace(/\/$/, "");
+  const res = await fetch(`${api}/repos/${cfg.repo}${path}`, {
     ...init,
     cache: "no-store",
     headers: {

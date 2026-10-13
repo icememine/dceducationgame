@@ -1,12 +1,8 @@
 import Link from "next/link";
-import { redirect } from "next/navigation";
 import { requireAdmin } from "@/features/admin/auth";
 import { githubConfig } from "@/features/admin/content-files";
 
-export default async function AdminHome({ searchParams }: { searchParams: Promise<{ key?: string }> }) {
-  const { key } = await searchParams;
-  // Cookies can only be set from a route handler; it checks the key and comes back here.
-  if (key) redirect(`/admin/session?key=${encodeURIComponent(key)}`);
+export default async function AdminHome() {
   await requireAdmin();
   const gh = githubConfig();
   return (
@@ -20,6 +16,10 @@ export default async function AdminHome({ searchParams }: { searchParams: Promis
         <li className="rounded-xl border border-line bg-surface p-4">
           <Link href="/admin/editor" className="font-extrabold text-sky-deep hover:underline">Trình soạn thảo</Link>
           <p className="text-sm text-muted">Sửa một câu hỏi, xem trước như học viên thấy, rồi tạo bản sửa.</p>
+        </li>
+        <li className="rounded-xl border border-line bg-surface p-4">
+          <Link href="/admin/market-sim" className="font-extrabold text-sky-deep hover:underline">Mô phỏng thị trường giảm</Link>
+          <p className="text-sm text-muted">Chỉ mô phỏng: gửi thử lời nhắc &quot;[Mô phỏng] Thị trường giảm X%&quot; để xem trước hoặc luyện tập.</p>
         </li>
       </ul>
       <p className="text-sm text-muted">

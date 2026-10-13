@@ -52,3 +52,5 @@ Set `DATABASE_URL` to use a real Postgres instead (migrations in `./drizzle` run
 4. `npx tsx scripts/check-unit.ts <unit file>` while writing, then `npm run content:check && npm test`, then open a PR for Compliance review.
 
 Stack: Next.js 15 · React 19 · TypeScript · Tailwind · Drizzle ORM · Postgres / PGlite · Zod · Vitest · Anthropic SDK (Claude) · Playwright (e2e).
+
+Staff area: `/admin` (analytics, content editor, market-drop simulator). Test login and local link: [docs/ADMIN_TEST.md](docs/ADMIN_TEST.md).

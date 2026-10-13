@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { AGE_RULE, FEE_RANGES } from "@content/tools/presets";
+import { AGE_RULE, AGE_RULE_BY_PROFILE, FEE_RANGES } from "@content/tools/presets";
 import { formatVnd } from "@/lib/utils";
 import { ageRule, dca, dcaPrices, feeImpact, type DcaPath } from "./calc";
 import { Bars, Choice, Footnote, Highlight, MillionField, pct, Slider } from "./ui";
@@ -93,9 +93,10 @@ export function FeeImpactTool() {
 }
 
 /** "100 − tuổi": reference equity weight by age. */
-export function AgeRuleTool() {
+export function AgeRuleTool({ profile }: { profile?: { id: string; name: string } }) {
+  const link = profile ? AGE_RULE_BY_PROFILE[profile.id] : undefined;
   const [age, setAge] = useState(30);
-  const [bold, setBold] = useState(false);
+  const [bold, setBold] = useState(link?.variant === "bold");
   const base = bold ? AGE_RULE.bold : AGE_RULE.base;
   const equity = ageRule(age, base);
   return (
@@ -109,6 +110,9 @@ export function AgeRuleTool() {
           {equity < 1 && <div className="flex items-center justify-center bg-sky" style={{ width: `${(1 - equity) * 100}%` }}>{equity <= 0.85 && `Thu nhập cố định ${pct(1 - equity, 0)}`}</div>}
         </div>
       </div>
+      {profile && link && (
+        <p className="rounded-xl bg-sky-soft p-3 text-sm"><b>Hồ sơ rủi ro: {profile.name}.</b> {link.note}</p>
+      )}
       <p className="text-sm">
         {base} − {age} = <b>{pct(equity, 0)}</b> cổ phiếu, phần còn lại là tài sản thu nhập cố định. Đây chỉ là điểm xuất phát: thời gian đến ngày cần
         tiền, khoản dự phòng và khẩu vị rủi ro của bạn quan trọng không kém tuổi.

@@ -9,7 +9,7 @@
  */
 import { getSegment } from "@content/index";
 import { profileInfo } from "@content/risk";
-import { AGE_RULE } from "@content/tools/presets";
+import { AGE_RULE, AGE_RULE_BY_PROFILE } from "@content/tools/presets";
 import { formatDuration, monthsToTarget } from "@/features/goal-planner/finance";
 import { formatVnd } from "@/lib/utils";
 
@@ -89,6 +89,15 @@ export function unitTitle(id: string): string {
   return unit ? stripPart(unit.title) : id;
 }
 
+/** Age-rule line, linked lightly to the confirmed profile (see AGE_RULE_BY_PROFILE). */
+function ageRuleLine(profileId?: string): string {
+  const link = profileId ? AGE_RULE_BY_PROFILE[profileId] : undefined;
+  if (!link) return `Khung tham khảo chung: tỷ trọng cổ phiếu khoảng ${AGE_RULE.base} − tuổi, hoặc ${AGE_RULE.bold} − tuổi với người chịu được biến động.`;
+  const rule = link.variant === "bold" ? AGE_RULE.bold : AGE_RULE.base;
+  // The bold-profile note only restates the variant, so the card keeps it for cautious profiles.
+  return `Điểm xuất phát tham khảo: tỷ trọng cổ phiếu khoảng ${rule} − tuổi.${link.variant === "base" ? ` ${link.note}` : " Hồ sơ rủi ro luôn được ưu tiên hơn quy tắc tuổi."}`;
+}
+
 export function buildPlanCard({ nickname, avatar, risk, goals, hideAmounts }: PlanCardInput): PlanCard {
   // Only a confirmed result from the framework counts (same rule as the profile page).
   const confirmed = risk?.frameworkVersion && risk.decision ? risk : undefined;
@@ -106,9 +115,7 @@ export function buildPlanCard({ nickname, avatar, risk, goals, hideAmounts }: Pl
       duration: hideAmounts ? null : formatDuration(monthsToTarget(g, g.target)),
     })),
     moreGoals: Math.max(0, goals.length - MAX_GOALS),
-    ageRule: hideAmounts
-      ? null
-      : `Khung tham khảo chung, không theo hồ sơ riêng: tỷ trọng cổ phiếu khoảng ${AGE_RULE.base} − tuổi, hoặc ${AGE_RULE.bold} − tuổi với người chịu được biến động.`,
+    ageRule: hideAmounts ? null : ageRuleLine(info?.id),
     hideAmounts,
     disclaimer: PLAN_DISCLAIMER,
     disclaimerLong: DISCLAIMER_TEXT,

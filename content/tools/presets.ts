@@ -86,3 +86,16 @@ export const FEE_RANGES = {
 
 /** "100 − tuổi": reference equity weight; 120 − tuổi for people who accept more risk. */
 export const AGE_RULE = { base: 100, bold: 120, sourceId: "amdd-no-timing" };
+
+/**
+ * Light link between the age rule and the confirmed risk profile, kept deliberately simple:
+ * no new allocation numbers, only which variant to start from and a caution where the two
+ * can disagree. The risk profile (Risk Scoring Framework) always takes precedence.
+ */
+export const AGE_RULE_BY_PROFILE: Record<string, { variant: "base" | "bold"; note: string }> = {
+  "rat-than-trong": { variant: "base", note: "Hồ sơ của bạn ưu tiên an toàn: tỷ lệ theo tuổi có thể cao hơn mức bạn thấy thoải mái. Hãy dựa vào kết quả đánh giá rủi ro trước." },
+  "than-trong": { variant: "base", note: "Hồ sơ của bạn khá thận trọng: nếu tỷ lệ theo tuổi khiến bạn lo lắng, hãy ưu tiên kết quả đánh giá rủi ro." },
+  "can-bang": { variant: "base", note: "Hồ sơ cân bằng: dùng 100 − tuổi làm điểm xuất phát." },
+  "kha-mao-hiem": { variant: "bold", note: "Hồ sơ của bạn chấp nhận rủi ro cao hơn: có thể bắt đầu từ biến thể 120 − tuổi." },
+  "rat-mao-hiem": { variant: "bold", note: "Hồ sơ của bạn chấp nhận rủi ro cao: có thể bắt đầu từ biến thể 120 − tuổi." },
+};
