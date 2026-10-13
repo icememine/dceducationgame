@@ -16,7 +16,7 @@ const STARTS = [
 ];
 const GOAL_LABEL: Record<number, string> = { 5: "Nhẹ nhàng", 10: "Đều đặn", 15: "Nghiêm túc", 20: "Tăng tốc" };
 
-const choice = "flex w-full items-center gap-3 rounded-2xl border-2 border-b-4 border-line bg-surface p-4 text-left font-bold aria-pressed:border-sky aria-pressed:bg-sky-soft";
+const choice = "flex w-full items-center gap-3 rounded-2xl border border-line bg-surface p-4 text-left font-bold aria-pressed:border-sky aria-pressed:bg-sky-soft";
 
 export function OnboardingForm() {
   const [step, setStep] = useState(0);
@@ -36,7 +36,7 @@ export function OnboardingForm() {
       </div>
       <div className="flex items-center gap-3">
         <Mascot mood={step === 0 ? "explore" : step === 1 ? "fight" : "celebrate"} size={80} />
-        <div className="rounded-2xl border-2 border-line p-3 font-bold">{bubble}</div>
+        <div className="rounded-2xl border border-line bg-surface p-3 font-bold">{bubble}</div>
       </div>
 
       <div className="flex flex-1 flex-col gap-3">
@@ -59,7 +59,7 @@ export function OnboardingForm() {
               maxLength={24}
               onChange={(e) => setNickname(e.target.value)}
               placeholder="Ví dụ: Rồng Tích Sản"
-              className="rounded-2xl border-2 border-line bg-sunken p-4 font-semibold outline-none focus:border-sky"
+              className="rounded-2xl border border-line bg-sunken p-4 font-semibold outline-none focus:border-sky"
             />
             <small className="font-semibold text-muted">Chỉ biệt danh được hiển thị công khai, không hiển thị tên thật.</small>
           </label>

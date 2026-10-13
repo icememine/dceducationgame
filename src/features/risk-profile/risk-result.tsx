@@ -16,7 +16,6 @@ import {
   type SectionId,
 } from "@content/risk";
 import { confirmRiskProfile } from "@/actions/risk";
-import { Mascot } from "@/components/mascot";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -30,14 +29,27 @@ export function ProfileCard({ profile, decision }: { profile: string; decision?:
   if (!p) return null;
   return (
     <div className="flex w-full flex-col items-center gap-2 text-center">
-      <Mascot mood={p.mascot} size={110} />
-      <p className="text-sm font-extrabold uppercase tracking-widest text-muted">Hồ sơ đầu tư của bạn</p>
-      <h2 className="text-3xl font-extrabold text-jade-deep">{p.name}</h2>
+      <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-muted">Hồ sơ đầu tư của bạn</p>
+      <h2 className="text-3xl font-extrabold">{p.name}</h2>
+      <RiskScale profile={p.id} />
       <p>{p.summary}</p>
       {decision === "higher" && <p className="text-xs text-muted">Bạn đã chọn mức cao hơn kết quả đánh giá và đã xác nhận.</p>}
       {decision === "lower" && <p className="text-xs text-muted">Bạn đã chọn mức thấp hơn kết quả đánh giá.</p>}
       <p className="text-sm">Quỹ phù hợp (ví dụ): <b>{p.funds.join(" · ")}</b></p>
       <p className="text-xs leading-snug text-muted">{DISCLAIMER}</p>
+    </div>
+  );
+}
+
+/** Five steps from "Rất thận trọng" to "Rất mạo hiểm", filled up to the learner's level. */
+export function RiskScale({ profile, className }: { profile: string; className?: string }) {
+  const level = PROFILE_IDS.indexOf(profile as (typeof PROFILE_IDS)[number]);
+  return (
+    <div className={cn("flex w-full max-w-[220px] flex-col gap-1", className)} aria-hidden="true">
+      <div className="grid grid-cols-5 gap-1">
+        {PROFILE_IDS.map((id, i) => <span key={id} className={cn("h-2 rounded-full", i <= level ? "bg-jade" : "bg-line")} style={i <= level ? { opacity: 0.45 + (0.55 * (i + 1)) / (level + 1) } : undefined} />)}
+      </div>
+      <div className="flex justify-between text-[10px] text-muted"><span>Thận trọng</span><span>Mạo hiểm</span></div>
     </div>
   );
 }
@@ -79,7 +91,7 @@ export function RiskConfirm({ riskId, result, continueHref = "/learn" }: { riskI
 
   return (
     <div className="flex w-full flex-col gap-3 text-left">
-      <div className="rounded-2xl border-2 border-line p-3">
+      <div className="rounded-2xl border border-line bg-surface p-3">
         <p className="flex items-baseline justify-between font-extrabold">
           Tổng điểm <span className="font-display text-2xl text-jade-deep">{result.total}<span className="text-sm text-muted">/{totalMax}</span></span>
         </p>
@@ -122,10 +134,10 @@ export function RiskConfirm({ riskId, result, continueHref = "/learn" }: { riskI
       <div className="flex flex-col gap-2">
         <Button disabled={pending} onClick={() => pick("agree")}>{CONFIRMATION.agree}</Button>
         <div className="grid grid-cols-2 gap-2">
-          <Button variant="ghost" disabled={pending || level === 0} onClick={() => pick("lower")} className="text-[13px] normal-case tracking-normal">
+          <Button variant="ghost" disabled={pending || level === 0} onClick={() => pick("lower")} className="text-[13px]">
             {CONFIRMATION.lower}
           </Button>
-          <Button variant="ghost" disabled={pending || level === PROFILE_IDS.length - 1} onClick={() => pick("higher")} className="text-[13px] normal-case tracking-normal">
+          <Button variant="ghost" disabled={pending || level === PROFILE_IDS.length - 1} onClick={() => pick("higher")} className="text-[13px]">
             {CONFIRMATION.higher}
           </Button>
         </div>

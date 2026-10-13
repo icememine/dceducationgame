@@ -45,7 +45,7 @@ export function StartEarlyTool() {
         </label>
       </div>
 
-      <div className="rounded-2xl border-2 border-line p-3">
+      <div className="rounded-2xl border border-line bg-surface p-3">
         <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Giá trị tích lũy theo tuổi" className="w-full">
           <polyline points={line(early.startAge)} fill="none" stroke="rgb(var(--jade))" strokeWidth={3} />
           <polyline points={line(late.startAge)} fill="none" stroke="rgb(var(--coral))" strokeWidth={3} />

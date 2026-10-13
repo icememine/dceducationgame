@@ -20,12 +20,12 @@ export default async function SegmentsPage() {
         <form key={segment.id} action={setActiveSegment.bind(null, segment.id)}>
           <button
             className={cn(
-              "flex w-full flex-col gap-2 rounded-2xl border-2 border-b-4 p-4 text-left",
+              "flex w-full flex-col gap-2 rounded-2xl border p-4 text-left",
               segment.id === activeSegment.id ? "border-jade bg-jade-soft" : "border-line bg-surface",
             )}
           >
             <span className="flex items-center gap-2">
-              <span className="rounded-lg bg-jade px-1.5 py-0.5 text-xs font-extrabold text-white">{segment.code}</span>
+              <span className="rounded-lg bg-jade px-1.5 py-0.5 text-xs font-extrabold text-on-accent">{segment.code}</span>
               <span className="font-display text-lg font-extrabold">{segment.title}</span>
             </span>
             <span className="text-sm text-muted">{BLURB[segment.id] ?? segment.subtitle}</span>

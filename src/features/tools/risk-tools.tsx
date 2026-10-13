@@ -32,7 +32,7 @@ export function SandboxTool() {
   return (
     <div className="flex flex-col gap-4">
       <Slider id="sb-stock" label="Tỷ trọng cổ phiếu" value={stock} min={0} max={100} step={10} onChange={setStock} format={(v) => `${v}% cổ phiếu · ${100 - v}% trái phiếu`} />
-      <div className="overflow-hidden rounded-2xl border-2 border-line">
+      <div className="overflow-hidden rounded-2xl border border-line bg-surface">
         <table className="w-full text-sm">
           <thead className="bg-sunken text-left"><tr><th className="p-2">Kịch bản 1 năm</th><th className="p-2 text-right">Cổ phiếu</th><th className="p-2 text-right">Trái phiếu</th><th className="p-2 text-right">Danh mục</th></tr></thead>
           <tbody>

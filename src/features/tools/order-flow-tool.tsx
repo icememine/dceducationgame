@@ -47,7 +47,7 @@ export function OrderFlowTool() {
         {steps.map((s, i) => (
           <li key={s.label} className="grid grid-cols-[1.75rem_1fr] gap-3">
             <div className="flex flex-col items-center">
-              <span className={cn("flex size-7 items-center justify-center rounded-full text-sm font-extrabold text-white", i === 2 ? "bg-jade" : "bg-sky")}>{i + 1}</span>
+              <span className={cn("flex size-7 items-center justify-center rounded-full text-sm font-extrabold text-on-accent", i === 2 ? "bg-jade" : "bg-sky")}>{i + 1}</span>
               {i < steps.length - 1 && <span className="w-0.5 flex-1 bg-line" />}
             </div>
             <div className="pb-4">

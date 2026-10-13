@@ -101,7 +101,7 @@ function Result({ r }: { r: ContentEditResult }) {
           <div key={i} className={l.startsWith("+") && !l.startsWith("+++") ? "bg-jade-soft" : l.startsWith("-") && !l.startsWith("---") ? "bg-coral-soft" : l.startsWith("@@") ? "text-sky-deep" : ""}>{l || " "}</div>
         ))}
       </pre>
-      <button type="button" onClick={download} className="self-start rounded-lg bg-sky px-4 py-2 font-extrabold text-white">Tải file</button>
+      <button type="button" onClick={download} className="self-start rounded-lg bg-sky px-4 py-2 font-extrabold text-on-accent">Tải file</button>
       <p className="text-xs text-muted">Thay file này vào {r.path}, chạy <code>npx tsx scripts/check-unit.ts {r.path}</code> rồi mở pull request.</p>
     </div>
   );
@@ -139,10 +139,10 @@ export function ChallengeEditor({ original, github }: { original: Obj; github: b
         </div>
         {editable && (
           <div className="flex flex-wrap gap-2">
-            <button type="button" disabled={!dirty || issues.length > 0 || pending} onClick={submit} className="rounded-lg bg-jade px-4 py-2 font-extrabold text-white disabled:opacity-40">
+            <button type="button" disabled={!dirty || issues.length > 0 || pending} onClick={submit} className="rounded-lg bg-jade px-4 py-2 font-extrabold text-on-accent disabled:opacity-40">
               {pending ? "Đang tạo…" : "Tạo bản sửa"}
             </button>
-            <button type="button" disabled={!dirty || pending} onClick={() => { setDraft(original); setResult(null); }} className="rounded-lg border border-line px-4 py-2 font-bold disabled:opacity-40">Khôi phục bản gốc</button>
+            <button type="button" disabled={!dirty || pending} onClick={() => { setDraft(original); setResult(null); }} className="rounded-lg border border-line bg-surface px-4 py-2 font-bold disabled:opacity-40">Khôi phục bản gốc</button>
             <span className="self-center text-xs text-muted">{github ? "Sẽ mở một pull request trên GitHub." : "Chưa cấu hình GitHub: sẽ hiện diff và cho tải file."}</span>
           </div>
         )}

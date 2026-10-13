@@ -2,36 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Tokens from the Investor365 Learn prototype, as RGB triplets for Tailwind alpha support. */
+/*
+ * Theme tokens as RGB triplets (Tailwind alpha support). Light ("D") is the default;
+ * dark ("C") applies with <html data-theme="dark">, chosen in Cài đặt and kept in a cookie.
+ * Accents are dark enough for white text in light, and bright with dark text in dark:
+ * put text on an accent fill with text-on-accent, never text-white.
+ */
 :root {
-  --page: 232 239 235; --surface: 255 255 255; --sunken: 243 247 245;
-  --ink: 21 48 42; --muted: 100 122 114; --line: 217 228 223;
-  --jade: 22 165 113; --jade-deep: 13 125 85; --jade-soft: 216 243 231;
-  --gold: 240 174 46; --gold-deep: 194 133 14; --gold-soft: 255 241 210;
-  --coral: 228 71 77; --coral-deep: 179 48 58; --coral-soft: 253 227 227;
-  --sky: 44 134 209; --sky-deep: 29 102 159; --sky-soft: 221 238 251;
-  --violet: 122 91 208; --violet-deep: 95 68 168; --violet-soft: 236 230 250;
-  --locked: 227 233 230; --locked-deep: 195 206 201;
+  --page: 243 245 249; --surface: 255 255 255; --sunken: 238 241 246;
+  --ink: 14 20 33; --muted: 95 107 128; --line: 227 232 240; --line-strong: 197 205 218;
+  --jade: 11 138 102; --jade-deep: 8 106 79; --jade-soft: 221 245 236;
+  --gold: 154 98 6; --gold-deep: 130 82 4; --gold-soft: 255 244 220;
+  --coral: 196 50 62; --coral-deep: 160 36 48; --coral-soft: 252 231 232;
+  --sky: 29 100 180; --sky-deep: 22 80 148; --sky-soft: 225 237 250;
+  --violet: 102 76 190; --violet-deep: 82 58 160; --violet-soft: 236 232 250;
+  --locked: 238 241 246; --locked-deep: 140 151 171;
+  --on-accent: 255 255 255;
+  /* Primary actions and the two "hero" cards stay navy in light, so light keeps C's weight. */
+  --primary: 14 20 33; --on-primary: 255 255 255;
+  --hero: 14 20 33; --hero-line: 14 20 33; --hero-ink: 238 242 248; --hero-muted: 140 151 171; --hero-accent: 79 209 165;
   color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --page: 8 17 14; --surface: 17 29 25; --sunken: 24 39 34;
-    --ink: 230 240 235; --muted: 143 165 157; --line: 37 55 47;
-    --jade: 39 191 134; --jade-deep: 19 126 88; --jade-soft: 18 58 44;
-    --gold: 244 184 64; --gold-deep: 168 115 16; --gold-soft: 58 45 16;
-    --coral: 240 98 106; --coral-deep: 168 50 59; --coral-soft: 61 26 29;
-    --sky: 76 158 227; --sky-deep: 40 104 159; --sky-soft: 19 40 58;
-    --violet: 150 122 230; --violet-deep: 90 66 160; --violet-soft: 40 32 66;
-    --locked: 34 50 44; --locked-deep: 23 36 31;
-    color-scheme: dark;
-  }
+:root[data-theme="dark"] {
+  --page: 14 20 33; --surface: 22 29 45; --sunken: 28 36 53;
+  --ink: 238 242 248; --muted: 140 151 171; --line: 36 48 74; --line-strong: 58 71 96;
+  --jade: 79 209 165; --jade-deep: 123 224 191; --jade-soft: 22 58 49;
+  --gold: 232 176 75; --gold-deep: 240 196 110; --gold-soft: 42 36 22;
+  --coral: 240 110 118; --coral-deep: 245 150 155; --coral-soft: 58 26 30;
+  --sky: 96 165 235; --sky-deep: 140 190 245; --sky-soft: 22 40 62;
+  --violet: 160 135 235; --violet-deep: 185 165 245; --violet-soft: 40 32 66;
+  --locked: 28 36 53; --locked-deep: 95 107 128;
+  --on-accent: 14 20 33;
+  --primary: 79 209 165; --on-primary: 14 20 33;
+  --hero: 27 42 58; --hero-line: 39 71 106; --hero-ink: 238 242 248; --hero-muted: 140 151 171; --hero-accent: 79 209 165;
+  color-scheme: dark;
 }
 
 html, body { height: 100%; }
 body { @apply bg-page text-ink font-body antialiased; }
 h1, h2, h3 { @apply font-display; text-wrap: balance; }
+.tabular { font-variant-numeric: tabular-nums; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }

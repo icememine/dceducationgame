@@ -1,13 +1,12 @@
 "use client";
 
-import { Check, FileText, Heart, Sparkles, X } from "lucide-react";
+import { Award, Check, FileText, Heart, HeartCrack, Sparkles, X } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState, useTransition } from "react";
 import { completeLesson, startLessonSession, startPlacementSession, startReviewSession, submitAnswer, type LessonSummary, type SubmitResult } from "@/actions/lesson";
 import { saveGoal, setActiveSegment } from "@/actions/user";
 import { badgeInfo } from "@/features/badges/badges";
-import { Mascot } from "@/components/mascot";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import {
@@ -159,7 +158,7 @@ export function LessonPlayer({ source, lessonTitle, challenges, hearts: initialH
   if (outOfHearts) {
     return (
       <main className="flex flex-1 flex-col items-center justify-center gap-4 p-6 text-center">
-        <Mascot mood="sad" size={160} />
+        <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-coral-soft"><HeartCrack className="h-8 w-8 text-coral" /></span>
         <h1 className="text-2xl font-extrabold">Bạn đã hết tim</h1>
         <p className="text-muted">Tim hồi lại theo thời gian. Ôn lại một bài đã học để nhận thêm tim ngay.</p>
         <Button asChild><Link href="/learn">Ôn tập để hồi tim</Link></Button>
@@ -173,15 +172,19 @@ export function LessonPlayer({ source, lessonTitle, challenges, hearts: initialH
 
   return (
     <main className="flex min-h-dvh flex-col">
-      <div className="flex items-center gap-3 p-4">
-        <Link href="/learn" aria-label="Thoát bài học" className="text-muted"><X /></Link>
-        <div className="h-4 flex-1 overflow-hidden rounded-full bg-locked" role="progressbar" aria-valuenow={pct} aria-label={lessonTitle}>
-          <i className="block h-full rounded-full bg-jade transition-all" style={{ width: `${Math.max(pct, 3)}%` }} />
+      <header className="flex flex-col gap-3 px-5 pb-3.5 pt-4">
+        <div className="flex items-center gap-3">
+          <Link href="/learn" aria-label="Thoát bài học" className="flex h-[38px] w-[38px] shrink-0 items-center justify-center rounded-xl border border-line bg-surface"><X className="h-4 w-4" /></Link>
+          <p className="min-w-0 flex-1 truncate text-[15px] font-bold">{lessonTitle}</p>
+          {heartsEnabled && !isPractice && <span className="flex items-center gap-1 text-sm font-bold text-coral tabular"><Heart className="h-4 w-4 fill-current" />{hearts}</span>}
+          {isPractice && <span className="rounded-full bg-gold-soft px-2.5 py-1 text-xs font-bold text-gold-deep">Ôn tập</span>}
+          {source.kind === "placement" && <span className="rounded-full bg-sky-soft px-2.5 py-1 text-xs font-bold text-sky-deep">Xếp lớp</span>}
+          <span className="rounded-full bg-jade-soft px-2.5 py-1 text-[13px] font-bold text-jade-deep tabular">{solved.size} / {challenges.length}</span>
         </div>
-        {heartsEnabled && !isPractice && <span className="flex items-center gap-1 font-extrabold text-coral"><Heart className="h-5 w-5 fill-current" />{hearts}</span>}
-        {isPractice && <span className="rounded-full bg-gold-soft px-2 py-0.5 text-xs font-extrabold text-gold-deep">Ôn tập</span>}
-        {source.kind === "placement" && <span className="rounded-full bg-sky-soft px-2 py-0.5 text-xs font-extrabold text-sky-deep">Xếp lớp</span>}
-      </div>
+        <div className="h-1.5 overflow-hidden rounded-full bg-line" role="progressbar" aria-valuenow={pct} aria-label={lessonTitle}>
+          <i className="block h-full rounded-full bg-jade transition-all" style={{ width: `${Math.max(pct, 2)}%` }} />
+        </div>
+      </header>
 
       <div className="flex flex-1 flex-col gap-4 overflow-y-auto px-5 pb-6">
         {retryWrong && solved.has(idx) === false && queue.indexOf(idx) !== pos && (
@@ -203,7 +206,7 @@ export function LessonPlayer({ source, lessonTitle, challenges, hearts: initialH
       </div>
 
       <Feedback result={result} kind={c.type} />
-      <div className={cn("p-4", result && (result.correct ? "bg-jade-soft" : result.correct === null ? "bg-sky-soft" : "bg-coral-soft"))}>
+      <div className={cn("px-5 pb-6 pt-3.5", result ? (result.correct ? "bg-jade-soft" : result.correct === null ? "bg-sky-soft" : "bg-coral-soft") : "border-t border-line bg-surface")}>
         <Button
           variant={result ? (result.correct ? "primary" : result.correct === null ? "sky" : "coral") : "primary"}
           disabled={!answer || pending || !session}
@@ -232,7 +235,7 @@ function Feedback({ result, kind }: { result: SubmitResult | null; kind: string 
       )}
     >
       <p className="flex items-center gap-2 font-display text-xl font-extrabold">
-        <span className={cn("flex h-7 w-7 items-center justify-center rounded-full text-white", tone === "ok" ? "bg-jade" : tone === "info" ? "bg-sky" : "bg-coral")}>
+        <span className={cn("flex h-7 w-7 items-center justify-center rounded-full text-on-accent", tone === "ok" ? "bg-jade" : tone === "info" ? "bg-sky" : "bg-coral")}>
           {tone === "ok" ? <Check className="h-4 w-4" /> : tone === "info" ? <Sparkles className="h-4 w-4" /> : <X className="h-4 w-4" />}
         </span>
         {tone === "ok" ? "Chính xác!" : tone === "info" ? (kind === "estimate" ? "Chưa sát lắm" : "Điều dữ liệu cho thấy") : "Chưa đúng"}
@@ -266,7 +269,7 @@ function Summary({ summary, seconds, onDone }: { summary: LessonSummary; seconds
           <RiskConfirm riskId={p.riskId} result={p.result} />
         ) : pl ? (
           <>
-            <Mascot mood={pl.unlockIndex > 0 ? "celebrate" : "study"} size={150} />
+            <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-sky-soft"><Award className="h-8 w-8 text-sky" /></span>
             <h1 className="text-2xl font-extrabold">Bạn trả lời đúng {pl.score}/{pl.total} câu</h1>
             <p className="text-muted">
               {pl.unlockIndex === 0
@@ -278,23 +281,23 @@ function Summary({ summary, seconds, onDone }: { summary: LessonSummary; seconds
           </>
         ) : (
           <>
-            <Mascot mood={summary.perfect ? "trophy" : "celebrate"} size={150} />
+            <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-jade-soft"><Check className="h-8 w-8 text-jade" strokeWidth={3} /></span>
             <h1 className="text-2xl font-extrabold">{summary.perfect ? "Hoàn hảo, không sai câu nào!" : "Hoàn thành bài học!"}</h1>
           </>
         )}
         <div className="grid w-full grid-cols-3 gap-2">
-          <Tile label="Tổng XP" value={`+${summary.xp}`} cls="bg-gold" />
-          <Tile label="Chuỗi" value={`${summary.streak} ngày`} cls="bg-coral" />
-          <Tile label="Thời gian" value={`${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, "0")}`} cls="bg-sky" />
+          <Tile label="Điểm" value={`+${summary.xp}`} />
+          <Tile label="Chuỗi" value={`${summary.streak} ngày`} />
+          <Tile label="Thời gian" value={`${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, "0")}`} />
         </div>
         {summary.newBadges.length > 0 && (
-          <div className="flex w-full flex-col gap-2 rounded-2xl border-2 border-gold bg-gold-soft p-3 text-left">
-            <p className="text-sm font-extrabold text-gold-deep">Huy hiệu mới!</p>
+          <div className="flex w-full flex-col gap-2 rounded-2xl border border-line bg-surface p-4 text-left">
+            <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-jade">Huy hiệu mới</p>
             {summary.newBadges.map((id) => {
               const b = badgeInfo(id);
               return b ? (
                 <div key={id} className="flex items-center gap-3">
-                  <Mascot mood={b.mascot} size={40} />
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gold-soft"><Award className="h-5 w-5 text-gold" /></span>
                   <div><p className="font-extrabold">{b.title}</p><p className="text-xs text-muted">{b.description}</p></div>
                 </div>
               ) : null;
@@ -307,9 +310,9 @@ function Summary({ summary, seconds, onDone }: { summary: LessonSummary; seconds
   );
 }
 
-const Tile = ({ label, value, cls }: { label: string; value: string; cls: string }) => (
-  <div className={cn("overflow-hidden rounded-2xl border-2", cls)}>
-    <p className="py-1 text-xs font-extrabold uppercase text-white">{label}</p>
-    <p className="bg-surface py-2 font-extrabold">{value}</p>
+const Tile = ({ label, value }: { label: string; value: string }) => (
+  <div className="flex flex-col gap-0.5 rounded-[14px] border border-line bg-surface p-3 text-left">
+    <p className="text-[11px] text-muted">{label}</p>
+    <p className="text-xl font-bold tabular">{value}</p>
   </div>
 );

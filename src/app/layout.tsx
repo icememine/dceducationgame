@@ -1,23 +1,26 @@
 import type { Metadata, Viewport } from "next";
-import { Baloo_2, Nunito } from "next/font/google";
+import { Manrope } from "next/font/google";
+import { getTheme } from "@/lib/theme";
 import "./globals.css";
 
-const display = Baloo_2({ subsets: ["latin", "vietnamese"], weight: ["600", "700", "800"], variable: "--font-display" });
-const body = Nunito({ subsets: ["latin", "vietnamese"], weight: ["500", "600", "700", "800"], variable: "--font-body" });
+const sans = Manrope({ subsets: ["latin", "vietnamese"], weight: ["400", "500", "600", "700"], variable: "--font-body" });
 
 export const metadata: Metadata = {
   title: "Rồng DC Academy",
   description: "Học đầu tư quỹ 5 phút mỗi ngày cùng Rồng DC",
 };
 
-export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#16A571" };
+export async function generateViewport(): Promise<Viewport> {
+  return { width: "device-width", initialScale: 1, themeColor: (await getTheme()) === "dark" ? "#0E1421" : "#F3F5F9" };
+}
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const theme = await getTheme();
   return (
-    <html lang="vi" className={`${display.variable} ${body.variable}`}>
-      {/* Phone-first column, like the prototype; desktop just centres it. */}
+    <html lang="vi" data-theme={theme} className={sans.variable} style={{ "--font-display": "var(--font-body)" } as React.CSSProperties}>
+      {/* Phone-first column; desktop just centres it. */}
       <body>
-        <div className="mx-auto flex min-h-full max-w-[480px] flex-col bg-surface shadow-sm">{children}</div>
+        <div className="mx-auto flex min-h-full max-w-[480px] flex-col bg-page shadow-sm">{children}</div>
       </body>
     </html>
   );

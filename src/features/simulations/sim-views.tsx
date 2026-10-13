@@ -29,7 +29,7 @@ function NavChart({ upto }: { upto: number }) {
   const y = (v: number) => h - pad - ((v - min) / (max - min)) * (h - 2 * pad);
   const pts = NAV.slice(0, upto + 1).map((v, m) => `${x(m).toFixed(1)},${y(v).toFixed(1)}`).join(" ");
   return (
-    <svg viewBox={`0 0 ${W} ${h}`} role="img" aria-label="Biểu đồ NAV minh họa" className="w-full rounded-2xl border-2 border-line">
+    <svg viewBox={`0 0 ${W} ${h}`} role="img" aria-label="Biểu đồ NAV minh họa" className="w-full rounded-2xl border border-line bg-surface">
       <polygon points={`${x(0)},${h - pad} ${pts} ${x(upto)},${h - pad}`} fill="rgb(var(--jade-soft))" />
       <polyline points={pts} fill="none" stroke="rgb(var(--jade))" strokeWidth={2.5} strokeLinejoin="round" />
       {DROPS.map((_, i) => decisionMonth(i) <= upto && <circle key={i} cx={x(decisionMonth(i))} cy={y(NAV[decisionMonth(i)])} r={5} fill="rgb(var(--coral))" />)}
@@ -107,7 +107,7 @@ function TimingChart({ prices, upto, picked, revealed }: { prices: number[]; upt
   const low = prices.indexOf(Math.min(...prices));
   const fill = (i: number) => (i === picked ? "rgb(var(--sky))" : revealed && i === low ? "rgb(var(--jade))" : revealed && i === 0 ? "rgb(var(--gold))" : "rgb(var(--ink))");
   return (
-    <svg viewBox={`0 0 ${W} ${h}`} role="img" aria-label="Giá CCQ trong tháng" className="w-full rounded-2xl border-2 border-line">
+    <svg viewBox={`0 0 ${W} ${h}`} role="img" aria-label="Giá CCQ trong tháng" className="w-full rounded-2xl border border-line bg-surface">
       {!revealed && <rect x={x(upto) + 4} y={0} width={Math.max(0, W - pad - x(upto) - 4)} height={h - 20} rx={6} fill="rgb(var(--locked))" opacity={0.6} />}
       <polyline points={shown.map((v, i) => `${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(" ")} fill="none" stroke="rgb(var(--ink))" strokeWidth={2} strokeLinejoin="round" />
       {shown.map((v, i) => <circle key={i} cx={x(i)} cy={y(v)} r={i === picked || (!revealed && i === upto) ? 6 : 3.5} fill={fill(i)} />)}

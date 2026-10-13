@@ -1,7 +1,7 @@
 "use client";
 
 import { QUIZ_PATTERNS } from "@content/schema";
-import { Mascot } from "@/components/mascot";
+import { Lightbulb } from "lucide-react";
 import { cn, formatVnd } from "@/lib/utils";
 import { formatDuration, monthsToTarget } from "@/features/goal-planner/finance";
 import { ProjectionChart } from "@/features/goal-planner/projection-chart";
@@ -29,8 +29,9 @@ export type ViewProps<T extends ClientChallenge["type"]> = {
 };
 
 const opt =
-  "flex w-full items-center gap-3 rounded-2xl border-2 border-b-4 border-line bg-surface p-3.5 text-left font-bold transition-colors aria-pressed:border-sky aria-pressed:bg-sky-soft disabled:opacity-80";
-const key = "flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border-2 border-line text-xs text-muted";
+  "group flex w-full items-center gap-3 rounded-[14px] border border-line bg-surface p-3.5 text-left text-[15px] font-medium leading-snug transition-colors hover:border-line-strong aria-pressed:border-jade aria-pressed:bg-jade-soft aria-pressed:font-semibold disabled:opacity-80";
+const key =
+  "flex h-[26px] w-[26px] shrink-0 items-center justify-center rounded-full border border-line-strong text-xs font-semibold text-muted group-aria-pressed:border-jade group-aria-pressed:bg-jade group-aria-pressed:text-on-accent";
 
 function Options({ options, draft, setDraft, locked, letters }: { options: string[]; draft: Draft; setDraft: (d: Draft) => void; locked: boolean; letters?: boolean }) {
   return (
@@ -46,12 +47,17 @@ function Options({ options, draft, setDraft, locked, letters }: { options: strin
 }
 
 export const Context = ({ text }: { text?: string }) =>
-  text ? <div className="rounded-2xl bg-sunken p-4 text-[15px]">{text}</div> : null;
+  text ? (
+    <div className="flex flex-col gap-2 rounded-2xl border border-line bg-surface p-4">
+      <span className="text-[11px] font-bold uppercase tracking-[0.1em] text-muted">Tình huống</span>
+      <p className="text-[15px] leading-relaxed">{text}</p>
+    </div>
+  ) : null;
 
 export function InfoView({ c }: { c: Extract<ClientChallenge, { type: "info" }> }) {
   return (
-    <div className="flex flex-col items-center gap-4 text-center">
-      <Mascot mood={c.mascot ?? "study"} size={140} />
+    <div className="flex flex-col gap-4 rounded-2xl border border-line bg-surface p-5">
+      <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-jade-soft"><Lightbulb className="h-5 w-5 text-jade" /></span>
       <h2 className="text-2xl font-extrabold">{c.title}</h2>
       <p className="text-[16px] leading-relaxed">{c.body}</p>
     </div>
@@ -62,7 +68,7 @@ export function InfoView({ c }: { c: Extract<ClientChallenge, { type: "info" }> 
 export function SelectView({ c, ...p }: ViewProps<"select">) {
   return (
     <>
-      <p className="text-xs font-extrabold uppercase tracking-widest text-sky-deep">{QUIZ_PATTERNS[c.pattern]}</p>
+      <p className="text-xs font-extrabold uppercase tracking-[0.1em] text-sky-deep">{QUIZ_PATTERNS[c.pattern]}</p>
       <Context text={c.context} />
       <h2 className="text-xl font-extrabold">{c.prompt}</h2>
       <Options options={c.options} letters {...p} />
@@ -75,8 +81,8 @@ export function ScenarioView({ c, ...p }: ViewProps<"scenario">) {
     <>
       <h2 className="text-xl font-extrabold">{c.prompt}</h2>
       <div className="flex items-start gap-3">
-        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-coral font-extrabold text-white">{c.persona.name[0]}</span>
-        <div className="rounded-2xl rounded-tl-sm border-2 border-line p-3">
+        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-coral font-extrabold text-on-accent">{c.persona.name[0]}</span>
+        <div className="rounded-2xl rounded-tl-sm border border-line bg-surface p-3">
           <small className="block font-bold text-muted">{c.persona.name}{c.persona.meta && ` · ${c.persona.meta}`}</small>
           {c.says}
         </div>
@@ -109,7 +115,7 @@ export function MatchView({ c, draft, setDraft, locked }: ViewProps<"match">) {
     next[draft.pickedLeft] = j;
     setDraft({ ...draft, pairs: next, pickedLeft: undefined });
   };
-  const tile = "min-h-14 rounded-2xl border-2 border-b-4 border-line bg-surface p-2.5 text-sm font-bold";
+  const tile = "min-h-14 rounded-[14px] border-2 border-line bg-surface p-2.5 text-sm font-semibold";
   return (
     <>
       <h2 className="text-xl font-extrabold">{c.prompt}</h2>
@@ -117,7 +123,7 @@ export function MatchView({ c, draft, setDraft, locked }: ViewProps<"match">) {
         <div className="flex flex-col gap-2.5">
           {c.left.map((t, i) => (
             <button key={i} disabled={locked} aria-pressed={draft.pickedLeft === i} onClick={() => tapLeft(i)}
-              className={cn(tile, pairs[i] !== undefined && PAIR_COLORS[i % PAIR_COLORS.length], draft.pickedLeft === i && "border-sky")}>
+              className={cn(tile, pairs[i] !== undefined && PAIR_COLORS[i % PAIR_COLORS.length], draft.pickedLeft === i && "border-jade")}>
               {t}
             </button>
           ))}
@@ -168,7 +174,7 @@ export function NumericView({ c, draft, setDraft, locked }: ViewProps<"numeric">
     <>
       <Context text={c.context} />
       <h2 className="text-xl font-extrabold">{c.prompt}</h2>
-      <label className="flex items-center gap-2 rounded-2xl border-2 border-line bg-sunken p-4 focus-within:border-sky">
+      <label className="flex items-center gap-2 rounded-2xl border border-line bg-sunken p-4 focus-within:border-sky">
         <input inputMode="decimal" autoComplete="off" placeholder="0" disabled={locked} value={draft.text ?? ""}
           onChange={(e) => setDraft({ text: e.target.value })}
           className="w-full bg-transparent text-2xl font-extrabold outline-none" />
@@ -184,10 +190,10 @@ export function EstimateView({ c, draft, setDraft, locked }: ViewProps<"estimate
   const v = draft.value ?? c.start;
   return (
     <>
-      <p className="text-xs font-extrabold uppercase tracking-widest text-sky-deep">Đoán số</p>
+      <p className="text-xs font-extrabold uppercase tracking-[0.1em] text-sky-deep">Đoán số</p>
       <Context text={c.context} />
       <h2 className="text-xl font-extrabold">{c.prompt}</h2>
-      <div className="flex flex-col gap-2 rounded-2xl border-2 border-line p-4">
+      <div className="flex flex-col gap-2 rounded-2xl border border-line bg-surface p-4">
         <p className="text-center font-display text-3xl font-extrabold text-sky-deep">{v.toLocaleString("vi-VN")} {c.unit}</p>
         <input type="range" min={c.min} max={c.max} step={c.step} value={v} disabled={locked} aria-label="Con số bạn đoán"
           onChange={(e) => setDraft({ value: Number(e.target.value) })} className="w-full accent-[rgb(var(--sky))]" />
@@ -201,12 +207,12 @@ export function EstimateView({ c, draft, setDraft, locked }: ViewProps<"estimate
 export function SpotView({ c, draft, setDraft, locked }: ViewProps<"spot">) {
   return (
     <>
-      <p className="text-xs font-extrabold uppercase tracking-widest text-coral-deep">Tìm câu sai</p>
+      <p className="text-xs font-extrabold uppercase tracking-[0.1em] text-coral-deep">Tìm câu sai</p>
       <Context text={c.context} />
       <h2 className="text-xl font-extrabold">{c.prompt}</h2>
       <div className="flex flex-col gap-2.5">
         {c.statements.map((s, i) => (
-          <button key={i} className={cn(opt, "font-semibold aria-pressed:border-coral aria-pressed:bg-coral-soft")} aria-pressed={draft.choice === i} disabled={locked} onClick={() => setDraft({ choice: i })}>
+          <button key={i} className={cn(opt, "aria-pressed:border-coral aria-pressed:bg-coral-soft")} aria-pressed={draft.choice === i} disabled={locked} onClick={() => setDraft({ choice: i })}>
             “{s}”
           </button>
         ))}
@@ -218,7 +224,7 @@ export function SpotView({ c, draft, setDraft, locked }: ViewProps<"spot">) {
 export function ProfileView({ c, draft, setDraft, locked }: ViewProps<"profile">) {
   return (
     <>
-      <p className="text-xs font-extrabold uppercase tracking-widest text-jade-deep">Tự đánh giá · không có đáp án sai</p>
+      <p className="text-xs font-extrabold uppercase tracking-[0.1em] text-jade-deep">Tự đánh giá · không có đáp án sai</p>
       <h2 className="text-xl font-extrabold">{c.prompt}</h2>
       <Options options={c.options} draft={draft} setDraft={setDraft} locked={locked} />
     </>
@@ -226,7 +232,7 @@ export function ProfileView({ c, draft, setDraft, locked }: ViewProps<"profile">
 }
 
 const field = "flex flex-col gap-1 text-sm font-bold";
-const input = "rounded-xl border-2 border-line bg-sunken p-2.5 font-extrabold outline-none focus:border-sky";
+const input = "rounded-xl border border-line bg-sunken p-2.5 font-extrabold outline-none focus:border-sky";
 
 export function GoalPlannerView({ c, draft, setDraft, locked }: ViewProps<"goal_planner">) {
   const plan = draft.plan ?? c.defaults;

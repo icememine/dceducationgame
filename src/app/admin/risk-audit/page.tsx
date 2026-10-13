@@ -42,7 +42,7 @@ export default async function RiskAuditPage({ searchParams }: { searchParams: Pr
           </select>
         </label>
         <DateRange from={sp.from} to={sp.to} />
-        <button className="rounded-lg bg-sky px-3 py-1.5 text-sm font-extrabold text-white">Lọc</button>
+        <button className="rounded-lg bg-sky px-3 py-1.5 text-sm font-extrabold text-on-accent">Lọc</button>
         {/* Plain <a>: a prefetched <Link> would run the export (and log it) without a click. */}
         <a href={`/admin/risk-audit/export?${qs}`} download className="text-sm font-bold text-sky-deep underline">Tải CSV</a>
       </form>

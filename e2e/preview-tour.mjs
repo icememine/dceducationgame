@@ -80,8 +80,8 @@ if (!/hỏi Rồng khá nhiều/.test(last)) errors.push("daily cap message not 
 // Spaced repetition: a mistake lands in "Cần ôn lại"; the review session clears it.
 await page.goto(B + "/lesson/b1-what-is-risk");
 await page.getByText("Chị đã mất hẳn 12% số tiền", { exact: true }).click(); await btn("Kiểm tra").click(); await page.getByText("Chưa đúng").waitFor();
-await page.goto(B + "/learn"); await page.getByText(/Cần ôn lại: \d+ câu/).waitFor(); await shot("09-review-card");
-await page.getByRole("link", { name: /Cần ôn lại/ }).click(); await page.waitForURL("**/review");
+await page.goto(B + "/learn"); await page.getByText(/Ôn lại \d+ câu/).waitFor(); await shot("09-review-card");
+await page.getByRole("link", { name: /Ôn lại \d+ câu/ }).click(); await page.waitForURL("**/review");
 // Only that one question is due: answer it right and the review session ends.
 await page.getByText("Đây là biến động giá; khoản lỗ chỉ thành thật nếu chị bán ở mức giá này", { exact: true }).click();
 await btn("Kiểm tra").click(); await page.getByText("Chính xác!").waitFor(); await btn("Tiếp tục").click();
@@ -96,12 +96,12 @@ await page.goto(B + "/profile/plan"); await page.getByText("Ẩn số tiền").f
 await page.goto(B + "/profile/settings"); await page.getByText(/nhắc/i).first().waitFor(); await shot("16-settings");
 // Placement test: one question per unit, answered once, then the result screen.
 await page.goto(B + "/placement/fund-types"); await page.getByRole("link", { name: "Bắt đầu kiểm tra" }).click(); await page.waitForURL("**/test");
+const placementDone = page.getByText(/Bạn trả lời đúng \d+\/\d+ câu/);
 for (let i = 0; i < 12; i++) {
-  if (await page.getByText(/Bạn trả lời đúng \d+\/\d+ câu/).isVisible()) break;
-  const before = await page.locator("main").innerText();
-  await page.locator("button[aria-pressed]").first().click(); await btn("Kiểm tra").click(); await btn("Tiếp tục").click();
-  // Wait until the next question (or the result) has replaced this one.
-  await page.waitForFunction((t) => document.querySelector("main")?.innerText !== t, before);
+  // Next question (an answerable option) or the result, whichever the server sends.
+  await page.locator("main:not(:has([role=status])) button[aria-pressed]:enabled").first().or(placementDone).waitFor();
+  if (await placementDone.isVisible()) break;
+  await page.locator("button[aria-pressed]:enabled").first().click(); await btn("Kiểm tra").click(); await btn("Tiếp tục").click();
 }
 await page.getByText(/Bạn trả lời đúng \d+\/\d+ câu/).waitFor(); await shot("17-placement-result");
 await browser.close();

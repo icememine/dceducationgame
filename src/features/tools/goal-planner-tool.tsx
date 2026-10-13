@@ -13,7 +13,7 @@ import { cn, formatVnd } from "@/lib/utils";
 type Plan = { kind: GoalKind; target: number; monthly: number; initial: number; annualReturn: number };
 
 const field = "flex flex-col gap-1 text-sm font-bold";
-const box = "flex items-center gap-1 rounded-xl border-2 border-line bg-sunken px-3 focus-within:border-sky";
+const box = "flex items-center gap-1 rounded-xl border border-line bg-sunken px-3 focus-within:border-sky";
 const inputCls = "w-full bg-transparent py-2 text-lg font-extrabold outline-none";
 
 /** Amount input in millions of đồng (what investors think in), stored in đồng. */
@@ -58,7 +58,7 @@ export function GoalPlannerTool() {
             key={p.kind}
             aria-pressed={plan.kind === p.kind}
             onClick={() => set({ kind: p.kind, target: p.target, monthly: p.monthly, initial: p.initial, annualReturn: p.annualReturn })}
-            className="rounded-full border-2 border-line px-3 py-1.5 text-sm font-bold aria-pressed:border-jade aria-pressed:bg-jade-soft aria-pressed:text-jade-deep"
+            className="rounded-full border border-line px-3 py-1.5 text-sm font-bold aria-pressed:border-jade aria-pressed:bg-jade-soft aria-pressed:text-jade-deep"
           >
             {p.label}
           </button>
@@ -89,7 +89,7 @@ export function GoalPlannerTool() {
 
       <ProjectionChart plan={plan} years={years} target={plan.target} />
 
-      <div className="flex flex-col gap-2 rounded-2xl border-2 border-line p-4">
+      <div className="flex flex-col gap-2 rounded-2xl border border-line bg-surface p-4">
         <label className={cn(field, "flex-row items-center justify-between")} htmlFor="pl-years">
           Muốn đạt mục tiêu trong
           <span className={cn(box, "w-28")}>

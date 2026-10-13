@@ -111,7 +111,7 @@ export function PlanSharePanel({ shown, hidden, token: initialToken }: { shown: 
 
   return (
     <div className="flex flex-col gap-4">
-      <label className="flex items-center justify-between gap-3 rounded-2xl border-2 border-line p-3">
+      <label className="flex items-center justify-between gap-3 rounded-2xl border border-line bg-surface p-3">
         <span>
           <span className="block text-sm font-extrabold">Ẩn số tiền</span>
           <span className="block text-xs text-muted">Ẩn số tiền mục tiêu, góp hằng tháng và thời gian trên bản chia sẻ.</span>
@@ -121,11 +121,11 @@ export function PlanSharePanel({ shown, hidden, token: initialToken }: { shown: 
 
       <PlanCardView card={hide ? hidden : shown} />
 
-      <section className="flex flex-col gap-3 rounded-2xl border-2 border-line p-4">
+      <section className="flex flex-col gap-3 rounded-2xl border border-line bg-surface p-4">
         <h2 className="text-lg font-extrabold">Chia sẻ</h2>
         {link ? (
           <>
-            <input readOnly value={link} onFocus={(e) => e.currentTarget.select()} aria-label="Liên kết chia sẻ" className="w-full rounded-xl border-2 border-line bg-sunken px-3 py-2 text-xs" />
+            <input readOnly value={link} onFocus={(e) => e.currentTarget.select()} aria-label="Liên kết chia sẻ" className="w-full rounded-xl border border-line bg-sunken px-3 py-2 text-xs" />
             {linkHides !== hide && (
               <p className="text-xs text-coral-deep">
                 Liên kết hiện tại đang {linkHides ? "ẩn" : "hiện"} số tiền. Tạo liên kết mới để áp dụng lựa chọn này (liên kết cũ sẽ ngừng hoạt động).

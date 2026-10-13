@@ -22,7 +22,7 @@ export function SimForm({ options, canSendAll }: { options: number[]; canSendAll
           <p className="text-xs text-muted">Gửi tới tất cả học viên: chỉ quản trị viên.</p>
         )}
       </fieldset>
-      <button disabled={pending} className="self-start rounded-lg bg-coral px-4 py-2 font-extrabold text-white disabled:opacity-50">{pending ? "Đang gửi…" : "Gửi thông báo mô phỏng"}</button>
+      <button disabled={pending} className="self-start rounded-lg bg-coral px-4 py-2 font-extrabold text-on-accent disabled:opacity-50">{pending ? "Đang gửi…" : "Gửi thông báo mô phỏng"}</button>
       {state.sent !== undefined && <p role="status" className="font-bold text-jade-deep">Đã gửi tới {state.sent} học viên.</p>}
       {state.error && <p role="alert" className="font-bold text-coral-deep">{state.error}</p>}
     </form>

@@ -69,7 +69,7 @@ export function RongChat() {
             key={i}
             className={cn(
               "max-w-[85%] whitespace-pre-line rounded-2xl p-3 text-[15px]",
-              t.role === "user" ? "self-end rounded-tr-sm bg-sky text-white" : "self-start rounded-tl-sm bg-jade-soft",
+              t.role === "user" ? "self-end rounded-tr-sm bg-sky text-on-accent" : "self-start rounded-tl-sm bg-jade-soft",
             )}
           >
             {t.text || <span className="text-muted">Rồng đang tra thư viện…</span>}
@@ -80,14 +80,14 @@ export function RongChat() {
       {!busy && (
         <div className="flex gap-2 overflow-x-auto pb-1">
           {SUGGESTIONS.map((s) => (
-            <button key={s} onClick={() => ask(s)} className="shrink-0 rounded-full border-2 border-line px-3 py-1.5 text-left text-[13px] font-bold">
+            <button key={s} onClick={() => ask(s)} className="shrink-0 rounded-full border border-line bg-surface px-3 py-1.5 text-left text-[13px] font-bold">
               {s}
             </button>
           ))}
         </div>
       )}
       <form
-        className="sticky bottom-0 flex items-end gap-2 bg-surface py-2"
+        className="sticky bottom-0 flex items-end gap-2 bg-page py-2"
         onSubmit={(e) => {
           e.preventDefault();
           ask(draft);
@@ -106,9 +106,9 @@ export function RongChat() {
           }}
           placeholder="Hỏi về quỹ, phí, giao dịch, kế hoạch…"
           aria-label="Câu hỏi cho Rồng"
-          className="flex-1 resize-none rounded-2xl border-2 border-line bg-sunken p-3 text-[15px] outline-none focus:border-sky"
+          className="flex-1 resize-none rounded-2xl border border-line bg-sunken p-3 text-[15px] outline-none focus:border-sky"
         />
-        <button type="submit" disabled={busy || !draft.trim()} aria-label="Gửi" className="rounded-2xl bg-jade p-3 text-white disabled:bg-locked">
+        <button type="submit" disabled={busy || !draft.trim()} aria-label="Gửi" className="rounded-2xl bg-jade p-3 text-on-accent disabled:bg-locked">
           <Send className="h-5 w-5" />
         </button>
       </form>

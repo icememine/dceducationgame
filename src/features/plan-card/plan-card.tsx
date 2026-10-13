@@ -5,8 +5,8 @@ import type { PlanCard } from "./model";
 /** The "Bản kế hoạch đầu tư" card. Same content as the SVG in ./svg.ts. */
 export function PlanCardView({ card }: { card: PlanCard }) {
   return (
-    <article className="overflow-hidden rounded-2xl border-2 border-line bg-surface">
-      <header className="bg-jade px-4 py-3 text-white">
+    <article className="overflow-hidden rounded-2xl border border-line bg-surface">
+      <header className="bg-jade px-4 py-3 text-on-accent">
         <p className="font-display text-lg font-extrabold uppercase tracking-wide">Bản kế hoạch đầu tư</p>
         <p className="text-xs font-bold text-jade-soft">Rồng DC Academy</p>
       </header>

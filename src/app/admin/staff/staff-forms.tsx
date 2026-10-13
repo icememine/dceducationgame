@@ -30,7 +30,7 @@ export function CreateStaffForm() {
             {Object.entries(ROLES).map(([id, r]) => <option key={id} value={id}>{r.label}</option>)}
           </select>
         </label>
-        <button disabled={pending} className="rounded-lg bg-jade px-3 py-1.5 text-sm font-extrabold text-white disabled:opacity-50">Tạo tài khoản</button>
+        <button disabled={pending} className="rounded-lg bg-jade px-3 py-1.5 text-sm font-extrabold text-on-accent disabled:opacity-50">Tạo tài khoản</button>
       </div>
       {state.error && <p role="alert" className="text-sm font-bold text-coral-deep">{state.error}</p>}
       {state.created && <OneTimePassword {...state.created} label="Đã tạo tài khoản" />}
@@ -55,7 +55,7 @@ export function EditStaffRow({ person, lastLogin, isMe }: { person: Person; last
             {Object.entries(ROLES).map(([id, r]) => <option key={id} value={id}>{r.label}</option>)}
           </select>
           <label className="flex items-center gap-1 text-xs"><input type="checkbox" name="active" checked={f.active} onChange={(e) => setF({ ...f, active: e.target.checked })} />Đang hoạt động</label>
-          <button disabled={saving} className="rounded border border-line px-2 py-1 text-xs font-bold disabled:opacity-50">Lưu</button>
+          <button disabled={saving} className="rounded border border-line bg-surface px-2 py-1 text-xs font-bold disabled:opacity-50">Lưu</button>
           {saveState.saved && <span className="text-xs font-bold text-jade-deep">Đã lưu</span>}
           {saveState.error && <span role="alert" className="text-xs font-bold text-coral-deep">{saveState.error}</span>}
         </form>
@@ -64,7 +64,7 @@ export function EditStaffRow({ person, lastLogin, isMe }: { person: Person; last
       <td className="p-2">
         <form action={reset}>
           <input type="hidden" name="id" value={person.id} />
-          <button disabled={resetting} className="rounded border border-line px-2 py-1 text-xs font-bold disabled:opacity-50">Đặt lại mật khẩu</button>
+          <button disabled={resetting} className="rounded border border-line bg-surface px-2 py-1 text-xs font-bold disabled:opacity-50">Đặt lại mật khẩu</button>
         </form>
         {resetState.reset && <OneTimePassword {...resetState.reset} label="Đã đặt lại mật khẩu" />}
         {resetState.error && <span role="alert" className="text-xs font-bold text-coral-deep">{resetState.error}</span>}

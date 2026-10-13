@@ -124,10 +124,13 @@ const log = await admin.locator("main").innerText();
 for (const t of ["Tạo quản trị viên đầu tiên", "Tạo tài khoản", "Đổi mật khẩu", "Sửa tài khoản", "Đặt lại mật khẩu", "Đăng nhập thất bại", "Bị tạm khoá đăng nhập"]) expect(log.includes(t), "audit log missing: " + t);
 await admin.goto(B + "/admin/audit?user=lan.content&action=login-failed");
 const filtered = await admin.locator("tbody tr").count(); expect(filtered === 5, "expected exactly 5 failed logins before the lock for lan.content, got " + filtered);
+// Earlier suites on the same server (e2e:admin) export CSVs too, so count only what this download adds.
+const exportRows = async () => { await admin.goto(B + "/admin/audit?action=export"); return admin.locator("tbody tr").count(); };
+const exportsBefore = await exportRows();
+await admin.goto(B + "/admin/audit?user=lan.content&action=login-failed");
 const [csv] = await Promise.all([admin.waitForEvent("download"), admin.getByRole("link", { name: "Tải CSV" }).click()]);
 expect(readFileSync(await csv.path(), "utf8").includes("Đăng nhập thất bại"), "audit CSV incomplete");
-await admin.goto(B + "/admin/audit?action=export");
-const exports = await admin.locator("tbody tr").count(); expect(exports === 1, "one CSV download should log one export (no prefetch), got " + exports);
+const exports = (await exportRows()) - exportsBefore; expect(exports === 1, "one CSV download should log one export (no prefetch), got " + exports);
 await admin.goto(B + "/admin/audit"); await admin.screenshot({ path: `${out}/s3-audit.png`, fullPage: true });
 step("audit log: every action recorded, filter by person and action, CSV");
 

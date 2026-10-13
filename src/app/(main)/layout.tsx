@@ -10,7 +10,7 @@ export default async function MainLayout({ children }: { children: React.ReactNo
   if (!user.onboardedAt) redirect("/");
   return (
     <>
-      <StatusBar segment={activeSegment} streak={progress.streak} xp={progress.xp} hearts={progress.hearts} bell={<NotificationBell />} />
+      <StatusBar segment={activeSegment} hearts={progress.hearts} bell={<NotificationBell />} />
       <main className="flex-1">{children}</main>
       <TabBar />
     </>

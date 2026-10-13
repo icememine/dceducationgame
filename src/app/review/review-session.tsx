@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Mascot } from "@/components/mascot";
+import { CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LessonPlayer } from "@/features/lesson-engine/player";
 import type { ClientChallenge } from "@/features/lesson-engine/types";
@@ -17,7 +17,7 @@ export function ReviewSession(props: { ids: string[]; challenges: ClientChalleng
   if (!initial.ids.length) {
     return (
       <main className="flex flex-1 flex-col items-center justify-center gap-4 p-6 text-center">
-        <Mascot mood="celebrate" size={150} />
+        <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-jade-soft"><CheckCircle2 className="h-8 w-8 text-jade" /></span>
         <h1 className="text-2xl font-extrabold">Không có câu nào cần ôn lúc này</h1>
         <p className="text-muted">Câu bạn từng sai sẽ quay lại sau 1, 3, 7 và 21 ngày để bạn nhớ lâu.</p>
         <Button asChild><Link href="/learn">Về lộ trình</Link></Button>

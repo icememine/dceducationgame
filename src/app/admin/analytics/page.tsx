@@ -49,7 +49,7 @@ export default async function AnalyticsPage({ searchParams }: { searchParams: Pr
             ))}
           </select>
         </label>
-        <button className="rounded-lg bg-sky px-4 py-2 font-extrabold text-white">Lọc</button>
+        <button className="rounded-lg bg-sky px-4 py-2 font-extrabold text-on-accent">Lọc</button>
         {(filter.segmentId || filter.unitId) && <Link href="/admin/analytics" className="py-2 text-sky-deep underline">Bỏ lọc</Link>}
       </form>
 

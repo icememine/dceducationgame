@@ -17,7 +17,7 @@ function PriceChart({ prices }: { prices: number[] }) {
   const max = Math.max(...prices) * 1.05, min = Math.min(...prices) * 0.95;
   const pts = prices.map((p, i) => `${(pad + (i / (prices.length - 1)) * (w - 2 * pad)).toFixed(1)},${(h - pad - ((p - min) / (max - min)) * (h - 2 * pad)).toFixed(1)}`).join(" ");
   return (
-    <div className="rounded-2xl border-2 border-line p-3">
+    <div className="rounded-2xl border border-line bg-surface p-3">
       <svg viewBox={`0 0 ${w} ${h}`} role="img" aria-label="Giá CCQ minh họa theo tháng" className="w-full">
         <polyline points={pts} fill="none" stroke="rgb(var(--sky))" strokeWidth={2.5} strokeLinejoin="round" />
       </svg>
@@ -104,8 +104,8 @@ export function AgeRuleTool({ profile }: { profile?: { id: string; name: string 
       <Slider id="age" label="Tuổi của bạn" value={age} min={18} max={80} onChange={setAge} format={(v) => `${v} tuổi`} />
       <Choice label="Quy tắc" value={bold ? "bold" : "base"} onChange={(v) => setBold(v === "bold")}
         options={[{ id: "base", label: `${AGE_RULE.base} − tuổi` }, { id: "bold", label: `${AGE_RULE.bold} − tuổi (chấp nhận rủi ro cao hơn)` }]} />
-      <div className="overflow-hidden rounded-2xl border-2 border-line">
-        <div className="flex h-10 text-sm font-extrabold text-white">
+      <div className="overflow-hidden rounded-2xl border border-line bg-surface">
+        <div className="flex h-10 text-sm font-extrabold text-on-accent">
           {equity > 0 && <div className="flex items-center justify-center bg-coral" style={{ width: `${equity * 100}%` }}>{equity >= 0.15 && `Cổ phiếu ${pct(equity, 0)}`}</div>}
           {equity < 1 && <div className="flex items-center justify-center bg-sky" style={{ width: `${(1 - equity) * 100}%` }}>{equity <= 0.85 && `Thu nhập cố định ${pct(1 - equity, 0)}`}</div>}
         </div>

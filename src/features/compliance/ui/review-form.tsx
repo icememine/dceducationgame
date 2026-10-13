@@ -26,7 +26,7 @@ export function ReviewForm({ kind, id }: { kind: "ai" | "risk"; id: number }) {
         <textarea name="note" rows={2} value={note} onChange={(e) => setNote(e.target.value)} className="rounded border border-line bg-surface p-2 font-normal" placeholder="Bắt buộc khi Cần sửa / Chuyển cấp trên" />
       </label>
       <div className="flex items-center gap-3">
-        <button disabled={pending} className="rounded-lg bg-jade px-3 py-1.5 font-extrabold text-white disabled:opacity-50">{pending ? "Đang lưu…" : "Lưu kết quả"}</button>
+        <button disabled={pending} className="rounded-lg bg-jade px-3 py-1.5 font-extrabold text-on-accent disabled:opacity-50">{pending ? "Đang lưu…" : "Lưu kết quả"}</button>
         {state.saved && <span role="status" className="font-bold text-jade-deep">Đã lưu: {REVIEW_OUTCOMES[state.saved as keyof typeof REVIEW_OUTCOMES]}</span>}
         {state.error && <span role="alert" className="font-bold text-coral-deep">{state.error}</span>}
       </div>

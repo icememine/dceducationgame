@@ -111,7 +111,7 @@ export function ReminderSettings({
 
   return (
     <>
-      <section className="flex flex-col gap-4 rounded-2xl border-2 border-line p-4">
+      <section className="flex flex-col gap-4 rounded-2xl border border-line bg-surface p-4">
         <h2 className="text-lg font-extrabold">Nhắc học mỗi ngày</h2>
         <label className="flex items-center justify-between gap-3">
           <span className="flex flex-col">
@@ -135,7 +135,7 @@ export function ReminderSettings({
             value={hour}
             disabled={pending || !enabled}
             onChange={(e) => save({ enabled, hour: Number(e.target.value) })}
-            className="rounded-xl border-2 border-line bg-surface px-3 py-2 font-bold disabled:opacity-50"
+            className="rounded-xl border border-line bg-surface px-3 py-2 font-bold disabled:opacity-50"
           >
             {HOURS.map((h) => (
               <option key={h} value={h}>{`${h}:00`}</option>
@@ -145,7 +145,7 @@ export function ReminderSettings({
         {saved && <p className="text-sm font-bold text-jade-deep" role="status">{saved}</p>}
       </section>
 
-      <section className="flex flex-col gap-3 rounded-2xl border-2 border-line p-4">
+      <section className="flex flex-col gap-3 rounded-2xl border border-line bg-surface p-4">
         <h2 className="text-lg font-extrabold">Thông báo trên thiết bị</h2>
         {!vapidPublicKey ? (
           <p className="text-sm text-muted">

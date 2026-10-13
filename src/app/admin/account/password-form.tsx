@@ -22,7 +22,7 @@ export function PasswordForm({ min }: { min: number }) {
       <label className="flex flex-col gap-1 text-sm font-bold">Nhập lại mật khẩu mới<input name="confirm" type="password" autoComplete="new-password" required className={box} /></label>
       <p className="text-xs text-muted">Ít nhất {min} ký tự, có cả chữ và số, không chứa tên đăng nhập.</p>
       {state.error && <p role="alert" className="rounded-lg bg-coral-soft p-2 text-sm font-bold text-coral-deep">{state.error}</p>}
-      <button disabled={pending} className="rounded-lg bg-jade px-4 py-2.5 font-extrabold text-white disabled:opacity-50">{pending ? "Đang lưu…" : "Đổi mật khẩu"}</button>
+      <button disabled={pending} className="rounded-lg bg-jade px-4 py-2.5 font-extrabold text-on-accent disabled:opacity-50">{pending ? "Đang lưu…" : "Đổi mật khẩu"}</button>
     </form>
   );
 }

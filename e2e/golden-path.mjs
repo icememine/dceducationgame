@@ -41,7 +41,7 @@ step("onboarding → Hiểu mình path");
 
 // 2. Risk assessment (Risk Scoring Framework v2.3): 7 answers worth 4+3+3+4+3+3+2 = 22 → Khá mạo hiểm,
 //    then the §5 confirmation step.
-await page.getByRole("link", { name: "Đánh giá mức độ chấp nhận rủi ro" }).click();
+await page.getByRole("link", { name: "Đánh giá mức độ chấp nhận rủi ro", exact: true }).click();
 await btn("Tiếp tục").click();
 for (const o of ["5 – 10 năm", "Điều bình thường trong đầu tư", "Giữ nguyên và chờ đợi", "Tăng trưởng: khoảng ±15%", "Lương cố định chiếm phần lớn", "5 – 20%", "Có kiến thức về đầu tư"]) {
   await page.getByText(o, { exact: true }).click();
@@ -58,7 +58,7 @@ await page.waitForURL("**/learn");
 step("risk assessment scored (22 → Khá mạo hiểm) and confirmed");
 
 // 3. First formula lesson: context → question → 3 options → insight, one wrong answer re-queued.
-await page.getByRole("link", { name: "Rủi ro nghĩa là gì?" }).click();
+await page.getByRole("link", { name: "Rủi ro nghĩa là gì?", exact: true }).click();
 await page.getByText("Chị Mai thấy NAV quỹ cổ phiếu", { exact: false }).waitFor();
 await shot("03-quiz");
 await pick("Chị đã mất hẳn 12% số tiền");
