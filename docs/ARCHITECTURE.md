@@ -148,6 +148,7 @@ src/
     leagues/           leagues.ts (weeks, groups of 30, settle top 5 / bottom 5), queries.ts
     notifications/     rules.ts (reminder message), reminders.ts (cron), notify.ts, push.ts (Web Push), bell.tsx
     plan-card/         model.ts (card fields, hide amounts), svg.ts, share panel
+    compliance/        review.ts (labels, risk audit view, filters, CSV; pure), queries.ts (ai_messages / risk_profiles + latest review), ui/
     admin/             auth.ts (ADMIN_USERNAME/ADMIN_PASSWORD login), stats.ts + queries.ts (analytics), patch.ts (edit a challenge in its unit file), editor/
   components/          button (3D), mascot, status-bar, tab-bar, disclaimer
   lib/                 auth.ts, utils.ts, cron-auth.ts (CRON_SECRET guard for /api/cron/*)

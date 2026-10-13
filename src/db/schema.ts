@@ -240,3 +240,23 @@ export const pushSubscriptions = pgTable(
   },
   (t) => [uniqueIndex("push_endpoint_idx").on(t.endpoint)],
 );
+
+/**
+ * Compliance review trail for AI answers ("ai" → ai_messages.id) and risk confirmations
+ * ("risk" → risk_profiles.id). Append-only: the newest row per target is its current status,
+ * older rows stay as history. `reviewer` is the staff login that made the call.
+ */
+export const complianceReviews = pgTable(
+  "compliance_reviews",
+  {
+    id: serial("id").primaryKey(),
+    kind: text("kind").notNull(),
+    targetId: integer("target_id").notNull(),
+    /** "ok" | "issue" | "escalated" */
+    outcome: text("outcome").notNull(),
+    note: text("note").notNull().default(""),
+    reviewer: text("reviewer").notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("compliance_reviews_target_idx").on(t.kind, t.targetId, t.createdAt)],
+);

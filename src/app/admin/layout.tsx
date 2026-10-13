@@ -22,6 +22,8 @@ export default async function AdminLayout({ children }: { children: React.ReactN
           <Link href="/admin" className="font-extrabold">Quản trị</Link>
           <Link href="/admin/analytics" className="font-bold text-sky-deep hover:underline">Phân tích câu hỏi</Link>
           <Link href="/admin/editor" className="font-bold text-sky-deep hover:underline">Trình soạn thảo</Link>
+          <Link href="/admin/ai-review" className="font-bold text-sky-deep hover:underline">Duyệt câu trả lời AI</Link>
+          <Link href="/admin/risk-audit" className="font-bold text-sky-deep hover:underline">Kiểm tra hồ sơ rủi ro</Link>
           <Link href="/admin/market-sim" className="font-bold text-sky-deep hover:underline">Mô phỏng thị trường giảm</Link>
           <form action={adminLogout} className="ml-auto"><button className="font-bold text-muted hover:underline">Đăng xuất</button></form>
         </header>

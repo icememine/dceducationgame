@@ -47,7 +47,7 @@ the team and friendly testers.
 - Stage A lessons (Quỹ DC & DragonX) are drafted: all 43 outline lessons covered (10 units, 43 lessons, from the Q&A library and fund facts). K review open, starting with the FAQ vs fund-facts conflicts the writers flagged.
 - **Luyện tình huống AI** in the app: persona + coach routes with the same guardrails and voice; scripted
   replies and the rule-based coach until the API key arrives (as the prototype does).
-- Compliance review page over `ai_messages` (filter by guardrail flag, mark reviewed).
+- ✅ Compliance review of AI answers (`/admin/ai-review`) and risk-check audit (`/admin/risk-audit`): filters, review outcome + note with history (`compliance_reviews`), CSV export.
 - Hỏi Rồng eval set (40–60 real questions with must/must-not facts), ready for when the model is switched on.
 
 ## Engagement and internal tools (done)

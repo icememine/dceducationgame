@@ -69,6 +69,22 @@ await btn("Ngừng chia sẻ").click(); await btn("Chia sẻ").waitFor();
 if ((await fetch(link)).status !== 404) errors.push("revoked link should 404");
 step("plan card: private, shared with hidden amounts, public page, image, revoke");
 
+// Second learner: high score without investing knowledge (rule ②), then chooses higher (§5.2 flags); asks Hỏi Rồng once.
+const l2 = await (await browser.newContext({ viewport: { width: 420, height: 900 } })).newPage();
+await l2.goto(B + "/"); await l2.getByRole("link", { name: "Bắt đầu" }).click();
+await l2.getByText("Tôi mới bắt đầu").click(); await btn("Tiếp tục", l2).click();
+await l2.getByText("Đều đặn").click(); await btn("Tiếp tục", l2).click();
+await l2.getByPlaceholder("Ví dụ: Rồng Tích Sản").fill("Rồng Cao Hơn"); await btn("Bắt đầu học", l2).click(); await l2.waitForURL("**/learn");
+await l2.goto(B + "/lesson/b1-risk-check"); await btn("Tiếp tục", l2).click();
+for (const o of ["Trên 10 năm", "Cơ hội để đạt lợi nhuận cao", "Mua thêm vì đây là cơ hội tốt", "Mạo hiểm: hơn ±15%", "Có nhiều nguồn thu nhập", "Dưới 5%", "Chưa biết về đầu tư"]) {
+  await l2.getByText(o, { exact: true }).click(); await btn("Tiếp tục", l2).click();
+}
+await btn("Tôi muốn nhiều rủi ro hơn", l2).click(); await l2.getByRole("checkbox").check(); await btn("Xác nhận", l2).click();
+await l2.getByText("Bạn đã chọn mức cao hơn kết quả đánh giá").waitFor();
+await l2.goto(B + "/rong"); await btn("Bán quỹ sau 2 năm thì mất phí và thuế gì?", l2).click();
+await l2.locator("ol li").last().filter({ hasText: "0,1%" }).waitFor({ timeout: 60_000 });
+step("second learner: chose a higher profile, asked Hỏi Rồng");
+
 // Admin login.
 await page.goto(B + "/admin"); await page.waitForURL("**/admin/login");
 await page.getByLabel("Tên đăng nhập").fill(USER); await page.getByLabel("Mật khẩu").fill("wrong-password"); await btn("Đăng nhập").click();
@@ -120,6 +136,36 @@ await page.goto(B + "/admin/market-sim"); await page.getByText("Chỉ là mô ph
 await btn("Gửi thông báo mô phỏng").click(); await page.getByText("Đã gửi tới 1 học viên.").waitFor(); await shot("a3-market-sim");
 await page.goto(B + "/notifications"); await page.getByText("[Mô phỏng] Thị trường giảm 20%: bạn sẽ làm gì?").first().waitFor(); await shot("a4-notification");
 step("market-drop simulator: labelled nudge delivered in-app");
+
+// Compliance: AI answers (all, since library answers carry no guardrail flag) and the risk audit.
+await page.goto(B + "/admin/ai-review?status=todo&flag=all");
+const aiItem = page.locator("li").filter({ hasText: "Bán quỹ sau 2 năm thì mất phí và thuế gì?" }).first();
+await aiItem.waitFor(); await aiItem.getByText("Câu trả lời và duyệt").click();
+await aiItem.getByLabel("Cần sửa").check(); await aiItem.getByRole("button", { name: "Lưu kết quả" }).click();
+await aiItem.getByText(/Hãy ghi chú lý do/).waitFor();
+await aiItem.getByLabel("Ghi chú").fill("Kiểm tra lại mức phí chuyển tiền"); await aiItem.getByRole("button", { name: "Lưu kết quả" }).click();
+await aiItem.getByText("Đã lưu: Cần sửa").waitFor(); await shot("a5-ai-review");
+await page.goto(B + "/admin/ai-review?status=issue&flag=all");
+await page.getByText("Kiểm tra lại mức phí chuyển tiền").first().waitFor({ state: "attached" });
+const [aiCsv] = await Promise.all([page.waitForEvent("download"), page.getByRole("link", { name: "Tải CSV" }).click()]);
+const aiCsvText = readFileSync(await aiCsv.path(), "utf8");
+if (!aiCsvText.includes("Cần sửa") || !aiCsvText.includes("Bán quỹ sau 2 năm")) errors.push("AI review CSV missing the reviewed row");
+step("compliance: AI answer reviewed (note required for 'Cần sửa'), filtered, exported");
+
+await page.goto(B + "/admin/risk-audit");
+const riskItem = page.locator("li").filter({ hasText: "Rồng Cao Hơn" }).first();
+await riskItem.waitFor();
+const riskText = await riskItem.innerText();
+for (const t of ["Chọn cao hơn", "đã tick xác nhận rủi ro", "Chọn hồ sơ cao hơn kết quả đánh giá"]) if (!riskText.includes(t)) errors.push("risk audit row missing: " + t);
+if (/Rồng Kế Hoạch/.test(await page.locator("main").innerText())) errors.push("an unflagged 'agree' result should not be in the attention view");
+await riskItem.getByText("Chi tiết điểm và duyệt").click(); await riskItem.getByText("Chưa biết về đầu tư").waitFor();
+await riskItem.getByRole("button", { name: "Lưu kết quả" }).click(); await riskItem.getByText("Đã lưu: Đạt").waitFor(); await shot("a6-risk-audit");
+await page.goto(B + "/admin/risk-audit");
+if (/Rồng Cao Hơn/.test(await page.locator("main").innerText())) errors.push("reviewed risk result should leave the 'Chưa duyệt' view");
+const [riskCsv] = await Promise.all([page.waitForEvent("download"), page.goto(B + "/admin/risk-audit/export?status=all&view=all").catch(() => null)]);
+const riskCsvText = readFileSync(await riskCsv.path(), "utf8");
+if (!riskCsvText.includes("Rồng Cao Hơn") || !riskCsvText.includes("Rồng Kế Hoạch") || !riskCsvText.includes("Đạt")) errors.push("risk CSV incomplete");
+step("compliance: risk audit shows the higher choice with its flags, review recorded, CSV exported");
 
 await page.goto(B + "/admin"); await btn("Đăng xuất").click(); await page.waitForURL("**/admin/login", { waitUntil: "commit" });
 await page.goto(B + "/admin/analytics"); await page.waitForURL("**/admin/login");
