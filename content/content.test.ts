@@ -11,7 +11,7 @@ describe("content", () => {
   });
 
   it("indexes lessons by id", () => {
-    expect(findLesson("a1-ccq-nav")?.segment.id).toBe("dc-funds");
+    expect(findLesson("a1-ccq-nav")?.segment.id).toBe("fund-types");
     expect(findLesson("nope")).toBeUndefined();
   });
 
