@@ -237,6 +237,7 @@ export type LessonInput = z.input<typeof lesson>;
 export type Unit = z.infer<typeof unit>;
 export type Segment = z.infer<typeof segment>;
 export type SegmentInput = z.input<typeof segment>;
+export type UnitInput = z.input<typeof unit>;
 export type Source = z.infer<typeof source>;
 export type QuizPattern = z.infer<typeof quizPattern>;
 export type GoalKind = z.infer<typeof goalKind>;

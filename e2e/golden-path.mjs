@@ -58,19 +58,24 @@ await page.waitForURL("**/learn");
 step("risk assessment scored (22 → Khá mạo hiểm) and confirmed");
 
 // 3. First formula lesson: context → question → 3 options → insight, one wrong answer re-queued.
-await page.getByRole("link", { name: "Quỹ dự phòng trước tiên" }).click();
-await page.getByText("Chị Lan chi tiêu 15 triệu đồng mỗi tháng", { exact: false }).waitFor();
+await page.getByRole("link", { name: "Rủi ro nghĩa là gì?" }).click();
+await page.getByText("Chị Mai thấy NAV quỹ cổ phiếu", { exact: false }).waitFor();
 await shot("03-quiz");
-await pick("Khoảng 45 triệu, vì 3 tháng chi tiêu là đủ");
+await pick("Chị đã mất hẳn 12% số tiền");
 await page.getByText("Chưa đúng").waitFor();
 await page.getByText("Điều cần nhớ:").waitFor();
 await shot("04-insight");
 await btn("Tiếp tục").click();
-await pick("Khoảng 2,5 năm"); await page.getByText("Chính xác!").waitFor(); await btn("Tiếp tục").click();
-await page.getByText("Đoán số").waitFor(); await btn("Kiểm tra").click(); await page.getByText("Điều cần nhớ:").waitFor(); await btn("Tiếp tục").click();
-await pick("Tiền cần dùng trong 8 tháng nên ưu tiên thanh khoản và ít biến động"); await page.getByText("Chính xác!").waitFor(); await btn("Tiếp tục").click();
+for (const [l, r] of [
+  ["Rủi ro thị trường", "Giá cổ phiếu giảm theo thị trường chung"],
+  ["Rủi ro lãi suất", "Lãi suất tăng làm giá trái phiếu giảm"],
+  ["Rủi ro tín dụng", "Tổ chức phát hành trái phiếu không trả được nợ"],
+  ["Rủi ro thanh khoản", "Khó bán tài sản đúng lúc với giá hợp lý"],
+]) { await btn(l).click(); await btn(r).click(); }
+await btn("Kiểm tra").click(); await page.getByText("Chính xác!").waitFor(); await btn("Tiếp tục").click();
+await pick("Lợi nhuận quỹ có thể âm trong một số năm, dù bình quân dài hạn vẫn dương"); await page.getByText("Chính xác!").waitFor(); await btn("Tiếp tục").click();
 await page.getByText("Làm lại câu sai").waitFor();
-await pick("Khoảng 180 triệu, tức 12 tháng × 15 triệu chi tiêu"); await page.getByText("Chính xác!").waitFor(); await btn("Tiếp tục").click();
+await pick("Đây là biến động giá; khoản lỗ chỉ thành thật nếu chị bán ở mức giá này"); await page.getByText("Chính xác!").waitFor(); await btn("Tiếp tục").click();
 await page.getByText("Hoàn thành bài học!").waitFor();
 await shot("05-summary");
 await btn("Tiếp tục").click();

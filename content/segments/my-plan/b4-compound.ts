@@ -1,0 +1,75 @@
+import type { UnitInput } from "../../schema";
+
+export const unit = {
+  id: "b4-compound",
+  title: "Phần 4 · Sức mạnh lãi kép",
+  description: "Lãi sinh lãi, và vì sao thời gian quan trọng nhất",
+  color: "violet",
+  mascot: "grow",
+  lessons: [
+    {
+      id: "b4-compound-30y",
+      title: "1 tỷ trong 30 năm",
+      challenges: [
+        {
+          id: "b4-interest-on-interest",
+          type: "info",
+          title: "Lãi sinh lãi",
+          body: "Lãi kép là khi lợi nhuận được giữ lại và tiếp tục sinh lời ở các kỳ sau. Bạn không cần góp thêm vốn để có hiệu ứng này. Thứ bạn cần nhất là thời gian.",
+          mascot: "grow",
+        },
+        {
+          id: "b4-one-billion-30y",
+          type: "estimate",
+          context: "Chị Mai 30 tuổi nhận 1 tỷ đồng tiền thừa kế và đầu tư một lần, không rút ra. Giả định lợi nhuận 15%/năm (minh họa, không được bảo đảm).",
+          prompt: "Đến năm 60 tuổi, khoản này thành bao nhiêu?",
+          min: 2,
+          max: 100,
+          step: 1,
+          start: 10,
+          unit: "tỷ",
+          answer: 66.2,
+          tolerance: 0.25,
+          reveal: [
+            { label: "Sau 5 năm", value: 2 },
+            { label: "Sau 10 năm", value: 4 },
+            { label: "Sau 20 năm", value: 16.4 },
+            { label: "Sau 30 năm", value: 66.2 },
+          ],
+          explain: "Khoảng 66,2 tỷ. Với 15%/năm, cứ khoảng 5 năm tiền nhân đôi, và mỗi lần nhân đôi sau lớn hơn lần trước: phần lớn tài sản được tạo ra ở những năm cuối.",
+          source: { sourceId: "amdd-study-plan-nam" },
+        },
+        {
+          id: "b4-start-25-or-45",
+          type: "select",
+          pattern: "why",
+          context: "An và Bình cùng góp 2 triệu/tháng đến năm 60 tuổi, giả định 15%/năm. An bắt đầu năm 25 tuổi (góp 840 triệu), Bình năm 45 tuổi (góp 360 triệu). An có khoảng 22,6 tỷ, Bình khoảng 1,2 tỷ.",
+          prompt: "Vì sao An góp chưa đến 2,5 lần mà có gấp khoảng 18 lần?",
+          options: [
+            "An chọn được những ngày mua tốt hơn",
+            "An có thêm 20 năm để lợi nhuận tiếp tục sinh lời",
+            "An chọn được quỹ có lợi nhuận cao hơn",
+          ],
+          answer: 1,
+          explain: "Cùng quỹ, cùng mức góp: khác biệt đến từ 20 năm lãi kép thêm. Trì hoãn có chi phí thật, nhưng bắt đầu muộn vẫn tốt hơn không bắt đầu.",
+          source: { sourceId: "amdd-age-60" },
+        },
+        {
+          id: "b4-dividend-spent",
+          type: "select",
+          pattern: "misconception",
+          context: "Chị Lan nhận cổ tức tiền mặt từ quỹ mỗi năm và dùng hết cho du lịch. Chị nghĩ tài khoản vẫn tăng theo lãi kép như người giữ lại toàn bộ lợi nhuận.",
+          prompt: "Nhận định nào đúng?",
+          options: [
+            "Lãi kép luôn tự diễn ra khi đã đầu tư vào quỹ",
+            "Phần cổ tức đã tiêu không còn sinh lời; muốn có lãi kép phải tái đầu tư khoản đó",
+            "Quỹ chia cổ tức thì hoàn toàn không có lãi kép",
+          ],
+          answer: 1,
+          explain: "Lãi kép cần lợi nhuận ở lại để tiếp tục sinh lời. Quỹ giữ lại thu nhập thì hiệu ứng nằm sẵn trong NAV; nhận tiền mặt ra ngoài thì phải tự mua lại nếu muốn tích lũy tiếp.",
+          source: { sourceId: "faq", locator: "Câu 38" },
+        },
+      ],
+    },
+  ],
+} satisfies UnitInput;

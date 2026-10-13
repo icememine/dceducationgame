@@ -1,0 +1,86 @@
+import type { UnitInput } from "../../schema";
+
+export const unit = {
+  id: "c2-bond-funds",
+  title: "Phần 3 · Quỹ trái phiếu",
+  description: "Lãi suất, duration và vai trò giảm chấn",
+  color: "jade",
+  mascot: "analyze",
+  lessons: [
+    {
+      id: "c2-bond-risk",
+      title: "Trái phiếu không tuyệt đối an toàn",
+      challenges: [
+        {
+          id: "c2-seesaw",
+          type: "select",
+          pattern: "why",
+          context: "Lãi suất thị trường tăng nhanh trong vài tháng. Chị Hoa thấy NAV quỹ trái phiếu của mình giảm nhẹ, dù mọi trái phiếu trong danh mục vẫn trả lãi đầy đủ.",
+          prompt: "Vì sao NAV giảm?",
+          options: [
+            "Vì một doanh nghiệp phát hành đã vỡ nợ",
+            "Vì trái phiếu cũ trả lãi thấp hơn trái phiếu mới, nên giá thị trường của chúng giảm",
+            "Vì quỹ phải trả lãi cao hơn cho nhà đầu tư mới",
+          ],
+          answer: 1,
+          explain: "Lãi suất và giá trái phiếu như hai đầu bập bênh: lãi suất tăng thì giá trái phiếu đang lưu hành giảm. Trong khi đó, lãi coupon vẫn tiếp tục được cộng dồn vào NAV theo thời gian.",
+          source: { sourceId: "w5-bond" },
+        },
+        {
+          id: "c2-duration",
+          type: "select",
+          pattern: "prediction",
+          context: "Quỹ X nắm chủ yếu trái phiếu còn 1 năm đáo hạn; quỹ Y nắm trái phiếu còn 7 năm. Lãi suất thị trường tăng thêm 1%.",
+          prompt: "NAV quỹ nào bị ảnh hưởng nhiều hơn?",
+          options: ["Quỹ X, kỳ hạn ngắn", "Quỹ Y, kỳ hạn dài", "Như nhau, vì cùng là trái phiếu"],
+          answer: 1,
+          explain: "Duration đo độ nhạy của giá trái phiếu với lãi suất. Danh mục nhiều trái phiếu duration dài thì NAV dao động mạnh hơn khi lãi suất thay đổi.",
+          source: { sourceId: "w5-bond" },
+        },
+        {
+          id: "c2-coupon-return",
+          type: "select",
+          pattern: "misconception",
+          context: "Quỹ M có coupon bình quân 12%, quỹ N có coupon bình quân 8%. Anh Phong chọn ngay quỹ M vì \"lãi cao hơn thì lời nhiều hơn\".",
+          prompt: "Nhận định nào đúng?",
+          options: [
+            "Coupon cao hơn chắc chắn cho lợi nhuận cao hơn",
+            "Lợi nhuận còn phụ thuộc giá mua trái phiếu, duration và rủi ro tín dụng",
+            "Coupon càng cao thì trái phiếu càng an toàn",
+          ],
+          answer: 1,
+          explain: "Coupon là lãi danh nghĩa; lợi nhuận thực tế còn tính giá mua và lãi/lỗ vốn. Coupon cao thường đi kèm tổ chức phát hành rủi ro hơn, và giá trái phiếu có thể giảm khi rủi ro tín dụng tăng.",
+          source: { sourceId: "w5-bond" },
+        },
+        {
+          id: "c2-spot-bond",
+          type: "spot",
+          context: "Một người bạn giải thích quỹ trái phiếu cho bạn bằng ba câu.",
+          prompt: "Câu nào sai?",
+          statements: [
+            "Quỹ trái phiếu định giá theo thị trường, nên NAV có thể giảm khi lãi suất tăng.",
+            "Quỹ trái phiếu không bao giờ giảm vì trái phiếu luôn trả lãi.",
+            "Đa dạng hóa giúp giảm rủi ro tập trung vào một tổ chức phát hành.",
+          ],
+          answer: 1,
+          explain: "Lãi coupon vẫn được trả, nhưng giá trái phiếu đang lưu hành thay đổi theo lãi suất và rủi ro tín dụng. Quỹ trái phiếu biến động thấp, không phải không biến động.",
+          source: { sourceId: "w5-bond" },
+        },
+        {
+          id: "c2-compare",
+          type: "match",
+          prompt: "Nối kênh đầu tư với đặc điểm an toàn vốn",
+          left: ["Gửi tiết kiệm", "Trái phiếu DN riêng lẻ", "Quỹ mở trái phiếu"],
+          right: [
+            "Phụ thuộc doanh nghiệp phát hành",
+            "Đa dạng hóa nhiều tổ chức phát hành",
+            "Cao trong hạn mức bảo hiểm tiền gửi",
+          ],
+          pairs: [2, 0, 1],
+          explain: "Quỹ trái phiếu chia rủi ro cho nhiều tổ chức phát hành và cho phép bắt đầu với số vốn nhỏ, nhưng không có bảo hiểm tiền gửi.",
+          source: { sourceId: "w5-bond" },
+        },
+      ],
+    },
+  ],
+} satisfies UnitInput;
