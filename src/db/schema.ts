@@ -1,4 +1,4 @@
-import { boolean, index, integer, jsonb, pgTable, real, serial, text, timestamp, uuid } from "drizzle-orm/pg-core";
+import { boolean, index, integer, jsonb, pgTable, primaryKey, real, serial, text, timestamp, uniqueIndex, uuid } from "drizzle-orm/pg-core";
 
 /**
  * Only learner STATE lives in the database. Lesson content is code (see /content) and is
@@ -15,6 +15,13 @@ export const users = pgTable("users", {
   dragonxRef: text("dragonx_ref"),
   dailyGoalMinutes: integer("daily_goal_minutes").notNull().default(10),
   activeSegmentId: text("active_segment_id").notNull().default("dc-funds"),
+  /** Daily study reminder (push / in-app), at this hour in Asia/Ho_Chi_Minh. */
+  reminderEnabled: boolean("reminder_enabled").notNull().default(false),
+  reminderHour: integer("reminder_hour").notNull().default(20),
+  /** "YYYY-MM-DD" (Vietnam) of the last reminder sent, so the cron never sends twice a day. */
+  lastRemindedDay: text("last_reminded_day"),
+  /** Random token for the public investment-plan card (/p/[token]); null = not shared. */
+  planShareToken: text("plan_share_token").unique(),
   onboardedAt: timestamp("onboarded_at", { withTimezone: true }),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 });
@@ -40,6 +47,10 @@ export const lessonSessions = pgTable(
     lessonId: text("lesson_id").notNull(),
     segmentId: text("segment_id").notNull(),
     isPractice: boolean("is_practice").notNull().default(false),
+    /** "lesson" | "review" (spaced repetition) | "placement" (jump-ahead test). */
+    kind: text("kind").notNull().default("lesson"),
+    /** Challenge ids of a review or placement session (they come from many lessons). */
+    items: jsonb("items"),
     startedAt: timestamp("started_at", { withTimezone: true }).notNull().defaultNow(),
     completedAt: timestamp("completed_at", { withTimezone: true }),
     xpAwarded: integer("xp_awarded"),
@@ -132,4 +143,100 @@ export const aiMessages = pgTable(
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
   },
   (t) => [index("ai_messages_user_idx").on(t.userId, t.createdAt)],
+);
+
+/**
+ * Spaced repetition (Leitner boxes). A graded mistake puts the question in box 0, due now
+ * ("Cần ôn lại"). Each correct review moves it up a box (due after 1, 3, 7, 21 days); a
+ * wrong review sends it back to box 0. After the last box it is retired.
+ */
+export const reviewItems = pgTable(
+  "review_items",
+  {
+    userId: text("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
+    challengeId: text("challenge_id").notNull(),
+    lessonId: text("lesson_id").notNull(),
+    box: integer("box").notNull().default(0),
+    dueAt: timestamp("due_at", { withTimezone: true }),
+    lapses: integer("lapses").notNull().default(0),
+    lastWrongAt: timestamp("last_wrong_at", { withTimezone: true }),
+    retiredAt: timestamp("retired_at", { withTimezone: true }),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [primaryKey({ columns: [t.userId, t.challengeId] }), index("review_items_due_idx").on(t.userId, t.dueAt)],
+);
+
+/** Placement ("Kiểm tra xếp lớp") results: lessons before `unlockIndex` open in that segment. */
+export const placements = pgTable("placements", {
+  id: serial("id").primaryKey(),
+  userId: text("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
+  segmentId: text("segment_id").notNull(),
+  unlockIndex: integer("unlock_index").notNull(),
+  score: integer("score").notNull(),
+  total: integer("total").notNull(),
+  /** Per-unit result: [{ unitId, correct }]. */
+  results: jsonb("results").notNull(),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+});
+
+/** Badges and monthly-challenge awards, kept so "new" ones can be announced once. */
+export const userBadges = pgTable(
+  "user_badges",
+  {
+    userId: text("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
+    badgeId: text("badge_id").notNull(),
+    earnedAt: timestamp("earned_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [primaryKey({ columns: [t.userId, t.badgeId] })],
+);
+
+/** Weekly league groups of up to 30 learners in the same tier. weekStart = Monday "YYYY-MM-DD" (Vietnam). */
+export const leagueMemberships = pgTable(
+  "league_memberships",
+  {
+    userId: text("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
+    weekStart: text("week_start").notNull(),
+    tier: integer("tier").notNull(),
+    groupNo: integer("group_no").notNull(),
+    /** Set when the week is settled: "up" | "down" | "stay", with the final rank. */
+    outcome: text("outcome"),
+    rank: integer("rank"),
+  },
+  (t) => [primaryKey({ columns: [t.userId, t.weekStart] }), index("league_group_idx").on(t.weekStart, t.tier, t.groupNo)],
+);
+
+/** Weeks whose promotions/demotions have been applied (idempotent settlement). */
+export const leagueWeeks = pgTable("league_weeks", {
+  weekStart: text("week_start").primaryKey(),
+  settledAt: timestamp("settled_at", { withTimezone: true }).notNull().defaultNow(),
+});
+
+/** In-app notifications (streak at risk, review due, league result, badge). */
+export const notifications = pgTable(
+  "notifications",
+  {
+    id: serial("id").primaryKey(),
+    userId: text("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
+    kind: text("kind").notNull(),
+    title: text("title").notNull(),
+    body: text("body").notNull(),
+    href: text("href"),
+    readAt: timestamp("read_at", { withTimezone: true }),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("notifications_user_idx").on(t.userId, t.createdAt)],
+);
+
+/** Web Push subscriptions (one per browser/device). Sending needs VAPID keys in the environment. */
+export const pushSubscriptions = pgTable(
+  "push_subscriptions",
+  {
+    id: serial("id").primaryKey(),
+    userId: text("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
+    endpoint: text("endpoint").notNull(),
+    p256dh: text("p256dh").notNull(),
+    auth: text("auth").notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [uniqueIndex("push_endpoint_idx").on(t.endpoint)],
 );
