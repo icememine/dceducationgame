@@ -79,7 +79,7 @@ function challengeMd(c: Challenge): string {
       out += c.options.map((o, i) => `- [${i === c.answer ? "x" : " "}] ${oneLine(o)}`).join("\n") + "\n\n";
       break;
     case "spot":
-      out += "> Đánh dấu [x] vào câu SAI.\n" + c.statements.map((o, i) => `- [${i === c.answer ? "x" : " "}] ${oneLine(o)}`).join("\n") + "\n\n";
+      out += "> Đánh dấu [x] vào câu SAI.\n\n" + c.statements.map((o, i) => `- [${i === c.answer ? "x" : " "}] ${oneLine(o)}`).join("\n") + "\n\n";
       break;
     case "match":
       out += c.left.map((l, i) => `- ${oneLine(l)} → ${oneLine(c.right[c.pairs[i]])}`).join("\n") + "\n\n";

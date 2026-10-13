@@ -5,6 +5,8 @@
  *   npm run content:import -- <file.md>                       preview: problems + diff, writes nothing
  *   npm run content:import -- <file.md> --write               apply to content/segments/**, then check
  *
+ * export also writes a .docx next to the .md (needs pandoc); import accepts an edited .docx too.
+ *
  * Only lesson titles and question texts/answers change; ids, types and sources stay. Edits are
  * applied with the admin editor's format-preserving patcher, validated with the same rules.
  */
@@ -14,11 +16,24 @@ import path from "node:path";
 import { findLesson, segments } from "../content";
 import { changedFields, findChallenge, patchChallenge, unifiedDiff, type Literal } from "../src/features/admin/patch";
 import { validateChallenge } from "../src/features/admin/validate";
+import { mdForDocx, mdFromDocx } from "../src/features/content-md/docx";
 import { applyEdits, contentStamp, exportContent, parseContent, readStamp } from "../src/features/content-md/markdown";
 
 const DEFAULT_OUT = "docs/NOI-DUNG-BAI-HOC.md";
 const escapeRe = (x: string) => x.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const [cmd, file, ...flags] = process.argv.slice(2);
+
+// Brackets, ids in headings and quotes stay literal text, so [x] reads the same in Word.
+const PANDOC_MD = ["-f", "markdown-task_lists-header_attributes-auto_identifiers-smart"];
+
+function fromDocx(f: string): string {
+  const r = spawnSync("pandoc", [f, "-t", "gfm", "--wrap=none"], { encoding: "utf8" });
+  if (r.status !== 0) {
+    console.error(`Không đọc được ${f}: cần cài pandoc.\n${r.stderr ?? r.error ?? ""}`);
+    process.exit(1);
+  }
+  return mdFromDocx(r.stdout);
+}
 
 function unitFiles(dir = "content/segments"): string[] {
   return readdirSync(dir).flatMap((n) => {
@@ -34,9 +49,12 @@ if (cmd === "export") {
   const lessons = segments.reduce((n, s) => n + s.units.reduce((m, u) => m + u.lessons.length, 0), 0);
   const questions = segments.reduce((n, s) => n + s.units.reduce((m, u) => m + u.lessons.reduce((k, l) => k + l.challenges.length, 0), 0), 0);
   console.log(`wrote ${out}: ${lessons} lessons, ${questions} questions, ${Math.round(md.length / 1024)} KB`);
+  const docx = out.replace(/\.md$/, "") + ".docx";
+  const r = spawnSync("pandoc", [...PANDOC_MD, "--toc", "--toc-depth=2", "-M", "title=Nội dung bài học", "-o", docx], { input: mdForDocx(md) });
+  console.log(r.status === 0 ? `wrote ${docx}` : `skipped ${docx} (pandoc not available)`);
 } else if (cmd === "import" && file) {
   const write = flags.includes("--write");
-  const source = readFileSync(file, "utf8");
+  const source = file.endsWith(".docx") ? fromDocx(file) : readFileSync(file, "utf8");
   const stamp = readStamp(source);
   if (stamp !== contentStamp(segments) && !flags.includes("--force")) {
     console.error(

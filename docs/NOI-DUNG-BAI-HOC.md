@@ -11,7 +11,7 @@
   Giới hạn: Bối cảnh / Lời nói / Giải thích 20–320 ký tự; câu chọn đáp án có đúng 3 phương án.
   Áp dụng: npm run content:import -- <file> (xem trước) rồi thêm --write để ghi.
 -->
-<!-- phiên bản nội dung: b39c6b04 -->
+<!-- phiên bản nội dung: c80e8102 -->
 
 # Hiểu mình
 
@@ -264,6 +264,7 @@ Bối cảnh: Ba người bạn chia sẻ thói quen đầu tư của mình tron
 Câu hỏi: Thói quen nào là bẫy hành vi?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] Tôi đặt lịch góp cố định mỗi tháng, thị trường lên hay xuống vẫn góp.
 - [x] Thấy cổ phiếu tăng ba phiên liền, tôi mua ngay kẻo lỡ.
 - [ ] Tôi chỉ bán khi mục tiêu hoặc hoàn cảnh của mình thay đổi.
@@ -584,6 +585,7 @@ Bối cảnh: Chị Quyên giải thích cho em gái mới đi làm cách chia t
 Câu hỏi: Câu nào chưa đúng?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] Tiền đóng học phí trong năm nên để ở nơi ít biến động, rút được khi cần.
 - [x] Quỹ dự phòng nên bằng 12 tháng thu nhập, kể cả phần đang để dành.
 - [ ] Mục tiêu còn 10 năm nữa có thể chấp nhận biến động của quỹ cổ phiếu.
@@ -799,6 +801,7 @@ Bối cảnh: Ba người bạn bàn về cột mốc 1 tỷ đầu tiên sau nh
 Câu hỏi: Câu nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] Giai đoạn đầu dễ nản nhất vì thành quả chưa tương xứng công sức bỏ ra.
 - [x] Cột mốc 1 tỷ quan trọng vì đạt được nó nghĩa là bạn đã giàu.
 - [ ] Tự do tài chính tùy vào tuổi, chi tiêu và mục tiêu, không gắn một con số cố định.
@@ -970,6 +973,7 @@ Bối cảnh: Thiếu khoảng 20 triệu/tháng cho mục tiêu trường top M
 Câu hỏi: Cách nào đi ngược nguyên tắc lập kế hoạch?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] Tìm học bổng, hoặc cho con học trong nước rồi chuyển tiếp.
 - [x] Chuyển toàn bộ sang tài sản rủi ro cao hơn để lợi nhuận bù phần thiếu.
 - [ ] Dùng một phần thu nhập trong những năm con du học để đóng học phí.
@@ -1225,6 +1229,7 @@ Bối cảnh: Chị Trang kể ba bước chị đã làm khi bắt đầu kế 
 Câu hỏi: Bước nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] Tôi tính số tiền cần có và năm cần dùng tiền.
 - [x] Tôi chọn quỹ có lợi nhuận cao nhất trước, rồi mới tính cần bao nhiêu.
 - [ ] Tôi chọn mức góp hằng tháng mà mình giữ được lâu dài.
@@ -1648,6 +1653,7 @@ Bối cảnh: Chị Diệp giải thích cho em trai cách quỹ xử lý cổ t
 Câu hỏi: Câu nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] Cổ tức và lãi được giữ lại thuộc tài sản quỹ, do đội ngũ quản lý dùng theo chiến lược
 - [x] Cổ tức giữ lại trong quỹ sẽ tự động làm tăng số CCQ của em
 - [ ] Tiền quỹ đã chia ra tài khoản của em chỉ được tái đầu tư khi em đặt lệnh mua tương ứng
@@ -1749,6 +1755,7 @@ Bối cảnh: Anh Vinh tóm tắt cho đồng nghiệp những gì anh học đ�
 Câu hỏi: Câu nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] Không cần góp thêm vốn mới vẫn có thể có lãi kép
 - [x] Quỹ chia cổ tức tiền mặt thì phần tiền đó vẫn tự sinh lời trong quỹ, dù tôi không mua lại
 - [ ] Các kỳ lỗ cũng tác động kép đến tài sản
@@ -1928,6 +1935,7 @@ Bối cảnh: Anh Đức chia sẻ với nhóm đồng nghiệp ba nguyên tắc
 Câu hỏi: Câu nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] Trước khi đầu tư, tôi để riêng khoản dự phòng và tiền cho nhu cầu ngắn hạn.
 - [ ] Đầu tư định kỳ giúp tôi giảm phụ thuộc vào một thời điểm giải ngân.
 - [x] Cứ chờ thị trường giảm rồi mới mua là chắc chắn mua được giá thấp hơn.
@@ -2105,6 +2113,7 @@ Bối cảnh: Đầu năm, anh Quân viết ra ba điều anh tin mình tự quy
 Câu hỏi: Câu nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] Tôi quyết định được số tiền góp mỗi tháng.
 - [x] Tôi quyết định được thời điểm tốt nhất để mua và bán.
 - [ ] Tôi quyết định được có tiếp tục kế hoạch khi thị trường điều chỉnh hay không.
@@ -2248,6 +2257,7 @@ Bối cảnh: Sau buổi chia sẻ về đầu tư, ba người bạn tóm tắt
 Câu hỏi: Câu nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] Mua vào ngày 1, 10 hay 25 hằng tháng chỉ làm kết quả xê dịch dưới 1%.
 - [x] Tiền nằm chờ trong tài khoản không tốn gì, nên cứ đợi thời điểm đẹp.
 - [ ] Khoản thưởng hay hoa hồng nên được đưa vào kế hoạch ngay khi tiền sẵn sàng.
@@ -2529,6 +2539,7 @@ Bối cảnh: Ba người bạn bàn chuyện có nên bắt đầu đầu tư �
 Câu hỏi: Câu nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] Với khoản tiền dùng trong 1–2 năm, thận trọng là cần thiết
 - [ ] Đầu tư đều đặn giảm số lần phải tự hỏi "bây giờ có nên mua không?"
 - [x] Đầu tư đều đặn làm biến động biến mất, nên tài sản không thể giảm
@@ -2560,6 +2571,7 @@ Bối cảnh: Ba nhà đầu tư giải thích vì sao kết quả quỹ cổ ph
 Câu hỏi: Câu nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] Phần tiền mặt và trái phiếu trong quỹ khiến kết quả khác chỉ số
 - [x] Quỹ chủ động đi khác chỉ số nghĩa là quỹ luôn tốt hơn chỉ số
 - [ ] Chi phí hoạt động của quỹ cũng tác động đến hiệu suất
@@ -2746,6 +2758,7 @@ Bối cảnh: Ba người bàn về một quỹ cổ phiếu vừa có một nă
 Câu hỏi: Câu nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] Cần so sánh cùng kỳ, cùng cách tính và trên nhiều năm
 - [ ] Quỹ chủ động có thể diễn biến khác chỉ số, cả tốt hơn lẫn kém hơn
 - [x] Một năm kém chỉ số chứng tỏ quỹ sẽ kém mãi, nên bán ngay
@@ -3181,6 +3194,7 @@ Bối cảnh: Anh Hiếu chia sẻ với đồng nghiệp về kế hoạch góp
 Câu hỏi: Câu nào của anh Hiếu chưa đúng?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] Số tiền góp mỗi tháng là thứ tôi tự quyết định được.
 - [ ] Tôi chọn được mức rủi ro chấp nhận và việc có tiếp tục kế hoạch khi thị trường giảm hay không.
 - [x] Nếu theo dõi tin tức đủ kỹ, tôi sẽ biết thời điểm tốt nhất để mua và bán.
@@ -3357,6 +3371,7 @@ Bối cảnh: Anh Tuấn giải thích cho em gái vì sao các quỹ có NAV/CC
 Câu hỏi: Câu nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] NAV/CCQ khác nhau một phần do thời điểm thành lập và lịch sử hoạt động của mỗi quỹ.
 - [x] Quỹ có NAV/CCQ thấp còn nhiều dư địa tăng hơn, nên đáng ưu tiên hơn.
 - [ ] Muốn so hai quỹ, nên xem tổng lợi nhuận trên cùng kỳ và mức rủi ro.
@@ -3635,6 +3650,7 @@ Bối cảnh: Một người bạn tóm tắt rủi ro khi đầu tư quỹ mở
 Câu hỏi: Câu nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] Quỹ trái phiếu có thể chịu rủi ro lãi suất và rủi ro tín dụng.
 - [x] Quỹ được quản lý chuyên nghiệp nên không thể mất vốn.
 - [ ] Quỹ cổ phiếu thường biến động mạnh hơn quỹ thu nhập cố định.
@@ -3762,6 +3778,7 @@ Bối cảnh: Chị Quyên giải thích cho mẹ khác biệt giữa quỹ th�
 Câu hỏi: Câu nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] Quỹ chia một khoản vốn nhỏ vào nhiều công cụ tiền tệ, giảm rủi ro tập trung vào một tổ chức phát hành.
 - [x] Lợi suất của quỹ luôn cao hơn lãi tiền gửi vì có chuyên gia quản lý.
 - [ ] Phí quản lý quỹ làm giảm một phần lợi suất mà nhà đầu tư thực nhận.
@@ -3921,6 +3938,7 @@ Bối cảnh: Chị Hiền giải thích cho mẹ về thu nhập từ quỹ c�
 Câu hỏi: Câu nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] Quỹ cổ phiếu không trả lãi cố định như tiền gửi.
 - [x] DCDE cam kết trả cổ tức hằng tháng với mức cố định.
 - [ ] Mức và thời điểm chia cổ tức phụ thuộc kết quả và phương án được duyệt.
@@ -4035,6 +4053,7 @@ Bối cảnh: Anh Kiên chia sẻ cách anh đánh giá một quỹ cổ phiếu
 Câu hỏi: Câu nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] Xem hiệu suất trên nhiều khoảng thời gian, như 1, 3 và 5 năm.
 - [ ] Đối chiếu với chỉ số tham chiếu và xem cả các giai đoạn giảm.
 - [x] Chỉ cần nhìn năm gần nhất, vì đó là con số mới nhất.
@@ -4261,6 +4280,7 @@ Bối cảnh: Chị Nhàn giải thích cho em trai cách đọc thông tin mộ
 Câu hỏi: Câu nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] Benchmark là chỉ số quỹ dùng để so sánh và hướng đến mô phỏng
 - [ ] Expense ratio đã được trừ vào NAV, không thu thêm khi bạn giao dịch
 - [x] Tracking error càng lớn chứng tỏ quỹ bám chỉ số càng tốt
@@ -4433,6 +4453,7 @@ Bối cảnh: Anh Long tóm tắt cho đồng nghiệp quỹ chỉ số giảm �
 Câu hỏi: Câu nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] Quỹ chỉ số loại bỏ rủi ro chọn nhầm một vài cổ phiếu
 - [x] Đa dạng hóa rộng giúp quỹ chỉ số tránh được các đợt giảm của thị trường
 - [ ] Khi chỉ số tham chiếu giảm, quỹ chỉ số giảm theo
@@ -4732,6 +4753,7 @@ Bối cảnh: Anh Quân giải thích cách anh chia danh mục theo Core – Sa
 Câu hỏi: Câu nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] Phần lõi dùng quỹ thụ động để tiếp cận thị trường rộng với chi phí thấp
 - [ ] Phần vệ tinh dùng quỹ chủ động để tìm alpha ở phân khúc kém hiệu quả
 - [x] Có phần lõi thụ động rồi thì danh mục không còn giảm khi thị trường giảm
@@ -4927,6 +4949,7 @@ Bối cảnh: Chị Vy giải thích khái niệm drawdown cho đồng nghiệp 
 Câu hỏi: Câu nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] Drawdown là mức lỗ lớn nhất tính từ đỉnh xuống đáy, trước khi danh mục hồi phục.
 - [ ] Drawdown thấp giúp nhà đầu tư ít bị cám dỗ bán ra ở thời điểm bất lợi.
 - [x] Danh mục có drawdown thấp hơn chắc chắn có lợi nhuận dài hạn cao hơn.
@@ -5428,6 +5451,7 @@ Bối cảnh: Một người bạn giới thiệu hai quỹ thu nhập cố đ�
 Câu hỏi: Câu nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] DCIP miễn phí bán, tiền bán về tài khoản ngay trong ngày giao dịch.
 - [x] Quỹ trái phiếu chỉ giữ trái phiếu và tiền gửi nên NAV không bao giờ giảm.
 - [ ] Bán DCBF thì tiền về sau 5 ngày làm việc kể từ ngày giao dịch.
@@ -5622,6 +5646,7 @@ Bối cảnh: Một người bạn chia sẻ với anh Long ba "bí quyết" ch�
 Câu hỏi: Câu nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] So hiệu suất các quỹ trên cùng một khoảng thời gian.
 - [ ] So từng quỹ với quỹ cùng loại, không so quỹ trái phiếu với quỹ cổ phiếu.
 - [x] Công ty nào có một quỹ lời cao nhất năm qua thì quỹ nào của công ty đó cũng tốt.
@@ -5709,6 +5734,7 @@ Bối cảnh: Trong nhóm chat đầu tư, anh Hiếu tóm tắt gia đình qu�
 Câu hỏi: Câu nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] DCIP so kết quả với lãi suất tiền gửi kỳ hạn 3 tháng trung bình của bốn ngân hàng.
 - [x] DCDS năng động hơn nên giai đoạn nào cũng lời hơn DCDE.
 - [ ] So DCDE với quỹ khác nên dùng tổng lợi nhuận đã tính cổ tức.
@@ -5909,6 +5935,7 @@ Bối cảnh: Anh Bảo sắp mua quỹ lần đầu. Một đồng nghiệp chi
 Câu hỏi: Mẹo nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] Kiểm tra đúng tên người thụ hưởng, số tài khoản, số tiền và nội dung trước khi bấm chuyển.
 - [ ] Chuyển nhanh vào số tài khoản siêu tốc của quỹ thì DragonX báo nhận tiền sớm hơn.
 - [x] Có sẵn ảnh QR của lần mua trước thì cứ quét lại, kể cả khi mua quỹ khác.
@@ -5957,6 +5984,7 @@ Bối cảnh: Một người bạn "có kinh nghiệm" nhắn cho anh Minh ba l�
 Câu hỏi: Câu nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] Chuyển tiền thành công ở ngân hàng chưa có nghĩa là lệnh đã được thực hiện.
 - [ ] Chuyển sai nội dung thì lệnh có thể không khớp và phải yêu cầu hoàn tiền.
 - [x] Cứ gửi mã OTP cho nhân viên hỗ trợ để họ kiểm tra nhanh hơn.
@@ -6047,6 +6075,7 @@ Bối cảnh: Thấy anh Đức loay hoay, một người bạn nhắn ba lời 
 Câu hỏi: Câu nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] Chuyển tiền qua Payoo không tự tạo ra một lệnh mua hợp lệ.
 - [ ] Lệnh Linh hoạt chỉ hủy được trước 14:30 ngày T-1.
 - [x] Chuyển nhầm quỹ thì cứ chuyển thêm vào đúng quỹ, khoản nhầm sẽ tự hoàn.
@@ -6109,6 +6138,7 @@ Bối cảnh: Em trai chị Linh, người "rành công nghệ", đưa ra ba nh�
 Câu hỏi: Nhận xét nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] Ứng dụng lỗi thì có thể thử bản web chính thức nếu được hỗ trợ.
 - [ ] Ảnh chụp lỗi gửi CSKH nên che các thông tin nhạy cảm.
 - [x] Đã báo lỗi nghĩa là lệnh chắc chắn chưa được ghi nhận, cứ đặt lại.
@@ -6213,6 +6243,7 @@ Bối cảnh: Anh Dũng giải thích cho em gái về chi phí khi đầu tư q
 Câu hỏi: Câu nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] Phí quản lý đã trừ trong NAV nên lợi nhuận em thấy là sau phí quản lý.
 - [x] Phí quản lý nằm hết trong NAV rồi, nên bán lúc nào cũng không mất đồng nào.
 - [ ] Khi bán vẫn có thể có phí bán, thuế và phí chuyển tiền.
@@ -6632,6 +6663,7 @@ Bối cảnh: Một đồng nghiệp chia sẻ với chị Yến kinh nghiệm x
 Câu hỏi: Câu nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] Báo cáo hoạt động và báo cáo năm của quỹ tải được trên website chính thức.
 - [x] Bảng hiệu suất nào trên website cũng xin được bản đóng dấu.
 - [ ] Cần văn bản có dấu thì gửi yêu cầu, nêu tên quỹ, kỳ số liệu và mục đích.
@@ -6694,6 +6726,7 @@ Bối cảnh: Thấy chú Tâm đã có mục ETF, một người bạn giải t
 Câu hỏi: Câu nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] ETF khớp lệnh theo cơ chế giao dịch trên sàn, khác với quỹ mở
 - [ ] Giá ETF trên sàn do cung cầu quyết định nên có thể lệch so với giá trị tài sản ròng
 - [x] Mua ETF cũng giống quỹ mở: đặt lệnh hôm trước, khớp một lần theo NAV kỳ sau
@@ -6940,6 +6973,7 @@ Bối cảnh: Chị Mai hỏi trong một nhóm chat nhà đầu tư về lỗi 
 Câu hỏi: Lời khuyên nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] Đừng dùng ảnh đã chỉnh sửa hoặc bị mất góc khi chụp giấy tờ.
 - [x] Cứ đăng ảnh hai mặt căn cước lên nhóm, mọi người xem giúp lỗi ở đâu.
 - [ ] Thông báo lỗi định dạng chưa chắc là app không hỗ trợ thẻ mới; hãy gửi lỗi cho kênh hỗ trợ.
@@ -7016,6 +7050,7 @@ Bối cảnh: Camera bị treo khi chụp chân dung, anh Quân nhắn hỏi và
 Câu hỏi: Lời khuyên nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] Kiểm tra quyền camera và đóng các ứng dụng khác đang dùng camera.
 - [ ] Chỉ gỡ và cài lại ứng dụng khi chắc vẫn đăng nhập và nhận được OTP.
 - [x] Gửi mã PIN và OTP để bên hỗ trợ đăng nhập kiểm tra giúp.
@@ -7133,6 +7168,7 @@ Bối cảnh: Anh Dũng kể chuyện đóng tài khoản với nhóm bạn, và
 Câu hỏi: Ý nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] Trước khi đóng phải xử lý hết số dư CCQ và lệnh đang chờ.
 - [ ] Nếu chỉ muốn nghỉ đầu tư một thời gian thì không cần đóng tài khoản.
 - [x] Gỡ ứng dụng DragonX là tài khoản tự đóng, tiền tự về ngân hàng.
@@ -7262,6 +7298,7 @@ Bối cảnh: Biết anh Đức đang chờ đường dẫn mới, một ngườ
 Câu hỏi: Mẹo nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [x] Tớ có sẵn đường dẫn xác minh của tớ, cậu dùng luôn cho nhanh
 - [ ] Giờ phục vụ có thể đổi vào ngày nghỉ, lễ, nên xem khung giờ trên email mới nhất
 - [ ] Nếu ai hỏi PIN hay OTP trong lúc xác minh thì đừng cung cấp
@@ -7340,6 +7377,7 @@ Bối cảnh: Trong nhóm chat gia đình, anh Khoa chia sẻ ba "mẹo" để n
 Câu hỏi: Mẹo nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] Nếu nghi ngờ, gác máy và tự gọi lại số được công bố trên kênh chính thức
 - [ ] Nhân viên DC không cần biết PIN hay OTP của bạn
 - [x] Số gọi đến trùng số tổng đài thì có thể yên tâm làm theo
@@ -7666,6 +7704,7 @@ Bối cảnh: Cô Hằng hỏi thêm một người quen về việc tặng CCQ 
 Câu hỏi: Ý kiến nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] Tặng CCQ cần làm hồ sơ chuyển quyền sở hữu.
 - [x] Cách gọn nhất luôn là bán ra rồi để con mua lại, không mất gì.
 - [ ] Cách tính thời gian nắm giữ khi tặng cần xác định theo quy định áp dụng.
@@ -7853,6 +7892,7 @@ Bối cảnh: Bạn của chị Yến nhắn ba lời khuyên để yêu cầu h
 Câu hỏi: Lời khuyên nào sai?
 
 > Đánh dấu [x] vào câu SAI.
+
 - [ ] Gửi email từ địa chỉ đã đăng ký tài khoản
 - [ ] Kèm mã lệnh và thời điểm xảy ra sự cố
 - [x] Gửi kèm mật khẩu để được ưu tiên xử lý

@@ -77,8 +77,9 @@ Tested end to end by `npm run e2e:admin` (both editor modes; the PR mode against
 
 ## Sửa nội dung bằng file Markdown
 
-- File chứa toàn bộ bài học, câu hỏi và đáp án: `docs/NOI-DUNG-BAI-HOC.md` (hướng dẫn sửa nằm ở đầu file).
-- Tạo lại file từ mã nguồn: `npm run content:export`
+- File chứa toàn bộ bài học, câu hỏi và đáp án: `docs/NOI-DUNG-BAI-HOC.md`, và bản Word `docs/NOI-DUNG-BAI-HOC.docx` (hướng dẫn sửa nằm ở đầu file).
+- Lệnh import nhận cả file `.md` lẫn `.docx` đã sửa (bản Word cần cài pandoc).
+- Tạo lại cả hai file từ mã nguồn: `npm run content:export`
 - Xem trước thay đổi từ file đã sửa: `npm run content:import -- docs/NOI-DUNG-BAI-HOC.md`
 - Ghi thay đổi vào mã nguồn: `npm run content:import -- docs/NOI-DUNG-BAI-HOC.md --write`
 - File có dấu phiên bản; nếu nội dung đã thay đổi sau khi xuất, lệnh import sẽ từ chối (dùng `--force` nếu chắc chắn).
