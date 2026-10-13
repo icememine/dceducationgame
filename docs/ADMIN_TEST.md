@@ -74,3 +74,11 @@ Tested end to end by `npm run e2e:admin` (both editor modes; the PR mode against
 3. **Analytics**: date-range filter, CSV export, placement and review statistics, funnel by segment, question-level drill-down over time.
 4. **Learner support**: look up a learner by nickname to answer a support request (read-only).
 5. **Notifications admin**: compose a one-off announcement; see reminder delivery and push subscription counts.
+
+## Sửa nội dung bằng file Markdown
+
+- File chứa toàn bộ bài học, câu hỏi và đáp án: `docs/NOI-DUNG-BAI-HOC.md` (hướng dẫn sửa nằm ở đầu file).
+- Tạo lại file từ mã nguồn: `npm run content:export`
+- Xem trước thay đổi từ file đã sửa: `npm run content:import -- docs/NOI-DUNG-BAI-HOC.md`
+- Ghi thay đổi vào mã nguồn: `npm run content:import -- docs/NOI-DUNG-BAI-HOC.md --write`
+- File có dấu phiên bản; nếu nội dung đã thay đổi sau khi xuất, lệnh import sẽ từ chối (dùng `--force` nếu chắc chắn).
