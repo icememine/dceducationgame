@@ -14,6 +14,6 @@ describe("docx round trip helpers", () => {
     const back = mdFromDocx(forWord.replace(/\[(x| )\]/g, "\\[$1\\]"));
     expect(readStamp(back)).toBe(readStamp(md));
     expect(parseContent(back).errors).toEqual([]);
-    expect(parseContent(back).challenges.size).toBe(parseContent(md).challenges.size);
+    expect(parseContent(back).challenges.length).toBe(parseContent(md).challenges.length);
   });
 });
