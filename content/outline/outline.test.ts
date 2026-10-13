@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { findLesson } from "../index";
 import { sourceById } from "../sources";
-import { aiScenarios, FAQ_NUMBERS, FORMATS, outline, outlineLessons, TOOLS } from "./index";
+import { advancedUnits, aiScenarios, FAQ_NUMBERS, FORMATS, outline, outlineLessons, TOOLS } from "./index";
 
 const lessons = outlineLessons();
 const refOk = (r: string) => (r.startsWith("faq:") ? FAQ_NUMBERS.includes(Number(r.slice(4))) : !!sourceById(r));
@@ -39,6 +39,8 @@ describe("lesson outline", () => {
     const covered = new Set<number>([
       ...lessons.flatMap((l) => l.sources.filter((r) => r.startsWith("faq:")).map((r) => Number(r.slice(4)))),
       ...outline.flatMap((s) => s.askRongOnly ?? []),
+      // Units parked for the advanced program still cover their FAQ questions.
+      ...advancedUnits.flatMap((u) => u.lessons.flatMap((l) => l.sources.filter((r) => r.startsWith("faq:")).map((r) => Number(r.slice(4))))),
     ]);
     expect(FAQ_NUMBERS.filter((n) => !covered.has(n))).toEqual([]);
   });

@@ -16,7 +16,7 @@ function vItem(q) {
   const perm = shuffle(q.options || [], LESSONS[L.id].code + (q.prompt || ""));
   switch (q.type) {
     case "story":
-      return `<div class="story">${mascot(q.mood || "study", 130)}<h2>${esc(q.title)}</h2><p>${esc(q.body)}</p>${q.src ? `<span class="src">${ic("doc")}Nguồn: <b>${esc(q.src)}</b></span>` : ""}</div>`;
+      return `<div class="story">${mascot(M[q.mood] ? q.mood : "study", 130)}<h2>${esc(q.title)}</h2><p>${esc(q.body)}</p>${q.src ? `<span class="src">${ic("doc")}Nguồn: <b>${esc(q.src)}</b></span>` : ""}</div>`;
     case "select": case "scenario": {
       const opts = `<div class="opts">${perm.map((orig, k) => `<button class="opt ${optCls(orig)}" data-ans="${orig}" aria-pressed="${L.ans === orig}" ${lock}><span class="key">${String.fromCharCode(65 + k)}</span><span>${esc(q.options[orig])}</span></button>`).join("")}</div>`;
       if (q.type === "scenario") {
@@ -50,7 +50,7 @@ function vItem(q) {
         <div class="opts">${pool.map((i) => `<button class="opt" data-pick="${i}" ${lock}><span>${esc(q.items[i])}</span></button>`).join("")}</div>`;
     }
     case "spot":
-      return `<div class="q-kind">${esc(q.kind)}</div><h2>${esc(q.prompt)}</h2><div class="spot">${q.sentences.map((s, i) => `<button class="sent ${!L.checked ? "" : i === q.answer ? "wrong" : L.ans === i ? "wrong" : ""}" data-ans="${i}" aria-pressed="${L.ans === i}" ${lock}>${esc(s)}</button>`).join("")}</div><p class="src">Chạm vào câu bạn cho là sai.</p>`;
+      return `<div class="q-kind">${esc(q.kind)}</div>${q.context ? `<div class="ctx">${esc(q.context)}</div>` : ""}<h2>${esc(q.prompt)}</h2><div class="spot">${q.sentences.map((s, i) => `<button class="sent ${!L.checked ? "" : i === q.answer ? "wrong" : L.ans === i ? "wrong" : ""}" data-ans="${i}" aria-pressed="${L.ans === i}" ${lock}>${esc(s)}</button>`).join("")}</div><p class="src">Chạm vào câu bạn cho là sai.</p>`;
     case "profile": {
       const sel = L.profile[q.idx];
       return `<div class="q-kind" style="color:var(--jade-deep)">Tự đánh giá · không có đáp án sai</div><h2>${esc(q.prompt)}</h2>
@@ -69,6 +69,13 @@ function seesaw() {
     <rect x="206" y="58" width="96" height="30" rx="8" fill="var(--sky)"/><text x="254" y="78" text-anchor="middle" font-size="12" font-weight="800" fill="var(--on-accent)">Giá trái phiếu ↓</text></svg></div>`;
 }
 function estimateBars(q) {
+  if (!q.reveal) {
+    // Generated lessons: optional labelled rows, then the answer next to the guess.
+    const rows = [...(q.rows || []), { label: "Đáp án", value: q.answer }];
+    const max = Math.max(...rows.map((r) => r.value), T.lesson.ans);
+    const row = (l, v, c) => `<div class="cmp-row"><span>${esc(l)}</span><span class="track"><i style="width:${Math.min(100, (v / max) * 100)}%;background:${c}"></i></span><b>${Number(v).toLocaleString("vi-VN")} ${esc(q.unit)}</b></div>`;
+    return `<div class="compare">${rows.map((r) => row(r.label, r.value, "var(--jade)")).join("")}${row("Bạn đoán", T.lesson.ans, "var(--sky)")}</div>`;
+  }
   const max = Math.max(...q.reveal.map((r) => r[1]));
   return `<div class="compare">${q.reveal.map(([y, v]) => `<div class="cmp-row"><span>Sau ${y} năm</span><span class="track"><i style="width:${(v / max) * 100}%;background:var(--jade)"></i></span><b>${v.toLocaleString("vi-VN")} tỷ</b></div>`).join("")}
     <div class="cmp-row"><span>Bạn đoán</span><span class="track"><i style="width:${Math.min(100, (T.lesson.ans / max) * 100)}%;background:var(--sky)"></i></span><b>${Number(T.lesson.ans).toLocaleString("vi-VN")} tỷ</b></div></div>`;

@@ -5,6 +5,7 @@ import type { OutlineLesson, OutlineStage } from "./types";
 
 export * from "./types";
 export { aiScenarios } from "./ai-scenarios";
+export { advancedUnits } from "./advanced";
 
 /** Recommended journey: Hiểu mình → Hiểu quỹ → Quỹ DC & DragonX. */
 export const outline: OutlineStage[] = [stageKnowYourself, stageKnowFunds, stageDcFunds];

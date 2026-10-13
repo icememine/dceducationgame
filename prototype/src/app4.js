@@ -43,9 +43,9 @@ function go(target) {
 /* ---------- flow index ---------- */
 const FLOWS = [
   { group: "Bắt đầu", items: [["welcome", "Chào mừng"], ["journey", "Chọn hành trình"], ["goal", "Mục tiêu mỗi ngày"], ["risk", "Tự đánh giá rủi ro"], ["riskResult", "Hồ sơ rủi ro của bạn"]] },
-  { group: "Học", items: [["learn", "Lộ trình 3 chặng"], ["lesson:compound", "Bài: Lãi kép, đoán số"], ["lesson:reactions", "Bài: Ba phản ứng khi giảm"], ["lesson:timing", "Bài: Trò chơi Nhà tiên tri"], ["lesson:funds101", "Bài: Quỹ trái phiếu"], ["lesson:case", "Bài: Hồ sơ hỗ trợ"], ["result", "Hoàn thành bài"], ["hearts", "Hết tim"]] },
+  { group: "Học", items: [["learn", "Lộ trình 3 chặng"], ["lesson:compound", "Bài: Lãi kép, đoán số"], ["lesson:reactions", "Bài: Ba phản ứng khi giảm"], ["lesson:timing", "Bài: Trò chơi Nhà tiên tri"], ["lesson:c1f-nav", "Bài: NAV và NAV/CCQ"], ["lesson:b7a-my-plan", "Bài: Bản kế hoạch của tôi"], ["lesson:case", "Bài: Hồ sơ hỗ trợ"], ["result", "Hoàn thành bài"], ["hearts", "Hết tim"]] },
   { group: "Công cụ", items: [["planner", "Lập kế hoạch mục tiêu"], ["compoundTool", "Lãi kép: 25 hay 45 tuổi"]] },
-  { group: "AI", items: [["ai", "Luyện tình huống AI"], ["aichat", "Tình huống: bán hết khi giảm"], ["rong", "Hỏi Rồng"]] },
+  { group: "AI", items: [["ai", "Luyện tình huống AI"], ["aichat", "Tình huống: bán hết khi giảm", "sub"], ["rong", "Hỏi Rồng"]] },
   { group: "Thi đua & hồ sơ", items: [["quests", "Nhiệm vụ hôm nay"], ["league", "Giải đấu tuần"], ["profile", "Hồ sơ & chứng nhận"]] },
 ];
 function isCurrent(k) {
@@ -59,7 +59,7 @@ function isCurrent(k) {
 }
 function renderIndex() {
   let n = 0;
-  document.getElementById("flowIndex").innerHTML = FLOWS.map((g) => `<div class="group"><div class="group-label">${g.group}</div>${g.items.map(([k, l]) => `<button class="flow-link" data-jump="${k}" aria-current="${isCurrent(k)}"><span class="n">${++n}</span>${l}</button>`).join("")}</div>`).join("");
+  document.getElementById("flowIndex").innerHTML = FLOWS.map((g) => `<div class="group"><div class="group-label">${g.group}</div>${g.items.map(([k, l, sub]) => `<button class="flow-link${sub ? " sub" : ""}" data-jump="${k}" aria-current="${isCurrent(k)}"><span class="n">${sub ? "↳" : ++n}</span>${l}</button>`).join("")}</div>`).join("");
 }
 document.getElementById("flowIndex").addEventListener("click", (e) => {
   const b = e.target.closest("[data-jump]");
@@ -68,7 +68,7 @@ document.getElementById("flowIndex").addEventListener("click", (e) => {
   T.modal = null; T.popover = null;
   if (k.startsWith("lesson:")) { const id = k.slice(7); S.stage = LESSONS[id].stage; startLesson(id); }
   else if (k === "risk") startLesson("risk");
-  else if (k === "hearts") { S.stage = "C"; startLesson("funds101"); T.lesson.hearts = 0; S.hearts = 0; T.modal = "hearts"; }
+  else if (k === "hearts") { S.stage = "C"; startLesson("c1f-nav"); T.lesson.hearts = 0; S.hearts = 0; T.modal = "hearts"; }
   else if (k === "result") { T.result = T.result || null; T.confettiDone = false; S.screen = "result"; }
   else if (k === "planner" || k === "compoundTool") { S.screen = "main"; S.tab = "tools"; S.toolSeg = k === "planner" ? "planner" : "compound"; }
   else if (k === "aichat") openScenario("panic-spouse");

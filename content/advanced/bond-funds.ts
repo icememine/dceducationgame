@@ -1,8 +1,14 @@
-import type { UnitInput } from "../../schema";
+import type { UnitInput } from "../schema";
+
+/**
+ * PARKED for the advanced program (Nâng cao, outline unit NC1): not on the learning path.
+ * Kept compiling and validated (npx tsx scripts/check-unit.ts content/advanced/bond-funds.ts)
+ * so it can be reused when the advanced program is written.
+ */
 
 export const unit = {
   id: "c2-bond-funds",
-  title: "Phần 3 · Quỹ trái phiếu",
+  title: "Nâng cao · Quỹ trái phiếu",
   description: "Lãi suất, duration và vai trò giảm chấn",
   color: "jade",
   mascot: "analyze",

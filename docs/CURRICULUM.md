@@ -2,7 +2,7 @@
 
 > Tài liệu này được sinh tự động từ `content/outline/`. Sửa ở đó rồi chạy `npm run docs:curriculum`.
 
-**3 chặng · 25 phần · 142 bài · 14 tình huống luyện AI.** 104 bài đã có bản chơi được (✅).
+**3 chặng · 24 phần · 135 bài · 14 tình huống luyện AI.** 97 bài đã có bản chơi được (✅).
 
 ## Triết lý
 
@@ -12,7 +12,7 @@ sau đó học loại quỹ nào làm việc gì; cuối cùng áp dụng vào s
 | Chặng | Vai trò | Phần | Bài |
 |---|---|---|---|
 | 1. Hiểu mình (B) | Chặng chính. Mọi quyết định đầu tư bắt đầu từ tình hình tài chính, mục tiêu và hành vi của chính nhà đầu tư. | 7 | 57 |
-| 2. Hiểu quỹ (C) | Hỗ trợ chặng Hiểu mình. Sau khi biết khẩu vị và mục tiêu, nhà đầu tư học loại quỹ nào làm việc gì. | 8 | 42 |
+| 2. Hiểu quỹ (C) | Hỗ trợ chặng Hiểu mình. Sau khi biết khẩu vị và mục tiêu, nhà đầu tư học loại quỹ nào làm việc gì. | 7 | 35 |
 | 3. Quỹ DC & DragonX (A) | Áp dụng: sản phẩm cụ thể của Dragon Capital và cách giao dịch an toàn trên DragonX. | 10 | 43 |
 
 ### Dạng bài
@@ -20,16 +20,16 @@ sau đó học loại quỹ nào làm việc gì; cuối cùng áp dụng vào s
 | Dạng | Mô tả | Số bài dùng |
 |---|---|---|
 | `story` | Câu chuyện | 11 |
-| `concept` | Thẻ kiến thức | 50 |
-| `quiz` | Câu hỏi nhanh | 70 |
+| `concept` | Thẻ kiến thức | 47 |
+| `quiz` | Câu hỏi nhanh | 65 |
 | `calc` | Tính nhanh | 14 |
 | `estimate` | Đoán số | 8 |
-| `sim` | Mô phỏng | 26 |
+| `sim` | Mô phỏng | 24 |
 | `game` | Trò chơi dữ liệu | 4 |
-| `scenario` | Tình huống | 20 |
+| `scenario` | Tình huống | 18 |
 | `decision` | Ra quyết định | 10 |
 | `case` | Hồ sơ hỗ trợ | 19 |
-| `spot` | Tìm lỗi sai | 10 |
+| `spot` | Tìm lỗi sai | 9 |
 | `reflect` | Tự đánh giá · cam kết | 9 |
 | `ai` | Luyện cùng AI | 1 |
 | `checkpoint` | Kiểm tra | 10 |
@@ -46,11 +46,11 @@ sau đó học loại quỹ nào làm việc gì; cuối cùng áp dụng vào s
 | Máy tính quỹ tự do sự nghiệp (`runway`) | B1.3, B1.4 |
 | Ước tính chi phí du học (`edu-cost`) | B3.4 |
 | Phân bổ theo quy tắc 100 − tuổi (`age-rule`) | B7.2 |
-| Danh mục thử nghiệm (`sandbox`) | B7.4, B7.6, C6.5, C7.2, C8.2 |
-| Máy tính hồi phục sau sụt giảm (`drawdown`) | C4.5 |
-| Mô phỏng tái cân bằng (`rebalance`) | C7.3 |
-| Bập bênh lãi suất – giá trái phiếu (`bond-seesaw`) | C3.2, C3.3 |
-| Tác động của phí theo thời gian (`fee-impact`) | B4.7, C6.2 |
+| Danh mục thử nghiệm (`sandbox`) | B7.4, B7.6, C5.5, C6.2, C7.2 |
+| Máy tính hồi phục sau sụt giảm (`drawdown`) | C3.5 |
+| Mô phỏng tái cân bằng (`rebalance`) | C6.3 |
+| Bập bênh lãi suất – giá trái phiếu (`bond-seesaw`) | — |
+| Tác động của phí theo thời gian (`fee-impact`) | B4.7, C5.2 |
 | Vòng đời một lệnh quỹ mở (`order-flow`) | A2.1 |
 | Bản đồ lợi nhuận theo tháng (`month-heatmap`) | B6.5 |
 | Chia thu nhập thành các ngăn (`income-split`) | B1.1 |
@@ -251,7 +251,7 @@ Cầu nối sang chặng Hiểu quỹ: tỷ trọng cổ phiếu và trái phi�
 
 ## Chặng 2 · Hiểu quỹ (C)
 
-*Quỹ là gì · Tiền tệ · Trái phiếu · Cổ phiếu · Chỉ số & ETF · Chủ động vs thụ động · Cân bằng*
+*Quỹ là gì · Tiền tệ · Cổ phiếu · Chỉ số & ETF · Chủ động vs thụ động · Cân bằng*
 
 Hỗ trợ chặng Hiểu mình. Sau khi biết khẩu vị và mục tiêu, nhà đầu tư học loại quỹ nào làm việc gì.
 
@@ -302,126 +302,101 @@ Lớp đệm thanh khoản: nơi cho tiền dự phòng và tiền chờ giải 
 
 </details>
 
-### C3 · Quỹ trái phiếu
-
-Bộ giảm chấn của danh mục, nhưng không tuyệt đối an toàn. Linh vật: `analyze`.
-
-| Bài | Mục tiêu | Dạng | Nguồn |
-|---|---|---|---|
-| **C3.1** Ba nguồn lợi nhuận của quỹ trái phiếu ✅ | Phân biệt lãi coupon, lãi/lỗ giá và giá trị từ quản lý danh mục. | Thẻ kiến thức, Câu hỏi nhanh | W5 Bài 4 · Quỹ trái phiếu nâng cao |
-| **C3.2** Bập bênh lãi suất và giá ✅ | Dự đoán NAV quỹ trái phiếu khi lãi suất tăng hoặc giảm. *Công cụ: Bập bênh lãi suất – giá trái phiếu.* | Mô phỏng, Câu hỏi nhanh | W5 Bài 4 · Quỹ trái phiếu nâng cao |
-| **C3.3** Duration: độ nhạy lãi suất ✅ | So sánh hai quỹ có duration khác nhau. *Công cụ: Bập bênh lãi suất – giá trái phiếu.* | Thẻ kiến thức, Mô phỏng | W5 Bài 4 · Quỹ trái phiếu nâng cao |
-| **C3.4** Coupon cao chưa chắc lời cao ✅ | Phân biệt coupon và yield. | Tìm lỗi sai, Câu hỏi nhanh | W5 Bài 4 · Quỹ trái phiếu nâng cao |
-| **C3.5** Rủi ro tín dụng và đa dạng hóa ✅ | So sánh quỹ trái phiếu với trái phiếu doanh nghiệp riêng lẻ và tiết kiệm dài hạn. | Câu hỏi nhanh, Tình huống | W5 Bài 4 · Quỹ trái phiếu nâng cao |
-| **C3.6** Dùng quỹ trái phiếu đúng vai ✅ | Chọn tình huống phù hợp và không phù hợp cho quỹ trái phiếu. | Tình huống, Câu hỏi nhanh | W5 Bài 4 · Quỹ trái phiếu nâng cao · Kế hoạch du học cho con: bài toán tài chính gia đình (anh Nam) |
-| **C3.7** Nâng cao: giá sạch và lãi dồn tích ✅ | Hiểu vì sao giá đầy đủ = giá sạch + lãi dồn tích (bài tùy chọn). | Thẻ kiến thức | FAQ 117 |
-
-<details><summary>Số liệu và ý chính cần dạy</summary>
-
-- **C3.1**: Quỹ trái phiếu định giá theo thị trường (mark-to-market): biến động lãi suất và tín dụng vào NAV ngay
-- **C3.2**: Lãi suất tăng → giá trái phiếu giảm → NAV giảm ngắn hạn; đây là rủi ro lớn nhất
-- **C3.3**: Danh mục nhiều trái phiếu duration dài thì NAV càng bị ảnh hưởng bởi lãi suất
-- **C3.4**: Coupon cố định khi phát hành; yield phụ thuộc giá mua, coupon và lãi/lỗ vốn
-- **C3.5**: Trái phiếu riêng lẻ: phụ thuộc doanh nghiệp, vốn tối thiểu thường 100 triệu – 1 tỷ, thanh khoản thấp; Quỹ trái phiếu: đa dạng hóa, vốn từ vài chục nghìn đồng, thanh khoản T+2 đến T+4
-- **C3.6**: Hợp: lớp lõi thu nhập cố định, chờ giải ngân, tái cơ cấu sau biến động; Không hợp: bảo toàn vốn tuyệt đối ngắn hạn; kỳ vọng lợi nhuận cao mà không chấp nhận biến động; DCBF (2013) dùng lãi suất tiền gửi 12 tháng của 4 ngân hàng làm chỉ số tham chiếu
-
-</details>
-
-### C4 · Quỹ cổ phiếu
+### C3 · Quỹ cổ phiếu
 
 Động cơ tăng trưởng dài hạn, đi kèm biến động lớn. Linh vật: `fight`.
 
 | Bài | Mục tiêu | Dạng | Nguồn |
 |---|---|---|---|
-| **C4.1** Tăng trưởng và biến động ✅ | Hiểu vì sao quỹ cổ phiếu hợp với mục tiêu dài và không hợp với tiền cần sớm. | Thẻ kiến thức, Câu hỏi nhanh | Kế hoạch du học cho con: bài toán tài chính gia đình (anh Nam) · FAQ 1, 123 |
-| **C4.2** Quỹ cổ phiếu không trả lãi hằng tháng ✅ | Phân biệt cổ tức quỹ với lãi tiền gửi. | Tìm lỗi sai, Câu hỏi nhanh | FAQ 14 |
-| **C4.3** Chiến lược năng động và chiến lược cổ tức ✅ | Giải thích vì sao hai quỹ cổ phiếu có lúc chênh lệch hiệu suất. | Thẻ kiến thức, Câu hỏi nhanh | FAQ 16, 124 |
-| **C4.4** Đánh giá hiệu suất quỹ cổ phiếu ✅ | Xem nhiều kỳ, so với chỉ số tham chiếu, xem biến động và giai đoạn giảm. | Tìm lỗi sai, Tính nhanh | FAQ 25, 26, 29 |
-| **C4.5** Drawdown: giảm bao nhiêu thì cần tăng bao nhiêu ✅ | Tính mức phục hồi cần thiết sau một đợt giảm. *Công cụ: Máy tính hồi phục sau sụt giảm.* | Tính nhanh, Đoán số | W5 Bài 5 · Quỹ cân bằng nâng cao |
+| **C3.1** Tăng trưởng và biến động ✅ | Hiểu vì sao quỹ cổ phiếu hợp với mục tiêu dài và không hợp với tiền cần sớm. | Thẻ kiến thức, Câu hỏi nhanh | Kế hoạch du học cho con: bài toán tài chính gia đình (anh Nam) · FAQ 1, 123 |
+| **C3.2** Quỹ cổ phiếu không trả lãi hằng tháng ✅ | Phân biệt cổ tức quỹ với lãi tiền gửi. | Tìm lỗi sai, Câu hỏi nhanh | FAQ 14 |
+| **C3.3** Chiến lược năng động và chiến lược cổ tức ✅ | Giải thích vì sao hai quỹ cổ phiếu có lúc chênh lệch hiệu suất. | Thẻ kiến thức, Câu hỏi nhanh | FAQ 16, 124 |
+| **C3.4** Đánh giá hiệu suất quỹ cổ phiếu ✅ | Xem nhiều kỳ, so với chỉ số tham chiếu, xem biến động và giai đoạn giảm. | Tìm lỗi sai, Tính nhanh | FAQ 25, 26, 29 |
+| **C3.5** Drawdown: giảm bao nhiêu thì cần tăng bao nhiêu ✅ | Tính mức phục hồi cần thiết sau một đợt giảm. *Công cụ: Máy tính hồi phục sau sụt giảm.* | Tính nhanh, Đoán số | W5 Bài 5 · Quỹ cân bằng nâng cao |
 
 <details><summary>Số liệu và ý chính cần dạy</summary>
 
-- **C4.1**: Quỹ cổ phiếu có thể giảm giá đáng kể trong ngắn hạn; Quỹ rủi ro hơn không chắc chắn lợi nhuận cao hơn; không nên dùng vốn vay
-- **C4.2**: Cổ tức quỹ phụ thuộc kết quả và phương án được duyệt; cần dòng tiền đều thì lập kế hoạch rút tiền
-- **C4.3**: Hiệu suất tương đối thay đổi theo chu kỳ; so sánh tổng lợi nhuận đã tính cổ tức, cùng kỳ
-- **C4.4**: Không so sánh lợi nhuận 8 tháng năm nay với cả năm trước; Chênh lệch giữa hai tỷ suất diễn đạt bằng điểm phần trăm
-- **C4.5**: Giảm 30% cần tăng ~43% để hòa vốn; giảm 12,5% cần ~14%
+- **C3.1**: Quỹ cổ phiếu có thể giảm giá đáng kể trong ngắn hạn; Quỹ rủi ro hơn không chắc chắn lợi nhuận cao hơn; không nên dùng vốn vay
+- **C3.2**: Cổ tức quỹ phụ thuộc kết quả và phương án được duyệt; cần dòng tiền đều thì lập kế hoạch rút tiền
+- **C3.3**: Hiệu suất tương đối thay đổi theo chu kỳ; so sánh tổng lợi nhuận đã tính cổ tức, cùng kỳ
+- **C3.4**: Không so sánh lợi nhuận 8 tháng năm nay với cả năm trước; Chênh lệch giữa hai tỷ suất diễn đạt bằng điểm phần trăm
+- **C3.5**: Giảm 30% cần tăng ~43% để hòa vốn; giảm 12,5% cần ~14%
 
 </details>
 
-### C5 · Quỹ chỉ số và ETF
+### C4 · Quỹ chỉ số và ETF
 
 Cách đơn giản, chi phí thấp để "là một phần của thị trường". Linh vật: `study`.
 
 | Bài | Mục tiêu | Dạng | Nguồn |
 |---|---|---|---|
-| **C5.1** Là một phần của thị trường ✅ | Giải thích quỹ chỉ số mô phỏng gì và vì sao chi phí thấp. | Thẻ kiến thức, Câu hỏi nhanh | W5 Bài 2 · Quỹ chỉ số |
-| **C5.2** Benchmark, tracking error, expense ratio ✅ | Dùng ba thuật ngữ để chọn giữa hai quỹ cùng chỉ số. | Câu hỏi nhanh, Tìm lỗi sai | W5 Bài 2 · Quỹ chỉ số |
-| **C5.3** Quỹ chỉ số mở và ETF ✅ | Phân biệt giao dịch theo NAV cuối ngày và theo giá thị trường trong ngày. | Thẻ kiến thức, Câu hỏi nhanh | W5 Bài 2 · Quỹ chỉ số · FAQ 7 |
-| **C5.4** Các chỉ số ở Việt Nam ✅ | Ghép chỉ số với nhóm cổ phiếu nó đại diện. | Câu hỏi nhanh | W5 Bài 2 · Quỹ chỉ số |
-| **C5.5** Quỹ chỉ số không phòng thủ ✅ | Hiểu quỹ chỉ số giảm cùng thị trường và không chuyển sang tiền mặt. | Tình huống, Câu hỏi nhanh | W5 Bài 2 · Quỹ chỉ số |
+| **C4.1** Là một phần của thị trường ✅ | Giải thích quỹ chỉ số mô phỏng gì và vì sao chi phí thấp. | Thẻ kiến thức, Câu hỏi nhanh | W5 Bài 2 · Quỹ chỉ số |
+| **C4.2** Benchmark, tracking error, expense ratio ✅ | Dùng ba thuật ngữ để chọn giữa hai quỹ cùng chỉ số. | Câu hỏi nhanh, Tìm lỗi sai | W5 Bài 2 · Quỹ chỉ số |
+| **C4.3** Quỹ chỉ số mở và ETF ✅ | Phân biệt giao dịch theo NAV cuối ngày và theo giá thị trường trong ngày. | Thẻ kiến thức, Câu hỏi nhanh | W5 Bài 2 · Quỹ chỉ số · FAQ 7 |
+| **C4.4** Các chỉ số ở Việt Nam ✅ | Ghép chỉ số với nhóm cổ phiếu nó đại diện. | Câu hỏi nhanh | W5 Bài 2 · Quỹ chỉ số |
+| **C4.5** Quỹ chỉ số không phòng thủ ✅ | Hiểu quỹ chỉ số giảm cùng thị trường và không chuyển sang tiền mặt. | Tình huống, Câu hỏi nhanh | W5 Bài 2 · Quỹ chỉ số |
 
 <details><summary>Số liệu và ý chính cần dạy</summary>
 
-- **C5.1**: Mô phỏng VN-Index, VN30, S&P 500…; ba yếu tố: thụ động, đa dạng hóa rộng, chi phí thấp (0,3–0,8%/năm)
-- **C5.2**: Cùng theo dõi một chỉ số: ưu tiên quỹ có tracking error và chi phí thấp hơn
-- **C5.3**: ETF giá thị trường có thể chênh lệch NAV; thuế TNCN khi bán CCQ ETF 0,1% giá trị giao dịch
-- **C5.4**: VN30: 30 doanh nghiệp vốn hóa lớn, thanh khoản cao; VN100/VNX50; VNDiamond: cạn room ngoại; VNFIN Lead: tài chính – ngân hàng; VN Midcap: vốn hóa trung bình
-- **C5.5**: VN30 giảm 20% thì quỹ mô phỏng VN30 cũng giảm tương ứng; quỹ chỉ số loại bỏ rủi ro chọn sai cổ phiếu, không loại bỏ rủi ro thị trường
+- **C4.1**: Mô phỏng VN-Index, VN30, S&P 500…; ba yếu tố: thụ động, đa dạng hóa rộng, chi phí thấp (0,3–0,8%/năm)
+- **C4.2**: Cùng theo dõi một chỉ số: ưu tiên quỹ có tracking error và chi phí thấp hơn
+- **C4.3**: ETF giá thị trường có thể chênh lệch NAV; thuế TNCN khi bán CCQ ETF 0,1% giá trị giao dịch
+- **C4.4**: VN30: 30 doanh nghiệp vốn hóa lớn, thanh khoản cao; VN100/VNX50; VNDiamond: cạn room ngoại; VNFIN Lead: tài chính – ngân hàng; VN Midcap: vốn hóa trung bình
+- **C4.5**: VN30 giảm 20% thì quỹ mô phỏng VN30 cũng giảm tương ứng; quỹ chỉ số loại bỏ rủi ro chọn sai cổ phiếu, không loại bỏ rủi ro thị trường
 
 </details>
 
-### C6 · Chủ động và thụ động
+### C5 · Chủ động và thụ động
 
 Alpha hay Beta: chọn đúng công cụ, hoặc kết hợp cả hai. Linh vật: `analyze`.
 
 | Bài | Mục tiêu | Dạng | Nguồn |
 |---|---|---|---|
-| **C6.1** Alpha và Beta ✅ | Định nghĩa alpha, beta và triết lý của hai trường phái. | Thẻ kiến thức, Câu hỏi nhanh | W5 Bài 3 · Quỹ chủ động vs thụ động |
-| **C6.2** Phí và lợi thế ✅ | So sánh chi phí, tính linh hoạt, minh bạch, rủi ro chính. *Công cụ: Tác động của phí theo thời gian.* | Câu hỏi nhanh, Mô phỏng | W5 Bài 3 · Quỹ chủ động vs thụ động |
-| **C6.3** Thị trường Việt Nam có gì khác ✅ | Hiểu vì sao quản lý chủ động có dư địa ở thị trường kém hiệu quả. | Thẻ kiến thức, Câu hỏi nhanh | W5 Bài 3 · Quỹ chủ động vs thụ động |
-| **C6.4** Một năm thua chỉ số có sao không? ✅ | Đánh giá quỹ chủ động trên khung 3–5 năm. | Tình huống, Ra quyết định | W5 Bài 3 · Quỹ chủ động vs thụ động · FAQ 121 |
-| **C6.5** Core – Satellite ✅ | Dựng danh mục lõi thụ động + vệ tinh chủ động. *Công cụ: Danh mục thử nghiệm.* | Mô phỏng, Thẻ kiến thức | W5 Bài 3 · Quỹ chủ động vs thụ động · W5 Bài 2 · Quỹ chỉ số |
+| **C5.1** Alpha và Beta ✅ | Định nghĩa alpha, beta và triết lý của hai trường phái. | Thẻ kiến thức, Câu hỏi nhanh | W5 Bài 3 · Quỹ chủ động vs thụ động |
+| **C5.2** Phí và lợi thế ✅ | So sánh chi phí, tính linh hoạt, minh bạch, rủi ro chính. *Công cụ: Tác động của phí theo thời gian.* | Câu hỏi nhanh, Mô phỏng | W5 Bài 3 · Quỹ chủ động vs thụ động |
+| **C5.3** Thị trường Việt Nam có gì khác ✅ | Hiểu vì sao quản lý chủ động có dư địa ở thị trường kém hiệu quả. | Thẻ kiến thức, Câu hỏi nhanh | W5 Bài 3 · Quỹ chủ động vs thụ động |
+| **C5.4** Một năm thua chỉ số có sao không? ✅ | Đánh giá quỹ chủ động trên khung 3–5 năm. | Tình huống, Ra quyết định | W5 Bài 3 · Quỹ chủ động vs thụ động · FAQ 121 |
+| **C5.5** Core – Satellite ✅ | Dựng danh mục lõi thụ động + vệ tinh chủ động. *Công cụ: Danh mục thử nghiệm.* | Mô phỏng, Thẻ kiến thức | W5 Bài 3 · Quỹ chủ động vs thụ động · W5 Bài 2 · Quỹ chỉ số |
 
 <details><summary>Số liệu và ý chính cần dạy</summary>
 
-- **C6.1**: Thụ động: thị trường khó bị đánh bại dài hạn; chủ động: thị trường có lúc định giá sai
-- **C6.2**: Thụ động 0,5–0,8%/năm tại VN; chủ động 1,5–2,5%/năm; Rủi ro chính: thụ động = thị trường; chủ động = nhận định sai của con người
-- **C6.3**: Thụ động chiếm hơn 50% tài sản quỹ cổ phiếu toàn cầu; Cuối 10/2025 Việt Nam có 18 ETF (~14% số quỹ) và 69 quỹ mở (~56%)
+- **C5.1**: Thụ động: thị trường khó bị đánh bại dài hạn; chủ động: thị trường có lúc định giá sai
+- **C5.2**: Thụ động 0,5–0,8%/năm tại VN; chủ động 1,5–2,5%/năm; Rủi ro chính: thụ động = thị trường; chủ động = nhận định sai của con người
+- **C5.3**: Thụ động chiếm hơn 50% tài sản quỹ cổ phiếu toàn cầu; Cuối 10/2025 Việt Nam có 18 ETF (~14% số quỹ) và 69 quỹ mở (~56%)
 
 </details>
 
-### C7 · Quỹ cân bằng
+### C6 · Quỹ cân bằng
 
 Một lệnh duy nhất, kỷ luật "bán cao, mua thấp" tự động. Linh vật: `trophy`.
 
 | Bài | Mục tiêu | Dạng | Nguồn |
 |---|---|---|---|
-| **C7.1** Markowitz và tương quan thấp ✅ | Giải thích vì sao kết hợp cổ phiếu và trái phiếu giảm rủi ro tổng thể. | Thẻ kiến thức, Câu hỏi nhanh | W5 Bài 5 · Quỹ cân bằng nâng cao |
-| **C7.2** Ba kịch bản thị trường ✅ | Tính kết quả danh mục 100% cổ phiếu và 50/50 trong ba kịch bản. *Công cụ: Danh mục thử nghiệm.* | Tính nhanh, Mô phỏng | W5 Bài 5 · Quỹ cân bằng nâng cao |
-| **C7.3** Tái cân bằng ✅ | Thực hiện tái cân bằng khi tỷ trọng trôi khỏi mục tiêu. *Công cụ: Mô phỏng tái cân bằng.* | Mô phỏng, Câu hỏi nhanh | W5 Bài 5 · Quỹ cân bằng nâng cao |
-| **C7.4** Tĩnh và động, Sharpe và drawdown ✅ | Phân biệt quỹ cân bằng tĩnh/động và đọc Sharpe ratio. | Thẻ kiến thức, Câu hỏi nhanh | W5 Bài 5 · Quỹ cân bằng nâng cao |
-| **C7.5** Quỹ cân bằng hay tự mua 50/50? ✅ | Cân nhắc giữa tự kiểm soát tỷ trọng và tái cân bằng tự động. | Tình huống, Ra quyết định | W5 Bài 5 · Quỹ cân bằng nâng cao |
+| **C6.1** Markowitz và tương quan thấp ✅ | Giải thích vì sao kết hợp cổ phiếu và trái phiếu giảm rủi ro tổng thể. | Thẻ kiến thức, Câu hỏi nhanh | W5 Bài 5 · Quỹ cân bằng nâng cao |
+| **C6.2** Ba kịch bản thị trường ✅ | Tính kết quả danh mục 100% cổ phiếu và 50/50 trong ba kịch bản. *Công cụ: Danh mục thử nghiệm.* | Tính nhanh, Mô phỏng | W5 Bài 5 · Quỹ cân bằng nâng cao |
+| **C6.3** Tái cân bằng ✅ | Thực hiện tái cân bằng khi tỷ trọng trôi khỏi mục tiêu. *Công cụ: Mô phỏng tái cân bằng.* | Mô phỏng, Câu hỏi nhanh | W5 Bài 5 · Quỹ cân bằng nâng cao |
+| **C6.4** Tĩnh và động, Sharpe và drawdown ✅ | Phân biệt quỹ cân bằng tĩnh/động và đọc Sharpe ratio. | Thẻ kiến thức, Câu hỏi nhanh | W5 Bài 5 · Quỹ cân bằng nâng cao |
+| **C6.5** Quỹ cân bằng hay tự mua 50/50? ✅ | Cân nhắc giữa tự kiểm soát tỷ trọng và tái cân bằng tự động. | Tình huống, Ra quyết định | W5 Bài 5 · Quỹ cân bằng nâng cao |
 
 <details><summary>Số liệu và ý chính cần dạy</summary>
 
-- **C7.1**: Lý thuyết danh mục hiện đại (1952): một tài sản biến động cao vẫn giảm rủi ro tổng nếu tương quan thấp
-- **C7.2**: Tăng mạnh: +25% vs +14%; đi ngang: +5% vs +5,5%; sụt giảm: −30% vs −12,5%
-- **C7.3**: Mục tiêu 50/50, cổ phiếu tăng lên 60% → bán bớt cổ phiếu, mua trái phiếu về 50/50
-- **C7.4**: Động: cổ phiếu dao động trong biên độ, ví dụ 40–70%; Sharpe = (lợi nhuận − lãi suất phi rủi ro) / độ biến động
-- **C7.5**: Tự mua hai quỹ: phải tự tái cân bằng, có thể tốn phí chuyển đổi; nắm giữ khuyến nghị từ 3 năm
+- **C6.1**: Lý thuyết danh mục hiện đại (1952): một tài sản biến động cao vẫn giảm rủi ro tổng nếu tương quan thấp
+- **C6.2**: Tăng mạnh: +25% vs +14%; đi ngang: +5% vs +5,5%; sụt giảm: −30% vs −12,5%
+- **C6.3**: Mục tiêu 50/50, cổ phiếu tăng lên 60% → bán bớt cổ phiếu, mua trái phiếu về 50/50
+- **C6.4**: Động: cổ phiếu dao động trong biên độ, ví dụ 40–70%; Sharpe = (lợi nhuận − lãi suất phi rủi ro) / độ biến động
+- **C6.5**: Tự mua hai quỹ: phải tự tái cân bằng, có thể tốn phí chuyển đổi; nắm giữ khuyến nghị từ 3 năm
 
 </details>
 
-### C8 · Ghép danh mục
+### C7 · Ghép danh mục
 
 Nối kiến thức về quỹ với kế hoạch đã lập ở chặng Hiểu mình. Linh vật: `celebrate`.
 
 | Bài | Mục tiêu | Dạng | Nguồn |
 |---|---|---|---|
-| **C8.1** Mỗi khoản tiền một công cụ ✅ | Ghép từng mục tiêu trong hồ sơ với loại quỹ phù hợp để tìm hiểu. | Câu hỏi nhanh, Tự đánh giá · cam kết | W5 Bài 1 · Quỹ thị trường tiền tệ · W5 Bài 4 · Quỹ trái phiếu nâng cao · W5 Bài 5 · Quỹ cân bằng nâng cao · Đầu tư thế nào mà không cần đoán từng nhịp thị trường? |
-| **C8.2** Danh mục thử nghiệm qua ba kịch bản ✅ | Thử danh mục của mình trong thị trường tăng, đi ngang, sụt giảm. *Công cụ: Danh mục thử nghiệm.* | Mô phỏng, Ra quyết định | W5 Bài 5 · Quỹ cân bằng nâng cao · Đầu tư thế nào mà không cần đoán từng nhịp thị trường? |
-| **C8.3** Kiểm tra cuối chặng: Hiểu quỹ ✅ | Đạt ≥ 80% để nhận chứng nhận "Hiểu quỹ". | Kiểm tra | W5 Bài 1 · Quỹ thị trường tiền tệ · W5 Bài 4 · Quỹ trái phiếu nâng cao · W5 Bài 2 · Quỹ chỉ số · W5 Bài 3 · Quỹ chủ động vs thụ động · W5 Bài 5 · Quỹ cân bằng nâng cao |
+| **C7.1** Mỗi khoản tiền một công cụ ✅ | Ghép từng mục tiêu trong hồ sơ với loại quỹ phù hợp để tìm hiểu. | Câu hỏi nhanh, Tự đánh giá · cam kết | W5 Bài 1 · Quỹ thị trường tiền tệ · W5 Bài 4 · Quỹ trái phiếu nâng cao · W5 Bài 5 · Quỹ cân bằng nâng cao · Đầu tư thế nào mà không cần đoán từng nhịp thị trường? |
+| **C7.2** Danh mục thử nghiệm qua ba kịch bản ✅ | Thử danh mục của mình trong thị trường tăng, đi ngang, sụt giảm. *Công cụ: Danh mục thử nghiệm.* | Mô phỏng, Ra quyết định | W5 Bài 5 · Quỹ cân bằng nâng cao · Đầu tư thế nào mà không cần đoán từng nhịp thị trường? |
+| **C7.3** Kiểm tra cuối chặng: Hiểu quỹ ✅ | Đạt ≥ 80% để nhận chứng nhận "Hiểu quỹ". | Kiểm tra | W5 Bài 1 · Quỹ thị trường tiền tệ · W5 Bài 4 · Quỹ trái phiếu nâng cao · W5 Bài 2 · Quỹ chỉ số · W5 Bài 3 · Quỹ chủ động vs thụ động · W5 Bài 5 · Quỹ cân bằng nâng cao |
 
 ## Chặng 3 · Quỹ DC & DragonX (A)
 
@@ -613,6 +588,24 @@ Biết công ty quản lý tiền của mình và tiếng nói của nhà đầu
 
 Câu hỏi FAQ chỉ trả lời qua Hỏi Rồng (không làm bài): 51, 96, 101, 102, 109.
 
+## Chương trình nâng cao (chưa nằm trên lộ trình)
+
+Các phần đã tách khỏi hành trình chính; nội dung mới sẽ được viết sau. Bài nháp cũ: `content/advanced/`.
+
+### NC1 · Quỹ trái phiếu
+
+Bộ giảm chấn của danh mục, nhưng không tuyệt đối an toàn.
+
+| Bài | Mục tiêu | Nguồn |
+|---|---|---|
+| **NC1.1** Ba nguồn lợi nhuận của quỹ trái phiếu | Phân biệt lãi coupon, lãi/lỗ giá và giá trị từ quản lý danh mục. | W5 Bài 4 · Quỹ trái phiếu nâng cao |
+| **NC1.2** Bập bênh lãi suất và giá | Dự đoán NAV quỹ trái phiếu khi lãi suất tăng hoặc giảm. | W5 Bài 4 · Quỹ trái phiếu nâng cao |
+| **NC1.3** Duration: độ nhạy lãi suất | So sánh hai quỹ có duration khác nhau. | W5 Bài 4 · Quỹ trái phiếu nâng cao |
+| **NC1.4** Coupon cao chưa chắc lời cao | Phân biệt coupon và yield. | W5 Bài 4 · Quỹ trái phiếu nâng cao |
+| **NC1.5** Rủi ro tín dụng và đa dạng hóa | So sánh quỹ trái phiếu với trái phiếu doanh nghiệp riêng lẻ và tiết kiệm dài hạn. | W5 Bài 4 · Quỹ trái phiếu nâng cao |
+| **NC1.6** Dùng quỹ trái phiếu đúng vai | Chọn tình huống phù hợp và không phù hợp cho quỹ trái phiếu. | W5 Bài 4 · Quỹ trái phiếu nâng cao · Kế hoạch du học cho con: bài toán tài chính gia đình (anh Nam) |
+| **NC1.7** Nâng cao: giá sạch và lãi dồn tích | Hiểu vì sao giá đầy đủ = giá sạch + lãi dồn tích (bài tùy chọn). | FAQ 117 |
+
 ## Tình huống luyện AI
 
 | Tình huống | AI đóng vai | Mở khóa sau | Chế độ |
@@ -627,7 +620,7 @@ Câu hỏi FAQ chỉ trả lời qua Hỏi Rồng (không làm bài): 51, 96, 10
 | Lãi tiết kiệm 9%, sao phải đầu tư quỹ? | Người thân lớn tuổi, quen gửi tiết kiệm | B6.4 | Nhà đầu tư |
 | "55 tuổi rồi, đầu tư còn kịp không?" | Chú 55 tuổi, chưa từng đầu tư | B3.8 | Nhà đầu tư |
 | Sắp nghỉ việc, có nên rút hết quỹ? | Chính bạn, vừa biết công ty tái cơ cấu | B1.3 | Nhà đầu tư |
-| Quỹ của tôi thua quỹ khác năm nay | Bạn thân khoe quỹ của họ lời hơn | C6.4 | Nhà đầu tư |
+| Quỹ của tôi thua quỹ khác năm nay | Bạn thân khoe quỹ của họ lời hơn | C5.4 | Nhà đầu tư |
 | Chuyển tiền rồi mà chưa thấy CCQ | Chính bạn, sốt ruột sau khi chuyển tiền | A2.4 | Nhà đầu tư |
 | Kể cho Rồng nghe mục tiêu của bạn | Rồng DC đóng vai người phỏng vấn kế hoạch | B3.1 | Nhà đầu tư |
 | Chế độ chuyên viên: chị Lan lo thị trường giảm | Chị Lan, 45 tuổi, giữ quỹ cổ phiếu 8 tháng, đang lỗ nhẹ | A3.2 | Chuyên viên |
@@ -638,33 +631,33 @@ Chi tiết lời mở đầu, tiêu chí chấm và cờ đỏ: `content/outline
 
 | FAQ | Bài |
 |---|---|
-| 1 | C4.1, A1.1, A1.8 |
+| 1 | C3.1, A1.1, A1.8 |
 | 2 | B5.3 |
 | 3 | B5.3 |
 | 4 | C1.6 |
 | 5 | A2.1, A2.3 |
 | 6 | C1.2 |
-| 7 | B5.8, C5.3 |
+| 7 | B5.8, C4.3 |
 | 8 | C1.4 |
 | 9 | B2.1, C1.5, C1.8 |
 | 10 | A3.2, A10.4 |
 | 11 | A5.1 |
 | 12 | A2.2 |
 | 13 | B3.10, B5.3, B7.5 |
-| 14 | C4.2 |
+| 14 | C3.2 |
 | 15 | A1.6 |
-| 16 | C1.3, C4.3, A1.2, A1.8 |
+| 16 | C1.3, C3.3, A1.2, A1.8 |
 | 18 | B5.3 |
 | 19 | C1.2 |
 | 21 | B3.9 |
 | 22 | B3.7, B3.10 |
 | 23 | B2.1 |
 | 24 | B6.7 |
-| 25 | C4.4 |
-| 26 | C4.4 |
+| 25 | C3.4 |
+| 26 | C3.4 |
 | 27 | A4.3 |
 | 28 | A1.1, A1.7 |
-| 29 | C4.4 |
+| 29 | C3.4 |
 | 30 | C1.7, A2.2 |
 | 31 | A4.1 |
 | 32 | A4.2 |
@@ -752,14 +745,14 @@ Chi tiết lời mở đầu, tiêu chí chấm và cờ đỏ: `content/outline
 | 114 | A6.1 |
 | 115 | A1.2 |
 | 116 | A8.2, A10.4 |
-| 117 | C3.7 |
+| 117 | NC1.7 |
 | 118 | A1.6 |
 | 119 | A6.4 |
 | 120 | A8.2 |
-| 121 | B6.7, C6.4 |
+| 121 | B6.7, C5.4 |
 | 122 | A1.1 |
-| 123 | B2.2, C4.1 |
-| 124 | C4.3, A1.2 |
+| 123 | B2.2, C3.1 |
+| 124 | C3.3, A1.2 |
 | 125 | B4.7, A3.1, A10.4 |
 | 126 | A6.5 |
 | 127 | A3.3 |

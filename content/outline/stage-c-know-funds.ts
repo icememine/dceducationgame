@@ -10,7 +10,7 @@ export const stageKnowFunds: OutlineStage = {
   code: "C",
   order: 2,
   title: "Hiểu quỹ",
-  subtitle: "Quỹ là gì · Tiền tệ · Trái phiếu · Cổ phiếu · Chỉ số & ETF · Chủ động vs thụ động · Cân bằng",
+  subtitle: "Quỹ là gì · Tiền tệ · Cổ phiếu · Chỉ số & ETF · Chủ động vs thụ động · Cân bằng",
   role: "Hỗ trợ chặng Hiểu mình. Sau khi biết khẩu vị và mục tiêu, nhà đầu tư học loại quỹ nào làm việc gì.",
   units: [
     {
@@ -156,91 +156,12 @@ export const stageKnowFunds: OutlineStage = {
     },
     {
       code: "C3",
-      title: "Quỹ trái phiếu",
-      why: "Bộ giảm chấn của danh mục, nhưng không tuyệt đối an toàn.",
-      mascot: "analyze",
-      lessons: [
-        {
-          code: "C3.1",
-          title: "Ba nguồn lợi nhuận của quỹ trái phiếu",
-          goal: "Phân biệt lãi coupon, lãi/lỗ giá và giá trị từ quản lý danh mục.",
-          formats: ["concept", "quiz"],
-          sources: ["w5-bond"],
-          facts: ["Quỹ trái phiếu định giá theo thị trường (mark-to-market): biến động lãi suất và tín dụng vào NAV ngay"],
-          builtAs: "c3b-three-sources",
-        },
-        {
-          code: "C3.2",
-          title: "Bập bênh lãi suất và giá",
-          goal: "Dự đoán NAV quỹ trái phiếu khi lãi suất tăng hoặc giảm.",
-          formats: ["sim", "quiz"],
-          sources: ["w5-bond"],
-          facts: ["Lãi suất tăng → giá trái phiếu giảm → NAV giảm ngắn hạn; đây là rủi ro lớn nhất"],
-          tool: "bond-seesaw",
-          builtAs: "c2-bond-risk",
-        },
-        {
-          code: "C3.3",
-          title: "Duration: độ nhạy lãi suất",
-          goal: "So sánh hai quỹ có duration khác nhau.",
-          formats: ["concept", "sim"],
-          sources: ["w5-bond"],
-          facts: ["Danh mục nhiều trái phiếu duration dài thì NAV càng bị ảnh hưởng bởi lãi suất"],
-          tool: "bond-seesaw",
-          builtAs: "c3b-duration",
-        },
-        {
-          code: "C3.4",
-          title: "Coupon cao chưa chắc lời cao",
-          goal: "Phân biệt coupon và yield.",
-          formats: ["spot", "quiz"],
-          sources: ["w5-bond"],
-          facts: ["Coupon cố định khi phát hành; yield phụ thuộc giá mua, coupon và lãi/lỗ vốn"],
-          builtAs: "c3b-coupon-yield",
-        },
-        {
-          code: "C3.5",
-          title: "Rủi ro tín dụng và đa dạng hóa",
-          goal: "So sánh quỹ trái phiếu với trái phiếu doanh nghiệp riêng lẻ và tiết kiệm dài hạn.",
-          formats: ["quiz", "scenario"],
-          sources: ["w5-bond"],
-          facts: [
-            "Trái phiếu riêng lẻ: phụ thuộc doanh nghiệp, vốn tối thiểu thường 100 triệu – 1 tỷ, thanh khoản thấp",
-            "Quỹ trái phiếu: đa dạng hóa, vốn từ vài chục nghìn đồng, thanh khoản T+2 đến T+4",
-          ],
-          builtAs: "c3b-credit-diversify",
-        },
-        {
-          code: "C3.6",
-          title: "Dùng quỹ trái phiếu đúng vai",
-          goal: "Chọn tình huống phù hợp và không phù hợp cho quỹ trái phiếu.",
-          formats: ["scenario", "quiz"],
-          sources: ["w5-bond", "amdd-study-plan-nam"],
-          facts: [
-            "Hợp: lớp lõi thu nhập cố định, chờ giải ngân, tái cơ cấu sau biến động",
-            "Không hợp: bảo toàn vốn tuyệt đối ngắn hạn; kỳ vọng lợi nhuận cao mà không chấp nhận biến động",
-            "DCBF (2013) dùng lãi suất tiền gửi 12 tháng của 4 ngân hàng làm chỉ số tham chiếu",
-          ],
-          builtAs: "c3b-bond-role",
-        },
-        {
-          code: "C3.7",
-          title: "Nâng cao: giá sạch và lãi dồn tích",
-          goal: "Hiểu vì sao giá đầy đủ = giá sạch + lãi dồn tích (bài tùy chọn).",
-          formats: ["concept"],
-          sources: ["faq:117"],
-          builtAs: "c3b-clean-dirty",
-        },
-      ],
-    },
-    {
-      code: "C4",
       title: "Quỹ cổ phiếu",
       why: "Động cơ tăng trưởng dài hạn, đi kèm biến động lớn.",
       mascot: "fight",
       lessons: [
         {
-          code: "C4.1",
+          code: "C3.1",
           title: "Tăng trưởng và biến động",
           goal: "Hiểu vì sao quỹ cổ phiếu hợp với mục tiêu dài và không hợp với tiền cần sớm.",
           formats: ["concept", "quiz"],
@@ -249,7 +170,7 @@ export const stageKnowFunds: OutlineStage = {
           builtAs: "c3-equity-basics",
         },
         {
-          code: "C4.2",
+          code: "C3.2",
           title: "Quỹ cổ phiếu không trả lãi hằng tháng",
           goal: "Phân biệt cổ tức quỹ với lãi tiền gửi.",
           formats: ["spot", "quiz"],
@@ -258,7 +179,7 @@ export const stageKnowFunds: OutlineStage = {
           builtAs: "c4e-no-monthly-interest",
         },
         {
-          code: "C4.3",
+          code: "C3.3",
           title: "Chiến lược năng động và chiến lược cổ tức",
           goal: "Giải thích vì sao hai quỹ cổ phiếu có lúc chênh lệch hiệu suất.",
           formats: ["concept", "quiz"],
@@ -267,7 +188,7 @@ export const stageKnowFunds: OutlineStage = {
           builtAs: "c4e-dynamic-vs-dividend",
         },
         {
-          code: "C4.4",
+          code: "C3.4",
           title: "Đánh giá hiệu suất quỹ cổ phiếu",
           goal: "Xem nhiều kỳ, so với chỉ số tham chiếu, xem biến động và giai đoạn giảm.",
           formats: ["spot", "calc"],
@@ -276,7 +197,7 @@ export const stageKnowFunds: OutlineStage = {
           builtAs: "c4e-judge-performance",
         },
         {
-          code: "C4.5",
+          code: "C3.5",
           title: "Drawdown: giảm bao nhiêu thì cần tăng bao nhiêu",
           goal: "Tính mức phục hồi cần thiết sau một đợt giảm.",
           formats: ["calc", "estimate"],
@@ -288,13 +209,13 @@ export const stageKnowFunds: OutlineStage = {
       ],
     },
     {
-      code: "C5",
+      code: "C4",
       title: "Quỹ chỉ số và ETF",
       why: "Cách đơn giản, chi phí thấp để \"là một phần của thị trường\".",
       mascot: "study",
       lessons: [
         {
-          code: "C5.1",
+          code: "C4.1",
           title: "Là một phần của thị trường",
           goal: "Giải thích quỹ chỉ số mô phỏng gì và vì sao chi phí thấp.",
           formats: ["concept", "quiz"],
@@ -303,7 +224,7 @@ export const stageKnowFunds: OutlineStage = {
           builtAs: "c4-index-vs-active",
         },
         {
-          code: "C5.2",
+          code: "C4.2",
           title: "Benchmark, tracking error, expense ratio",
           goal: "Dùng ba thuật ngữ để chọn giữa hai quỹ cùng chỉ số.",
           formats: ["quiz", "spot"],
@@ -312,7 +233,7 @@ export const stageKnowFunds: OutlineStage = {
           builtAs: "c5i-index-terms",
         },
         {
-          code: "C5.3",
+          code: "C4.3",
           title: "Quỹ chỉ số mở và ETF",
           goal: "Phân biệt giao dịch theo NAV cuối ngày và theo giá thị trường trong ngày.",
           formats: ["concept", "quiz"],
@@ -321,7 +242,7 @@ export const stageKnowFunds: OutlineStage = {
           builtAs: "c5i-etf-vs-open",
         },
         {
-          code: "C5.4",
+          code: "C4.4",
           title: "Các chỉ số ở Việt Nam",
           goal: "Ghép chỉ số với nhóm cổ phiếu nó đại diện.",
           formats: ["quiz"],
@@ -330,7 +251,7 @@ export const stageKnowFunds: OutlineStage = {
           builtAs: "c5i-vn-indices",
         },
         {
-          code: "C5.5",
+          code: "C4.5",
           title: "Quỹ chỉ số không phòng thủ",
           goal: "Hiểu quỹ chỉ số giảm cùng thị trường và không chuyển sang tiền mặt.",
           formats: ["scenario", "quiz"],
@@ -341,13 +262,13 @@ export const stageKnowFunds: OutlineStage = {
       ],
     },
     {
-      code: "C6",
+      code: "C5",
       title: "Chủ động và thụ động",
       why: "Alpha hay Beta: chọn đúng công cụ, hoặc kết hợp cả hai.",
       mascot: "analyze",
       lessons: [
         {
-          code: "C6.1",
+          code: "C5.1",
           title: "Alpha và Beta",
           goal: "Định nghĩa alpha, beta và triết lý của hai trường phái.",
           formats: ["concept", "quiz"],
@@ -356,7 +277,7 @@ export const stageKnowFunds: OutlineStage = {
           builtAs: "c6a-alpha-beta",
         },
         {
-          code: "C6.2",
+          code: "C5.2",
           title: "Phí và lợi thế",
           goal: "So sánh chi phí, tính linh hoạt, minh bạch, rủi ro chính.",
           formats: ["quiz", "sim"],
@@ -366,7 +287,7 @@ export const stageKnowFunds: OutlineStage = {
           builtAs: "c6a-fees-edges",
         },
         {
-          code: "C6.3",
+          code: "C5.3",
           title: "Thị trường Việt Nam có gì khác",
           goal: "Hiểu vì sao quản lý chủ động có dư địa ở thị trường kém hiệu quả.",
           formats: ["concept", "quiz"],
@@ -378,7 +299,7 @@ export const stageKnowFunds: OutlineStage = {
           builtAs: "c6a-vn-market",
         },
         {
-          code: "C6.4",
+          code: "C5.4",
           title: "Một năm thua chỉ số có sao không?",
           goal: "Đánh giá quỹ chủ động trên khung 3–5 năm.",
           formats: ["scenario", "decision"],
@@ -386,7 +307,7 @@ export const stageKnowFunds: OutlineStage = {
           builtAs: "c6a-one-bad-year",
         },
         {
-          code: "C6.5",
+          code: "C5.5",
           title: "Core – Satellite",
           goal: "Dựng danh mục lõi thụ động + vệ tinh chủ động.",
           formats: ["sim", "concept"],
@@ -397,13 +318,13 @@ export const stageKnowFunds: OutlineStage = {
       ],
     },
     {
-      code: "C7",
+      code: "C6",
       title: "Quỹ cân bằng",
       why: "Một lệnh duy nhất, kỷ luật \"bán cao, mua thấp\" tự động.",
       mascot: "trophy",
       lessons: [
         {
-          code: "C7.1",
+          code: "C6.1",
           title: "Markowitz và tương quan thấp",
           goal: "Giải thích vì sao kết hợp cổ phiếu và trái phiếu giảm rủi ro tổng thể.",
           formats: ["concept", "quiz"],
@@ -412,7 +333,7 @@ export const stageKnowFunds: OutlineStage = {
           builtAs: "c7b-markowitz",
         },
         {
-          code: "C7.2",
+          code: "C6.2",
           title: "Ba kịch bản thị trường",
           goal: "Tính kết quả danh mục 100% cổ phiếu và 50/50 trong ba kịch bản.",
           formats: ["calc", "sim"],
@@ -422,7 +343,7 @@ export const stageKnowFunds: OutlineStage = {
           builtAs: "c7b-three-scenarios",
         },
         {
-          code: "C7.3",
+          code: "C6.3",
           title: "Tái cân bằng",
           goal: "Thực hiện tái cân bằng khi tỷ trọng trôi khỏi mục tiêu.",
           formats: ["sim", "quiz"],
@@ -432,7 +353,7 @@ export const stageKnowFunds: OutlineStage = {
           builtAs: "c5-rebalancing",
         },
         {
-          code: "C7.4",
+          code: "C6.4",
           title: "Tĩnh và động, Sharpe và drawdown",
           goal: "Phân biệt quỹ cân bằng tĩnh/động và đọc Sharpe ratio.",
           formats: ["concept", "quiz"],
@@ -441,7 +362,7 @@ export const stageKnowFunds: OutlineStage = {
           builtAs: "c7b-static-dynamic",
         },
         {
-          code: "C7.5",
+          code: "C6.5",
           title: "Quỹ cân bằng hay tự mua 50/50?",
           goal: "Cân nhắc giữa tự kiểm soát tỷ trọng và tái cân bằng tự động.",
           formats: ["scenario", "decision"],
@@ -452,13 +373,13 @@ export const stageKnowFunds: OutlineStage = {
       ],
     },
     {
-      code: "C8",
+      code: "C7",
       title: "Ghép danh mục",
       why: "Nối kiến thức về quỹ với kế hoạch đã lập ở chặng Hiểu mình.",
       mascot: "celebrate",
       lessons: [
         {
-          code: "C8.1",
+          code: "C7.1",
           title: "Mỗi khoản tiền một công cụ",
           goal: "Ghép từng mục tiêu trong hồ sơ với loại quỹ phù hợp để tìm hiểu.",
           formats: ["quiz", "reflect"],
@@ -466,7 +387,7 @@ export const stageKnowFunds: OutlineStage = {
           builtAs: "c5-checkpoint",
         },
         {
-          code: "C8.2",
+          code: "C7.2",
           title: "Danh mục thử nghiệm qua ba kịch bản",
           goal: "Thử danh mục của mình trong thị trường tăng, đi ngang, sụt giảm.",
           formats: ["sim", "decision"],
@@ -475,7 +396,7 @@ export const stageKnowFunds: OutlineStage = {
           builtAs: "c8p-stress-test",
         },
         {
-          code: "C8.3",
+          code: "C7.3",
           title: "Kiểm tra cuối chặng: Hiểu quỹ",
           goal: "Đạt ≥ 80% để nhận chứng nhận \"Hiểu quỹ\".",
           formats: ["checkpoint"],

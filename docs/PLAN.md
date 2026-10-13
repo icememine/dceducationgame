@@ -36,11 +36,13 @@ the team and friendly testers.
 | 10 | **Write Hiểu mình** from the outline: all 57 stage-B outline lessons now have a playable lesson (7 units, 55 lessons incl. 6 checkpoints). Drafts on the formula; review by K, starting with the facts each writer flagged | C + K | ✅ drafted, K review open |
 | 11 | **Staging deploy** with Postgres, `CONTENT_PREVIEW=1` for reviewers | E | needs a hosting decision |
 | 12 | Confirm flagged facts: sell-fee tier 1–2 years, NAV time, legacy funds, DIAMOND criteria, past returns | K + C | open |
-| 13 | Prototype screen index: "Tình huống: bán hết khi giảm" (17) should sit under "Luyện tình huống AI" (16) | E | open (small) |
+| 13 | Prototype screen index: "Tình huống: bán hết khi giảm" sits under "Luyện tình huống AI"; the prototype now plays every app lesson | E | ✅ done |
 
 ## Milestone 2: Hiểu quỹ + AI practice
 
-- Stage C lessons (Hiểu quỹ) are drafted: all 42 outline lessons covered (8 units, 40 lessons). K review open.
+- Stage C lessons (Hiểu quỹ) are drafted: all 35 outline lessons covered (7 units, 33 lessons). K review open.
+- **Quỹ trái phiếu moved to the advanced program** (outline `content/outline/advanced.ts`, unit NC1). The drafted
+  lessons are parked in `content/advanced/bond-funds.ts`; P writes new advanced content later.
 - Write stage A (DC funds) on the library: 5 of 43 outline lessons built so far.
 - **Luyện tình huống AI** in the app: persona + coach routes with the same guardrails and voice; scripted
   replies and the rule-based coach until the API key arrives (as the prototype does).

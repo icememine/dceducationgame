@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { findLesson } from "../index";
-import { applyDecision, BANDS, needsAcknowledgement, RISK_QUESTIONS, scoreRisk, specialCases, type RiskChoices } from "./index";
+import { findLesson, segments } from "../index";
+import { applyDecision, BANDS, PROFILES, needsAcknowledgement, RISK_QUESTIONS, scoreRisk, specialCases, type RiskChoices } from "./index";
 
 /** Answers by points, in question order (Câu 1 … Câu 7), as the framework's scoring sheet reads. */
 const pts = (...points: number[]): RiskChoices =>
@@ -78,5 +78,10 @@ describe("risk scoring framework v2.3 · §5", () => {
     const lesson = findLesson("b1-risk-check")!.lesson;
     expect(lesson.challenges.filter((c) => c.type === "profile").map((c) => c.id)).toEqual(RISK_QUESTIONS.map((q) => q.id));
     expect(RISK_QUESTIONS.map((q) => q.number)).toEqual([1, 2, 3, 4, 5, 6, 7]);
+  });
+
+  it("points every profile's study units at units on the learning path", () => {
+    const units = new Set(segments.flatMap((s) => s.units.map((u) => u.id)));
+    for (const p of PROFILES) for (const u of p.studyUnits) expect(units.has(u), `${p.id} → ${u}`).toBe(true);
   });
 });

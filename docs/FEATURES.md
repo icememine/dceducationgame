@@ -38,9 +38,9 @@ Lesson content is planned in [CURRICULUM.md](./CURRICULUM.md) (generated from `c
 | 3.4 | Tình huống | Chat-style scenario with persona and multiple-choice reply | P | ✅ | MVP |
 | 3.5 | Tự đánh giá | Scored self-assessment items, no wrong answers, no hearts | N | ✅ | MVP |
 | 3.6 | Lập kế hoạch trong bài | Inline goal planner that saves a goal | N | ✅ | MVP |
-| 3.7 | Đoán số | Slider guess, then reveal the real figure (e.g. "1 tỷ sau 30 năm thành bao nhiêu?") | N | ☐ | MVP |
-| 3.8 | Tìm lỗi sai | Highlight the wrong sentence in a piece of advice (e.g. "NAV cao là quỹ đắt") | N | ☐ | MVP |
-| 3.9 | Ra quyết định | Multi-step branching: choose, see what happened in the data, choose again | N | ☐ | V1 |
+| 3.7 | Đoán số | Slider guess, then reveal the real figure (e.g. "1 tỷ sau 30 năm thành bao nhiêu?") | N | ✅ | MVP |
+| 3.8 | Tìm lỗi sai | Highlight the wrong sentence in a piece of advice (e.g. "NAV cao là quỹ đắt") | N | ✅ | MVP |
+| 3.9 | Ra quyết định | Multi-step branching: choose, see what happened in the data, choose again | N | ✅ (reaction_sim) | V1 |
 | 3.10 | Hồ sơ hỗ trợ | Support case: read the investor's situation, pick the correct next steps in order | N | ☐ (order type covers a basic version) | MVP |
 | 3.11 | Phản hồi có nguồn | Every answer shows explanation + "Nguồn: …" | P | ✅ | MVP |
 | 3.12 | Làm lại câu sai | Wrong items re-queued at the end of the lesson | P/D | ✅ | MVP |
@@ -188,7 +188,7 @@ Conversational version of the planner: Rồng asks for the four numbers, then fi
 | 11.1 | Content-as-code | Lessons and outline as typed files; PR review = audit trail | ✅ | MVP |
 | 11.2 | Kiểm tra nội dung | `content:check` + tests: ids, answers, sources, FAQ coverage | ✅ | MVP |
 | 11.3 | Sinh tài liệu | `docs:curriculum` regenerates CURRICULUM.md from the outline | ✅ | MVP |
-| 11.4 | Bảng thông tin quỹ | Dated fund facts (fees, cut-off times, benchmarks) with expiry alerts, read by lesson templates | ☐ | MVP |
+| 11.4 | Bảng thông tin quỹ | Dated fund facts (fees, cut-off times, benchmarks) with expiry alerts, read by lesson templates | ✅ (fund-facts.ts + expiry test) | MVP |
 | 11.5 | Trình soạn thảo | Editor UI that opens PRs for non-developers | ☐ | V1 |
 | 11.6 | Phân tích câu hỏi | Most-missed questions and drop-off per lesson from `challenge_attempts` | ☐ | V1 |
 | 11.7 | A/B test | Compare lesson variants on completion and accuracy | ☐ | V2 |

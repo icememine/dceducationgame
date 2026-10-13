@@ -68,9 +68,10 @@ const STAGE_META = {
 };
 const stageOf = (code) => STAGES.find((s) => s.code === code);
 const flatLessons = (code) => stageOf(code).units.flatMap((u) => u.lessons);
-const DEMO = { "B2.3": "risk", "B4.2": "compound", "B5.5": "timing", "B5.6": "reactions", "C3.2": "funds101", "A2.4": "case" };
+/** Hand-built showcase lessons (richer interactions); every other built lesson comes from the app (DATA.lessons). */
+const DEMO = { "B2.3": "risk", "B4.2": "compound", "B5.5": "timing", "B5.6": "reactions", "A2.4": "case" };
 /** Lessons before this code are shown as finished, so the path looks lived in. */
-const BASE_DONE = { B: "B4.2", C: "C3.2", A: "A1.1" };
+const BASE_DONE = { B: "B4.2", C: "C1.1", A: "A1.1" };
 
 const PATTERN = { prediction: "Dự đoán", why: "Vì sao?", misconception: "Hiểu lầm phổ biến", decision: "Ra quyết định" };
 const SRC = {
@@ -88,7 +89,7 @@ const SRC = {
 /** Questions and rules come from content/risk/risk-model.ts (injected by npm run proto:build). */
 const RISK_ITEMS = DATA.risk.questions.map((q) => ({ id: q.id, prompt: q.prompt, opts: q.options.map((o) => [o.label]) }));
 /** Profiles and questionnaire: Risk Scoring Framework v2.3, injected from content/risk/risk-model.ts. */
-const UNIT_LABEL = { "c1-money-market": "Quỹ thị trường tiền tệ", "c2-bond-funds": "Quỹ trái phiếu", "c3-equity-funds": "Quỹ cổ phiếu", "c4-index-passive": "Quỹ chỉ số & ETF", "c5-balanced": "Quỹ cân bằng" };
+const UNIT_LABEL = { "c0-fund-101": "Quỹ đầu tư 101", "c1-money-market": "Quỹ thị trường tiền tệ", "c3-equity-funds": "Quỹ cổ phiếu", "c4-index-passive": "Quỹ chỉ số & ETF", "c5-balanced": "Quỹ cân bằng" };
 const PROFILES = DATA.risk.profiles.map((p) => ({ id: p.id, name: p.name, mood: p.mascot, summary: p.summary, units: p.studyUnits.map((u) => UNIT_LABEL[u] || u), funds: p.funds.join(" · ") }));
 /* risk-score:start (mirror of scoreRisk in content/risk/score.ts; content/risk/prototype-parity.test.ts checks they agree) */
 function scoreRiskModel(model, choices) {
@@ -181,33 +182,6 @@ const LESSONS = {
         explain: "Chọn ngày nào trong tháng gần như không quan trọng. Thứ tốn kém là để tiền nằm chờ, nên ngày tốt nhất thường là ngày tiền về tài khoản.", src: SRC.best },
     ],
   },
-  funds101: {
-    title: "Bập bênh lãi suất", code: "C3.2", stage: "C", xp: 15,
-    items: [
-      { type: "match", kind: "Nối cặp", prompt: "Nối loại quỹ với vai trò trong danh mục",
-        left: ["Quỹ tiền tệ", "Quỹ trái phiếu", "Quỹ cân bằng", "Quỹ cổ phiếu"],
-        right: ["Tăng trưởng dài hạn, biến động lớn", "Lớp đệm thanh khoản, tiền chờ giải ngân", "Tự tái cân bằng cổ phiếu – trái phiếu", "Thu nhập cố định, bộ giảm chấn"],
-        pairs: { 0: 1, 1: 3, 2: 2, 3: 0 }, explain: "Mỗi loại quỹ làm một việc. Danh mục tốt dùng đúng công cụ cho đúng khoản tiền.", src: SRC.bal },
-      { type: "select", pattern: "misconception", context: "Anh Bình chuyển 200 triệu từ sổ tiết kiệm sang một quỹ thị trường tiền tệ vì nghe nói quỹ này \"an toàn y như gửi ngân hàng\".",
-        prompt: "Điểm khác biệt nào anh cần biết?",
-        options: ["Quỹ được bảo hiểm tiền gửi giống sổ tiết kiệm", "Quỹ không được bảo hiểm tiền gửi và lợi suất thay đổi theo lãi suất ngắn hạn", "Quỹ cam kết lợi suất cố định cao hơn tiết kiệm"], answer: 1,
-        explain: "Quỹ tiền tệ biến động thấp vì nắm công cụ nợ ngắn hạn chất lượng cao, nhưng không phải tiền gửi: không có bảo hiểm tiền gửi, không cam kết lợi suất.", src: SRC.mmf },
-      { type: "select", pattern: "prediction", seesaw: true, context: "Quỹ X nắm chủ yếu trái phiếu còn 1 năm đáo hạn; quỹ Y nắm trái phiếu còn 7 năm. Lãi suất thị trường tăng thêm 1%.",
-        prompt: "NAV quỹ nào bị ảnh hưởng nhiều hơn?",
-        options: ["Quỹ X, kỳ hạn ngắn", "Quỹ Y, kỳ hạn dài", "Như nhau, vì cùng là trái phiếu"], answer: 1,
-        explain: "Lãi suất tăng thì giá trái phiếu giảm, như hai đầu bập bênh. Duration càng dài, giá càng nhạy với lãi suất, NAV càng dao động mạnh.", src: SRC.bond },
-      { type: "spot", kind: "Tìm câu sai", prompt: "Bạn của bạn giải thích quỹ trái phiếu. Câu nào sai?",
-        sentences: ["Quỹ trái phiếu định giá theo thị trường, nên NAV có thể giảm khi lãi suất tăng.", "Trái phiếu coupon 12% thì quỹ chắc chắn lời 12%/năm.", "Đa dạng hóa giúp giảm rủi ro tập trung vào một tổ chức phát hành."], answer: 1,
-        explain: "Coupon là lãi danh nghĩa. Lợi nhuận thực tế (yield) còn phụ thuộc giá mua, biến động lãi suất và rủi ro tín dụng.", src: SRC.bond },
-      { type: "order", kind: "Sắp xếp", prompt: "Sắp xếp theo mức biến động thường thấy, từ thấp đến cao",
-        items: ["Quỹ thị trường tiền tệ", "Quỹ trái phiếu", "Quỹ cân bằng", "Quỹ cổ phiếu"],
-        explain: "Tiền tệ biến động thấp nhất, cổ phiếu cao nhất. Biến động thấp hơn thường đi kèm kỳ vọng sinh lời thấp hơn.", src: SRC.bal },
-      { type: "select", pattern: "prediction", context: "Trong một đợt điều chỉnh mạnh, khoản đầu tư quỹ cổ phiếu của chị Nhi giảm 30%: từ 100 triệu còn 70 triệu.",
-        prompt: "Quỹ cần tăng bao nhiêu % để chị về lại 100 triệu?",
-        options: ["30%", "Khoảng 43%", "Khoảng 70%"], answer: 1,
-        explain: "70 triệu phải tăng thêm 30 triệu, tức khoảng 43%. Danh mục chỉ giảm 12,5% thì cần khoảng 14%: hạn chế mức sụt giảm giúp hồi phục nhanh hơn.", src: SRC.bal },
-    ],
-  },
   case: {
     title: "Hồ sơ: Đã chuyển tiền mà chưa thấy CCQ", code: "A2.4", stage: "A", xp: 15,
     items: [
@@ -236,6 +210,10 @@ const LESSONS = {
     ],
   },
 };
+const HAND = new Set(Object.keys(LESSONS));
+// Lessons converted from the app's content by npm run proto:build; hand-built ones win.
+for (const [id, l] of Object.entries(DATA.lessons)) if (!LESSONS[id]) LESSONS[id] = l;
+for (const [code, id] of Object.entries(DATA.lessonByCode)) if (!DEMO[code] && LESSONS[id]) DEMO[code] = id;
 const lessonByCode = (code) => Object.entries(LESSONS).find(([, l]) => l.code === code)?.[0];
 
 /* ---------- simulations ---------- */

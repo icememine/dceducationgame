@@ -2,7 +2,7 @@ import type { UnitInput } from "../../schema";
 
 export const unit = {
   id: "c8-portfolio",
-  title: "Phần 8 · Ghép danh mục",
+  title: "Phần 7 · Ghép danh mục",
   description: "Mỗi khoản tiền một công cụ, ghép thành danh mục của bạn",
   color: "jade",
   mascot: "trophy",

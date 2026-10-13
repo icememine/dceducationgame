@@ -132,7 +132,7 @@ export const aiScenarios: AiScenario[] = [
     goodResponse: ["So sánh cùng kỳ, cùng phương pháp, cùng mức rủi ro", "Đánh giá quỹ chủ động trên 3–5 năm", "Nhớ phí và thuế khi chuyển đổi"],
     redFlags: ["Chuyển quỹ chỉ vì một năm"],
     sources: ["faq:121", "faq:124", "w5-active-passive", "faq:53"],
-    unlockAfter: "C6.4",
+    unlockAfter: "C5.4",
     mode: "investor",
   },
   {

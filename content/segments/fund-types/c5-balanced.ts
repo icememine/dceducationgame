@@ -2,7 +2,7 @@ import type { UnitInput } from "../../schema";
 
 export const unit = {
   id: "c5-balanced",
-  title: "Phần 7 · Quỹ cân bằng",
+  title: "Phần 6 · Quỹ cân bằng",
   description: "Tái cân bằng: bán cao, mua thấp tự động",
   color: "gold",
   mascot: "trophy",

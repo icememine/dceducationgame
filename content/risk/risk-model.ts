@@ -36,12 +36,12 @@ export const PROFILES: ProfileInfo[] = [
   {
     id: "rat-than-trong", name: "Rất thận trọng", mascot: "save",
     summary: "Ưu tiên bảo toàn vốn, chấp nhận lợi nhuận thấp.",
-    funds: ["DCIP"], studyUnits: ["c1-money-market", "c2-bond-funds"],
+    funds: ["DCIP"], studyUnits: ["c0-fund-101", "c1-money-market"],
   },
   {
     id: "than-trong", name: "Thận trọng", mascot: "study",
     summary: "Ưu tiên an toàn, chấp nhận rủi ro nhỏ.",
-    funds: ["DCIP", "DCBF", "DCBA + DCBF"], studyUnits: ["c2-bond-funds", "c5-balanced"],
+    funds: ["DCIP", "DCBF", "DCBA + DCBF"], studyUnits: ["c1-money-market", "c5-balanced"],
   },
   {
     id: "can-bang", name: "Cân bằng", mascot: "grow",

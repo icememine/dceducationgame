@@ -2,7 +2,7 @@ import type { UnitInput } from "../../schema";
 
 export const unit = {
   id: "c4-index-passive",
-  title: "Phần 5 · Quỹ chỉ số và ETF",
+  title: "Phần 4 · Quỹ chỉ số và ETF",
   description: "Mô phỏng chỉ số với chi phí thấp",
   color: "violet",
   mascot: "study",

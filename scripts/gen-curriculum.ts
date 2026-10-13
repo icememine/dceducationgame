@@ -2,7 +2,7 @@
 // Run after editing the outline: `npm run docs:curriculum`.
 import { writeFileSync } from "node:fs";
 import path from "node:path";
-import { aiScenarios, FAQ_NUMBERS, FORMATS, outline, outlineLessons, TOOLS, type SourceRef } from "../content/outline";
+import { advancedUnits, aiScenarios, FAQ_NUMBERS, FORMATS, outline, outlineLessons, TOOLS, type SourceRef } from "../content/outline";
 import { sourceById } from "../content/sources";
 
 const root = path.join(__dirname, "..");
@@ -70,13 +70,20 @@ for (const s of outline) {
   if (s.askRongOnly?.length) out.push(`Câu hỏi FAQ chỉ trả lời qua Hỏi Rồng (không làm bài): ${s.askRongOnly.join(", ")}.`, "");
 }
 
+out.push("## Chương trình nâng cao (chưa nằm trên lộ trình)", "", "Các phần đã tách khỏi hành trình chính; nội dung mới sẽ được viết sau. Bài nháp cũ: `content/advanced/`.", "");
+for (const u of advancedUnits) {
+  out.push(`### ${u.code} · ${u.title}`, "", u.why, "", "| Bài | Mục tiêu | Nguồn |", "|---|---|---|");
+  for (const l of u.lessons) out.push(`| **${l.code}** ${esc(l.title)} | ${esc(l.goal)} | ${esc(srcShort(l.sources))} |`);
+  out.push("");
+}
+
 out.push("## Tình huống luyện AI", "", "| Tình huống | AI đóng vai | Mở khóa sau | Chế độ |", "|---|---|---|---|");
 for (const a of aiScenarios) out.push(`| ${esc(a.title)} | ${esc(a.persona)} | ${a.unlockAfter} | ${a.mode === "staff" ? "Chuyên viên" : "Nhà đầu tư"} |`);
 out.push("", "Chi tiết lời mở đầu, tiêu chí chấm và cờ đỏ: `content/outline/ai-scenarios.ts`. Thiết kế tính năng: `docs/FEATURES.md`.", "");
 
 out.push("## Bản đồ 133 câu hỏi FAQ", "", "| FAQ | Bài |", "|---|---|");
 for (const n of FAQ_NUMBERS) {
-  const where = lessons.filter((l) => l.sources.includes(`faq:${n}`)).map((l) => l.code);
+  const where = [...lessons, ...advancedUnits.flatMap((u) => u.lessons)].filter((l) => l.sources.includes(`faq:${n}`)).map((l) => l.code);
   const rong = outline.some((s) => s.askRongOnly?.includes(n));
   out.push(`| ${n} | ${where.join(", ") || (rong ? "Hỏi Rồng" : "—")} |`);
 }
@@ -100,5 +107,5 @@ writeFileSync(path.join(root, "docs", "CURRICULUM.md"), out.join("\n"));
 const sources = Object.fromEntries(
   [...new Set(lessons.flatMap((l) => l.sources).concat(aiScenarios.flatMap((a) => a.sources)))].map((r) => [r, srcLabel(r)]),
 );
-writeFileSync(path.join(root, "docs", "program.json"), JSON.stringify({ outline, aiScenarios, formats: FORMATS, tools: TOOLS, sources }, null, 0));
+writeFileSync(path.join(root, "docs", "program.json"), JSON.stringify({ outline, advanced: advancedUnits, aiScenarios, formats: FORMATS, tools: TOOLS, sources }, null, 0));
 console.log(`wrote docs/CURRICULUM.md (${lessons.length} lessons) and docs/program.json`);

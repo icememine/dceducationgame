@@ -2,7 +2,7 @@ import type { UnitInput } from "../../schema";
 
 export const unit = {
   id: "c3-equity-funds",
-  title: "Phần 4 · Quỹ cổ phiếu",
+  title: "Phần 3 · Quỹ cổ phiếu",
   description: "Tăng trưởng dài hạn, chấp nhận biến động",
   color: "coral",
   mascot: "fight",

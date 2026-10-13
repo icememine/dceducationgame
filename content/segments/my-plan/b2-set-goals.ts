@@ -575,7 +575,7 @@ export const unit = {
           type: "goal_planner",
           prompt: "Tạo mục tiêu của bạn",
           goal: "custom",
-          defaults: { target: 500_000_000, monthly: 5_000_000, initial: 0, annualReturn: 0.07 },
+          defaults: { target: 500_000_000, monthly: 5_000_000, initial: 0, annualReturn: 0.1 },
           source: { sourceId: "amdd-first-billion" },
         },
         {

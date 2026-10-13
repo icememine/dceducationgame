@@ -2,7 +2,7 @@ import type { UnitInput } from "../../schema";
 
 export const unit = {
   id: "c6-active-passive",
-  title: "Phần 6 · Chủ động và thụ động",
+  title: "Phần 5 · Chủ động và thụ động",
   description: "Alpha, beta và cách kết hợp hai trường phái",
   color: "sky",
   mascot: "analyze",
