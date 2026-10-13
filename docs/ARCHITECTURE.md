@@ -117,7 +117,8 @@ flowchart LR
 content/
   schema.ts            Zod schemas: segment → unit → lesson → challenge (12 types), sources
   sources.ts           every citable document, with asOf date
-  segments/            dc-funds.ts (A) · my-plan/ (B, one file per unit) · fund-types/ (C, one file per unit)
+  segments/            my-plan/ (B) · fund-types/ (C) · dc-funds/ (A): one file per unit
+  advanced/            parked units for the advanced program (not on the path)
   index.ts             registry, lookups, validateContent() integrity checks
   library/             Q&A library (faq-products, faq-services), glossary, fund-facts (+ text form), search
   ai/rong-voice.md     Rồng's tone and mood, edited by the content team
@@ -132,7 +133,7 @@ scripts/build-prototype.ts builds prototype/rong-dc-academy.html from prototype/
 e2e/golden-path.mjs        end-to-end golden path (CI)
 src/
   app/                 routes (see §8)
-  actions/             server actions: lesson.ts, user.ts
+  actions/             server actions: lesson.ts (lessons, review, placement), user.ts, risk.ts, plan.ts, notifications.ts, admin.ts
   db/                  schema.ts, client.ts (Postgres | PGlite), queries.ts
   features/
     lesson-engine/     grade.ts, shuffle.ts, types.ts, player.tsx, challenge-views.tsx
@@ -140,8 +141,16 @@ src/
     risk-profile/      risk-explanation.tsx (why the result is what it is); scoring lives in content/risk
     goal-planner/      finance.ts (FV, months-to-target, required monthly, CAGR)
     ai/                guardrails.ts (fixed rules + reply review), voice.ts, rong.ts (request, stream, offline), rong-chat.tsx
+    tools/             calc.ts (Công cụ math, tested against the articles), the calculators
+    review/            srs.ts (Leitner boxes 1/3/7/21 days), queries.ts ("Cần ôn lại", due questions)
+    placement/         placement.ts (one question per unit → unlock index), queries.ts
+    badges/            badges.ts (badges + monthly challenges, pure), sync.ts (award + notify)
+    leagues/           leagues.ts (weeks, groups of 30, settle top 5 / bottom 5), queries.ts
+    notifications/     rules.ts (reminder message), reminders.ts (cron), notify.ts, push.ts (Web Push), bell.tsx
+    plan-card/         model.ts (card fields, hide amounts), svg.ts, share panel
+    admin/             auth.ts (ADMIN_TOKEN), stats.ts + queries.ts (analytics), patch.ts (edit a challenge in its unit file), editor/
   components/          button (3D), mascot, status-bar, tab-bar, disclaimer
-  lib/                 auth.ts, utils.ts
+  lib/                 auth.ts, utils.ts, cron-auth.ts (CRON_SECRET guard for /api/cron/*)
 ```
 
 ## 4. Content model

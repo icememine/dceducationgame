@@ -50,6 +50,14 @@ the team and friendly testers.
 - Compliance review page over `ai_messages` (filter by guardrail flag, mark reviewed).
 - Hỏi Rồng eval set (40–60 real questions with must/must-not facts), ready for when the model is switched on.
 
+## Engagement and internal tools (done)
+
+Review + spaced repetition (`/review`), placement test, badges and monthly challenges, weekly league
+groups, reminders and in-app notifications (Web Push when VAPID keys are set), the shareable
+investment-plan card, and `/admin` (per-question analytics, content editor that produces a diff or a PR).
+Ops needed before pilot: schedule `/api/cron/reminders` hourly and `/api/cron/leagues` weekly with
+`CRON_SECRET`; generate VAPID keys; set `ADMIN_TOKEN` (and `GITHUB_*` for editor PRs).
+
 ## Milestone 3: pilot
 
 - DragonX SSO behind `getUserId()`; anonymous progress merged on first login.

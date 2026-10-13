@@ -14,7 +14,7 @@ Lesson content is planned in [CURRICULUM.md](./CURRICULUM.md) (generated from `c
 | 1.2 | Chọn hành trình | Experience question (mới bắt đầu / biết chút ít / đang đầu tư DC) picks the starting stage. Replaces the prototype's staff "chọn vai trò" | P→N | ✅ | MVP |
 | 1.3 | Mục tiêu mỗi ngày | 5 / 10 / 15 / 20 minutes a day, reminder time | P | ✅ | MVP |
 | 1.4 | Biệt danh | Public nickname only; real name never shown | N | ✅ | MVP |
-| 1.5 | Kiểm tra xếp lớp | Optional 10-question placement test that unlocks units the investor already knows (Duolingo "jump ahead") | D→N | ☐ | V1 |
+| 1.5 | Kiểm tra xếp lớp | Optional 10-question placement test that unlocks units the investor already knows (Duolingo "jump ahead") | D→N | ✅ (one question per unit, max 10; `/placement/[segment]`) | V1 |
 | 1.6 | Hồ sơ rủi ro dẫn đường | After the B2.3 self-assessment, the path highlights the fund-type units for that profile | N | ✅ (profile + recommendation) / ☐ (path highlight) | MVP |
 
 ## 2. Learning path
@@ -139,11 +139,11 @@ Conversational version of the planner: Rồng asks for the four numbers, then fi
 | # | Feature | What it does | From | Status | Phase |
 |---|---|---|---|---|---|
 | 6.1 | XP | 15 per lesson, +5 perfect, 30 checkpoint, 5 practice | P/D | ✅ | MVP |
-| 6.2 | Chuỗi ngày | Vietnam calendar day, 1 freeze, streak-at-risk reminder | P/D | ✅ (logic) / ☐ (reminder) | MVP |
+| 6.2 | Chuỗi ngày | Vietnam calendar day, 1 freeze, streak-at-risk reminder | P/D | ✅ (logic + daily reminder) | MVP |
 | 6.3 | Nhiệm vụ hôm nay | Earn 20 XP · 1 perfect lesson · 1 correct scenario | P/D | ✅ | MVP |
-| 6.4 | Thử thách tháng | e.g. "Hoàn thành Hiểu mình trước 31/10" → badge | P | ☐ | V1 |
-| 6.5 | Giải đấu tuần | Đồng → Kim Cương, groups of 30, top 5 up / bottom 5 down, weekly job | P/D | ✅ (board) / ☐ (groups + job) | V1 |
-| 6.6 | Huy hiệu | Milestones: first goal saved, 7-day streak, scam call handled, first checkpoint | N | ☐ | V1 |
+| 6.4 | Thử thách tháng | e.g. "Hoàn thành Hiểu mình trước 31/10" → badge | P | ✅ (3 challenges a month → monthly badge) | V1 |
+| 6.5 | Giải đấu tuần | Đồng → Kim Cương, groups of 30, top 5 up / bottom 5 down, weekly job | P/D | ✅ (groups of 30, weekly settlement, `/api/cron/leagues`) | V1 |
+| 6.6 | Huy hiệu | Milestones: first goal saved, 7-day streak, scam call handled, first checkpoint | N | ✅ (13 badges) | V1 |
 | 6.7 | Chứng nhận | Hiểu mình · Hiểu quỹ · Nhà đầu tư DC hiểu biết; shareable card | P | ☐ | V1 |
 | 6.8 | Bạn bè, giới thiệu | Follow friends, invite via DragonX referral (promotion rules apply) | D→N | ☐ | V2 |
 
@@ -151,9 +151,9 @@ Conversational version of the planner: Rồng asks for the four numbers, then fi
 
 | # | Feature | What it does | From | Status | Phase |
 |---|---|---|---|---|---|
-| 7.1 | Cần ôn lại | Topics with recent mistakes (from `challenge_attempts`), shown on the profile as in the prototype | P | ☐ | MVP |
-| 7.2 | Ôn tập nhanh 3 phút | Mixed review of weak items; earns hearts back | P/D | ✅ (practice replay) / ☐ (mixed review) | MVP |
-| 7.3 | Lặp lại ngắt quãng | Items resurface after 1, 3, 7, 21 days | N | ☐ | V1 |
+| 7.1 | Cần ôn lại | Topics with recent mistakes (from `challenge_attempts`), shown on the profile as in the prototype | P | ✅ (learn page card + profile list) | MVP |
+| 7.2 | Ôn tập nhanh 3 phút | Mixed review of weak items; earns hearts back | P/D | ✅ (`/review`, earns hearts back) | MVP |
+| 7.3 | Lặp lại ngắt quãng | Items resurface after 1, 3, 7, 21 days | N | ✅ (Leitner boxes 1/3/7/21 days) | V1 |
 
 ## 8. Profile
 
@@ -162,16 +162,16 @@ Conversational version of the planner: Rồng asks for the four numbers, then fi
 | 8.1 | Thống kê | XP, streak, league, 30-day accuracy | P | ✅ (partial) | MVP |
 | 8.2 | Khẩu vị rủi ro | Latest profile, why it was capped, retake every 12 months | N | ✅ | MVP |
 | 8.3 | Mục tiêu của tôi | Saved goals with progress | N | ✅ | MVP |
-| 8.4 | Bản kế hoạch đầu tư | Profile + goals + allocation as a shareable card / PDF | N | ☐ | V1 |
-| 8.5 | Chứng nhận và huy hiệu | Wall of earned items | P | ☐ | V1 |
+| 8.4 | Bản kế hoạch đầu tư | Profile + goals + allocation as a shareable card / PDF | N | ✅ (card + public link + SVG; no PDF) | V1 |
+| 8.5 | Chứng nhận và huy hiệu | Wall of earned items | P | ✅ (badge wall on the profile) | V1 |
 
 ## 9. Notifications and engagement
 
 | # | Feature | What it does | Phase |
 |---|---|---|---|
-| 9.1 | Nhắc học | Push / email / Zalo at the chosen time | V1 |
-| 9.2 | Chuỗi sắp mất | Evening nudge with mascot `fight` | V1 |
-| 9.3 | Khi thị trường giảm | When the market falls sharply, nudge to the B2.4 / B5.6 lessons instead of a sell button | V1 |
+| 9.1 | Nhắc học | Push / email / Zalo at the chosen time | ✅ in-app + Web Push (VAPID); email/Zalo not built · V1 |
+| 9.2 | Chuỗi sắp mất | Evening nudge with mascot `fight` | ✅ (reminder rule) · V1 |
+| 9.3 | Khi thị trường giảm | When the market falls sharply, nudge to the B2.4 / B5.6 lessons instead of a sell button | ☐ needs market data · V1 |
 | 9.4 | Bài mới tuần này | Each new AMDD article becomes a 3-minute lesson (via 5.4) | V1 |
 
 ## 10. DragonX integration
@@ -192,8 +192,8 @@ Conversational version of the planner: Rồng asks for the four numbers, then fi
 | 11.2 | Kiểm tra nội dung | `content:check` + tests: ids, answers, sources, FAQ coverage | ✅ | MVP |
 | 11.3 | Sinh tài liệu | `docs:curriculum` regenerates CURRICULUM.md from the outline | ✅ | MVP |
 | 11.4 | Bảng thông tin quỹ | Dated fund facts (fees, cut-off times, benchmarks) with expiry alerts, read by lesson templates | ✅ (fund-facts.ts + expiry test) | MVP |
-| 11.5 | Trình soạn thảo | Editor UI that opens PRs for non-developers | ☐ | V1 |
-| 11.6 | Phân tích câu hỏi | Most-missed questions and drop-off per lesson from `challenge_attempts` | ☐ | V1 |
+| 11.5 | Trình soạn thảo | Editor UI that opens PRs for non-developers | ✅ (`/admin/editor`, diff or PR) | V1 |
+| 11.6 | Phân tích câu hỏi | Most-missed questions and drop-off per lesson from `challenge_attempts` | ✅ (`/admin/analytics`) | V1 |
 | 11.7 | A/B test | Compare lesson variants on completion and accuracy | ☐ | V2 |
 
 ## 12. Compliance and trust
