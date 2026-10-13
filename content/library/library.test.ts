@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { findLesson } from "../index";
 import { FAQ_NUMBERS } from "../outline";
-import { FACTS_AS_OF, FEES, LIMITS, netProceeds, SELL_EXAMPLE } from "./fund-facts";
+import { FACTS_AS_OF, FEES, FUNDS, LIMITS, netProceeds, ORDER_CALENDAR, SCHEDULE, SELL_EXAMPLE } from "./fund-facts";
 import { CATEGORIES, excluded, glossary, library, searchLibrary } from "./index";
 
 const vnd = (n: number) => n.toLocaleString("vi-VN");
@@ -59,5 +59,14 @@ describe("fund facts used in lessons", () => {
     expect(twoYears).toContain(vnd(FEES.transferFee.from500m) + "đ");
     expect(twoYears).toContain(`${FEES.pitOnSale * 100}`.replace(".", ",") + "%");
     expect(LIMITS.minBuy).toBe(100_000);
+  });
+
+  it("keeps the order calendar in step with the fund texts", () => {
+    for (const [code, cal] of Object.entries(ORDER_CALENDAR)) {
+      const f = FUNDS[code as keyof typeof FUNDS];
+      expect(f.cashAfterSell, code).toBe(cal!.cashDays === 0 ? "Trong ngày T" : `T+${cal!.cashDays}`);
+      expect(f.tradingDays, code).toBe(cal!.weekdays.length === 5 ? "Hằng ngày, thứ 2 đến thứ 6" : `Thứ ${cal!.weekdays.map((d) => d + 1).join(" và thứ ")} hằng tuần`);
+    }
+    expect(SCHEDULE.orderCutoff).toMatch(/^14:30/);
   });
 });

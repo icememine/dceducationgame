@@ -34,6 +34,12 @@ await btn("Du học cho con").click();
 await page.getByText("Thời gian ước tính").waitFor(); await shot("00-tools-planner");
 await btn("Lưu mục tiêu").click(); await btn("Đã lưu vào hồ sơ").waitFor();
 await page.getByRole("link", { name: "25 hay 45 tuổi" }).click(); await page.getByText("chỉ góp nhiều hơn").waitFor(); await shot("00-tools-start-early");
+for (const [link, text, name] of [
+  ["Tự do sự nghiệp", "Hiện tại bạn có", "runway"], ["Chi phí du học", "Theo giá hôm nay", "edu"], ["Góp đều (DCA)", "Giá vốn bình quân của bạn", "dca"],
+  ["Tác động của phí", "khoảng chênh", "fee"], ["100 − tuổi", "Thu nhập cố định", "age"], ["Hồi phục", "Cần tăng để về lại điểm hòa vốn", "drawdown"],
+  ["Danh mục thử nghiệm", "Kịch bản 1 năm", "sandbox"], ["Tái cân bằng", "Tỷ trọng cổ phiếu đã trôi thành", "rebalance"], ["Vòng đời lệnh", "Ngày giao dịch T", "order"],
+]) { await page.getByRole("link", { name: link, exact: true }).click(); await page.getByText(text).first().waitFor(); await shot(`00-tools-${name}`); }
+await btn("Bán").click(); await page.getByText("Tiền bán về tài khoản ngân hàng").waitFor(); await shot("00-tools-order-sell");
 await page.goto(B + "/profile"); await page.getByText("Du học cho con").waitFor();
 // Simulations: three reactions, then the timing game (5 months).
 await page.goto(B + "/lesson/b3-reactions");

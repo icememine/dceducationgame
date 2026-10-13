@@ -32,6 +32,7 @@ the team and friendly testers.
 | 6 | Content preview mode (`CONTENT_PREVIEW=1`) so writers and Compliance can open any lesson | E | ✅ done |
 | 7 | Fund-facts expiry test (fails after ~4 months without re-check) | E | ✅ done |
 | 8 | **Công cụ tab**: goal planner (presets from the articles, time to target, monthly amount needed for a chosen year, save to profile) and "25 hay 45 tuổi"; Nhiệm vụ moved to the gift icon | E | ✅ done |
+| 8b | **Công cụ, the rest**: tự do sự nghiệp, chi phí du học, góp đều (DCA), tác động của phí, 100 − tuổi, hồi phục sau sụt giảm, danh mục thử nghiệm, tái cân bằng, vòng đời lệnh (trading calendar in `fund-facts.ts`) | E | ✅ done |
 | 9 | **Interactive lesson types**: "Ba phản ứng" decision simulation (`reaction_sim`) and "Nhà tiên tri" timing game (`timing_game`), seeded and tested in `features/simulations` | E | ✅ done |
 | 10 | **Write Hiểu mình** from the outline: all 57 stage-B outline lessons now have a playable lesson (7 units, 55 lessons incl. 6 checkpoints). Drafts on the formula; review by K, starting with the facts each writer flagged | C + K | ✅ drafted, K review open |
 | 11 | **Staging deploy** with Postgres, `CONTENT_PREVIEW=1` for reviewers | E | needs a hosting decision |

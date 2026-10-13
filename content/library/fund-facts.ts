@@ -123,6 +123,21 @@ export const SCHEDULE = {
 } as const;
 
 /**
+ * Machine-readable trading calendar for the order-lifecycle tool, mirroring `tradingDays` and
+ * `cashAfterSell` above (the library test checks they agree). Weekdays: 1 = Monday … 5 = Friday.
+ * `cashDays`: working days from trading day T until sale proceeds are paid (0 = same day).
+ * Public holidays are not modelled. DCBA follows its prospectus, so it is left out.
+ */
+export const ORDER_CALENDAR: Partial<Record<OpenFund, { weekdays: number[]; cashDays: number }>> = {
+  DCDS: { weekdays: [1, 2, 3, 4, 5], cashDays: 2 },
+  DCDE: { weekdays: [1, 2, 3, 4, 5], cashDays: 2 },
+  DCBF: { weekdays: [3, 5], cashDays: 5 },
+  DCIP: { weekdays: [1, 2, 3, 4, 5], cashDays: 0 },
+};
+/** Hour (local time) of the order cut-off on T-1, from SCHEDULE.orderCutoff. */
+export const ORDER_CUTOFF = { hour: 14, minute: 30 } as const;
+
+/**
  * A worked redemption from the workbook, used by lessons and Hỏi Rồng to show where the
  * money goes: 15,49 CCQ sold at NAV 57.855,58 after 6–12 months of holding. The workbook's
  * 2022 transfer fee (12.100đ) is replaced by today's 6.600đ.

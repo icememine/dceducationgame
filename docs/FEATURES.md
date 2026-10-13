@@ -56,6 +56,9 @@ Reused across lessons and available from the profile as standalone tools. Lesson
 
 | # | Tool | What it does | Phase |
 |---|---|---|---|
+
+Built in the app (`/tools`, math in `src/features/tools/calc.ts`, tested against the articles' figures): 4.1, 4.2, 4.3, 4.6, 4.7, 4.8, 4.9 (stock/bond mix, the balanced-fund article's three scenarios), 4.10, 4.11, 4.13, 4.14. Not built: 4.12 (bond unit moved to the advanced program), 4.15 (needs licensed VN-Index monthly data). 4.4 and 4.5 run inside lessons.
+
 | 4.1 | Lập kế hoạch mục tiêu | Four numbers → time to target, required monthly amount, contributed vs growth chart; multiple named goals (1 tỷ, du học, hưu trí, tự do sự nghiệp, mua nhà) | ✅ basic · MVP full |
 | 4.2 | Máy tính lãi kép | Lump sum and periodic; 5-year, 10-year, 30-year markers; "start at 25 vs 45" comparison | MVP |
 | 4.3 | Mô phỏng DCA | Same money, DCA vs lump sum, on illustrative or historical NAV series; average cost | MVP |

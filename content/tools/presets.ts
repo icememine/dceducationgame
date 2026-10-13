@@ -44,3 +44,45 @@ export const START_EARLY = {
   annualReturn: 0.12,
   sourceId: "amdd-age-60",
 };
+
+/** "Quỹ tự do sự nghiệp": months of spending you could live on without income. */
+export const RUNWAY = {
+  monthlySpend: 15_000_000,
+  targetMonths: 12,
+  monthly: 5_000_000,
+  annualReturn: 0.15,
+  /** Under 3 months: act now; 6–12: relatively safe; 12–18: ideal. */
+  bands: { act: 3, safe: 6, good: 12, ideal: 18 },
+  sourceId: "amdd-career-fund",
+};
+
+/** "Chi phí du học": HSBC estimate quoted in the article, 4 years ≈ 4,2 tỷ at today's rate. */
+export const EDU_COST = {
+  annualUsd: 40_000,
+  years: 4,
+  totalVnd: 4_200_000_000,
+  /** The article's own conversion: 4,2 tỷ ÷ (40.000 USD × 4). */
+  usdVnd: 4_200_000_000 / (40_000 * 4),
+  childAge: 8,
+  startAge: 18,
+  annualReturn: 0.13,
+  sourceId: "amdd-suitcase",
+};
+
+/** Three market scenarios from the balanced-fund article (one year, illustration). */
+export const MARKET_SCENARIOS = [
+  { id: "up", label: "Tăng mạnh", stock: 0.25, bond: 0.03 },
+  { id: "flat", label: "Đi ngang", stock: 0.05, bond: 0.06 },
+  { id: "down", label: "Sụt giảm", stock: -0.3, bond: 0.05 },
+] as const;
+export const MARKET_SCENARIOS_SOURCE = "w5-balanced";
+
+/** Typical yearly management-cost ranges in Vietnam, from the active vs passive article. */
+export const FEE_RANGES = {
+  passive: { min: 0.005, max: 0.008 },
+  active: { min: 0.015, max: 0.025 },
+  sourceId: "w5-active-passive",
+};
+
+/** "100 − tuổi": reference equity weight; 120 − tuổi for people who accept more risk. */
+export const AGE_RULE = { base: 100, bold: 120, sourceId: "amdd-no-timing" };
