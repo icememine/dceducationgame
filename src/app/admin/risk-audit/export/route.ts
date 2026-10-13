@@ -1,5 +1,7 @@
 import { SPECIAL_CASES } from "@content/risk";
-import { isAdmin } from "@/features/admin/auth";
+import { getStaff } from "@/features/admin/auth";
+import { can } from "@/features/staff/roles";
+import { audit } from "@/features/staff/server";
 import { listRiskProfiles } from "@/features/compliance/queries";
 import { parseStatus, REVIEW_OUTCOMES, riskAudit, toCsv, vnDayEnd, vnDayStart } from "@/features/compliance/review";
 
@@ -9,7 +11,8 @@ const VIEWS = new Set(["attention", "confirmed", "unconfirmed", "all", ...Object
 
 /** CSV of the risk-check results matching the page's filters (up to 5.000 rows), one column per answer. */
 export async function GET(req: Request) {
-  if (!(await isAdmin())) return new Response("Not Found", { status: 404 });
+  const staff = await getStaff();
+  if (!staff || staff.mustChangePassword || !can(staff.role, "risk-audit")) return new Response("Not Found", { status: 404 });
   const p = new URL(req.url).searchParams;
   const view = p.get("view") ?? "attention";
   const { rows } = await listRiskProfiles({ status: parseStatus(p.get("status")), view: VIEWS.has(view) ? view : "attention", from: vnDayStart(p.get("from")), to: vnDayEnd(p.get("to")), limit: 5000 });
@@ -23,5 +26,6 @@ export async function GET(req: Request) {
       r.outcome ? REVIEW_OUTCOMES[r.outcome as keyof typeof REVIEW_OUTCOMES] : "Chưa duyệt", r.reviewer, r.note, r.reviewedAt?.toISOString(),
     ]),
   );
+  await audit(staff, "export", "risk", { rows: rows.length, filters: Object.fromEntries(p) });
   return new Response(csv, { headers: { "content-type": "text/csv; charset=utf-8", "content-disposition": `attachment; filename="risk-audit-${new Date().toISOString().slice(0, 10)}.csv"`, "cache-control": "no-store" } });
 }

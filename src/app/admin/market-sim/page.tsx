@@ -1,11 +1,12 @@
-import { requireAdmin } from "@/features/admin/auth";
+import { requireStaff } from "@/features/admin/auth";
+import { can } from "@/features/staff/roles";
 import { MARKET_DROP_OPTIONS, marketDropNudge } from "@/features/notifications/rules";
 import { SimForm } from "./sim-form";
 
 export const metadata = { title: "Mô phỏng thị trường giảm" };
 
 export default async function MarketSimPage() {
-  await requireAdmin();
+  const staff = await requireStaff("market-sim");
   const sample = marketDropNudge(20);
   return (
     <main className="flex max-w-2xl flex-col gap-4">
@@ -20,7 +21,7 @@ export default async function MarketSimPage() {
         <p className="text-muted">{sample.body}</p>
         <p className="text-xs text-muted">Mở bài: {sample.href}</p>
       </div>
-      <SimForm options={[...MARKET_DROP_OPTIONS]} />
+      <SimForm options={[...MARKET_DROP_OPTIONS]} canSendAll={can(staff.role, "market-sim:all")} />
     </main>
   );
 }

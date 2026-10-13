@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { requireAdmin } from "@/features/admin/auth";
+import { requireStaff } from "@/features/admin/auth";
 import { listAiMessages, reviewHistory } from "@/features/compliance/queries";
 import { AI_FLAG_LABELS, aiFlagLabel, parseStatus, vnDayEnd, vnDayStart } from "@/features/compliance/review";
 import { DateRange, field, History, input, StatusBadge, StatusSelect, vnTime } from "@/features/compliance/ui/parts";
@@ -11,7 +10,7 @@ type SP = { status?: string; flag?: string; from?: string; to?: string; q?: stri
 
 /** Compliance review of Hỏi Rồng answers (ai_messages): filter, read, record a decision. */
 export default async function AiReviewPage({ searchParams }: { searchParams: Promise<SP> }) {
-  await requireAdmin();
+  await requireStaff("ai-review");
   const sp = await searchParams;
   const status = parseStatus(sp.status);
   const flag = sp.flag && (sp.flag in AI_FLAG_LABELS || ["any", "none", "all"].includes(sp.flag)) ? sp.flag : "any";
@@ -37,7 +36,8 @@ export default async function AiReviewPage({ searchParams }: { searchParams: Pro
         <DateRange from={sp.from} to={sp.to} />
         <label className={field}>Tìm trong câu hỏi/trả lời<input name="q" defaultValue={q} className={input} /></label>
         <button className="rounded-lg bg-sky px-3 py-1.5 text-sm font-extrabold text-white">Lọc</button>
-        <Link href={`/admin/ai-review/export?${qs}`} className="text-sm font-bold text-sky-deep underline">Tải CSV</Link>
+        {/* Plain <a>: a prefetched <Link> would run the export (and log it) without a click. */}
+        <a href={`/admin/ai-review/export?${qs}`} download className="text-sm font-bold text-sky-deep underline">Tải CSV</a>
       </form>
       <p className="text-sm font-bold">{total} câu trả lời{total > rows.length ? ` (hiện ${rows.length} mới nhất)` : ""}</p>
       <ul className="flex flex-col gap-3">

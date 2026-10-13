@@ -40,6 +40,7 @@ jobs:
       - run: npx -y wait-on@8.0.4 http://localhost:3100 --timeout 120000
       - run: BASE_URL=http://localhost:3100 npm run e2e:golden -- e2e-shots
       - run: BASE_URL=http://localhost:3100 ADMIN_USERNAME=admin ADMIN_PASSWORD=ci-admin-password npm run e2e:admin -- e2e-shots
+      - run: BASE_URL=http://localhost:3100 ADMIN_USERNAME=admin ADMIN_PASSWORD=ci-admin-password npm run e2e:staff -- e2e-shots
       - if: failure()
         uses: actions/upload-artifact@v4
         with:

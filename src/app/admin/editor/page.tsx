@@ -1,5 +1,5 @@
 import { segments } from "@content/index";
-import { requireAdmin } from "@/features/admin/auth";
+import { requireStaff } from "@/features/admin/auth";
 import { githubConfig } from "@/features/admin/content-files";
 import { ChallengeEditor } from "@/features/admin/editor/editor";
 import { ChallengePicker, type PickerTree } from "@/features/admin/editor/picker";
@@ -11,7 +11,7 @@ const label = (c: Record<string, unknown>) => {
 };
 
 export default async function EditorPage({ searchParams }: { searchParams: Promise<{ c?: string }> }) {
-  await requireAdmin();
+  await requireStaff("editor");
   const { c } = await searchParams;
   const loc = c ? indexChallenges(segments).get(c) : undefined;
   const tree: PickerTree = segments.map((s) => ({

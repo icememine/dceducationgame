@@ -256,7 +256,57 @@ export const complianceReviews = pgTable(
     outcome: text("outcome").notNull(),
     note: text("note").notNull().default(""),
     reviewer: text("reviewer").notNull(),
+    /** Staff account that made the call (null for reviews made before staff accounts). */
+    staffId: integer("staff_id"),
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
   },
   (t) => [index("compliance_reviews_target_idx").on(t.kind, t.targetId, t.createdAt)],
+);
+
+/**
+ * Staff accounts for /admin (FEATURES.md 11.x). Passwords are scrypt hashes; roles decide which
+ * pages and actions a person may use (src/features/staff/roles.ts). Accounts are deactivated,
+ * never deleted, so the audit log and review history keep pointing at a real person.
+ */
+export const staffUsers = pgTable("staff_users", {
+  id: serial("id").primaryKey(),
+  username: text("username").notNull().unique(),
+  displayName: text("display_name").notNull(),
+  /** "admin" | "content" | "compliance" */
+  role: text("role").notNull(),
+  passwordHash: text("password_hash").notNull(),
+  /** Set for new accounts and after a reset: the person must choose a new password first. */
+  mustChangePassword: boolean("must_change_password").notNull().default(true),
+  active: boolean("active").notNull().default(true),
+  lastLoginAt: timestamp("last_login_at", { withTimezone: true }),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+});
+
+/** Server-side sessions: the cookie holds a random token, the table only its SHA-256. */
+export const staffSessions = pgTable(
+  "staff_sessions",
+  {
+    tokenHash: text("token_hash").primaryKey(),
+    staffId: integer("staff_id").notNull().references(() => staffUsers.id, { onDelete: "cascade" }),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
+  },
+  (t) => [index("staff_sessions_staff_idx").on(t.staffId)],
+);
+
+/** Who did what in /admin: logins, failed logins, reviews, content edits, simulations, account changes. */
+export const staffAudit = pgTable(
+  "staff_audit",
+  {
+    id: serial("id").primaryKey(),
+    /** Null for failed logins with an unknown username. */
+    staffId: integer("staff_id").references(() => staffUsers.id),
+    /** The username as typed or as it was at the time (kept even if the account changes). */
+    username: text("username").notNull(),
+    action: text("action").notNull(),
+    target: text("target"),
+    detail: jsonb("detail").notNull().default({}),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("staff_audit_time_idx").on(t.createdAt), index("staff_audit_user_idx").on(t.username, t.createdAt)],
 );

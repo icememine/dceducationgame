@@ -1,7 +1,8 @@
 "use server";
 
 import { segments } from "@content/index";
-import { assertAdmin } from "@/features/admin/auth";
+import { assertStaff } from "@/features/admin/auth";
+import { audit } from "@/features/staff/server";
 import { githubConfig, loadUnitFile, openPullRequest } from "@/features/admin/content-files";
 import { changedFields, describeChanges, findChallenge, patchChallenge, unifiedDiff, type Literal } from "@/features/admin/patch";
 import { indexChallenges } from "@/features/admin/stats";
@@ -18,7 +19,7 @@ export type ContentEditResult =
  * the patched file for download. Never writes to the local filesystem.
  */
 export async function createContentEdit(challengeId: string, edited: unknown): Promise<ContentEditResult> {
-  await assertAdmin();
+  const staff = await assertStaff("editor");
   try {
     const loc = indexChallenges(segments).get(challengeId);
     if (!loc) return { ok: false, error: `Không có câu "${challengeId}" trong nội dung hiện tại` };
@@ -51,9 +52,11 @@ export async function createContentEdit(challengeId: string, edited: unknown): P
         "",
         "Đã kiểm tra bằng schema Zod (content/schema.ts) trước khi tạo commit. CI chạy `npm run content:check`.",
       ].join("\n");
-      const pr = await openPullRequest(cfg, { file, text, challengeId, body });
+      const pr = await openPullRequest(cfg, { file, text, challengeId, body: `${body}\n\nNgười sửa: ${staff.displayName} (${staff.username})` });
+      await audit(staff, "content-edit", challengeId, { mode: "pr", url: pr.url, fields: changedKeys });
       return { ok: true, mode: "pr", url: pr.url, branch: pr.branch, path: file.path, changes: changedKeys };
     }
+    await audit(staff, "content-edit", challengeId, { mode: "diff", fields: changedKeys });
     return { ok: true, mode: "diff", path: file.path, diff: unifiedDiff(file.text, text, file.path), fileText: text, changes: changedKeys };
   } catch (e) {
     return { ok: false, error: e instanceof Error ? e.message : String(e) };

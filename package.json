@@ -17,7 +17,8 @@
     "e2e:golden": "node e2e/golden-path.mjs",
     "proto:build": "tsx scripts/build-prototype.ts",
     "e2e:preview": "node e2e/preview-tour.mjs",
-    "e2e:admin": "node e2e/admin-and-plan.mjs"
+    "e2e:admin": "node e2e/admin-and-plan.mjs",
+    "e2e:staff": "node e2e/staff-roles.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "0.133.0",

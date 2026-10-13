@@ -36,6 +36,13 @@
       "when": 1791876878087,
       "tag": "0004_compliance_reviews",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1791877580806,
+      "tag": "0005_staff_accounts",
+      "breakpoints": true
     }
   ]
 }

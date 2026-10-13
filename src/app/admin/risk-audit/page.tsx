@@ -1,6 +1,5 @@
-import Link from "next/link";
 import { SPECIAL_CASES } from "@content/risk";
-import { requireAdmin } from "@/features/admin/auth";
+import { requireStaff } from "@/features/admin/auth";
 import { listRiskProfiles, reviewHistory } from "@/features/compliance/queries";
 import { parseStatus, riskAudit, vnDayEnd, vnDayStart } from "@/features/compliance/review";
 import { DateRange, field, History, input, StatusBadge, StatusSelect, vnTime } from "@/features/compliance/ui/parts";
@@ -20,7 +19,7 @@ type SP = { status?: string; view?: string; from?: string; to?: string };
 
 /** Compliance audit of risk-check results (risk_profiles): scoring trail, §5 decision, §5.2 flags. */
 export default async function RiskAuditPage({ searchParams }: { searchParams: Promise<SP> }) {
-  await requireAdmin();
+  await requireStaff("risk-audit");
   const sp = await searchParams;
   const status = parseStatus(sp.status);
   const view = sp.view && sp.view in VIEWS ? sp.view : "attention";
@@ -44,7 +43,8 @@ export default async function RiskAuditPage({ searchParams }: { searchParams: Pr
         </label>
         <DateRange from={sp.from} to={sp.to} />
         <button className="rounded-lg bg-sky px-3 py-1.5 text-sm font-extrabold text-white">Lọc</button>
-        <Link href={`/admin/risk-audit/export?${qs}`} className="text-sm font-bold text-sky-deep underline">Tải CSV</Link>
+        {/* Plain <a>: a prefetched <Link> would run the export (and log it) without a click. */}
+        <a href={`/admin/risk-audit/export?${qs}`} download className="text-sm font-bold text-sky-deep underline">Tải CSV</a>
       </form>
       <p className="text-sm font-bold">{total} kết quả{total > rows.length ? ` (hiện ${rows.length} mới nhất)` : ""}</p>
       <ul className="flex flex-col gap-3">

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { segments } from "@content/index";
-import { requireAdmin } from "@/features/admin/auth";
+import { requireStaff } from "@/features/admin/auth";
 import { attemptTotals, firstTries, lessonFunnel, wrongAnswers } from "@/features/admin/queries";
 import { buildFunnel, buildQuestionStats, indexChallenges, isGraded, pct, type Filter } from "@/features/admin/stats";
 
@@ -9,7 +9,7 @@ const th = "border-b border-line px-2 py-1.5 text-left font-extrabold";
 const td = "border-b border-line px-2 py-1.5 align-top";
 
 export default async function AnalyticsPage({ searchParams }: { searchParams: Promise<{ segment?: string; unit?: string }> }) {
-  await requireAdmin();
+  await requireStaff("analytics");
   const sp = await searchParams;
   const filter: Filter = { segmentId: sp.segment || undefined, unitId: sp.unit || undefined };
   const index = indexChallenges(segments);

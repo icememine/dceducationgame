@@ -90,12 +90,12 @@ export async function reviewHistory(kind: "ai" | "risk", ids: number[]) {
   return out;
 }
 
-export async function addReview(kind: "ai" | "risk", targetId: number, outcome: ReviewOutcome, note: string, reviewer: string) {
+export async function addReview(kind: "ai" | "risk", targetId: number, outcome: ReviewOutcome, note: string, reviewer: string, staffId?: number) {
   const db = await getDb();
   const table = kind === "ai" ? aiMessages : riskProfiles;
   const [exists] = await db.select({ id: table.id }).from(table).where(eq(table.id, targetId));
   if (!exists) throw new Error("Không tìm thấy bản ghi");
-  await db.insert(cr).values({ kind, targetId, outcome, note: note.trim().slice(0, 2000), reviewer });
+  await db.insert(cr).values({ kind, targetId, outcome, note: note.trim().slice(0, 2000), reviewer, staffId });
 }
 
 /** Open work for the admin home page. */

@@ -1,4 +1,6 @@
-import { isAdmin } from "@/features/admin/auth";
+import { getStaff } from "@/features/admin/auth";
+import { can } from "@/features/staff/roles";
+import { audit } from "@/features/staff/server";
 import { listAiMessages } from "@/features/compliance/queries";
 import { aiFlagLabel, AI_FLAG_LABELS, parseStatus, REVIEW_OUTCOMES, toCsv, vnDayEnd, vnDayStart } from "@/features/compliance/review";
 
@@ -6,7 +8,8 @@ export const dynamic = "force-dynamic";
 
 /** CSV of the AI answers matching the page's filters (up to 5.000 rows). */
 export async function GET(req: Request) {
-  if (!(await isAdmin())) return new Response("Not Found", { status: 404 });
+  const staff = await getStaff();
+  if (!staff || staff.mustChangePassword || !can(staff.role, "ai-review")) return new Response("Not Found", { status: 404 });
   const p = new URL(req.url).searchParams;
   const flag = p.get("flag") ?? "any";
   const { rows } = await listAiMessages({
@@ -24,5 +27,6 @@ export async function GET(req: Request) {
       r.outcome ? REVIEW_OUTCOMES[r.outcome as keyof typeof REVIEW_OUTCOMES] : "Chưa duyệt", r.reviewer, r.note, r.reviewedAt?.toISOString(),
     ]),
   );
+  await audit(staff, "export", "ai", { rows: rows.length, filters: Object.fromEntries(p) });
   return new Response(csv, { headers: { "content-type": "text/csv; charset=utf-8", "content-disposition": `attachment; filename="ai-review-${new Date().toISOString().slice(0, 10)}.csv"`, "cache-control": "no-store" } });
 }

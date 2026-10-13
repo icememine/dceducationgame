@@ -3,7 +3,7 @@
 import { useActionState } from "react";
 import { sendMarketDropSim, type SimState } from "@/actions/admin-sim";
 
-export function SimForm({ options }: { options: number[] }) {
+export function SimForm({ options, canSendAll }: { options: number[]; canSendAll: boolean }) {
   const [state, action, pending] = useActionState<SimState, FormData>(sendMarketDropSim, {});
   return (
     <form action={action} className="flex flex-col gap-3 rounded-lg border border-line bg-surface p-4 text-sm">
@@ -16,7 +16,11 @@ export function SimForm({ options }: { options: number[] }) {
       <fieldset className="flex flex-col gap-1">
         <legend className="font-bold">Gửi tới</legend>
         <label className="flex items-center gap-2"><input type="radio" name="audience" value="me" defaultChecked /> Trình duyệt này (xem trước trong mục Thông báo)</label>
-        <label className="flex items-center gap-2"><input type="radio" name="audience" value="all" /> Tất cả học viên (buổi luyện tập)</label>
+        {canSendAll ? (
+          <label className="flex items-center gap-2"><input type="radio" name="audience" value="all" /> Tất cả học viên (buổi luyện tập)</label>
+        ) : (
+          <p className="text-xs text-muted">Gửi tới tất cả học viên: chỉ quản trị viên.</p>
+        )}
       </fieldset>
       <button disabled={pending} className="self-start rounded-lg bg-coral px-4 py-2 font-extrabold text-white disabled:opacity-50">{pending ? "Đang gửi…" : "Gửi thông báo mô phỏng"}</button>
       {state.sent !== undefined && <p role="status" className="font-bold text-jade-deep">Đã gửi tới {state.sent} học viên.</p>}
