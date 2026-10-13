@@ -4,6 +4,9 @@ import { Disclaimer } from "@/components/disclaimer";
 import { Mascot } from "@/components/mascot";
 import { Button } from "@/components/ui/button";
 import { getGoals, getLatestProfile, getUserState } from "@/db/queries";
+import { BADGES, badgeInfo } from "@/features/badges/badges";
+import { getUserBadges, syncBadges } from "@/features/badges/sync";
+import { getReviewOverview } from "@/features/review/queries";
 import { monthsToTarget, formatDuration } from "@/features/goal-planner/finance";
 import { profileInfo, type RiskResult } from "@content/risk";
 import { ProfileCard, RiskConfirm } from "@/features/risk-profile/risk-result";
@@ -16,7 +19,16 @@ const GOAL_NAME: Record<string, string> = {
 
 export default async function ProfilePage() {
   const userId = await getUserId();
-  const [{ user, progress }, risk, goals] = await Promise.all([getUserState(userId), getLatestProfile(userId), getGoals(userId)]);
+  await syncBadges(userId); // picks up milestones reached outside lessons (goal saved, risk confirmed, promotion)
+  const [{ user, progress }, risk, goals, review, badges] = await Promise.all([
+    getUserState(userId),
+    getLatestProfile(userId),
+    getGoals(userId),
+    getReviewOverview(userId),
+    getUserBadges(userId),
+  ]);
+  const earned = new Set(badges.map((b) => b.badgeId));
+  const monthly = badges.filter((b) => b.badgeId.startsWith("monthly:"));
   // Results from before the framework (no framework version) are treated as "not assessed yet".
   const current = risk?.frameworkVersion ? risk : undefined;
   const info = current ? profileInfo(current.finalProfile ?? current.profile) : undefined;
@@ -65,6 +77,52 @@ export default async function ProfilePage() {
             <span className="text-muted">{formatVnd(g.monthly)}/tháng · {formatDuration(monthsToTarget(g, g.target))}</span>
           </div>
         ))}
+      </section>
+
+      <section className="flex flex-col gap-2 rounded-2xl border-2 border-line p-4">
+        <div className="flex items-center justify-between">
+          <h2 className="text-lg font-extrabold">Cần ôn lại</h2>
+          <span className="text-xs font-bold text-muted">{review.learning} câu đang ôn · {review.retired} câu đã thuộc</span>
+        </div>
+        {review.recent.length === 0 ? (
+          <p className="text-sm text-muted">Chưa có câu nào. Câu bạn trả lời sai sẽ hiện ở đây và quay lại sau 1, 3, 7, 21 ngày.</p>
+        ) : (
+          <ul className="flex flex-col gap-1.5">
+            {review.recent.map((r) => (
+              <li key={r.challengeId} className="rounded-xl bg-sunken p-3 text-sm">
+                <p className="font-bold">{r.prompt}</p>
+                <p className="text-xs text-muted">{r.lessonTitle}</p>
+              </li>
+            ))}
+          </ul>
+        )}
+        {review.due > 0 && <Button variant="gold" asChild><Link href="/review">Ôn tập ngay · {review.due} câu</Link></Button>}
+      </section>
+
+      <section className="flex flex-col gap-3 rounded-2xl border-2 border-line p-4">
+        <h2 className="text-lg font-extrabold">Huy hiệu · {BADGES.filter((b) => earned.has(b.id)).length}/{BADGES.length}</h2>
+        <ul className="grid grid-cols-3 gap-2">
+          {BADGES.map((b) => (
+            <li key={b.id} className={`flex flex-col items-center gap-1 rounded-xl p-2 text-center ${earned.has(b.id) ? "bg-gold-soft" : "bg-sunken opacity-50 grayscale"}`} title={b.description}>
+              <Mascot mood={b.mascot} size={44} />
+              <span className="text-xs font-extrabold leading-tight">{b.title}</span>
+            </li>
+          ))}
+          {monthly.map((m) => {
+            const info = badgeInfo(m.badgeId)!;
+            return (
+              <li key={m.badgeId} className="flex flex-col items-center gap-1 rounded-xl bg-violet-soft p-2 text-center" title={info.description}>
+                <Mascot mood={info.mascot} size={44} />
+                <span className="text-xs font-extrabold leading-tight">{info.title}</span>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+
+      <section className="grid grid-cols-2 gap-2">
+        <Button variant="ghost" asChild><Link href="/profile/plan">Bản kế hoạch đầu tư</Link></Button>
+        <Button variant="ghost" asChild><Link href="/profile/settings">Nhắc học & thông báo</Link></Button>
       </section>
 
       <section className="flex flex-col gap-3 rounded-2xl bg-jade-soft p-4">

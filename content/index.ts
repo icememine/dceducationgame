@@ -1,4 +1,4 @@
-import { segment, type Lesson, type Segment, type Unit } from "./schema";
+import { segment, type Challenge, type Lesson, type Segment, type Unit } from "./schema";
 import { sourceById } from "./sources";
 import { dcFunds } from "./segments/dc-funds";
 import { myPlan } from "./segments/my-plan";
@@ -23,7 +23,12 @@ for (const s of segments) {
   for (const u of s.units) for (const l of u.lessons) lessonIndex.set(l.id, { segment: s, unit: u, lesson: l, index: index++ });
 }
 
+const challengeIndex = new Map<string, LessonLocation & { challenge: Challenge }>();
+for (const loc of lessonIndex.values()) for (const c of loc.lesson.challenges) challengeIndex.set(c.id, { ...loc, challenge: c });
+
 export const getSegment = (id: string) => segments.find((s) => s.id === id);
+/** Challenge ids are unique across all content (validateContent checks it). */
+export const findChallenge = (challengeId: string) => challengeIndex.get(challengeId);
 export const findLesson = (lessonId: string) => lessonIndex.get(lessonId);
 export const lessonsOf = (s: Segment) => s.units.flatMap((u) => u.lessons);
 

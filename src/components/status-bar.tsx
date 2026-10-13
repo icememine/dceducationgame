@@ -2,7 +2,7 @@ import { ChevronDown, Flame, Gift, Heart, Zap } from "lucide-react";
 import Link from "next/link";
 import type { Segment } from "@content/schema";
 
-export function StatusBar({ segment, streak, xp, hearts }: { segment: Segment; streak: number; xp: number; hearts: number }) {
+export function StatusBar({ segment, streak, xp, hearts, bell }: { segment: Segment; streak: number; xp: number; hearts: number; bell?: React.ReactNode }) {
   return (
     <header className="sticky top-0 z-10 flex items-center justify-between border-b-2 border-line bg-surface px-4 py-2.5">
       <Link href="/segments" className="flex items-center gap-2 rounded-xl px-2 py-1 font-extrabold hover:bg-sunken">
@@ -17,6 +17,7 @@ export function StatusBar({ segment, streak, xp, hearts }: { segment: Segment; s
           <span className="flex items-center gap-1 text-coral" title="Tim"><Heart className="h-5 w-5 fill-current" />{hearts}</span>
         )}
         <Link href="/quests" aria-label="Nhiệm vụ hôm nay" className="text-violet"><Gift className="h-5 w-5" /></Link>
+        {bell}
       </div>
     </header>
   );

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { setActiveSegment } from "@/actions/user";
 import { getSegmentProgress, getUserState } from "@/db/queries";
 import { getUserId } from "@/lib/auth";
@@ -33,6 +34,9 @@ export default async function SegmentsPage() {
             </span>
             <span className="text-xs font-bold text-muted">{done} / {total} bài</span>
           </button>
+          {done === 0 && segment.id !== "my-plan" && (
+            <Link href={`/placement/${segment.id}`} className="mt-1 block text-right text-sm font-extrabold text-sky-deep">Kiểm tra xếp lớp →</Link>
+          )}
         </form>
       ))}
     </div>

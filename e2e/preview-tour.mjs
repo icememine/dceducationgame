@@ -77,6 +77,33 @@ await page.goto(B + "/rong");
 for (let i = 0; i < 3; i++) { await btn("Bao lâu thì nhận được tiền bán?").click(); await page.getByRole("button", { name: "Gửi" }).waitFor(); await page.waitForTimeout(1500); }
 const last = await page.locator("ol li").last().innerText(); await shot("08-rong-cap");
 if (!/hỏi Rồng khá nhiều/.test(last)) errors.push("daily cap message not shown: " + last.slice(0, 80));
+// Spaced repetition: a mistake lands in "Cần ôn lại"; the review session clears it.
+await page.goto(B + "/lesson/b1-what-is-risk");
+await page.getByText("Chị đã mất hẳn 12% số tiền", { exact: true }).click(); await btn("Kiểm tra").click(); await page.getByText("Chưa đúng").waitFor();
+await page.goto(B + "/learn"); await page.getByText(/Cần ôn lại: \d+ câu/).waitFor(); await shot("09-review-card");
+await page.getByRole("link", { name: /Cần ôn lại/ }).click(); await page.waitForURL("**/review");
+// Only that one question is due: answer it right and the review session ends.
+await page.getByText("Đây là biến động giá; khoản lỗ chỉ thành thật nếu chị bán ở mức giá này", { exact: true }).click();
+await btn("Kiểm tra").click(); await page.getByText("Chính xác!").waitFor(); await btn("Tiếp tục").click();
+await page.getByText(/Hoàn thành bài học!|Hoàn hảo/).first().waitFor(); await shot("10-review-done");
+// Badges, review list and links on the profile; monthly challenges; league group; notifications.
+await page.goto(B + "/profile"); await page.getByText(/Huy hiệu · \d+\//).waitFor();
+await page.getByText("Bước đầu tiên").waitFor(); await page.getByRole("link", { name: "Bản kế hoạch đầu tư" }).waitFor(); await shot("11-profile");
+await page.goto(B + "/quests"); await page.getByText(/Thử thách tháng \d+\/\d{4}/).waitFor(); await shot("12-quests");
+await page.goto(B + "/leaderboard"); await page.getByText("(bạn)").waitFor(); await page.getByText(/Nhóm \d+ người/).waitFor(); await shot("13-league");
+await page.goto(B + "/notifications"); await page.getByText(/Huy hiệu mới/).first().waitFor(); await shot("14-notifications");
+await page.goto(B + "/profile/plan"); await page.getByText("Ẩn số tiền").first().waitFor(); await shot("15-plan");
+await page.goto(B + "/profile/settings"); await page.getByText(/nhắc/i).first().waitFor(); await shot("16-settings");
+// Placement test: one question per unit, answered once, then the result screen.
+await page.goto(B + "/placement/fund-types"); await page.getByRole("link", { name: "Bắt đầu kiểm tra" }).click(); await page.waitForURL("**/test");
+for (let i = 0; i < 12; i++) {
+  if (await page.getByText(/Bạn trả lời đúng \d+\/\d+ câu/).isVisible()) break;
+  const before = await page.locator("main").innerText();
+  await page.locator("button[aria-pressed]").first().click(); await btn("Kiểm tra").click(); await btn("Tiếp tục").click();
+  // Wait until the next question (or the result) has replaced this one.
+  await page.waitForFunction((t) => document.querySelector("main")?.innerText !== t, before);
+}
+await page.getByText(/Bạn trả lời đúng \d+\/\d+ câu/).waitFor(); await shot("17-placement-result");
 await browser.close();
 if (errors.length) { console.error("FAILED:", errors); process.exit(1); }
 console.log("Preview tour OK");

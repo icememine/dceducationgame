@@ -1,8 +1,10 @@
-import { BookOpen, Check, Lock, Star, Trophy } from "lucide-react";
+import { BookOpen, Check, Lock, RotateCcw, Star, Trophy } from "lucide-react";
 import Link from "next/link";
 import { Mascot } from "@/components/mascot";
 import { unitColor } from "@/components/unit-colors";
-import { getCompletedLessonIds, getUserState, pathStatus } from "@/db/queries";
+import { getPathStatus, getUserState } from "@/db/queries";
+import { getLatestPlacement } from "@/features/placement/queries";
+import { getReviewOverview } from "@/features/review/queries";
 import { getUserId } from "@/lib/auth";
 import { cn } from "@/lib/utils";
 
@@ -12,10 +14,24 @@ const ZIG = [0, -56, -80, -56, 0, 56, 80, 56];
 export default async function LearnPage() {
   const userId = await getUserId();
   const { activeSegment } = await getUserState(userId);
-  const status = pathStatus(activeSegment, await getCompletedLessonIds(userId));
+  const [status, review, placement] = await Promise.all([getPathStatus(userId, activeSegment), getReviewOverview(userId), getLatestPlacement(userId, activeSegment.id)]);
+  const fresh = [...status.values()].every((v) => v !== "done");
 
   return (
     <div className="flex flex-col gap-2 pb-8">
+      {review.due > 0 && (
+        <Link href="/review" className="mx-4 mt-4 flex items-center gap-3 rounded-2xl border-2 border-b-4 border-gold bg-gold-soft p-3">
+          <RotateCcw className="h-6 w-6 shrink-0 text-gold-deep" />
+          <span className="flex-1 text-sm"><b>Cần ôn lại: {review.due} câu</b><br />Ôn những câu từng sai để nhớ lâu, hồi thêm tim.</span>
+          <span className="rounded-xl bg-gold px-3 py-1.5 text-sm font-extrabold text-white">Ôn tập</span>
+        </Link>
+      )}
+      {fresh && !placement && activeSegment.id !== "my-plan" && (
+        <Link href={`/placement/${activeSegment.id}`} className="mx-4 mt-4 flex items-center gap-3 rounded-2xl border-2 border-b-4 border-sky bg-sky-soft p-3">
+          <Trophy className="h-6 w-6 shrink-0 text-sky-deep" />
+          <span className="flex-1 text-sm"><b>Đã biết một phần?</b><br />Làm bài kiểm tra xếp lớp để mở sẵn các phần bạn đã nắm.</span>
+        </Link>
+      )}
       {activeSegment.units.map((unit, ui) => {
         const c = unitColor[unit.color];
         const unitLocked = unit.lessons.every((l) => status.get(l.id) === "locked");

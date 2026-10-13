@@ -4,6 +4,7 @@ import { getSegment, lessonsOf, segments } from "@content/index";
 import type { Segment } from "@content/schema";
 import { localDay, regenerateHearts } from "@/features/gamification/engine";
 import { questProgress } from "@/features/gamification/quests";
+import { getPlacementUnlock } from "@/features/placement/queries";
 import { getDb } from "./client";
 import { aiMessages, challengeAttempts, goals, lessonSessions, riskProfiles, userProgress, users, xpEvents } from "./schema";
 
@@ -45,17 +46,25 @@ export async function getCompletedLessonIds(userId: string): Promise<Set<string>
 
 export type NodeStatus = "done" | "current" | "locked";
 
-/** Linear unlocking inside a segment, like Duolingo's path. */
 /**
- * Linear unlock inside a segment. CONTENT_PREVIEW=1 opens every lesson so writers and
- * Compliance can review any lesson directly (staging only; never in production).
+ * Linear unlock inside a segment, like Duolingo's path. Lessons before `unlockIndex` (reached
+ * through the placement test) are open too, without counting as done. CONTENT_PREVIEW=1 opens
+ * every lesson so writers and Compliance can review any lesson directly (staging only).
  */
-export function pathStatus(segment: Segment, completed: Set<string>, preview = process.env.CONTENT_PREVIEW === "1") {
+export function pathStatus(segment: Segment, completed: Set<string>, unlockIndex = 0, preview = process.env.CONTENT_PREVIEW === "1") {
   const ordered = lessonsOf(segment);
   const firstOpen = ordered.findIndex((l) => !completed.has(l.id));
   const status = new Map<string, NodeStatus>();
-  ordered.forEach((l, i) => status.set(l.id, completed.has(l.id) ? "done" : i === firstOpen || preview ? "current" : "locked"));
+  // Placement opens every lesson before the first unit missed, plus that unit's first lesson.
+  const placed = (i: number) => unlockIndex > 0 && i <= unlockIndex;
+  ordered.forEach((l, i) => status.set(l.id, completed.has(l.id) ? "done" : i === firstOpen || placed(i) || preview ? "current" : "locked"));
   return status;
+}
+
+/** Path status for one learner: completed lessons plus any placement unlock in that segment. */
+export async function getPathStatus(userId: string, segment: Segment) {
+  const [completed, unlockIndex] = await Promise.all([getCompletedLessonIds(userId), getPlacementUnlock(userId, segment.id)]);
+  return pathStatus(segment, completed, unlockIndex);
 }
 
 export async function getSegmentProgress(userId: string) {

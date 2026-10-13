@@ -4,8 +4,9 @@ import { Check, FileText, Heart, Sparkles, X } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState, useTransition } from "react";
-import { completeLesson, startLessonSession, submitAnswer, type LessonSummary, type SubmitResult } from "@/actions/lesson";
-import { saveGoal } from "@/actions/user";
+import { completeLesson, startLessonSession, startPlacementSession, startReviewSession, submitAnswer, type LessonSummary, type SubmitResult } from "@/actions/lesson";
+import { saveGoal, setActiveSegment } from "@/actions/user";
+import { badgeInfo } from "@/features/badges/badges";
 import { Mascot } from "@/components/mascot";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -28,8 +29,11 @@ import { TIMING_ROUNDS } from "@/features/simulations/sims";
 import { parseLocaleNumber } from "./grade";
 import type { Answer, ClientChallenge } from "./types";
 
+/** What the player plays: a lesson on the path, a spaced-repetition review, or a placement test. */
+export type PlayerSource = { kind: "lesson"; lessonId: string } | { kind: "review"; items: string[] } | { kind: "placement"; segmentId: string };
+
 type Props = {
-  lessonId: string;
+  source: PlayerSource;
   lessonTitle: string;
   challenges: ClientChallenge[];
   hearts: number;
@@ -69,17 +73,19 @@ function toAnswer(c: ClientChallenge, d: Draft): Answer | null {
  * Wrong answers go to the back of the queue, so a lesson ends only when every graded
  * item has been answered correctly once (the server verifies this on completion).
  */
-export function LessonPlayer({ lessonId, lessonTitle, challenges, hearts: initialHearts, heartsEnabled }: Props) {
+export function LessonPlayer({ source, lessonTitle, challenges, hearts: initialHearts, heartsEnabled }: Props) {
   const router = useRouter();
   const [session, setSession] = useState<{ sessionId: string; isPractice: boolean } | null>(null);
   const started = useRef(false);
   useEffect(() => {
     if (started.current) return; // StrictMode runs effects twice in dev
     started.current = true;
-    startLessonSession(lessonId)
-      .then((s) => ("error" in s ? router.replace("/learn") : setSession(s)))
-      .catch((e: Error) => setError(e.message));
-  }, [lessonId, router]);
+    const begin =
+      source.kind === "lesson" ? startLessonSession(source.lessonId) : source.kind === "review" ? startReviewSession(source.items) : startPlacementSession(source.segmentId);
+    begin.then((s) => ("error" in s ? router.replace("/learn") : setSession(s))).catch((e: Error) => setError(e.message));
+  }, [source, router]);
+  // A placement test asks each question once: wrong answers are not re-queued.
+  const retryWrong = source.kind !== "placement";
   const sessionId = session?.sessionId ?? "";
   const isPractice = session?.isPractice ?? false;
   const [queue, setQueue] = useState(() => challenges.map((_, i) => i));
@@ -118,7 +124,7 @@ export function LessonPlayer({ lessonId, lessonTitle, challenges, hearts: initia
 
   const onPrimary = () => {
     if (!c || !answer) return;
-    if (result) return advance(result.correct === false ? [idx] : []);
+    if (result) return advance(result.correct === false && retryWrong ? [idx] : []);
     if (c.type === "info") {
       markSolved();
       return advance();
@@ -142,7 +148,13 @@ export function LessonPlayer({ lessonId, lessonTitle, challenges, hearts: initia
     });
   };
 
-  if (summary) return <Summary summary={summary} seconds={Math.round((Date.now() - startedAt) / 1000)} onDone={() => router.push("/learn")} />;
+  if (summary) {
+    const onDone = async () => {
+      if (summary.placement) await setActiveSegment(summary.placement.segmentId);
+      router.push("/learn");
+    };
+    return <Summary summary={summary} seconds={Math.round((Date.now() - startedAt) / 1000)} onDone={onDone} />;
+  }
 
   if (outOfHearts) {
     return (
@@ -168,10 +180,11 @@ export function LessonPlayer({ lessonId, lessonTitle, challenges, hearts: initia
         </div>
         {heartsEnabled && !isPractice && <span className="flex items-center gap-1 font-extrabold text-coral"><Heart className="h-5 w-5 fill-current" />{hearts}</span>}
         {isPractice && <span className="rounded-full bg-gold-soft px-2 py-0.5 text-xs font-extrabold text-gold-deep">Ôn tập</span>}
+        {source.kind === "placement" && <span className="rounded-full bg-sky-soft px-2 py-0.5 text-xs font-extrabold text-sky-deep">Xếp lớp</span>}
       </div>
 
       <div className="flex flex-1 flex-col gap-4 overflow-y-auto px-5 pb-6">
-        {solved.has(idx) === false && queue.indexOf(idx) !== pos && (
+        {retryWrong && solved.has(idx) === false && queue.indexOf(idx) !== pos && (
           <p className="text-xs font-extrabold uppercase tracking-widest text-coral">Làm lại câu sai</p>
         )}
         {c.type === "info" && <InfoView c={c} />}
@@ -244,12 +257,25 @@ function Feedback({ result, kind }: { result: SubmitResult | null; kind: string 
 
 function Summary({ summary, seconds, onDone }: { summary: LessonSummary; seconds: number; onDone: () => void }) {
   const p = summary.profile;
+  const pl = summary.placement;
   return (
     <main className="flex flex-1 flex-col justify-between gap-6 p-6">
       <div className="flex flex-col items-center gap-4 text-center">
         {p ? (
           // Risk self-check: the learner confirms the result (framework §5) before moving on.
           <RiskConfirm riskId={p.riskId} result={p.result} />
+        ) : pl ? (
+          <>
+            <Mascot mood={pl.unlockIndex > 0 ? "celebrate" : "study"} size={150} />
+            <h1 className="text-2xl font-extrabold">Bạn trả lời đúng {pl.score}/{pl.total} câu</h1>
+            <p className="text-muted">
+              {pl.unlockIndex === 0
+                ? "Hãy bắt đầu từ bài đầu tiên: nền tảng vững giúp các phần sau dễ hơn."
+                : pl.nextLessonTitle
+                  ? <>Các bài trước đã mở để bạn ôn khi cần. Bắt đầu từ <b>{pl.nextLessonTitle}</b>.</>
+                  : "Bạn đã nắm chắc cả chặng: mọi bài đều đã mở."}
+            </p>
+          </>
         ) : (
           <>
             <Mascot mood={summary.perfect ? "trophy" : "celebrate"} size={150} />
@@ -261,6 +287,20 @@ function Summary({ summary, seconds, onDone }: { summary: LessonSummary; seconds
           <Tile label="Chuỗi" value={`${summary.streak} ngày`} cls="bg-coral" />
           <Tile label="Thời gian" value={`${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, "0")}`} cls="bg-sky" />
         </div>
+        {summary.newBadges.length > 0 && (
+          <div className="flex w-full flex-col gap-2 rounded-2xl border-2 border-gold bg-gold-soft p-3 text-left">
+            <p className="text-sm font-extrabold text-gold-deep">Huy hiệu mới!</p>
+            {summary.newBadges.map((id) => {
+              const b = badgeInfo(id);
+              return b ? (
+                <div key={id} className="flex items-center gap-3">
+                  <Mascot mood={b.mascot} size={40} />
+                  <div><p className="font-extrabold">{b.title}</p><p className="text-xs text-muted">{b.description}</p></div>
+                </div>
+              ) : null;
+            })}
+          </div>
+        )}
       </div>
       {!p && <Button onClick={onDone}>Tiếp tục</Button>}
     </main>

@@ -27,7 +27,8 @@ export async function completeOnboarding(input: z.input<typeof onboardingInput>)
     .update(users)
     .set({ nickname: data.nickname, dailyGoalMinutes: data.dailyGoalMinutes, activeSegmentId: data.segmentId, onboardedAt: new Date() })
     .where(eq(users.id, userId));
-  redirect("/learn");
+  // Learners who already know something can test out of what they know (placement test).
+  redirect(data.segmentId === "my-plan" ? "/learn" : `/placement/${data.segmentId}`);
 }
 
 export async function setActiveSegment(segmentId: string) {
