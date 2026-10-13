@@ -2,7 +2,7 @@
 
 > Tài liệu này được sinh tự động từ `content/outline/`. Sửa ở đó rồi chạy `npm run docs:curriculum`.
 
-**3 chặng · 25 phần · 142 bài · 14 tình huống luyện AI.** 29 bài đã có bản chơi được (✅).
+**3 chặng · 25 phần · 142 bài · 14 tình huống luyện AI.** 104 bài đã có bản chơi được (✅).
 
 ## Triết lý
 
@@ -71,8 +71,8 @@ Trước khi đầu tư, cần biết mình có gì, tiêu gì và có lưới a
 | **B1.2** Tiền thưởng cũng là tiền lương ✅ | Nhận ra tâm lý chia ngăn và có kế hoạch cho các khoản thu ngoài lương. | Câu chuyện, Câu hỏi nhanh, Ra quyết định | Ngày tốt nhất để đầu tư là ngày tiền về tài khoản |
 | **B1.3** Nếu mất việc hôm nay ✅ | Tự tính số tháng mình sống được không cần thu nhập và đặt mục tiêu quỹ tự do sự nghiệp. *Công cụ: Máy tính quỹ tự do sự nghiệp.* | Câu chuyện, Tính nhanh, Tự đánh giá · cam kết | Nếu mất việc hôm nay, bạn có bao nhiêu quyền lựa chọn? |
 | **B1.4** Bao lâu để có 12 tháng quyền lựa chọn ✅ | Chọn mức tích lũy hằng tháng thực tế để đạt quỹ dự phòng. *Công cụ: Máy tính quỹ tự do sự nghiệp.* | Mô phỏng, Đoán số | Nếu mất việc hôm nay, bạn có bao nhiêu quyền lựa chọn? |
-| **B1.5** Đặt tên cho khoản tiền | Tách riêng và đặt tên quỹ dự phòng để nó không bị tiêu lẫn. *Công cụ: Lập kế hoạch mục tiêu.* | Thẻ kiến thức, Tự đánh giá · cam kết | Nếu mất việc hôm nay, bạn có bao nhiêu quyền lựa chọn? |
-| **B1.6** Kiểm tra: Tiền của tôi | Ôn lại cả phần. | Kiểm tra | Nếu mất việc hôm nay, bạn có bao nhiêu quyền lựa chọn? · Ngày tốt nhất để đầu tư là ngày tiền về tài khoản · Kế hoạch du học cho con: bài toán tài chính gia đình (anh Nam) |
+| **B1.5** Đặt tên cho khoản tiền ✅ | Tách riêng và đặt tên quỹ dự phòng để nó không bị tiêu lẫn. *Công cụ: Lập kế hoạch mục tiêu.* | Thẻ kiến thức, Tự đánh giá · cam kết | Nếu mất việc hôm nay, bạn có bao nhiêu quyền lựa chọn? |
+| **B1.6** Kiểm tra: Tiền của tôi ✅ | Ôn lại cả phần. | Kiểm tra | Nếu mất việc hôm nay, bạn có bao nhiêu quyền lựa chọn? · Ngày tốt nhất để đầu tư là ngày tiền về tài khoản · Kế hoạch du học cho con: bài toán tài chính gia đình (anh Nam) |
 
 <details><summary>Số liệu và ý chính cần dạy</summary>
 
@@ -93,9 +93,9 @@ Biết mình chịu được biến động đến đâu trước khi chọn b�
 | **B2.1** Rủi ro nghĩa là gì với bạn? ✅ | Phân biệt biến động giá, mất vốn và không đạt mục tiêu. | Thẻ kiến thức, Câu hỏi nhanh | FAQ 9, 23 |
 | **B2.2** Muốn chịu rủi ro và có thể chịu rủi ro ✅ | Hiểu vì sao khả năng tài chính và thời gian giới hạn mức rủi ro, dù mình rất muốn mạo hiểm. | Thẻ kiến thức, Tình huống | Kế hoạch du học cho con nên bắt đầu từ đâu? · FAQ 123 |
 | **B2.3** Đánh giá mức độ chấp nhận rủi ro ✅ | Làm 7 câu theo Risk Scoring Framework v2.3, nhận một trong 5 hồ sơ (Rất thận trọng → Rất mạo hiểm) và xác nhận kết quả. | Tự đánh giá · cam kết | Bộ Đánh Giá Mức Độ Chấp Nhận Rủi Ro Nhà Đầu Tư (v2.3, 12/2025) · Nếu mất việc hôm nay, bạn có bao nhiêu quyền lựa chọn? |
-| **B2.4** Danh mục của bạn vừa giảm 20% | Trải nghiệm cảm giác thua lỗ tạm thời và thấy điều gì xảy ra nếu kiên nhẫn. *Công cụ: Mô phỏng ba phản ứng khi quỹ giảm.* | Mô phỏng, Ra quyết định | Kế hoạch du học cho con: bài toán tài chính gia đình (anh Nam) |
+| **B2.4** Danh mục của bạn vừa giảm 20% ✅ | Trải nghiệm cảm giác thua lỗ tạm thời và thấy điều gì xảy ra nếu kiên nhẫn. *Công cụ: Mô phỏng ba phản ứng khi quỹ giảm.* | Mô phỏng, Ra quyết định | Kế hoạch du học cho con: bài toán tài chính gia đình (anh Nam) |
 | **B2.5** Rủi ro lớn nhất là chính mình ✅ | Nhận diện FOMO, bán tháo và "mua cao bán thấp". | Câu chuyện, Câu hỏi nhanh, Tìm lỗi sai | DCA là gì? Đầu tư đều đặn và lãi kép · Investor Day 2026: ba điểm nhà đầu tư mới cần quan tâm |
-| **B2.6** Hồ sơ của tôi và lộ trình tiếp theo | Đọc kết quả hồ sơ, hiểu vì sao bị giới hạn, biết khi nào cần làm lại (mỗi 12 tháng hoặc khi hoàn cảnh đổi). | Tự đánh giá · cam kết, Thẻ kiến thức | Bộ Đánh Giá Mức Độ Chấp Nhận Rủi Ro Nhà Đầu Tư (v2.3, 12/2025) |
+| **B2.6** Hồ sơ của tôi và lộ trình tiếp theo ✅ | Đọc kết quả hồ sơ, hiểu vì sao bị giới hạn, biết khi nào cần làm lại (mỗi 12 tháng hoặc khi hoàn cảnh đổi). | Tự đánh giá · cam kết, Thẻ kiến thức | Bộ Đánh Giá Mức Độ Chấp Nhận Rủi Ro Nhà Đầu Tư (v2.3, 12/2025) |
 
 <details><summary>Số liệu và ý chính cần dạy</summary>
 
@@ -112,18 +112,18 @@ Một kế hoạch bắt đầu từ số tiền cần có và thời điểm c�
 
 | Bài | Mục tiêu | Dạng | Nguồn |
 |---|---|---|---|
-| **B3.1** Bốn con số của mọi kế hoạch | Trả lời được: cần bao nhiêu, còn bao lâu, đã có bao nhiêu, mỗi tháng góp được bao nhiêu. | Thẻ kiến thức, Câu hỏi nhanh | Kế hoạch du học cho con nên bắt đầu từ đâu? · Làm sao đạt 1 tỷ đồng đầu tiên |
+| **B3.1** Bốn con số của mọi kế hoạch ✅ | Trả lời được: cần bao nhiêu, còn bao lâu, đã có bao nhiêu, mỗi tháng góp được bao nhiêu. | Thẻ kiến thức, Câu hỏi nhanh | Kế hoạch du học cho con nên bắt đầu từ đâu? · Làm sao đạt 1 tỷ đồng đầu tiên |
 | **B3.2** 1 tỷ đồng đầu tiên ✅ | Tính được thời gian đạt 1 tỷ với mức góp của mình. *Công cụ: Lập kế hoạch mục tiêu.* | Đoán số, Mô phỏng | Làm sao đạt 1 tỷ đồng đầu tiên |
-| **B3.3** Vì sao cột mốc 1 tỷ có ý nghĩa | Hiểu giai đoạn tài sản bắt đầu "làm việc" và vì sao nhiều người bỏ cuộc trước đó. | Câu chuyện, Thẻ kiến thức, Câu hỏi nhanh | Ý nghĩa cột mốc 1 tỷ đồng đầu tiên |
+| **B3.3** Vì sao cột mốc 1 tỷ có ý nghĩa ✅ | Hiểu giai đoạn tài sản bắt đầu "làm việc" và vì sao nhiều người bỏ cuộc trước đó. | Câu chuyện, Thẻ kiến thức, Câu hỏi nhanh | Ý nghĩa cột mốc 1 tỷ đồng đầu tiên |
 | **B3.4** Du học: con số thật ✅ | Ước tính chi phí du học tại thời điểm nhập học, có tính lạm phát học phí và tỷ giá. *Công cụ: Ước tính chi phí du học.* | Đoán số, Mô phỏng | Kế hoạch du học cho con nên bắt đầu từ đâu? · Chiếc vali được xếp trong mười năm |
-| **B3.5** Chiếc vali xếp trong mười năm | Thấy bắt đầu sớm làm giảm mạnh số tiền phải góp mỗi tháng. *Công cụ: Lập kế hoạch mục tiêu.* | Câu chuyện, Mô phỏng, Câu hỏi nhanh | Chiếc vali được xếp trong mười năm · Kế hoạch du học cho con nên bắt đầu từ đâu? |
-| **B3.6** Có nhà đất rồi, đã đủ cho con đi học chưa? | Đánh giá một tài sản theo ba tiêu chí: tăng trưởng theo kịp chi phí, thanh khoản, có tiền đúng lúc. | Tình huống, Ra quyết định | Kế hoạch du học cho con nên bắt đầu từ đâu? |
-| **B3.7** Thiếu tiền: tăng rủi ro hay điều chỉnh mục tiêu? | Chọn cách bù thiếu hụt mà không đẩy rủi ro vượt khả năng chịu đựng. | Tình huống, Ra quyết định | Kế hoạch du học cho con nên bắt đầu từ đâu? · FAQ 22 |
+| **B3.5** Chiếc vali xếp trong mười năm ✅ | Thấy bắt đầu sớm làm giảm mạnh số tiền phải góp mỗi tháng. *Công cụ: Lập kế hoạch mục tiêu.* | Câu chuyện, Mô phỏng, Câu hỏi nhanh | Chiếc vali được xếp trong mười năm · Kế hoạch du học cho con nên bắt đầu từ đâu? |
+| **B3.6** Có nhà đất rồi, đã đủ cho con đi học chưa? ✅ | Đánh giá một tài sản theo ba tiêu chí: tăng trưởng theo kịp chi phí, thanh khoản, có tiền đúng lúc. | Tình huống, Ra quyết định | Kế hoạch du học cho con nên bắt đầu từ đâu? |
+| **B3.7** Thiếu tiền: tăng rủi ro hay điều chỉnh mục tiêu? ✅ | Chọn cách bù thiếu hụt mà không đẩy rủi ro vượt khả năng chịu đựng. | Tình huống, Ra quyết định | Kế hoạch du học cho con nên bắt đầu từ đâu? · FAQ 22 |
 | **B3.8** Muộn vẫn hơn không: chuẩn bị nghỉ hưu ✅ | Hiểu chi phí của sự trì hoãn và các cách tích lũy hưu trí. *Công cụ: Máy tính lãi kép.* | Câu chuyện, Mô phỏng, Câu hỏi nhanh | Câu chuyện về nhà đầu tư 60 tuổi · FAQ 41, 130 |
-| **B3.9** Gấp đôi vốn trong 5 năm? | Tính lợi nhuận cần thiết cho một mục tiêu và nhận ra khi nào mục tiêu đòi hỏi rủi ro quá lớn. | Tính nhanh, Câu hỏi nhanh | Kế hoạch du học cho con: bài toán tài chính gia đình (anh Nam) · FAQ 21 |
-| **B3.10** Mua nhà, mua xe: mục tiêu có ngày cố định | Chọn mức biến động phù hợp cho khoản tiền cần dùng vào một ngày cụ thể. | Tình huống, Câu hỏi nhanh | FAQ 22, 13 |
-| **B3.11** Lập kế hoạch của tôi | Tạo ít nhất một mục tiêu với bốn con số và lưu vào hồ sơ. *Công cụ: Lập kế hoạch mục tiêu.* | Tự đánh giá · cam kết, Mô phỏng | Làm sao đạt 1 tỷ đồng đầu tiên · Kế hoạch du học cho con nên bắt đầu từ đâu? |
-| **B3.12** Kiểm tra: Mục tiêu của tôi | Ôn lại cả phần. | Kiểm tra | Làm sao đạt 1 tỷ đồng đầu tiên · Chiếc vali được xếp trong mười năm · Câu chuyện về nhà đầu tư 60 tuổi |
+| **B3.9** Gấp đôi vốn trong 5 năm? ✅ | Tính lợi nhuận cần thiết cho một mục tiêu và nhận ra khi nào mục tiêu đòi hỏi rủi ro quá lớn. | Tính nhanh, Câu hỏi nhanh | Kế hoạch du học cho con: bài toán tài chính gia đình (anh Nam) · FAQ 21 |
+| **B3.10** Mua nhà, mua xe: mục tiêu có ngày cố định ✅ | Chọn mức biến động phù hợp cho khoản tiền cần dùng vào một ngày cụ thể. | Tình huống, Câu hỏi nhanh | FAQ 22, 13 |
+| **B3.11** Lập kế hoạch của tôi ✅ | Tạo ít nhất một mục tiêu với bốn con số và lưu vào hồ sơ. *Công cụ: Lập kế hoạch mục tiêu.* | Tự đánh giá · cam kết, Mô phỏng | Làm sao đạt 1 tỷ đồng đầu tiên · Kế hoạch du học cho con nên bắt đầu từ đâu? |
+| **B3.12** Kiểm tra: Mục tiêu của tôi ✅ | Ôn lại cả phần. | Kiểm tra | Làm sao đạt 1 tỷ đồng đầu tiên · Chiếc vali được xếp trong mười năm · Câu chuyện về nhà đầu tư 60 tuổi |
 
 <details><summary>Số liệu và ý chính cần dạy</summary>
 
@@ -147,15 +147,15 @@ Thời gian là biến số mạnh nhất mà nhà đầu tư cá nhân kiểm s
 
 | Bài | Mục tiêu | Dạng | Nguồn |
 |---|---|---|---|
-| **B4.1** Lãi sinh lãi | Giải thích lãi kép và nhận biết khi nào lãi kép bị ngắt. | Thẻ kiến thức, Câu hỏi nhanh | FAQ 38 |
+| **B4.1** Lãi sinh lãi ✅ | Giải thích lãi kép và nhận biết khi nào lãi kép bị ngắt. | Thẻ kiến thức, Câu hỏi nhanh | FAQ 38 |
 | **B4.2** 1 tỷ trong 30 năm ✅ | Đoán rồi so sánh với con số thật để cảm nhận đường cong lãi kép. *Công cụ: Máy tính lãi kép.* | Đoán số, Mô phỏng | Kế hoạch du học cho con: bài toán tài chính gia đình (anh Nam) |
-| **B4.3** 5 triệu mỗi tuần | Thấy góp nhỏ đều đặn trong thời gian dài tạo ra kết quả lớn. *Công cụ: Máy tính lãi kép.* | Đoán số, Mô phỏng | DCA là gì? Đầu tư đều đặn và lãi kép |
-| **B4.4** Bắt đầu năm 25 tuổi hay 45 tuổi | So sánh hai người cùng mức góp, khác thời điểm bắt đầu. *Công cụ: Máy tính lãi kép.* | Mô phỏng, Câu hỏi nhanh | Câu chuyện về nhà đầu tư 60 tuổi · DCA là gì? Đầu tư đều đặn và lãi kép |
-| **B4.5** Ba năm đầu: lãi kép chưa thấy đâu | Chuẩn bị tâm lý cho giai đoạn đầu khi tài khoản chủ yếu là vốn của mình. | Câu chuyện, Đoán số | 10 năm đầu tư đều đặn vào DCDS · Ý nghĩa cột mốc 1 tỷ đồng đầu tiên |
-| **B4.6** Tăng mức góp 5% mỗi năm | Thấy tác dụng của việc tăng dần số tiền góp theo thu nhập. *Công cụ: Lập kế hoạch mục tiêu.* | Mô phỏng, Tính nhanh | 10 năm đầu tư đều đặn vào DCDS · Làm sao đạt 1 tỷ đồng đầu tiên |
-| **B4.7** Phí cũng có lãi kép | Thấy chênh lệch phí nhỏ mỗi năm thành khoảng lớn sau 20 năm. *Công cụ: Tác động của phí theo thời gian.* | Mô phỏng, Câu hỏi nhanh | W5 Bài 2 · Quỹ chỉ số · W5 Bài 3 · Quỹ chủ động vs thụ động · FAQ 125 |
-| **B4.8** Cổ tức và tái đầu tư | Không cộng trùng cổ tức khi tính lợi nhuận và biết khi nào cần tự tái đầu tư. | Thẻ kiến thức, Tìm lỗi sai | FAQ 39, 40 |
-| **B4.9** Kiểm tra: Lãi kép | Ôn lại cả phần. | Kiểm tra | DCA là gì? Đầu tư đều đặn và lãi kép · 10 năm đầu tư đều đặn vào DCDS · FAQ 38 |
+| **B4.3** 5 triệu mỗi tuần ✅ | Thấy góp nhỏ đều đặn trong thời gian dài tạo ra kết quả lớn. *Công cụ: Máy tính lãi kép.* | Đoán số, Mô phỏng | DCA là gì? Đầu tư đều đặn và lãi kép |
+| **B4.4** Bắt đầu năm 25 tuổi hay 45 tuổi ✅ | So sánh hai người cùng mức góp, khác thời điểm bắt đầu. *Công cụ: Máy tính lãi kép.* | Mô phỏng, Câu hỏi nhanh | Câu chuyện về nhà đầu tư 60 tuổi · DCA là gì? Đầu tư đều đặn và lãi kép |
+| **B4.5** Ba năm đầu: lãi kép chưa thấy đâu ✅ | Chuẩn bị tâm lý cho giai đoạn đầu khi tài khoản chủ yếu là vốn của mình. | Câu chuyện, Đoán số | 10 năm đầu tư đều đặn vào DCDS · Ý nghĩa cột mốc 1 tỷ đồng đầu tiên |
+| **B4.6** Tăng mức góp 5% mỗi năm ✅ | Thấy tác dụng của việc tăng dần số tiền góp theo thu nhập. *Công cụ: Lập kế hoạch mục tiêu.* | Mô phỏng, Tính nhanh | 10 năm đầu tư đều đặn vào DCDS · Làm sao đạt 1 tỷ đồng đầu tiên |
+| **B4.7** Phí cũng có lãi kép ✅ | Thấy chênh lệch phí nhỏ mỗi năm thành khoảng lớn sau 20 năm. *Công cụ: Tác động của phí theo thời gian.* | Mô phỏng, Câu hỏi nhanh | W5 Bài 2 · Quỹ chỉ số · W5 Bài 3 · Quỹ chủ động vs thụ động · FAQ 125 |
+| **B4.8** Cổ tức và tái đầu tư ✅ | Không cộng trùng cổ tức khi tính lợi nhuận và biết khi nào cần tự tái đầu tư. | Thẻ kiến thức, Tìm lỗi sai | FAQ 39, 40 |
+| **B4.9** Kiểm tra: Lãi kép ✅ | Ôn lại cả phần. | Kiểm tra | DCA là gì? Đầu tư đều đặn và lãi kép · 10 năm đầu tư đều đặn vào DCDS · FAQ 38 |
 
 <details><summary>Số liệu và ý chính cần dạy</summary>
 
@@ -177,14 +177,14 @@ Một kế hoạch chỉ có giá trị nếu duy trì được qua các nhịp 
 | Bài | Mục tiêu | Dạng | Nguồn |
 |---|---|---|---|
 | **B5.1** Không ai đợi giá xăng giảm mới đổ xăng ✅ | Giải thích DCA bằng một ví dụ đời thường. | Câu chuyện, Câu hỏi nhanh | Không ai đợi giá xăng giảm mới đổ xăng · DCA là gì? Đầu tư đều đặn và lãi kép |
-| **B5.2** Giá vốn bình quân | Tự tính số CCQ mua được và giá vốn bình quân qua nhiều kỳ. *Công cụ: Mô phỏng DCA và đầu tư một lần.* | Tính nhanh, Mô phỏng | DCA là gì? Đầu tư đều đặn và lãi kép · Không ai đợi giá xăng giảm mới đổ xăng |
-| **B5.3** DCA hay đầu tư một lần? | Chọn cách giải ngân phù hợp với nguồn tiền và khả năng chịu biến động. *Công cụ: Mô phỏng DCA và đầu tư một lần.* | Thẻ kiến thức, Tình huống | FAQ 3, 2, 13, 18 |
-| **B5.4** Ngày tốt nhất để đầu tư | Hiểu vì sao giảm thời gian tiền nằm chờ quan trọng hơn chọn ngày đẹp. | Trò chơi dữ liệu, Câu hỏi nhanh | Ngày tốt nhất để đầu tư là ngày tiền về tài khoản |
+| **B5.2** Giá vốn bình quân ✅ | Tự tính số CCQ mua được và giá vốn bình quân qua nhiều kỳ. *Công cụ: Mô phỏng DCA và đầu tư một lần.* | Tính nhanh, Mô phỏng | DCA là gì? Đầu tư đều đặn và lãi kép · Không ai đợi giá xăng giảm mới đổ xăng |
+| **B5.3** DCA hay đầu tư một lần? ✅ | Chọn cách giải ngân phù hợp với nguồn tiền và khả năng chịu biến động. *Công cụ: Mô phỏng DCA và đầu tư một lần.* | Thẻ kiến thức, Tình huống | FAQ 3, 2, 13, 18 |
+| **B5.4** Ngày tốt nhất để đầu tư ✅ | Hiểu vì sao giảm thời gian tiền nằm chờ quan trọng hơn chọn ngày đẹp. | Trò chơi dữ liệu, Câu hỏi nhanh | Ngày tốt nhất để đầu tư là ngày tiền về tài khoản |
 | **B5.5** Trò chơi Nhà tiên tri ✅ | Tự chơi chọn ngày mua và thấy chênh lệch chỉ vài phần trăm sau 22 năm. *Công cụ: Trò chơi Nhà tiên tri (chọn ngày mua).* | Trò chơi dữ liệu | Không ai đợi giá xăng giảm mới đổ xăng · Ngày tốt nhất để đầu tư là ngày tiền về tài khoản |
 | **B5.6** Ba phản ứng khi quỹ giảm ✅ | So sánh kiên trì, tạm dừng và bán rồi mua lại trên dữ liệu 10 năm. *Công cụ: Mô phỏng ba phản ứng khi quỹ giảm.* | Ra quyết định, Trò chơi dữ liệu | 10 năm đầu tư đều đặn vào DCDS |
-| **B5.7** Điều bạn kiểm soát được | Phân loại các yếu tố kiểm soát được và không kiểm soát được. | Câu hỏi nhanh, Tự đánh giá · cam kết | 10 năm đầu tư đều đặn vào DCDS |
-| **B5.8** DCA linh hoạt và DCA với ETF | Biết có thể đổi số tiền góp và áp dụng tích lũy định kỳ cho ETF. | Thẻ kiến thức, Câu hỏi nhanh | FAQ 129, 7 |
-| **B5.9** Kiểm tra: Kỷ luật | Ôn lại cả phần. | Kiểm tra | Không ai đợi giá xăng giảm mới đổ xăng · Ngày tốt nhất để đầu tư là ngày tiền về tài khoản · 10 năm đầu tư đều đặn vào DCDS |
+| **B5.7** Điều bạn kiểm soát được ✅ | Phân loại các yếu tố kiểm soát được và không kiểm soát được. | Câu hỏi nhanh, Tự đánh giá · cam kết | 10 năm đầu tư đều đặn vào DCDS |
+| **B5.8** DCA linh hoạt và DCA với ETF ✅ | Biết có thể đổi số tiền góp và áp dụng tích lũy định kỳ cho ETF. | Thẻ kiến thức, Câu hỏi nhanh | FAQ 129, 7 |
+| **B5.9** Kiểm tra: Kỷ luật ✅ | Ôn lại cả phần. | Kiểm tra | Không ai đợi giá xăng giảm mới đổ xăng · Ngày tốt nhất để đầu tư là ngày tiền về tài khoản · 10 năm đầu tư đều đặn vào DCDS |
 
 <details><summary>Số liệu và ý chính cần dạy</summary>
 
@@ -205,14 +205,14 @@ Hiểu thị trường vận hành thế nào để không hoảng loạn và kh
 
 | Bài | Mục tiêu | Dạng | Nguồn |
 |---|---|---|---|
-| **B6.1** Thị trường chứng khoán đi cùng nền kinh tế | Giải thích vì sao thị trường tăng trưởng dài hạn theo lợi nhuận doanh nghiệp và kinh tế. | Thẻ kiến thức, Câu hỏi nhanh | Investor Day 2026: ba điểm nhà đầu tư mới cần quan tâm · Câu chuyện về nhà đầu tư 60 tuổi |
-| **B6.2** Chỉ một phần nhỏ cổ phiếu dẫn dắt | Hiểu vì sao chọn đúng cổ phiếu khó và quỹ đa dạng hóa giúp gì. | Thẻ kiến thức, Đoán số | DCA là gì? Đầu tư đều đặn và lãi kép · Investor Day 2026: ba điểm nhà đầu tư mới cần quan tâm |
-| **B6.3** Vàng, tiết kiệm hay chứng khoán? | So sánh các kênh trên cùng khung thời gian và hiểu kết quả phụ thuộc thời điểm. | Câu chuyện, Câu hỏi nhanh | Đầu tư thế nào mà không cần đoán từng nhịp thị trường? |
-| **B6.4** Có nên chờ thêm? | Phân biệt thận trọng hợp lý (tiền cần trong 1–2 năm) với chờ vô thời hạn. | Câu chuyện, Ra quyết định | Thị trường còn nhiều biến số, có nên tiếp tục chờ? |
+| **B6.1** Thị trường chứng khoán đi cùng nền kinh tế ✅ | Giải thích vì sao thị trường tăng trưởng dài hạn theo lợi nhuận doanh nghiệp và kinh tế. | Thẻ kiến thức, Câu hỏi nhanh | Investor Day 2026: ba điểm nhà đầu tư mới cần quan tâm · Câu chuyện về nhà đầu tư 60 tuổi |
+| **B6.2** Chỉ một phần nhỏ cổ phiếu dẫn dắt ✅ | Hiểu vì sao chọn đúng cổ phiếu khó và quỹ đa dạng hóa giúp gì. | Thẻ kiến thức, Đoán số | DCA là gì? Đầu tư đều đặn và lãi kép · Investor Day 2026: ba điểm nhà đầu tư mới cần quan tâm |
+| **B6.3** Vàng, tiết kiệm hay chứng khoán? ✅ | So sánh các kênh trên cùng khung thời gian và hiểu kết quả phụ thuộc thời điểm. | Câu chuyện, Câu hỏi nhanh | Đầu tư thế nào mà không cần đoán từng nhịp thị trường? |
+| **B6.4** Có nên chờ thêm? ✅ | Phân biệt thận trọng hợp lý (tiền cần trong 1–2 năm) với chờ vô thời hạn. | Câu chuyện, Ra quyết định | Thị trường còn nhiều biến số, có nên tiếp tục chờ? |
 | **B6.5** Sell in May có đúng ở Việt Nam? ✅ | Kiểm tra một quy tắc truyền miệng bằng dữ liệu. *Công cụ: Bản đồ lợi nhuận theo tháng.* | Trò chơi dữ liệu, Câu hỏi nhanh | Câu chuyện "Sell in May" tại thị trường Việt Nam |
-| **B6.6** Vì sao quỹ đi khác chỉ số | Giải thích vì sao thị trường giảm mà NAV quỹ tăng, hoặc vừa mua đã thấy âm. | Thẻ kiến thức, Hồ sơ hỗ trợ | FAQ 37, 87 |
-| **B6.7** Sau một năm thua lỗ | Đánh giá một năm quỹ giảm hoặc tăng chậm hơn quỹ khác mà không phản ứng vội. | Tình huống, Ra quyết định | FAQ 24, 121 |
-| **B6.8** Kiểm tra: Thị trường | Ôn lại cả phần. | Kiểm tra | Đầu tư thế nào mà không cần đoán từng nhịp thị trường? · Câu chuyện "Sell in May" tại thị trường Việt Nam · Thị trường còn nhiều biến số, có nên tiếp tục chờ? |
+| **B6.6** Vì sao quỹ đi khác chỉ số ✅ | Giải thích vì sao thị trường giảm mà NAV quỹ tăng, hoặc vừa mua đã thấy âm. | Thẻ kiến thức, Hồ sơ hỗ trợ | FAQ 37, 87 |
+| **B6.7** Sau một năm thua lỗ ✅ | Đánh giá một năm quỹ giảm hoặc tăng chậm hơn quỹ khác mà không phản ứng vội. | Tình huống, Ra quyết định | FAQ 24, 121 |
+| **B6.8** Kiểm tra: Thị trường ✅ | Ôn lại cả phần. | Kiểm tra | Đầu tư thế nào mà không cần đoán từng nhịp thị trường? · Câu chuyện "Sell in May" tại thị trường Việt Nam · Thị trường còn nhiều biến số, có nên tiếp tục chờ? |
 
 <details><summary>Số liệu và ý chính cần dạy</summary>
 
@@ -232,13 +232,13 @@ Cầu nối sang chặng Hiểu quỹ: tỷ trọng cổ phiếu và trái phi�
 
 | Bài | Mục tiêu | Dạng | Nguồn |
 |---|---|---|---|
-| **B7.1** Nhiều quỹ chưa chắc tốt hơn | Hiểu mỗi quỹ đã đa dạng hóa sẵn và tỷ trọng mới là điều quan trọng. | Thẻ kiến thức, Câu hỏi nhanh | Đầu tư thế nào mà không cần đoán từng nhịp thị trường? |
-| **B7.2** Quy tắc 100 trừ tuổi | Tính tỷ trọng cổ phiếu tham khảo và hiểu giới hạn của quy tắc. *Công cụ: Phân bổ theo quy tắc 100 − tuổi.* | Tính nhanh, Mô phỏng | Đầu tư thế nào mà không cần đoán từng nhịp thị trường? |
-| **B7.3** Ba chân dung nhà đầu tư | Ghép chân dung với khung phân bổ tham khảo. | Câu hỏi nhanh, Tình huống | Đầu tư thế nào mà không cần đoán từng nhịp thị trường? |
-| **B7.4** Công thức 60/40 | Hiểu danh mục 60% cổ phiếu, 40% trái phiếu và vì sao vẫn dùng được ở tuổi 60. *Công cụ: Danh mục thử nghiệm.* | Thẻ kiến thức, Mô phỏng | Đầu tư thế nào mà không cần đoán từng nhịp thị trường? · W5 Bài 5 · Quỹ cân bằng nâng cao |
-| **B7.5** Càng gần ngày cần tiền | Lập lộ trình giảm dần tỷ trọng tài sản biến động khi gần mục tiêu. *Công cụ: Lập kế hoạch mục tiêu.* | Thẻ kiến thức, Mô phỏng | Kế hoạch du học cho con nên bắt đầu từ đâu? · Chiếc vali được xếp trong mười năm · FAQ 13 |
-| **B7.6** Bản kế hoạch đầu tư của tôi | Ghép hồ sơ rủi ro, mục tiêu và phân bổ thành một bản kế hoạch có thể lưu và chia sẻ. *Công cụ: Danh mục thử nghiệm.* | Tự đánh giá · cam kết, Mô phỏng | Đầu tư thế nào mà không cần đoán từng nhịp thị trường? · Làm sao đạt 1 tỷ đồng đầu tiên |
-| **B7.7** Kiểm tra cuối chặng: Hiểu mình | Đạt ≥ 80% để nhận chứng nhận "Hiểu mình". | Kiểm tra | Đầu tư thế nào mà không cần đoán từng nhịp thị trường? · 10 năm đầu tư đều đặn vào DCDS · Làm sao đạt 1 tỷ đồng đầu tiên |
+| **B7.1** Nhiều quỹ chưa chắc tốt hơn ✅ | Hiểu mỗi quỹ đã đa dạng hóa sẵn và tỷ trọng mới là điều quan trọng. | Thẻ kiến thức, Câu hỏi nhanh | Đầu tư thế nào mà không cần đoán từng nhịp thị trường? |
+| **B7.2** Quy tắc 100 trừ tuổi ✅ | Tính tỷ trọng cổ phiếu tham khảo và hiểu giới hạn của quy tắc. *Công cụ: Phân bổ theo quy tắc 100 − tuổi.* | Tính nhanh, Mô phỏng | Đầu tư thế nào mà không cần đoán từng nhịp thị trường? |
+| **B7.3** Ba chân dung nhà đầu tư ✅ | Ghép chân dung với khung phân bổ tham khảo. | Câu hỏi nhanh, Tình huống | Đầu tư thế nào mà không cần đoán từng nhịp thị trường? |
+| **B7.4** Công thức 60/40 ✅ | Hiểu danh mục 60% cổ phiếu, 40% trái phiếu và vì sao vẫn dùng được ở tuổi 60. *Công cụ: Danh mục thử nghiệm.* | Thẻ kiến thức, Mô phỏng | Đầu tư thế nào mà không cần đoán từng nhịp thị trường? · W5 Bài 5 · Quỹ cân bằng nâng cao |
+| **B7.5** Càng gần ngày cần tiền ✅ | Lập lộ trình giảm dần tỷ trọng tài sản biến động khi gần mục tiêu. *Công cụ: Lập kế hoạch mục tiêu.* | Thẻ kiến thức, Mô phỏng | Kế hoạch du học cho con nên bắt đầu từ đâu? · Chiếc vali được xếp trong mười năm · FAQ 13 |
+| **B7.6** Bản kế hoạch đầu tư của tôi ✅ | Ghép hồ sơ rủi ro, mục tiêu và phân bổ thành một bản kế hoạch có thể lưu và chia sẻ. *Công cụ: Danh mục thử nghiệm.* | Tự đánh giá · cam kết, Mô phỏng | Đầu tư thế nào mà không cần đoán từng nhịp thị trường? · Làm sao đạt 1 tỷ đồng đầu tiên |
+| **B7.7** Kiểm tra cuối chặng: Hiểu mình ✅ | Đạt ≥ 80% để nhận chứng nhận "Hiểu mình". | Kiểm tra | Đầu tư thế nào mà không cần đoán từng nhịp thị trường? · 10 năm đầu tư đều đặn vào DCDS · Làm sao đạt 1 tỷ đồng đầu tiên |
 
 <details><summary>Số liệu và ý chính cần dạy</summary>
 
@@ -262,13 +262,13 @@ Nền tảng chung cho mọi loại quỹ: sở hữu gì, giá tính thế nào
 | Bài | Mục tiêu | Dạng | Nguồn |
 |---|---|---|---|
 | **C1.1** Góp chung, chuyên gia quản lý ✅ | Giải thích quỹ mở và chứng chỉ quỹ bằng lời của mình. | Thẻ kiến thức, Câu hỏi nhanh | FAQ 134 |
-| **C1.2** NAV và NAV/CCQ | Tính NAV/CCQ và số CCQ mua được. | Thẻ kiến thức, Tính nhanh | FAQ 6, 19 |
-| **C1.3** NAV cao không có nghĩa là đắt | Tránh so sánh quỹ bằng NAV/CCQ. | Tìm lỗi sai, Câu hỏi nhanh | FAQ 16 |
-| **C1.4** Lợi nhuận đến từ đâu | Kể ra các nguồn lợi nhuận ở cấp quỹ và cấp nhà đầu tư. | Thẻ kiến thức, Câu hỏi nhanh | FAQ 8 |
-| **C1.5** Năm loại rủi ro | Ghép mỗi loại rủi ro với ví dụ. | Câu hỏi nhanh | FAQ 9 |
+| **C1.2** NAV và NAV/CCQ ✅ | Tính NAV/CCQ và số CCQ mua được. | Thẻ kiến thức, Tính nhanh | FAQ 6, 19 |
+| **C1.3** NAV cao không có nghĩa là đắt ✅ | Tránh so sánh quỹ bằng NAV/CCQ. | Tìm lỗi sai, Câu hỏi nhanh | FAQ 16 |
+| **C1.4** Lợi nhuận đến từ đâu ✅ | Kể ra các nguồn lợi nhuận ở cấp quỹ và cấp nhà đầu tư. | Thẻ kiến thức, Câu hỏi nhanh | FAQ 8 |
+| **C1.5** Năm loại rủi ro ✅ | Ghép mỗi loại rủi ro với ví dụ. | Câu hỏi nhanh | FAQ 9 |
 | **C1.6** Ai bảo vệ tiền của bạn ✅ | Nêu vai trò ngân hàng giám sát, kiểm toán, UBCKNN, ban đại diện quỹ, và giới hạn của chúng. | Thẻ kiến thức, Câu hỏi nhanh, Tình huống | W5 Bài 2 · Quỹ chỉ số · FAQ 4, 103 |
-| **C1.7** Quỹ mở, ETF hay tự mua cổ phiếu | So sánh ba cách tham gia thị trường theo chi phí, thời gian, rủi ro lựa chọn, minh bạch. | Câu hỏi nhanh, Thẻ kiến thức | W5 Bài 2 · Quỹ chỉ số · FAQ 30 |
-| **C1.8** Kiểm tra: Quỹ 101 | Ôn lại cả phần. | Kiểm tra | W5 Bài 2 · Quỹ chỉ số · FAQ 9, 134 |
+| **C1.7** Quỹ mở, ETF hay tự mua cổ phiếu ✅ | So sánh ba cách tham gia thị trường theo chi phí, thời gian, rủi ro lựa chọn, minh bạch. | Câu hỏi nhanh, Thẻ kiến thức | W5 Bài 2 · Quỹ chỉ số · FAQ 30 |
+| **C1.8** Kiểm tra: Quỹ 101 ✅ | Ôn lại cả phần. | Kiểm tra | W5 Bài 2 · Quỹ chỉ số · FAQ 9, 134 |
 
 <details><summary>Số liệu và ý chính cần dạy</summary>
 
@@ -289,9 +289,9 @@ Lớp đệm thanh khoản: nơi cho tiền dự phòng và tiền chờ giải 
 | Bài | Mục tiêu | Dạng | Nguồn |
 |---|---|---|---|
 | **C2.1** Khi tiền mặt cũng sinh lời ✅ | Nêu MMF đầu tư vào đâu và mục tiêu của nó. | Thẻ kiến thức, Câu hỏi nhanh | W5 Bài 1 · Quỹ thị trường tiền tệ |
-| **C2.2** MMF hay tiền gửi kỳ hạn ngắn | So sánh rủi ro vốn, thanh khoản và lợi suất của hai lựa chọn. | Câu hỏi nhanh, Tìm lỗi sai | W5 Bài 1 · Quỹ thị trường tiền tệ |
-| **C2.3** Khi nào dùng, khi nào không | Xếp các khoản tiền vào đúng chỗ: MMF hay tài sản tăng trưởng. | Câu hỏi nhanh, Tình huống | W5 Bài 1 · Quỹ thị trường tiền tệ · Nếu mất việc hôm nay, bạn có bao nhiêu quyền lựa chọn? |
-| **C2.4** MMF tại Việt Nam | Hiểu sản phẩm tương đương trong nước và cách đánh giá đúng thước đo. | Thẻ kiến thức, Câu hỏi nhanh | W5 Bài 1 · Quỹ thị trường tiền tệ |
+| **C2.2** MMF hay tiền gửi kỳ hạn ngắn ✅ | So sánh rủi ro vốn, thanh khoản và lợi suất của hai lựa chọn. | Câu hỏi nhanh, Tìm lỗi sai | W5 Bài 1 · Quỹ thị trường tiền tệ |
+| **C2.3** Khi nào dùng, khi nào không ✅ | Xếp các khoản tiền vào đúng chỗ: MMF hay tài sản tăng trưởng. | Câu hỏi nhanh, Tình huống | W5 Bài 1 · Quỹ thị trường tiền tệ · Nếu mất việc hôm nay, bạn có bao nhiêu quyền lựa chọn? |
+| **C2.4** MMF tại Việt Nam ✅ | Hiểu sản phẩm tương đương trong nước và cách đánh giá đúng thước đo. | Thẻ kiến thức, Câu hỏi nhanh | W5 Bài 1 · Quỹ thị trường tiền tệ |
 
 <details><summary>Số liệu và ý chính cần dạy</summary>
 
@@ -308,13 +308,13 @@ Bộ giảm chấn của danh mục, nhưng không tuyệt đối an toàn. Linh
 
 | Bài | Mục tiêu | Dạng | Nguồn |
 |---|---|---|---|
-| **C3.1** Ba nguồn lợi nhuận của quỹ trái phiếu | Phân biệt lãi coupon, lãi/lỗ giá và giá trị từ quản lý danh mục. | Thẻ kiến thức, Câu hỏi nhanh | W5 Bài 4 · Quỹ trái phiếu nâng cao |
+| **C3.1** Ba nguồn lợi nhuận của quỹ trái phiếu ✅ | Phân biệt lãi coupon, lãi/lỗ giá và giá trị từ quản lý danh mục. | Thẻ kiến thức, Câu hỏi nhanh | W5 Bài 4 · Quỹ trái phiếu nâng cao |
 | **C3.2** Bập bênh lãi suất và giá ✅ | Dự đoán NAV quỹ trái phiếu khi lãi suất tăng hoặc giảm. *Công cụ: Bập bênh lãi suất – giá trái phiếu.* | Mô phỏng, Câu hỏi nhanh | W5 Bài 4 · Quỹ trái phiếu nâng cao |
-| **C3.3** Duration: độ nhạy lãi suất | So sánh hai quỹ có duration khác nhau. *Công cụ: Bập bênh lãi suất – giá trái phiếu.* | Thẻ kiến thức, Mô phỏng | W5 Bài 4 · Quỹ trái phiếu nâng cao |
-| **C3.4** Coupon cao chưa chắc lời cao | Phân biệt coupon và yield. | Tìm lỗi sai, Câu hỏi nhanh | W5 Bài 4 · Quỹ trái phiếu nâng cao |
-| **C3.5** Rủi ro tín dụng và đa dạng hóa | So sánh quỹ trái phiếu với trái phiếu doanh nghiệp riêng lẻ và tiết kiệm dài hạn. | Câu hỏi nhanh, Tình huống | W5 Bài 4 · Quỹ trái phiếu nâng cao |
-| **C3.6** Dùng quỹ trái phiếu đúng vai | Chọn tình huống phù hợp và không phù hợp cho quỹ trái phiếu. | Tình huống, Câu hỏi nhanh | W5 Bài 4 · Quỹ trái phiếu nâng cao · Kế hoạch du học cho con: bài toán tài chính gia đình (anh Nam) |
-| **C3.7** Nâng cao: giá sạch và lãi dồn tích | Hiểu vì sao giá đầy đủ = giá sạch + lãi dồn tích (bài tùy chọn). | Thẻ kiến thức | FAQ 117 |
+| **C3.3** Duration: độ nhạy lãi suất ✅ | So sánh hai quỹ có duration khác nhau. *Công cụ: Bập bênh lãi suất – giá trái phiếu.* | Thẻ kiến thức, Mô phỏng | W5 Bài 4 · Quỹ trái phiếu nâng cao |
+| **C3.4** Coupon cao chưa chắc lời cao ✅ | Phân biệt coupon và yield. | Tìm lỗi sai, Câu hỏi nhanh | W5 Bài 4 · Quỹ trái phiếu nâng cao |
+| **C3.5** Rủi ro tín dụng và đa dạng hóa ✅ | So sánh quỹ trái phiếu với trái phiếu doanh nghiệp riêng lẻ và tiết kiệm dài hạn. | Câu hỏi nhanh, Tình huống | W5 Bài 4 · Quỹ trái phiếu nâng cao |
+| **C3.6** Dùng quỹ trái phiếu đúng vai ✅ | Chọn tình huống phù hợp và không phù hợp cho quỹ trái phiếu. | Tình huống, Câu hỏi nhanh | W5 Bài 4 · Quỹ trái phiếu nâng cao · Kế hoạch du học cho con: bài toán tài chính gia đình (anh Nam) |
+| **C3.7** Nâng cao: giá sạch và lãi dồn tích ✅ | Hiểu vì sao giá đầy đủ = giá sạch + lãi dồn tích (bài tùy chọn). | Thẻ kiến thức | FAQ 117 |
 
 <details><summary>Số liệu và ý chính cần dạy</summary>
 
@@ -334,10 +334,10 @@ Bộ giảm chấn của danh mục, nhưng không tuyệt đối an toàn. Linh
 | Bài | Mục tiêu | Dạng | Nguồn |
 |---|---|---|---|
 | **C4.1** Tăng trưởng và biến động ✅ | Hiểu vì sao quỹ cổ phiếu hợp với mục tiêu dài và không hợp với tiền cần sớm. | Thẻ kiến thức, Câu hỏi nhanh | Kế hoạch du học cho con: bài toán tài chính gia đình (anh Nam) · FAQ 1, 123 |
-| **C4.2** Quỹ cổ phiếu không trả lãi hằng tháng | Phân biệt cổ tức quỹ với lãi tiền gửi. | Tìm lỗi sai, Câu hỏi nhanh | FAQ 14 |
-| **C4.3** Chiến lược năng động và chiến lược cổ tức | Giải thích vì sao hai quỹ cổ phiếu có lúc chênh lệch hiệu suất. | Thẻ kiến thức, Câu hỏi nhanh | FAQ 16, 124 |
-| **C4.4** Đánh giá hiệu suất quỹ cổ phiếu | Xem nhiều kỳ, so với chỉ số tham chiếu, xem biến động và giai đoạn giảm. | Tìm lỗi sai, Tính nhanh | FAQ 25, 26, 29 |
-| **C4.5** Drawdown: giảm bao nhiêu thì cần tăng bao nhiêu | Tính mức phục hồi cần thiết sau một đợt giảm. *Công cụ: Máy tính hồi phục sau sụt giảm.* | Tính nhanh, Đoán số | W5 Bài 5 · Quỹ cân bằng nâng cao |
+| **C4.2** Quỹ cổ phiếu không trả lãi hằng tháng ✅ | Phân biệt cổ tức quỹ với lãi tiền gửi. | Tìm lỗi sai, Câu hỏi nhanh | FAQ 14 |
+| **C4.3** Chiến lược năng động và chiến lược cổ tức ✅ | Giải thích vì sao hai quỹ cổ phiếu có lúc chênh lệch hiệu suất. | Thẻ kiến thức, Câu hỏi nhanh | FAQ 16, 124 |
+| **C4.4** Đánh giá hiệu suất quỹ cổ phiếu ✅ | Xem nhiều kỳ, so với chỉ số tham chiếu, xem biến động và giai đoạn giảm. | Tìm lỗi sai, Tính nhanh | FAQ 25, 26, 29 |
+| **C4.5** Drawdown: giảm bao nhiêu thì cần tăng bao nhiêu ✅ | Tính mức phục hồi cần thiết sau một đợt giảm. *Công cụ: Máy tính hồi phục sau sụt giảm.* | Tính nhanh, Đoán số | W5 Bài 5 · Quỹ cân bằng nâng cao |
 
 <details><summary>Số liệu và ý chính cần dạy</summary>
 
@@ -356,10 +356,10 @@ Cách đơn giản, chi phí thấp để "là một phần của thị trườn
 | Bài | Mục tiêu | Dạng | Nguồn |
 |---|---|---|---|
 | **C5.1** Là một phần của thị trường ✅ | Giải thích quỹ chỉ số mô phỏng gì và vì sao chi phí thấp. | Thẻ kiến thức, Câu hỏi nhanh | W5 Bài 2 · Quỹ chỉ số |
-| **C5.2** Benchmark, tracking error, expense ratio | Dùng ba thuật ngữ để chọn giữa hai quỹ cùng chỉ số. | Câu hỏi nhanh, Tìm lỗi sai | W5 Bài 2 · Quỹ chỉ số |
-| **C5.3** Quỹ chỉ số mở và ETF | Phân biệt giao dịch theo NAV cuối ngày và theo giá thị trường trong ngày. | Thẻ kiến thức, Câu hỏi nhanh | W5 Bài 2 · Quỹ chỉ số · FAQ 7 |
-| **C5.4** Các chỉ số ở Việt Nam | Ghép chỉ số với nhóm cổ phiếu nó đại diện. | Câu hỏi nhanh | W5 Bài 2 · Quỹ chỉ số |
-| **C5.5** Quỹ chỉ số không phòng thủ | Hiểu quỹ chỉ số giảm cùng thị trường và không chuyển sang tiền mặt. | Tình huống, Câu hỏi nhanh | W5 Bài 2 · Quỹ chỉ số |
+| **C5.2** Benchmark, tracking error, expense ratio ✅ | Dùng ba thuật ngữ để chọn giữa hai quỹ cùng chỉ số. | Câu hỏi nhanh, Tìm lỗi sai | W5 Bài 2 · Quỹ chỉ số |
+| **C5.3** Quỹ chỉ số mở và ETF ✅ | Phân biệt giao dịch theo NAV cuối ngày và theo giá thị trường trong ngày. | Thẻ kiến thức, Câu hỏi nhanh | W5 Bài 2 · Quỹ chỉ số · FAQ 7 |
+| **C5.4** Các chỉ số ở Việt Nam ✅ | Ghép chỉ số với nhóm cổ phiếu nó đại diện. | Câu hỏi nhanh | W5 Bài 2 · Quỹ chỉ số |
+| **C5.5** Quỹ chỉ số không phòng thủ ✅ | Hiểu quỹ chỉ số giảm cùng thị trường và không chuyển sang tiền mặt. | Tình huống, Câu hỏi nhanh | W5 Bài 2 · Quỹ chỉ số |
 
 <details><summary>Số liệu và ý chính cần dạy</summary>
 
@@ -377,11 +377,11 @@ Alpha hay Beta: chọn đúng công cụ, hoặc kết hợp cả hai. Linh vậ
 
 | Bài | Mục tiêu | Dạng | Nguồn |
 |---|---|---|---|
-| **C6.1** Alpha và Beta | Định nghĩa alpha, beta và triết lý của hai trường phái. | Thẻ kiến thức, Câu hỏi nhanh | W5 Bài 3 · Quỹ chủ động vs thụ động |
-| **C6.2** Phí và lợi thế | So sánh chi phí, tính linh hoạt, minh bạch, rủi ro chính. *Công cụ: Tác động của phí theo thời gian.* | Câu hỏi nhanh, Mô phỏng | W5 Bài 3 · Quỹ chủ động vs thụ động |
-| **C6.3** Thị trường Việt Nam có gì khác | Hiểu vì sao quản lý chủ động có dư địa ở thị trường kém hiệu quả. | Thẻ kiến thức, Câu hỏi nhanh | W5 Bài 3 · Quỹ chủ động vs thụ động |
-| **C6.4** Một năm thua chỉ số có sao không? | Đánh giá quỹ chủ động trên khung 3–5 năm. | Tình huống, Ra quyết định | W5 Bài 3 · Quỹ chủ động vs thụ động · FAQ 121 |
-| **C6.5** Core – Satellite | Dựng danh mục lõi thụ động + vệ tinh chủ động. *Công cụ: Danh mục thử nghiệm.* | Mô phỏng, Thẻ kiến thức | W5 Bài 3 · Quỹ chủ động vs thụ động · W5 Bài 2 · Quỹ chỉ số |
+| **C6.1** Alpha và Beta ✅ | Định nghĩa alpha, beta và triết lý của hai trường phái. | Thẻ kiến thức, Câu hỏi nhanh | W5 Bài 3 · Quỹ chủ động vs thụ động |
+| **C6.2** Phí và lợi thế ✅ | So sánh chi phí, tính linh hoạt, minh bạch, rủi ro chính. *Công cụ: Tác động của phí theo thời gian.* | Câu hỏi nhanh, Mô phỏng | W5 Bài 3 · Quỹ chủ động vs thụ động |
+| **C6.3** Thị trường Việt Nam có gì khác ✅ | Hiểu vì sao quản lý chủ động có dư địa ở thị trường kém hiệu quả. | Thẻ kiến thức, Câu hỏi nhanh | W5 Bài 3 · Quỹ chủ động vs thụ động |
+| **C6.4** Một năm thua chỉ số có sao không? ✅ | Đánh giá quỹ chủ động trên khung 3–5 năm. | Tình huống, Ra quyết định | W5 Bài 3 · Quỹ chủ động vs thụ động · FAQ 121 |
+| **C6.5** Core – Satellite ✅ | Dựng danh mục lõi thụ động + vệ tinh chủ động. *Công cụ: Danh mục thử nghiệm.* | Mô phỏng, Thẻ kiến thức | W5 Bài 3 · Quỹ chủ động vs thụ động · W5 Bài 2 · Quỹ chỉ số |
 
 <details><summary>Số liệu và ý chính cần dạy</summary>
 
@@ -397,11 +397,11 @@ Một lệnh duy nhất, kỷ luật "bán cao, mua thấp" tự động. Linh v
 
 | Bài | Mục tiêu | Dạng | Nguồn |
 |---|---|---|---|
-| **C7.1** Markowitz và tương quan thấp | Giải thích vì sao kết hợp cổ phiếu và trái phiếu giảm rủi ro tổng thể. | Thẻ kiến thức, Câu hỏi nhanh | W5 Bài 5 · Quỹ cân bằng nâng cao |
-| **C7.2** Ba kịch bản thị trường | Tính kết quả danh mục 100% cổ phiếu và 50/50 trong ba kịch bản. *Công cụ: Danh mục thử nghiệm.* | Tính nhanh, Mô phỏng | W5 Bài 5 · Quỹ cân bằng nâng cao |
+| **C7.1** Markowitz và tương quan thấp ✅ | Giải thích vì sao kết hợp cổ phiếu và trái phiếu giảm rủi ro tổng thể. | Thẻ kiến thức, Câu hỏi nhanh | W5 Bài 5 · Quỹ cân bằng nâng cao |
+| **C7.2** Ba kịch bản thị trường ✅ | Tính kết quả danh mục 100% cổ phiếu và 50/50 trong ba kịch bản. *Công cụ: Danh mục thử nghiệm.* | Tính nhanh, Mô phỏng | W5 Bài 5 · Quỹ cân bằng nâng cao |
 | **C7.3** Tái cân bằng ✅ | Thực hiện tái cân bằng khi tỷ trọng trôi khỏi mục tiêu. *Công cụ: Mô phỏng tái cân bằng.* | Mô phỏng, Câu hỏi nhanh | W5 Bài 5 · Quỹ cân bằng nâng cao |
-| **C7.4** Tĩnh và động, Sharpe và drawdown | Phân biệt quỹ cân bằng tĩnh/động và đọc Sharpe ratio. | Thẻ kiến thức, Câu hỏi nhanh | W5 Bài 5 · Quỹ cân bằng nâng cao |
-| **C7.5** Quỹ cân bằng hay tự mua 50/50? | Cân nhắc giữa tự kiểm soát tỷ trọng và tái cân bằng tự động. | Tình huống, Ra quyết định | W5 Bài 5 · Quỹ cân bằng nâng cao |
+| **C7.4** Tĩnh và động, Sharpe và drawdown ✅ | Phân biệt quỹ cân bằng tĩnh/động và đọc Sharpe ratio. | Thẻ kiến thức, Câu hỏi nhanh | W5 Bài 5 · Quỹ cân bằng nâng cao |
+| **C7.5** Quỹ cân bằng hay tự mua 50/50? ✅ | Cân nhắc giữa tự kiểm soát tỷ trọng và tái cân bằng tự động. | Tình huống, Ra quyết định | W5 Bài 5 · Quỹ cân bằng nâng cao |
 
 <details><summary>Số liệu và ý chính cần dạy</summary>
 
@@ -420,8 +420,8 @@ Nối kiến thức về quỹ với kế hoạch đã lập ở chặng Hiểu 
 | Bài | Mục tiêu | Dạng | Nguồn |
 |---|---|---|---|
 | **C8.1** Mỗi khoản tiền một công cụ ✅ | Ghép từng mục tiêu trong hồ sơ với loại quỹ phù hợp để tìm hiểu. | Câu hỏi nhanh, Tự đánh giá · cam kết | W5 Bài 1 · Quỹ thị trường tiền tệ · W5 Bài 4 · Quỹ trái phiếu nâng cao · W5 Bài 5 · Quỹ cân bằng nâng cao · Đầu tư thế nào mà không cần đoán từng nhịp thị trường? |
-| **C8.2** Danh mục thử nghiệm qua ba kịch bản | Thử danh mục của mình trong thị trường tăng, đi ngang, sụt giảm. *Công cụ: Danh mục thử nghiệm.* | Mô phỏng, Ra quyết định | W5 Bài 5 · Quỹ cân bằng nâng cao · Đầu tư thế nào mà không cần đoán từng nhịp thị trường? |
-| **C8.3** Kiểm tra cuối chặng: Hiểu quỹ | Đạt ≥ 80% để nhận chứng nhận "Hiểu quỹ". | Kiểm tra | W5 Bài 1 · Quỹ thị trường tiền tệ · W5 Bài 4 · Quỹ trái phiếu nâng cao · W5 Bài 2 · Quỹ chỉ số · W5 Bài 3 · Quỹ chủ động vs thụ động · W5 Bài 5 · Quỹ cân bằng nâng cao |
+| **C8.2** Danh mục thử nghiệm qua ba kịch bản ✅ | Thử danh mục của mình trong thị trường tăng, đi ngang, sụt giảm. *Công cụ: Danh mục thử nghiệm.* | Mô phỏng, Ra quyết định | W5 Bài 5 · Quỹ cân bằng nâng cao · Đầu tư thế nào mà không cần đoán từng nhịp thị trường? |
+| **C8.3** Kiểm tra cuối chặng: Hiểu quỹ ✅ | Đạt ≥ 80% để nhận chứng nhận "Hiểu quỹ". | Kiểm tra | W5 Bài 1 · Quỹ thị trường tiền tệ · W5 Bài 4 · Quỹ trái phiếu nâng cao · W5 Bài 2 · Quỹ chỉ số · W5 Bài 3 · Quỹ chủ động vs thụ động · W5 Bài 5 · Quỹ cân bằng nâng cao |
 
 ## Chặng 3 · Quỹ DC & DragonX (A)
 

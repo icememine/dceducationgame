@@ -43,10 +43,12 @@ Set `DATABASE_URL` to use a real Postgres instead (migrations in `./drizzle` run
 
 ## Add a lesson
 
-1. Edit `content/segments/<segment>.ts`: add a lesson with a new kebab-case `id` and challenges. Every graded
+1. Edit the unit file (`content/segments/dc-funds.ts`, or `content/segments/<segment>/<unit>.ts` for Hiểu mình
+   and Hiểu quỹ): add a lesson with a new kebab-case `id` and challenges. Every graded
    question follows the quiz formula (context → question → 3 options → insight, see docs/QUIZ_FORMULA.md).
 2. Cite a source on every graded challenge (`source: { sourceId: "amdd-dca" }`); add new documents to
    `content/sources.ts`. Fees, tax and schedules come from `content/library/fund-facts.ts`.
-3. `npm run content:check && npm test`, then open a PR for Compliance review.
+3. Set `builtAs` on the outline lesson it covers (`content/outline/`).
+4. `npx tsx scripts/check-unit.ts <unit file>` while writing, then `npm run content:check && npm test`, then open a PR for Compliance review.
 
 Stack: Next.js 15 · React 19 · TypeScript · Tailwind · Drizzle ORM · Postgres / PGlite · Zod · Vitest · Anthropic SDK (Claude) · Playwright (e2e).

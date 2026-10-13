@@ -38,6 +38,7 @@ export const stageKnowFunds: OutlineStage = {
             "NAV = tổng tài sản − nghĩa vụ phải trả; NAV/CCQ = NAV ÷ số CCQ lưu hành",
             "Quỹ mở phát hành thêm khi có lệnh mua, mua lại khi có lệnh bán; phát hành theo NAV không làm giảm NAV/CCQ của người cũ",
           ],
+          builtAs: "c1f-nav",
         },
         {
           code: "C1.3",
@@ -46,6 +47,7 @@ export const stageKnowFunds: OutlineStage = {
           formats: ["spot", "quiz"],
           sources: ["faq:16"],
           facts: ["NAV/CCQ khác nhau do thời điểm thành lập, lịch sử và phân phối; so sánh tổng lợi nhuận cùng kỳ và mức rủi ro"],
+          builtAs: "c1f-nav-not-price",
         },
         {
           code: "C1.4",
@@ -54,6 +56,7 @@ export const stageKnowFunds: OutlineStage = {
           formats: ["concept", "quiz"],
           sources: ["faq:8"],
           facts: ["Cấp quỹ: thay đổi giá tài sản, cổ tức, lãi trái phiếu, sau chi phí", "Cấp nhà đầu tư: thay đổi giá trị CCQ + phân phối thực nhận, sau phí và thuế"],
+          builtAs: "c1f-returns",
         },
         {
           code: "C1.5",
@@ -62,6 +65,7 @@ export const stageKnowFunds: OutlineStage = {
           formats: ["quiz"],
           sources: ["faq:9"],
           facts: ["Rủi ro thị trường, lãi suất, tín dụng, thanh khoản, quyết định đầu tư; đa dạng hóa giúp quản trị nhưng không loại bỏ"],
+          builtAs: "c1f-five-risks",
         },
         {
           code: "C1.6",
@@ -83,6 +87,7 @@ export const stageKnowFunds: OutlineStage = {
           formats: ["quiz", "concept"],
           sources: ["w5-index", "faq:30"],
           facts: ["ETF mua bán trên sàn theo giá thị trường trong ngày; quỹ mở giao dịch theo NAV của kỳ giao dịch", "Quỹ mở không biết trước giá khớp khi đặt lệnh"],
+          builtAs: "c1f-fund-etf-stocks",
         },
         {
           code: "C1.8",
@@ -90,6 +95,7 @@ export const stageKnowFunds: OutlineStage = {
           goal: "Ôn lại cả phần.",
           formats: ["checkpoint"],
           sources: ["faq:9", "faq:134", "w5-index"],
+          builtAs: "c1f-checkpoint",
         },
       ],
     },
@@ -122,6 +128,7 @@ export const stageKnowFunds: OutlineStage = {
             "Rút vốn linh hoạt, thanh toán thường T+2 đến T+4, không tức thời như tài khoản ngân hàng",
             "Lợi suất biến động theo lãi suất ngắn hạn; sau phí có thể bằng hoặc thấp hơn tiền gửi",
           ],
+          builtAs: "c2m-vs-deposit",
         },
         {
           code: "C2.3",
@@ -130,6 +137,7 @@ export const stageKnowFunds: OutlineStage = {
           formats: ["quiz", "scenario"],
           sources: ["w5-mmf", "amdd-career-fund"],
           facts: ["Hợp: quỹ khẩn cấp, tiền chờ giải ngân, chi tiêu lớn trong 6–12 tháng", "Không hợp: tăng trưởng dài hạn, đánh bại lạm phát nhiều năm"],
+          builtAs: "c2m-when-to-use",
         },
         {
           code: "C2.4",
@@ -142,6 +150,7 @@ export const stageKnowFunds: OutlineStage = {
             "Ví dụ DCIP: chỉ số tham chiếu là lãi suất tiền gửi 3 tháng bình quân của Agribank, VietinBank, Vietcombank, BIDV",
             "\"Quỹ thị trường tiền tệ không giúp danh mục sinh lời nhanh hơn mà giúp nhà đầu tư ra quyết định tốt hơn\"",
           ],
+          builtAs: "c2m-vietnam",
         },
       ],
     },
@@ -158,6 +167,7 @@ export const stageKnowFunds: OutlineStage = {
           formats: ["concept", "quiz"],
           sources: ["w5-bond"],
           facts: ["Quỹ trái phiếu định giá theo thị trường (mark-to-market): biến động lãi suất và tín dụng vào NAV ngay"],
+          builtAs: "c3b-three-sources",
         },
         {
           code: "C3.2",
@@ -177,6 +187,7 @@ export const stageKnowFunds: OutlineStage = {
           sources: ["w5-bond"],
           facts: ["Danh mục nhiều trái phiếu duration dài thì NAV càng bị ảnh hưởng bởi lãi suất"],
           tool: "bond-seesaw",
+          builtAs: "c3b-duration",
         },
         {
           code: "C3.4",
@@ -185,6 +196,7 @@ export const stageKnowFunds: OutlineStage = {
           formats: ["spot", "quiz"],
           sources: ["w5-bond"],
           facts: ["Coupon cố định khi phát hành; yield phụ thuộc giá mua, coupon và lãi/lỗ vốn"],
+          builtAs: "c3b-coupon-yield",
         },
         {
           code: "C3.5",
@@ -196,6 +208,7 @@ export const stageKnowFunds: OutlineStage = {
             "Trái phiếu riêng lẻ: phụ thuộc doanh nghiệp, vốn tối thiểu thường 100 triệu – 1 tỷ, thanh khoản thấp",
             "Quỹ trái phiếu: đa dạng hóa, vốn từ vài chục nghìn đồng, thanh khoản T+2 đến T+4",
           ],
+          builtAs: "c3b-credit-diversify",
         },
         {
           code: "C3.6",
@@ -208,6 +221,7 @@ export const stageKnowFunds: OutlineStage = {
             "Không hợp: bảo toàn vốn tuyệt đối ngắn hạn; kỳ vọng lợi nhuận cao mà không chấp nhận biến động",
             "DCBF (2013) dùng lãi suất tiền gửi 12 tháng của 4 ngân hàng làm chỉ số tham chiếu",
           ],
+          builtAs: "c3b-bond-role",
         },
         {
           code: "C3.7",
@@ -215,6 +229,7 @@ export const stageKnowFunds: OutlineStage = {
           goal: "Hiểu vì sao giá đầy đủ = giá sạch + lãi dồn tích (bài tùy chọn).",
           formats: ["concept"],
           sources: ["faq:117"],
+          builtAs: "c3b-clean-dirty",
         },
       ],
     },
@@ -240,6 +255,7 @@ export const stageKnowFunds: OutlineStage = {
           formats: ["spot", "quiz"],
           sources: ["faq:14"],
           facts: ["Cổ tức quỹ phụ thuộc kết quả và phương án được duyệt; cần dòng tiền đều thì lập kế hoạch rút tiền"],
+          builtAs: "c4e-no-monthly-interest",
         },
         {
           code: "C4.3",
@@ -248,6 +264,7 @@ export const stageKnowFunds: OutlineStage = {
           formats: ["concept", "quiz"],
           sources: ["faq:16", "faq:124"],
           facts: ["Hiệu suất tương đối thay đổi theo chu kỳ; so sánh tổng lợi nhuận đã tính cổ tức, cùng kỳ"],
+          builtAs: "c4e-dynamic-vs-dividend",
         },
         {
           code: "C4.4",
@@ -256,6 +273,7 @@ export const stageKnowFunds: OutlineStage = {
           formats: ["spot", "calc"],
           sources: ["faq:25", "faq:26", "faq:29"],
           facts: ["Không so sánh lợi nhuận 8 tháng năm nay với cả năm trước", "Chênh lệch giữa hai tỷ suất diễn đạt bằng điểm phần trăm"],
+          builtAs: "c4e-judge-performance",
         },
         {
           code: "C4.5",
@@ -265,6 +283,7 @@ export const stageKnowFunds: OutlineStage = {
           sources: ["w5-balanced"],
           facts: ["Giảm 30% cần tăng ~43% để hòa vốn; giảm 12,5% cần ~14%"],
           tool: "drawdown",
+          builtAs: "c4e-drawdown-math",
         },
       ],
     },
@@ -290,6 +309,7 @@ export const stageKnowFunds: OutlineStage = {
           formats: ["quiz", "spot"],
           sources: ["w5-index"],
           facts: ["Cùng theo dõi một chỉ số: ưu tiên quỹ có tracking error và chi phí thấp hơn"],
+          builtAs: "c5i-index-terms",
         },
         {
           code: "C5.3",
@@ -298,6 +318,7 @@ export const stageKnowFunds: OutlineStage = {
           formats: ["concept", "quiz"],
           sources: ["w5-index", "faq:7"],
           facts: ["ETF giá thị trường có thể chênh lệch NAV; thuế TNCN khi bán CCQ ETF 0,1% giá trị giao dịch"],
+          builtAs: "c5i-etf-vs-open",
         },
         {
           code: "C5.4",
@@ -306,6 +327,7 @@ export const stageKnowFunds: OutlineStage = {
           formats: ["quiz"],
           sources: ["w5-index"],
           facts: ["VN30: 30 doanh nghiệp vốn hóa lớn, thanh khoản cao; VN100/VNX50; VNDiamond: cạn room ngoại; VNFIN Lead: tài chính – ngân hàng; VN Midcap: vốn hóa trung bình"],
+          builtAs: "c5i-vn-indices",
         },
         {
           code: "C5.5",
@@ -314,6 +336,7 @@ export const stageKnowFunds: OutlineStage = {
           formats: ["scenario", "quiz"],
           sources: ["w5-index"],
           facts: ["VN30 giảm 20% thì quỹ mô phỏng VN30 cũng giảm tương ứng; quỹ chỉ số loại bỏ rủi ro chọn sai cổ phiếu, không loại bỏ rủi ro thị trường"],
+          builtAs: "c5i-no-defense",
         },
       ],
     },
@@ -330,6 +353,7 @@ export const stageKnowFunds: OutlineStage = {
           formats: ["concept", "quiz"],
           sources: ["w5-active-passive"],
           facts: ["Thụ động: thị trường khó bị đánh bại dài hạn; chủ động: thị trường có lúc định giá sai"],
+          builtAs: "c6a-alpha-beta",
         },
         {
           code: "C6.2",
@@ -339,6 +363,7 @@ export const stageKnowFunds: OutlineStage = {
           sources: ["w5-active-passive"],
           facts: ["Thụ động 0,5–0,8%/năm tại VN; chủ động 1,5–2,5%/năm", "Rủi ro chính: thụ động = thị trường; chủ động = nhận định sai của con người"],
           tool: "fee-impact",
+          builtAs: "c6a-fees-edges",
         },
         {
           code: "C6.3",
@@ -350,6 +375,7 @@ export const stageKnowFunds: OutlineStage = {
             "Thụ động chiếm hơn 50% tài sản quỹ cổ phiếu toàn cầu",
             "Cuối 10/2025 Việt Nam có 18 ETF (~14% số quỹ) và 69 quỹ mở (~56%)",
           ],
+          builtAs: "c6a-vn-market",
         },
         {
           code: "C6.4",
@@ -357,6 +383,7 @@ export const stageKnowFunds: OutlineStage = {
           goal: "Đánh giá quỹ chủ động trên khung 3–5 năm.",
           formats: ["scenario", "decision"],
           sources: ["w5-active-passive", "faq:121"],
+          builtAs: "c6a-one-bad-year",
         },
         {
           code: "C6.5",
@@ -365,6 +392,7 @@ export const stageKnowFunds: OutlineStage = {
           formats: ["sim", "concept"],
           sources: ["w5-active-passive", "w5-index"],
           tool: "sandbox",
+          builtAs: "c6a-core-satellite",
         },
       ],
     },
@@ -381,6 +409,7 @@ export const stageKnowFunds: OutlineStage = {
           formats: ["concept", "quiz"],
           sources: ["w5-balanced"],
           facts: ["Lý thuyết danh mục hiện đại (1952): một tài sản biến động cao vẫn giảm rủi ro tổng nếu tương quan thấp"],
+          builtAs: "c7b-markowitz",
         },
         {
           code: "C7.2",
@@ -390,6 +419,7 @@ export const stageKnowFunds: OutlineStage = {
           sources: ["w5-balanced"],
           facts: ["Tăng mạnh: +25% vs +14%; đi ngang: +5% vs +5,5%; sụt giảm: −30% vs −12,5%"],
           tool: "sandbox",
+          builtAs: "c7b-three-scenarios",
         },
         {
           code: "C7.3",
@@ -408,6 +438,7 @@ export const stageKnowFunds: OutlineStage = {
           formats: ["concept", "quiz"],
           sources: ["w5-balanced"],
           facts: ["Động: cổ phiếu dao động trong biên độ, ví dụ 40–70%", "Sharpe = (lợi nhuận − lãi suất phi rủi ro) / độ biến động"],
+          builtAs: "c7b-static-dynamic",
         },
         {
           code: "C7.5",
@@ -416,6 +447,7 @@ export const stageKnowFunds: OutlineStage = {
           formats: ["scenario", "decision"],
           sources: ["w5-balanced"],
           facts: ["Tự mua hai quỹ: phải tự tái cân bằng, có thể tốn phí chuyển đổi; nắm giữ khuyến nghị từ 3 năm"],
+          builtAs: "c7b-fund-or-diy",
         },
       ],
     },
@@ -440,6 +472,7 @@ export const stageKnowFunds: OutlineStage = {
           formats: ["sim", "decision"],
           sources: ["w5-balanced", "amdd-no-timing"],
           tool: "sandbox",
+          builtAs: "c8p-stress-test",
         },
         {
           code: "C8.3",
@@ -447,6 +480,7 @@ export const stageKnowFunds: OutlineStage = {
           goal: "Đạt ≥ 80% để nhận chứng nhận \"Hiểu quỹ\".",
           formats: ["checkpoint"],
           sources: ["w5-mmf", "w5-bond", "w5-index", "w5-active-passive", "w5-balanced"],
+          builtAs: "c8p-stage-checkpoint",
         },
       ],
     },

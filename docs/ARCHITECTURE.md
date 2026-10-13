@@ -117,7 +117,7 @@ flowchart LR
 content/
   schema.ts            Zod schemas: segment → unit → lesson → challenge (12 types), sources
   sources.ts           every citable document, with asOf date
-  segments/            dc-funds.ts (A) · my-plan.ts (B) · fund-types.ts (C)
+  segments/            dc-funds.ts (A) · my-plan/ (B, one file per unit) · fund-types/ (C, one file per unit)
   index.ts             registry, lookups, validateContent() integrity checks
   library/             Q&A library (faq-products, faq-services), glossary, fund-facts (+ text form), search
   ai/rong-voice.md     Rồng's tone and mood, edited by the content team

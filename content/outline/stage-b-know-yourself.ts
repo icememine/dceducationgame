@@ -78,6 +78,7 @@ export const stageKnowYourself: OutlineStage = {
           sources: ["amdd-career-fund"],
           facts: ["Khoản tiền được đặt tên và theo dõi tiến độ được xử lý như một cam kết, không phải khoản \"để dành nếu còn tiền\""],
           tool: "planner",
+          builtAs: "b1m-name-the-pot",
         },
         {
           code: "B1.6",
@@ -85,6 +86,7 @@ export const stageKnowYourself: OutlineStage = {
           goal: "Ôn lại cả phần.",
           formats: ["checkpoint"],
           sources: ["amdd-career-fund", "amdd-best-day", "amdd-study-plan-nam"],
+          builtAs: "b1m-checkpoint",
         },
       ],
     },
@@ -135,6 +137,7 @@ export const stageKnowYourself: OutlineStage = {
             "\"Chúng ta không dự đoán được khi nào thị trường tăng mạnh, khi nào giảm mạnh, kể cả nhà đầu tư chuyên nghiệp\"",
           ],
           tool: "reaction-sim",
+          builtAs: "b2r-drop-20",
         },
         {
           code: "B2.5",
@@ -155,6 +158,7 @@ export const stageKnowYourself: OutlineStage = {
           goal: "Đọc kết quả hồ sơ, hiểu vì sao bị giới hạn, biết khi nào cần làm lại (mỗi 12 tháng hoặc khi hoàn cảnh đổi).",
           formats: ["reflect", "concept"],
           sources: ["dc-risk-quiz"],
+          builtAs: "b2r-my-profile",
         },
       ],
     },
@@ -171,6 +175,7 @@ export const stageKnowYourself: OutlineStage = {
           formats: ["concept", "quiz"],
           sources: ["amdd-study-abroad", "amdd-first-billion"],
           facts: ["Khi chưa rõ số tiền cần có và thời điểm cần tiền, ngay cả một quỹ tốt cũng chưa chắc giúp đạt mục tiêu"],
+          builtAs: "b3g-four-numbers",
         },
         {
           code: "B3.2",
@@ -197,6 +202,7 @@ export const stageKnowYourself: OutlineStage = {
             "Đến một lúc, lợi nhuận một năm có thể sánh ngang hoặc vượt số tiền góp trong năm",
             "1 tỷ không phải tự do tài chính, mà là điểm khởi đầu của giai đoạn tích lũy mới",
           ],
+          builtAs: "b3g-billion-meaning",
         },
         {
           code: "B3.4",
@@ -224,6 +230,7 @@ export const stageKnowYourself: OutlineStage = {
             "Mỗi 1 tỷ đầu tư ngay từ đầu giảm khoảng 15 triệu tiền góp mỗi tháng (≈1,8 tỷ trong 10 năm)",
           ],
           tool: "planner",
+          builtAs: "b3g-suitcase",
         },
         {
           code: "B3.6",
@@ -232,6 +239,7 @@ export const stageKnowYourself: OutlineStage = {
           formats: ["scenario", "decision"],
           sources: ["amdd-study-abroad"],
           facts: ["Lịch nhập học không lùi được vì thị trường bất động sản trầm lắng; học phí đóng từng kỳ, nhà đất khó bán từng phần"],
+          builtAs: "b3g-house-ready",
         },
         {
           code: "B3.7",
@@ -243,6 +251,7 @@ export const stageKnowYourself: OutlineStage = {
             "Gia đình có 2 tỷ đã đầu tư + 20 triệu/tháng: đủ cho Anh, thiếu ~6 triệu/tháng cho Singapore, thiếu ~20 triệu/tháng cho trường top Mỹ",
             "Có thể bù bằng học bổng, học trong nước rồi chuyển tiếp, hoặc dùng một phần thu nhập khi con đi học",
           ],
+          builtAs: "b3g-shortfall",
         },
         {
           code: "B3.8",
@@ -265,6 +274,7 @@ export const stageKnowYourself: OutlineStage = {
           formats: ["calc", "quiz"],
           sources: ["faq:21", "amdd-study-plan-nam"],
           facts: ["Gấp đôi trong 5 năm cần khoảng 14,9%/năm, trước phí và thuế, không được bảo đảm", "Với 15%/năm, khoảng 5 năm tiền nhân đôi"],
+          builtAs: "b3g-double-5y",
         },
         {
           code: "B3.10",
@@ -273,6 +283,7 @@ export const stageKnowYourself: OutlineStage = {
           formats: ["scenario", "quiz"],
           sources: ["faq:22", "faq:13"],
           facts: ["Khoản cần dùng sớm hoặc có thời hạn cố định nên ưu tiên thanh khoản và hạn chế biến động", "Gần đến lúc cần tiền, giảm dần tài sản biến động mạnh"],
+          builtAs: "b3g-fixed-date",
         },
         {
           code: "B3.11",
@@ -282,6 +293,7 @@ export const stageKnowYourself: OutlineStage = {
           sources: ["amdd-first-billion", "amdd-study-abroad"],
           facts: ["Rà soát kế hoạch ít nhất mỗi năm một lần, hoặc 2–3 năm một lần với mục tiêu dài"],
           tool: "planner",
+          builtAs: "b3g-my-plan",
         },
         {
           code: "B3.12",
@@ -289,6 +301,7 @@ export const stageKnowYourself: OutlineStage = {
           goal: "Ôn lại cả phần.",
           formats: ["checkpoint"],
           sources: ["amdd-first-billion", "amdd-suitcase", "amdd-age-60"],
+          builtAs: "b3g-checkpoint",
         },
       ],
     },
@@ -308,6 +321,7 @@ export const stageKnowYourself: OutlineStage = {
             "Lãi kép: lợi nhuận được giữ lại hoặc tái đầu tư tạo cơ sở sinh lời cho kỳ sau; không cần góp thêm vốn",
             "Quỹ giữ lại thu nhập: phản ánh trong NAV; quỹ trả tiền mặt: phải tự tái đầu tư nếu muốn tiếp tục tích lũy",
           ],
+          builtAs: "b4c-interest-on-interest",
         },
         {
           code: "B4.2",
@@ -331,6 +345,7 @@ export const stageKnowYourself: OutlineStage = {
             "15%/năm là mức tham chiếu lịch sử thị trường Việt Nam từ năm 2000, gồm cổ tức; không được bảo đảm",
           ],
           tool: "compound",
+          builtAs: "b4c-weekly-5m",
         },
         {
           code: "B4.4",
@@ -340,6 +355,7 @@ export const stageKnowYourself: OutlineStage = {
           sources: ["amdd-age-60", "amdd-dca"],
           facts: ["Thời gian đầu tư dài hơn tạo tác động lớn hơn việc tăng số tiền ban đầu", "Trì hoãn có chi phí thật: chi phí cơ hội của những năm lãi kép bị bỏ lỡ"],
           tool: "compound",
+          builtAs: "b4c-start-early",
         },
         {
           code: "B4.5",
@@ -351,6 +367,7 @@ export const stageKnowYourself: OutlineStage = {
             "10 triệu/tháng vào DCDS từ 8/2016: sau 3 năm góp 360 triệu, tài khoản ~404 triệu (gần 90% là vốn)",
             "Sau 5 năm: 600 triệu → 1,06 tỷ; sau 10 năm: 1,2 tỷ → ~2,21 tỷ",
           ],
+          builtAs: "b4c-first-three-years",
         },
         {
           code: "B4.6",
@@ -360,6 +377,7 @@ export const stageKnowYourself: OutlineStage = {
           sources: ["amdd-dcds-10y", "amdd-first-billion"],
           facts: ["Tăng 5%/năm từ 10 triệu lên ~15,5 triệu ở năm 10: góp thêm ~310 triệu, tài khoản thêm ~440 triệu, lên 2,65 tỷ"],
           tool: "planner",
+          builtAs: "b4c-step-up",
         },
         {
           code: "B4.7",
@@ -369,6 +387,7 @@ export const stageKnowYourself: OutlineStage = {
           sources: ["w5-index", "w5-active-passive", "faq:125"],
           facts: ["Quỹ chỉ số 0,3–0,8%/năm; quỹ chủ động 1,5–2,5%/năm", "Phí quản lý đã phản ánh trong NAV, không thu thêm khi giao dịch"],
           tool: "fee-impact",
+          builtAs: "b4c-fees-compound",
         },
         {
           code: "B4.8",
@@ -377,6 +396,7 @@ export const stageKnowYourself: OutlineStage = {
           formats: ["concept", "spot"],
           sources: ["faq:39", "faq:40"],
           facts: ["Không cộng thêm cổ tức vào một chỉ tiêu đã bao gồm cổ tức", "Tiền phân phối ra ngoài quỹ chỉ được tái đầu tư khi có giao dịch mua tương ứng"],
+          builtAs: "b4c-dividends",
         },
         {
           code: "B4.9",
@@ -384,6 +404,7 @@ export const stageKnowYourself: OutlineStage = {
           goal: "Ôn lại cả phần.",
           formats: ["checkpoint"],
           sources: ["amdd-dca", "amdd-dcds-10y", "faq:38"],
+          builtAs: "b4c-checkpoint",
         },
       ],
     },
@@ -410,6 +431,7 @@ export const stageKnowYourself: OutlineStage = {
           sources: ["amdd-dca", "amdd-petrol"],
           facts: ["Giá vốn hình thành qua nhiều lần mua ở các mức giá khác nhau, không phụ thuộc một lần mua duy nhất"],
           tool: "dca-sim",
+          builtAs: "b5d-average-cost",
         },
         {
           code: "B5.3",
@@ -422,6 +444,7 @@ export const stageKnowYourself: OutlineStage = {
             "DCA không loại bỏ rủi ro và không luôn hơn đầu tư một lần, đặc biệt khi thị trường tăng liên tục",
           ],
           tool: "dca-sim",
+          builtAs: "b5d-dca-or-lump-sum",
         },
         {
           code: "B5.4",
@@ -434,6 +457,7 @@ export const stageKnowYourself: OutlineStage = {
             "Mua vào ngày 1, 10 hay 25 hằng tháng chỉ xê dịch kết quả dưới 1%",
             "Đầu tư ngay cho kết quả cao hơn chờ 3 tháng trong ~58% trường hợp, cao hơn chờ 6 tháng trong ~63% (đo sau 3 năm)",
           ],
+          builtAs: "b5d-best-day",
         },
         {
           code: "B5.5",
@@ -468,6 +492,7 @@ export const stageKnowYourself: OutlineStage = {
           formats: ["quiz", "reflect"],
           sources: ["amdd-dcds-10y"],
           facts: ["Kiểm soát được: số tiền góp, mức rủi ro chấp nhận, có tiếp tục kế hoạch hay không", "Không kiểm soát được: thị trường năm tới, quỹ tăng bao nhiêu, thời điểm tốt nhất"],
+          builtAs: "b5d-what-you-control",
         },
         {
           code: "B5.8",
@@ -476,6 +501,7 @@ export const stageKnowYourself: OutlineStage = {
           formats: ["concept", "quiz"],
           sources: ["faq:129", "faq:7"],
           facts: ["Có thể điều chỉnh số tiền nếu đáp ứng mức tối thiểu", "ETF mua theo giá thị trường: tính đơn vị giao dịch, thanh khoản, chênh lệch giá mua bán, phí và thuế"],
+          builtAs: "b5d-flexible-etf",
         },
         {
           code: "B5.9",
@@ -483,6 +509,7 @@ export const stageKnowYourself: OutlineStage = {
           goal: "Ôn lại cả phần.",
           formats: ["checkpoint"],
           sources: ["amdd-petrol", "amdd-best-day", "amdd-dcds-10y"],
+          builtAs: "b5d-checkpoint",
         },
       ],
     },
@@ -502,6 +529,7 @@ export const stageKnowYourself: OutlineStage = {
             "Quy mô thị trường kỳ vọng mở rộng cùng lợi nhuận doanh nghiệp, làn sóng IPO và nâng hạng",
             "Đây là kịch bản kỳ vọng, không phải dự báo chắc chắn",
           ],
+          builtAs: "b6m-economy",
         },
         {
           code: "B6.2",
@@ -510,6 +538,7 @@ export const stageKnowYourself: OutlineStage = {
           formats: ["concept", "estimate"],
           sources: ["amdd-dca", "amdd-investor-day-3"],
           facts: ["Năm 2025 chỉ khoảng 17% cổ phiếu niêm yết tăng vượt chỉ số"],
+          builtAs: "b6m-few-leaders",
         },
         {
           code: "B6.3",
@@ -523,6 +552,7 @@ export const stageKnowYourself: OutlineStage = {
             "Khung 10–15 năm: chứng khoán ~13–14%/năm; tiền gửi tốt ~7,5%/năm",
             "Lãi suất tiền gửi 9–10% được đánh giá là đột biến, không kỳ vọng kéo dài",
           ],
+          builtAs: "b6m-gold-savings-stocks",
         },
         {
           code: "B6.4",
@@ -534,6 +564,7 @@ export const stageKnowYourself: OutlineStage = {
             "Vàng miếng từ gần 180 triệu xuống ~147 triệu/lượng: người mua đầu năm lỗ ~30 triệu/lượng",
             "Với mục tiêu 3–10 năm, thị trường hiếm khi có thời điểm \"mọi thứ đã rõ ràng\"",
           ],
+          builtAs: "b6m-wait-more",
         },
         {
           code: "B6.5",
@@ -556,6 +587,7 @@ export const stageKnowYourself: OutlineStage = {
           formats: ["concept", "case"],
           sources: ["faq:37", "faq:87"],
           facts: ["Danh mục và tỷ trọng quỹ khác chỉ số; tiền mặt, trái phiếu, chi phí cũng ảnh hưởng", "Vừa mua đã âm có thể do NAV mới thay đổi, làm tròn hoặc chi phí"],
+          builtAs: "b6m-fund-vs-index",
         },
         {
           code: "B6.7",
@@ -564,6 +596,7 @@ export const stageKnowYourself: OutlineStage = {
           formats: ["scenario", "decision"],
           sources: ["faq:24", "faq:121"],
           facts: ["So sánh cùng kỳ, cùng phương pháp, cùng mức rủi ro trước khi kết luận", "Không có bảo đảm quỹ phục hồi trong một thời hạn cụ thể"],
+          builtAs: "b6m-after-loss",
         },
         {
           code: "B6.8",
@@ -571,6 +604,7 @@ export const stageKnowYourself: OutlineStage = {
           goal: "Ôn lại cả phần.",
           formats: ["checkpoint"],
           sources: ["amdd-no-timing", "amdd-sell-in-may", "amdd-waiting"],
+          builtAs: "b6m-checkpoint",
         },
       ],
     },
@@ -587,6 +621,7 @@ export const stageKnowYourself: OutlineStage = {
           formats: ["concept", "quiz"],
           sources: ["amdd-no-timing"],
           facts: ["\"Không cần thiết phải nhiều quỹ. Quan trọng nhất là tỷ trọng giữa cổ phiếu và trái phiếu\""],
+          builtAs: "b7a-few-funds",
         },
         {
           code: "B7.2",
@@ -596,6 +631,7 @@ export const stageKnowYourself: OutlineStage = {
           sources: ["amdd-no-timing"],
           facts: ["100 − tuổi = tỷ trọng cổ phiếu tham khảo (30 tuổi → 70%)", "Biến thể 120 − tuổi cho người chấp nhận rủi ro cao hơn", "Tuổi chỉ là một yếu tố, bên cạnh mục tiêu và khẩu vị rủi ro"],
           tool: "age-rule",
+          builtAs: "b7a-age-rule",
         },
         {
           code: "B7.3",
@@ -608,6 +644,7 @@ export const stageKnowYourself: OutlineStage = {
             "3–5 năm, rủi ro vừa phải → quỹ cân bằng (~40% trái phiếu làm \"bộ giảm sốc\")",
             "Trẻ, chấp nhận rủi ro cao → cổ phiếu 80–90%, thậm chí 100% (chỉ là khung tham khảo)",
           ],
+          builtAs: "b7a-three-portraits",
         },
         {
           code: "B7.4",
@@ -616,6 +653,7 @@ export const stageKnowYourself: OutlineStage = {
           formats: ["concept", "sim"],
           sources: ["amdd-no-timing", "w5-balanced"],
           tool: "sandbox",
+          builtAs: "b7a-sixty-forty",
         },
         {
           code: "B7.5",
@@ -625,6 +663,7 @@ export const stageKnowYourself: OutlineStage = {
           sources: ["amdd-study-abroad", "amdd-suitcase", "faq:13"],
           facts: ["Ví dụ du học: 15%/năm trong 7 năm đầu, 7%/năm trong 3 năm cuối khi giảm tài sản biến động mạnh"],
           tool: "planner",
+          builtAs: "b7a-glide-path",
         },
         {
           code: "B7.6",
@@ -633,6 +672,7 @@ export const stageKnowYourself: OutlineStage = {
           formats: ["reflect", "sim"],
           sources: ["amdd-no-timing", "amdd-first-billion"],
           tool: "sandbox",
+          builtAs: "b7a-my-plan",
         },
         {
           code: "B7.7",
@@ -640,6 +680,7 @@ export const stageKnowYourself: OutlineStage = {
           goal: "Đạt ≥ 80% để nhận chứng nhận \"Hiểu mình\".",
           formats: ["checkpoint"],
           sources: ["amdd-no-timing", "amdd-dcds-10y", "amdd-first-billion"],
+          builtAs: "b7a-checkpoint",
         },
       ],
     },
