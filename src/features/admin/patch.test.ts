@@ -102,7 +102,7 @@ describe("patchChallenge", () => {
     expect(after.value.options).toHaveLength(4);
     expect(out).toContain(`          options: [\n            "Vẫn 25.000 đồng",\n`);
     const readded = patchChallenge(out, "a2-dividend-nav", { ...after.value, source: { sourceId: "faq", locator: "Câu 106" } });
-    expect(readded).toContain(`          explain: "Cổ tức được trả từ tài sản quỹ`);
+    expect(readded).toContain(`          explain: ${JSON.stringify(span.value.explain)},`);
     expect(readded).toMatch(/explain: ".*",\n {10}source: \{ sourceId: "faq", locator: "Câu 106" \},\n {8}\},/);
   });
 

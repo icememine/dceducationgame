@@ -11,7 +11,7 @@
   Giới hạn: Bối cảnh / Lời nói / Giải thích 20–320 ký tự; câu chọn đáp án có đúng 3 phương án.
   Áp dụng: npm run content:import -- <file> (xem trước) rồi thêm --write để ghi.
 -->
-<!-- phiên bản nội dung: 97e250ba -->
+<!-- phiên bản nội dung: 9f8ca6e0 -->
 
 # Hiểu mình
 
@@ -1348,29 +1348,29 @@ Giải thích: Khoảng 66,2 tỷ. Với 15%/năm, cứ khoảng 5 năm tiền n
 
 #### Câu b4-start-25-or-45 · Chọn đáp án · Vì sao?
 
-Bối cảnh: An và Bình cùng góp 2 triệu/tháng đến năm 60 tuổi, giả định 15%/năm. An bắt đầu năm 25 tuổi (góp 840 triệu), Bình năm 45 tuổi (góp 360 triệu). An có khoảng 22,6 tỷ, Bình khoảng 1,2 tỷ.
+Bối cảnh: An và Bình cùng góp 2 triệu/tháng đến năm 60 tuổi, giả định 15%/năm. An bắt đầu năm 25 tuổi (góp tổng 840 triệu, đạt ~22,6 tỷ); Bình bắt đầu năm 45 tuổi (góp tổng 360 triệu, đạt ~1,2 tỷ).
 
-Câu hỏi: Vì sao An góp chưa đến 2,5 lần mà có gấp khoảng 18 lần?
+Câu hỏi: Vì sao An chỉ góp vốn gấp 2,3 lần mà tài sản cuối kỳ lại gấp tới 18 lần Bình?
 
-- [ ] An chọn được những ngày mua tốt hơn
-- [x] An có thêm 20 năm để lợi nhuận tiếp tục sinh lời
-- [ ] An chọn được quỹ có lợi nhuận cao hơn
+- [ ] Vì An chọn được những ngày mua chứng chỉ quỹ tối ưu hơn Bình
+- [x] Vì An có thêm 20 năm để đòn bẩy lãi kép tiếp tục nhân bản tài sản
+- [ ] Vì An lựa chọn được quỹ có tỷ suất lợi nhuận cao hơn
 
-Giải thích: Cùng quỹ, cùng mức góp: khác biệt đến từ 20 năm lãi kép thêm. Trì hoãn có chi phí thật, nhưng bắt đầu muộn vẫn tốt hơn không bắt đầu.
+Giải thích: Cùng một quỹ và cùng mức góp hằng tháng, sự khác biệt khổng lồ đến từ 20 năm lãi kép vận hành. Trì hoãn đầu tư tạo ra một khoản chi phí cơ hội rất đắt, nhưng bắt đầu ngay hôm nay vẫn luôn tốt hơn bỏ cuộc.
 
 > Nguồn: Câu chuyện về nhà đầu tư 60 tuổi
 
 #### Câu b4-dividend-spent · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: Chị Lan nhận cổ tức tiền mặt từ quỹ mỗi năm và dùng hết cho du lịch. Chị nghĩ tài khoản vẫn tăng theo lãi kép như người giữ lại toàn bộ lợi nhuận.
+Bối cảnh: Chị Lan nhận cổ tức tiền mặt từ quỹ hằng năm và chi tiêu hết cho các chuyến du lịch. Chị nghĩ tài sản của mình vẫn tăng trưởng theo lãi kép giống như người giữ lại toàn bộ lợi nhuận.
 
-Câu hỏi: Nhận định nào đúng?
+Câu hỏi: Nhận định nào dưới đây phản ánh đúng bản chất?
 
-- [ ] Lãi kép luôn tự diễn ra khi đã đầu tư vào quỹ
-- [x] Phần cổ tức đã tiêu không còn sinh lời; muốn có lãi kép phải tái đầu tư khoản đó
-- [ ] Quỹ chia cổ tức thì hoàn toàn không có lãi kép
+- [ ] Lãi kép vẫn tự động diễn ra khi đã mở tài khoản đầu tư quỹ
+- [x] Phần cổ tức đã chi tiêu không còn khả năng sinh lời; muốn có lãi kép phải tái đầu tư tiền đó
+- [ ] Các quỹ có chi trả cổ tức thì hoàn toàn không có hiệu ứng lãi kép
 
-Giải thích: Lãi kép cần lợi nhuận ở lại để tiếp tục sinh lời. Quỹ giữ lại thu nhập thì hiệu ứng nằm sẵn trong NAV; nhận tiền mặt ra ngoài thì phải tự mua lại nếu muốn tích lũy tiếp.
+Giải thích: Lãi kép đòi hỏi lợi nhuận phải ở lại trong danh mục để tiếp tục sinh lời. Nếu rút tiền mặt ra chi tiêu, bạn cần tự đặt lệnh mua lại chứng chỉ quỹ nếu muốn tiếp tục hành trình tích lũy.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 38
 
@@ -1404,29 +1404,29 @@ Giải thích: Mức giả định không đổi, 15% mỗi năm; thứ thay đ�
 
 #### Câu b4c-fifteen-percent · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: Xem phép tính 123,5 tỷ, Linh 23 tuổi nói: "Vậy cứ góp 5 triệu mỗi tuần là chắc chắn thành trăm tỷ."
+Bối cảnh: Đọc ví dụ 123,5 tỷ đồng, Linh (23 tuổi) nói: "Vậy cứ trích góp 5 triệu mỗi tuần là chắc chắn thu về hơn trăm tỷ".
 
-Câu hỏi: Nhận định nào đúng về mức 15%/năm trong ví dụ?
+Câu hỏi: Nhận định nào phản ánh đúng bản chất con số 15%/năm trong mô phỏng?
 
-- [ ] Mức lợi nhuận quỹ cam kết trả mỗi năm cho người góp đều
-- [x] Mức tham chiếu lịch sử từ năm 2000, gồm cổ tức; không được bảo đảm
-- [ ] Mức tối thiểu, vì thực tế năm nào cũng cao hơn
+- [ ] Mức lợi nhuận công ty quản lý quỹ cam kết chi trả hằng năm
+- [x] Mức tham chiếu lịch sử của thị trường Việt Nam từ năm 2000 (gồm cổ tức), không được bảo đảm
+- [ ] Mức lợi nhuận tối thiểu vì thực tế các năm đều đạt cao hơn
 
-Giải thích: Đây là hiệu suất lịch sử của thị trường chứng khoán Việt Nam từ năm 2000, tính gộp cổ tức; từng giai đoạn có thể cao hơn hoặc thấp hơn nhiều. Phép tính giúp hiểu cơ chế, không hứa một con số.
+Giải thích: 15%/năm là hiệu suất tham chiếu lịch sử dài hạn của thị trường, từng giai đoạn thực tế sẽ có năm tăng cao và năm giảm âm. Mô hình dùng để giải thích cơ chế chứ không phải lời hứa hẹn.
 
 > Nguồn: DCA là gì? Đầu tư đều đặn và lãi kép
 
 #### Câu b4c-behavior · Chọn đáp án · Vì sao?
 
-Bối cảnh: Tại Investor Day 2026, Dragon Capital dẫn số liệu: hơn 90% tài khoản giao dịch cá nhân không có lãi, hoặc lãi dưới 10% mỗi năm.
+Bối cảnh: Số liệu Investor Day 2026 cho thấy hơn 90% tài khoản giao dịch cá nhân có hiệu suất kém (lỗ hoặc dưới 10%/năm).
 
-Câu hỏi: Theo các chuyên gia, nguyên nhân chính là gì?
+Câu hỏi: Theo chuyên gia, rào cản lớn nhất khiến đa số nhà đầu tư thất bại là gì?
 
-- [ ] Nhà đầu tư cá nhân thiếu kỹ năng phân tích doanh nghiệp
-- [x] Hành vi: mua khi đã tăng mạnh vì FOMO, bán tháo khi giảm
-- [ ] Phí giao dịch trên thị trường quá cao
+- [ ] Nhà đầu tư cá nhân thiếu kỹ năng phân tích báo cáo tài chính
+- [x] Bẫy cảm xúc: mua vì sợ lỡ cơ hội (FOMO) khi giá tăng cao và hoảng loạn bán tháo khi giá giảm
+- [ ] Chi phí giao dịch và quản lý trên thị trường quá cao
 
-Giải thích: Mua cao bán thấp làm đứt mạch tích lũy, nên lãi kép không có thời gian phát huy. Góp số tiền cố định theo lịch, như 5 triệu mỗi tuần, giúp tách quyết định khỏi cảm xúc.
+Giải thích: Mua cao bán thấp làm đứt gãy đà tích lũy, khiến lãi kép không có đủ thời gian phát huy. Việc trích một khoản tiền cố định theo lịch giúp tách biệt quyết định đầu tư khỏi cảm xúc bộc phát.
 
 > Nguồn: DCA là gì? Đầu tư đều đặn và lãi kép
 
@@ -1462,15 +1462,15 @@ Giải thích: Khoảng 16,3 tỷ so với 33,8 tỷ, dù anh Toàn góp 1,8 t�
 
 #### Câu b4c-cost-of-waiting · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Chị Ngân 30 tuổi định chờ 5 năm, khi lương cao hơn, mới góp 3 triệu/tháng. Giả định 15%/năm đến năm 60 tuổi: bắt đầu ngay được khoảng 16,7 tỷ, chờ 5 năm còn khoảng 8,2 tỷ.
+Bối cảnh: Chị Ngân (30 tuổi) định hoãn 5 năm chờ lương cao rồi mới trích 3 triệu/tháng. Giả định 15%/năm đến tuổi 60: bắt đầu ngay đạt ~16,7 tỷ; hoãn 5 năm chỉ còn ~8,2 tỷ đồng.
 
-Câu hỏi: Chị nên cân nhắc gì trước khi quyết định chờ?
+Câu hỏi: Chị Ngân nên cân nhắc điều gì trước khi quyết định hoãn?
 
-- [ ] Chờ không mất gì, vì tiền vẫn nằm trong tài khoản
-- [x] Chờ có chi phí cơ hội: mất gần một nửa kết quả cuối
-- [ ] Nên chờ, vì lương cao hơn thì góp được nhiều hơn
+- [ ] Việc chờ đợi không mất mát gì vì tiền vẫn nằm an toàn trong tài khoản
+- [x] Việc trì hoãn tạo ra chi phí cơ hội thực sự: đánh mất gần một nửa tài sản cuối kỳ
+- [ ] Nên chờ đợi vì khi lương cao hơn sẽ góp được số tiền lớn hơn
 
-Giải thích: Trì hoãn không tốn tiền mặt, nhưng tốn những năm lãi kép không lấy lại được. Bắt đầu với số nhỏ ngay rồi tăng dần khi lương tăng giúp giữ được những năm quý nhất.
+Giải thích: Trì hoãn không làm mất tiền mặt hiện tại nhưng làm mất đi những năm lãi kép quý giá. Bắt đầu ngay với số tiền nhỏ rồi nâng dần theo thu nhập là chiến lược tối ưu hơn.
 
 > Nguồn: Câu chuyện về nhà đầu tư 60 tuổi
 
@@ -1480,7 +1480,7 @@ Giải thích: Trì hoãn không tốn tiền mặt, nhưng tốn những năm l
 
 Tiêu đề: Giai đoạn khó nhất
 
-Nội dung: Những năm đầu, tài khoản tăng chủ yếu nhờ tiền bạn góp; lợi nhuận có nhưng còn nhỏ. Đây là lúc nhiều người mất kiên nhẫn và dừng lại, trước khi lãi kép kịp phát huy.
+Nội dung: Trong những năm đầu tiên, tài khoản tăng lên chủ yếu nhờ số tiền vốn do chính bạn tự nộp vào; phần lợi nhuận sinh ra vẫn còn rất nhỏ. Đây là chặng đường thử thách nhất khiến nhiều người mất kiên nhẫn và bỏ cuộc trước khi đòn bẩy lãi kép kịp phát huy tác dụng.
 
 > Nguồn: Ý nghĩa cột mốc 1 tỷ đồng đầu tiên
 
@@ -1498,15 +1498,15 @@ Giải thích: Khoảng 1,06 tỷ: lợi nhuận tăng từ khoảng 44 triệu 
 
 #### Câu b4c-small-base · Chọn đáp án · Vì sao?
 
-Bối cảnh: Anh Sơn góp đều được 2 năm, tài khoản chỉ hơn vốn góp một chút. Anh nói: "Tiền tăng là nhờ mình góp, chứ đầu tư có làm gì đâu."
+Bối cảnh: Anh Sơn góp đều 2 năm, tài khoản chỉ nhỉnh hơn số tiền gốc một chút. Anh than thở: "Tiền tăng hoàn toàn là do mình tự nộp vào chứ đầu tư có sinh lời mấy đâu".
 
-Câu hỏi: Vì sao giai đoạn này lợi nhuận khó nhận ra?
+Câu hỏi: Nguyên nhân vì sao ở giai đoạn đầu phần lợi nhuận lại khó nhận biết?
 
-- [ ] Vì lợi nhuận của quỹ bị khóa đến khi rút tiền
-- [x] Vì tài sản còn nhỏ, phần sinh lời nhỏ so với tiền góp mới
-- [ ] Vì anh đã chọn sai thời điểm bắt đầu
+- [ ] Vì lợi nhuận của quỹ bị phong tỏa cho đến khi nhà đầu tư rút vốn
+- [x] Vì quy mô tài sản còn nhỏ nên số tiền lời tính theo phần trăm chưa tạo ra con số tuyệt đối lớn
+- [ ] Vì anh Sơn đã chọn sai thời điểm bắt đầu giải ngân
 
-Giải thích: Lợi nhuận tính trên tài sản đã tích lũy; khi tài sản còn nhỏ, tiền góp mới lấn át. Đến một giai đoạn, lợi nhuận một năm có thể sánh ngang hoặc vượt số tiền góp trong năm đó.
+Giải thích: Lợi nhuận tính trên nền vốn tích lũy. Khi nền vốn còn nhỏ, khoản tiền nộp thêm hằng tháng sẽ lấn át phần tiền lời. Đến khi danh mục đạt quy mô đủ lớn, lợi nhuận một năm có thể bằng hoặc vượt toàn bộ tiền góp cả năm.
 
 > Nguồn: Ý nghĩa cột mốc 1 tỷ đồng đầu tiên
 
@@ -1556,15 +1556,15 @@ Giải thích: Cùng 72 triệu, nhưng khoản của anh Long có thêm 7 năm 
 
 #### Câu b4c-raise · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Anh Quân vừa được tăng lương 10%, tức thêm 3 triệu/tháng. Anh đang góp đều 5 triệu/tháng cho một mục tiêu dài hạn.
+Bối cảnh: Anh Quân vừa được tăng lương 10% (thu nhập tăng thêm 3 triệu/tháng). Anh đang duy trì trích góp 5 triệu/tháng cho mục tiêu dài hạn.
 
-Câu hỏi: Cách nào giúp kế hoạch tiến nhanh hơn mà vẫn bền vững?
+Câu hỏi: Hành động nào giúp bản kế hoạch bứt phá mà vẫn đảm bảo mức sống hiện tại?
 
-- [ ] Giữ nguyên mức góp, dùng hết phần tăng thêm cho chi tiêu
-- [x] Chuyển một phần tiền tăng lương vào mức góp định kỳ từ tháng này
-- [ ] Dồn toàn bộ tiền tăng lương lại, đợi thị trường giảm mới đầu tư
+- [ ] Giữ nguyên mức góp 5 triệu, dùng toàn bộ phần lương tăng thêm cho chi tiêu cá nhân
+- [x] Trích ngay một phần tiền lương tăng thêm để nâng mức góp định kỳ hằng tháng
+- [ ] Dồn toàn bộ tiền tăng lương lại, chờ thị trường giảm sâu mới giải ngân
 
-Giải thích: Tăng mức góp ngay khi thu nhập tăng giúp kế hoạch lớn dần mà mức sống hiện tại không giảm. Khả năng gia tăng mức đầu tư theo thời gian là một trong ba yếu tố cơ bản của kế hoạch dài hạn.
+Giải thích: Tăng mức góp ngay khi thu nhập gia tăng giúp quy mô tài sản tích lũy bứt phá nhanh chóng mà không làm ảnh hưởng đến mức chi tiêu sinh hoạt đã quen thuộc.
 
 > Nguồn: Làm sao đạt 1 tỷ đồng đầu tiên
 
@@ -1590,29 +1590,29 @@ Giải thích: Khoảng 4,4 tỷ (13,1 tỷ so với 8,7 tỷ), gần 9 lần v�
 
 #### Câu b4c-fee-in-nav · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: Chị Hằng thấy phí mua CCQ là 0% và chưa bao giờ nhận hóa đơn phí quản lý. Chị kết luận: "Đầu tư quỹ này hoàn toàn không mất phí."
+Bối cảnh: Chị Hằng thấy phí mua chứng chỉ quỹ là 0% và chưa từng nhận hóa đơn thu phí quản lý. Chị kết luận: "Đầu tư quỹ này hoàn toàn miễn phí".
 
-Câu hỏi: Nhận định nào đúng?
+Câu hỏi: Nhận định nào dưới đây phản ánh đúng thực tế?
 
-- [ ] Đúng, không có hóa đơn nghĩa là quỹ không thu phí
-- [x] Phí quản lý đã trừ trong NAV hằng ngày, nên vẫn làm giảm lợi nhuận
-- [ ] Phí quản lý sẽ bị thu một lần khi chị bán CCQ
+- [ ] Đúng, không nhận hóa đơn thu phí nghĩa là quỹ không tính phí quản lý
+- [x] Phí quản lý đã được khấu trừ trực tiếp vào NAV hằng ngày trước khi công bố
+- [ ] Phí quản lý sẽ được truy thu một lần khi chị thực hiện bán chứng chỉ quỹ
 
-Giải thích: Phí quản lý là chi phí cấp quỹ, đã phản ánh trong NAV nên không thu lại khi giao dịch. Không thấy hóa đơn không có nghĩa là không có phí; lệnh bán còn có thể có phí và thuế riêng theo biểu phí.
+Giải thích: Phí quản lý là chi phí vận hành ở cấp độ quỹ, đã được trừ trực tiếp vào giá trị tài sản ròng (NAV) hằng ngày. Do đó, mức tăng trưởng NAV hiển thị đã là lợi nhuận sau phí.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 125
 
 #### Câu b4c-fee-vs-alpha · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Anh Quang so sánh một quỹ chỉ số phí khoảng 0,5%/năm với một quỹ chủ động phí khoảng 2%/năm. Anh đang lập kế hoạch đầu tư 20 năm.
+Bối cảnh: Anh Quang so sánh giữa quỹ chỉ số (phí ~0,5%/năm) và quỹ chủ động (phí ~2%/năm) cho kế hoạch tích lũy 20 năm.
 
-Câu hỏi: Anh nên cân nhắc gì trước khi chọn?
+Câu hỏi: Anh Quang nên cân nhắc yếu tố nào trước khi đưa ra lựa chọn?
 
-- [ ] Quỹ phí cao hơn chắc chắn được quản lý tốt hơn
-- [x] Phần vượt trội sau phí có đủ bù mức phí cao hơn không
-- [ ] Phí chỉ chênh 1,5% nên không cần xét đến
+- [ ] Quỹ có mức phí cao hơn chắc chắn có đội ngũ quản lý xuất sắc hơn
+- [x] Mức lợi nhuận vượt trội (alpha) sau phí của quỹ chủ động có đủ bù đắp mức phí cao hơn không
+- [ ] Mức chênh lệch 1,5% phí là quá nhỏ nên không cần tính đến
 
-Giải thích: Quỹ chủ động hướng tới lợi nhuận vượt chỉ số sau khi trừ phí, nhưng không phải lúc nào cũng làm được. Với khung thời gian dài, phí tạo khác biệt lớn, nên cần đặt cạnh hiệu suất lịch sử khi so sánh.
+Giải thích: Phí là khoản chi chắc chắn phải trả, trong khi khả năng tạo lợi nhuận vượt trội là không bảo đảm. Trong dài hạn, chênh lệch phí sẽ tạo ra khoảng cách tài sản rất lớn.
 
 > Nguồn: W5 Bài 3 · Quỹ chủ động vs thụ động
 
@@ -1634,45 +1634,45 @@ Giải thích: Trước khi cộng, hãy xem định nghĩa của chỉ tiêu đ
 
 #### Câu b4c-nav-vs-total · Chọn đáp án · Vì sao?
 
-Bối cảnh: Năm qua, một quỹ chia cổ tức tiền mặt cho nhà đầu tư. Chị My thấy mức thay đổi NAV/CCQ thấp hơn tổng lợi nhuận mà quỹ công bố.
+Bối cảnh: Trong năm, quỹ thực hiện chia cổ tức tiền mặt. Chị My thấy mức tăng trưởng NAV/CCQ thấp hơn con số tổng lợi nhuận mà quỹ công bố.
 
-Câu hỏi: Vì sao hai con số khác nhau?
+Câu hỏi: Nguyên nhân vì sao có sự lệch nhau giữa hai con số này?
 
-- [ ] Vì quỹ công bố sai một trong hai con số
-- [x] Vì NAV/CCQ đơn thuần chưa phản ánh cổ tức đã trả ra ngoài quỹ
-- [ ] Vì cổ tức làm giảm lợi nhuận thật của nhà đầu tư
+- [ ] Vì công ty quản lý quỹ công bố sai lệch một trong hai số liệu
+- [x] Vì NAV/CCQ đơn thuần chưa tính phần tiền cổ tức đã chi trả ra ngoài quỹ
+- [ ] Vì việc chia cổ tức làm giảm hiệu quả đầu tư thực tế
 
-Giải thích: Tiền đã chia ra ngoài không còn nằm trong NAV, nhưng vẫn là kết quả của khoản đầu tư. Tổng lợi nhuận tính cả phần phân phối, nên muốn đánh giá đúng cần biết mình đang đọc chỉ tiêu nào.
+Giải thích: Tiền cổ tức sau khi chia đã rời khỏi tài sản quỹ để về tài khoản nhà đầu tư, khiến NAV/CCQ giảm tương ứng. Chỉ số tổng lợi nhuận cộng ngược phần cổ tức này vào để phản ánh trọn vẹn hiệu suất.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 40
 
 #### Câu b4c-reinvest-spot · Tìm câu sai
 
-Bối cảnh: Chị Diệp giải thích cho em trai cách quỹ xử lý cổ tức và tiền lãi từ tài sản quỹ.
+Bối cảnh: Chị Diệp giải thích cho em trai về cơ chế xử lý cổ tức của quỹ mở.
 
-Câu hỏi: Câu nào sai?
+Câu hỏi: Trong các nhận định dưới đây, câu nào SAI?
 
 > Đánh dấu [x] vào câu SAI.
 
-- [ ] Cổ tức và lãi được giữ lại thuộc tài sản quỹ, do đội ngũ quản lý dùng theo chiến lược
-- [x] Cổ tức giữ lại trong quỹ sẽ tự động làm tăng số CCQ của em
-- [ ] Tiền quỹ đã chia ra tài khoản của em chỉ được tái đầu tư khi em đặt lệnh mua tương ứng
+- [ ] Cổ tức doanh nghiệp trả cho quỹ sẽ nằm trong tài sản quỹ và được tái đầu tư.
+- [x] Cổ tức giữ lại trong quỹ sẽ tự động làm tăng thêm số chứng chỉ quỹ của em.
+- [ ] Tiền cổ tức đã chia về tài khoản chỉ sinh lời tiếp nếu em đặt lệnh mua lại.
 
-Giải thích: Phần giữ lại làm tăng tài sản quỹ, tức thể hiện qua NAV, chứ không cộng thêm CCQ cho từng người. Còn tiền đã chia ra ngoài, muốn tiếp tục tích lũy thì bạn phải tự mua lại.
+Giải thích: Cổ tức giữ lại trong quỹ làm tăng tổng tài sản ròng, tức làm tăng giá trị NAV/CCQ chứ không tự động cộng thêm số lượng chứng chỉ quỹ cho từng nhà đầu tư.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 39
 
 #### Câu b4c-buy-back · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Anh Thịnh nhận 5 triệu tiền phân phối từ quỹ vào tài khoản ngân hàng. Anh muốn khoản này tiếp tục tích lũy cùng phần còn lại.
+Bối cảnh: Anh Thịnh nhận 5 triệu đồng cổ tức tiền mặt từ quỹ về tài khoản ngân hàng và muốn khoản tiền này tiếp tục sinh lời tích lũy.
 
-Câu hỏi: Anh cần làm gì?
+Câu hỏi: Anh Thịnh cần thao tác gì?
 
-- [ ] Không cần làm gì, quỹ sẽ tự mua lại CCQ cho anh
-- [x] Chủ động đặt lệnh mua CCQ bằng khoản tiền đó
-- [ ] Chờ cuối năm, quỹ sẽ cộng khoản đó vào NAV
+- [ ] Không cần làm gì, hệ thống quỹ sẽ tự động mua thêm chứng chỉ quỹ
+- [x] Chủ động đặt lệnh mua chứng chỉ quỹ mới bằng khoản tiền 5 triệu đó
+- [ ] Chờ đến cuối năm, công ty quản lý quỹ sẽ tự cộng khoản tiền này vào NAV
 
-Giải thích: Tiền phân phối ra ngoài quỹ chỉ được tái đầu tư khi có giao dịch tương ứng. Không có lệnh mua, phần tiền đó đứng ngoài và không còn góp vào lãi kép của khoản đầu tư.
+Giải thích: Tiền đã chi trả ra tài khoản ngân hàng sẽ nằm ngoài hệ thống quỹ. Muốn tiền tiếp tục tham gia vào đòn bẩy lãi kép, bạn bắt buộc phải chủ động đặt lệnh mua mới.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 39
 
@@ -1722,15 +1722,15 @@ Giải thích: Tài khoản tăng khoảng 1,15 tỷ so với 600 triệu góp t
 
 #### Câu b4c-cp-start-small · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: Thư 24 tuổi, mới đi làm, nghĩ: "Mình đợi có 100 triệu rồi mới đầu tư, góp vài triệu mỗi tháng chẳng thấm vào đâu."
+Bối cảnh: Thư (24 tuổi) nghĩ: "Đợi khi nào tích lũy đủ 100 triệu mới đầu tư, chứ góp 1–2 triệu mỗi tháng chẳng thấm vào đâu".
 
-Câu hỏi: Nhận định nào đúng?
+Câu hỏi: Nhận định nào dưới đây phản ánh đúng thực tế tài chính?
 
-- [ ] Lãi kép chỉ thật sự có tác dụng khi vốn ban đầu đã đủ lớn
-- [x] Bắt đầu nhỏ từ sớm có giá trị, vì thời gian quan trọng hơn vốn ban đầu
-- [ ] Nên đợi đủ vốn, vì góp nhỏ thì phí ăn hết lợi nhuận
+- [ ] Lãi kép chỉ phát huy tác dụng khi quy mô vốn ban đầu đạt mức lớn
+- [x] Bắt đầu nhỏ từ sớm có giá trị rất lớn vì yếu tố thời gian quan trọng hơn số vốn ban đầu
+- [ ] Nên chờ đủ vốn lớn vì trích góp nhỏ sẽ bị phí quản lý bào mòn hết lợi nhuận
 
-Giải thích: Thời gian đầu tư dài hơn tạo tác động lũy kế lớn hơn việc tăng số tiền bỏ vào ban đầu. Mỗi năm chờ đủ vốn là một năm lãi kép không lấy lại được.
+Giải thích: Bắt đầu sớm giúp bạn sở hữu biến động thời gian quý giá. Mỗi năm trì hoãn chờ đủ vốn lớn là một năm đòn bẩy lãi kép bị bỏ lỡ không thể lấy lại.
 
 > Nguồn: DCA là gì? Đầu tư đều đặn và lãi kép
 
@@ -1750,17 +1750,17 @@ Giải thích: Khoảng 7,1 tỷ, gấp hơn 25 lần mốc 10 năm dù thời g
 
 #### Câu b4c-cp-spot · Tìm câu sai
 
-Bối cảnh: Anh Vinh tóm tắt cho đồng nghiệp những gì anh học được về lãi kép khi đầu tư quỹ.
+Bối cảnh: Anh Vinh tóm tắt các nguyên lý cốt lõi về lãi kép cho đồng nghiệp.
 
-Câu hỏi: Câu nào sai?
+Câu hỏi: Trong các nhận định dưới đây, câu nào SAI?
 
 > Đánh dấu [x] vào câu SAI.
 
-- [ ] Không cần góp thêm vốn mới vẫn có thể có lãi kép
-- [x] Quỹ chia cổ tức tiền mặt thì phần tiền đó vẫn tự sinh lời trong quỹ, dù tôi không mua lại
-- [ ] Các kỳ lỗ cũng tác động kép đến tài sản
+- [ ] Không cần nộp thêm vốn mới vẫn có thể phát huy hiệu ứng lãi kép.
+- [x] Tiền cổ tức đã chi về ngân hàng vẫn tự động sinh lãi kép trong quỹ mà không cần mua lại.
+- [ ] Các đợt thị trường giảm giá cũng tạo ra tác động kép đến tài sản.
 
-Giải thích: Tiền đã chia ra ngoài quỹ không còn tham gia lãi kép cho tới khi bạn mua lại. Với quỹ giữ lại thu nhập, hiệu ứng này nằm sẵn trong NAV.
+Giải thích: Tiền cổ tức sau khi đã chi trả ra ngoài tài khoản ngân hàng sẽ rời khỏi quỹ và ngừng sinh lãi kép cho đến khi bạn chủ động đặt lệnh mua lại chứng chỉ quỹ.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 38
 
@@ -1772,21 +1772,21 @@ Giải thích: Tiền đã chia ra ngoài quỹ không còn tham gia lãi kép c
 
 Tiêu đề: Không ai đợi giá xăng giảm mới đổ xăng
 
-Nội dung: Đổ "năm chục" mỗi lần: giá cao mua được ít, giá thấp mua được nhiều. DCA áp dụng cùng nguyên tắc cho đầu tư: số tiền cố định, lịch cố định.
+Nội dung: Khi tạt vào cây xăng đổ "năm chục": giá xăng tăng bạn mua được ít lít hơn, giá xăng giảm bạn mua được nhiều lít hơn. Đầu tư định kỳ (DCA) áp dụng chuẩn xác nguyên tắc này: số tiền cố định, lịch trình cố định.
 
 > Nguồn: Không ai đợi giá xăng giảm mới đổ xăng
 
 #### Câu b3-three-years · Chọn đáp án · Vì sao?
 
-Bối cảnh: Một nhà đầu tư góp đều 10 triệu đồng/tháng vào DCDS. Sau 3 năm, tổng vốn góp là 360 triệu đồng, tài khoản đạt khoảng 404 triệu đồng.
+Bối cảnh: Nhà đầu tư góp đều 10 triệu/tháng vào DCDS. Sau 3 năm, tổng vốn góp 360 triệu, giá trị tài khoản đạt ~404 triệu đồng (gần 90% vẫn là tiền gốc tự nộp).
 
-Câu hỏi: Vì sao sau 3 năm, gần 90% giá trị tài khoản vẫn đến từ vốn góp?
+Câu hỏi: Vì sao sau 3 năm phần lớn tài sản vẫn là tiền vốn gốc?
 
-- [ ] Lãi kép chỉ bắt đầu sau 3 năm
-- [x] Các khoản tiền góp sau chưa có nhiều thời gian sinh lời
-- [ ] Đầu tư định kỳ không tận dụng được lãi kép
+- [ ] Vì cơ chế lãi kép chỉ bắt đầu kích hoạt từ năm thứ 4 trở đi
+- [x] Vì các khoản tiền trích góp ở những tháng sau chưa có đủ thời gian sinh lời
+- [ ] Vì phương pháp đầu tư định kỳ không tận dụng được sức mạnh lãi kép
 
-Giải thích: Lãi kép bắt đầu ngay khi lợi nhuận được tái đầu tư, nhưng mỗi khoản góp có thời gian sinh lời khác nhau. Đầu tư lâu dài giúp hiệu ứng tích lũy có cơ hội rõ rệt hơn.
+Giải thích: Mỗi đợt tiền nộp vào có số tháng "làm việc" khác nhau. Các đợt tiền mới nộp ở năm thứ 2, thứ 3 cần thêm thời gian để tích lũy lợi nhuận tạo ra sự bứt phá.
 
 > Nguồn: 10 năm đầu tư đều đặn vào DCDS
 
@@ -1806,27 +1806,27 @@ Giải thích: Khoảng 2,21 tỷ: phần lợi nhuận đã gần bằng vốn 
 
 #### Câu b3-dca-no-loss · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: Anh Khoa đầu tư 3 triệu mỗi tháng vào quỹ cổ phiếu và nói với bạn: "Mình mua đều mỗi tháng nên chắc chắn không bao giờ lỗ."
+Bối cảnh: Anh Khoa góp 3 triệu/tháng vào quỹ cổ phiếu và khẳng định: "Mua đều hằng tháng thì đảm bảo tuyệt đối không bao giờ bị lỗ".
 
-Câu hỏi: Nhận định nào đúng về đầu tư định kỳ (DCA)?
+Câu hỏi: Nhận định nào dưới đây phản ánh đúng bản chất của DCA?
 
-- [ ] DCA loại bỏ hoàn toàn rủi ro thua lỗ
-- [x] DCA giúp giữ kỷ luật và bình quân giá vốn, nhưng tài khoản vẫn có thể giảm
-- [ ] DCA luôn cho kết quả tốt hơn đầu tư một lần
+- [ ] DCA loại bỏ hoàn toàn rủi ro thua lỗ cho nhà đầu tư
+- [x] DCA giúp giữ kỷ luật và bình quân giá vốn, nhưng tài khoản vẫn có thể bị âm khi thị trường giảm
+- [ ] DCA luôn mang lại hiệu suất cao hơn phương pháp giải ngân một lần
 
-Giải thích: Mua đều giúp giá vốn hình thành từ nhiều mức giá, không phụ thuộc một thời điểm. Nhưng thị trường giảm kéo dài thì tài khoản vẫn âm, và khi thị trường tăng liên tục, đầu tư một lần có thể tốt hơn.
+Giải thích: DCA giúp bình quân giá vốn qua nhiều chu kỳ. Tuy nhiên, nếu thị trường chung đi xuống kéo dài, giá trị danh mục vẫn có thể bị sụt giảm.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 3
 
 #### Câu b3-strategies · Sắp xếp
 
-Câu hỏi: Ba người cùng góp 10 triệu/tháng vào DCDS (2016–2026) nhưng phản ứng khác nhau khi quỹ giảm. Xếp kết quả từ cao đến thấp
+Câu hỏi: Bạn hãy sắp xếp kết quả tài khoản của 3 nhà đầu tư góp 10 triệu/tháng vào DCDS (2016–2026) theo thứ tự từ CAO đến THẤP dựa trên phản ứng khi thị trường giảm
 
-1. Đầu tư đều đặn (~2,21 tỷ)
-2. Tạm dừng khi quỹ giảm (~2,16 tỷ)
-3. Bán ra rồi mua lại (~1,85 tỷ)
+1. Kiên trì đầu tư đều đặn bất chấp thị trường (~2,21 tỷ đồng)
+2. Tạm dừng nộp tiền khi thị trường sụt giảm (~2,16 tỷ đồng)
+3. Bán ra cắt lỗ rồi mua lại khi thị trường tăng (~1,85 tỷ đồng)
 
-Giải thích: Người bán ra rồi mua lại có ít hơn khoảng 360 triệu, bằng 3 năm tiền góp. Kiên trì vừa đơn giản hơn, vừa hiệu quả hơn việc đoán thị trường.
+Giải thích: Người cố gắng đoán nhịp bán ra rồi mua lại thu về kết quả thấp hơn người kiên trì tới 360 triệu đồng (tương đương 3 năm tiền vốn tự nộp).
 
 > Nguồn: 10 năm đầu tư đều đặn vào DCDS
 
@@ -1890,57 +1890,57 @@ Giải thích: Kết quả của anh Bình phụ thuộc hoàn toàn vào giá c
 
 #### Câu b5d-money-source-match · Nối cặp
 
-Câu hỏi: Nối nguồn tiền với cách giải ngân thường phù hợp
+Câu hỏi: Bạn hãy nối nguồn tiền dưới đây với phương thức giải ngân phù hợp
 
-- Trích 3 triệu từ lương mỗi tháng → Đầu tư định kỳ hằng tháng
-- Có sẵn 500 triệu nhàn rỗi, đầu tư dài và chịu được biến động ngay sau khi mua → Đầu tư một lần
-- Có sẵn 500 triệu nhưng ngại giá giảm ngay sau khi mua → Chia thành nhiều đợt theo kế hoạch
+- Trích 3 triệu đồng từ lương hằng tháng → Đầu tư định kỳ hằng tháng (DCA)
+- Có sẵn 500 triệu nhàn rỗi, chịu được biến động ngắn hạn → Đầu tư một lần (Lump-sum)
+- Có sẵn 500 triệu nhưng e ngại thị trường giảm ngay sau khi mua → Chia nhỏ giải ngân theo đợt
 
-Giải thích: Vốn hình thành từ thu nhập hằng tháng thì hợp với đầu tư định kỳ. Vốn đã có sẵn thì có thể đầu tư một lần hoặc chia đợt, tùy khả năng chịu biến động.
+Giải thích: Bản chất nguồn tiền và khả năng chịu đựng biến động tâm lý sẽ quyết định phương thức giải ngân tối ưu.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 13
 
 #### Câu b5d-rising-market · Chọn đáp án · Dự đoán
 
-Bối cảnh: Giả định thị trường tăng đều suốt 12 tháng. Anh Hải đầu tư 120 triệu một lần ngay tháng đầu; chị Ngọc chia ra 10 triệu mỗi tháng vào cùng quỹ.
+Bối cảnh: Giả định thị trường tăng trưởng liên tục trong 12 tháng. Anh Hải đầu tư 120 triệu một lần ngay tháng đầu; chị Ngọc chia nhỏ 10 triệu/tháng.
 
-Câu hỏi: Cuối năm, ai nhiều khả năng có kết quả cao hơn?
+Câu hỏi: Khép lại năm, tài khoản của ai sẽ có giá trị cao hơn?
 
-- [ ] Chị Ngọc, vì DCA luôn cho kết quả tốt hơn
-- [x] Anh Hải, vì toàn bộ số tiền đã ở trong thị trường suốt đợt tăng
-- [ ] Như nhau, vì cùng bỏ ra 120 triệu
+- [ ] Chị Ngọc, vì DCA luôn mang lại kết quả vượt trội
+- [x] Anh Hải, vì toàn bộ 120 triệu đồng đã nằm trong thị trường trọn vẹn đợt tăng
+- [ ] Cả hai có kết quả bằng nhau vì cùng giải ngân 120 triệu
 
-Giải thích: Khi giá tăng liên tục, chị Ngọc mua các phần sau ở giá ngày càng cao. DCA giúp giữ kỷ luật và giảm phụ thuộc một thời điểm, nhưng không phải lúc nào cũng thắng đầu tư một lần.
+Giải thích: Khi thị trường tăng liên tục, người mua DCA phải mua các đợt sau ở mức giá ngày càng cao. Lump-sum phát huy lợi thế tối đa trong thị trường tăng giá kéo dài.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 3
 
 #### Câu b5d-land-money · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Chị Hạnh có 300 triệu từ bán đất, đã để riêng quỹ dự phòng, mục tiêu 10 năm. Chị sợ vừa mua xong thì thị trường giảm.
+Bối cảnh: Chị Hạnh nhận 300 triệu đồng từ bán đất, đã có quỹ dự phòng riêng và nhắm mục tiêu 10 năm. Chị rất sợ vừa mua xong thì thị trường sụt giảm.
 
-Câu hỏi: Cách giải ngân nào hợp lý với chị?
+Câu hỏi: Cách giải ngân nào giúp chị Hạnh an tâm nhất?
 
-- [x] Bắt đầu với một phần, phần còn lại giải ngân theo lịch định sẵn
-- [ ] Giữ tiền mặt đến khi chắc chắn thị trường đã chạm đáy
-- [ ] Dồn hết ngay hôm nay vì dài hạn thị trường chắc chắn tăng
+- [x] Bắt đầu giải ngân một phần, phần còn lại chia đều giải ngân theo lịch định sẵn
+- [ ] Giữ tiền mặt chờ cho đến khi chắc chắn thị trường đã tạo đáy
+- [ ] Dồn toàn bộ 300 triệu giải ngân ngay hôm nay vì mục tiêu là 10 năm
 
-Giải thích: Không ai biết chắc giá sẽ giảm thêm hay không. Chia đợt giảm áp lực chọn một thời điểm duy nhất, nhưng chị vẫn cần chấp nhận danh mục có thể giảm sau khi mua.
+Giải thích: Chia nhỏ khoản tiền lớn giải ngân theo đợt giúp giải tỏa áp lực tâm lý sợ mua đúng đỉnh, giúp chị Hạnh bước vào thị trường một cách chủ động.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 18
 
 #### Câu b5d-spot-when-to-buy · Tìm câu sai
 
-Bối cảnh: Anh Đức chia sẻ với nhóm đồng nghiệp ba nguyên tắc giải ngân của mình.
+Bối cảnh: Anh Đức chia sẻ ba nguyên tắc giải ngân tài chính cá nhân.
 
-Câu hỏi: Câu nào sai?
+Câu hỏi: Nguyên tắc nào dưới đây là SAI?
 
 > Đánh dấu [x] vào câu SAI.
 
-- [ ] Trước khi đầu tư, tôi để riêng khoản dự phòng và tiền cho nhu cầu ngắn hạn.
-- [ ] Đầu tư định kỳ giúp tôi giảm phụ thuộc vào một thời điểm giải ngân.
-- [x] Cứ chờ thị trường giảm rồi mới mua là chắc chắn mua được giá thấp hơn.
+- [ ] Trước khi đầu tư, tôi luôn giữ riêng quỹ dự phòng và tiền ngắn hạn.
+- [ ] Đầu tư định kỳ giúp tôi giảm bớt phụ thuộc vào một thời điểm mua duy nhất.
+- [x] Cứ kiên nhẫn chờ thị trường giảm sâu rồi mới mua là chắc chắn mua được giá thấp.
 
-Giải thích: Thị trường giảm có thể tạo cơ hội mua rẻ hơn, nhưng giá vẫn có thể giảm tiếp, hoặc tăng lại trước khi bạn kịp mua. Chờ đợi còn làm mất thời gian đầu tư.
+Giải thích: Việc ngồi chờ thị trường giảm có thể khiến bạn bỏ lỡ đà tăng giá kéo dài, hoặc khi thị trường giảm thật bạn lại không dám giải ngân do sợ giảm tiếp.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 2
 
@@ -1960,15 +1960,15 @@ Giải thích: Khoảng 63%, và 58% khi so với chờ 3 tháng. Không phải 
 
 #### Câu b5d-longer-wait · Chọn đáp án · Vì sao?
 
-Bối cảnh: Trên dữ liệu DCDS 22 năm, đầu tư ngay thắng chờ 3 tháng trong khoảng 58% trường hợp, nhưng thắng chờ 6 tháng trong khoảng 63%.
+Bối cảnh: Dữ liệu DCDS cho thấy: giải ngân ngay thắng chờ 3 tháng ở 58% trường hợp, nhưng thắng chờ 6 tháng ở 63% trường hợp.
 
-Câu hỏi: Vì sao chờ càng lâu thì càng hay thua đầu tư ngay?
+Câu hỏi: Vì sao càng chờ đợi lâu thì xác suất thua phương án giải ngân ngay càng cao?
 
-- [x] Vì thị trường có xu hướng tăng dài hạn, chờ lâu hơn là bỏ lỡ nhiều tăng trưởng hơn
-- [ ] Vì giá CCQ tháng nào cũng tăng đều
-- [ ] Vì tiền chờ trong tài khoản bị quỹ tính phí
+- [x] Vì thị trường có xu hướng tăng dài hạn, trì hoãn càng lâu càng bỏ lỡ nhiều đà tăng
+- [ ] Vì giá chứng chỉ quỹ hằng tháng luôn tăng đều đặn không giảm
+- [ ] Vì tiền nằm chờ trong tài khoản bị công ty quản lý quỹ thu phí
 
-Giải thích: Thị trường tăng dài hạn theo sự phát triển của doanh nghiệp và nền kinh tế, dù từng tháng vẫn có lên xuống. Mỗi tháng trì hoãn là thêm một phần cơ hội tăng trưởng bị bỏ lỡ.
+Giải thích: Nền kinh tế và doanh nghiệp phát triển giúp thị trường có xu hướng tăng trong dài hạn. Mỗi tháng tiền nằm chờ là một tháng bạn bỏ lỡ cơ hội sinh lời của dòng vốn.
 
 > Nguồn: Ngày tốt nhất để đầu tư là ngày tiền về tài khoản
 
@@ -1988,15 +1988,15 @@ Giải thích: Người xui nhất chỉ kém khoảng 3,6%, người may nhất
 
 #### Câu b5d-salary-day · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Lương chị Linh về ngày 5, nhưng chị thường để tiền nằm trong tài khoản chờ một phiên giảm điểm mới mua quỹ, có tháng chờ đến tận cuối tháng.
+Bối cảnh: Lương chị Linh về ngày 5 hằng tháng, nhưng chị hay canh bảng điện chờ phiên giảm mới mua, có khi chờ đến tận cuối tháng.
 
-Câu hỏi: Chị nên thay đổi điều gì?
+Câu hỏi: Chị Linh nên thay đổi thói quen này như thế nào?
 
-- [ ] Canh kỹ hơn để bắt đúng phiên giảm mạnh nhất tháng
-- [x] Đặt lịch đầu tư ngay sau ngày nhận lương
-- [ ] Gom lương ba tháng rồi mua một lần vào lúc thị trường giảm
+- [ ] Canh bảng điện kỹ hơn để bắt chính xác phiên giảm sâu nhất tháng
+- [x] Thiết lập lịch trích đầu tư tự động ngay sau ngày nhận lương
+- [ ] Gom lương 3 tháng lại rồi chờ đợt giảm mạnh mới mua một lần
 
-Giải thích: Khi chọn ngày gần như không tạo khác biệt, tiêu chí hợp lý là giảm thời gian tiền đứng ngoài thị trường. Ngày tốt nhất thường là ngày tiền sẵn sàng.
+Giải thích: Vì chọn ngày mua không tạo ra khác biệt lớn, tiêu chí tối ưu nhất là đưa tiền vào làm việc ngay khi sẵn sàng. Đặt lịch ngay sau ngày nhận lương giúp loại bỏ hoàn toàn sự trì hoãn.
 
 > Nguồn: Ngày tốt nhất để đầu tư là ngày tiền về tài khoản
 
@@ -2012,57 +2012,57 @@ Giải thích: Đoán đúng đáy rất khó, và kể cả đoán đúng mọi
 
 #### Câu b3-timing-gap · Chọn đáp án · Dự đoán
 
-Bối cảnh: Hai người cùng góp 10 triệu/tháng vào DCDS suốt 22 năm. Người A may mắn luôn mua đúng ngày giá thấp nhất mỗi tháng; người B mua vào một ngày cố định.
+Bối cảnh: So sánh 22 năm dữ liệu DCDS: Người A may mắn luôn mua đúng ngày giá thấp nhất tháng, Người B mua cố định vào một ngày trong tháng.
 
-Câu hỏi: Người A có nhiều hơn người B khoảng bao nhiêu?
+Câu hỏi: Tổng tài sản của Người A nhiều hơn Người B khoảng bao nhiêu?
 
 - [x] Chỉ khoảng 2,7%
 - [ ] Khoảng 30%
 - [ ] Gấp đôi
 
-Giải thích: Khoảng 11,8 tỷ so với 11,4 tỷ. Ngay cả may mắn tuyệt đối cũng chỉ thêm 2,7%: thời gian ở lại thị trường quan trọng hơn nhiều so với chọn ngày mua.
+Giải thích: Khoảng 11,8 tỷ so với 11,4 tỷ đồng. Việc may mắn bắt trúng đáy tuyệt đối suốt 22 năm cũng chỉ mang lại chênh lệch 2,7%. Thời gian hiện diện trên thị trường quan trọng hơn nhiều việc đoán ngày mua.
 
 > Nguồn: Không ai đợi giá xăng giảm mới đổ xăng
 
 #### Câu b3-day-of-month · Chọn đáp án · Dự đoán
 
-Bối cảnh: Dữ liệu DCDS hơn 22 năm: ba người cùng đầu tư mỗi tháng, một người mua ngày 1, một người ngày 10, một người ngày 25.
+Bối cảnh: Dữ liệu 22 năm DCDS: ba người cùng góp vốn hằng tháng, Người 1 mua ngày 1, Người 2 mua ngày 10, Người 3 mua ngày 25.
 
-Câu hỏi: Kết quả của họ chênh nhau khoảng bao nhiêu?
+Câu hỏi: Mức chênh lệch kết quả giữa ba người này là bao nhiêu?
 
 - [x] Dưới 1%
 - [ ] Khoảng 10%
 - [ ] Khoảng 25%
 
-Giải thích: Chọn ngày nào trong tháng gần như không quan trọng. Điều tạo khác biệt là đầu tư đều và để tiền nằm trong thị trường đủ lâu, nên ngày tốt nhất thường là ngày tiền về tài khoản.
+Giải thích: Dưới 1%. Chọn ngày 1, ngày 10 hay ngày 25 trong tháng gần như không tạo ra sự khác biệt. Ngày tốt nhất để đầu tư đơn giản là ngày tiền về tài khoản của bạn.
 
 > Nguồn: Ngày tốt nhất để đầu tư là ngày tiền về tài khoản
 
 #### Câu b3-sell-in-may · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: Cuối tháng 4, nhóm chat đầu tư rộn ràng câu "Sell in May and go away": nên bán hết trước tháng 5 vì tháng 5 luôn giảm điểm.
+Bối cảnh: Cuối tháng 4, nhóm thảo luận nhắc câu "Sell in May and go away" (Bán tháng 5 rồi đứng ngoài) vì cho rằng tháng 5 luôn giảm điểm.
 
-Câu hỏi: Dữ liệu VN-Index 2014–2025 cho thấy điều gì?
+Câu hỏi: Dữ liệu VN-Index giai đoạn 2014–2025 chỉ ra thực tế nào?
 
-- [ ] Tháng 5 giảm điểm ở cả 12 năm
-- [x] Tháng 5 tăng ở 8/12 năm, dao động từ −7,5% đến +12,4%
-- [ ] Tháng 5 luôn là tháng tăng mạnh nhất năm
+- [ ] Tháng 5 giảm điểm trong cả 12 năm
+- [x] Tháng 5 tăng điểm ở 8/12 năm, với biên độ từ −7,5% đến +12,4%
+- [ ] Tháng 5 luôn là tháng tăng trưởng mạnh nhất trong năm
 
-Giải thích: Kinh nghiệm của thị trường khác không tự động đúng ở Việt Nam. Kết quả từng tháng phụ thuộc điều kiện kinh tế mỗi năm, không phải lịch.
+Giải thích: Khái niệm truyền miệng từ thị trường quốc tế không hoàn toàn đúng tại Việt Nam. Diễn biến từng tháng phụ thuộc vào các yếu tố vĩ mô và doanh nghiệp thực tế chứ không tuân theo quy luật lịch.
 
 > Nguồn: Câu chuyện "Sell in May" tại thị trường Việt Nam
 
 #### Câu b3-patience · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Chị Vy bắt đầu đầu tư DCDS giữa năm 2024. Sau 12 tháng tài khoản vẫn lỗ nhẹ và chị định bán. Người giữ thêm 6 tháng, đến cuối 2025 đã lãi khoảng 38%.
+Bối cảnh: Chị Vy mua DCDS từ giữa 2024, sau 12 tháng tài khoản lỗ nhẹ nên định bán. Thực tế dữ liệu nếu giữ thêm 6 tháng (đến cuối 2025) tài khoản đạt lãi ~38%.
 
-Câu hỏi: Trước khi bán, chị nên cân nhắc điều gì?
+Câu hỏi: Chị Vy nên cân nhắc điều gì trước khi đặt lệnh bán?
 
-- [ ] Bán ngay để cắt lỗ trước khi lỗ nhiều hơn
-- [x] Mục tiêu và thời gian đầu tư của mình có thay đổi không, vì không ai đoán được lúc thị trường tăng mạnh
-- [ ] Bán rồi chờ thị trường rõ xu hướng mới mua lại
+- [ ] Bán ngay để cắt lỗ trước khi thị trường giảm sâu hơn
+- [x] Xem mục tiêu và thời hạn đầu tư có thay đổi không, vì biến động ngắn hạn không dự báo được đợt tăng
+- [ ] Bán ra rồi chờ thị trường thể hiện rõ xu hướng mới mua lại
 
-Giải thích: Lỗ tạm thời chỉ thành lỗ thật khi bán. Nếu mục tiêu và thời gian không đổi, quyết định nên dựa trên kế hoạch chứ không dựa trên cảm xúc của 12 tháng gần nhất.
+Giải thích: Khoản lỗ trên giấy chỉ thành lỗ thật khi bạn bấm bán. Nếu mục tiêu dài hạn không đổi, hãy kiên trì tuân thủ kế hoạch thay vì hành động theo cảm xúc biến động ngắn hạn.
 
 > Nguồn: Kế hoạch du học cho con: bài toán tài chính gia đình (anh Nam)
 
@@ -2078,29 +2078,29 @@ Giải thích: Mỗi lần tạm dừng hay bán ra đều bỏ lỡ những th�
 
 #### Câu b3-reactions-lowest · Chọn đáp án · Dự đoán
 
-Bối cảnh: Ba người cùng góp 10 triệu/tháng vào DCDS từ 8/2016 đến 7/2026, tổng vốn 1,2 tỷ. Khi quỹ giảm, A vẫn góp đều, B tạm dừng, C bán ra rồi mua lại khi quỹ tăng.
+Bối cảnh: Ba người cùng góp 10 triệu/tháng vào DCDS (2016–2026, vốn 1,2 tỷ): Người A góp đều đặn, Người B tạm dừng khi giá giảm, Người C bán ra rồi mua lại khi giá tăng.
 
-Câu hỏi: Ai có kết quả thấp nhất?
+Câu hỏi: Ai thu về kết quả tài sản THẤP NHẤT?
 
-- [ ] A, vì vẫn góp tiền cả lúc quỹ giảm
-- [ ] B, vì bỏ lỡ một số tháng góp
-- [x] C, vì bán ra rồi mua lại
+- [ ] Người A, vì vẫn nộp tiền ngay cả lúc thị trường suy thoái
+- [ ] Người B, vì bị bỏ lỡ một số kỳ góp vốn
+- [x] Người C, vì bán ra cắt lỗ rồi mới mua lại sau
 
-Giải thích: A khoảng 2,21 tỷ, B 2,16 tỷ, C chỉ 1,85 tỷ: ít hơn khoảng 360 triệu, bằng 3 năm tiền góp. Bán khi giảm biến khoản lỗ tạm thời thành lỗ thật.
+Giải thích: Người A đạt ~2,21 tỷ; Người B đạt ~2,16 tỷ; Người C chỉ đạt ~1,85 tỷ đồng. Hành vi bán khi thị trường giảm đã trực tiếp biến lỗ tạm thời thành lỗ thật và bỏ lỡ đợt phục hồi.
 
 > Nguồn: 10 năm đầu tư đều đặn vào DCDS
 
 #### Câu b3-reactions-pause · Chọn đáp án · Vì sao?
 
-Bối cảnh: Người tạm dừng đã cân nhắc ra vào 11 lần trong 10 năm, lần nào cũng có lý do nghe hợp lý. Kết quả cuối cùng vẫn thấp hơn người cứ góp đều.
+Bối cảnh: Người B đã 11 lần tạm dừng góp vốn trong 10 năm khi thấy thị trường có tin xấu. Kết quả cuối cùng vẫn thấp hơn Người A (người cứ góp đều).
 
-Câu hỏi: Vì sao "làm nhiều hơn" lại không tốt hơn?
+Câu hỏi: Vì sao việc "chủ động phản ứng" lại cho kết quả kém hơn việc góp đều?
 
-- [ ] Vì mỗi lần ra vào đều bị phạt phí rất cao
-- [x] Vì những tháng tạm dừng thường là lúc giá thấp, khi cùng số tiền mua được nhiều CCQ nhất
-- [ ] Vì người góp đều được quỹ ưu tiên giá tốt hơn
+- [ ] Vì mỗi lần tạm dừng đều bị công ty quản lý quỹ phạt phí rất cao
+- [x] Vì những tháng tạm dừng chính là lúc giá chứng chỉ quỹ rẻ nhất, mua được nhiều nhất
+- [ ] Vì người góp đều được quỹ ưu tiên áp dụng mức giá ưu đãi hơn
 
-Giải thích: Dừng góp khi quỹ giảm nghĩa là bỏ qua những lần mua rẻ nhất. Điều bạn kiểm soát được là số tiền góp, mức rủi ro và việc có giữ kế hoạch hay không.
+Giải thích: Dừng nộp tiền khi thị trường giảm đồng nghĩa với việc bạn từ bỏ cơ hội mua chứng chỉ quỹ ở vùng giá rẻ. Kỷ luật góp đều giúp bạn tự động tận dụng các đợt sụt giảm của thị trường.
 
 > Nguồn: 10 năm đầu tư đều đặn vào DCDS
 
@@ -2108,17 +2108,17 @@ Giải thích: Dừng góp khi quỹ giảm nghĩa là bỏ qua những lần mu
 
 #### Câu b5d-spot-control · Tìm câu sai
 
-Bối cảnh: Đầu năm, anh Quân viết ra ba điều anh tin mình tự quyết được trong kế hoạch đầu tư.
+Bối cảnh: Anh Quân liệt kê các yếu tố anh tin mình chủ động quyết định được trong kế hoạch đầu tư.
 
-Câu hỏi: Câu nào sai?
+Câu hỏi: Nhận định nào dưới đây là SAI?
 
 > Đánh dấu [x] vào câu SAI.
 
-- [ ] Tôi quyết định được số tiền góp mỗi tháng.
+- [ ] Tôi quyết định được số tiền trích góp mỗi tháng.
 - [x] Tôi quyết định được thời điểm tốt nhất để mua và bán.
-- [ ] Tôi quyết định được có tiếp tục kế hoạch khi thị trường điều chỉnh hay không.
+- [ ] Tôi quyết định được có tiếp tục giữ kế hoạch khi thị trường giảm hay không.
 
-Giải thích: Thị trường năm tới, quỹ tăng bao nhiêu hay đâu là thời điểm tốt nhất đều nằm ngoài tầm tay. Kế hoạch nên dựa trên số tiền góp, mức rủi ro chấp nhận và việc có tiếp tục hay không.
+Giải thích: Thời điểm đỉnh hay đáy của thị trường là yếu tố nằm ngoài tầm kiểm soát của bất kỳ ai. Kế hoạch bền vững chỉ nên dựa trên các yếu tố bạn tự chủ: số tiền góp, tỷ trọng rủi ro và kỷ luật thực thi.
 
 > Nguồn: 10 năm đầu tư đều đặn vào DCDS
 
@@ -2138,29 +2138,29 @@ Giải thích: Phần góp thêm cũng được sinh lời theo thời gian, nê
 
 #### Câu b5d-forecast-habit · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: Mỗi sáng chị Hà đọc năm bản tin dự báo VN-Index rồi mới quyết định tháng này có góp tiền vào quỹ hay không. Chị nói: "Theo dõi kỹ thì mình kiểm soát được kết quả."
+Bối cảnh: Mỗi sáng chị Hà đọc 5 bản tin dự báo VN-Index rồi mới quyết định tháng này có nộp tiền vào quỹ không. Chị tin rằng làm vậy sẽ kiểm soát được kết quả.
 
-Câu hỏi: Nhận định nào đúng?
+Câu hỏi: Nhận định nào dưới đây phản ánh đúng thực tế?
 
-- [ ] Đọc đủ nhiều dự báo sẽ biết trước thị trường năm tới
-- [x] Kết quả từng năm phụ thuộc thị trường; điều chị kiểm soát là số tiền góp và việc giữ kế hoạch
-- [ ] Bỏ góp những tháng có dự báo xấu luôn giúp kết quả tốt hơn
+- [ ] Đọc nhiều bản tin dự báo sẽ giúp nhận diện chính xác xu hướng thị trường
+- [x] Diễn biến thị trường là không thể kiểm soát; yếu tố chị kiểm soát được là số tiền góp và kỷ luật giữ kế hoạch
+- [ ] Bỏ góp ở những tháng có dự báo xấu luôn mang lại kết quả tốt hơn
 
-Giải thích: Trong mô phỏng 10 năm DCDS, yếu tố lớn nhất mà nhà đầu tư thực sự kiểm soát lại là điều đơn giản nhất: có tiếp tục đầu tư hay không.
+Giải thích: Các bản tin dự báo ngắn hạn không thể bảo đảm chính xác. Trong mô phỏng 10 năm, yếu tố quyết định thành bại lại là điều đơn giản nhất: duy trì thói quen trích góp bất chấp tin tức.
 
 > Nguồn: 10 năm đầu tư đều đặn vào DCDS
 
 #### Câu b5d-risk-lever · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Anh Phúc góp đều vào quỹ cổ phiếu nhưng lần nào quỹ giảm mạnh anh cũng mất ngủ và muốn bán. Anh không đoán được khi nào đợt giảm tiếp theo đến.
+Bối cảnh: Anh Phúc góp đều vào quỹ cổ phiếu nhưng đợt giảm nào anh cũng mất ngủ và muốn bán cắt lỗ. Anh không thể đoán được khi nào đợt giảm tiếp theo xảy ra.
 
-Câu hỏi: Anh nên điều chỉnh điều gì trước?
+Câu hỏi: Anh Phúc nên điều chỉnh yếu tố nào trước tiên?
 
-- [ ] Học cách đoán đỉnh để bán trước mỗi đợt giảm
+- [ ] Học kỹ năng dự báo đỉnh để bán ra trước các đợt giảm
 - [ ] Bán hết mỗi khi có tin xấu rồi mua lại sau
-- [x] Xem lại mức rủi ro mình chấp nhận và chọn danh mục phù hợp với nó
+- [x] Đánh giá lại khẩu vị rủi ro và tái phân bổ sang danh mục phù hợp hơn
 
-Giải thích: Biến động thị trường nằm ngoài tầm tay, nhưng mức rủi ro thì do anh chọn. Một danh mục vừa sức giúp anh duy trì kế hoạch khi thị trường đi xuống.
+Giải thích: Biến động thị trường là khách quan, nhưng tỷ trọng rủi ro danh mục là do bạn chủ động chọn. Chuyển sang danh mục cân bằng giúp bạn giữ được sự bình an tâm lý để đồng hành dài hạn.
 
 > Nguồn: 10 năm đầu tư đều đặn vào DCDS
 
@@ -2168,55 +2168,55 @@ Giải thích: Biến động thị trường nằm ngoài tầm tay, nhưng m�
 
 #### Câu b5d-fixed-amount · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: Anh Toàn đang góp tự động 5 triệu/tháng. Tháng này có thưởng, anh muốn góp 8 triệu nhưng nghĩ: "Đã đăng ký DCA thì kỳ nào cũng bắt buộc đúng một số tiền."
+Bối cảnh: Anh Toàn đang trích góp tự động 5 triệu/tháng. Tháng này nhận thưởng anh muốn góp 8 triệu nhưng nghĩ: "Đã đăng ký DCA thì kỳ nào cũng phải góp đúng một số tiền cố định".
 
-Câu hỏi: Nhận định nào đúng?
+Câu hỏi: Nhận định nào dưới đây phản ánh đúng quy định giao dịch?
 
-- [x] Có thể điều chỉnh số tiền nếu đáp ứng mức tối thiểu và điều kiện giao dịch của quỹ
-- [ ] Phải hủy kế hoạch cũ và mở một tài khoản mới
-- [ ] Góp khác số tiền đã đăng ký sẽ làm mất hết tác dụng của việc góp đều
+- [x] Bạn hoàn toàn có thể điều chỉnh số tiền góp linh hoạt, miễn đạt mức tối thiểu của quỹ
+- [ ] Bắt buộc phải hủy kế hoạch cũ và mở tài khoản mới nếu muốn đổi số tiền
+- [ ] Góp khác số tiền đã đăng ký sẽ làm mất hoàn toàn tác dụng của DCA
 
-Giải thích: Với lệnh đầu tư tự động, cần kiểm tra điều kiện sửa số tiền và lịch thực hiện. Điều quan trọng là giữ thói quen góp đều, không phải con số giống hệt mỗi kỳ.
+Giải thích: Bản chất của DCA là duy trì thói quen tích lũy đều đặn. Bạn hoàn toàn được phép gia tăng số tiền nộp vào khi có thu nhập tốt hơn, miễn là tuân thủ quy định giá trị lệnh tối thiểu của quỹ.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 129
 
 #### Câu b5d-dca-kinds · Nối cặp
 
-Câu hỏi: Nối cách tích lũy với đặc điểm của nó
+Câu hỏi: Bạn hãy nối từng hình thức tích lũy dưới đây với đặc điểm tương ứng
 
-- DCA theo nghĩa thông dụng → Số tiền cố định, lịch cố định
-- Góp linh hoạt → Số tiền có thể thay đổi mỗi kỳ
-- Mua ETF định kỳ → Đặt lệnh trên sàn theo giá thị trường
+- DCA thông dụng → Số tiền cố định, lịch trình trích góp cố định
+- Góp linh hoạt → Số tiền trích góp có thể thay đổi tùy thuộc dòng tiền hằng kỳ
+- Mua ETF định kỳ → Đặt lệnh mua trực tiếp trên sàn chứng khoán theo giá thị trường
 
-Giải thích: Cả ba đều là kế hoạch tích lũy đều đặn. Khác biệt nằm ở số tiền mỗi kỳ và cách khớp lệnh: quỹ mở mua theo NAV, ETF mua trên sàn.
+Giải thích: Cả ba đều dựa trên tinh thần tích lũy tài sản định kỳ, chỉ khác nhau ở phương thức khớp lệnh và tính linh hoạt của dòng tiền.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 129
 
 #### Câu b5d-etf-costs · Chọn đáp án · Vì sao?
 
-Bối cảnh: Anh Sơn quen góp quỹ mở mỗi tháng và muốn làm y hệt với một ETF. Bạn anh nhắc: "Với ETF, cách tính chi phí khác đấy."
+Bối cảnh: Anh Sơn quen góp quỹ mở hằng tháng và muốn áp dụng hệt như vậy với một quỹ ETF. Bạn anh lưu ý: "Góp ETF định kỳ tính toán chi phí khác quỹ mở đấy".
 
-Câu hỏi: Vì sao mua ETF định kỳ cần tính thêm nhiều yếu tố hơn?
+Câu hỏi: Vì sao mua ETF định kỳ lại cần tính toán thêm nhiều yếu tố chi phí hơn?
 
-- [ ] Vì ETF không cho phép mua theo kế hoạch định kỳ
-- [ ] Vì ETF khớp theo NAV chốt cuối ngày giống quỹ mở
-- [x] Vì ETF giao dịch trên sàn, nên phải tính đơn vị giao dịch, thanh khoản và chênh lệch giá mua bán
+- [ ] Vì các quỹ ETF không cho phép nhà đầu tư thực hiện mua định kỳ
+- [ ] Vì ETF khớp lệnh theo giá NAV chốt cuối ngày giống như quỹ mở
+- [x] Vì ETF giao dịch trên sàn nên phải tính phí môi giới, thuế, đơn vị lô và chênh lệch giá mua/bán
 
-Giải thích: ETF vẫn mua định kỳ được theo nguyên tắc DCA, nhưng giá khớp là giá thị trường. Cộng thêm phí và thuế, mỗi lần mua có chi phí riêng cần tính trước.
+Giải thích: ETF giao dịch trực tiếp trên sàn chứng khoán theo cơ chế giá thị trường liên tục. Mỗi lần đặt mua đều phát sinh phí môi giới, thuế và quy định lô tối thiểu (100 CCQ).
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 7
 
 #### Câu b5d-etf-trading · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Chị My tích lũy ETF hằng tháng, nhưng gần đây chị mua bán thêm mỗi tuần theo nhịp tăng giảm "để tối ưu giá vốn".
+Bối cảnh: Chị My tích lũy ETF hằng tháng, nhưng gần đây chị liên tục mua bán thêm hằng tuần theo các nhịp sóng tăng giảm ngắn hạn với mong muốn "tối ưu giá vốn".
 
-Câu hỏi: Chị nên cân nhắc điều gì?
+Câu hỏi: Chị My nên cân nhắc điều gì về hành vi này?
 
-- [ ] Giao dịch dày hơn, vì ETF thanh khoản như cổ phiếu
-- [x] Quay về kế hoạch định kỳ, hạn chế giao dịch theo biến động ngắn hạn
-- [ ] Chỉ mua vào những tuần thị trường giảm
+- [ ] Nên giao dịch dày hơn vì ETF có tính thanh khoản cao như cổ phiếu
+- [x] Quay lại kế hoạch định kỳ dài hạn, hạn chế lướt sóng theo biến động ngắn hạn
+- [ ] Chỉ thực hiện mua vào ở những tuần thị trường điều chỉnh giảm
 
-Giải thích: Mỗi lần mua bán đều tốn phí, thuế và chênh lệch giá. Giao dịch liên tục theo biến động ngắn hạn làm tăng chi phí và rủi ro quyết định sai thời điểm.
+Giải thích: Việc mua bán liên tục khiến bạn tốn thêm nhiều chi phí môi giới, thuế và đối mặt với rủi ro đoán sai nhịp ngắn hạn của thị trường.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 7
 
@@ -2252,17 +2252,17 @@ Giải thích: Chênh lệch giá trong một tháng là nhỏ so với tăng tr
 
 #### Câu b5d-cp-spot-waiting · Tìm câu sai
 
-Bối cảnh: Sau buổi chia sẻ về đầu tư, ba người bạn tóm tắt lại điều mình nhớ nhất.
+Bối cảnh: Ba người bạn tóm tắt các bài học cốt lõi sau chuỗi bài về kỷ luật đầu tư.
 
-Câu hỏi: Câu nào sai?
+Câu hỏi: Trong các nhận định dưới đây, câu nào SAI?
 
 > Đánh dấu [x] vào câu SAI.
 
-- [ ] Mua vào ngày 1, 10 hay 25 hằng tháng chỉ làm kết quả xê dịch dưới 1%.
-- [x] Tiền nằm chờ trong tài khoản không tốn gì, nên cứ đợi thời điểm đẹp.
-- [ ] Khoản thưởng hay hoa hồng nên được đưa vào kế hoạch ngay khi tiền sẵn sàng.
+- [ ] Chọn mua ngày 1, ngày 10 hay ngày 25 trong tháng chỉ làm kết quả lệch nhau dưới 1%.
+- [x] Tiền nằm chờ trong tài khoản không mất chi phí gì, nên cứ kiên nhẫn chờ thời điểm đẹp.
+- [ ] Khoản tiền thưởng hay hoa hồng nên được đưa vào kế hoạch ngay khi dòng tiền sẵn sàng.
 
-Giải thích: Tiền nằm chờ đang lặng lẽ trả một loại phí: thời gian tăng trưởng bị bỏ lỡ. Khoản phí lớn nhất trong đầu tư thường là thời gian chờ đợi.
+Giải thích: Tiền nằm chờ trong tài khoản đang thầm lặng trả chi phí cơ hội đắt đỏ: đó là khoảng thời gian tăng trưởng bị bỏ lỡ. Trì hoãn chờ đợi là một trong những khoản "phí" lớn nhất.
 
 > Nguồn: Ngày tốt nhất để đầu tư là ngày tiền về tài khoản
 
@@ -2282,29 +2282,29 @@ Giải thích: Phần tăng thêm đạt khoảng 461 triệu, trong khi ở nă
 
 #### Câu b5d-cp-lump-sum · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: Chú Bảy có 400 triệu nhàn rỗi, đã có dự phòng, định đầu tư 10 năm và chịu được biến động ngay sau khi mua. Con chú bảo: "Phải chia 12 tháng, đầu tư một lần là sai."
+Bối cảnh: Chú Bảy có 400 triệu nhàn rỗi, đã có dự phòng, định đầu tư 10 năm và chịu được biến động. Con chú bảo: "Bắt buộc phải chia 12 đợt DCA, dồn mua một lần là sai".
 
-Câu hỏi: Nhận định nào đúng?
+Câu hỏi: Nhận định nào dưới đây phản ánh đúng nguyên tắc?
 
-- [ ] Đầu tư một lần là sai vì DCA luôn ít rủi ro hơn
-- [ ] Nên chờ thị trường giảm 20% rồi mới mua
-- [x] Với vốn sẵn có và thời gian dài, đầu tư một lần cũng là lựa chọn hợp lý
+- [ ] Đầu tư một lần là sai vì DCA luôn có rủi ro thấp hơn
+- [ ] Nên chờ thị trường giảm 20% rồi mới bắt đầu giải ngân
+- [x] Khi vốn đã có sẵn và thời gian đủ dài, giải ngân một lần cũng là lựa chọn hoàn toàn hợp lý
 
-Giải thích: DCA phù hợp khi vốn đến từ thu nhập hằng tháng hoặc khi muốn giảm áp lực chọn thời điểm. Nó không loại bỏ rủi ro và không luôn hơn đầu tư một lần, nhất là khi thị trường tăng liên tục.
+Giải thích: DCA không phải lúc nào cũng vượt trội Lump-sum, đặc biệt khi thị trường bước vào giai đoạn tăng giá kéo dài. Có sẵn vốn và thời gian 10 năm cho phép chú Bảy chọn giải ngân một lần nếu chịu được biến động ngắn hạn.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 3
 
 #### Câu b5d-cp-young-saver · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Khánh, 25 tuổi, vừa bắt đầu góp 2 triệu/tháng vào quỹ. Khánh hỏi nên dồn sức cải thiện điều gì nhất trong vài năm tới.
+Bối cảnh: Khánh (25 tuổi) vừa bắt đầu trích góp 2 triệu/tháng vào quỹ. Khánh hỏi nên dồn sức cải thiện điều gì nhất trong vài năm tới để tối ưu tài sản.
 
-Câu hỏi: Lời khuyên nào hợp lý?
+Câu hỏi: Lời khuyên nào chuẩn xác nhất cho Khánh?
 
-- [x] Tăng dần số tiền góp khi thu nhập tăng và giữ kế hoạch qua các đợt giảm
-- [ ] Học dự báo thị trường năm tới để chọn năm vào tiền
-- [ ] Tìm ra ngày đẹp nhất trong tháng để đặt lệnh
+- [x] Tập trung tăng dần số tiền góp hằng tháng khi thu nhập tăng và giữ kỷ luật qua các đợt giảm
+- [ ] Học kỹ năng dự báo xu hướng thị trường để chọn năm vào tiền
+- [ ] Tìm kiếm ngày mua tối ưu nhất trong tháng để đặt lệnh
 
-Giải thích: Thị trường và ngày mua đẹp nhất nằm ngoài tầm tay, còn số tiền góp và việc kiên trì thì không. Trong mô phỏng 10 năm DCDS, có tiếp tục đầu tư hay không là yếu tố lớn nhất nằm trong tay nhà đầu tư.
+Giải thích: Xu hướng thị trường hay ngày mua đẹp nhất là yếu tố ngoài tầm tay. Gia tăng số tiền trích góp từ thu nhập và kiên trì giữ vững kế hoạch là hai đòn bẩy lớn nhất do chính Khánh tự kiểm soát.
 
 > Nguồn: 10 năm đầu tư đều đặn vào DCDS
 
@@ -5222,54 +5222,54 @@ Giải thích: Mục tiêu trung hạn 3–5 năm đủ dài để tái cân b�
 
 #### Câu a2-fund-match · Nối cặp
 
-Câu hỏi: Nối quỹ với danh mục đầu tư
+Câu hỏi: Bạn hãy nối mỗi quỹ mở dưới đây với danh mục đầu tư tương ứng
 
 - DCDS → Tối đa 100% cổ phiếu tăng trưởng
 - DCDE → Cổ phiếu doanh nghiệp trả cổ tức đều
 - DCBF → Khoảng 40% trái phiếu, 60% tiền gửi
 - DCIP → Khoảng 65% trái phiếu, 35% tiền gửi
 
-Giải thích: Hai quỹ cổ phiếu hướng đến tăng trưởng dài hạn; hai quỹ trái phiếu ưu tiên ổn định. DCBA kết hợp cả hai nhóm tài sản.
+Giải thích: Hai quỹ cổ phiếu DCDS và DCDE hướng đến mục tiêu tăng trưởng dài hạn; hai quỹ thu nhập cố định DCBF và DCIP ưu tiên tính ổn định. Trong khi đó, DCBA là giải pháp kết hợp cả hai nhóm tài sản này.
 
 > Nguồn: Thư viện hỏi đáp Quỹ DC · Các quỹ mở của DC
 
 #### Câu a2-idle-cash · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Chị Phương có 50 triệu tiền nhàn rỗi, có thể cần dùng bất cứ lúc nào trong năm, và muốn lợi nhuận tốt hơn gửi không kỳ hạn.
+Bối cảnh: Chị Phương có 50 triệu đồng tiền nhàn rỗi, có thể cần dùng bất cứ lúc nào trong năm và muốn tối ưu lợi nhuận tốt hơn so với tiền gửi không kỳ hạn.
 
-Câu hỏi: Quỹ DC nào hợp để chị tìm hiểu trước?
+Câu hỏi: Quỹ mở nào của Dragon Capital phù hợp để chị Phương tìm hiểu trước?
 
-- [ ] DCDS, vì lợi nhuận bình quân quá khứ cao nhất
-- [x] DCIP: chủ yếu trái phiếu và tiền gửi, giao dịch mỗi ngày, miễn phí bán
-- [ ] DCDE, vì quỹ có chia cổ tức
+- [ ] DCDS, vì lợi nhuận bình quân quá khứ đạt mức cao nhất
+- [x] DCIP: chủ yếu trái phiếu và tiền gửi, giao dịch hằng ngày, miễn phí bán
+- [ ] DCDE, vì quỹ có chính sách chia cổ tức tiền mặt
 
-Giải thích: Tiền có thể cần bất cứ lúc nào nên ưu tiên biến động thấp và rút linh hoạt. DCIP giao dịch mỗi ngày làm việc, tiền bán về ngay trong ngày giao dịch, dù NAV vẫn có thể dao động nhẹ.
+Giải thích: Tiền có thể cần sử dụng bất cứ lúc nào bắt buộc phải ưu tiên tính biến động thấp và khả năng rút vốn linh hoạt. Quỹ DCIP giao dịch vào mỗi ngày làm việc, tiền bán về ngay trong ngày T, dù giá trị NAV vẫn có thể dao động nhẹ.
 
 > Nguồn: Thư viện hỏi đáp Quỹ DC · Chọn quỹ & kế hoạch đầu tư
 
 #### Câu a2-dividend-nav · Chọn đáp án · Dự đoán
 
-Bối cảnh: NAV/CCQ của DCDE đang là 25.000 đồng. Quỹ chia cổ tức tiền mặt 1.300 đồng/CCQ; giả sử thị trường đứng yên.
+Bối cảnh: NAV/CCQ của quỹ DCDE đang ở mức 25.000 đồng. Quỹ thực hiện chia cổ tức tiền mặt 1.300 đồng/CCQ; giả sử các yếu tố thị trường đứng yên.
 
-Câu hỏi: Sau ngày chốt quyền, NAV/CCQ là bao nhiêu?
+Câu hỏi: Sau ngày chốt quyền phân phối, giá trị NAV/CCQ của DCDE là bao nhiêu?
 
-- [ ] Vẫn 25.000 đồng
+- [ ] Vẫn giữ nguyên 25.000 đồng
 - [x] 23.700 đồng
-- [ ] 26.300 đồng
+- [ ] Tăng lên 26.300 đồng
 
-Giải thích: Cổ tức được trả từ tài sản quỹ, nên NAV/CCQ giảm đúng 1.300 đồng và khoản này về tài khoản của bạn. Tổng giá trị bạn nắm giữ không đổi: đây không phải lỗ đầu tư.
+Giải thích: Tiền cổ tức được trích trực tiếp từ tài sản quỹ để trả về tài khoản nhà đầu tư, nên NAV/CCQ sẽ điều chỉnh giảm tương ứng 1.300 đồng. Tổng tài sản nhà đầu tư nắm giữ hoàn toàn không bị ảnh hưởng, đây không phải là một khoản lỗ đầu tư.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 106
 
 #### Câu a2-volatility-order · Sắp xếp
 
-Câu hỏi: Sắp xếp theo mức biến động thường thấy, từ thấp đến cao
+Câu hỏi: Bạn hãy sắp xếp các quỹ mở dưới đây theo biên độ biến động thường thấy từ THẤP đến CAO
 
-1. DCBF (trái phiếu)
-2. DCBA (cân bằng)
-3. DCDS (cổ phiếu)
+1. DCBF (quỹ trái phiếu)
+2. DCBA (quỹ cân bằng)
+3. DCDS (quỹ cổ phiếu)
 
-Giải thích: Quỹ thu nhập cố định thường biến động thấp hơn quỹ cổ phiếu; quỹ cân bằng nằm giữa. Không quỹ nào bảo đảm đồng thời an toàn vốn và lợi nhuận cao.
+Giải thích: Quỹ thu nhập cố định có biên độ biến động thấp hơn quỹ cổ phiếu, còn quỹ cân bằng nằm ở khoảng giữa. Không có quỹ mở nào cam kết vừa an toàn tuyệt đối vừa sinh lời cao.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 1
 
@@ -5277,56 +5277,56 @@ Giải thích: Quỹ thu nhập cố định thường biến động thấp hơ
 
 #### Câu a1d-equity-pair-match · Nối cặp
 
-Câu hỏi: Nối mỗi đặc điểm với đúng quỹ
+Câu hỏi: Bạn hãy nối từng đặc điểm dưới đây với đúng quỹ cổ phiếu tương ứng
 
 - Chiến lược của DCDS → Năng động, tìm kiếm tăng trưởng vốn dài hạn
 - Chiến lược của DCDE → Doanh nghiệp nền tảng tài chính tốt, có khả năng trả cổ tức
 - Chỉ số tham chiếu của DCDS → 80% VN-Index + 20% chỉ số trái phiếu HNX kỳ hạn 2 năm
 - Chỉ số tham chiếu của DCDE → VN-Index
 
-Giải thích: Cả hai đều là quỹ cổ phiếu nhưng khác chiến lược, nên mỗi quỹ được đối chiếu với một chỉ số tham chiếu riêng. So một quỹ với chỉ số của quỹ kia sẽ cho kết luận lệch.
+Giải thích: DCDS và DCDE là hai quỹ cổ phiếu theo đuổi hai chiến lược khác nhau, do đó mỗi quỹ được đo lường bằng một chỉ số tham chiếu riêng biệt.
 
 > Nguồn: Thư viện hỏi đáp Quỹ DC · Các quỹ mở của DC
 
 #### Câu a1d-dcds-beats-dcde · Chọn đáp án · Vì sao?
 
-Bối cảnh: Anh Khải, 41 tuổi, giữ cả DCDS và DCDE. Xem báo cáo một giai đoạn trong quá khứ, anh thấy DCDS tăng nhiều hơn hẳn DCDE.
+Bối cảnh: Anh Khải (41 tuổi) nắm giữ song song cả DCDS và DCDE. Khi rà soát báo cáo ở một giai đoạn trong quá khứ, anh thấy DCDS đạt mức tăng trưởng cao hơn hẳn DCDE.
 
-Câu hỏi: Vì sao có giai đoạn DCDS sinh lời cao hơn DCDE?
+Câu hỏi: Nguyên nhân vì sao có giai đoạn DCDS sinh lời cao hơn DCDE?
 
-- [ ] DCDS năng động hơn nên lúc nào cũng có lợi nhuận cao hơn DCDE
-- [x] Hai quỹ khác cổ phiếu, tỷ trọng ngành và mức tiền mặt, nên hiệu suất tương đối đổi theo chu kỳ
-- [ ] DCDE chia cổ tức nên phần tiền đó bị mất khỏi lợi nhuận của nhà đầu tư
+- [ ] DCDS năng động hơn nên ở mọi giai đoạn đều sẽ có lợi nhuận cao hơn DCDE
+- [x] Hai quỹ khác cổ phiếu, tỷ trọng ngành và tiền mặt, nên hiệu suất đổi theo chu kỳ
+- [ ] DCDE chia cổ tức nên phần tiền đó bị mất khỏi tổng lợi nhuận của nhà đầu tư
 
-Giải thích: Hiệu suất tương đối thay đổi theo chu kỳ thị trường: DCDS không mặc nhiên luôn lời hơn hay rủi ro hơn DCDE. Muốn giải thích chênh lệch, hãy xem báo cáo đúng kỳ và tổng lợi nhuận đã tính cổ tức.
+Giải thích: Hiệu suất tương đối của từng quỹ sẽ thay đổi theo từng chu kỳ thị trường. DCDS không mặc nhiên luôn sinh lời cao hơn hay rủi ro hơn DCDE.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 124
 
 #### Câu a1d-nav-gap · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: Chị Quyên thấy NAV/CCQ của DCDS và DCDE chênh nhau khá xa, và nghĩ quỹ có NAV/CCQ cao hơn là quỹ "đắt" hơn.
+Bối cảnh: Chị Quyên quan sát thấy NAV/CCQ của DCDS và DCDE chênh lệch nhau khá xa, nên kết luận quỹ có NAV/CCQ cao hơn là quỹ "đắt" hơn.
 
-Câu hỏi: Nhận định nào đúng?
+Câu hỏi: Nhận định nào dưới đây phản ánh đúng bản chất?
 
-- [ ] NAV/CCQ cao hơn nghĩa là quỹ đó đang đắt, nên mua quỹ có NAV thấp
-- [ ] NAV/CCQ cao hơn cho thấy quỹ đó quản lý tốt hơn
-- [x] NAV/CCQ chênh nhau còn do thời điểm thành lập, lịch sử hoạt động và các đợt phân phối
+- [ ] NAV/CCQ cao hơn nghĩa là quỹ đang đắt, nên ưu tiên mua quỹ có NAV thấp
+- [ ] NAV/CCQ cao hơn chứng tỏ quỹ đó có chất lượng quản lý xuất sắc hơn
+- [x] Mức NAV/CCQ chênh lệch phụ thuộc ngày thành lập, lịch sử và các đợt chia cổ tức
 
-Giải thích: Mức NAV/CCQ phụ thuộc quỹ ra đời khi nào và đã chia bao nhiêu cổ tức, nên tự nó không nói quỹ đắt hay tốt. So sánh đúng là xem tổng lợi nhuận cùng kỳ và mức rủi ro.
+Giải thích: Mức NAV/CCQ phụ thuộc vào thời điểm quỹ ra đời và lịch sử phân phối cổ tức. Cách đánh giá chuẩn xác nhất là so sánh tổng lợi nhuận cùng kỳ và biên độ rủi ro.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 16
 
 #### Câu a1d-dcde-vs-index · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Anh Tùng muốn biết DCDE đã làm tốt hơn hay kém VN-Index trong một năm qua, nhưng chỉ lấy mức thay đổi NAV/CCQ để so.
+Bối cảnh: Anh Tùng muốn đánh giá hiệu quả của DCDE so với VN-Index trong năm qua, nhưng anh chỉ dùng mức thay đổi NAV/CCQ trên màn hình để so sánh.
 
-Câu hỏi: Anh nên dùng số liệu nào của DCDE để so cho đúng?
+Câu hỏi: Anh Tùng nên sử dụng con số nào của DCDE để so sánh công bằng với chỉ số?
 
-- [x] Tổng lợi nhuận đã tính cổ tức phân phối, cùng ngày đầu và ngày cuối với chỉ số
-- [ ] Mức thay đổi NAV/CCQ, vì đó là giá quỹ hiển thị trên ứng dụng
-- [ ] Mức thay đổi NAV/CCQ, so với chỉ số 80% VN-Index + 20% trái phiếu
+- [x] Tổng lợi nhuận đã tính phần cổ tức phân phối, đo trên cùng khoảng thời gian
+- [ ] Mức thay đổi NAV/CCQ thuần túy hiển thị trên ứng dụng DragonX
+- [ ] Mức thay đổi NAV/CCQ đem so với chỉ số 80% VN-Index + 20% trái phiếu
 
-Giải thích: Khi DCDE chia cổ tức, NAV/CCQ giảm tương ứng, nên chỉ nhìn NAV/CCQ sẽ đánh giá thấp quỹ. Chênh lệch với VN-Index nên tính bằng điểm phần trăm trên cùng một khoảng thời gian.
+Giải thích: Khi DCDE chia cổ tức tiền mặt, NAV/CCQ bị giảm tương ứng. Nếu bỏ qua phần cổ tức đã nhận, bạn sẽ đánh giá thấp hơn hiệu suất thực tế của quỹ.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 115
 
@@ -5346,15 +5346,15 @@ Giải thích: 2.000 × 1.300 = 2,6 triệu đồng. Khoản này không phải 
 
 #### Câu a1d-dividend-total · Chọn đáp án · Dự đoán
 
-Bối cảnh: Giả định anh Khoa giữ 1.000 CCQ DCDE, NAV/CCQ 30.000 đồng, tức 30 triệu đồng. Quỹ phân phối 1.300 đồng/CCQ và thị trường đứng yên.
+Bối cảnh: Anh Khoa giữ 1.000 CCQ DCDE ở mức NAV/CCQ 30.000 đồng (tổng giá trị 30 triệu). Quỹ chi trả cổ tức 1.300 đồng/CCQ, giả định thị trường đi ngang.
 
-Câu hỏi: Sau ngày chốt quyền, tổng tài sản của anh (CCQ cộng tiền cổ tức) thay đổi thế nào?
+Câu hỏi: Sau ngày chốt quyền, tổng tài sản của anh Khoa biến động ra sao?
 
-- [x] Không đổi: 28,7 triệu giá trị CCQ cộng 1,3 triệu tiền cổ tức
-- [ ] Giảm 1,3 triệu, vì NAV/CCQ đã giảm
-- [ ] Tăng 1,3 triệu, vì có thêm tiền cổ tức
+- [x] Không đổi: 28,7 triệu giá trị CCQ cộng với 1,3 triệu tiền cổ tức nhận về
+- [ ] Giảm 1,3 triệu đồng do giá trị NAV/CCQ bị sụt giảm
+- [ ] Tăng thêm 1,3 triệu đồng nhờ có khoản tiền cổ tức cộng thêm
 
-Giải thích: Cổ tức chỉ chuyển một phần giá trị từ trong quỹ ra tài khoản của bạn, nên NAV/CCQ giảm 1.300 đồng không phải lỗ đầu tư. Lời hay lỗ thật đến từ biến động của danh mục.
+Giải thích: Phân phối cổ tức chỉ đơn thuần chuyển một phần giá trị từ trong quỹ ra tài khoản ngân hàng của bạn. Tổng giá trị tài sản trước và sau ngày chốt quyền không thay đổi.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 106
 
@@ -5374,29 +5374,29 @@ Giải thích: DCDE hướng đến phân phối tiền mặt nhưng không bả
 
 #### Câu a1d-dividend-history · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: Anh Đạt đọc một bài viết cũ trên mạng nói rằng DCDE "chưa từng chia cổ tức" và định bỏ qua quỹ này vì lý do đó.
+Bối cảnh: Anh Đạt đọc một bài viết cũ trên mạng nói rằng DCDE chưa từng chia cổ tức tiền mặt và định bỏ qua quỹ này.
 
-Câu hỏi: Nhận định nào đúng?
+Câu hỏi: Nhận định nào dưới đây phản ánh đúng thực tế?
 
-- [ ] Đúng, quỹ mở không bao giờ được chia cổ tức tiền mặt
-- [ ] Đúng, DCDE chỉ tái đầu tư cổ tức vào NAV giống DCDS
-- [x] Sai, DCDE đã có các đợt phân phối tiền mặt; lịch sử có trong thông báo chính thức
+- [ ] Bài viết đúng, quỹ mở theo quy định không bao giờ được chia cổ tức tiền mặt
+- [ ] Bài viết đúng, DCDE chỉ giữ lại toàn bộ lợi nhuận tái đầu tư giống DCDS
+- [x] Bài viết sai, DCDE đã thực hiện nhiều đợt phân phối cổ tức tiền mặt cho nhà đầu tư
 
-Giải thích: Thông tin cũ dễ lỗi thời. Lịch sử phân phối nằm trong thông báo phân phối và báo cáo hoạt động trên website chính thức của Dragon Capital, đó là nơi nên kiểm tra.
+Giải thích: Thông tin cũ trên internet rất dễ bị sai lệch. Lịch sử chi trả cổ tức chính thức của DCDE được công bố công khai trên website chính thức của Dragon Capital.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 133
 
 #### Câu a1d-dividend-notice · Chọn đáp án · Vì sao?
 
-Bối cảnh: Chị Mai đọc thông báo phân phối của DCDE: cổ tức được chia cho một năm tài chính, nhưng tiền lại về tài khoản vào năm sau đó.
+Bối cảnh: Chị Mai đọc thông báo: cổ tức được phân phối cho năm tài chính trước, nhưng ngày nhận tiền thực tế lại rơi vào năm sau.
 
-Câu hỏi: Vì sao có chênh lệch này?
+Câu hỏi: Nguyên nhân của việc chênh lệch mốc thời gian này là gì?
 
-- [x] Năm tài chính được phân phối có thể khác năm thực tế nhận tiền
-- [ ] Quỹ đã chậm trả và chị nên khiếu nại
-- [ ] Thông báo bị ghi nhầm năm
+- [x] Năm tài chính được phân phối lợi nhuận có thể khác với năm thực tế thực hiện chi trả
+- [ ] Do công ty quản lý quỹ bị chậm trễ thanh toán nên tiền bị dời sang năm sau
+- [ ] Do thông báo công bố bị in nhầm lẫn về mặt con số
 
-Giải thích: Cổ tức được chia từ kết quả của một năm, rồi mới được duyệt và chi trả. Khi đọc thông báo, hãy kiểm tra ngày chốt quyền, điều kiện hưởng, mức trên mỗi CCQ và ngày thanh toán.
+Giải thích: Cổ tức được chốt dựa trên kết quả kinh doanh của năm tài chính trước đó, sau đó thông qua Đại hội nhà đầu tư phê duyệt rồi mới tiến hành chi trả tiền thực tế.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 133
 
@@ -5404,59 +5404,59 @@ Giải thích: Cổ tức được chia từ kết quả của một năm, rồi
 
 #### Câu a1d-dcbf-benchmark · Chọn đáp án · Dự đoán
 
-Bối cảnh: Anh Bảo giữ DCBF đã một năm và muốn biết quỹ làm tốt hay chưa, nhưng không rõ nên so kết quả với thước đo nào.
+Bối cảnh: Anh Bảo nắm giữ DCBF đã 1 năm và muốn đánh giá hiệu quả đầu tư, nhưng anh chưa rõ nên so sánh với chỉ số tham chiếu nào.
 
-Câu hỏi: DCBF dùng chỉ số tham chiếu nào?
+Câu hỏi: DCBF sử dụng chỉ số tham chiếu chính thức nào?
 
-- [ ] VN-Index, giống các quỹ cổ phiếu
-- [x] Lãi suất tiền gửi kỳ hạn 12 tháng của 4 ngân hàng Agribank, Vietcombank, VietinBank, BIDV
-- [ ] Lãi suất tiền gửi không kỳ hạn của ngân hàng anh đang dùng
+- [ ] VN-Index, giống như các quỹ cổ phiếu
+- [x] Lãi suất tiền gửi kỳ hạn 12 tháng bình quân của 4 ngân hàng thương mại nhà nước
+- [ ] Lãi suất tiền gửi không kỳ hạn của ngân hàng cá nhân
 
-Giải thích: DCBF hướng tới lợi nhuận ổn định và cao hơn lãi suất tiết kiệm dài hạn, nên thước đo phù hợp là lãi suất tiền gửi 12 tháng. So quỹ trái phiếu với VN-Index là so sai đối tượng.
+Giải thích: Mục tiêu của DCBF là mang lại lợi nhuận ổn định và cao hơn lãi suất tiết kiệm dài hạn, nên chỉ số tham chiếu chuẩn mực là lãi suất tiền gửi 12 tháng của Big 4 ngân hàng.
 
 > Nguồn: W5 Bài 4 · Quỹ trái phiếu nâng cao
 
 #### Câu a1d-dcip-benchmark · Chọn đáp án · Vì sao?
 
-Bối cảnh: DCIP dùng lãi suất tiền gửi kỳ hạn 3 tháng trung bình của bốn ngân hàng thương mại nhà nước làm chỉ số tham chiếu, ngắn hơn hẳn mốc 12 tháng của DCBF.
+Bối cảnh: DCIP sử dụng chỉ số tham chiếu là lãi suất tiền gửi 3 tháng bình quân của Big 4 ngân hàng, ngắn hơn nhiều so với mốc 12 tháng của DCBF.
 
-Câu hỏi: Vì sao DCIP chọn mốc 3 tháng?
+Câu hỏi: Vì sao DCIP lại lựa chọn mốc tham chiếu 3 tháng?
 
-- [ ] Vì DCIP cam kết trả lãi 3 tháng một lần
-- [ ] Vì mốc ngắn hạn dễ vượt hơn, giúp kết quả quỹ trông đẹp hơn
-- [x] Vì vai trò của DCIP là quản lý tiền ngắn hạn, nên so với các kênh giữ tiền ngắn hạn
+- [ ] Vì DCIP cam kết chi trả lợi nhuận đều đặn 3 tháng một lần
+- [ ] Vì mốc 3 tháng dễ vượt qua hơn, giúp kết quả của quỹ đẹp hơn
+- [x] Vì vai trò của DCIP là quản lý tiền ngắn hạn, cần so với các kênh giữ tiền ngắn hạn
 
-Giải thích: Chỉ số tham chiếu phản ánh vai trò của quỹ: DCIP là nơi giữ tiền nhàn rỗi cần linh hoạt, không phải tài sản tăng trưởng dài hạn. Chọn đúng thước đo giúp bạn đặt kỳ vọng đúng.
+Giải thích: Chỉ số tham chiếu phản ánh đúng bản chất của quỹ: DCIP là công cụ quản lý dòng tiền nhàn rỗi ngắn hạn, đòi hỏi tính linh hoạt cao.
 
 > Nguồn: W5 Bài 1 · Quỹ thị trường tiền tệ
 
 #### Câu a1d-dcbf-nav-date · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Sáng thứ Hai, chị Ngọc mở DragonX thấy NAV của DCBF vẫn y như hôm thứ Sáu, trong khi DCDS đã đổi. Chị nghĩ ứng dụng bị lỗi.
+Bối cảnh: Sáng thứ Hai, chị Ngọc mở DragonX thấy NAV của DCBF giữ nguyên so với thứ Sáu, trong khi DCDS đã cập nhật số mới. Chị nghĩ ứng dụng báo lỗi.
 
-Câu hỏi: Chị nên làm gì trước khi kết luận dữ liệu sai?
+Câu hỏi: Chị Ngọc nên làm gì trước khi kết luận ứng dụng bị lỗi?
 
-- [ ] Báo lỗi ngay, vì NAV quỹ nào cũng phải đổi mỗi ngày
-- [x] Xem ngày của NAV đang hiển thị và lịch giao dịch của DCBF
-- [ ] Bán DCBF để chuyển sang quỹ có NAV cập nhật hằng ngày
+- [ ] Báo lỗi hệ thống ngay lập tức vì NAV của quỹ phải thay đổi hằng ngày
+- [x] Xem ngày định giá của NAV hiển thị và đối chiếu với lịch giao dịch của DCBF
+- [ ] Bán hết DCBF để chuyển sang mua quỹ có cập nhật NAV hằng ngày
 
-Giải thích: Theo lịch hiện hành, DCBF giao dịch vào thứ 4 và thứ 6, còn DCDS giao dịch hằng ngày. NAV chưa đổi có thể do lịch công bố hoặc đang cập nhật, chưa đủ để kết luận sai số.
+Giải thích: Theo lịch giao dịch, DCBF khớp lệnh vào thứ 4 và thứ 6 hằng tuần, còn DCDS khớp hằng ngày. NAV chưa thay đổi vào sáng thứ Hai là hoàn toàn bình thường do chưa tới ngày định giá tiếp theo.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 113
 
 #### Câu a1d-bond-funds-spot · Tìm câu sai
 
-Bối cảnh: Một người bạn giới thiệu hai quỹ thu nhập cố định của DC cho chị Ngọc bằng ba câu.
+Bối cảnh: Một người bạn giới thiệu về hai quỹ thu nhập cố định của Dragon Capital.
 
-Câu hỏi: Câu nào sai?
+Câu hỏi: Trong các nhận định dưới đây, câu nào SAI?
 
 > Đánh dấu [x] vào câu SAI.
 
-- [ ] DCIP miễn phí bán, tiền bán về tài khoản ngay trong ngày giao dịch.
-- [x] Quỹ trái phiếu chỉ giữ trái phiếu và tiền gửi nên NAV không bao giờ giảm.
-- [ ] Bán DCBF thì tiền về sau 5 ngày làm việc kể từ ngày giao dịch.
+- [ ] DCIP miễn phí bán và tiền bán về tài khoản ngay trong ngày giao dịch.
+- [x] Quỹ trái phiếu chỉ nắm giữ trái phiếu và tiền gửi nên NAV không bao giờ giảm.
+- [ ] Khi bán DCBF, tiền bán sẽ về sau 5 ngày làm việc kể từ ngày giao dịch (T+5).
 
-Giải thích: Khi lãi suất thị trường tăng, giá trái phiếu có thể đi ngang hoặc giảm, làm NAV tăng chậm hoặc giảm nhẹ trong ngắn hạn. Vì vậy nên đánh giá quỹ trái phiếu trên khoảng từ 1 năm trở lên.
+Giải thích: Khi lãi suất thị trường tăng, giá của các trái phiếu trong danh mục có thể bị giảm, khiến NAV/CCQ của quỹ trái phiếu giảm nhẹ trong ngắn hạn.
 
 > Nguồn: Thư viện hỏi đáp Quỹ DC · NAV, lợi nhuận & cổ tức
 
@@ -5466,58 +5466,58 @@ Giải thích: Khi lãi suất thị trường tăng, giá trái phiếu có th�
 
 Nhân vật: Chị Thảo
 
-Thông tin nhân vật: 38 tuổi, con 8 tuổi, dự định cho con du học sau 10 năm
+Thông tin nhân vật: 38 tuổi, có con 8 tuổi, tích lũy cho con du học sau 10 năm
 
-Lời nói: Còn 10 năm nữa con mới đi học, nhưng nhìn NAV quỹ cổ phiếu lên xuống mạnh là chị mất ngủ. Có lựa chọn nào cân bằng hơn không?
+Lời nói: Còn 10 năm nữa con mới đi học, nhưng nhìn NAV quỹ cổ phiếu biến động mạnh là chị mất ngủ. Có lựa chọn nào cân bằng hơn không?
 
-Câu hỏi: Lời giải thích nào phù hợp nhất với chị Thảo?
+Câu hỏi: Bạn nên giải thích cho chị Thảo như thế nào?
 
-- [x] Quỹ cân bằng (ở DC là DCBA) kết hợp cổ phiếu với tài sản thu nhập cố định nên thường ít biến động hơn, dù NAV vẫn có thể giảm
-- [ ] Để hết vào DCIP vì quỹ này không biến động và vẫn đủ tăng trưởng cho 10 năm
-- [ ] Chọn quỹ nào năm ngoái có lợi nhuận cao nhất thì sẽ không phải lo nữa
+- [x] Quỹ cân bằng DCBA kết hợp cổ phiếu và trái phiếu nên biến động dịu hơn quỹ cổ phiếu
+- [ ] Chị nên chuyển hết sang DCIP vì DCIP không biến động mà vẫn đủ tăng trưởng cho 10 năm
+- [ ] Chọn quỹ nào năm ngoái đạt lợi nhuận cao nhất thì sẽ không cần lo lắng nữa
 
-Giải thích: Còn nhiều thời gian nhưng muốn cân bằng hơn giữa tăng trưởng và ổn định thì quỹ cân bằng có thể hợp hơn quỹ cổ phiếu. Lựa chọn nào cũng cần khớp với số tiền cần có và thời gian còn lại.
+Giải thích: Quỹ cân bằng DCBA phân bổ cả cổ phiếu (để tìm kiếm tăng trưởng) và trái phiếu (làm bộ đệm giảm sốc), giúp giảm biên độ biến động cho nhà đầu tư.
 
 > Nguồn: Kế hoạch du học cho con nên bắt đầu từ đâu?
 
 #### Câu a1d-dcba-not-guaranteed · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: Anh Sang nghe nói DCBA có cả trái phiếu, nên tin rằng quỹ "có phần trái phiếu đỡ" thì NAV không thể giảm.
+Bối cảnh: Anh Sang thấy DCBA có nắm giữ trái phiếu nên tin rằng giá trị NAV của quỹ này sẽ không bao giờ bị giảm.
 
-Câu hỏi: Nhận định nào đúng?
+Câu hỏi: Nhận định nào dưới đây phản ánh đúng thực tế?
 
-- [ ] Đúng, phần trái phiếu bảo đảm vốn cho nhà đầu tư
-- [x] DCBA hướng đến cân bằng tăng trưởng và biến động, nhưng vẫn có thể giảm NAV
-- [ ] DCBA bảo đảm lợi nhuận tối thiểu bằng lãi tiết kiệm
+- [ ] Đúng, phần trái phiếu trong quỹ đảm bảo không bao giờ bị lỗ vốn
+- [x] DCBA giúp giảm biến động, nhưng NAV vẫn có thể giảm theo diễn biến thị trường
+- [ ] DCBA bảo đảm mức lợi nhuận tối thiểu luôn bằng lãi suất tiết kiệm
 
-Giải thích: Tài sản thu nhập cố định giúp giảm biến động, nhưng phần cổ phiếu vẫn kéo NAV đi theo thị trường. DCBA không bảo đảm vốn hay lợi nhuận; hãy xem chiến lược phân bổ trong tài liệu quỹ.
+Giải thích: Trái phiếu giúp làm dịu đà giảm, nhưng phần cổ phiếu trong danh mục vẫn chịu ảnh hưởng từ thị trường chung. DCBA không bảo đảm hòa vốn hay cam kết lợi nhuận cố định.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 34
 
 #### Câu a1d-goal-order · Sắp xếp
 
-Câu hỏi: Sắp xếp các bước chọn danh mục cho một mục tiêu dài hạn
+Câu hỏi: Bạn hãy sắp xếp các bước chọn danh mục cho mục tiêu dài hạn theo đúng trình tự
 
-1. Xác định thời gian còn lại đến mục tiêu
-2. Cân nhắc mức biến động gia đình chấp nhận được
-3. Chọn danh mục phù hợp, ví dụ quỹ cổ phiếu hay quỹ cân bằng
-4. Càng gần mục tiêu, giảm dần tài sản biến động cao
+1. Xác định thời gian còn lại đến thời điểm cần dùng tiền
+2. Cân nhắc mức độ biến động mà gia đình có thể chấp nhận
+3. Lựa chọn danh mục phù hợp (quỹ cổ phiếu hoặc quỹ cân bằng)
+4. Càng đến gần hạn mục tiêu, chủ động giảm dần tỷ trọng tài sản biến động cao
 
-Giải thích: Cùng chấp nhận biến động cao, gia đình còn 2 năm và gia đình còn 10 năm sẽ đầu tư khác nhau. Vì vậy thời gian đến mục tiêu được xác định trước, rồi mới chọn danh mục.
+Giải thích: Thời gian đến mục tiêu và khả năng chịu biến động là hai căn cứ tiên quyết để lựa chọn danh mục tài sản phù hợp.
 
 > Nguồn: Kế hoạch du học cho con nên bắt đầu từ đâu?
 
 #### Câu a1d-near-goal · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Anh Hưng còn 2 năm nữa là con nhập học đại học ở nước ngoài, và toàn bộ khoản tích lũy đang nằm trong quỹ cổ phiếu.
+Bối cảnh: Anh Hưng chỉ còn 2 năm nữa là đến hạn đóng học phí du học cho con, toàn bộ khoản tích lũy hiện vẫn đang nằm ở quỹ cổ phiếu.
 
-Câu hỏi: Anh nên cân nhắc điều gì trước?
+Câu hỏi: Anh Hưng nên ưu tiên cân nhắc hành động nào?
 
-- [ ] Dồn thêm vào quỹ cổ phiếu để tăng tốc trong 2 năm cuối
-- [ ] Giữ nguyên, vì cổ phiếu dài hạn chắc chắn sẽ thắng
-- [x] Chuyển dần ưu tiên sang bảo toàn, giảm tỷ trọng tài sản biến động cao
+- [ ] Nộp thêm tiền vào quỹ cổ phiếu để tăng tốc trong 2 năm cuối
+- [ ] Giữ nguyên danh mục vì dài hạn quỹ cổ phiếu luôn tăng giá
+- [x] Chuyển dần sang tài sản an toàn để bảo vệ số tiền đã tích lũy
 
-Giải thích: Ngày nhập học không thể lùi lại chỉ vì thị trường giảm. Càng gần mục tiêu, việc giữ được số tiền đã tích lũy quan trọng hơn tìm thêm tăng trưởng.
+Giải thích: Lịch đóng học phí là cố định và không thể hoãn lại. Càng sát ngày cần tiền, việc bảo vệ thành quả tích lũy phải được ưu tiên hơn so với tìm kiếm tăng trưởng.
 
 > Nguồn: Kế hoạch du học cho con nên bắt đầu từ đâu?
 
@@ -5525,56 +5525,56 @@ Giải thích: Ngày nhập học không thể lùi lại chỉ vì thị trư�
 
 #### Câu a1d-report-match · Nối cặp
 
-Câu hỏi: Nối mỗi phần của báo cáo quỹ với câu hỏi nó trả lời
+Câu hỏi: Bạn hãy nối mỗi phần của báo cáo quỹ dưới đây với thông tin tương ứng
 
-- Các khoản đầu tư lớn nhất → Quỹ đang nắm nhiều nhất những mã nào?
-- Tỷ trọng ngành → Tiền quỹ tập trung vào lĩnh vực nào?
-- Phân bổ tài sản → Bao nhiêu phần là cổ phiếu, trái phiếu, tiền gửi?
-- Ngày chốt số liệu → Số liệu đúng tại thời điểm nào?
+- Các khoản đầu tư lớn nhất → Danh mục các mã tài sản chiếm tỷ trọng cao nhất
+- Tỷ trọng ngành → Tỷ lệ phân bổ vốn vào các lĩnh vực kinh tế
+- Phân bổ tài sản → Tỷ lệ giữa cổ phiếu, trái phiếu và tiền mặt
+- Ngày chốt số liệu → Thời điểm ghi nhận bức tranh danh mục
 
-Giải thích: Ba phần đầu cho thấy quỹ đang đầu tư vào đâu; ngày chốt số liệu cho biết bức tranh đó đúng vào lúc nào. Đọc thiếu ngày chốt dễ hiểu nhầm danh mục cũ là danh mục hôm nay.
+Giải thích: Luôn đọc ngày chốt số liệu trước tiên để tránh nhầm lẫn giữa danh mục quá khứ và trạng thái hiện tại.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 15
 
 #### Câu a1d-report-stale · Chọn đáp án · Vì sao?
 
-Bối cảnh: Chị Lan thấy một cổ phiếu nằm trong top khoản đầu tư của báo cáo tháng, nhưng sau đó nghe tin quỹ đã giảm tỷ trọng mã này.
+Bối cảnh: Chị Lan thấy một mã cổ phiếu nằm trong danh mục top đầu của báo cáo tháng, nhưng sau đó nghe tin quỹ đã giảm tỷ trọng mã này.
 
-Câu hỏi: Vì sao báo cáo và danh mục hiện tại có thể khác nhau?
+Câu hỏi: Nguyên nhân vì sao báo cáo và thực tế giao dịch lại có sự khác biệt?
 
-- [x] Báo cáo phản ánh danh mục tại ngày chốt số liệu, quỹ vẫn mua bán sau đó
-- [ ] Báo cáo đã sai và cần được đính chính
-- [ ] Quỹ chỉ được thay đổi danh mục mỗi năm một lần
+- [x] Báo cáo phản ánh danh mục tại ngày chốt số liệu, quỹ vẫn giao dịch sau đó
+- [ ] Báo cáo công bố bị sai số liệu và cần phải đính chính lại
+- [ ] Quỹ mở chỉ được phép thay đổi danh mục đầu tư mỗi năm một lần
 
-Giải thích: Báo cáo hằng tháng thường chốt số liệu vào cuối tháng trước, trong khi đội ngũ đầu tư vẫn điều chỉnh danh mục. Luôn đọc ngày chốt trước khi rút ra kết luận.
+Giải thích: Báo cáo hằng tháng chốt số liệu tại một mốc cố định (thường là ngày cuối tháng). Đội ngũ quản lý quỹ vẫn chủ động mua bán tài sản sau mốc thời gian đó.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 15
 
 #### Câu a1d-report-no-plan · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: Anh Thịnh muốn đọc báo cáo của DCDS để biết tuần tới quỹ sẽ mua thêm cổ phiếu nào rồi mua theo.
+Bối cảnh: Anh Thịnh muốn đọc báo cáo tháng của DCDS để biết tuần tới quỹ sẽ mua mã cổ phiếu nào nhằm đặt lệnh mua theo.
 
-Câu hỏi: Nhận định nào đúng?
+Câu hỏi: Nhận định nào dưới đây phản ánh đúng quy định công bố thông tin?
 
-- [ ] Báo cáo tháng liệt kê đầy đủ kế hoạch mua bán sắp tới của quỹ
-- [x] Kế hoạch mua bán chi tiết của từng quỹ không được công bố
-- [ ] Chỉ cần hỏi bộ phận hỗ trợ là được cung cấp kế hoạch mua bán
+- [ ] Báo cáo tháng sẽ liệt kê chi tiết danh mục cổ phiếu dự định mua tuần tới
+- [x] Kế hoạch giao dịch chi tiết của từng quỹ tuyệt đối không được công bố trước
+- [ ] Chỉ cần gọi điện cho tổng đài CSKH là sẽ được cung cấp danh mục mua tuần tới
 
-Giải thích: Báo cáo cho biết quỹ đã nắm gì tại ngày chốt, không cho biết quỹ sắp làm gì. Báo cáo thị trường và triển vọng thì có trên website, nhưng phạm vi khác kế hoạch giao dịch.
+Giải thích: Báo cáo quỹ cho biết trạng thái tài sản đã nắm giữ tại ngày chốt số liệu, hoàn toàn không công bố kế hoạch giao dịch tương lai để đảm bảo tính bảo mật và công bằng.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 118
 
 #### Câu a1d-report-screenshot · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Anh Phúc muốn biết DCDS đang có bao nhiêu phần trăm cổ phiếu. Một người bạn gửi anh ảnh chụp một trang báo cáo, không rõ của kỳ nào.
+Bối cảnh: Anh Phúc muốn biết tỷ trọng cổ phiếu hiện tại của DCDS, người bạn gửi cho anh một tấm ảnh chụp báo cáo nhưng đã bị cắt mất phần ngày chốt.
 
-Câu hỏi: Anh nên làm gì?
+Câu hỏi: Anh Phúc nên xử lý như thế nào?
 
-- [ ] Dùng luôn ảnh chụp, vì tỷ trọng cổ phiếu của quỹ ít khi đổi
-- [ ] Hỏi thêm vài người bạn và lấy con số nhiều người nói nhất
-- [x] Tải báo cáo định kỳ từ website Dragon Capital hoặc DragonX và kiểm tra ngày chốt
+- [ ] Dùng luôn số liệu trên ảnh chụp vì tỷ trọng cổ phiếu của quỹ ít khi thay đổi
+- [ ] Hỏi ý kiến thêm vài người bạn rồi lấy con số trung bình
+- [x] Tải báo cáo định kỳ mới nhất từ website chính thức để kiểm tra ngày chốt
 
-Giải thích: Ảnh chụp không rõ kỳ có thể là số liệu cũ. Báo cáo chính thức có ngày chốt số liệu, giúp bạn biết con số mình đang đọc đúng vào thời điểm nào.
+Giải thích: Ảnh chụp cắt góc có thể là dữ liệu cũ đã hết hiệu lực. Luôn trích xuất báo cáo từ nguồn chính thức để đảm bảo tính chính xác.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 15
 
@@ -5588,26 +5588,26 @@ Thông tin nhân vật: 52 tuổi, mua DCDS theo lời giới thiệu của đ�
 
 Lời nói: Cô mua theo người quen, giờ không rõ quỹ này có hợp với mình không. Hay cô bán hết rồi đổi sang quỹ khác cho yên tâm?
 
-Câu hỏi: Lời khuyên nào phù hợp nhất với cô Hoa?
+Câu hỏi: Lời khuyên nào dưới đây phù hợp nhất với cô Hoa?
 
-- [ ] Bán hết rồi chuyển sang quỹ nào năm qua có lợi nhuận cao nhất
-- [ ] Giữ nguyên, vì người giới thiệu đã có lời với quỹ này
-- [x] Rà soát mục tiêu, thời gian nắm giữ, tiền dự phòng và mức giảm chịu được rồi mới quyết
+- [ ] Bán hết ngay để chuyển sang quỹ có lợi nhuận cao nhất năm qua
+- [ ] Giữ nguyên tuyệt đối vì người giới thiệu đã đầu tư có lãi
+- [x] Rà soát mục tiêu, thời hạn, quỹ dự phòng và mức chịu lỗ trước khi quyết định
 
-Giải thích: Một quỹ hợp với người giới thiệu chưa chắc hợp với cô Hoa. Quyết định nên dựa trên mục tiêu và khả năng chịu biến động của chính mình, không theo lời người khác hay một năm lời cao.
+Giải thích: Danh mục phù hợp với người giới thiệu chưa chắc đã phù hợp với cô Hoa. Quyết định đầu tư cần dựa trên bức tranh tài chính cá nhân của chính mình.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 28
 
 #### Câu a1d-referral-steps · Sắp xếp
 
-Câu hỏi: Sắp xếp các bước rà soát khoản đã mua
+Câu hỏi: Bạn hãy sắp xếp các bước rà soát một khoản đầu tư đã mua theo đúng trình tự
 
-1. Xác định mục tiêu và thời gian định nắm giữ
-2. Kiểm tra đã có đủ tiền dự phòng chưa
-3. Ước lượng mức giảm giá mình chịu được
-4. Đối chiếu với chiến lược và rủi ro của quỹ đang giữ
+1. Xác định rõ mục tiêu tài chính và khoảng thời gian dự định nắm giữ
+2. Kiểm tra xem bản thân đã thiết lập đủ quỹ dự phòng chi tiêu chưa
+3. Ước lượng mức độ giảm giá tài sản mà bản thân thực sự chịu đựng được
+4. Đối chiếu các yếu tố trên với chiến lược và đặc tính rủi ro của quỹ đang giữ
 
-Giải thích: Hiểu mình trước, rồi mới đánh giá quỹ. Bộ phận hỗ trợ có thể giải thích chiến lược, rủi ro và điều kiện giao dịch để bạn tự chọn phân bổ phù hợp.
+Giải thích: Hiểu rõ hoàn cảnh bản thân trước rồi mới tiến hành đánh giá lại danh mục quỹ đang nắm giữ.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 28
 
@@ -5627,31 +5627,31 @@ Giải thích: Phí bán giảm dần theo thời gian nắm giữ: trên 6 thá
 
 #### Câu a1d-compare-managers · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Anh Long muốn so Dragon Capital với hai công ty quản lý quỹ khác và định chọn công ty có quy mô tài sản lớn nhất.
+Bối cảnh: Anh Long muốn so sánh Dragon Capital với hai công ty quản lý quỹ khác và định chọn công ty có quy mô tài sản lớn nhất.
 
-Câu hỏi: Anh nên so sánh theo tiêu chí nào?
+Câu hỏi: Anh Long nên so sánh dựa trên các tiêu chí chuẩn mực nào?
 
-- [ ] Quy mô tài sản và độ nổi tiếng của thương hiệu
-- [x] Chiến lược, rủi ro, hiệu suất cùng kỳ, phí, minh bạch và chất lượng phục vụ
-- [ ] Quỹ có lợi nhuận cao nhất trong năm vừa rồi
+- [ ] Quy mô tài sản quản lý và độ nổi tiếng của thương hiệu
+- [x] Chiến lược, rủi ro, hiệu suất cùng kỳ, biểu phí và tính minh bạch
+- [ ] Công ty nào có một quỹ đạt lợi nhuận cao nhất năm vừa qua
 
-Giải thích: Quy mô hay một năm lời cao không cho biết quỹ có hợp với bạn không. Ngay trong một công ty, các quỹ có chiến lược và kết quả khác nhau, nên cần so từng quỹ với quỹ cùng loại.
+Giải thích: Quy mô hay thành tích ngắn hạn của một quỹ không đại diện cho toàn bộ các sản phẩm. Bạn cần so sánh từng quỹ cụ thể theo cùng chiến lược và cùng khung thời gian.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 95
 
 #### Câu a1d-compare-spot · Tìm câu sai
 
-Bối cảnh: Một người bạn chia sẻ với anh Long ba "bí quyết" chọn quỹ.
+Bối cảnh: Một người quen chia sẻ với anh Long ba lời khuyên khi lựa chọn công ty quản lý quỹ.
 
-Câu hỏi: Câu nào sai?
+Câu hỏi: Lời khuyên nào dưới đây SAI?
 
 > Đánh dấu [x] vào câu SAI.
 
-- [ ] So hiệu suất các quỹ trên cùng một khoảng thời gian.
-- [ ] So từng quỹ với quỹ cùng loại, không so quỹ trái phiếu với quỹ cổ phiếu.
-- [x] Công ty nào có một quỹ lời cao nhất năm qua thì quỹ nào của công ty đó cũng tốt.
+- [ ] So sánh hiệu suất các quỹ trên cùng một khoảng thời gian.
+- [ ] So sánh từng quỹ với các quỹ có cùng chiến lược và lớp tài sản.
+- [x] Công ty nào có một quỹ lời cao nhất năm qua thì mọi quỹ của họ đều tốt.
 
-Giải thích: Danh mục và kết quả của từng quỹ có thể khác nhau ngay trong cùng một công ty quản lý quỹ. Hãy đánh giá từng quỹ theo chiến lược, rủi ro và hiệu suất cùng kỳ.
+Giải thích: Mỗi quỹ trong cùng một công ty có chiến lược, danh mục và biên độ rủi ro hoàn toàn khác nhau. Không thể lấy kết quả của một quỹ để kết luận cho tất cả các quỹ còn lại.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 95
 
@@ -5659,87 +5659,87 @@ Giải thích: Danh mục và kết quả của từng quỹ có thể khác nha
 
 #### Câu a1d-cp-low-volatility · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Chú Bình, 58 tuổi, muốn hạn chế rủi ro nhưng vẫn có cơ hội sinh lời, và hỏi quỹ DC nào vừa an toàn vốn vừa lợi nhuận cao.
+Bối cảnh: Chú Bình (58 tuổi) muốn tìm một quỹ mở vừa an toàn vốn tuyệt đối vừa có lợi nhuận cao.
 
-Câu hỏi: Câu trả lời nào đúng nhất?
+Câu hỏi: Lời giải thích nào dưới đây là chuẩn xác nhất cho chú Bình?
 
-- [ ] DCDS, vì vừa tăng trưởng mạnh vừa được bảo đảm vốn
-- [x] Không quỹ nào bảo đảm cả hai; DCBF, DCIP thường biến động thấp hơn quỹ cổ phiếu
-- [ ] DCBA, vì quỹ cân bằng chắc chắn không lỗ
+- [ ] DCDS, vì quỹ vừa tăng trưởng mạnh vừa đảm bảo an toàn vốn
+- [x] Không có quỹ nào đáp ứng cả hai; DCBF và DCIP biến động thấp hơn quỹ cổ phiếu
+- [ ] DCBA, vì quỹ cân bằng chắc chắn không bao giờ bị lỗ
 
-Giải thích: An toàn vốn và lợi nhuận cao luôn phải đánh đổi. Chọn quỹ bắt đầu từ mục tiêu, thời gian đầu tư, nhu cầu dùng tiền và khả năng chịu biến động.
+Giải thích: Lợi nhuận kỳ vọng cao luôn đi kèm với biên độ biến động lớn. Không có sản phẩm nào bảo đảm đồng thời cả hai yếu tố an toàn vốn tuyệt đối và lợi nhuận cao.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 1
 
 #### Câu a1d-cp-dcds-benchmark · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: Anh Vinh so lợi nhuận một năm của DCDS với VN-Index thuần và kết luận quỹ "thua thị trường" trong một năm VN-Index tăng mạnh.
+Bối cảnh: Anh Vinh đem so sánh lợi nhuận DCDS với VN-Index thuần túy và kết luận quỹ "thua thị trường" trong một năm VN-Index tăng mạnh.
 
-Câu hỏi: Nhận định nào đúng?
+Câu hỏi: Nhận định nào dưới đây phản ánh đúng chỉ số tham chiếu của DCDS?
 
-- [x] Chỉ số tham chiếu của DCDS là 80% VN-Index + 20% chỉ số trái phiếu HNX kỳ hạn 2 năm
-- [ ] Quỹ cổ phiếu nào cũng chỉ dùng VN-Index làm chỉ số tham chiếu
-- [ ] DCDS không có chỉ số tham chiếu nên không thể so sánh
+- [x] Chỉ số tham chiếu là 80% VN-Index + 20% chỉ số trái phiếu HNX kỳ hạn 2 năm
+- [ ] Mọi quỹ cổ phiếu đều bắt buộc dùng VN-Index thuần làm chỉ số tham chiếu
+- [ ] DCDS không có chỉ số tham chiếu cố định
 
-Giải thích: DCDS có thể giữ một phần trái phiếu và tiền gửi, nên chỉ số tham chiếu của quỹ có cả phần trái phiếu. Đánh giá quỹ nên dùng đúng chỉ số trong báo cáo của kỳ đang xem.
+Giải thích: Danh mục DCDS có cấu phần trái phiếu/tiền mặt làm bộ đệm, do đó chỉ số tham chiếu chuẩn mực phải bao gồm 20% chỉ số trái phiếu HNX.
 
 > Nguồn: Thư viện hỏi đáp Quỹ DC · Các quỹ mở của DC
 
 #### Câu a1d-cp-dividend · Chọn đáp án · Dự đoán
 
-Bối cảnh: Giả định chị Uyên giữ 500 CCQ DCDE ở NAV/CCQ 20.000 đồng; quỹ phân phối 1.300 đồng/CCQ và các yếu tố khác không đổi.
+Bối cảnh: Chị Uyên giữ 500 CCQ DCDE ở mức NAV/CCQ 20.000 đồng. Quỹ phân phối cổ tức tiền mặt 1.300 đồng/CCQ, giả định thị trường đứng yên.
 
-Câu hỏi: Sau ngày chốt quyền, điều gì xảy ra?
+Câu hỏi: Sau ngày chốt quyền, sự thay đổi nào sẽ diễn ra?
 
-- [ ] NAV/CCQ vẫn 20.000 đồng và chị nhận thêm 650.000 đồng
-- [ ] NAV/CCQ còn 18.700 đồng, chị bị lỗ 650.000 đồng
-- [x] NAV/CCQ còn 18.700 đồng và chị có quyền nhận 650.000 đồng
+- [ ] NAV/CCQ giữ nguyên 20.000 đồng và chị nhận thêm 650.000 đồng
+- [ ] NAV/CCQ giảm còn 18.700 đồng và chị bị lỗ mất 650.000 đồng
+- [x] NAV/CCQ giảm còn 18.700 đồng và chị nhận 650.000 đồng tiền cổ tức
 
-Giải thích: 500 × 1.300 = 650.000 đồng được tách khỏi tài sản quỹ thành tiền của chị, nên NAV/CCQ giảm đúng 1.300 đồng. Tổng tài sản không đổi, đó không phải lỗ.
+Giải thích: 500 × 1.300 = 650.000 đồng tiền mặt được tách ra từ tài sản quỹ chuyển về tài khoản của chị. NAV/CCQ giảm tương ứng 1.300 đồng; tổng tài sản không đổi.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 106
 
 #### Câu a1d-cp-balanced · Chọn đáp án · Vì sao?
 
-Bối cảnh: Hai gia đình cùng còn 12 năm cho mục tiêu dài hạn: nhà anh Duy cân nhắc DCDS, nhà chị Trang cân nhắc DCBA.
+Bối cảnh: Hai gia đình cùng tích lũy cho mục tiêu 12 năm: gia đình anh Duy chọn DCDS, gia đình chị Trang chọn DCBA.
 
-Câu hỏi: Vì sao cả hai lựa chọn đều có thể hợp lý?
+Câu hỏi: Vì sao cả hai sự lựa chọn này đều có thể hợp lý?
 
-- [ ] Vì quỹ nào của DC cũng cho kết quả như nhau sau 12 năm
-- [x] Vì cùng thời gian nhưng mức chấp nhận biến động của hai gia đình khác nhau
-- [ ] Vì DCBA và DCDS có cùng danh mục, chỉ khác tên
+- [ ] Vì mọi quỹ mở của DC đều mang lại kết quả hệt như nhau sau 12 năm
+- [x] Vì cùng thời gian nhưng mức độ chịu đựng biến động của hai gia đình khác nhau
+- [ ] Vì DCBA và DCDS có cùng danh mục đầu tư, chỉ khác tên gọi
 
-Giải thích: DCDS hướng đến tăng trưởng dài hạn và chấp nhận biến động mạnh; DCBA kết hợp cổ phiếu với tài sản thu nhập cố định để cân bằng hơn. Danh mục phù hợp phụ thuộc cả thời gian lẫn mức biến động chịu được.
+Giải thích: DCDS chấp nhận biến động mạnh để tối ưu tăng trưởng; DCBA kết hợp trái phiếu để giảm sóc cho nhà đầu tư muốn sự an tâm.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 34
 
 #### Câu a1d-cp-report-date · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Đầu tháng 6, chị Diệp đọc báo cáo hoạt động mới nhất của DCDE để xem tỷ trọng ngành ngân hàng của quỹ.
+Bối cảnh: Đầu tháng 6, chị Diệp mở báo cáo hoạt động mới nhất của DCDE để xem tỷ trọng ngành ngân hàng.
 
-Câu hỏi: Chị cần lưu ý gì khi đọc con số này?
+Câu hỏi: Chị Diệp cần lưu ý điều gì về con số tỷ trọng này?
 
-- [x] Đó là tỷ trọng tại ngày chốt số liệu, có thể khác danh mục hôm nay
-- [ ] Đó là tỷ trọng quỹ cam kết giữ trong cả năm
-- [ ] Đó là kế hoạch phân bổ của quỹ cho tháng tới
+- [x] Con số phản ánh tại ngày chốt số liệu, có thể khác với danh mục thực tế hôm nay
+- [ ] Đây là tỷ trọng cố định mà quỹ cam kết duy trì trong suốt cả năm
+- [ ] Đây là kế hoạch phân bổ dòng tiền của quỹ cho tháng tiếp theo
 
-Giải thích: Báo cáo là ảnh chụp danh mục tại một thời điểm, thường là cuối tháng trước. Quỹ vẫn điều chỉnh danh mục sau đó và không công bố kế hoạch mua bán chi tiết.
+Giải thích: Báo cáo là bức tranh chụp lại danh mục tại ngày chốt (thường là cuối tháng trước). Đội ngũ quản lý vẫn tiếp tục điều chỉnh danh mục hằng ngày.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 15
 
 #### Câu a1d-cp-spot · Tìm câu sai
 
-Bối cảnh: Trong nhóm chat đầu tư, anh Hiếu tóm tắt gia đình quỹ DC bằng ba câu.
+Bối cảnh: Anh Hiếu tóm tắt kiến thức về các quỹ Dragon Capital cho nhóm bạn.
 
-Câu hỏi: Câu nào sai?
+Câu hỏi: Nhận định nào dưới đây SAI?
 
 > Đánh dấu [x] vào câu SAI.
 
-- [ ] DCIP so kết quả với lãi suất tiền gửi kỳ hạn 3 tháng trung bình của bốn ngân hàng.
-- [x] DCDS năng động hơn nên giai đoạn nào cũng lời hơn DCDE.
-- [ ] So DCDE với quỹ khác nên dùng tổng lợi nhuận đã tính cổ tức.
+- [ ] DCIP so sánh hiệu quả với lãi suất tiết kiệm 3 tháng của Big 4 ngân hàng.
+- [x] DCDS năng động hơn nên ở bất kỳ giai đoạn nào cũng lời hơn DCDE.
+- [ ] Khi đánh giá DCDE, phải dùng chỉ số tổng lợi nhuận đã tính cổ tức.
 
-Giải thích: Hai quỹ cổ phiếu khác cổ phiếu nắm giữ, tỷ trọng ngành và mức tiền mặt, nên có giai đoạn quỹ này tốt hơn, có giai đoạn ngược lại. Không quỹ nào luôn vượt trội.
+Giải thích: DCDS và DCDE theo đuổi chiến lược khác nhau nên hiệu suất tương đối sẽ thay đổi tùy thuộc vào từng chu kỳ thị trường.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 16
 
@@ -5749,58 +5749,58 @@ Giải thích: Hai quỹ cổ phiếu khác cổ phiếu nắm giữ, tỷ trọ
 
 #### Câu a2o-lifecycle-order · Sắp xếp
 
-Câu hỏi: Sắp xếp vòng đời một lệnh mua quỹ mở theo đúng thứ tự
+Câu hỏi: Bạn hãy sắp xếp vòng đời một lệnh mua chứng chỉ quỹ mở theo đúng thứ tự
 
-1. Đặt lệnh trên DragonX, xác nhận bằng mã PIN và OTP
-2. Chuyển tiền theo hướng dẫn thanh toán của lệnh đó
-3. Quỹ nhận và đối soát khoản tiền
-4. Lệnh được thực hiện ở kỳ giao dịch ngày T
-5. NAV/CCQ kỳ T được công bố, khoảng 12:00 ngày T
-6. Số CCQ mới cập nhật vào tài khoản, trước 18:00 ngày T
+1. Đặt lệnh trên DragonX và xác nhận bằng mã PIN/OTP
+2. Thực hiện chuyển tiền theo đúng hướng dẫn thanh toán
+3. Ngân hàng giám sát và quỹ đối soát ghi nhận khoản tiền
+4. Lệnh được chính thức xử lý ở kỳ giao dịch ngày T
+5. NAV/CCQ kỳ T được công bố (khoảng 12:00 ngày T)
+6. Số chứng chỉ quỹ mới cập nhật vào tài khoản (trước 18:00 ngày T)
 
-Giải thích: Từ lúc bấm đặt lệnh đến lúc thấy CCQ có nhiều bước ở giữa. Biết mình đang ở bước nào giúp bạn không hoảng khi số dư chưa đổi.
+Giải thích: Nắm rõ các mốc thời gian xử lý giúp bạn an tâm theo dõi lệnh thay vì lo lắng khi thấy số dư CCQ chưa cập nhật tức thì.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 44
 
 #### Câu a2o-lifecycle-late-cash · Chọn đáp án · Dự đoán
 
-Bối cảnh: Anh Tuấn đặt lệnh mua DCDS lúc 14:00 thứ Hai, nhưng 21:30 mới chuyển khoản liên ngân hàng thông thường. Tiền về tài khoản của quỹ sáng thứ Ba.
+Bối cảnh: Anh Tuấn đặt lệnh mua DCDS lúc 14:00 thứ Hai, nhưng đến 21:30 anh mới chuyển khoản liên ngân hàng thường. Tiền về tài khoản quỹ vào sáng thứ Ba.
 
-Câu hỏi: Lệnh của anh được thực hiện ở kỳ giao dịch nào?
+Câu hỏi: Lệnh của anh Tuấn sẽ được thực hiện ở kỳ giao dịch nào?
 
-- [ ] Kỳ thứ Ba, vì lệnh đặt trước 14:30 thứ Hai
-- [x] Kỳ thứ Tư, vì tiền về quỹ sau 22:00 thứ Hai
-- [ ] Không kỳ nào, lệnh bị hủy và anh phải đặt lại
+- [ ] Kỳ thứ Ba, vì lệnh được đặt trên ứng dụng trước 14:30 thứ Hai
+- [x] Kỳ thứ Tư, vì tiền về tài khoản quỹ sau mốc 22:00 thứ Hai
+- [ ] Lệnh bị hệ thống tự động hủy và anh Tuấn phải đặt lại
 
-Giải thích: Để kịp kỳ ngày T, cả lệnh (trước 14:30) lẫn tiền (trước 22:00 ngày T-1) đều phải đến đúng hạn. Lệnh hoặc tiền đến muộn được xử lý ở kỳ giao dịch kế tiếp.
+Giải thích: Điều kiện hợp lệ cho kỳ ngày T yêu cầu tiền phải về tài khoản quỹ trước 22:00 ngày T-1. Tiền về sáng thứ Ba sẽ khớp ở kỳ giao dịch thứ Tư.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 108
 
 #### Câu a2o-lifecycle-bank-ok · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: 11:00 thứ Năm, chị Mai nhận tin nhắn ngân hàng báo đã chuyển thành công 5 triệu đồng mua DCDE. Chị khoe với bạn: "Mình mua xong rồi!"
+Bối cảnh: 11:00 thứ Năm, chị Mai nhận tin nhắn ngân hàng báo chuyển tiền thành công 5 triệu đồng mua DCDE. Chị khẳng định: "Mình đã mua xong chứng chỉ quỹ rồi".
 
-Câu hỏi: Nhận định nào đúng?
+Câu hỏi: Nhận định nào dưới đây phản ánh đúng trạng thái lệnh?
 
-- [ ] Chị đã sở hữu CCQ theo NAV lúc 11:00 thứ Năm
-- [x] Lệnh còn chờ quỹ đối soát tiền và thực hiện ở kỳ thứ Sáu
-- [ ] Chị đã có CCQ, chỉ là ứng dụng hiển thị chậm vài tuần
+- [ ] Chị đã sở hữu CCQ tính theo mức giá NAV lúc 11:00 thứ Năm
+- [x] Tiền chờ đối soát và lệnh sẽ khớp theo NAV chốt ở phiên thứ Sáu
+- [ ] Chị đã có CCQ, ứng dụng chỉ hiển thị chậm vài tuần
 
-Giải thích: Tin nhắn ngân hàng chỉ xác nhận tiền đã rời tài khoản của bạn. Lệnh mua còn qua bước đối soát và kỳ giao dịch hợp lệ, rồi số CCQ mới được cập nhật.
+Giải thích: Tin nhắn ngân hàng chỉ xác nhận tiền đã rời tài khoản cá nhân. Lệnh mua phải qua bước đối soát ngân hàng giám sát và khớp giá NAV chốt ở kỳ giao dịch quy định.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 44
 
 #### Câu a2o-lifecycle-why-1430 · Chọn đáp án · Vì sao?
 
-Bối cảnh: Quỹ vẫn nhận tiền mua đến 22:00 ngày T-1. Vậy mà DC vẫn khuyên nhà đầu tư chuyển tiền trước 14:30.
+Bối cảnh: Hạn chót nhận tiền cho kỳ giao dịch là 22:00 ngày T-1, nhưng Dragon Capital luôn khuyến nghị nhà đầu tư nên chuyển tiền trước 14:30.
 
-Câu hỏi: Vì sao có lời khuyên này?
+Câu hỏi: Nguyên nhân của lời khuyên này là gì?
 
-- [ ] Vì tiền về sau 14:30 bị tính phí mua cao hơn
-- [x] Vì chuyển khoản liên ngân hàng thông thường có thể về chậm, làm lệnh rơi sang kỳ sau
-- [ ] Vì tiền chuyển sau 14:30 được khớp theo NAV cao hơn
+- [ ] Chuyển tiền sau 14:30 sẽ bị áp dụng mức phí mua cao hơn
+- [x] Chuyển tiền muộn có thể bị tắc nghẽn liên ngân hàng, làm tiền về sau 22:00
+- [ ] Chuyển tiền sau 14:30 sẽ phải khớp ở mức giá NAV cao hơn
 
-Giải thích: Mốc 22:00 tính theo lúc tiền đến tài khoản của quỹ, không phải lúc bạn bấm chuyển. Chuyển sớm tạo khoảng đệm cho những chậm trễ giữa các ngân hàng.
+Giải thích: Mốc 22:00 tính theo thời điểm tiền ghi có thực tế tại tài khoản quỹ. Chuyển tiền trước 14:30 giúp tạo khoảng đệm an toàn phòng trường hợp ngân hàng xử lý chậm.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 108
 
@@ -5808,29 +5808,29 @@ Giải thích: Mốc 22:00 tính theo lúc tiền đến tài khoản của qu�
 
 #### Câu a3-price-known · Chọn đáp án · Dự đoán
 
-Bối cảnh: 10:00 sáng thứ Ba, chị Hạnh đặt lệnh mua DCDS và chuyển tiền ngay. Lệnh đặt trước 14:30 được khớp ở phiên giao dịch ngày hôm sau.
+Bối cảnh: 10:00 sáng thứ Ba, chị Hạnh đặt lệnh mua DCDS và chuyển tiền ngay. Lệnh đặt trước 14:30 sẽ khớp vào phiên ngày thứ Tư.
 
-Câu hỏi: Chị mua chứng chỉ quỹ với giá nào?
+Câu hỏi: Chị Hạnh sẽ mua chứng chỉ quỹ với mức giá NAV nào?
 
-- [ ] Giá NAV hiển thị lúc 10:00 thứ Ba
-- [x] NAV/CCQ của phiên thứ Tư, công bố khoảng 12:00 thứ Tư
-- [ ] Giá thấp nhất trong tuần
+- [ ] Giá NAV hiển thị trên ứng dụng lúc 10:00 sáng thứ Ba
+- [x] NAV/CCQ của phiên thứ Tư, được công bố vào khoảng 12:00 thứ Tư
+- [ ] Mức giá NAV thấp nhất ghi nhận được trong tuần
 
-Giải thích: Quỹ mở không khớp giá tức thời như cổ phiếu: lệnh trước 14:30 ngày T-1 khớp theo NAV/CCQ của ngày T. Khi đặt lệnh bạn biết số tiền, còn số CCQ chỉ biết sau khi NAV được công bố.
+Giải thích: Quỹ mở khớp lệnh theo nguyên tắc giá chưa biết (unknown price). Lệnh hợp lệ trước 14:30 ngày T-1 sẽ khớp theo đúng giá NAV/CCQ chốt vào ngày T.
 
 > Nguồn: Thư viện hỏi đáp Quỹ DC · Lịch giao dịch
 
 #### Câu a3-dcbf-schedule · Chọn đáp án · Dự đoán
 
-Bối cảnh: Chị Thảo đặt lệnh mua DCBF lúc 15:00 thứ Ba, sau giờ chốt lệnh 14:30. DCBF chỉ giao dịch vào thứ Tư và thứ Sáu hằng tuần.
+Bối cảnh: Chị Thảo đặt lệnh mua DCBF lúc 15:00 thứ Ba (sau giờ chốt lệnh 14:30). Quỹ DCBF giao dịch định kỳ vào thứ Tư và thứ Sáu hằng tuần.
 
-Câu hỏi: Lệnh của chị được khớp vào phiên nào?
+Câu hỏi: Lệnh của chị Thảo sẽ được thực hiện vào phiên giao dịch nào?
 
-- [ ] Phiên thứ Tư tuần này
-- [x] Phiên thứ Sáu tuần này
-- [ ] Phiên thứ Tư tuần sau
+- [ ] Phiên giao dịch thứ Tư tuần này
+- [x] Phiên giao dịch thứ Sáu tuần này
+- [ ] Phiên giao dịch thứ Tư tuần sau
 
-Giải thích: Lệnh sau 14:30 ngày T-1 chuyển sang phiên kế tiếp. DCBF có hai phiên mỗi tuần nên lùi sang thứ Sáu; DCDS, DCDE, DCIP giao dịch mỗi ngày làm việc nên chỉ lùi một ngày.
+Giải thích: Đặt lệnh sau 14:30 thứ Ba sẽ không kịp cho kỳ thứ Tư, do đó lệnh chuyển sang kỳ giao dịch hợp lệ tiếp theo là thứ Sáu.
 
 > Nguồn: Thư viện hỏi đáp Quỹ DC · Lịch giao dịch
 
@@ -5842,41 +5842,41 @@ Thông tin nhân vật: Mua 100 CCQ DCDS tháng 1/2024 và 100 CCQ tháng 3/2025
 
 Lời nói: Tháng 6/2026 chị bán 150 CCQ. Lần mua đầu đã quá 2 năm rồi, vậy cả 150 CCQ được miễn phí bán đúng không em?
 
-Câu hỏi: Câu nào đúng?
+Câu hỏi: Câu trả lời nào dưới đây là chính xác?
 
-- [ ] Đúng, cả 150 CCQ tính từ lần mua đầu tiên nên được miễn phí bán
-- [x] Chưa đúng: 100 CCQ mua 1/2024 được miễn; 50 CCQ mua 3/2025 mới giữ khoảng 15 tháng nên vẫn chịu phí
-- [ ] Cả 150 CCQ đều chịu phí vì tính theo lần mua gần nhất
+- [ ] Đúng, cả 150 CCQ đều tính theo mốc lần mua đầu nên được miễn phí bán
+- [x] Chưa đúng: 100 CCQ mua 1/2024 miễn phí; 50 CCQ mua 3/2025 (15 tháng) chịu phí
+- [ ] Cả 150 CCQ đều chịu phí bán vì tính theo lần mua mới nhất
 
-Giải thích: Mỗi lần mua tính thời gian nắm giữ riêng, và CCQ mua trước được bán trước (FIFO). Lô giữ trên 2 năm có phí bán 0%; lô chưa đủ 2 năm chịu phí theo biểu phí, tối đa 2,5%.
+Giải thích: Hệ thống tự động áp dụng nguyên tắc Mua trước - Bán trước (FIFO). 100 CCQ thuộc đợt 1 (trên 2 năm) có phí bán 0%; 50 CCQ thuộc đợt 2 (mới giữ 15 tháng) chịu phí bán theo biểu phí.
 
 > Nguồn: Thư viện hỏi đáp Quỹ DC · Biểu phí & thuế
 
 #### Câu a3-estimate-vs-actual · Chọn đáp án · Vì sao?
 
-Bối cảnh: Chị Lan bán 15,49 CCQ đã giữ được 8 tháng, khớp ở NAV 57.855,58 đồng: tổng tiền bán 896.183 đồng. Nhưng tài khoản chỉ nhận 875.244 đồng.
+Bối cảnh: Chị Lan bán 15,49 CCQ đã giữ 8 tháng, khớp ở giá NAV 57.855,58 đồng; tổng tiền bán trên lý thuyết là 896.183 đồng. Tuy nhiên tài khoản thực nhận là 875.244 đồng.
 
-Câu hỏi: Khoản chênh lệch gần 21.000 đồng gồm những gì?
+Câu hỏi: Khoản chênh lệch gần 21.000 đồng bao gồm những chi phí nào?
 
-- [ ] Phí quản lý quỹ bị trừ thêm khi bán
-- [x] Thuế TNCN 0,1% (896đ), phí bán 1,5% (13.443đ) và phí chuyển tiền 6.600đ
-- [ ] Quỹ giữ lại một phần tiền bán để bù lỗ
+- [ ] Phí quản lý quỹ bị trừ thêm khi bấm lệnh bán
+- [x] Thuế TNCN 0,1% (896đ), phí bán 1,5% (13.443đ) và phí chuyển tiền (6.600đ)
+- [ ] Quỹ giữ lại một phần tiền bán để bù đắp rủi ro
 
-Giải thích: Thuế TNCN là 0,1% trên tổng tiền bán, kể cả khi lỗ; phí bán giảm dần theo thời gian nắm giữ. Phí quản lý đã nằm sẵn trong NAV nên không bị trừ thêm.
+Giải thích: Thuế TNCN (0,1% trên tổng tiền bán) và phí bán (1,5% do giữ dưới 1 năm) cùng phí chuyển tiền ngân hàng được khấu trừ trực tiếp khi thanh toán.
 
 > Nguồn: Thư viện hỏi đáp Quỹ DC · Biểu phí & thuế
 
 #### Câu a3-sell-after-2y · Chọn đáp án · Dự đoán
 
-Bối cảnh: Anh Hải mua DCDS cách đây 2 năm 3 tháng. Nay anh bán toàn bộ, tổng tiền bán là 200 triệu đồng, nhận về tài khoản ngân hàng thông thường.
+Bối cảnh: Anh Hải bán toàn bộ số DCDS đã nắm giữ 2 năm 3 tháng, tổng giá trị bán là 200 triệu đồng, nhận về tài khoản ngân hàng thông thường.
 
-Câu hỏi: Anh sẽ chịu những khoản nào?
+Câu hỏi: Anh Hải sẽ chịu các khoản nghĩa vụ tài chính nào?
 
-- [ ] Phí bán 2,5% như mọi giao dịch bán
-- [x] Phí bán 0%; chỉ có thuế TNCN 0,1% (200.000đ) và phí chuyển tiền 6.600đ
-- [ ] Không mất khoản nào vì đã giữ trên 2 năm
+- [ ] Phí bán 2,5% áp dụng cho mọi giao dịch bán
+- [x] Phí bán 0%; thuế TNCN 0,1% (200.000đ) và phí chuyển tiền (6.600đ)
+- [ ] Không mất bất kỳ khoản phí hay thuế nào do đã giữ trên 2 năm
 
-Giải thích: Giữ trên 2 năm thì phí bán về 0%, nhưng thuế TNCN 0,1% trên tổng tiền bán vẫn áp dụng theo luật. Phí chuyển tiền là 6.600đ cho khoản dưới 500 triệu, 220.000đ từ 500 triệu trở lên.
+Giải thích: Nắm giữ trên 2 năm được miễn phí bán (0%). Thuế TNCN 0,1% áp dụng theo quy định pháp luật và phí chuyển tiền ngân hàng 6.600đ (khoản dưới 500 triệu; 220.000đ từ 500 triệu trở lên).
 
 > Nguồn: Thư viện hỏi đáp Quỹ DC · Biểu phí & thuế
 
@@ -5890,57 +5890,57 @@ Thông tin nhân vật: 52 tuổi, lần đầu mua DCBF qua một người tư 
 
 Lời nói: Bạn tư vấn bảo chị chuyển 50 triệu vào tài khoản riêng của bạn ấy, bạn ấy đặt lệnh giúp cho nhanh. Chị chuyển luôn nhé?
 
-Câu hỏi: Chị Ngọc nên làm gì?
+Câu hỏi: Chị Ngọc nên xử lý tình huống này thế nào?
 
-- [ ] Được, nếu bạn ấy gửi kèm ảnh thẻ nhân viên
-- [x] Không chuyển. Tiền mua quỹ chỉ vào tài khoản của quỹ, theo hướng dẫn thanh toán của lệnh
-- [ ] Được, miễn chị ghi rõ nội dung là mua DCBF
+- [ ] Chuyển tiền ngay nếu tư vấn viên gửi kèm ảnh chụp thẻ nhân viên
+- [x] Tuyệt đối không chuyển; tiền mua quỹ chỉ chuyển vào tài khoản đứng tên quỹ
+- [ ] Chuyển tiền nếu ghi rõ nội dung là nhờ mua DCBF
 
-Giải thích: Tiền mua quỹ luôn vào tài khoản của quỹ tại ngân hàng giám sát; chính DC cũng không giữ tiền của nhà đầu tư. Ai đề nghị chuyển vào tài khoản cá nhân, dù quen biết, là tín hiệu phải dừng lại.
+Giải thích: Dòng tiền mua quỹ chỉ được chuyển trực tiếp vào tài khoản của quỹ mở tại ngân hàng giám sát. Bất kỳ yêu cầu chuyển tiền vào tài khoản cá nhân nào cũng là vi phạm nguyên tắc an toàn.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 5
 
 #### Câu a2o-transfer-content · Chọn đáp án · Dự đoán
 
-Bối cảnh: Anh Khoa chuyển đúng số tài khoản và số tiền mua DCDS, nhưng tự gõ nội dung chuyển khoản theo ý mình thay vì nội dung trong hướng dẫn thanh toán.
+Bối cảnh: Anh Khoa chuyển đúng số tài khoản và số tiền mua DCDS, nhưng tự gõ nội dung chuyển tiền theo ý thích thay vì sao chép đúng hướng dẫn.
 
-Câu hỏi: Điều gì có thể xảy ra?
+Câu hỏi: Hệ thống sẽ xử lý khoản tiền của anh Khoa như thế nào?
 
-- [ ] Lệnh vẫn khớp bình thường vì số tiền đã đúng
-- [x] Hệ thống không nhận ra khoản tiền của ai, lệnh không khớp và anh phải yêu cầu hoàn tiền
-- [ ] Quỹ sẽ gọi điện xác nhận rồi khớp lệnh ngay trong ngày
+- [ ] Lệnh vẫn khớp bình thường vì số tiền và số tài khoản đã chính xác
+- [x] Hệ thống không đối soát được, lệnh không khớp và phải làm thủ tục hoàn tiền
+- [ ] Quỹ sẽ gọi điện xác nhận và hỗ trợ khớp lệnh ngay trong ngày
 
-Giải thích: Nội dung chuyển khoản là cách hệ thống ghép khoản tiền với đúng người, đúng lệnh. Sai nội dung thì phải chờ hoàn tiền, có thể mất phí chuyển tiền và lỡ kỳ giao dịch dự định.
+Giải thích: Nội dung chuyển khoản là mã định danh duy nhất giúp hệ thống tự động ghép tiền với đúng tài khoản và mã lệnh. Sai nội dung buộc phải tra soát thủ công và hoàn tiền.
 
 > Nguồn: Thư viện hỏi đáp Quỹ DC · Chuyển tiền & hoàn tiền
 
 #### Câu a2o-transfer-other-bank · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: Chị Vy đăng ký tài khoản ngân hàng A để nhận tiền bán. Tháng này chị muốn chuyển tiền mua quỹ từ tài khoản lương ở ngân hàng B.
+Bối cảnh: Chị Vy đăng ký ngân hàng A làm tài khoản nhận tiền bán. Tháng này chị muốn dùng ứng dụng ngân hàng B đứng tên chị để chuyển tiền mua quỹ.
 
-Câu hỏi: Nhận định nào đúng?
+Câu hỏi: Nhận định nào dưới đây phản ánh đúng quy định?
 
-- [ ] Chỉ được mua bằng tài khoản đã đăng ký; chuyển từ tài khoản khác sẽ bị trả lại
-- [x] Tài khoản đăng ký là nơi nhận tiền bán; chuyển từ tài khoản khác đứng tên mình vẫn được
-- [ ] Chuyển từ tài khoản của ai cũng được, kể cả người thân, không cần hỏi trước
+- [ ] Bắt buộc chuyển từ ngân hàng A; chuyển từ ngân hàng B sẽ bị trả lại
+- [x] Tài khoản đăng ký là nơi nhận tiền bán; mua từ tài khoản chính chủ khác vẫn hợp lệ
+- [ ] Chuyển từ tài khoản của ai cũng được, kể cả người thân trong gia đình
 
-Giải thích: Tài khoản chuyển tiền mua và tài khoản nhận tiền bán là hai việc khác nhau. Tiền từ tài khoản người khác có thể không đối soát được, nên hãy hỏi CSKH trước khi chuyển.
+Giải thích: Tài khoản nhận tiền bán cố định để bảo vệ tài sản chính chủ. Việc chuyển tiền mua có thể thực hiện từ các tài khoản ngân hàng chính chủ khác của nhà đầu tư.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 52
 
 #### Câu a2o-transfer-spot · Tìm câu sai
 
-Bối cảnh: Anh Bảo sắp mua quỹ lần đầu. Một đồng nghiệp chia sẻ ba mẹo chuyển tiền.
+Bối cảnh: Một đồng nghiệp chia sẻ ba kinh nghiệm chuyển tiền mua quỹ cho anh Bảo.
 
-Câu hỏi: Mẹo nào sai?
+Câu hỏi: Lời khuyên nào dưới đây SAI?
 
 > Đánh dấu [x] vào câu SAI.
 
-- [ ] Kiểm tra đúng tên người thụ hưởng, số tài khoản, số tiền và nội dung trước khi bấm chuyển.
-- [ ] Chuyển nhanh vào số tài khoản siêu tốc của quỹ thì DragonX báo nhận tiền sớm hơn.
-- [x] Có sẵn ảnh QR của lần mua trước thì cứ quét lại, kể cả khi mua quỹ khác.
+- [ ] Kiểm tra đúng tên người thụ hưởng, số tài khoản, số tiền và nội dung.
+- [ ] Chuyển nhanh vào số tài khoản siêu tốc của quỹ để ghi nhận sớm.
+- [x] Có sẵn ảnh QR của lần mua trước thì cứ quét lại cho tiện, kể cả mua quỹ khác.
 
-Giải thích: Mỗi lệnh có hướng dẫn thanh toán riêng; tiền vào tài khoản quỹ nào thì được đối soát cho quỹ đó. Không dùng lại QR cũ hay QR của quỹ khác, chưa chắc thì hỏi CSKH trước.
+Giải thích: Mỗi lệnh mua hoặc mỗi quỹ mở có thông tin tài khoản và mã QR riêng biệt. Tuyệt đối không dùng lại mã QR của lệnh cũ hoặc của quỹ khác.
 
 > Nguồn: Thư viện hỏi đáp Quỹ DC · Chuyển tiền & hoàn tiền
 
@@ -5954,56 +5954,56 @@ Thông tin nhân vật: Chuyển 20 triệu mua DCDS lúc 9:00 sáng thứ Ba
 
 Lời nói: App vẫn chưa thấy chứng chỉ quỹ. Hay anh chuyển lại lần nữa cho chắc?
 
-Câu hỏi: Anh Minh nên làm gì?
+Câu hỏi: Anh Minh nên được hướng dẫn xử lý như thế nào?
 
-- [ ] Chuyển thêm lần nữa, thừa thì quỹ trả lại
-- [x] Không chuyển thêm. Lệnh trước 14:30 thứ Ba khớp ở phiên thứ Tư; số CCQ hiện sau khi NAV công bố
-- [ ] Hủy lệnh rồi đặt lệnh mới
+- [ ] Chuyển thêm một lần nữa, nếu thừa tiền quỹ sẽ tự hoàn lại
+- [x] Không chuyển thêm; lệnh trước 14:30 thứ Ba khớp kỳ thứ Tư, CCQ hiển thị sau chốt NAV
+- [ ] Hủy lệnh hiện tại và thao tác đặt lại lệnh mới
 
-Giải thích: Lệnh trước 14:30 ngày T-1 khớp theo NAV của ngày T, công bố khoảng 12:00 ngày T. Không đặt lại lệnh hay chuyển thêm chỉ vì trạng thái chưa đổi.
+Giải thích: Lệnh thứ Ba khớp theo NAV chốt ngày thứ Tư (công bố khoảng 12:00) và số dư CCQ cập nhật trước 18:00 thứ Tư. Việc chưa thấy CCQ sáng thứ Ba là hoàn toàn đúng quy trình.
 
 > Nguồn: Thư viện hỏi đáp Quỹ DC · Lịch giao dịch
 
 #### Câu a3-missing-units-steps · Sắp xếp
 
-Câu hỏi: Sắp xếp các bước xử lý theo đúng thứ tự
+Câu hỏi: Bạn hãy sắp xếp các bước xử lý khi chưa thấy CCQ cập nhật theo đúng thứ tự
 
-1. Kiểm tra trạng thái lệnh và kỳ giao dịch
-2. Đối chiếu tài khoản nhận, số tiền, nội dung chuyển khoản
-3. Gửi mã lệnh và chứng từ qua kênh hỗ trợ chính thức
-4. Chờ phản hồi, không đặt lại lệnh hay chuyển thêm
+1. Kiểm tra trạng thái lệnh và lịch giao dịch quy định của quỹ
+2. Đối chiếu thông tin tài khoản nhận, số tiền và nội dung chuyển khoản trên chứng từ
+3. Gửi mã lệnh kèm chứng từ chuyển tiền qua kênh hỗ trợ chính thức
+4. Kiên nhẫn chờ phản hồi, tuyệt đối không đặt lại lệnh hay chuyển thêm tiền
 
-Giải thích: Quy tắc dùng lại được cho mọi sự cố giao dịch: kiểm tra trạng thái, đối chiếu, gửi thông tin qua kênh chính thức, không lặp lại thao tác.
+Giải thích: Xác định đúng trạng thái lệnh trước khi thực hiện bất kỳ thao tác liên quan đến dòng tiền.
 
 > Nguồn: Thư viện hỏi đáp Quỹ DC · Đặt lệnh, hủy lệnh & nhận tiền bán
 
 #### Câu a3-missing-units-spot · Tìm câu sai
 
-Bối cảnh: Một người bạn "có kinh nghiệm" nhắn cho anh Minh ba lời khuyên về lệnh mua chưa thấy CCQ.
+Bối cảnh: Một người quen đưa ra ba lời khuyên cho anh Minh khi chưa thấy CCQ.
 
-Câu hỏi: Câu nào sai?
+Câu hỏi: Lời khuyên nào dưới đây SAI?
 
 > Đánh dấu [x] vào câu SAI.
 
-- [ ] Chuyển tiền thành công ở ngân hàng chưa có nghĩa là lệnh đã được thực hiện.
-- [ ] Chuyển sai nội dung thì lệnh có thể không khớp và phải yêu cầu hoàn tiền.
-- [x] Cứ gửi mã OTP cho nhân viên hỗ trợ để họ kiểm tra nhanh hơn.
+- [ ] Chuyển tiền thành công ở ngân hàng chưa có nghĩa là lệnh đã khớp.
+- [ ] Chuyển sai nội dung thì lệnh không khớp và phải yêu cầu hoàn tiền.
+- [x] Cứ gửi mã OTP cho nhân viên hỗ trợ để họ kiểm tra hệ thống nhanh hơn.
 
-Giải thích: Nhân viên hỗ trợ không bao giờ cần PIN hay OTP của bạn. Ai hỏi những thứ này là dấu hiệu lừa đảo, dù họ xưng là ai.
+Giải thích: Chuyên viên hỗ trợ tra cứu sự cố qua mã lệnh và số tài khoản, tuyệt đối không bao giờ yêu cầu nhà đầu tư cung cấp mã OTP hay mã PIN.
 
 > Nguồn: Thư viện hỏi đáp Quỹ DC · Đăng nhập, mật khẩu & OTP
 
 #### Câu a3-missing-units-cash · Chọn đáp án · Dự đoán
 
-Bối cảnh: 10:00 thứ Hai, anh Minh đặt lệnh bán DCDS (trước giờ chốt 14:30). DCDS giao dịch mỗi ngày làm việc và trả tiền bán sau 2 ngày làm việc kể từ ngày giao dịch (T+2).
+Bối cảnh: 10:00 thứ Hai, anh Minh đặt bán DCDS (trước 14:30). DCDS giao dịch hằng ngày và thanh toán tiền bán sau 2 ngày làm việc (T+2).
 
-Câu hỏi: Tiền bán dự kiến về tài khoản ngày nào?
+Câu hỏi: Tiền bán dự kiến sẽ chuyển về tài khoản ngân hàng của anh Minh vào ngày nào?
 
-- [ ] Thứ Tư, tức 2 ngày sau khi đặt lệnh
-- [x] Thứ Năm: lệnh khớp ở phiên thứ Ba, cộng 2 ngày làm việc
-- [ ] Ngay trong thứ Hai
+- [ ] Thứ Tư tuần này (2 ngày kể từ ngày đặt lệnh)
+- [x] Thứ Năm tuần này (lệnh khớp phiên thứ Ba, cộng 2 ngày làm việc T+2)
+- [ ] Tiền về ngay trong ngày thứ Hai
 
-Giải thích: Thời gian chờ tính từ ngày giao dịch T, không phải ngày đặt lệnh. DCDS, DCDE trả tiền T+2; DCBF T+5; DCIP ngay trong ngày T; không tính thứ Bảy, Chủ nhật, ngày lễ.
+Giải thích: Lệnh đặt trước 14:30 thứ Hai khớp ở kỳ giao dịch thứ Ba (ngày T). Tiền bán T+2 sẽ được thanh toán vào thứ Năm.
 
 > Nguồn: Thư viện hỏi đáp Quỹ DC · Đặt lệnh, hủy lệnh & nhận tiền bán
 
@@ -6017,70 +6017,70 @@ Thông tin nhân vật: Chuyển 10 triệu qua Payoo, sau đó hủy lệnh mua
 
 Lời nói: Anh hủy lệnh rồi mà tiền chưa thấy về lại. Hay anh đặt lệnh mới để dùng luôn khoản đó cho nhanh?
 
-Câu hỏi: Anh Đức nên làm gì?
+Câu hỏi: Anh Đức nên được hướng dẫn xử lý như thế nào?
 
-- [ ] Đặt lệnh mới, hệ thống sẽ tự lấy khoản tiền cũ
-- [x] Chưa đặt lại. Gửi mã lệnh và chứng từ cho CSKH để xác định tiền đang ở đâu
-- [ ] Không cần làm gì, hủy lệnh xong tiền tự hoàn trong ngày
+- [ ] Đặt lệnh mới, hệ thống sẽ tự động sử dụng khoản tiền cũ
+- [x] Chưa đặt lại; gửi mã lệnh và chứng từ cho CSKH để tra soát khoản tiền
+- [ ] Không cần làm gì, hủy lệnh xong tiền sẽ tự động hoàn về trong ngày
 
-Giải thích: Lệnh và tiền là hai việc riêng: hủy lệnh chỉ dừng yêu cầu mua, còn khoản tiền phải được tra soát rồi mới hoàn. Thời gian hoàn do CSKH xác nhận cho từng trường hợp.
+Giải thích: Hủy lệnh chỉ có tác dụng dừng lệnh giao dịch, không tự động chuyển tiền sang lệnh mới. Khoản tiền đã chuyển cần được CSKH tra soát và xử lý hoàn tiền theo quy trình.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 54
 
 #### Câu a2o-cancel-payoo-steps · Sắp xếp
 
-Câu hỏi: Lỡ chuyển tiền qua Payoo trước khi đặt lệnh: sắp xếp các bước xử lý
+Câu hỏi: Bạn hãy sắp xếp các bước xử lý khi lỡ chuyển tiền qua Payoo trước khi đặt lệnh
 
-1. Giữ lại chứng từ thanh toán
-2. Gửi chứng từ (và mã lệnh nếu có) cho CSKH qua kênh chính thức
-3. Chờ CSKH xác định khoản tiền đã đến đâu
-4. Bổ sung lệnh hoặc nhận hoàn tiền theo hướng dẫn
+1. Lưu giữ đầy đủ chứng từ thanh toán Payoo
+2. Gửi chứng từ kèm mã lệnh (nếu có) qua kênh hỗ trợ CSKH chính thức
+3. Chờ CSKH kiểm tra và xác định trạng thái khoản tiền
+4. Bổ sung lệnh hoặc nhận hoàn tiền theo hướng dẫn chuyên trách
 
-Giải thích: Chuyển tiền không tự tạo thành một lệnh mua hợp lệ. Trước khi có xác nhận, không chuyển tiếp hay chuyển thêm khoản nào.
+Giải thích: Cung cấp chứng từ chuyển tiền giúp bộ phận hỗ trợ đối soát nhanh chóng.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 50
 
 #### Câu a2o-wrong-fund-pending · Chọn đáp án · Dự đoán
 
-Bối cảnh: Chị Trang chuyển 20 triệu vào tài khoản của DCBF, rồi đổi ý muốn mua DCDS. Lệnh DCBF chưa khớp, chị đặt thêm lệnh mua DCDS mà không báo ai.
+Bối cảnh: Chị Trang chuyển 20 triệu vào tài khoản DCBF nhưng đổi ý muốn mua DCDS. Lệnh DCBF chưa khớp, chị tự đặt thêm lệnh mua DCDS mà không thông báo.
 
-Câu hỏi: Khoản 20 triệu sẽ được xử lý thế nào?
+Câu hỏi: Khoản tiền 20 triệu chị Trang đã chuyển sẽ được xử lý ra sao?
 
-- [ ] Tự động chuyển sang làm tiền mua cho lệnh DCDS
-- [x] Vẫn được đối soát cho DCBF; lệnh DCDS không có tiền đi kèm
-- [ ] Tự hoàn về tài khoản của chị vì có hai lệnh cùng lúc
+- [ ] Tự động chuyển sang làm tiền đối soát cho lệnh mua DCDS mới
+- [x] Vẫn đối soát cho DCBF; lệnh mua DCDS mới sẽ không có tiền đi kèm
+- [ ] Tự động hoàn về tài khoản ngân hàng do xuất hiện hai lệnh trùng
 
-Giải thích: Tiền vào tài khoản của quỹ nào thì được đối soát cho quỹ đó. Khi lệnh cũ chưa khớp, liên hệ CSKH ngay để được điều chỉnh hoặc hoàn tiền.
+Giải thích: Tiền ghi có vào tài khoản quỹ nào sẽ được hệ thống tự động đối soát cho quỹ đó. Khi muốn thay đổi, nhà đầu tư cần liên hệ CSKH trước giờ chốt lệnh để được hỗ trợ.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 128
 
 #### Câu a2o-wrong-fund-matched · Chọn đáp án · Vì sao?
 
-Bối cảnh: Lệnh mua DCBF của anh Long đã khớp từ tuần trước. Hôm nay anh muốn "đổi" khoản đó sang DCDS và nghĩ chỉ cần nhờ sửa lệnh.
+Bối cảnh: Lệnh mua DCBF của anh Long đã khớp từ tuần trước. Hôm nay anh muốn "đổi" số tiền đó sang DCDS và nghĩ chỉ cần nhờ hỗ trợ sửa lệnh.
 
-Câu hỏi: Vì sao đây không còn là chuyện sửa lệnh?
+Câu hỏi: Vì sao trường hợp này không thể xử lý bằng thao tác sửa lệnh?
 
-- [ ] Vì DC không cho chuyển từ quỹ trái phiếu sang quỹ cổ phiếu
-- [x] Vì CCQ DCBF đã hình thành; sang DCDS là giao dịch mới, có thể phát sinh phí và thuế
-- [ ] Vì phải giữ DCBF đủ 2 năm mới được bán
+- [ ] Vì Dragon Capital cấm chuyển từ quỹ trái phiếu sang quỹ cổ phiếu
+- [x] Vì CCQ DCBF đã hình thành; sang DCDS là giao dịch mới có phí và thuế
+- [ ] Vì bắt buộc phải nắm giữ DCBF đủ 2 năm mới được phép chuyển
 
-Giải thích: Sau khi khớp, muốn đổi quỹ phải chuyển đổi hoặc bán rồi mua lại. Phần bán chịu thuế TNCN 0,1%, và CCQ ở quỹ mới tính thời gian nắm giữ lại từ đầu.
+Giải thích: Khi lệnh đã khớp, chứng chỉ quỹ DCBF đã chính thức sở hữu. Chuyển sang DCDS thực chất là thực hiện lệnh chuyển đổi hoặc bán DCBF rồi mua DCDS, có phát sinh thuế TNCN 0,1%.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 128
 
 #### Câu a2o-cancel-spot · Tìm câu sai
 
-Bối cảnh: Thấy anh Đức loay hoay, một người bạn nhắn ba lời khuyên về hủy lệnh và chuyển nhầm.
+Bối cảnh: Một người bạn đưa ra ba lời khuyên cho anh Đức về việc hủy lệnh và chuyển nhầm.
 
-Câu hỏi: Câu nào sai?
+Câu hỏi: Lời khuyên nào dưới đây SAI?
 
 > Đánh dấu [x] vào câu SAI.
 
 - [ ] Chuyển tiền qua Payoo không tự tạo ra một lệnh mua hợp lệ.
-- [ ] Lệnh Linh hoạt chỉ hủy được trước 14:30 ngày T-1.
+- [ ] Lệnh Linh hoạt chỉ hủy được trước mốc 14:30 ngày T-1.
 - [x] Chuyển nhầm quỹ thì cứ chuyển thêm vào đúng quỹ, khoản nhầm sẽ tự hoàn.
 
-Giải thích: Khoản chuyển nhầm cần CSKH tra soát mới điều chỉnh hay hoàn được. Chuyển thêm khi chưa rõ khoản cũ chỉ tạo thêm một khoản tiền phải đối soát.
+Giải thích: Chuyển thêm tiền khi chưa xử lý khoản nhầm sẽ tạo ra hai khoản tiền cần tra soát. Bạn cần liên hệ CSKH để xử lý khoản nhầm trước.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 128
 
@@ -6094,56 +6094,56 @@ Thông tin nhân vật: 34 tuổi, đặt mua DCIP 5 triệu trên DragonX
 
 Lời nói: App báo lỗi ngay sau khi chị nhập OTP. Chị bấm đặt lại lần nữa nhé, hay chuyển tiền luôn cho chắc?
 
-Câu hỏi: Chị Linh nên làm gì trước?
+Câu hỏi: Chị Linh nên làm gì trước tiên?
 
-- [ ] Đặt lại ngay; nếu bị trùng, hệ thống sẽ tự gộp hai lệnh
-- [x] Chụp lại thông báo lỗi, rồi xem lịch sử lệnh để biết lệnh đã được ghi nhận chưa
-- [ ] Chuyển tiền trước để giữ chỗ, chuyện lệnh tính sau
+- [ ] Bấm đặt lại ngay; nếu trùng lệnh hệ thống sẽ tự động gộp
+- [x] Chụp ảnh lỗi, vào Sổ lệnh kiểm tra xem lệnh đã ghi nhận chưa
+- [ ] Chuyển tiền ngay để giữ chỗ, việc kiểm tra lệnh tính sau
 
-Giải thích: Lỗi xuất hiện sau bước xác nhận vẫn có thể là lệnh đã được ghi nhận. Đặt lại hay chuyển tiền nhiều lần trước khi biết trạng thái dễ tạo lệnh trùng và khoản tiền phải tra soát.
+Giải thích: Thông báo lỗi sau bước OTP vẫn có trường hợp lệnh đã kịp ghi nhận vào hệ thống. Kiểm tra Sổ lệnh giúp tránh đặt trùng lệnh.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 88
 
 #### Câu a2o-error-steps · Sắp xếp
 
-Câu hỏi: Sắp xếp các bước xử lý khi ứng dụng báo lỗi lúc đặt lệnh
+Câu hỏi: Bạn hãy sắp xếp các bước xử lý khi ứng dụng báo lỗi lúc đặt lệnh theo đúng thứ tự
 
-1. Chụp lại thông báo lỗi
-2. Vào Sổ lệnh kiểm tra lệnh đã được ghi nhận chưa
+1. Chụp màn hình thông báo lỗi hiển thị trên ứng dụng
+2. Vào mục Sổ lệnh kiểm tra xem lệnh đã được ghi nhận hay chưa
 3. Kiểm tra kết nối mạng, cập nhật ứng dụng hoặc thử bản web chính thức
-4. Nếu vẫn lỗi, gửi ảnh thông báo (đã che thông tin nhạy cảm) cho CSKH
+4. Nếu vẫn lỗi, gửi ảnh thông báo lỗi (đã che thông tin nhạy cảm) cho CSKH
 
-Giải thích: Kiểm tra trạng thái luôn đi trước thao tác lại. Ảnh lỗi giúp CSKH tra soát nhanh, nhưng đừng để lộ thông tin nhạy cảm trong ảnh.
+Giải thích: Xác định trạng thái ghi nhận của lệnh trước khi quyết định thao tác lại.
 
 > Nguồn: Thư viện hỏi đáp Quỹ DC · Đặt lệnh, hủy lệnh & nhận tiền bán
 
 #### Câu a2o-error-recorded · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Chị Linh mở Sổ lệnh và thấy lệnh mua DCIP 5 triệu đã được ghi nhận, dù ứng dụng vừa báo lỗi.
+Bối cảnh: Chị Linh mở Sổ lệnh và thấy lệnh mua DCIP 5 triệu đã được ghi nhận thành công, dù màn hình trước đó báo lỗi.
 
-Câu hỏi: Bước tiếp theo hợp lý là gì?
+Câu hỏi: Thao tác tiếp theo hợp lý nhất của chị Linh là gì?
 
-- [ ] Đặt thêm một lệnh nữa cho chắc, rồi chuyển 10 triệu
-- [x] Chuyển 5 triệu một lần, theo hướng dẫn thanh toán của đúng lệnh đó
-- [ ] Hủy lệnh đó vì lệnh tạo ra lúc ứng dụng lỗi không có giá trị
+- [ ] Đặt thêm một lệnh mua 5 triệu nữa rồi chuyển 10 triệu
+- [x] Chuyển đúng 5 triệu theo hướng dẫn thanh toán của lệnh đã ghi nhận
+- [ ] Hủy lệnh đó vì lệnh tạo ra lúc ứng dụng báo lỗi là không hợp lệ
 
-Giải thích: Khi đã biết trạng thái, bạn tiếp tục đúng lệnh đã ghi nhận. Lệnh mua khớp theo số tiền quỹ thực nhận, nên chuyển dư hay chuyển hai lần đều làm khoản mua lệch kế hoạch.
+Giải thích: Khi lệnh đã ghi nhận trong Sổ lệnh, nhà đầu tư chỉ cần thực hiện chuyển khoản đúng số tiền và nội dung của lệnh đó.
 
 > Nguồn: Thư viện hỏi đáp Quỹ DC · Đặt lệnh, hủy lệnh & nhận tiền bán
 
 #### Câu a2o-error-spot · Tìm câu sai
 
-Bối cảnh: Em trai chị Linh, người "rành công nghệ", đưa ra ba nhận xét về lỗi ứng dụng khi đặt lệnh.
+Bối cảnh: Em trai chị Linh đưa ra ba nhận xét khi ứng dụng báo lỗi.
 
-Câu hỏi: Nhận xét nào sai?
+Câu hỏi: Nhận xét nào dưới đây SAI?
 
 > Đánh dấu [x] vào câu SAI.
 
-- [ ] Ứng dụng lỗi thì có thể thử bản web chính thức nếu được hỗ trợ.
-- [ ] Ảnh chụp lỗi gửi CSKH nên che các thông tin nhạy cảm.
-- [x] Đã báo lỗi nghĩa là lệnh chắc chắn chưa được ghi nhận, cứ đặt lại.
+- [ ] Ứng dụng lỗi thì có thể thử đăng nhập bản web chính thức.
+- [ ] Ảnh chụp thông báo lỗi gửi CSKH nên che các thông tin nhạy cảm.
+- [x] Đã báo lỗi nghĩa là lệnh chắc chắn chưa ghi nhận, cứ đặt lại.
 
-Giải thích: Thông báo lỗi không cho biết lệnh đã vào hệ thống hay chưa; chỉ lịch sử lệnh mới cho biết. Xác định trạng thái trước, rồi mới quyết định có đặt lại hay không.
+Giải thích: Thông báo lỗi trên giao diện không đồng nghĩa 100% lệnh chưa vào hệ thống. Lịch sử Sổ lệnh mới là nơi phản ánh chính xác trạng thái ghi nhận.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 88
 
@@ -6151,57 +6151,57 @@ Giải thích: Thông báo lỗi không cho biết lệnh đã vào hệ thống
 
 #### Câu a2o-sell-dcbf-cash · Chọn đáp án · Dự đoán
 
-Bối cảnh: 10:00 thứ Ba, chị Hoa đặt bán DCBF. DCBF giao dịch thứ Tư và thứ Sáu, trả tiền bán sau 5 ngày làm việc kể từ ngày giao dịch (T+5).
+Bối cảnh: 10:00 thứ Ba, chị Hoa đặt lệnh bán DCBF (trước 14:30). DCBF giao dịch thứ Tư và thứ Sáu, trả tiền bán T+5.
 
-Câu hỏi: Tiền bán dự kiến về ngày nào?
+Câu hỏi: Tiền bán dự kiến sẽ về tài khoản ngân hàng của chị Hoa vào ngày nào?
 
-- [ ] Thứ Ba tuần sau, tức 5 ngày làm việc kể từ ngày đặt lệnh
-- [x] Thứ Tư tuần sau: lệnh khớp kỳ thứ Tư tuần này, cộng 5 ngày làm việc
-- [ ] Ngay thứ Tư tuần này, vì DCBF là quỹ trái phiếu
+- [ ] Thứ Ba tuần sau (5 ngày làm việc tính từ ngày đặt lệnh)
+- [x] Thứ Tư tuần sau (lệnh khớp phiên thứ Tư tuần này, cộng 5 ngày làm việc T+5)
+- [ ] Ngay thứ Tư tuần này vì DCBF là quỹ trái phiếu
 
-Giải thích: Thời gian chờ tính từ ngày giao dịch hợp lệ, không phải ngày đặt lệnh, và bỏ qua cuối tuần, ngày lễ. Ngày dự kiến thanh toán luôn có trong xác nhận giao dịch.
+Giải thích: Lệnh trước 14:30 thứ Ba khớp ở kỳ giao dịch thứ Tư. Thời gian thanh toán T+5 bắt đầu tính từ thứ Tư, không tính thứ Bảy và Chủ nhật, nên tiền về vào thứ Tư tuần sau.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 46
 
 #### Câu a2o-sell-min-units · Chọn đáp án · Vì sao?
 
-Bối cảnh: Chị Thu có 25 CCQ DCDE và đặt bán 20 CCQ để lấy tiền sửa nhà. Lệnh bán bị hủy.
+Bối cảnh: Chị Thu có 25 CCQ DCDE và đặt lệnh bán 20 CCQ, hệ thống báo lệnh bị hủy.
 
-Câu hỏi: Nguyên nhân nhiều khả năng nhất là gì?
+Câu hỏi: Nguyên nhân vì sao lệnh bán của chị Thu bị hủy?
 
-- [ ] Lệnh bán phải là bội số của 10 CCQ
-- [x] Số CCQ còn lại (5) dưới mức tối thiểu 10 CCQ
-- [ ] Quỹ cổ phiếu chỉ cho bán sau khi giữ đủ 2 năm
+- [ ] Lệnh bán bắt buộc phải là bội số của 10 CCQ
+- [x] Số CCQ còn lại (5 CCQ) thấp hơn mức duy trì tối thiểu 10 CCQ
+- [ ] Quỹ cổ phiếu chỉ cho phép bán sau khi nắm giữ đủ 2 năm
 
-Giải thích: Mỗi lệnh bán một phần tối thiểu 10 CCQ và số còn lại cũng phải từ 10 CCQ. Nếu không, bạn bán ít hơn để giữ đủ 10 CCQ, hoặc bán hết số dư của quỹ đó.
+Giải thích: Quy định giao dịch yêu cầu số lượng bán tối thiểu là 10 CCQ và số dư CCQ còn lại sau khi bán cũng phải đạt tối thiểu 10 CCQ. Với 25 CCQ, chị Thu có thể bán 15 CCQ hoặc bán toàn bộ 25 CCQ.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 47
 
 #### Câu a2o-sell-cancelled-next · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Anh Quân đặt bán DCDS trị giá khoảng 150 triệu đồng và thấy lệnh báo bị hủy. Anh định bấm đặt lại y hệt.
+Bối cảnh: Anh Quân đặt bán DCDS trị giá 150 triệu đồng và thấy lệnh báo bị hủy. Anh định bấm đặt lại y hệt.
 
-Câu hỏi: Anh nên làm gì trước khi đặt lại?
+Câu hỏi: Anh Quân nên làm gì trước khi thao tác đặt lại?
 
-- [ ] Đặt lại ngay, chắc lần trước do mạng yếu
-- [x] Xem thông báo của lệnh; nếu chưa rõ, gửi mã lệnh và thông báo cho CSKH
-- [ ] Đổi sang hình thức iSAVING rồi bán lại cho nhanh
+- [ ] Đặt lại ngay lập tức vì có thể do nghẽn mạng
+- [x] Xem lý do trong thông báo; nếu chưa rõ thì gửi mã lệnh cho CSKH
+- [ ] Đổi sang hình thức đầu tư iSAVING rồi đặt bán lại
 
-Giải thích: Lệnh bán có thể bị hủy vì vượt hạn mức bán (mặc định 100 triệu đồng/tháng), số dư khả dụng, sai hình thức đầu tư lúc mua hoặc hồ sơ. Đặt lại y hệt mà chưa rõ lý do có thể bị hủy lần nữa.
+Giải thích: Lệnh bán 150 triệu bị hủy có thể do vượt hạn mức bán mặc định (100 triệu/tháng) hoặc chưa đủ số dư tối thiểu. Đặt lại y hệt mà chưa rõ nguyên nhân sẽ tiếp tục bị từ chối.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 47
 
 #### Câu a2o-sell-custodian-bank · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: Chị Diễm nghe nói tiền của quỹ nằm ở ngân hàng giám sát. Chị định ra đó mở tài khoản để nhận tiền bán CCQ.
+Bối cảnh: Chị Diễm nghe nói tài sản của quỹ lưu ký tại ngân hàng giám sát, nên định ra ngân hàng này mở tài khoản để nhận tiền bán CCQ.
 
-Câu hỏi: Nhận định nào đúng?
+Câu hỏi: Nhận định nào dưới đây phản ánh đúng quy định?
 
-- [ ] Bắt buộc mở, vì ngân hàng giám sát chỉ trả tiền vào tài khoản tại chính ngân hàng đó
-- [x] Không bắt buộc; tiền bán về tài khoản nhận tiền chị đã đăng ký với DC
-- [ ] Không cần, vì tiền bán nằm lại trong DragonX đến khi chị rút
+- [ ] Bắt buộc mở tài khoản tại ngân hàng giám sát thì mới nhận được tiền bán
+- [x] Không bắt buộc; tiền bán sẽ về tài khoản ngân hàng chính chủ chị đã đăng ký
+- [ ] Không cần mở, tiền bán sẽ nằm lại ứng dụng DragonX cho đến khi rút
 
-Giải thích: Ngân hàng giám sát lưu ký tài sản quỹ và xác nhận NAV, không phải nơi bạn bắt buộc mở tài khoản. Trước khi bán, hãy kiểm tra đúng tên chủ tài khoản, số tài khoản và ngân hàng nhận.
+Giải thích: Ngân hàng giám sát quản lý tài sản quỹ độc lập. Tiền bán CCQ sẽ được chuyển thẳng về tài khoản ngân hàng chính chủ mà nhà đầu tư đã đăng ký trên hệ thống.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 111
 
@@ -6838,42 +6838,42 @@ Giải thích: Mỗi ETF có quy định hoán đổi riêng trong tài liệu c
 
 #### Câu a6a-open-steps · Sắp xếp
 
-Câu hỏi: Sắp xếp các bước mở tài khoản trực tuyến trên DragonX theo đúng thứ tự
+Câu hỏi: Bạn hãy sắp xếp các bước mở tài khoản trực tuyến trên DragonX theo đúng thứ tự
 
 1. Tải ứng dụng DragonX và chọn đăng ký
 2. Nhập thông tin, chụp căn cước và xác thực khuôn mặt (eKYC)
 3. Khai báo tài khoản ngân hàng nhận tiền
 4. Ký hợp đồng mở tài khoản điện tử
 
-Giải thích: Hợp đồng điện tử ký trên DragonX có giá trị pháp lý, nên mở tài khoản trực tuyến không cần gửi hồ sơ giấy về DC.
+Giải thích: Hợp đồng điện tử ký trên DragonX có giá trị pháp lý, nên mở tài khoản trực tuyến không cần gửi hồ sơ giấy về Dragon Capital.
 
 > Nguồn: Thư viện hỏi đáp Quỹ DC · Mở tài khoản, eKYC & hồ sơ
 
 #### Câu a6a-pending-review · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Chị Ngọc, 29 tuổi, đăng ký tài khoản trên DragonX đã vài ngày mà hồ sơ vẫn chưa được duyệt. Chị định đăng ký thêm một hồ sơ mới cho nhanh.
+Bối cảnh: Chị Ngọc (29 tuổi) đăng ký tài khoản trên DragonX đã vài ngày mà hồ sơ vẫn chưa được duyệt. Chị định đăng ký thêm một hồ sơ mới cho nhanh.
 
-Câu hỏi: Chị nên làm gì trước?
+Câu hỏi: Chị Ngọc nên làm gì trước tiên?
 
 - [ ] Đăng ký thêm hồ sơ mới, hồ sơ nào duyệt trước thì dùng
 - [x] Xem thông báo trên DragonX và email (kể cả thư rác), rồi bổ sung đúng phần được yêu cầu
 - [ ] Xóa ứng dụng, cài lại và làm lại từ đầu
 
-Giải thích: Hồ sơ thường chờ vì thiếu định danh, thông tin liên hệ hoặc tài khoản nhận tiền. Mở thêm hồ sơ khi chưa rõ nguyên nhân chỉ làm việc kiểm tra rối hơn.
+Giải thích: Hồ sơ thường chờ duyệt vì thiếu định danh, thông tin liên hệ hoặc tài khoản nhận tiền. Mở thêm hồ sơ mới khi chưa rõ nguyên nhân chỉ làm quy trình kiểm tra bị rối thêm.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 63
 
 #### Câu a6a-bank-partner · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: Bác Tâm, 63 tuổi, được chuyên viên ngân hàng đối tác giới thiệu và hỗ trợ mở tài khoản quỹ ngay tại quầy giao dịch.
+Bối cảnh: Bác Tâm (63 tuổi) được chuyên viên ngân hàng đối tác giới thiệu và hỗ trợ mở tài khoản quỹ ngay tại quầy giao dịch.
 
-Câu hỏi: Nhận định nào đúng?
+Câu hỏi: Nhận định nào dưới đây phản ánh đúng thực tế?
 
 - [ ] Mua tại ngân hàng nên khoản đầu tư được bảo đảm như tiền gửi tiết kiệm
 - [x] Quỹ vẫn có rủi ro đầu tư; mua qua ngân hàng không biến CCQ thành tiền gửi được bảo đảm
 - [ ] Mua qua ngân hàng thì ngân hàng chịu lỗ thay nếu NAV giảm
 
-Giải thích: Ngân hàng đối tác chỉ giới thiệu và hỗ trợ mở tài khoản tại DC; tài sản vẫn là CCQ có giá biến động. Hãy đọc tài liệu quỹ và biểu phí như khi tự mở tài khoản.
+Giải thích: Ngân hàng đối tác chỉ đóng vai trò giới thiệu và hỗ trợ mở tài khoản tại Dragon Capital; tài sản vẫn là chứng chỉ quỹ có giá trị biến động theo thị trường.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 132
 
@@ -6881,13 +6881,13 @@ Giải thích: Ngân hàng đối tác chỉ giới thiệu và hỗ trợ mở 
 
 Bối cảnh: Anh Phúc muốn mở tài khoản quỹ cho cả mình và vợ, nhưng định dùng chung một số điện thoại cho tiện nhận thông báo.
 
-Câu hỏi: Anh nên cân nhắc gì trước khi đăng ký?
+Câu hỏi: Anh Phúc nên cân nhắc điều gì trước khi đăng ký?
 
 - [ ] Cứ đăng ký, hệ thống tự hiểu hai tài khoản của một gia đình
 - [x] Mỗi tài khoản phải xác thực đúng chủ sở hữu; hỏi CSKH về quy tắc dùng chung trước khi đăng ký
 - [ ] Dùng căn cước của anh mở luôn cả hai tài khoản cho nhanh
 
-Giải thích: Số điện thoại và email dùng để nhận OTP, thông báo giao dịch cho đúng chủ tài khoản. Không bao giờ dùng giấy tờ của người này để mở tài khoản cho người khác.
+Giải thích: Số điện thoại và email dùng để nhận mã OTP cùng các thông báo giao dịch cho chính chủ. Tuyệt đối không dùng giấy tờ tùy thân của người này để mở tài khoản cho người khác.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 114
 
@@ -6895,13 +6895,13 @@ Giải thích: Số điện thoại và email dùng để nhận OTP, thông bá
 
 Bối cảnh: Anh Tuấn mua quỹ qua Fmarket từ trước, sau đó mở thêm DragonX bằng cùng số điện thoại. Anh đổi địa chỉ trên DragonX nhưng bên Fmarket vẫn hiện địa chỉ cũ.
 
-Câu hỏi: Vì sao thông tin không đổi theo?
+Câu hỏi: Nguyên nhân vì sao thông tin không tự động đổi theo?
 
 - [ ] Ứng dụng Fmarket bị lỗi, chỉ cần chờ vài ngày sẽ đồng bộ
 - [x] Mỗi kênh phân phối quản lý tài khoản và quy trình cập nhật riêng, không đồng bộ chỉ vì cùng số điện thoại
 - [ ] Địa chỉ chỉ cập nhật được khi đã bán hết CCQ
 
-Giải thích: Thông tin phải cập nhật tại kênh đang ghi nhận số dư đó. Nếu chưa rõ số dư nằm ở kênh nào, hãy nhờ CSKH xác định đầu mối trước khi mở thêm tài khoản.
+Giải thích: Thông tin phải được cập nhật riêng tại kênh đang ghi nhận số dư. Nếu chưa rõ số dư nằm ở kênh nào, bạn hãy nhờ CSKH xác định đầu mối trước khi thực hiện.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 105
 
@@ -6911,58 +6911,58 @@ Giải thích: Thông tin phải cập nhật tại kênh đang ghi nhận số 
 
 Nhân vật: Chị Mai
 
-Thông tin nhân vật: Mua quỹ trên DragonX, vừa cập nhật căn cước trên MoMo
+Thông tin nhân vật: mua quỹ trên DragonX, vừa cập nhật căn cước mới trên MoMo
 
 Lời nói: Chị vừa cập nhật căn cước mới trên MoMo xong, sao DragonX vẫn báo tài khoản quỹ cần cập nhật? Chị làm rồi mà!
 
-Câu hỏi: Câu trả lời nào đúng?
+Câu hỏi: Câu trả lời nào dưới đây là chính xác?
 
 - [ ] Chờ vài ngày, thông tin từ MoMo sẽ tự chuyển sang tài khoản quỹ
 - [x] Hồ sơ ở MoMo và tài khoản quỹ nằm trên hai hệ thống khác nhau; chị cần cập nhật cho tài khoản quỹ trên DragonX
 - [ ] Thông báo này bị lỗi, chị có thể bỏ qua
 
-Giải thích: Cập nhật ở ứng dụng đối tác không tự hoàn tất cập nhật ở tài khoản quỹ. Mỗi hồ sơ phải được cập nhật theo hướng dẫn của đơn vị đang quản lý nó.
+Giải thích: Cập nhật ở ứng dụng đối tác không tự hoàn tất cập nhật ở tài khoản quỹ. Mỗi hồ sơ bắt buộc phải được cập nhật riêng theo hướng dẫn của đơn vị đang trực tiếp quản lý.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 55
 
 #### Câu a6a-id-scan-steps · Sắp xếp
 
-Câu hỏi: Ứng dụng báo không quét được mã QR trên căn cước. Sắp xếp cách xử lý theo đúng thứ tự
+Câu hỏi: Bạn hãy sắp xếp các bước xử lý khi ứng dụng báo không quét được mã QR trên căn cước theo đúng thứ tự
 
 1. Cập nhật DragonX lên bản mới và cấp quyền camera
 2. Chụp nơi đủ sáng, tránh lóa, giấy tờ nằm trọn trong khung, giữ máy ổn định
 3. Đưa máy lại gần hoặc ra xa một chút để camera lấy nét mã QR
 4. Nếu vẫn lỗi, gửi mô tả lỗi cho CSKH để được hướng dẫn cách xác minh khác
 
-Giải thích: Phần lớn lỗi đến từ quyền camera, ánh sáng hoặc độ nét. Chỉ khi đã thử hết mới nhờ hỗ trợ, và gửi mô tả lỗi chứ không đăng ảnh giấy tờ ra ngoài.
+Giải thích: Phần lớn sự cố đến từ quyền camera, độ nét hoặc ánh sáng xung quanh. Chỉ gửi mô tả lỗi qua kênh chính thức chứ không đăng ảnh giấy tờ cá nhân ra bên ngoài.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 62
 
 #### Câu a6a-id-chip-unchanged · Chọn đáp án · Vì sao?
 
-Bối cảnh: Anh Hưng đã dùng căn cước gắn chip từ lâu và thông tin không đổi, nhưng vẫn nhận thông báo yêu cầu cập nhật hồ sơ.
+Bối cảnh: Anh Hưng đã dùng căn cước gắn chip từ lâu và thông tin không hề thay đổi, nhưng anh vẫn nhận thông báo yêu cầu cập nhật hồ sơ.
 
-Câu hỏi: Vì sao có thể vẫn nhận thông báo này?
+Câu hỏi: Vì sao anh Hưng vẫn có thể nhận được thông báo này?
 
 - [ ] Thông báo chỉ gửi cho người đổi số căn cước, nên chắc chắn là gửi nhầm
 - [x] Yêu cầu có thể liên quan đến hiệu lực giấy tờ, độ đầy đủ của hồ sơ hoặc một bước xác thực cần bổ sung
 - [ ] Hồ sơ phải cập nhật lại mỗi năm dù không có gì thay đổi
 
-Giải thích: Cập nhật không chỉ là đổi số giấy tờ. Hãy đối chiếu thông báo với hồ sơ đang ghi nhận; nếu thấy đã đúng, hỏi CSKH yêu cầu cụ thể trước khi bỏ qua.
+Giải thích: Yêu cầu cập nhật không chỉ dành riêng cho việc đổi số căn cước mà còn bao gồm thời hạn hiệu lực giấy tờ hoặc ảnh xác thực. Bạn nên liên hệ CSKH để rõ yêu cầu cụ thể.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 56
 
 #### Câu a6a-id-waiting · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Cô Yến đang chờ cấp căn cước mới. Cô đọc lại một thông báo cũ có mốc 01/10/2024 và lo tài khoản đã bị khóa.
+Bối cảnh: Cô Yến đang chờ cơ quan công an cấp căn cước mới. Cô đọc lại một thông báo cũ có mốc 01/10/2024 và rất lo tài khoản của mình đã bị khóa.
 
-Câu hỏi: Cô nên làm gì?
+Câu hỏi: Cô Yến nên làm gì trước tiên?
 
 - [x] Liên hệ CSKH từ email hoặc số điện thoại đã đăng ký, nêu tình trạng giấy tờ và ngày dự kiến nhận
 - [ ] Bán hết CCQ ngay trước khi bị khóa
 - [ ] Mượn căn cước của người nhà để cập nhật tạm
 
-Giải thích: Mốc trong thông báo năm 2024 là thông tin lịch sử, không phải hạn mới. CSKH sẽ kiểm tra giấy tờ tạm thời dùng được và giao dịch nào có thể bị ảnh hưởng.
+Giải thích: Mốc thời gian trong thông báo cũ chỉ là thông tin lịch sử. Liên hệ CSKH giúp cô kiểm tra chính xác loại giấy tờ tạm thời có thể sử dụng.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 58
 
@@ -6970,7 +6970,7 @@ Giải thích: Mốc trong thông báo năm 2024 là thông tin lịch sử, kh�
 
 Bối cảnh: Chị Mai hỏi trong một nhóm chat nhà đầu tư về lỗi cập nhật căn cước và nhận được ba lời khuyên.
 
-Câu hỏi: Lời khuyên nào sai?
+Câu hỏi: Lời khuyên nào dưới đây SAI?
 
 > Đánh dấu [x] vào câu SAI.
 
@@ -6978,7 +6978,7 @@ Câu hỏi: Lời khuyên nào sai?
 - [x] Cứ đăng ảnh hai mặt căn cước lên nhóm, mọi người xem giúp lỗi ở đâu.
 - [ ] Thông báo lỗi định dạng chưa chắc là app không hỗ trợ thẻ mới; hãy gửi lỗi cho kênh hỗ trợ.
 
-Giải thích: Ảnh giấy tờ tùy thân là dữ liệu kẻ gian có thể dùng để giả mạo bạn. Chỉ gửi qua kênh hỗ trợ chính thức, không bao giờ đăng lên nhóm chat hay kênh công khai.
+Giải thích: Ảnh giấy tờ tùy thân chứa thông tin nhạy cảm rất dễ bị kẻ gian lợi dụng. Chỉ gửi chứng từ qua kênh hỗ trợ chính thức, tuyệt đối không đăng lên các hội nhóm công khai.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 62
 
@@ -6992,62 +6992,62 @@ Thông tin nhân vật: 62 tuổi, đang cập nhật hồ sơ trên DragonX
 
 Lời nói: Ứng dụng đọc sai địa chỉ của bà mà bà không sửa được. Thôi bà cứ bấm xác nhận cho xong, sau này sửa sau nhé?
 
-Câu hỏi: Bà Hoa nên làm gì?
+Câu hỏi: Bà Hoa nên được hướng dẫn như thế nào?
 
 - [ ] Cứ xác nhận, địa chỉ sai không ảnh hưởng gì
 - [x] Không xác nhận; kiểm tra phần cho phép chỉnh sửa, nếu không được thì liên hệ CSKH
 - [ ] Mở một tài khoản mới và nhập lại địa chỉ đúng
 
-Giải thích: Thông tin đọc tự động từ giấy tờ có thể sai. Xác nhận hồ sơ sai là ký vào dữ liệu sai; nếu cần hồ sơ giấy, CSKH sẽ cung cấp đúng biểu mẫu hiện hành.
+Giải thích: Xác nhận thông tin sai nghĩa là ký vào dữ liệu không chính xác. Nếu hệ thống OCR đọc sai mà không tự sửa được, bà cần liên hệ CSKH để được gửi biểu mẫu chỉnh sửa chuẩn.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 71
 
 #### Câu a6a-info-why-face · Chọn đáp án · Vì sao?
 
-Bối cảnh: Anh Quân chỉ muốn đổi số điện thoại, nhưng DragonX yêu cầu chụp lại giấy tờ và khuôn mặt. Anh thấy rắc rối quá.
+Bối cảnh: Anh Quân chỉ muốn thay đổi số điện thoại cá nhân, nhưng DragonX yêu cầu chụp lại giấy tờ và quét khuôn mặt.
 
-Câu hỏi: Vì sao cần bước xác thực này?
+Câu hỏi: Nguyên nhân vì sao hệ thống lại yêu cầu bước xác thực này?
 
 - [x] Để kiểm tra người yêu cầu đúng là chủ tài khoản và thông tin mới hợp lệ
 - [ ] Để DC cập nhật ảnh đại diện mới cho tài khoản
 - [ ] Vì mọi thay đổi đều phải xác thực ở cùng một mức như nhau
 
-Giải thích: Nếu ai cũng đổi được thông tin liên hệ, kẻ gian có thể chiếm tài khoản. Mức xác thực tùy loại thay đổi, và chỉ làm trên ứng dụng hoặc kênh chính thức.
+Giải thích: Bước xác thực khuôn mặt nhằm bảo vệ tài khoản của bạn, ngăn chặn kẻ gian mạo danh để thay đổi thông tin liên hệ và chiếm đoạt tài sản.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 67
 
 #### Câu a6a-info-rejected-steps · Sắp xếp
 
-Câu hỏi: Yêu cầu thay đổi thông tin bị từ chối. Sắp xếp các bước xử lý theo đúng thứ tự
+Câu hỏi: Yêu cầu thay đổi thông tin bị từ chối. Bạn hãy sắp xếp các bước xử lý theo đúng trình tự
 
 1. Đọc lý do trong thông báo phản hồi
 2. Sửa đúng phần được nêu (ảnh mờ, giấy tờ hết hiệu lực, thông tin không khớp, hồ sơ thiếu)
 3. Gửi lại yêu cầu
 4. Nếu lý do chưa rõ, hỏi CSKH phần cụ thể cần bổ sung
 
-Giải thích: Lý do từ chối thường nằm ngay trong thông báo. Sửa đúng chỗ nhanh hơn làm lại toàn bộ, và bạn có quyền yêu cầu được chỉ rõ phần cần sửa.
+Giải thích: Lý do bị từ chối được ghi rõ trong thông báo. Sửa đúng điểm sai sẽ giúp hồ sơ được phê duyệt nhanh chóng ở lần gửi tiếp theo.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 60
 
 #### Câu a6a-info-wrong-name · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: Họ tên của chị Thùy trên ứng dụng bị sai một dấu và chị không tự sửa được. Một người quen khuyên mở tài khoản khác cho nhanh.
+Bối cảnh: Họ tên của chị Thùy trên ứng dụng bị thiếu một dấu thanh và chị không thể tự sửa. Người quen khuyên chị nên mở tài khoản mới cho nhanh.
 
-Câu hỏi: Nhận định nào đúng?
+Câu hỏi: Nhận định nào dưới đây phản ánh đúng quy định?
 
 - [ ] Mở tài khoản mới là cách nhanh nhất để có tên đúng
 - [ ] Sai một dấu không quan trọng, cứ tiếp tục giao dịch
 - [x] Nên đối chiếu với giấy tờ và nhờ CSKH kiểm tra nguồn dữ liệu, rồi làm theo quy trình cập nhật
 
-Giải thích: Tên trên tài khoản phải khớp giấy tờ định danh. Mở thêm tài khoản không sửa được lỗi gốc mà còn để lại một hồ sơ sai cần xử lý.
+Giải thích: Tên trên tài khoản phải khớp 100% với giấy tờ định danh. Mở tài khoản mới không giải quyết được lỗi hệ thống cũ mà còn tạo ra hồ sơ trùng lặp cần xử lý.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 81
 
 #### Câu a6a-info-spot · Tìm câu sai
 
-Bối cảnh: Camera bị treo khi chụp chân dung, anh Quân nhắn hỏi và nhận được ba lời khuyên từ một tài khoản xưng là "hỗ trợ DragonX".
+Bối cảnh: Camera bị treo khi chụp chân dung xác thực, anh Quân hỏi và nhận được ba lời khuyên từ một tài khoản tự xưng "hỗ trợ DragonX".
 
-Câu hỏi: Lời khuyên nào sai?
+Câu hỏi: Lời khuyên nào dưới đây SAI?
 
 > Đánh dấu [x] vào câu SAI.
 
@@ -7055,7 +7055,7 @@ Câu hỏi: Lời khuyên nào sai?
 - [ ] Chỉ gỡ và cài lại ứng dụng khi chắc vẫn đăng nhập và nhận được OTP.
 - [x] Gửi mã PIN và OTP để bên hỗ trợ đăng nhập kiểm tra giúp.
 
-Giải thích: Không bộ phận hỗ trợ thật nào cần PIN hay OTP của bạn. Ai hỏi những mã này là dấu hiệu lừa đảo, dù họ xưng là ai.
+Giải thích: Chuyên viên hỗ trợ thật tuyệt đối không bao giờ yêu cầu cung cấp mã PIN hay OTP. Bất kỳ ai đòi hỏi hai thông tin này đều là giả mạo.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 72
 
@@ -7063,55 +7063,55 @@ Giải thích: Không bộ phận hỗ trợ thật nào cần PIN hay OTP của
 
 #### Câu a6a-payout-match · Nối cặp
 
-Câu hỏi: Ghép mỗi tình huống với cách xử lý đúng
+Câu hỏi: Bạn hãy nối mỗi tình huống dưới đây với cách xử lý tương ứng
 
 - Muốn đổi tài khoản nhận tiền sang ví MoMo → Tùy kênh mở tài khoản; hỏi CSKH trước khi đổi
 - Đang ở nước ngoài, muốn cập nhật thông tin → Hỏi CSKH: không phải cứ ra nước ngoài là bị chặn mọi giao dịch
 - Muốn mở tài khoản cho con 12 tuổi → Chủ tài khoản cần từ đủ 18 tuổi; hỏi CSKH về chính sách hiện hành
 
-Giải thích: Ba tình huống đều không có câu trả lời chung cho mọi người: kết quả tùy kênh, tình trạng cư trú và chính sách sản phẩm. Hỏi trước giúp tránh làm sai thủ tục.
+Giải thích: Mỗi tình huống đều có điều kiện riêng tùy thuộc vào kênh mở tài khoản và quy định pháp lý tại thời điểm thực hiện.
 
 > Nguồn: Thư viện hỏi đáp Quỹ DC · Mở tài khoản, eKYC & hồ sơ
 
 #### Câu a6a-payout-fee · Chọn đáp án · Dự đoán
 
-Bối cảnh: Chị Vy mở tài khoản quỹ qua MoMo, nay đổi tài khoản nhận tiền sang một ngân hàng thông thường. Chị bán CCQ được 50 triệu đồng.
+Bối cảnh: Chị Vy mở tài khoản quỹ qua MoMo, nay chị đổi tài khoản nhận tiền sang một ngân hàng thương mại. Chị thực hiện bán CCQ thu về 50 triệu đồng.
 
-Câu hỏi: Khoản nào sẽ phát sinh mà trước đây chị không phải trả?
+Câu hỏi: Khoản chi phí nào sẽ phát sinh mà trước đây chị Vy không phải trả?
 
 - [x] Phí chuyển tiền 6.600đ vì tiền về ngân hàng thông thường
 - [ ] Phí chuyển tiền 220.000đ
 - [ ] Không thêm khoản nào, đổi tài khoản không ảnh hưởng phí
 
-Giải thích: Tiền bán về ví MoMo, ngân hàng số CAKE hoặc Standard Chartered được miễn phí chuyển. Về ngân hàng khác thì mất 6.600đ cho khoản dưới 500 triệu, 220.000đ từ 500 triệu trở lên.
+Giải thích: Tiền bán về ví MoMo, ngân hàng số CAKE hoặc Standard Chartered được miễn phí chuyển tiền. Về ngân hàng thương mại khác sẽ tính phí 6.600đ cho khoản dưới 500 triệu.
 
 > Nguồn: Thư viện hỏi đáp Quỹ DC · Mở tài khoản, eKYC & hồ sơ
 
 #### Câu a6a-payout-merge · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: Anh Sơn mua quỹ DC qua MoMo, qua Fmarket và trên DragonX, cả ba đều dùng một số điện thoại. Anh tin DragonX sẽ tự gộp hết số dư.
+Bối cảnh: Anh Sơn mua quỹ DC qua MoMo, Fmarket và DragonX bằng cùng một số điện thoại. Anh tin DragonX sẽ tự gộp toàn bộ số dư lại làm một.
 
-Câu hỏi: Nhận định nào đúng?
+Câu hỏi: Nhận định nào dưới đây phản ánh đúng quy định?
 
 - [ ] Cùng số điện thoại thì số dư tự gộp về DragonX
 - [x] Số dư mỗi kênh ghi nhận ở tài khoản của kênh đó; muốn quản lý tập trung phải làm thủ tục chuyển số dư
 - [ ] Chỉ gộp được nếu bán hết ở kênh cũ rồi mua lại trên DragonX
 
-Giải thích: Xem tổng tài sản và chuyển quyền quản lý giao dịch là hai việc khác nhau. Gửi thông tin các tài khoản cho CSKH qua email đã đăng ký để kiểm tra trường hợp cụ thể.
+Giải thích: Mỗi kênh phân phối có mã tài khoản giao dịch riêng. Muốn tập trung số dư về DragonX, nhà đầu tư phải làm thủ tục chuyển số dư CCQ giữa các đại lý.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 119
 
 #### Câu a6a-payout-holding · Chọn đáp án · Dự đoán
 
-Bối cảnh: Anh Sơn giữ DCDS ở Fmarket được 20 tháng, rồi làm thủ tục chuyển số dư CCQ sang tài khoản trên DragonX.
+Bối cảnh: Anh Sơn nắm giữ DCDS tại Fmarket được 20 tháng, sau đó làm thủ tục chuyển số dư CCQ này sang tài khoản trên DragonX.
 
-Câu hỏi: Thời gian nắm giữ của số CCQ này tính thế nào?
+Câu hỏi: Thời gian nắm giữ của số chứng chỉ quỹ này được tính như thế nào?
 
-- [ ] Tính lại từ đầu, như khi chuyển đổi sang quỹ khác
+- [ ] Tính lại từ đầu, như khi thực hiện chuyển đổi sang quỹ khác
 - [x] Giữ nguyên 20 tháng, vì CCQ chỉ đổi nơi quản lý chứ không bị bán ra
 - [ ] Được cộng thêm để đủ 2 năm
 
-Giải thích: Chuyển số dư giữa các đại lý phân phối giữ nguyên thời gian nắm giữ. Chuyển đổi quỹ thì khác: đó là bán quỹ cũ, mua quỹ mới, nên thời gian tính lại và ảnh hưởng mốc miễn phí bán sau 2 năm.
+Giải thích: Chuyển số dư đại lý chỉ thay đổi đơn vị quản lý tài khoản, không phải là lệnh bán nên thời gian nắm giữ của từng lô được giữ nguyên trọn vẹn.
 
 > Nguồn: Thư viện hỏi đáp Quỹ DC · Chuyển đổi quỹ & chuyển số dư
 
@@ -7121,51 +7121,51 @@ Giải thích: Chuyển số dư giữa các đại lý phân phối giữ nguy�
 
 Nhân vật: Anh Dũng
 
-Thông tin nhân vật: Mở tài khoản trực tuyến trên DragonX, nay muốn đóng
+Thông tin nhân vật: mở tài khoản trực tuyến trên DragonX, nay muốn làm thủ tục đóng
 
 Lời nói: Lúc mở thì làm trên app vài phút, sao giờ đóng tài khoản lại phải gửi giấy? Thủ tục gì mà ngược đời vậy em?
 
-Câu hỏi: Câu trả lời nào đúng?
+Câu hỏi: Câu trả lời nào dưới đây là chuẩn xác?
 
 - [ ] Vì tài khoản lưu ký tại VSDC nên mọi thủ tục đều bắt buộc dùng giấy
 - [x] Mỗi thủ tục có yêu cầu xác minh và lưu hồ sơ riêng; CSKH sẽ hướng dẫn hình thức theo quy trình đang áp dụng
 - [ ] Không cần giấy, anh chỉ cần gỡ ứng dụng là tài khoản tự đóng
 
-Giải thích: Mở và đóng tài khoản là hai thủ tục khác nhau. Hình thức nộp phải theo quy trình thực tế đang áp dụng, và CSKH cần chỉ rõ căn cứ khi yêu cầu hồ sơ giấy.
+Giải thích: Quy trình mở và đóng tài khoản áp dụng các tiêu chuẩn lưu trữ pháp lý khác nhau. CSKH sẽ hướng dẫn cụ thể biểu mẫu và hình thức nộp phù hợp.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 126
 
 #### Câu a6a-close-steps · Sắp xếp
 
-Câu hỏi: Sắp xếp các bước đóng tài khoản theo đúng thứ tự
+Câu hỏi: Bạn hãy sắp xếp các bước đóng tài khoản theo đúng trình tự
 
 1. Liên hệ CSKH để hỏi điều kiện và quy trình đóng tài khoản hiện hành
 2. Xử lý hết số dư CCQ và các lệnh đang chờ theo điều kiện CSKH đã nêu
 3. Điền, ký phiếu đóng tài khoản và gửi theo hướng dẫn
 
-Giải thích: Tài khoản chỉ đóng được khi không còn số dư hay lệnh dở dang. Hỏi quy trình trước giúp bạn không phải làm lại vì sai biểu mẫu.
+Giải thích: Tài khoản chỉ có thể đóng khi đã tất toán toàn bộ số dư và không còn bất kỳ lệnh giao dịch nào đang chờ xử lý.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 61
 
 #### Câu a6a-close-pause · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Chị Thu sắp nghỉ sinh con và muốn tạm dừng đầu tư khoảng một năm. Chị định đóng tài khoản quỹ cho gọn.
+Bối cảnh: Chị Thu chuẩn bị nghỉ sinh và muốn tạm dừng đầu tư một năm. Chị định đóng tài khoản quỹ cho gọn gàng.
 
-Câu hỏi: Chị nên cân nhắc gì trước khi quyết định?
+Câu hỏi: Chị Thu nên cân nhắc điều gì trước khi quyết định?
 
 - [ ] Phải đóng tài khoản, nếu không sẽ bị trừ phí hằng tháng
 - [x] Chỉ tạm ngừng thì không cần đóng; chị có thể ngừng chuyển tiền và hỏi CSKH về việc giữ tài khoản
 - [ ] Tài khoản không giao dịch một năm sẽ tự đóng
 
-Giải thích: Đóng tài khoản là thủ tục riêng, mở lại cũng mất công. Muốn nghỉ một thời gian, chỉ cần ngừng chuyển tiền; quyết định đóng vẫn hoàn toàn theo yêu cầu của bạn.
+Giải thích: Tài khoản quỹ không thu phí duy trì hằng tháng khi không giao dịch. Chị Thu chỉ cần dừng chuyển tiền mà không cần thực hiện thủ tục đóng tài khoản.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 61
 
 #### Câu a6a-close-spot · Tìm câu sai
 
-Bối cảnh: Anh Dũng kể chuyện đóng tài khoản với nhóm bạn, và một người góp ba ý.
+Bối cảnh: Anh Dũng kể chuyện đóng tài khoản cho nhóm bạn, một người đưa ra ba ý kiến.
 
-Câu hỏi: Ý nào sai?
+Câu hỏi: Ý kiến nào dưới đây SAI?
 
 > Đánh dấu [x] vào câu SAI.
 
@@ -7173,7 +7173,7 @@ Câu hỏi: Ý nào sai?
 - [ ] Nếu chỉ muốn nghỉ đầu tư một thời gian thì không cần đóng tài khoản.
 - [x] Gỡ ứng dụng DragonX là tài khoản tự đóng, tiền tự về ngân hàng.
 
-Giải thích: Gỡ ứng dụng không động gì tới tài khoản: CCQ vẫn đứng tên bạn cho tới khi bạn bán. Tài khoản chỉ đóng theo một yêu cầu hợp lệ của chính bạn.
+Giải thích: Hành động xóa ứng dụng chỉ gỡ phần phần mềm khỏi điện thoại; tài khoản và số dư CCQ vẫn tồn tại nguyên vẹn trên hệ thống của công ty quản lý quỹ.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 61
 
@@ -7185,7 +7185,7 @@ Giải thích: Gỡ ứng dụng không động gì tới tài khoản: CCQ vẫ
 
 Tiêu đề: Hạn mức bán
 
-Nội dung: Tài khoản mở qua DragonX có hạn mức bán CCQ mặc định 100 triệu đồng/tháng. Hạn mức thực tế của từng tài khoản tùy tình trạng xác minh và hồ sơ. Muốn bán nhiều hơn, bạn cần xác minh để nâng hạn mức.
+Nội dung: Tài khoản mở qua DragonX có hạn mức bán CCQ mặc định là 100 triệu đồng/tháng. Hạn mức thực tế áp dụng tùy thuộc vào tình trạng xác minh hồ sơ của từng khách hàng. Muốn giao dịch số tiền lớn hơn, bạn cần thực hiện thủ tục nâng hạn mức.
 
 > Nguồn: Thư viện hỏi đáp Quỹ DC · Hạn mức giao dịch
 
@@ -7205,29 +7205,29 @@ Giải thích: Hạn mức tính trên tổng giá trị bán trong kỳ, gồm 
 
 #### Câu a7l-limit-same · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: Anh Tuấn nghe đồng nghiệp nói bán vài trăm triệu đồng trong một tháng mà không gặp lỗi. Anh định đặt lệnh bán tương tự mà không xem lại tài khoản của mình.
+Bối cảnh: Anh Tuấn nghe bạn nói vừa bán thành công 300 triệu trong tháng. Anh định đặt lệnh bán tương tự mà không kiểm tra lại tài khoản của mình.
 
-Câu hỏi: Nhận định nào đúng?
+Câu hỏi: Nhận định nào dưới đây phản ánh đúng quy định?
 
 - [ ] Mọi tài khoản DragonX có cùng hạn mức nên lệnh của anh cũng sẽ qua
 - [x] Hạn mức tùy tình trạng xác minh và hồ sơ từng tài khoản; anh cần xem hạn mức của chính mình
 - [ ] Hạn mức chỉ áp dụng cho lệnh mua, không áp dụng cho lệnh bán
 
-Giải thích: Tài khoản của đồng nghiệp có thể đã được nâng hạn mức sau khi xác minh. Không mặc định mọi tài khoản có cùng mức, hay đều được nâng lên không giới hạn.
+Giải thích: Tài khoản của người bạn có thể đã hoàn tất xác minh video call nên được cấp hạn mức cao hơn. Anh Tuấn cần kiểm tra hạn mức hiển thị riêng của mình.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 110
 
 #### Câu a7l-limit-after-call · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Sáng nay chú Hùng vừa hoàn tất cuộc gọi video xác minh để nâng hạn mức. Chiều nay chú muốn đặt ngay một lệnh bán lớn.
+Bối cảnh: Sáng nay chú Hùng vừa hoàn tất cuộc gọi video xác minh để nâng hạn mức. Chiều nay chú muốn đặt ngay một lệnh bán giá trị lớn.
 
-Câu hỏi: Chú nên làm gì trước khi đặt lệnh?
+Câu hỏi: Chú Hùng nên làm gì trước khi đặt lệnh?
 
 - [ ] Đặt lệnh luôn, vì gọi xong nghĩa là hạn mức đã được nâng
 - [ ] Gọi xác minh thêm một lần nữa cho chắc rồi mới đặt lệnh
 - [x] Kiểm tra hạn mức hiện hành trên tài khoản hoặc thông báo kết quả; chưa rõ thì hỏi bộ phận hỗ trợ
 
-Giải thích: Hoàn thành cuộc gọi chưa nhất thiết đồng nghĩa hạn mức đã cập nhật ngay. Xác nhận hạn mức đang áp dụng giúp tránh lệnh bán lớn bị từ chối.
+Giải thích: Hoàn thành cuộc gọi xác minh cần một khoảng thời gian ngắn để bộ phận nghiệp vụ duyệt và cập nhật hạn mức mới lên hệ thống.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 76
 
@@ -7241,19 +7241,19 @@ Thông tin nhân vật: 41 tuổi, vừa gửi yêu cầu nâng hạn mức trê
 
 Lời nói: Anh gửi yêu cầu nâng hạn mức hai hôm rồi mà chưa thấy email hướng dẫn nào. Hay là yêu cầu bị từ chối?
 
-Câu hỏi: Bạn nên trả lời anh Bảo thế nào?
+Câu hỏi: Bạn nên giải thích cho anh Bảo như thế nào?
 
 - [ ] Chắc bị từ chối rồi, anh nên mở tài khoản khác
 - [x] Anh kiểm tra email đăng ký kể cả thư mục thư rác, xem trạng thái yêu cầu; nếu vẫn chưa có thì liên hệ kênh chính thức để được gửi lại
 - [ ] Anh nhờ người quen đã nâng hạn mức chuyển tiếp đường dẫn của họ để dùng tạm
 
-Giải thích: Email hướng dẫn có thể nằm trong thư rác, hoặc cần được gửi lại. Kiểm tra trạng thái yêu cầu và hỏi kênh chính thức trước khi kết luận yêu cầu bị từ chối.
+Giải thích: Email hệ thống gửi tự động rất dễ bị lọt vào hộp thư rác (Spam/Junk). Anh Bảo nên kiểm tra kỹ hoặc nhờ CSKH gửi lại link xác minh.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 74
 
 #### Câu a7l-raise-steps · Sắp xếp
 
-Câu hỏi: Sắp xếp các bước nâng hạn mức theo đúng thứ tự
+Câu hỏi: Bạn hãy sắp xếp các bước nâng hạn mức giao dịch theo đúng trình tự
 
 1. Gửi yêu cầu nâng hạn mức trên DragonX
 2. Nhận email hướng dẫn có đường dẫn xác minh
@@ -7265,45 +7265,45 @@ Câu hỏi: Sắp xếp các bước nâng hạn mức theo đúng thứ tự
 
 #### Câu a7l-raise-browser · Chọn đáp án · Vì sao?
 
-Bối cảnh: Chị Thảo bấm đường dẫn xác minh ngay trong ứng dụng chat, nhưng màn hình không bật được camera và không kết nối được với nhân viên.
+Bối cảnh: Chị Thảo bấm đường dẫn xác minh ngay trong ứng dụng Zalo, nhưng màn hình không bật được camera và không thể kết nối.
 
-Câu hỏi: Vì sao cuộc gọi có thể không kết nối được?
+Câu hỏi: Nguyên nhân vì sao cuộc gọi xác minh bị lỗi?
 
 - [x] Vì trình duyệt tích hợp trong ứng dụng chat có thể không hỗ trợ đủ quyền camera và micro
 - [ ] Vì đường dẫn xác minh chỉ mở được trên máy tính
 - [ ] Vì tài khoản của chị đã bị khóa giao dịch
 
-Giải thích: Cuộc gọi video cần quyền camera, micro và kết nối mạng ổn định. Mở đường dẫn bằng trình duyệt được hỗ trợ và thử lại trong khung giờ phục vụ; vẫn lỗi thì liên hệ hỗ trợ.
+Giải thích: Trình duyệt nội bộ của các ứng dụng nhắn tin thường bị chặn quyền truy cập camera/micro. Chị Thảo nên sao chép link và mở bằng Safari hoặc Chrome.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 75
 
 #### Câu a7l-raise-expired · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Anh Đức để quên email vài hôm, đến khi mở đường dẫn nâng hạn mức thì màn hình báo đã hết hạn.
+Bối cảnh: Anh Đức để quên email xác minh vài ngày, đến khi mở ra thì hệ thống báo đường dẫn đã hết hạn sử dụng.
 
-Câu hỏi: Anh nên làm gì?
+Câu hỏi: Anh Đức nên xử lý như thế nào?
 
 - [x] Liên hệ bộ phận hỗ trợ để kiểm tra yêu cầu và được cấp đường dẫn mới
 - [ ] Tìm lại email cũ hơn trong hộp thư, vì đường dẫn cũ thường vẫn dùng được
 - [ ] Áp dụng thời hạn ghi trong tài liệu hướng dẫn cũ để tính lại ngày
 
-Giải thích: Thời hạn sử dụng theo thông báo đi kèm đường dẫn mới, không theo tài liệu cũ. Bộ phận hỗ trợ kiểm tra lại yêu cầu và cấp đường dẫn mới nếu cần.
+Giải thích: Mỗi đường dẫn xác minh video call đều có hạn dùng bảo mật ngắn. Khi link hết hạn, anh Đức phải nhờ CSKH cấp lại link mới.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 77
 
 #### Câu a7l-raise-spot · Tìm câu sai
 
-Bối cảnh: Biết anh Đức đang chờ đường dẫn mới, một người bạn nhiệt tình chia sẻ ba "mẹo" nâng hạn mức.
+Bối cảnh: Biết anh Đức đang chờ link mới, người bạn nhiệt tình chia sẻ ba "mẹo" nâng hạn mức.
 
-Câu hỏi: Mẹo nào sai?
+Câu hỏi: Mẹo nào dưới đây SAI?
 
 > Đánh dấu [x] vào câu SAI.
 
-- [x] Tớ có sẵn đường dẫn xác minh của tớ, cậu dùng luôn cho nhanh
-- [ ] Giờ phục vụ có thể đổi vào ngày nghỉ, lễ, nên xem khung giờ trên email mới nhất
-- [ ] Nếu ai hỏi PIN hay OTP trong lúc xác minh thì đừng cung cấp
+- [x] Tớ có sẵn đường dẫn xác minh của tớ, cậu dùng luôn cho nhanh.
+- [ ] Giờ phục vụ có thể đổi vào ngày nghỉ, lễ, nên xem khung giờ trên email mới nhất.
+- [ ] Nếu ai hỏi PIN hay OTP trong lúc xác minh thì đừng cung cấp.
 
-Giải thích: Việc xác minh là để xác nhận chính chủ tài khoản. Chỉ mở đường dẫn từ nguồn đã xác nhận, không dùng đường dẫn người khác chuyển tiếp để xác minh tài khoản của mình.
+Giải thích: Link xác minh chứa mã định danh cá nhân độc bản của từng tài khoản. Tuyệt đối không dùng chung hay mở link xác minh của người khác.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 77
 
@@ -7313,35 +7313,35 @@ Giải thích: Việc xác minh là để xác nhận chính chủ tài khoản.
 
 #### Câu a5-otp · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Tối Chủ nhật, anh Vinh nhận một mã OTP của DragonX dù không thao tác gì. Ngay sau đó, có người tự xưng nhân viên DC gọi xin mã để "kiểm tra hệ thống".
+Bối cảnh: Tối Chủ nhật, anh Vinh nhận được mã OTP từ DragonX dù anh không thực hiện giao dịch nào. Ngay sau đó, một người tự xưng nhân viên DC gọi điện xin mã OTP để "kiểm tra lỗi".
 
-Câu hỏi: Anh nên làm gì?
+Câu hỏi: Anh Vinh nên xử lý thế nào?
 
 - [ ] Đọc mã cho họ, vì họ biết đúng tên anh
 - [x] Không cung cấp OTP; liên hệ kênh hỗ trợ chính thức và đổi mật khẩu, PIN
 - [ ] Bỏ qua, không cần làm gì thêm
 
-Giải thích: Nhân viên DC không bao giờ cần OTP, PIN hay mật khẩu của bạn. OTP lạ nghĩa là có người đang thử đăng nhập: hãy đổi thông tin bảo mật qua kênh chính thức ngay.
+Giải thích: Nhân viên Dragon Capital không bao giờ yêu cầu cung cấp OTP hay PIN. Việc nhận OTP bất thường báo hiệu có kẻ đang dò mật khẩu, anh cần đổi mã PIN gấp.
 
 > Nguồn: Thư viện hỏi đáp Quỹ DC · Đăng nhập, mật khẩu & OTP
 
 #### Câu a5-caller-id · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: Cuộc gọi đến hiển thị tên "Dragon Capital". Người gọi đọc đúng họ tên và số tài khoản của chị Mai, rồi đề nghị chị chuyển tiền sang một tài khoản mới để "nâng hạng".
+Bối cảnh: Cuộc gọi đến hiện tên "Dragon Capital", người gọi đọc đúng họ tên và số tài khoản của chị Mai rồi yêu cầu chị chuyển tiền sang tài khoản mới để "nâng hạng".
 
-Câu hỏi: Nhận định nào đúng?
+Câu hỏi: Nhận định nào dưới đây phản ánh đúng thực tế?
 
 - [ ] Tên hiển thị và thông tin chính xác là đủ để tin
 - [x] Tên hiển thị có thể bị giả mạo; hãy tự gọi lại số chính thức trước khi làm gì
 - [ ] Chỉ cần hỏi tên nhân viên là kiểm tra được
 
-Giải thích: Kẻ gian có thể giả tên hiển thị và dùng thông tin cá nhân bị lộ. Tiền mua quỹ chỉ chuyển vào tài khoản đứng tên quỹ theo hướng dẫn trên DragonX, không theo yêu cầu qua điện thoại.
+Giải thích: Kẻ gian có thể sử dụng công nghệ giả mạo số Caller-ID hiển thị tên thương hiệu. Tiền mua quỹ chỉ chuyển vào tài khoản đứng tên quỹ công khai trên DragonX.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 116
 
 #### Câu a5-bad-link · Sắp xếp
 
-Câu hỏi: Lỡ nhấn đường dẫn lạ: sắp xếp các bước theo thứ tự nên làm
+Câu hỏi: Lỡ bấm vào đường dẫn lạ có dấu hiệu lừa đảo, bạn hãy sắp xếp các bước xử lý theo đúng trình tự khẩn cấp
 
 1. Ngừng tương tác, không nhập thêm PIN/OTP
 2. Liên hệ hỗ trợ từ một thiết bị an toàn
@@ -7366,51 +7366,51 @@ Câu hỏi: Bạn khuyên chú Hùng thế nào?
 - [x] Chú gác máy, không cài gì, rồi tự gọi lại số được công bố trên website chính thức
 - [ ] Chú cứ cài, miễn là không nhập PIN vào ứng dụng đó
 
-Giải thích: Số gọi đến và tên hiển thị đều có thể bị giả mạo. Nhân viên DC không yêu cầu cài ứng dụng lạ qua điện thoại; chủ động gọi lại kênh chính thức là cách kiểm tra duy nhất bạn tự kiểm soát được.
+Giải thích: Dragon Capital không bao giờ yêu cầu khách hàng cài đặt các file ứng dụng lạ (.APK) qua đường dẫn ngoài. Mọi ứng dụng chính thức chỉ tải từ App Store hoặc Google Play.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 116
 
 #### Câu a8s-tips-spot · Tìm câu sai
 
-Bối cảnh: Trong nhóm chat gia đình, anh Khoa chia sẻ ba "mẹo" để nhận biết cuộc gọi tự xưng là Dragon Capital.
+Bối cảnh: Anh Khoa chia sẻ ba mẹo nhận diện cuộc gọi mạo danh Dragon Capital.
 
-Câu hỏi: Mẹo nào sai?
+Câu hỏi: Mẹo nào dưới đây SAI?
 
 > Đánh dấu [x] vào câu SAI.
 
-- [ ] Nếu nghi ngờ, gác máy và tự gọi lại số được công bố trên kênh chính thức
-- [ ] Nhân viên DC không cần biết PIN hay OTP của bạn
-- [x] Số gọi đến trùng số tổng đài thì có thể yên tâm làm theo
+- [ ] Nếu nghi ngờ, gác máy và tự gọi lại số được công bố trên kênh chính thức.
+- [ ] Nhân viên DC không cần biết PIN hay OTP của bạn.
+- [x] Số gọi đến trùng số tổng đài thì có thể yên tâm làm theo.
 
-Giải thích: Kẻ gian có thể làm số gọi đến hiển thị giống số thật. Thứ đáng tin là kênh bạn tự tìm và tự liên hệ, không phải thứ hiện trên màn hình cuộc gọi đến.
+Giải thích: Công nghệ VoIP có thể làm nhái số điện thoại gọi đến hệt như số tổng đài thật. Chỉ có cuộc gọi do chính bạn chủ động bấm số gọi đi mới bảo đảm an toàn.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 116
 
 #### Câu a8s-personal-account · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Một "chuyên viên DC" kết bạn Zalo với anh Tài, gửi ảnh thẻ nhân viên và mời anh mua DCIP bằng cách chuyển tiền vào tài khoản cá nhân của chuyên viên để "giữ suất".
+Bối cảnh: Một "chuyên viên DC" kết bạn Zalo với anh Tài, gửi ảnh thẻ nhân viên và mời anh mua DCIP bằng cách chuyển tiền vào tài khoản cá nhân của chuyên viên.
 
-Câu hỏi: Anh Tài nên làm gì?
+Câu hỏi: Anh Tài nên xử lý như thế nào?
 
 - [ ] Chuyển tiền, vì người này đã gửi ảnh thẻ nhân viên
 - [x] Không chuyển; tiền mua quỹ chỉ vào tài khoản của quỹ hiển thị trên DragonX
 - [ ] Chuyển thử một khoản nhỏ trước, thấy ổn thì chuyển tiếp
 
-Giải thích: Ảnh thẻ có thể làm giả, còn quy tắc thì không đổi: tiền mua quỹ đi vào tài khoản của quỹ tại ngân hàng giám sát. Bất kỳ yêu cầu chuyển vào tài khoản cá nhân nào cũng là dấu hiệu dừng lại.
+Giải thích: Thẻ nhân viên rất dễ bị cắt ghép chỉnh sửa. Nguyên tắc sắt đá: Tiền mua quỹ chỉ được chuyển vào tài khoản đứng tên Quỹ Mở tại Ngân hàng Giám sát.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 116
 
 #### Câu a8s-clicked-link · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: Chị Ngọc lỡ nhấn đường dẫn "xác thực tài khoản DragonX" trong một tin nhắn và đã nhập OTP. Chị tự trấn an: "Tiền bán quỹ chỉ về tài khoản ngân hàng đã đăng ký, nên chẳng sao."
+Bối cảnh: Chị Ngọc lỡ bấm link lạ và trót nhập mã OTP. Chị tự trấn an: "Tiền bán quỹ kiểu gì chẳng về tài khoản ngân hàng chính chủ của mình, lo gì".
 
-Câu hỏi: Nhận định nào đúng?
+Câu hỏi: Nhận định nào dưới đây phản ánh đúng thực tế?
 
 - [ ] Chị nói đúng, tiền chỉ về tài khoản đã đăng ký nên không cần làm gì
 - [ ] Chỉ cần xóa tin nhắn và chặn số gửi là đủ an toàn
 - [x] Chị vẫn cần báo ngay bộ phận hỗ trợ và kiểm tra lệnh, tài khoản thụ hưởng
 
-Giải thích: Khi đã nhập dữ liệu vào trang lạ, người khác có thể dùng nó để thao tác trên tài khoản. Một quy định an toàn không thay được việc báo sự cố sớm và đổi thông tin bảo mật qua kênh chính thức.
+Giải thích: Kẻ gian khi lấy được thông tin đăng nhập có thể can thiệp đặt lệnh bán hoặc tìm cách thay đổi thông tin tài khoản nhận tiền. Chị Ngọc phải báo hỗ trợ khóa tài khoản khẩn cấp.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 120
 
@@ -7420,64 +7420,64 @@ Giải thích: Khi đã nhập dữ liệu vào trang lạ, người khác có t
 
 Nhân vật: Chị Thu
 
-Thông tin nhân vật: 38 tuổi, giữ DCBF và DCDS
+Thông tin nhân vật: 38 tuổi, nắm giữ DCBF và DCDS
 
 Lời nói: Chị vừa mất điện thoại ở chợ, trong máy có cài DragonX. Chị định mua máy mới rồi đổi sang số điện thoại khác là xong, vậy là an toàn rồi đúng không?
 
-Câu hỏi: Bạn trả lời chị Thu thế nào?
+Câu hỏi: Lời tư vấn nào dưới đây là đầy đủ nhất cho chị Thu?
 
 - [ ] Đúng rồi, chỉ cần đổi sang số mới là kẻ gian hết đường vào
 - [x] Chưa đủ: chị khóa SIM qua nhà mạng và báo ngay bộ phận hỗ trợ DC
 - [ ] Chị cứ chờ vài ngày, thấy giao dịch lạ thì hãy báo
 
-Giải thích: Chỉ đổi số hay tin vào PIN chưa loại bỏ hết rủi ro. Báo sớm giúp DC xác minh danh tính và áp dụng biện pháp bảo vệ tài khoản trước khi kẻ gian kịp thao tác.
+Giải thích: Ngay khi mất máy, việc đầu tiên là gọi nhà mạng khóa SIM (để chặn nhận OTP) và báo Dragon Capital tạm khóa tài khoản giao dịch trực tuyến.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 85
 
 #### Câu a8s-lost-phone-order · Sắp xếp
 
-Câu hỏi: Mất điện thoại: sắp xếp các bước theo thứ tự nên làm
+Câu hỏi: Khi bị mất điện thoại, bạn hãy sắp xếp các bước xử lý theo đúng trình tự khẩn cấp
 
 1. Gọi nhà mạng để khóa SIM
 2. Báo ngay bộ phận hỗ trợ DC để xác minh và bảo vệ tài khoản
 3. Đăng nhập trên thiết bị an toàn, đổi PIN đăng nhập và PIN giao dịch
 4. Kiểm tra lịch sử lệnh, thông tin liên hệ và tài khoản nhận tiền
 
-Giải thích: Khóa SIM chặn kẻ gian nhận OTP qua tin nhắn; báo DC để bảo vệ tài khoản; sau đó mới tự rà soát khi đã đăng nhập an toàn.
+Giải thích: Ưu tiên khóa SIM và báo tổng đài trước để ngăn chặn mọi thao tác gian lận tức thì.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 85
 
 #### Câu a8s-web-relogin · Chọn đáp án · Vì sao?
 
-Bối cảnh: Anh Quân mở DragonX bản web xem danh mục, rồi để máy đó khá lâu không thao tác. Quay lại, trang yêu cầu anh đăng nhập lại.
+Bối cảnh: Anh Quân đăng nhập DragonX bản web, sau đó để máy đứng yên không thao tác. Khi quay lại, màn hình yêu cầu anh phải đăng nhập lại.
 
-Câu hỏi: Vì sao trang yêu cầu đăng nhập lại?
+Câu hỏi: Nguyên nhân vì sao hệ thống lại tự động đăng xuất?
 
 - [ ] Tài khoản của anh đã bị khóa vì nghi ngờ gian lận
 - [x] Phiên đăng nhập tự kết thúc sau một thời gian không thao tác, để bảo mật
 - [ ] Bản web bị lỗi, anh cần cài lại trình duyệt
 
-Giải thích: Phiên tự hết hạn giúp người khác không dùng được máy bạn bỏ quên. Hãy đăng nhập lại đúng website chính thức và kiểm tra trạng thái lệnh trước khi thao tác tiếp.
+Giải thích: Đây là tính năng bảo mật thời hạn phiên (Session Timeout), giúp bảo vệ tài nguyên tài khoản phòng trường hợp nhà đầu tư rời máy mà quên đăng xuất.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 89
 
 #### Câu a8s-face-id · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: Bà Hoa đổi điện thoại mới và cài lại DragonX. Ứng dụng yêu cầu thiết lập lại Face ID, cháu bà bảo: "Chắc tài khoản bị hack rồi."
+Bối cảnh: Bà Hoa mua điện thoại mới và cài lại ứng dụng DragonX. Ứng dụng yêu cầu thiết lập lại Face ID, cháu bà hốt hoảng: "Chắc tài khoản bị hack rồi".
 
-Câu hỏi: Nhận định nào đúng?
+Câu hỏi: Nhận định nào dưới đây phản ánh đúng cơ chế bảo mật?
 
 - [ ] Tài khoản đã bị xâm nhập, cần đóng tài khoản ngay
 - [x] Đổi máy hoặc cài lại ứng dụng thường cần thiết lập lại sinh trắc học
 - [ ] Bà nên nhờ nhân viên hỗ trợ đăng nhập hộ bằng PIN của bà
 
-Giải thích: Face ID, vân tay gắn với từng thiết bị và cài đặt bảo mật. Bà đăng nhập bằng cách được hỗ trợ rồi làm theo hướng dẫn; chỉ khi yêu cầu lặp lại liên tục mới cần báo hỗ trợ kiểm tra.
+Giải thích: Dữ liệu sinh trắc học (Face ID/Vân tay) lưu trực tiếp trên phần cứng của từng điện thoại. Khi đổi máy mới, việc thiết lập lại là quy trình hoàn toàn bình thường.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 91
 
 #### Câu a8s-white-screen · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Sáng nay DragonX của anh Phát chỉ hiện màn hình trắng, không đăng nhập được. Một người lạ trong nhóm chat gửi anh đường dẫn tải "bản DragonX đã sửa lỗi".
+Bối cảnh: Mở DragonX sáng nay chỉ thấy màn hình trắng. Một tài khoản lạ trong nhóm chat gửi cho anh Phát đường dẫn tải "bản DragonX đã sửa lỗi".
 
 Câu hỏi: Anh Phát nên làm gì?
 
@@ -7485,7 +7485,7 @@ Câu hỏi: Anh Phát nên làm gì?
 - [ ] Tải bản sửa lỗi từ đường dẫn kia, vì ứng dụng gốc đang hỏng
 - [ ] Gửi PIN cho bộ phận hỗ trợ để họ đăng nhập kiểm tra giúp
 
-Giải thích: Lỗi hiển thị thường xử lý được bằng các bước cơ bản. Nếu vẫn lỗi, gửi mô tả lỗi, loại máy và phiên bản ứng dụng qua kênh hỗ trợ, và kiểm tra lệnh cũ trước khi đặt lại để tránh trùng lệnh.
+Giải thích: Tuyệt đối không tải ứng dụng từ các đường dẫn trôi nổi trên mạng xã hội. Anh Phát có thể dùng tạm phiên bản web chính thức.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 79
 
@@ -7493,70 +7493,70 @@ Giải thích: Lỗi hiển thị thường xử lý được bằng các bướ
 
 #### Câu a8s-dragonlib · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: Anh Trung đọc một bài về đầu tư định kỳ trên DragonLib và nói: "Bài nằm ngay trong ứng dụng của công ty quỹ, cứ làm theo là chắc có lãi."
+Bối cảnh: Anh Trung đọc bài viết hướng dẫn tích sản trên mục DragonLib và khẳng định: "Bài nằm trên ứng dụng chính thức nên cứ làm theo là chắc chắn có lãi".
 
-Câu hỏi: Nhận định nào đúng?
+Câu hỏi: Nhận định nào dưới đây phản ánh đúng bản chất?
 
 - [ ] Đúng, nội dung trên DragonX là cam kết kết quả đầu tư
 - [x] DragonLib là kiến thức phổ thông, cần áp dụng theo mục tiêu và tài chính riêng
 - [ ] DragonLib là nơi đặt lệnh nhanh theo khuyến nghị của chuyên gia
 
-Giải thích: DragonLib là khu vực kiến thức đầu tư và thông tin thị trường trên DragonX. Cùng một phương pháp có thể hợp với người này mà không hợp với người khác, và không bài viết nào thay được kế hoạch của chính bạn.
+Giải thích: DragonLib cung cấp kiến thức tài chính cơ bản mang tính giáo dục. Mỗi nhà đầu tư cần tự điều chỉnh phương pháp sao cho phù hợp với hoàn cảnh cá nhân.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 83
 
 #### Câu a8s-no-maturity · Chọn đáp án · Vì sao?
 
-Bối cảnh: Chị Diệp tìm mãi trên DragonX dòng "ngày đáo hạn" cho khoản DCBF mua năm ngoái, giống như sổ tiết kiệm 12 tháng của chị, mà không thấy.
+Bối cảnh: Chị Diệp tìm kiếm "ngày đáo hạn" cho khoản đầu tư DCBF trên DragonX nhưng không thấy hiển thị.
 
-Câu hỏi: Vì sao không có dòng này?
+Câu hỏi: Nguyên nhân vì sao lại không có thông tin ngày đáo hạn?
 
 - [x] Quỹ mở không có ngày đáo hạn cố định cho từng khoản đầu tư
 - [ ] Ứng dụng đang lỗi, ngày đáo hạn bị ẩn đi
 - [ ] DCBF tự đáo hạn sau đúng 12 tháng nên không cần hiển thị
 
-Giải thích: Với quỹ mở, bạn tự chọn thời gian nắm giữ theo mục tiêu. Dù vậy, thời gian nắm giữ từng lô vẫn quan trọng vì dùng để xác định phí bán; bạn tra trong lịch sử giao dịch.
+Giải thích: Quỹ mở là sản phẩm đầu tư không có ngày đáo hạn cố định. Nhà đầu tư hoàn toàn chủ động quyết định thời điểm bán chứng chỉ quỹ theo nhu cầu cá nhân.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 84
 
 #### Câu a8s-dcip-qr · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Đặt lệnh mua DCIP xong, chú Bình không thấy mã QR thanh toán. Trong máy chú vẫn còn ảnh QR chụp từ lần mua trước.
+Bối cảnh: Đặt lệnh mua DCIP xong, chú Bình không thấy hiện mã QR thanh toán. Trong máy chú vẫn lưu ảnh mã QR chụp từ lần mua DCIP trước.
 
-Câu hỏi: Chú Bình nên làm gì?
+Câu hỏi: Chú Bình nên xử lý như thế nào?
 
 - [ ] Dùng lại ảnh QR lần trước, vì vẫn là quỹ DCIP
 - [x] Mở lại hướng dẫn thanh toán của lệnh; không có QR thì dùng cách chuyển khoản đã công bố
 - [ ] Quét mã QR của DCBF, vì cùng một công ty quản lý
 
-Giải thích: Thông tin nhận tiền gắn với đúng quỹ và đúng lệnh. QR cũ hay QR quỹ khác có thể khiến tiền không khớp lệnh; chưa rõ thông tin nhận tiền thì hỏi hỗ trợ trước khi chuyển.
+Giải thích: Mã QR thanh toán chứa thông tin định danh riêng cho từng lệnh giao dịch. Quét lại QR cũ có thể khiến hệ thống không đối soát được tiền.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 86
 
 #### Câu a8s-where-match · Nối cặp
 
-Câu hỏi: Nối mỗi nhu cầu với nơi phù hợp
+Câu hỏi: Bạn hãy nối mỗi nhu cầu dưới đây với mục tương ứng trên DragonX
 
-- Tìm hiểu một khái niệm đầu tư → DragonLib
-- Tra thời gian nắm giữ từng lô → Lịch sử giao dịch
+- Tìm hiểu một khái niệm đầu tư → Mục DragonLib
+- Tra thời gian nắm giữ từng lô → Mục Lịch sử giao dịch
 - Xem thông tin chuyển tiền cho lệnh mua → Hướng dẫn thanh toán của lệnh
 - Báo sự cố tài khoản → Kênh hỗ trợ công bố trên website chính thức
 
-Giải thích: Mỗi việc có một nơi chính thức. Biết trước nơi cần tìm giúp bạn không phải dựa vào ảnh chụp cũ hay lời chỉ dẫn của người lạ.
+Giải thích: Sử dụng đúng tính năng giúp bạn tra cứu thông tin nhanh chóng và an toàn.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 84
 
 #### Câu a8s-public-comment · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Anh Long muốn báo một lệnh bán bị lỗi. Anh định bình luận dưới bài đăng trên Fanpage của DC, kèm số tài khoản và ảnh chụp lệnh cho nhanh.
+Bối cảnh: Anh Long muốn báo một lệnh bán bị lỗi. Anh định để lại bình luận công khai dưới bài viết trên Fanpage kèm số tài khoản cho nhanh.
 
-Câu hỏi: Cách nào đúng?
+Câu hỏi: Anh Long nên làm thế nào cho đúng quy định an toàn?
 
 - [ ] Bình luận công khai, vì càng nhiều người thấy càng được xử lý sớm
 - [ ] Trả lời tài khoản tự xưng "CSKH DC" vừa nhắn tin chào anh
-- [x] Gửi qua email hoặc hotline CSKH công bố trên dragoncapital.com.vn
+- [x] Gửi qua email hoặc hotline CSKH công bố trên website chính thức
 
-Giải thích: Thông tin tài khoản đăng công khai có thể bị kẻ gian lợi dụng, và tài khoản tự nhắn tới chưa chắc là thật. Bạn chủ động liên hệ kênh được công bố, nêu mã lệnh, mô tả sự cố và thời điểm.
+Giải thích: Để lại số tài khoản công khai trên mạng xã hội khiến bạn trở thành mục tiêu của các đối tượng lừa đảo. Hãy gửi tin nhắn riêng qua email CSKH chính thức.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 99
 
@@ -7572,67 +7572,67 @@ Thông tin nhân vật: 70 tuổi, đã ủy quyền cho con gái đặt lệnh 
 
 Lời nói: Tôi ủy quyền cho con gái giao dịch rồi. Sau này tôi mất thì số CCQ này mặc nhiên là của nó luôn, đúng không cháu?
 
-Câu hỏi: Câu trả lời nào đúng?
+Câu hỏi: Câu trả lời nào dưới đây là đúng bản chất pháp lý?
 
 - [ ] Đúng, người được ủy quyền giao dịch sẽ nhận CCQ khi chủ tài khoản qua đời
 - [x] Chưa đúng: ủy quyền giao dịch không làm con gái thành chủ sở hữu hay người thừa kế
 - [ ] Đúng, nếu giấy ủy quyền đã được công chứng
 
-Giải thích: Ủy quyền chỉ cho phép đặt lệnh thay, tài sản vẫn đứng tên ông. Muốn sắp xếp cho người thân nhận sau này, cần hồ sơ theo pháp luật về di chúc và thừa kế.
+Giải thích: Hợp đồng ủy quyền chỉ có hiệu lực khi chủ tài khoản còn sống và chấm dứt ngay khi chủ tài khoản qua đời. Việc thừa kế phải tuân theo quy định pháp luật.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 73
 
 #### Câu a9o-auth-match · Nối cặp
 
-Câu hỏi: Ghép mỗi mong muốn với thủ tục phù hợp
+Câu hỏi: Bạn hãy nối từng mong muốn dưới đây với thủ tục pháp lý tương ứng
 
 - Nhờ người thân đặt lệnh mua, bán thay mình → Hợp đồng ủy quyền giao dịch
-- Chuyển CCQ cho người thân ngay khi còn sống → Thủ tục chuyển quyền sở hữu
+- Chuyển CCQ cho người thân ngay khi còn sống → Thủ tục chuyển quyền sở hữu (tặng/cho)
 - Để người thân nhận CCQ sau khi mình qua đời → Di chúc theo pháp luật về thừa kế
 
-Giải thích: Ba mục đích khác nhau cần ba loại giấy tờ khác nhau. Làm rõ mục đích với CSKH và chuyên gia pháp lý trước khi lập hồ sơ để không làm sai thủ tục.
+Giải thích: Phân biệt rõ ba thủ tục pháp lý để chuẩn bị hồ sơ đúng mục đích.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 73
 
 #### Câu a9o-auth-money · Chọn đáp án · Dự đoán
 
-Bối cảnh: Chị Hà lập hợp đồng ủy quyền có công chứng cho em trai đặt lệnh thay. Em trai đặt lệnh bán 30 CCQ DCDS của chị bằng phiếu lệnh giấy.
+Bối cảnh: Chị Hà lập hợp đồng ủy quyền công chứng cho em trai đặt lệnh. Em trai đến quầy nộp phiếu đặt bán 30 CCQ DCDS của chị.
 
-Câu hỏi: Tiền bán sẽ về đâu?
+Câu hỏi: Tiền bán CCQ sau khi khớp lệnh sẽ được chuyển về đâu?
 
 - [ ] Tài khoản của em trai, vì em là người đặt lệnh
 - [x] Tài khoản ngân hàng đã đăng ký của chị Hà
 - [ ] Tài khoản nào em trai ghi trên phiếu lệnh
 
-Giải thích: Phạm vi ủy quyền chỉ gồm đặt lệnh mua, bán CCQ, không gồm giao dịch về tiền. Nhờ vậy tài sản vẫn được bảo vệ dù người khác thao tác thay.
+Giải thích: Giấy ủy quyền giao dịch chỉ cho phép thực hiện thao tác đặt lệnh mua/bán. Tiền bán bắt buộc phải thanh toán về đúng tài khoản ngân hàng chính chủ của chị Hà.
 
 > Nguồn: Thư viện hỏi đáp Quỹ DC · An toàn tài sản & pháp lý
 
 #### Câu a9o-auth-pin · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: Bác Lộc, 68 tuổi, đã ủy quyền cho con trai. Con trai đề nghị: "Bố đưa con mã PIN và OTP, con đặt lệnh trên app cho nhanh".
+Bối cảnh: Bác Lộc (68 tuổi) đã lập giấy ủy quyền cho con trai. Con trai đề nghị: "Bố đưa con mã PIN và OTP để con đặt lệnh trên app cho tiện".
 
-Câu hỏi: Nhận định nào đúng?
+Câu hỏi: Nhận định nào dưới đây phản ánh đúng quy định?
 
 - [ ] Đã có ủy quyền công chứng thì đưa PIN, OTP cho con là hợp lệ
 - [x] Ủy quyền không áp dụng cho giao dịch trực tuyến; không chia sẻ PIN, OTP kể cả với người được ủy quyền
 - [ ] Chỉ cần đưa PIN, còn OTP thì giữ lại
 
-Giải thích: Người được ủy quyền đặt lệnh bằng phiếu lệnh giấy theo quy trình. PIN và OTP chỉ dành cho chủ tài khoản, không chia sẻ cho bất kỳ ai.
+Giải thích: Người được ủy quyền chỉ được đặt lệnh giấy tại quầy hoặc theo quy trình định danh. Mã PIN và OTP trực tuyến là tuyệt mật của cá nhân chủ tài khoản.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 64
 
 #### Câu a9o-auth-capacity · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Bố của anh Khải đang hôn mê sau tai nạn. Gia đình cần tiền viện phí và muốn lập giấy ủy quyền để bán CCQ của bố.
+Bối cảnh: Bố anh Khải bị tai nạn đang hôn mê. Gia đình cần tiền viện phí nên định lập giấy ủy quyền để bán chứng chỉ quỹ của bố.
 
-Câu hỏi: Gia đình nên cân nhắc gì trước?
+Câu hỏi: Gia đình nên lưu ý điều gì trước tiên?
 
 - [ ] Lập giấy ủy quyền ngay, các con ký thay bố
 - [x] Khi người ủy quyền đã mất năng lực hành vi dân sự thì không nhận ủy quyền; cần quyết định của Tòa án và người đại diện theo pháp luật
 - [ ] Dùng điện thoại của bố để tự đặt lệnh bán
 
-Giải thích: Ủy quyền chỉ có giá trị khi người ủy quyền còn đủ năng lực hành vi dân sự. Vì vậy nên liên hệ CSKH và lập hồ sơ khi mọi việc còn bình thường.
+Giải thích: Hợp đồng ủy quyền đòi hỏi người ủy quyền phải hoàn toàn minh mẫn và có đầy đủ năng lực hành vi dân sự tại thời điểm ký kết.
 
 > Nguồn: Thư viện hỏi đáp Quỹ DC · An toàn tài sản & pháp lý
 
@@ -7646,32 +7646,32 @@ Thông tin nhân vật: Bố vừa qua đời, để lại CCQ DCBF
 
 Lời nói: Bố em không để lại di chúc. Vậy số CCQ của bố có bị quỹ thu hồi không, hay mất luôn ạ?
 
-Câu hỏi: Câu trả lời nào đúng?
+Câu hỏi: Lời giải thích nào dưới đây là đúng pháp luật?
 
 - [ ] Không có di chúc thì CCQ thuộc về quỹ
 - [x] CCQ vẫn là tài sản của bố và được xử lý theo quy định về thừa kế, dù có hay không có di chúc
 - [ ] CCQ được tự động bán và tiền chuyển cho người thân gần nhất
 
-Giải thích: CCQ là tài sản của nhà đầu tư, không phải của quỹ. Người thừa kế hoàn thiện hồ sơ xác lập quyền thừa kế và chuyển quyền sở hữu để nhận số CCQ này.
+Giải thích: Chứng chỉ quỹ là tài sản hợp pháp của cá nhân. Hàng thừa kế sẽ thực hiện thủ tục khai nhận di sản thừa kế theo quy định pháp luật để nhận số CCQ này.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 65
 
 #### Câu a9o-inherit-steps · Sắp xếp
 
-Câu hỏi: Sắp xếp quy trình nhận CCQ thừa kế theo đúng thứ tự
+Câu hỏi: Bạn hãy sắp xếp quy trình nhận chuyển đổi CCQ thừa kế theo đúng thứ tự
 
 1. Liên hệ CSKH để nhận danh sách hồ sơ cụ thể
 2. Hoàn thiện hồ sơ chuyển quyền sở hữu do thừa kế theo quy chế của VSDC
 3. Nộp hồ sơ cho Dragon Capital
 4. DC làm việc với VSDC để chuyển CCQ sang tài khoản người nhận thừa kế
 
-Giải thích: Sau khi CCQ đã sang tài khoản của mình, người nhận thừa kế toàn quyền quyết định giữ hay bán. Hỏi danh sách hồ sơ trước giúp tránh nộp thiếu, phải bổ sung nhiều lần.
+Giải thích: Thực hiện chuẩn xác từng bước hồ sơ để VSDC hoàn tất việc sang tên sở hữu.
 
 > Nguồn: Thư viện hỏi đáp Quỹ DC · An toàn tài sản & pháp lý
 
 #### Câu a9o-inherit-dispute · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Ba anh em nhà chị Linh chưa thống nhất cách chia số CCQ bố để lại. Anh cả đề nghị nhờ Dragon Capital chia giúp cho công bằng.
+Bối cảnh: Ba anh em chị Linh chưa thống nhất được tỷ lệ chia số CCQ bố để lại. Anh cả đòi nhờ Dragon Capital đứng ra phân xử.
 
 Câu hỏi: Gia đình nên làm gì?
 
@@ -7679,29 +7679,29 @@ Câu hỏi: Gia đình nên làm gì?
 - [x] Thống nhất theo pháp luật về thừa kế; nếu tranh chấp, cơ quan có thẩm quyền giải quyết
 - [ ] Ai nộp hồ sơ trước thì được nhận toàn bộ
 
-Giải thích: DC hỗ trợ quy trình theo hồ sơ hợp lệ nhưng không tự xác định người thừa kế hay phân chia tài sản. Vai trò của quỹ là thực hiện, không phải phân xử.
+Giải thích: Công ty quản lý quỹ chỉ căn cứ vào văn bản phân chia di sản thừa kế đã được công chứng/chứng thực hợp pháp chứ không có thẩm quyền phân xử tranh chấp.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 65
 
 #### Câu a9o-gift-tax · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: Cô Hằng muốn tặng con gái số CCQ DCDE đang giữ. Một người bạn nói chắc nịch: "Tặng thì mất thuế 10% toàn bộ giá trị".
+Bối cảnh: Cô Hằng muốn làm thủ tục tặng toàn bộ CCQ DCDE cho con gái. Bạn cô bảo: "Tặng cho là mất ngay 10% thuế trên tổng giá trị đấy".
 
-Câu hỏi: Nhận định nào đúng?
+Câu hỏi: Nhận định nào dưới đây phản ánh đúng quy định thuế?
 
 - [ ] Đúng, thuế tặng luôn là 10% toàn bộ giá trị CCQ
 - [ ] Tặng CCQ không bao giờ phát sinh thuế
 - [x] Có thể phát sinh thuế; mức thuế, căn cứ tính và thời điểm định giá tùy quy định áp dụng cho từng trường hợp
 
-Giải thích: Không nên tự áp một mức thuế chung. Hãy hỏi CSKH về hồ sơ chuyển quyền sở hữu và hỏi đơn vị tư vấn thuế nếu cần, trước khi thực hiện.
+Giải thích: Nghĩa vụ thuế đối với giao dịch biếu/tặng tài sản phụ thuộc vào mối quan hệ nhân thân và quy định thuế TNCN hiện hành.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 66
 
 #### Câu a9o-gift-spot · Tìm câu sai
 
-Bối cảnh: Cô Hằng hỏi thêm một người quen về việc tặng CCQ cho con và nhận được ba ý kiến.
+Bối cảnh: Cô Hằng hỏi thêm một người quen về việc tặng CCQ cho con.
 
-Câu hỏi: Ý kiến nào sai?
+Câu hỏi: Ý kiến nào dưới đây SAI?
 
 > Đánh dấu [x] vào câu SAI.
 
@@ -7709,7 +7709,7 @@ Câu hỏi: Ý kiến nào sai?
 - [x] Cách gọn nhất luôn là bán ra rồi để con mua lại, không mất gì.
 - [ ] Cách tính thời gian nắm giữ khi tặng cần xác định theo quy định áp dụng.
 
-Giải thích: Bán ra là chịu thuế TNCN 0,1% trên tổng tiền bán, cộng phí bán tối đa 2,5% nếu lô chưa giữ đủ 2 năm. Cần tính đủ phí, thuế và thủ tục trước khi chọn cách này.
+Giải thích: Việc bán ra rồi mua lại sẽ ngay lập tức làm phát sinh thuế TNCN 0,1% trên tổng giá trị bán và phí bán (nếu giữ dưới 2 năm).
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 66
 
@@ -7721,35 +7721,35 @@ Giải thích: Bán ra là chịu thuế TNCN 0,1% trên tổng tiền bán, c�
 
 Tiêu đề: Thương hiệu, tập đoàn và pháp nhân
 
-Nội dung: Các quỹ mở DCDS, DCDE, DCBF, DCIP và DCBA do Công ty Quản lý Quỹ Đầu tư Dragon Capital Việt Nam (DCVFM) quản lý, thành viên của tập đoàn Dragon Capital. Tên pháp nhân, giấy phép và thông tin sở hữu chính thức nằm trong bản cáo bạch, điều lệ quỹ và công bố trên dragoncapital.com.vn.
+Nội dung: Các quỹ mở DCDS, DCDE, DCBF, DCIP và DCBA do Công ty Quản lý Quỹ Đầu tư Dragon Capital Việt Nam (DCVFM) trực tiếp quản lý. Tên pháp nhân, giấy phép hoạt động và cơ cấu sở hữu chính thức đều được công bố công khai trong Bản cáo bạch và Điều lệ quỹ.
 
 > Nguồn: Thư viện hỏi đáp Quỹ DC · Liên hệ & dịch vụ nhà đầu tư
 
 #### Câu a10d-due-diligence · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Chị Vy cần ghi tên công ty quản lý quỹ vào hồ sơ thẩm định khoản đầu tư DCBF của doanh nghiệp. Đồng nghiệp gợi ý chép đoạn giới thiệu tập đoàn trong một bài báo.
+Bối cảnh: Chị Vy cần trích dẫn tên chuẩn xác của công ty quản lý quỹ vào hợp đồng thẩm định đầu tư của doanh nghiệp.
 
-Câu hỏi: Chị nên lấy thông tin ở đâu?
+Câu hỏi: Chị Vy nên lấy thông tin từ nguồn nào?
 
 - [ ] Chép bài báo, vì tên tập đoàn ai cũng biết
 - [ ] Ghi "Dragon Capital" là đủ, vì cùng một thương hiệu
 - [x] Bản cáo bạch, điều lệ quỹ hoặc tài liệu cập nhật xin từ CSKH
 
-Giải thích: Thương hiệu, tập đoàn và pháp nhân quản lý quỹ là ba thứ khác nhau. Hồ sơ pháp lý cần đúng tên pháp nhân tại ngày dùng, nên phải lấy từ tài liệu chính thức thay vì mô tả chung.
+Giải thích: Tên pháp nhân trên văn bản pháp lý bắt buộc phải ghi đúng theo Giấy phép thành lập và hoạt động được Ủy ban Chứng khoán Nhà nước cấp.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 97
 
 #### Câu a10d-parent-location · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: Anh Đức thấy Dragon Capital có văn phòng ở TP.HCM và Hà Nội, nên ghi vào báo cáo: "Công ty mẹ đăng ký tại TP.HCM."
+Bối cảnh: Anh Đức thấy trụ sở làm việc của Dragon Capital tại TP.HCM nên ghi trong báo cáo: "Công ty mẹ đăng ký tại TP.HCM".
 
-Câu hỏi: Nhận định nào đúng?
+Câu hỏi: Nhận định nào dưới đây là chuẩn xác?
 
 - [x] Nơi công ty hoạt động chưa chắc là nơi đăng ký của công ty mẹ trực tiếp
 - [ ] Ghi vậy là đúng, vì văn phòng chính ở TP.HCM
 - [ ] Công ty mẹ chính là ngân hàng giám sát của các quỹ
 
-Giải thích: Thông tin công ty mẹ gắn với đúng pháp nhân và cơ cấu sở hữu tại ngày tra cứu. Cần kiểm tra theo công bố chính thức; bộ phận hỗ trợ có thể chỉ nguồn để bạn tra.
+Giải thích: Địa điểm đặt văn phòng điều hành và địa chỉ đăng ký pháp lý của công ty mẹ tập đoàn có thể nằm ở các tài phán khác nhau.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 98
 
@@ -7769,15 +7769,15 @@ Giải thích: Tài sản quỹ được lưu ký tại ngân hàng giám sát, 
 
 #### Câu a10d-if-manager-fails · Chọn đáp án · Dự đoán
 
-Bối cảnh: Giả định một ngày công ty quản lý quỹ không thể tiếp tục hoạt động, trong khi bạn đang giữ CCQ của một quỹ mở do công ty này quản lý.
+Bối cảnh: Giả định tình huống công ty quản lý quỹ gặp sự cố ngừng hoạt động.
 
-Câu hỏi: Điều gì xảy ra với khoản CCQ của bạn?
+Câu hỏi: Số chứng chỉ quỹ của nhà đầu tư sẽ được xử lý ra sao?
 
 - [ ] Bị dùng để trả nợ cho công ty quản lý
 - [ ] Được ngân hàng giám sát hoàn đủ số vốn đã góp
 - [x] Quỹ được xử lý theo điều lệ và pháp luật, thanh toán theo NAV
 
-Giải thích: Quỹ hạch toán độc lập và có thể được chuyển giao cho công ty quản lý khác hoặc giải thể. Khoản đầu tư không bị dùng trả nợ của công ty, nhưng giá trị vẫn phụ thuộc NAV lúc đó.
+Giải thích: Tài sản của quỹ độc lập hoàn toàn với tài sản của công ty quản lý. Quỹ sẽ được chuyển giao cho công ty quản lý khác hoặc giải thể thanh lý tài sản chia lại cho nhà đầu tư theo giá trị NAV.
 
 > Nguồn: Thư viện hỏi đáp Quỹ DC · An toàn tài sản & pháp lý
 
@@ -7785,70 +7785,70 @@ Giải thích: Quỹ hạch toán độc lập và có thể được chuyển g
 
 #### Câu a10d-agm-date · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: Giả sử năm ngoái quỹ của chị Hằng họp Đại hội nhà đầu tư thường niên vào tháng 4. Năm nay chị xin nghỉ phép đúng tháng 4 để dự.
+Bối cảnh: Năm ngoái quỹ DCDS tổ chức Đại hội nhà đầu tư vào tháng 4. Năm nay chị Hằng xin nghỉ phép sẵn đúng tháng 4 để đi họp.
 
-Câu hỏi: Nhận định nào đúng?
+Câu hỏi: Nhận định nào dưới đây phản ánh đúng quy định?
 
 - [ ] Lịch năm trước là căn cứ chắc chắn cho năm nay
 - [ ] Đại hội chỉ dành cho nhà đầu tư tổ chức
 - [x] Lịch họp được công bố riêng cho từng quỹ, từng năm
 
-Giải thích: Lịch họp, ngày chốt danh sách và điều kiện tham dự đều có thể thay đổi theo năm. Hãy theo dõi mục công bố thông tin của quỹ hoặc thư mời gửi đến người đủ điều kiện.
+Giải thích: Thời gian họp Đại hội nhà đầu tư thường niên được Ban đại diện quỹ quyết định và công bố công khai riêng cho từng năm.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 107
 
 #### Câu a10d-no-invite · Chọn đáp án · Vì sao?
 
-Bối cảnh: Anh Toàn và chị gái cùng giữ CCQ của một quỹ. Chị gái nhận thư mời dự Đại hội nhà đầu tư, còn anh thì không.
+Bối cảnh: Anh Toàn và chị gái cùng sở hữu CCQ của một quỹ. Đến kỳ Đại hội, chị gái nhận được thư mời còn anh Toàn thì không.
 
-Câu hỏi: Vì sao có thể như vậy?
+Câu hỏi: Nguyên nhân vì sao có sự khác biệt này?
 
 - [x] Thư mời gửi người đủ điều kiện theo ngày chốt danh sách quỹ công bố
 - [ ] Thư mời chỉ gửi cho người giữ CCQ trên 2 năm
 - [ ] Anh đã không đăng ký nhận thư qua tổng đài
 
-Giải thích: Mỗi kỳ đại hội có ngày chốt danh sách và điều kiện tham dự riêng. Nếu thắc mắc, bạn đối chiếu thông báo của đúng quỹ trong năm đó thay vì đoán theo trường hợp của người khác.
+Giải thích: Danh sách nhà đầu tư có quyền tham dự Đại hội được chốt tại một ngày cố định (Ngày chốt danh sách). Nếu anh Toàn mua CCQ sau ngày này thì sẽ không có tên trong danh sách mời.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 107
 
 #### Câu a10d-board-role · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: Chị Mỹ đọc tin "Ban đại diện quỹ họp" và nghĩ đây là những người chọn mua, bán từng cổ phiếu cho quỹ mỗi ngày.
+Bối cảnh: Chị Mỹ nghĩ rằng Ban Đại diện quỹ là những người hằng ngày trực tiếp đặt lệnh mua bán từng mã cổ phiếu cho quỹ.
 
-Câu hỏi: Nhận định nào đúng?
+Câu hỏi: Nhận định nào dưới đây phản ánh đúng chức năng của Ban Đại diện quỹ?
 
 - [ ] Đúng, ban đại diện quyết định từng giao dịch của quỹ
 - [x] Ban đại diện đại diện quyền lợi nhà đầu tư và giám sát theo thẩm quyền
 - [ ] Ban đại diện là bộ phận chăm sóc khách hàng của quỹ
 
-Giải thích: Ban đại diện giám sát các vấn đề thuộc thẩm quyền theo pháp luật, điều lệ và nghị quyết Đại hội nhà đầu tư. Việc chọn từng khoản đầu tư hằng ngày vẫn do đội ngũ quản lý quỹ.
+Giải thích: Ban Đại diện do Đại hội nhà đầu tư bầu ra để đại diện cho nhà đầu tư giám sát hoạt động của Quỹ và Công ty quản lý quỹ. Việc đầu tư hằng ngày thuộc nhiệm vụ của Ban Điều hành Quỹ.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 103
 
 #### Câu a10d-roles-match · Nối cặp
 
-Câu hỏi: Nối mỗi bên với vai trò của mình
+Câu hỏi: Bạn hãy nối mỗi đơn vị dưới đây với đúng vai trò vận hành
 
 - Ban đại diện quỹ → Đại diện quyền lợi nhà đầu tư
 - Công ty quản lý quỹ → Ra quyết định đầu tư
 - Ngân hàng giám sát → Lưu ký tài sản quỹ, xác nhận NAV
 - VSDC → Ghi nhận số CCQ bạn sở hữu
 
-Giải thích: Mỗi bên giữ một phần việc và kiểm tra lẫn nhau. Sự tách bạch này tăng minh bạch, nhưng không bên nào bảo đảm vốn hay lợi nhuận.
+Giải thích: Bốn đơn vị độc lập cùng tham gia vận hành để bảo đảm tính minh bạch và an toàn tài sản cho nhà đầu tư.
 
 > Nguồn: Thư viện hỏi đáp Quỹ DC · An toàn tài sản & pháp lý
 
 #### Câu a10d-board-members · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Anh Khôi muốn biết ban đại diện của DCBF hiện gồm những ai và nhiệm kỳ đến khi nào.
+Bối cảnh: Anh Khôi muốn tìm danh sách thành viên Ban Đại diện hiện tại của quỹ DCBF.
 
-Câu hỏi: Anh nên tra ở đâu?
+Câu hỏi: Anh Khôi nên tra cứu ở nguồn thông tin chính thức nào?
 
 - [x] Điều lệ, nghị quyết và công bố thông tin của DCBF
 - [ ] Hỏi trong nhóm cộng đồng nhà đầu tư trên Facebook
 - [ ] Dùng danh sách của DCDS, vì cùng công ty quản lý
 
-Giải thích: Mỗi quỹ có ban đại diện và nhiệm kỳ riêng. Nguồn đúng là tài liệu của chính quỹ đó trên dragoncapital.com.vn, không phải lời kể hay danh sách của quỹ khác.
+Giải thích: Mỗi quỹ mở có Ban Đại diện riêng biệt. Thông tin nhân sự Ban Đại diện được công bố chính thức tại trang thông tin của quỹ đó trên website chính thức.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 103
 
@@ -7862,56 +7862,56 @@ Thông tin nhân vật: 45 tuổi, giữ DCDS
 
 Lời nói: Lệnh bán DCDS của chị báo bị hủy mà chị không hiểu vì sao. Chị định email cho bộ phận hỗ trợ, gửi kèm PIN để họ vào kiểm tra cho nhanh nhé?
 
-Câu hỏi: Bạn trả lời chị Yến thế nào?
+Câu hỏi: Bạn khuyên chị Yến như thế nào?
 
 - [ ] Chị gửi OTP thay cho PIN, vì OTP chỉ dùng một lần
 - [x] Không gửi PIN; chị nêu số tài khoản, mã lệnh, sự cố và thời điểm
 - [ ] Chị cứ gửi PIN, email gửi cho công ty thì an toàn
 
-Giải thích: Bộ phận hỗ trợ tra được lệnh bằng số tài khoản và mã lệnh, không cần PIN, OTP hay mật khẩu. Ai hỏi những mã này, dù nhân danh ai, đều là dấu hiệu cần dừng lại.
+Giải thích: Bộ phận hỗ trợ CSKH tra cứu sự cố thông qua Mã giao dịch và Số tài khoản. Tuyệt đối không cung cấp mật khẩu, PIN hay OTP dưới bất kỳ hình thức nào.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 99
 
 #### Câu a10d-contact-order · Sắp xếp
 
-Câu hỏi: Chuẩn bị một yêu cầu hỗ trợ: sắp xếp theo thứ tự
+Câu hỏi: Bạn hãy sắp xếp các bước gửi yêu cầu hỗ trợ khi gặp sự cố giao dịch theo đúng trình tự
 
 1. Kiểm tra trạng thái lệnh trên DragonX
 2. Ghi lại mã lệnh, thời điểm và mô tả sự cố
 3. Gửi qua email hoặc hotline CSKH đã công bố
 4. Chờ phản hồi, không đặt lại lệnh khi chưa rõ trạng thái
 
-Giải thích: Kiểm tra trước giúp bạn mô tả đúng vấn đề; thông tin đầy đủ giúp được xử lý nhanh; không lặp lại lệnh để tránh trùng lệnh.
+Giải thích: Chuẩn bị đầy đủ thông tin mã lệnh giúp CSKH xử lý yêu cầu nhanh chóng.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 99
 
 #### Câu a10d-contact-spot · Tìm câu sai
 
-Bối cảnh: Bạn của chị Yến nhắn ba lời khuyên để yêu cầu hỗ trợ gửi Dragon Capital được xử lý nhanh.
+Bối cảnh: Bạn chị Yến đưa ra ba lời khuyên để yêu cầu hỗ trợ được xử lý nhanh hơn.
 
-Câu hỏi: Lời khuyên nào sai?
+Câu hỏi: Lời khuyên nào dưới đây SAI?
 
 > Đánh dấu [x] vào câu SAI.
 
-- [ ] Gửi email từ địa chỉ đã đăng ký tài khoản
-- [ ] Kèm mã lệnh và thời điểm xảy ra sự cố
-- [x] Gửi kèm mật khẩu để được ưu tiên xử lý
+- [ ] Gửi email từ địa chỉ đã đăng ký tài khoản.
+- [ ] Kèm mã lệnh và thời điểm xảy ra sự cố.
+- [x] Gửi kèm mật khẩu để được ưu tiên xử lý.
 
-Giải thích: Không có quy trình nào cần mật khẩu, PIN hay OTP của bạn. Email từ địa chỉ đã đăng ký cùng mã lệnh, thời điểm đã đủ để tra cứu.
+Giải thích: Yêu cầu cung cấp mật khẩu là dấu hiệu lừa đảo. Bộ phận CSKH Dragon Capital không bao giờ yêu cầu khách hàng cung cấp mật khẩu.
 
 > Nguồn: Thư viện hỏi đáp Quỹ DC · Liên hệ & dịch vụ nhà đầu tư
 
 #### Câu a10d-no-advisor · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: Anh Lâm tự mở tài khoản trên DragonX và chưa được giới thiệu chuyên viên chăm sóc riêng. Anh lo: "Không có chuyên viên thì chẳng ai giải quyết yêu cầu của mình."
+Bối cảnh: Anh Lâm tự mở tài khoản trên DragonX và chưa được phân công chuyên viên chăm sóc riêng. Anh lo không có ai hỗ trợ giải quyết sự cố.
 
-Câu hỏi: Nhận định nào đúng?
+Câu hỏi: Nhận định nào dưới đây phản ánh đúng thực tế?
 
 - [ ] Phải có chuyên viên riêng mới được hỗ trợ
 - [ ] Phải mua quỹ qua ngân hàng thì mới có người hỗ trợ
 - [x] Kênh dịch vụ nhà đầu tư chính thức vẫn tiếp nhận yêu cầu
 
-Giải thích: Việc bố trí chuyên viên riêng tùy kênh phân phối và nhóm dịch vụ của tài khoản. Bạn có thể hỏi bộ phận hỗ trợ đầu mối phù hợp; trong lúc đó mọi yêu cầu vẫn đi qua kênh chính thức.
+Giải thích: Tất cả nhà đầu tư đều được hỗ trợ đầy đủ và công bằng thông qua các kênh CSKH chính thức của Dragon Capital.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 100
 
@@ -7933,13 +7933,13 @@ Giải thích: Ngoài giờ làm việc, email qua kênh chính thức vẫn lư
 
 #### Câu a10d-check-schedule · Nối cặp
 
-Câu hỏi: Nối mỗi quỹ với lịch giao dịch và thời gian tiền bán về
+Câu hỏi: Bạn hãy nối mỗi quỹ mở dưới đây với lịch giao dịch và thời gian nhận tiền bán tương ứng
 
-- DCIP → Hằng ngày; tiền về trong ngày T
-- DCDS → Hằng ngày; tiền về sau 2 ngày làm việc
-- DCBF → Thứ 4 và thứ 6; tiền về sau 5 ngày làm việc
+- DCIP → Giao dịch hằng ngày; tiền bán về ngay trong ngày T
+- DCDS → Giao dịch hằng ngày; tiền bán về sau 2 ngày làm việc (T+2)
+- DCBF → Giao dịch thứ 4 và thứ 6; tiền bán về sau 5 ngày làm việc (T+5)
 
-Giải thích: Lịch giao dịch và thời gian nhận tiền khác nhau giữa các quỹ. Biết trước giúp bạn chọn quỹ hợp với lúc cần tiền, thay vì bất ngờ khi tiền chưa về.
+Giải thích: Mỗi quỹ có quy định về chu kỳ giao dịch và thời gian thanh toán tiền bán riêng biệt.
 
 > Nguồn: Thư viện hỏi đáp Quỹ DC · Chọn quỹ & kế hoạch đầu tư
 
@@ -7947,13 +7947,13 @@ Giải thích: Lịch giao dịch và thời gian nhận tiền khác nhau giữ
 
 Bối cảnh: Ngân hàng báo chú Sang đã chuyển khoản thành công tiền mua DCDE. Mở DragonX ngay sau đó, chú chưa thấy số CCQ tăng lên.
 
-Câu hỏi: Vì sao chưa thấy CCQ?
+Câu hỏi: Nguyên nhân vì sao chú Sang chưa thấy số dư CCQ tăng?
 
 - [ ] Lệnh đã bị hủy, chú cần chuyển tiền lại
 - [x] Quỹ còn phải nhận, đối soát tiền và xử lý lệnh theo kỳ hợp lệ
 - [ ] Ngân hàng giữ tiền đến khi chú gọi điện xác nhận
 
-Giải thích: Chuyển tiền thành công chưa có nghĩa lệnh mua đã được thực hiện; số dư CCQ chỉ cập nhật sau khi lệnh được xử lý. Hãy xem trạng thái lệnh trước, đừng chuyển thêm tiền.
+Giải thích: Tiền chuyển thành công mới chỉ là bước khởi đầu. Lệnh mua cần qua khâu đối soát với Ngân hàng Giám sát và chờ tính toán NAV của kỳ giao dịch.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 44
 
@@ -7973,43 +7973,43 @@ Giải thích: Theo nguyên tắc mua trước bán trước (FIFO), lô sớm n
 
 #### Câu a10d-check-mgmt-fee · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: Anh Đạt đọc biểu phí thấy quỹ có phí quản lý hằng năm. Anh lo mỗi lần bán CCQ sẽ bị trừ thêm khoản phí này một lần nữa.
+Bối cảnh: Anh Đạt lo ngại mỗi lần đặt lệnh bán CCQ sẽ bị công ty quỹ thu thêm một khoản phí quản lý cho cả năm.
 
-Câu hỏi: Nhận định nào đúng?
+Câu hỏi: Nhận định nào dưới đây phản ánh đúng thực tế?
 
 - [ ] Mỗi lệnh bán bị trừ thêm phí quản lý tính cho cả năm
 - [ ] Đã trả phí quản lý nên khi bán không mất thêm khoản nào
 - [x] Phí quản lý đã nằm trong NAV; bán vẫn có thể chịu phí bán và thuế
 
-Giải thích: Phí quản lý được hạch toán vào tài sản quỹ và đã phản ánh trong NAV/CCQ công bố. Phí giao dịch và thuế là khoản riêng của từng lệnh, tính theo biểu phí hiện hành.
+Giải thích: Phí quản lý đã được tính toán khấu trừ hằng ngày vào giá trị NAV/CCQ. Lệnh bán chỉ phát sinh phí bán (tùy thời gian giữ) và thuế TNCN 0,1%.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 125
 
 #### Câu a10d-check-proxy · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Ông Bảy 70 tuổi muốn con trai đặt lệnh mua bán quỹ giúp mình. Ông định đưa luôn cho con PIN và đọc OTP mỗi khi con cần.
+Bối cảnh: Ông Bảy (70 tuổi) muốn con trai đặt lệnh mua bán quỹ giúp mình. Ông định đưa luôn mã PIN và đọc OTP cho con mỗi khi giao dịch.
 
-Câu hỏi: Ông nên làm gì?
+Câu hỏi: Ông Bảy nên làm gì để đảm bảo đúng quy định an toàn?
 
 - [ ] Đưa PIN cho con, vì người trong nhà thì không sao
 - [ ] Chuyển hết CCQ sang tên con để con tiện giao dịch
 - [x] Hỏi bộ phận hỗ trợ về thủ tục ủy quyền, không chia sẻ PIN, OTP
 
-Giải thích: Ủy quyền giao dịch khác chuyển quyền sở hữu: tài sản vẫn đứng tên ông. Thủ tục ủy quyền có yêu cầu riêng, và PIN, OTP không chia sẻ cho cả người được ủy quyền.
+Giải thích: Mã PIN và OTP là thông tin bảo mật tối cấp của cá nhân. Muốn con giao dịch hợp pháp, ông Bảy cần thực hiện thủ tục lập Hợp đồng ủy quyền theo đúng quy định.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 64
 
 #### Câu a10d-check-fake-board · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Một người gọi cho chú Phúc, tự giới thiệu là thành viên ban đại diện quỹ DCDS, đề nghị chú chuyển tiền vào tài khoản cá nhân để "giữ suất dự đại hội".
+Bối cảnh: Một người gọi cho chú Phúc, tự xưng là thành viên Ban Đại diện quỹ DCDS và đề nghị chú chuyển tiền vào tài khoản cá nhân để "giữ suất dự Đại hội".
 
-Câu hỏi: Chú Phúc nên làm gì?
+Câu hỏi: Chú Phúc nên xử lý tình huống này thế nào?
 
 - [ ] Chuyển tiền, vì ban đại diện đại diện quyền lợi nhà đầu tư
 - [x] Không chuyển; xem lịch và điều kiện đại hội trong công bố chính thức
 - [ ] Chuyển một nửa trước, nửa còn lại khi nhận được thư mời
 
-Giải thích: Danh xưng nghe uy tín không thay được kênh chính thức. Điều kiện dự đại hội được công bố công khai, và không ai được yêu cầu chuyển tiền vào tài khoản cá nhân; nghi ngờ thì tự gọi lại số chính thức.
+Giải thích: Tất cả thành viên Ban Đại diện hay nhân viên công ty quản lý quỹ đều không được phép thu tiền cá nhân. Mọi yêu cầu chuyển tiền vào tài khoản cá nhân đều là hành vi lừa đảo.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 116
 
