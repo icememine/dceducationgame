@@ -35,6 +35,9 @@ describe("serialiser", () => {
     expect(serialiseValue(long, "    ")).toBe(`[\n      "${long[0]}",\n      "${long[1]}",\n    ]`);
     expect(serialiseValue(2_600_000, "")).toBe("2_600_000");
     expect(serialiseValue('nói "không"', "")).toBe('"nói \\"không\\""');
+     // Long text stays one string literal, wherever it starts on the line.
+    const text = "Lãi kép ".repeat(40).trim();
+    expect(serialiseValue(text, "          ", 19)).toBe(JSON.stringify(text));
   });
   it("serialises a whole object at the given indentation", () => {
     expect(serialiseObject({ id: "x", type: "info", title: "T", body: "B" }, "  ")).toBe('{\n    id: "x",\n    type: "info",\n    title: "T",\n    body: "B",\n  }');

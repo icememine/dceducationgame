@@ -11,7 +11,7 @@
   Giới hạn: Bối cảnh / Lời nói / Giải thích 20–320 ký tự; câu chọn đáp án có đúng 3 phương án.
   Áp dụng: npm run content:import -- <file> (xem trước) rồi thêm --write để ghi.
 -->
-<!-- phiên bản nội dung: c80e8102 -->
+<!-- phiên bản nội dung: 97e250ba -->
 
 # Hiểu mình
 
@@ -1272,57 +1272,57 @@ Giải thích: Với 15%/năm, cứ khoảng 5 năm tiền nhân đôi nhờ lã
 
 #### Câu b4c-year-two · Chọn đáp án · Dự đoán
 
-Bối cảnh: Anh Hùng đầu tư 100 triệu đồng, không góp thêm và không rút lợi nhuận. Giả định minh họa 10%/năm: năm đầu tài khoản tăng 10 triệu, lên 110 triệu.
+Bối cảnh: Anh Hùng đầu tư 100 triệu đồng, không nộp thêm vốn và giữ nguyên lợi nhuận. Giả định lợi nhuận minh họa 10%/năm: năm đầu tài khoản tăng 10 triệu đồng, đạt mốc 110 triệu đồng.
 
-Câu hỏi: Năm thứ hai, tài khoản tăng thêm bao nhiêu?
+Câu hỏi: Trong năm thứ hai, tài khoản của anh Hùng sẽ tăng thêm bao nhiêu?
 
-- [ ] 10 triệu, như năm đầu
-- [x] 11 triệu
-- [ ] 20 triệu
+- [ ] 10 triệu đồng, giống như năm đầu tiên
+- [x] 11 triệu đồng
+- [ ] 20 triệu đồng
 
-Giải thích: 10% của 110 triệu là 11 triệu: 10 triệu lợi nhuận năm đầu cũng bắt đầu sinh lời. Khoản chênh nhỏ này lặp lại qua nhiều năm sẽ lớn dần, có thể vượt xa vốn gốc.
+Giải thích: 10% của 110 triệu đồng là 11 triệu đồng. Phần 10 triệu đồng tiền lãi của năm đầu tiên đã bắt đầu sinh lời tiếp ở năm thứ hai. Khoản chênh lệch nhỏ này khi tích lũy qua nhiều năm sẽ tăng trưởng rất mạnh.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 38
 
 #### Câu b4c-no-new-money · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: Chị Hạnh có 50 triệu trong quỹ nhưng hai năm nay chưa góp thêm được đồng nào. Chị nghĩ: "Không góp thêm thì làm gì có lãi kép."
+Bối cảnh: Chị Hạnh sở hữu 50 triệu đồng trong quỹ nhưng hai năm nay chưa thể góp thêm tiền mới. Chị lo lắng: "Không nộp thêm vốn thì làm sao có lãi kép được".
 
-Câu hỏi: Nhận định nào đúng?
+Câu hỏi: Nhận định nào dưới đây phản ánh đúng bản chất của lãi kép?
 
-- [ ] Lãi kép chỉ xuất hiện khi góp thêm tiền đều đặn
-- [x] Lãi kép đến từ lợi nhuận được giữ lại, không cần vốn mới
-- [ ] Lãi kép chỉ có ở tiền gửi tiết kiệm, không có ở quỹ
+- [ ] Lãi kép chỉ xuất hiện khi nhà đầu tư trích nộp tiền mới đều đặn
+- [x] Lãi kép đến từ phần lợi nhuận được giữ lại tái đầu tư, không phụ thuộc vào vốn mới
+- [ ] Lãi kép chỉ có ở kênh gửi tiết kiệm ngân hàng, không áp dụng cho quỹ mở
 
-Giải thích: Lợi nhuận ở lại trong khoản đầu tư trở thành cơ sở sinh lời cho kỳ sau. Góp thêm giúp tài sản lớn nhanh hơn, nhưng đó là một lực khác cộng vào, không phải điều kiện của lãi kép.
+Giải thích: Lợi nhuận được giữ lại trong khoản đầu tư sẽ trở thành nền vốn sinh lời cho các kỳ tiếp theo. Việc nộp thêm vốn hằng tháng giúp tài sản tăng nhanh hơn, nhưng đó là tác động từ nguồn vốn mới chứ không phải điều kiện bắt buộc để lãi kép vận hành.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 38
 
 #### Câu b4c-retained-nav · Chọn đáp án · Vì sao?
 
-Bối cảnh: Anh Phúc giữ CCQ của một quỹ không chia cổ tức tiền mặt. Ba năm liền anh không nhận đồng nào từ quỹ, nhưng giá trị tài khoản vẫn tăng.
+Bối cảnh: Anh Phúc nắm giữ chứng chỉ quỹ của một quỹ mở không phân phối cổ tức tiền mặt. Ba năm liền anh không nhận khoản tiền chuyển về tài khoản, nhưng giá trị tổng tài khoản vẫn tăng lên.
 
-Câu hỏi: Vì sao tài khoản vẫn tăng dù anh không nhận tiền?
+Câu hỏi: Vì sao tổng tài sản của anh Phúc vẫn tăng dù không nhận tiền mặt?
 
-- [ ] Vì quỹ cộng thêm CCQ mới vào tài khoản anh mỗi năm
-- [x] Vì thu nhập được giữ lại trong quỹ và phản ánh vào NAV
-- [ ] Vì đó chỉ là con số trên giấy, chưa phải lợi nhuận thật
+- [ ] Vì quỹ tự động tặng thêm chứng chỉ quỹ mới vào tài khoản của anh hằng năm
+- [x] Vì lợi nhuận được giữ lại trong quỹ và phản ánh trực tiếp vào giá trị NAV/CCQ
+- [ ] Vì đây chỉ là con số trên giấy tờ, chưa phải lợi nhuận thực tế
 
-Giải thích: Với quỹ giữ lại thu nhập, lãi kép diễn ra bên trong quỹ: số CCQ không đổi, giá mỗi CCQ (NAV) tăng. Theo dõi NAV là cách theo dõi hiệu ứng này.
+Giải thích: Với quỹ mở tích lũy lợi nhuận, hiệu ứng lãi kép diễn ra ngay bên trong quỹ: số lượng chứng chỉ quỹ giữ nguyên, nhưng giá trị mỗi chứng chỉ quỹ (NAV/CCQ) sẽ tăng dần theo thời gian.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 38
 
 #### Câu b4c-loss-compounds · Chọn đáp án · Dự đoán
 
-Bối cảnh: Giả định minh họa: tài khoản 100 triệu của chị Thu giảm 20% trong một năm, rồi năm sau tăng lại đúng 20%.
+Bối cảnh: Giả định minh họa: tài khoản 100 triệu đồng của chị Thu bị giảm 20% trong năm đầu tiên, sau đó năm thứ hai tăng trưởng trở lại đúng 20%.
 
-Câu hỏi: Sau hai năm, tài khoản còn bao nhiêu?
+Câu hỏi: Sau hai năm, giá trị tài khoản của chị Thu còn bao nhiêu?
 
-- [ ] 100 triệu, vì giảm và tăng cùng 20%
-- [x] 96 triệu
-- [ ] 104 triệu
+- [ ] 100 triệu đồng, vì mức giảm và mức tăng đều là 20%
+- [x] 96 triệu đồng
+- [ ] 104 triệu đồng
 
-Giải thích: Mức tăng 20% chỉ tính trên 80 triệu, nên được 16 triệu. Lãi kép tác động cả hai chiều: kỳ lỗ thu nhỏ nền vốn sinh lời, nên một đợt giảm sâu cần mức tăng lớn hơn để bù lại.
+Giải thích: Sau năm đầu giảm 20%, tài khoản còn 80 triệu đồng; mức tăng 20% của năm sau tính trên 80 triệu sẽ là 16 triệu, đưa tài khoản lên 96 triệu đồng. Lực tác động kép diễn ra ở cả hai chiều: một đợt giảm sâu đòi hỏi tỷ lệ phần trăm tăng trưởng cao hơn nhiều mới có thể hòa vốn.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 38
 
@@ -1332,7 +1332,7 @@ Giải thích: Mức tăng 20% chỉ tính trên 80 triệu, nên được 16 tr
 
 Tiêu đề: Lãi sinh lãi
 
-Nội dung: Lãi kép là khi lợi nhuận được giữ lại và tiếp tục sinh lời ở các kỳ sau. Bạn không cần góp thêm vốn để có hiệu ứng này. Thứ bạn cần nhất là thời gian.
+Nội dung: Lãi kép xuất hiện khi phần lợi nhuận được giữ lại và tiếp tục sinh lời trong các kỳ tiếp theo. Bạn không bắt buộc phải trích thêm vốn mới để có hiệu ứng này; yếu tố quan trọng nhất bạn cần chính là thời gian.
 
 #### Câu b4-one-billion-30y · Đoán số
 

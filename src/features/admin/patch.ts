@@ -186,7 +186,6 @@ export function formatNumber(n: number): string {
 }
 
 const isScalar = (v: Literal) => v === null || typeof v !== "object";
-const isPlainObject = (v: Literal): v is { [key: string]: Literal } => v !== null && typeof v === "object" && !Array.isArray(v);
 const defined = (o: { [key: string]: Literal }) => Object.entries(o).filter(([, v]) => v !== undefined);
 
 function inline(v: Literal): string | null {
@@ -209,8 +208,9 @@ function inline(v: Literal): string | null {
  */
 export function serialiseValue(v: Literal, indent: string, column = indent.length): string {
   const one = inline(v);
-  // Objects of scalars (source, persona, defaults) always stay on one line, like the content files.
-  if (one !== null && (isPlainObject(v) || column + one.length + 1 <= MAX_LINE)) return one;
+  // Strings, numbers and objects of scalars (source, persona, defaults) always stay on one line,
+  // like the content files; long text cannot be wrapped without changing it.
+  if (one !== null && (!Array.isArray(v) || column + one.length + 1 <= MAX_LINE)) return one;
   const inner = indent + "  ";
   if (Array.isArray(v)) {
     return `[\n${v.map((x) => `${inner}${serialiseValue(x, inner)},\n`).join("")}${indent}]`;

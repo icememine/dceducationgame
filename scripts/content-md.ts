@@ -115,9 +115,15 @@ if (cmd === "export") {
     for (const [f, t] of changedFiles) console.log("\n" + unifiedDiff(readFileSync(f, "utf8"), t, f));
     if (changedFiles.length) console.log("\nXem trước xong. Thêm --write để ghi vào file nội dung.");
   } else if (changedFiles.length) {
+    const originals = changedFiles.map(([f]) => [f, readFileSync(f, "utf8")] as const);
     for (const [f, t] of changedFiles) writeFileSync(f, t);
     console.log(`\nĐã ghi ${changedFiles.length} file. Kiểm tra nội dung…`);
     const r = spawnSync("npx", ["tsx", "scripts/check-content.ts"], { stdio: "inherit" });
+    if (r.status !== 0) {
+      // Never leave content files half-imported: put them back as they were.
+      for (const [f, t] of originals) writeFileSync(f, t);
+      console.error("\nKiểm tra nội dung không qua, đã khôi phục các file như trước khi nhập.");
+    }
     process.exit(r.status ?? 1);
   }
 } else {
