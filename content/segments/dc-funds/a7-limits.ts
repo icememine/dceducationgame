@@ -25,15 +25,15 @@ export const unit = {
           id: "a7l-limit-sum",
           type: "select",
           pattern: "prediction",
-          context: "Giả định hạn mức bán đang hiển thị trên tài khoản chị Linh là 100 triệu đồng/tháng. Đầu tháng chị đã bán 70 triệu đồng, nay chị đặt thêm lệnh bán 45 triệu đồng.",
-          prompt: "Lệnh 45 triệu đồng sẽ ra sao?",
+          context: "Giả định hạn mức bán trên tài khoản chị Linh là 100 triệu/tháng. Đầu tháng chị đã bán 70 triệu; nay chị đặt thêm lệnh bán 45 triệu đồng.",
+          prompt: "Lệnh bán 45 triệu đồng này sẽ được xử lý thế nào?",
           options: [
             "Được nhận, vì mỗi lệnh đều dưới 100 triệu đồng",
             "Báo vượt hạn mức, vì tổng giá trị bán trong tháng thành 115 triệu đồng",
             "Được nhận, vì hạn mức tự tăng khi đã bán một lần",
           ],
           answer: 1,
-          explain: "Hạn mức tính trên tổng giá trị bán trong kỳ, gồm cả lệnh đã dùng hạn mức trước đó. Trước một lệnh lớn, cộng các lệnh trong tháng rồi so với hạn mức đang hiển thị.",
+          explain: "Hạn mức được tính cộng dồn trên tổng giá trị các lệnh bán đã thực hiện trong cùng một tháng. 70 + 45 = 115 triệu (vượt mốc 100 triệu) nên hệ thống sẽ báo lỗi.",
           source: { sourceId: "faq", locator: "Câu 110" },
         },
         {

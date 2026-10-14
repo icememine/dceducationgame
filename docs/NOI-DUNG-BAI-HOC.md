@@ -11,7 +11,7 @@
   Giới hạn: Bối cảnh / Lời nói / Giải thích 20–320 ký tự; câu chọn đáp án có đúng 3 phương án.
   Áp dụng: npm run content:import -- <file> (xem trước) rồi thêm --write để ghi.
 -->
-<!-- phiên bản nội dung: 9f8ca6e0 -->
+<!-- phiên bản nội dung: d19e4874 -->
 
 # Hiểu mình
 
@@ -1336,13 +1336,13 @@ Nội dung: Lãi kép xuất hiện khi phần lợi nhuận được giữ lạ
 
 #### Câu b4-one-billion-30y · Đoán số
 
-Bối cảnh: Chị Mai 30 tuổi nhận 1 tỷ đồng tiền thừa kế và đầu tư một lần, không rút ra. Giả định lợi nhuận 15%/năm (minh họa, không được bảo đảm).
+Bối cảnh: Chị Mai (30 tuổi) nhận khoản thừa kế 1 tỷ đồng và đầu tư một lần vào quỹ, giữ nguyên không rút ra. Giả định lợi nhuận bình quân 15%/năm (minh họa, không được bảo đảm).
 
-Câu hỏi: Đến năm 60 tuổi, khoản này thành bao nhiêu?
+Câu hỏi: Đến năm 60 tuổi (sau 30 năm), khoản tiền này sẽ đạt giá trị khoảng bao nhiêu tỷ đồng?
 
 Số liệu: nhỏ nhất=2; lớn nhất=100; bước=1; bắt đầu=10; đáp án=66.2; sai số=0.25; đơn vị=tỷ
 
-Giải thích: Khoảng 66,2 tỷ. Với 15%/năm, cứ khoảng 5 năm tiền nhân đôi, và mỗi lần nhân đôi sau lớn hơn lần trước: phần lớn tài sản được tạo ra ở những năm cuối.
+Giải thích: Khoảng 66,2 tỷ đồng. Với mức 15%/năm, cứ khoảng 5 năm tài sản sẽ nhân đôi một lần, và các đợt nhân đôi về sau tạo ra giá trị quy mô lớn hơn hẳn các đợt đầu.
 
 > Nguồn: Kế hoạch du học cho con: bài toán tài chính gia đình (anh Nam)
 
@@ -1378,27 +1378,27 @@ Giải thích: Lãi kép đòi hỏi lợi nhuận phải ở lại trong danh m
 
 #### Câu b4c-weekly-30y · Đoán số
 
-Bối cảnh: Tại Investor Day 2026, Dragon Capital minh họa: góp 5 triệu mỗi tuần (khoảng 20 triệu/tháng) trong 30 năm, tổng vốn khoảng 7,9 tỷ. Giả định 15%/năm, mức tham chiếu, không được bảo đảm.
+Bối cảnh: Tại Investor Day 2026, Dragon Capital đưa mô phỏng: góp 5 triệu mỗi tuần (khoảng 20 triệu/tháng) suốt 30 năm, tổng vốn tự nộp khoảng 7,9 tỷ đồng. Giả định 15%/năm (minh họa, không được bảo đảm).
 
-Câu hỏi: Sau 30 năm, tài khoản đạt khoảng bao nhiêu?
+Câu hỏi: Sau 30 năm, tổng tài sản tài khoản đạt khoảng bao nhiêu tỷ đồng?
 
 Số liệu: nhỏ nhất=8; lớn nhất=200; bước=0.5; bắt đầu=15; đáp án=123.5; sai số=0.25; đơn vị=tỷ
 
-Giải thích: Khoảng 123,5 tỷ, hơn 15 lần vốn góp. Con số chỉ minh họa cơ chế lãi kép; lợi nhuận thực tế phụ thuộc thị trường từng giai đoạn và không được bảo đảm.
+Giải thích: Khoảng 123,5 tỷ đồng (gấp hơn 15 lần tổng vốn tự bỏ ra). Con số minh họa cho sức mạnh tích lũy của kỷ luật định kỳ kết hợp với đòn bẩy thời gian dài hạn.
 
 > Nguồn: DCA là gì? Đầu tư đều đặn và lãi kép
 
 #### Câu b4c-last-decade · Chọn đáp án · Vì sao?
 
-Bối cảnh: Trong ví dụ 5 triệu/tuần, mỗi 10 năm số tiền góp như nhau. Vậy mà 10 năm đầu tài khoản chỉ đạt khoảng 5,8 tỷ, còn 10 năm cuối tăng thêm khoảng 94 tỷ (từ 29,1 lên 123,5 tỷ).
+Bối cảnh: Trong ví dụ trên, số tiền góp ở mỗi chặng 10 năm là như nhau. Tuy nhiên, 10 năm đầu tài khoản chỉ đạt 5,8 tỷ; nhưng 10 năm cuối tài khoản tăng thêm tới 94 tỷ đồng (từ 29,1 lên 123,5 tỷ).
 
-Câu hỏi: Vì sao 10 năm cuối tăng nhiều hơn hẳn?
+Câu hỏi: Nguyên nhân vì sao 10 năm cuối cùng tài sản lại bứt phá mạnh mẽ như vậy?
 
-- [ ] Vì 10 năm cuối thị trường được giả định tăng mạnh hơn
-- [x] Vì 15% được tính trên cả khối tài sản đã tích lũy
-- [ ] Vì về sau người góp chọn được thời điểm mua tốt hơn
+- [ ] Vì thị trường chứng khoán được giả định tăng trưởng mạnh hơn ở 10 năm cuối
+- [x] Vì mức 15%/năm được tính trên quy mô nền tài sản khổng lồ đã tích lũy từ trước
+- [ ] Vì nhà đầu tư lựa chọn được thời điểm mua tối ưu hơn ở giai đoạn sau
 
-Giải thích: Mức giả định không đổi, 15% mỗi năm; thứ thay đổi là nền tài sản để tính 15% đó. Những năm cuối, phần sinh lời vượt xa tiền góp, nhưng chỉ đến với người kiên trì qua những năm đầu.
+Giải thích: Tỷ lệ giả định 15%/năm không đổi, nhưng nền vốn để tính 15% ở 10 năm cuối đã lớn hơn rất nhiều. Những năm cuối hành trình, tiền lời sinh ra vượt xa số tiền bạn tự nộp hằng tuần.
 
 > Nguồn: DCA là gì? Đầu tư đều đặn và lãi kép
 
@@ -1434,29 +1434,29 @@ Giải thích: Mua cao bán thấp làm đứt gãy đà tích lũy, khiến lã
 
 #### Câu b4c-ten-years-early · Chọn đáp án · Dự đoán
 
-Bối cảnh: Giả định 15%/năm (minh họa). Chị Vy góp 3 triệu/tháng từ 25 đến 35 tuổi rồi dừng góp, để nguyên tài khoản; anh Khang góp 3 triệu/tháng từ 35 đến 60 tuổi.
+Bối cảnh: Giả định 15%/năm (minh họa, không được bảo đảm): chị Vy góp 3 triệu/tháng từ 25 đến 35 tuổi rồi ngừng nộp vốn (góp 360 triệu); anh Khang bắt đầu từ 35 đến 60 tuổi mới góp 3 triệu/tháng (góp 900 triệu).
 
-Câu hỏi: Năm 60 tuổi, ai có nhiều tiền hơn?
+Câu hỏi: Tại mốc 60 tuổi, tổng tài sản của ai sẽ lớn hơn?
 
-- [ ] Anh Khang, vì góp tới 900 triệu so với 360 triệu
-- [x] Chị Vy, dù chỉ góp trong 10 năm
-- [ ] Gần bằng nhau, vì hai người cùng mức góp
+- [ ] Anh Khang, vì tổng số tiền gốc nộp vào cao hơn nhiều (900 triệu so với 360 triệu)
+- [x] Chị Vy, dù chị chỉ trích vốn đầu tư trong đúng 10 năm đầu
+- [ ] Hai người có kết quả gần bằng nhau vì cùng mức góp 3 triệu/tháng
 
-Giải thích: Chị Vy khoảng 25,7 tỷ, anh Khang khoảng 8,2 tỷ. 10 năm góp sớm có thêm 25 năm lãi kép, nên mạnh hơn cả 25 năm góp muộn: thời gian là biến số lớn nhất bạn kiểm soát được.
+Giải thích: Chị Vy đạt khoảng 25,7 tỷ đồng, trong khi anh Khang đạt khoảng 8,2 tỷ đồng. 10 năm nộp vốn sớm của chị Vy có thêm 25 năm lãi kép chạy tự do, tạo ra sức mạnh vượt xa 25 năm nộp vốn muộn.
 
 > Nguồn: Câu chuyện về nhà đầu tư 60 tuổi
 
 #### Câu b4c-double-later · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: Anh Toàn 35 tuổi tính: "Bắt đầu muộn 10 năm thì mình góp gấp đôi là bù được." Giả định 15%/năm, anh góp 6 triệu/tháng đến 60 tuổi, còn bạn anh góp 3 triệu/tháng từ năm 25 tuổi.
+Bối cảnh: Anh Toàn (35 tuổi) tính toán: "Bắt đầu muộn 10 năm thì mình nâng gấp đôi mức góp lên 6 triệu/tháng là bù đắp hoàn toàn cho bạn mình (người góp 3 triệu/tháng từ năm 25 tuổi)". Giả định 15%/năm.
 
-Câu hỏi: Nhận định nào đúng?
+Câu hỏi: Nhận định nào dưới đây phản ánh đúng kết quả thực tế?
 
-- [ ] Góp gấp đôi sẽ cho kết quả gấp đôi người bạn
-- [ ] Hai người sẽ có kết quả gần bằng nhau
-- [x] Anh Toàn chỉ có khoảng một nửa, dù góp nhiều hơn
+- [ ] Góp vốn gấp đôi sẽ mang lại kết quả tài sản cuối kỳ gấp đôi
+- [ ] Hai người sẽ đạt kết quả gần tương đương nhau ở mốc 60 tuổi
+- [x] Anh Toàn chỉ đạt khoảng một nửa tài sản của bạn, dù số tiền tự bỏ ra nhiều hơn
 
-Giải thích: Khoảng 16,3 tỷ so với 33,8 tỷ, dù anh Toàn góp 1,8 tỷ còn bạn anh góp 1,26 tỷ. Thời gian đầu tư dài hơn tạo tác động lũy kế lớn hơn việc tăng số tiền bỏ vào.
+Giải thích: Anh Toàn đạt ~16,3 tỷ (vốn nộp 1,8 tỷ), còn người bạn đạt ~33,8 tỷ đồng (vốn nộp 1,26 tỷ). Việc gia tăng số tiền nộp vào không thể bù đắp hoàn toàn cho khoảng thời gian lãi kép bị bỏ lỡ.
 
 > Nguồn: DCA là gì? Đầu tư đều đặn và lãi kép
 
@@ -1486,13 +1486,13 @@ Nội dung: Trong những năm đầu tiên, tài khoản tăng lên chủ yếu
 
 #### Câu b4c-five-years · Đoán số
 
-Bối cảnh: Mô phỏng lịch sử: góp 10 triệu cuối mỗi tháng vào DCDS từ 8/2016. Sau 3 năm, 360 triệu vốn thành khoảng 404 triệu, gần 90% vẫn là tiền của chính mình.
+Bối cảnh: Dữ liệu mô phỏng DCDS (2016–2021): góp 10 triệu/tháng, sau 3 năm vốn 360 triệu đạt ~404 triệu (90% là tiền gốc). Tiếp tục giữ kỷ luật đến năm thứ 5 với 600 triệu tiền gốc (kết quả quá khứ, chỉ để minh họa).
 
-Câu hỏi: Sau 5 năm, với 600 triệu vốn góp, tài khoản đạt khoảng bao nhiêu?
+Câu hỏi: Sau 5 năm, tổng giá trị tài khoản đạt khoảng bao nhiêu triệu đồng?
 
 Số liệu: nhỏ nhất=600; lớn nhất=2000; bước=10; bắt đầu=700; đáp án=1060; sai số=0.15; đơn vị=triệu
 
-Giải thích: Khoảng 1,06 tỷ: lợi nhuận tăng từ khoảng 44 triệu lên khoảng 460 triệu chỉ trong 2 năm. Kết quả quá khứ chỉ để minh họa, nhưng cho thấy hiệu ứng tích lũy thường đến muộn hơn ta mong.
+Giải thích: Khoảng 1,06 tỷ đồng. Phần lợi nhuận bứt phá từ 44 triệu (ở năm 3) lên tới khoảng 460 triệu đồng (ở năm 5). Tác động tích lũy luôn cần một khoảng thời gian nhất định để bộc lộ rõ nét.
 
 > Nguồn: 10 năm đầu tư đều đặn vào DCDS
 
@@ -1512,15 +1512,15 @@ Giải thích: Lợi nhuận tính trên nền vốn tích lũy. Khi nền vốn
 
 #### Câu b4c-dont-quit · Chọn đáp án · Ra quyết định
 
-Bối cảnh: Minh họa: sau 3 năm góp đều cho mục tiêu 10 năm, chị Hà thấy tài khoản chỉ hơn vốn khoảng 12%. Chị định dừng góp, chuyển sang gửi tiết kiệm cho "chắc ăn".
+Bối cảnh: Minh họa: sau 3 năm góp đều cho mục tiêu 10 năm, chị Hà thấy tài khoản chỉ lời khoảng 12% so với vốn gốc. Chị nản lòng định dừng góp để chuyển sang gửi tiết kiệm cho chắc chắn.
 
-Câu hỏi: Chị nên cân nhắc gì trước khi đổi kế hoạch?
+Câu hỏi: Chị Hà nên cân nhắc điều gì trước khi quyết định hủy bỏ kế hoạch?
 
-- [x] Ba năm đầu chủ yếu là tiền góp; hãy đánh giá theo mục tiêu 10 năm
-- [ ] Lợi nhuận nhỏ sau 3 năm chứng tỏ quỹ hoạt động kém, nên đổi ngay
-- [ ] Tạm dừng góp, đợi thị trường tăng mạnh rồi góp tiếp
+- [x] 3 năm đầu chủ yếu là giai đoạn tích vốn; thước đo chuẩn mực phải căn cứ vào mục tiêu 10 năm
+- [ ] Lợi nhuận nhỏ sau 3 năm là bằng chứng cho thấy quỹ hoạt động kém, nên đổi quỹ ngay
+- [ ] Tạm dừng nộp tiền, chờ thị trường bứt phá mạnh rồi mới tiếp tục góp
 
-Giải thích: Trong mô phỏng DCDS, phần tăng thêm so với vốn chỉ khoảng 44 triệu ở năm 3 nhưng vượt 1 tỷ ở năm 10. Thước đo đúng là mục tiêu và thời hạn, không phải cảm giác sau vài năm đầu.
+Giải thích: Trong mô phỏng DCDS, phần lãi thêm chỉ khoảng 44 triệu ở năm thứ 3 nhưng đã vượt mốc 1 tỷ đồng ở năm thứ 10. Thước đo đúng đắn là mốc thời gian mục tiêu ban đầu chứ không phải cảm xúc ngắn hạn.
 
 > Nguồn: 10 năm đầu tư đều đặn vào DCDS
 
@@ -1528,29 +1528,29 @@ Giải thích: Trong mô phỏng DCDS, phần tăng thêm so với vốn chỉ k
 
 #### Câu b4c-step-up-result · Chọn đáp án · Dự đoán
 
-Bối cảnh: Mô phỏng DCDS 8/2016–7/2026: góp cố định 10 triệu/tháng được khoảng 2,21 tỷ. Chị Trang cũng bắt đầu từ 10 triệu nhưng mỗi năm tăng mức góp 5%, lên khoảng 15,5 triệu/tháng ở năm 10, tổng cộng góp thêm khoảng 310 triệu.
+Bối cảnh: Mô phỏng DCDS (2016–2026): góp cố định 10 triệu/tháng đạt ~2,21 tỷ. Chị Trang bắt đầu từ 10 triệu/tháng nhưng mỗi năm tăng mức góp thêm 5% (năm thứ 10 góp ~15,5 triệu/tháng), nộp thêm tổng cộng ~310 triệu tiền gốc (kết quả quá khứ, chỉ để minh họa).
 
-Câu hỏi: Tài khoản cuối kỳ của chị Trang đạt khoảng bao nhiêu?
+Câu hỏi: Giá trị tài khoản cuối kỳ của chị Trang đạt khoảng bao nhiêu?
 
-- [ ] Khoảng 2,52 tỷ: 2,21 tỷ cộng 310 triệu góp thêm
-- [x] Khoảng 2,65 tỷ
-- [ ] Khoảng 3,3 tỷ, gấp rưỡi vì mức góp gấp rưỡi
+- [ ] Khoảng 2,52 tỷ đồng (bằng 2,21 tỷ cộng thêm đúng 310 triệu tiền nộp thêm)
+- [x] Khoảng 2,65 tỷ đồng
+- [ ] Khoảng 3,3 tỷ đồng
 
-Giải thích: Góp thêm khoảng 310 triệu, tài khoản thêm khoảng 440 triệu, vì phần góp thêm cũng sinh lời. Mức tăng ở các năm sau có ít thời gian hơn, nên chưa đến mức gấp rưỡi; kết quả quá khứ chỉ để minh họa.
+Giải thích: Khoảng 2,65 tỷ đồng. Nộp thêm 310 triệu tiền gốc giúp tài sản tăng thêm tới 440 triệu đồng nhờ phần vốn góp bổ sung cũng liên tục sinh lời.
 
 > Nguồn: 10 năm đầu tư đều đặn vào DCDS
 
 #### Câu b4c-early-extra · Chọn đáp án · Dự đoán
 
-Bối cảnh: Giả định 15%/năm (minh họa), kế hoạch 10 năm. Anh Long góp thêm 2 triệu/tháng trong 3 năm đầu; chị Mỹ góp thêm đúng 2 triệu/tháng nhưng trong 3 năm cuối.
+Bối cảnh: Kế hoạch 10 năm, giả định 15%/năm (minh họa, không được bảo đảm): anh Long nộp thêm 2 triệu/tháng trong 3 năm đầu; chị Mỹ nộp thêm đúng 2 triệu/tháng nhưng ở 3 năm cuối.
 
-Câu hỏi: Đến năm 10, phần góp thêm 72 triệu của mỗi người thành bao nhiêu?
+Câu hỏi: Đến năm thứ 10, phần vốn nộp thêm 72 triệu đồng của ai sẽ tạo ra giá trị cao hơn?
 
-- [ ] Cả hai cùng khoảng 89 triệu
-- [x] Long khoảng 237 triệu, Mỹ khoảng 89 triệu
-- [ ] Long khoảng 89 triệu, Mỹ khoảng 237 triệu
+- [ ] Cả hai đều đạt kết quả như nhau, khoảng 89 triệu đồng
+- [x] Anh Long đạt khoảng 237 triệu, chị Mỹ đạt khoảng 89 triệu đồng
+- [ ] Anh Long đạt khoảng 89 triệu, chị Mỹ đạt khoảng 237 triệu đồng
 
-Giải thích: Cùng 72 triệu, nhưng khoản của anh Long có thêm 7 năm sinh lời. Mỗi khoản góp bổ sung từ sớm tạo khác biệt lớn khi được lãi kép tích lũy trong nhiều năm.
+Giải thích: Cùng khoản vốn nộp thêm 72 triệu, nhưng khoản tiền của anh Long có thêm 7 năm hưởng lãi kép tích lũy, tạo ra giá trị cao hơn hẳn.
 
 > Nguồn: Làm sao đạt 1 tỷ đồng đầu tiên
 
@@ -1578,13 +1578,13 @@ Giải thích: Tăng mức góp ngay khi thu nhập gia tăng giúp quy mô tài
 
 #### Câu b4c-fee-gap-30y · Đoán số
 
-Bối cảnh: Giả định minh họa: 500 triệu đầu tư một lần, lợi nhuận trước phí 12%/năm. Quỹ A thu phí 0,5%/năm (còn 11,5%), quỹ B thu phí 2%/năm (còn 10%).
+Bối cảnh: Mô phỏng 500 triệu đầu tư 30 năm, lợi nhuận trước phí 12%/năm (minh họa, không được bảo đảm): Quỹ A phí 0,5%/năm (ròng 11,5%), Quỹ B phí 2%/năm (ròng 10%).
 
-Câu hỏi: Sau 30 năm, tài khoản ở quỹ A hơn quỹ B khoảng bao nhiêu tỷ?
+Câu hỏi: Sau 30 năm, tài khoản ở Quỹ A cao hơn Quỹ B khoảng bao nhiêu tỷ đồng?
 
 Số liệu: nhỏ nhất=0; lớn nhất=10; bước=0.1; bắt đầu=1; đáp án=4.4; sai số=0.25; đơn vị=tỷ
 
-Giải thích: Khoảng 4,4 tỷ (13,1 tỷ so với 8,7 tỷ), gần 9 lần vốn ban đầu. Phần phí bị trừ mỗi năm mất luôn cơ hội sinh lời ở các năm sau, nên khoảng cách lớn dần theo thời gian.
+Giải thích: Khoảng 4,4 tỷ đồng (13,1 tỷ so với 8,7 tỷ). Khoản phí bị khấu trừ hằng năm làm mất đi cơ hội sinh lời kép của chính số tiền đó trong các năm tiếp theo.
 
 > Nguồn: W5 Bài 2 · Quỹ chỉ số
 
@@ -1620,15 +1620,15 @@ Giải thích: Phí là khoản chi chắc chắn phải trả, trong khi khả 
 
 #### Câu b4c-double-count · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: Giả định minh họa: báo cáo quỹ ghi tổng lợi nhuận năm qua 12%, đã tính phần cổ tức phân phối. Anh Bảo nhận cổ tức tương đương 2% và tính: "Vậy mình lãi 14%."
+Bối cảnh: Giả định minh họa: báo cáo quỹ ghi tổng lợi nhuận năm qua là 12% (đã bao gồm phần cổ tức phân phối). Anh Bảo nhận cổ tức 2% tiền mặt và tính: "Vậy tổng lãi của mình là 14%".
 
-Câu hỏi: Nhận định nào đúng?
+Câu hỏi: Nhận định nào dưới đây phản ánh đúng phép tính?
 
-- [ ] Đúng, cổ tức là phần cộng thêm vào tổng lợi nhuận
-- [x] Sai, 12% đã gồm cổ tức nên cộng thêm là tính hai lần
-- [ ] Sai, phải lấy 12% trừ đi 2% cổ tức
+- [ ] Đúng, cổ tức tiền mặt nhận về là khoản lợi nhuận cộng thêm
+- [x] Sai, con số 12% đã bao gồm cổ tức, việc cộng thêm 2% là tính trùng hai lần
+- [ ] Sai, phải lấy 12% trừ đi 2% cổ tức mới ra kết quả thực
 
-Giải thích: Trước khi cộng, hãy xem định nghĩa của chỉ tiêu đang đọc. Không cộng thêm cổ tức vào một chỉ tiêu đã bao gồm cổ tức; đối chiếu báo cáo quỹ với cách hiển thị trên tài khoản.
+Giải thích: Chỉ số tổng lợi nhuận công bố đã tính toán trọn vẹn cả phần tăng giá NAV và phần cổ tức phân phối. Việc cộng thêm cổ tức nhận về vào chỉ số này sẽ dẫn đến sai lệch dữ liệu.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 40
 
@@ -1680,43 +1680,43 @@ Giải thích: Tiền đã chi trả ra tài khoản ngân hàng sẽ nằm ngo�
 
 #### Câu b4c-cp-withdraw · Chọn đáp án · Dự đoán
 
-Bối cảnh: Giả định 10%/năm (minh họa). Anh Dũng và chị Loan cùng đầu tư 200 triệu trong 10 năm; anh Dũng rút phần lợi nhuận mỗi cuối năm để tiêu, chị Loan để nguyên.
+Bối cảnh: Giả định 10%/năm (minh họa, không được bảo đảm): Anh Dũng và chị Loan cùng đầu tư 200 triệu trong 10 năm; anh Dũng mỗi năm rút tiền lời ra tiêu, chị Loan để nguyên tái đầu tư.
 
-Câu hỏi: Sau 10 năm, tài khoản của chị Loan khoảng bao nhiêu?
+Câu hỏi: Sau 10 năm, tổng tài sản của chị Loan đạt khoảng bao nhiêu?
 
-- [ ] Khoảng 400 triệu: vốn cộng 10 lần 20 triệu
-- [x] Khoảng 519 triệu
-- [ ] Khoảng 2 tỷ
+- [ ] Khoảng 400 triệu đồng (200 triệu gốc + 10 năm × 20 triệu)
+- [x] Khoảng 519 triệu đồng
+- [ ] Khoảng 2 tỷ đồng
 
-Giải thích: Anh Dũng rút tổng cộng 200 triệu và còn 200 triệu vốn; chị Loan hơn khoảng 119 triệu vì lợi nhuận ở lại tiếp tục sinh lời. Rút lợi nhuận ra là ngắt lãi kép.
+Giải thích: Anh Dũng rút tổng cộng 200 triệu và giữ nguyên 200 triệu gốc. Chị Loan đạt ~519 triệu đồng (hơn anh Dũng 119 triệu) nhờ phần tiền lời ở lại liên tục sinh lãi kép.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 38
 
 #### Câu b4c-cp-siblings · Chọn đáp án · Dự đoán
 
-Bối cảnh: Giả định 15%/năm (minh họa). Hai chị em cùng góp 5 triệu/tháng đến năm 58 tuổi: chị bắt đầu năm 28 tuổi (góp 1,8 tỷ), em bắt đầu năm 38 tuổi (góp 1,2 tỷ).
+Bối cảnh: Giả định 15%/năm (minh họa, không được bảo đảm): hai chị em cùng góp 5 triệu/tháng đến năm 58 tuổi; người chị bắt đầu năm 28 tuổi (góp 1,8 tỷ), người em bắt đầu năm 38 tuổi (góp 1,2 tỷ).
 
-Câu hỏi: Kết quả của chị so với em thế nào?
+Câu hỏi: Tài sản của người chị ở mốc 58 tuổi so với người em thế nào?
 
-- [ ] Gấp khoảng 1,5 lần, bằng tỷ lệ vốn góp
+- [ ] Gấp khoảng 1,5 lần (tương ứng tỷ lệ vốn góp 1,8 / 1,2)
 - [x] Gấp hơn 4 lần
-- [ ] Gần bằng nhau
+- [ ] Gần tương đương nhau
 
-Giải thích: Khoảng 27,8 tỷ so với 6,6 tỷ. 10 năm thêm ở đầu hành trình được nhân lên ở cuối, nên trì hoãn có chi phí cơ hội rất thật.
+Giải thích: Người chị đạt ~27,8 tỷ, người em đạt ~6,6 tỷ đồng. 10 năm tích lũy sớm ở đầu hành trình được nhân bản vượt bậc nhờ khoảng thời gian lãi kép dài hơn.
 
 > Nguồn: Câu chuyện về nhà đầu tư 60 tuổi
 
 #### Câu b4c-cp-dcds-5-10 · Chọn đáp án · Vì sao?
 
-Bối cảnh: Mô phỏng DCDS, góp 10 triệu/tháng từ 8/2016: từ năm 5 đến năm 10, vốn góp thêm 600 triệu nhưng tài khoản tăng từ khoảng 1,06 tỷ lên 2,21 tỷ.
+Bối cảnh: Dữ liệu DCDS (góp 10 triệu/tháng từ 2016): từ năm thứ 5 đến năm thứ 10, tiền gốc nộp thêm là 600 triệu nhưng tài khoản bứt phá từ 1,06 tỷ lên 2,21 tỷ đồng (kết quả quá khứ, chỉ để minh họa).
 
-Câu hỏi: Vì sao tài khoản tăng gần gấp đôi số tiền góp thêm?
+Câu hỏi: Vì sao giá trị tài khoản lại tăng gần gấp đôi số tiền vốn nộp thêm?
 
-- [ ] Vì giai đoạn sau quỹ chuyển sang chiến lược rủi ro hơn
-- [x] Vì lợi nhuận được tính trên khối tài sản đã lớn hơn nhiều
-- [ ] Vì tiền góp giai đoạn sau được mua với giá ưu đãi
+- [ ] Vì ở giai đoạn sau quỹ chuyển sang áp dụng chiến lược mạo hiểm hơn
+- [x] Vì tỷ lệ sinh lời được tính trên quy mô nền tài sản đã lớn hơn rất nhiều
+- [ ] Vì tiền nộp giai đoạn sau được mua với mức giá ưu đãi đặc biệt
 
-Giải thích: Tài khoản tăng khoảng 1,15 tỷ so với 600 triệu góp thêm. Lãi kép mạnh dần khi tài sản lớn lên; kết quả quá khứ chỉ minh họa, không bảo đảm cho tương lai.
+Giải thích: Tài sản tăng thêm 1,15 tỷ đồng trong khi vốn chỉ nộp thêm 600 triệu. Hiệu ứng lãi kép thể hiện sức mạnh ngày càng rõ khi quy mô nền tài sản tích lũy đã đạt độ lớn cần thiết.
 
 > Nguồn: 10 năm đầu tư đều đặn vào DCDS
 
@@ -1736,15 +1736,15 @@ Giải thích: Bắt đầu sớm giúp bạn sở hữu biến động thời g
 
 #### Câu b4c-cp-fee-1pct · Chọn đáp án · Dự đoán
 
-Bối cảnh: Giả định minh họa: hai khoản 1 tỷ, một khoản sinh lời 12%/năm, khoản kia 11%/năm vì phí cao hơn 1%. Sau 10 năm, khoản đầu hơn khoảng 270 triệu.
+Bối cảnh: Hai khoản 1 tỷ đồng: Khoản A sinh lời 12%/năm (minh họa, không được bảo đảm), Khoản B sinh lời 11%/năm (do phí cao hơn 1%). Sau 10 năm, Khoản A hơn Khoản B khoảng 270 triệu.
 
-Câu hỏi: Sau 30 năm, chênh lệch khoảng bao nhiêu?
+Câu hỏi: Sau 30 năm, khoảng cách chênh lệch giữa hai khoản sẽ là bao nhiêu?
 
-- [ ] Khoảng 810 triệu, gấp 3 lần mốc 10 năm
-- [x] Khoảng 7 tỷ
-- [ ] Vẫn khoảng 270 triệu
+- [ ] Khoảng 810 triệu đồng (gấp 3 lần mốc 10 năm)
+- [x] Khoảng 7 tỷ đồng
+- [ ] Vẫn giữ nguyên khoảng 270 triệu đồng
 
-Giải thích: Khoảng 7,1 tỷ, gấp hơn 25 lần mốc 10 năm dù thời gian chỉ gấp 3. Phí cũng có lãi kép: chênh lệch nhỏ mỗi năm thành khoảng cách lớn khi đầu tư rất dài hạn.
+Giải thích: Khoảng 7,1 tỷ đồng (gấp hơn 25 lần mốc 10 năm dù thời gian chỉ tăng gấp 3). Chi phí bị trừ hằng tháng cũng bị tính "lãi kép ngược", tạo ra khoảng cách khổng lồ trong dài hạn.
 
 > Nguồn: W5 Bài 2 · Quỹ chỉ số
 
@@ -1792,15 +1792,15 @@ Giải thích: Mỗi đợt tiền nộp vào có số tháng "làm việc" khá
 
 #### Câu b3-ten-years · Chọn đáp án · Dự đoán
 
-Bối cảnh: Nhà đầu tư đó tiếp tục góp 10 triệu/tháng vào DCDS từ 8/2016. Sau 10 năm, tổng vốn góp là 1,2 tỷ đồng (số liệu quá khứ, chỉ để minh họa).
+Bối cảnh: Nhà đầu tư tiếp tục kiên trì góp 10 triệu/tháng vào DCDS từ 2016 đến 2026. Tổng tiền vốn tự nộp là 1,2 tỷ đồng (kết quả quá khứ, chỉ để minh họa).
 
-Câu hỏi: Tài khoản đạt khoảng bao nhiêu?
+Câu hỏi: Giá trị tài khoản thu về đạt khoảng bao nhiêu?
 
-- [ ] Khoảng 1,3 tỷ
-- [x] Khoảng 2,2 tỷ
-- [ ] Khoảng 6 tỷ
+- [ ] Khoảng 1,3 tỷ đồng
+- [x] Khoảng 2,2 tỷ đồng
+- [ ] Khoảng 6 tỷ đồng
 
-Giải thích: Khoảng 2,21 tỷ: phần lợi nhuận đã gần bằng vốn góp, dù 3 năm đầu gần như không thấy. Lãi kép cần thời gian; kết quả quá khứ không bảo đảm tương lai.
+Giải thích: Khoảng 2,21 tỷ đồng. Lợi nhuận tích lũy (~1,01 tỷ) đã gần đuổi kịp tổng số tiền vốn tự bỏ vào, cho thấy thành quả rõ rệt của kỷ luật dài hạn.
 
 > Nguồn: 10 năm đầu tư đều đặn vào DCDS
 
@@ -1834,55 +1834,55 @@ Giải thích: Người cố gắng đoán nhịp bán ra rồi mua lại thu v�
 
 #### Câu b5d-units-bought · Đoán số
 
-Bối cảnh: Minh họa: chị Mai góp 6 triệu đồng mỗi tháng. Giá CCQ ba tháng lần lượt là 20.000đ, 15.000đ và 30.000đ.
+Bối cảnh: Chị Mai góp 6 triệu đồng mỗi tháng. Mức giá NAV/CCQ trong 3 tháng lần lượt là 20.000đ, 15.000đ và 30.000đ (minh họa, không được bảo đảm).
 
-Câu hỏi: Sau 3 tháng, chị Mai có tổng cộng bao nhiêu CCQ?
+Câu hỏi: Sau 3 tháng, chị Mai sở hữu tổng cộng bao nhiêu chứng chỉ quỹ?
 
 Số liệu: nhỏ nhất=0; lớn nhất=2000; bước=50; bắt đầu=600; đáp án=900; sai số=0.1; đơn vị=CCQ
 
-Giải thích: Cùng 6 triệu nhưng tháng giá 15.000đ mua được 400 CCQ, gấp đôi tháng giá 30.000đ. Người mua không quyết định được giá, chỉ quyết định được số tiền bỏ ra.
+Giải thích: Tháng 1 (6tr ÷ 20k = 300 CCQ); Tháng 2 (6tr ÷ 15k = 400 CCQ); Tháng 3 (6tr ÷ 30k = 200 CCQ). Tổng cộng: 300 + 400 + 200 = 900 CCQ.
 
 > Nguồn: Không ai đợi giá xăng giảm mới đổ xăng
 
 #### Câu b5d-avg-cost-value · Chọn đáp án · Dự đoán
 
-Bối cảnh: Minh họa tiếp: chị Mai đã bỏ ra 18 triệu đồng và nhận về 900 CCQ qua ba lần mua ở giá 20.000đ, 15.000đ và 30.000đ.
+Bối cảnh: Chị Mai đã bỏ ra tổng cộng 18 triệu đồng và nhận về 900 CCQ qua 3 đợt mua (minh họa, không được bảo đảm).
 
-Câu hỏi: Giá vốn bình quân của chị là bao nhiêu?
+Câu hỏi: Giá vốn bình quân trên mỗi chứng chỉ quỹ của chị Mai là bao nhiêu?
 
-- [ ] Khoảng 21.700đ, bằng trung bình cộng ba mức giá
-- [x] 20.000đ mỗi CCQ
-- [ ] 15.000đ, vì tính theo lần mua rẻ nhất
+- [ ] Khoảng 21.700đ (bằng trung bình cộng của 3 mức giá)
+- [x] 20.000đ mỗi chứng chỉ quỹ
+- [ ] 15.000đ (tính theo mức giá rẻ nhất)
 
-Giải thích: Giá vốn bình quân = tổng tiền bỏ ra chia tổng số CCQ: 18 triệu ÷ 900 = 20.000đ. Nó hình thành từ cả ba lần mua, không phụ thuộc một lần duy nhất.
+Giải thích: Giá vốn bình quân = Tổng tiền bỏ ra ÷ Tổng số CCQ = 18.000.000 ÷ 900 = 20.000đ/CCQ. Đây là giá vốn thực tế quản trị danh mục của chị Mai.
 
 > Nguồn: Không ai đợi giá xăng giảm mới đổ xăng
 
 #### Câu b5d-avg-below-mean · Chọn đáp án · Vì sao?
 
-Bối cảnh: Giá vốn bình quân của chị Mai là 20.000đ, trong khi trung bình cộng ba mức giá 20.000đ, 15.000đ và 30.000đ là khoảng 21.700đ (minh họa).
+Bối cảnh: Giá vốn thực tế của chị Mai là 20.000đ, trong khi trung bình cộng 3 mức giá (20k, 15k, 30k) lại là 21.700đ (minh họa, không được bảo đảm).
 
-Câu hỏi: Vì sao giá vốn lại thấp hơn trung bình cộng các mức giá?
+Câu hỏi: Vì sao giá vốn bình quân thực tế lại thấp hơn trung bình cộng các mức giá?
 
-- [ ] Vì quỹ giảm giá cho người góp định kỳ
-- [x] Vì số tiền cố định mua được nhiều CCQ hơn ở tháng giá thấp, nên giá thấp chiếm tỷ trọng lớn hơn
-- [ ] Vì tháng giá cao không được tính vào giá vốn
+- [ ] Vì công ty quản lý quỹ áp dụng chính sách giảm giá cho người góp định kỳ
+- [x] Vì số tiền cố định mua được nhiều CCQ hơn ở tháng giá thấp, kéo tỷ trọng giá thấp lên cao hơn
+- [ ] Vì đợt mua ở mức giá cao không được tính vào giá vốn
 
-Giải thích: Mọi lần mua đều được tính, nhưng lần mua rẻ mang về nhiều CCQ hơn nên kéo giá vốn xuống. Đó là cơ chế bình quân hóa giá mua của DCA, không phải ưu đãi của quỹ.
+Giải thích: Nhờ trích số tiền cố định, đợt giá giảm 15.000đ chị mua được tới 400 CCQ (chiếm tỷ trọng lớn nhất), giúp kéo giá vốn bình quân tổng xuống thấp hơn toán học thuần túy.
 
 > Nguồn: DCA là gì? Đầu tư đều đặn và lãi kép
 
 #### Câu b5d-one-shot-vs-avg · Chọn đáp án · Dự đoán
 
-Bối cảnh: Minh họa: anh Bình dồn cả 18 triệu mua một lần ở tháng 3, giá 30.000đ, được 600 CCQ. Tháng 4 giá CCQ về 20.000đ.
+Bối cảnh: Anh Bình dồn 18 triệu mua một lần ở tháng thứ 3 (giá 30.000đ) được 600 CCQ. Tháng thứ 4, giá CCQ điều chỉnh về mốc 20.000đ (minh họa, không được bảo đảm).
 
-Câu hỏi: Lúc này tài khoản của anh Bình và chị Mai (900 CCQ) thế nào?
+Câu hỏi: Lúc này tình trạng tài khoản của anh Bình và chị Mai (900 CCQ) thế nào?
 
-- [ ] Cả hai lỗ như nhau, vì cùng bỏ ra 18 triệu
-- [ ] Anh Bình lãi hơn, vì mua ít lần nên ít tốn phí
-- [x] Chị Mai hòa vốn 18 triệu, anh Bình còn 12 triệu
+- [ ] Cả hai cùng bị lỗ như nhau vì đều bỏ ra 18 triệu đồng
+- [ ] Anh Bình có kết quả tốt hơn vì mua một lần tiết kiệm chi phí
+- [x] Chị Mai hòa vốn (900 × 20k = 18tr), anh Bình còn 12 triệu (600 × 20k)
 
-Giải thích: Kết quả của anh Bình phụ thuộc hoàn toàn vào giá của một lần mua. Nếu anh mua đúng tháng 2 thì kết quả đã ngược lại, nên DCA không phải luôn hơn, chỉ bớt phụ thuộc vào việc đoán đúng.
+Giải thích: Anh Bình đặt cược toàn bộ vào một thời điểm duy nhất nên chịu rủi ro đuôi. DCA giúp chị Mai phân tán rủi ro điểm mua và giữ tài khoản ở vị thế an toàn hơn.
 
 > Nguồn: Không ai đợi giá xăng giảm mới đổ xăng
 
@@ -1948,13 +1948,13 @@ Giải thích: Việc ngồi chờ thị trường giảm có thể khiến bạ
 
 #### Câu b5d-invest-now-share · Đoán số
 
-Bối cảnh: Dữ liệu DCDS 5/2004–6/2026 (bình quân ~12,6%/năm, kết quả quá khứ): ở mỗi thời điểm, so sánh đầu tư ngay với chờ 6 tháng rồi mới đầu tư, đo sau 3 năm.
+Bối cảnh: Dữ liệu DCDS (2004–2026): so sánh giữa việc giải ngân ngay và việc chờ 6 tháng rồi mới mua, đo lường kết quả sau 3 năm (kết quả quá khứ, chỉ để minh họa).
 
-Câu hỏi: Đầu tư ngay cho kết quả cao hơn trong khoảng bao nhiêu % trường hợp?
+Câu hỏi: Phương án giải ngân ngay cho kết quả cao hơn trong bao nhiêu phần trăm số trường hợp?
 
 Số liệu: nhỏ nhất=0; lớn nhất=100; bước=1; bắt đầu=50; đáp án=63; sai số=0.15; đơn vị=%
 
-Giải thích: Khoảng 63%, và 58% khi so với chờ 3 tháng. Không phải lúc nào đầu tư ngay cũng thắng, nhưng thời gian tiền đứng ngoài thị trường thường đắt hơn chọn sai ngày mua.
+Giải thích: Khoảng 63% trường hợp giải ngân ngay thắng phương án chờ 6 tháng. Thời gian tiền đứng ngoài thị trường chờ đợi thường đắt hơn nhiều so với rủi ro chọn sai ngày mua.
 
 > Nguồn: Ngày tốt nhất để đầu tư là ngày tiền về tài khoản
 
@@ -1974,15 +1974,15 @@ Giải thích: Nền kinh tế và doanh nghiệp phát triển giúp thị trư
 
 #### Câu b5d-unluckiest · Chọn đáp án · Dự đoán
 
-Bối cảnh: Anh Dũng lo mình "đen": giả sử suốt 265 tháng, tháng nào anh cũng mua trúng ngày giá DCDS cao nhất tháng (dữ liệu quá khứ, minh họa).
+Bối cảnh: Giả sử trong suốt 265 tháng, anh Dũng đều "xui xẻo" mua đúng vào ngày có mức giá NAV cao nhất của mỗi tháng (kết quả quá khứ, chỉ để minh họa).
 
-Câu hỏi: Anh kém người mua theo lịch cố định khoảng bao nhiêu?
+Câu hỏi: Kết quả cuối cùng của anh Dũng kém người mua theo lịch cố định khoảng bao nhiêu?
 
-- [ ] Khoảng một nửa
+- [ ] Khoảng 50%
 - [ ] Khoảng 30%
-- [x] Chỉ khoảng 3,6%
+- [x] Chỉ kém khoảng 3,6%
 
-Giải thích: Người xui nhất chỉ kém khoảng 3,6%, người may nhất chỉ hơn khoảng 2,7%. Cả trò chơi chọn ngày kéo dài hơn hai thập kỷ hóa ra chỉ đáng vài phần trăm.
+Giải thích: Người xui xẻo nhất chỉ kém người mua lịch cố định khoảng 3,6%, còn người may mắn nhất mua đúng đáy mỗi tháng cũng chỉ nhỉnh hơn 2,7%. Yếu tố chọn ngày mua trong tháng chỉ chiếm tỷ trọng rất nhỏ trong tổng thành quả dài hạn.
 
 > Nguồn: Ngày tốt nhất để đầu tư là ngày tiền về tài khoản
 
@@ -2124,15 +2124,15 @@ Giải thích: Thời điểm đỉnh hay đáy của thị trường là yếu 
 
 #### Câu b5d-raise-5pct · Chọn đáp án · Dự đoán
 
-Bối cảnh: Minh họa trên dữ liệu DCDS 8/2016–7/2026: thay vì giữ 10 triệu/tháng, một người tăng số tiền góp 5% mỗi năm (lên ~15,5 triệu ở năm thứ 10), tức bỏ thêm khoảng 310 triệu.
+Bối cảnh: Dữ liệu DCDS (2016–2026): Thay vì giữ cố định 10 triệu/tháng (~2,21 tỷ), nhà đầu tư chủ động tăng mức góp thêm 5% mỗi năm (~15,5 triệu ở năm 10), nộp thêm ~310 triệu (kết quả quá khứ, chỉ để minh họa).
 
-Câu hỏi: Tài khoản cuối kỳ tăng thêm khoảng bao nhiêu?
+Câu hỏi: Giá trị tài khoản cuối kỳ tăng thêm khoảng bao nhiêu?
 
-- [ ] Khoảng 310 triệu, đúng bằng phần góp thêm
-- [x] Khoảng 440 triệu, lên 2,65 tỷ
-- [ ] Khoảng 1 tỷ, gấp ba phần góp thêm
+- [ ] Khoảng 310 triệu đồng, đúng bằng số tiền nộp thêm
+- [x] Khoảng 440 triệu đồng, nâng tổng tài sản lên 2,65 tỷ
+- [ ] Khoảng 1 tỷ đồng
 
-Giải thích: Phần góp thêm cũng được sinh lời theo thời gian, nên tài khoản tăng nhiều hơn số vốn bỏ thêm. Số tiền góp là đòn bẩy bạn tự kiểm soát; kết quả quá khứ không bảo đảm tương lai.
+Giải thích: Phần vốn góp bổ sung hằng năm cũng liên tục sinh lời, giúp tổng tài sản tăng thêm 440 triệu đồng. Khả năng gia tăng mức góp theo thu nhập là đòn bẩy hoàn toàn nằm trong tay bạn.
 
 > Nguồn: 10 năm đầu tư đều đặn vào DCDS
 
@@ -2224,29 +2224,29 @@ Giải thích: Việc mua bán liên tục khiến bạn tốn thêm nhiều chi
 
 #### Câu b5d-cp-avg-cost · Chọn đáp án · Dự đoán
 
-Bối cảnh: Minh họa: chị Trang góp 5 triệu mỗi tháng. Tháng 1 giá CCQ 25.000đ, tháng 2 giá tăng lên 50.000đ.
+Bối cảnh: Chị Trang góp 5 triệu đồng mỗi tháng. Tháng 1 giá NAV/CCQ là 25.000đ, Tháng 2 giá tăng lên 50.000đ (minh họa, không được bảo đảm).
 
-Câu hỏi: Giá vốn bình quân của chị sau hai tháng là bao nhiêu?
+Câu hỏi: Giá vốn bình quân của chị Trang sau hai tháng là bao nhiêu?
 
-- [ ] 37.500đ, trung bình của hai mức giá
-- [x] Khoảng 33.300đ
-- [ ] 25.000đ, giá của lần mua đầu
+- [ ] 37.500đ (trung bình cộng của hai mức giá)
+- [x] Khoảng 33.300đ mỗi chứng chỉ quỹ
+- [ ] 25.000đ (giá của lần mua đầu tiên)
 
-Giải thích: 10 triệu mua được 200 + 100 = 300 CCQ, nên giá vốn khoảng 33.300đ. Tháng giá thấp mua được nhiều hơn nên kéo giá vốn xuống dưới trung bình cộng.
+Giải thích: 10 triệu bỏ ra mua được: Tháng 1 (200 CCQ) + Tháng 2 (100 CCQ) = 300 CCQ. Giá vốn = 10.000.000 ÷ 300 ≈ 33.333đ. Đợt mua giá rẻ nhận được nhiều CCQ hơn nên kéo giá vốn xuống thấp hơn trung bình cộng toán học.
 
 > Nguồn: Không ai đợi giá xăng giảm mới đổ xăng
 
 #### Câu b5d-cp-worst-buyer · Chọn đáp án · Vì sao?
 
-Bối cảnh: Người "xui nhất" mua đúng ngày giá DCDS cao nhất mỗi tháng suốt 265 tháng vẫn biến 2,65 tỷ vốn thành khoảng 11 tỷ (kết quả quá khứ, minh họa).
+Bối cảnh: Người "xui xẻo nhất" mua đúng ngày giá đỉnh hằng tháng suốt 265 tháng vẫn biến 2,65 tỷ đồng tiền gốc thành ~11 tỷ đồng (dữ liệu DCDS quá khứ, minh họa).
 
-Câu hỏi: Vì sao mua đỉnh liên tục mà kết quả vẫn gần người mua theo lịch?
+Câu hỏi: Vì sao mua đúng đỉnh liên tục mà kết quả vẫn tiệm cận người mua theo lịch cố định?
 
-- [ ] Vì suốt 22 năm đó thị trường không có đợt giảm nào
-- [x] Vì góp đều và ở lại thị trường đủ lâu quan trọng hơn giá của từng lần mua
-- [ ] Vì đầu tư định kỳ loại bỏ hoàn toàn rủi ro
+- [ ] Vì trong suốt 22 năm đó thị trường chứng khoán không có đợt suy thoái nào
+- [x] Vì việc góp đều đặn và hiện diện đủ lâu trên thị trường quan trọng hơn mức giá của từng đợt mua
+- [ ] Vì hình thức đầu tư định kỳ triệt tiêu hoàn toàn mọi rủi ro
 
-Giải thích: Chênh lệch giá trong một tháng là nhỏ so với tăng trưởng của hơn 20 năm. Kế hoạch đầu tư cả đời không nên phụ thuộc vào việc đoán đúng từng thời điểm.
+Giải thích: Mức chênh lệch giá trong một tháng rất nhỏ so với đà tăng trưởng tổng thể qua 20 năm. Sự kiên trì dài hạn chiến thắng những biến động giá ngắn hạn.
 
 > Nguồn: Không ai đợi giá xăng giảm mới đổ xăng
 
@@ -2268,15 +2268,15 @@ Giải thích: Tiền nằm chờ trong tài khoản đang thầm lặng trả c
 
 #### Câu b5d-cp-five-years · Chọn đáp án · Dự đoán
 
-Bối cảnh: Một người góp đều 10 triệu/tháng vào DCDS từ 8/2016. Sau 5 năm, tổng vốn góp là 600 triệu (kết quả quá khứ, minh họa).
+Bối cảnh: Nhà đầu tư góp đều 10 triệu/tháng vào DCDS từ 2016. Sau 5 năm, tổng tiền gốc nộp vào là 600 triệu đồng (kết quả quá khứ, chỉ để minh họa).
 
-Câu hỏi: Tài khoản đạt khoảng bao nhiêu?
+Câu hỏi: Giá trị tài khoản đạt khoảng bao nhiêu?
 
-- [ ] Khoảng 650 triệu
-- [x] Khoảng 1,06 tỷ
-- [ ] Khoảng 2,2 tỷ
+- [ ] Khoảng 650 triệu đồng
+- [x] Khoảng 1,06 tỷ đồng
+- [ ] Khoảng 2,2 tỷ đồng
 
-Giải thích: Phần tăng thêm đạt khoảng 461 triệu, trong khi ở năm thứ 3 gần 90% tài khoản vẫn là vốn góp. Khoảng cách giữa vốn và giá trị nới rộng dần theo thời gian.
+Giải thích: Khoảng 1,06 tỷ đồng. Phần lợi nhuận đạt khoảng 460 triệu đồng. Khoảng cách giữa tiền gốc nộp vào và giá trị tài sản thực tế sẽ ngày càng mở rộng theo thời gian.
 
 > Nguồn: 10 năm đầu tư đều đặn vào DCDS
 
@@ -5334,13 +5334,13 @@ Giải thích: Khi DCDE chia cổ tức tiền mặt, NAV/CCQ bị giảm tươn
 
 #### Câu a1d-dividend-cash · Đoán số
 
-Bối cảnh: Giả định chị Hạnh nắm 2.000 CCQ DCDE và quỹ phân phối cổ tức tiền mặt 1.300 đồng/CCQ.
+Bối cảnh: Giả định chị Hạnh sở hữu 2.000 CCQ DCDE và quỹ công bố phân phối cổ tức tiền mặt 1.300 đồng/CCQ.
 
-Câu hỏi: Trước khoản khấu trừ (nếu có), chị nhận khoảng bao nhiêu tiền?
+Câu hỏi: Trước khi trừ thuế/phí (nếu có), chị Hạnh nhận về tổng cộng bao nhiêu tiền?
 
 Số liệu: nhỏ nhất=0; lớn nhất=10000000; bước=100000; bắt đầu=5000000; đáp án=2600000; sai số=0.1; đơn vị=đồng
 
-Giải thích: 2.000 × 1.300 = 2,6 triệu đồng. Khoản này không phải tiền "cho thêm": nó được tách ra từ tài sản quỹ, nên NAV/CCQ giảm tương ứng sau ngày chốt quyền.
+Giải thích: 2.000 × 1.300 = 2,6 triệu đồng. Khoản tiền này được trích ra từ tài sản quỹ chuyển về tài khoản ngân hàng của chị, nên NAV/CCQ sẽ điều chỉnh giảm tương ứng.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 106
 
@@ -5360,15 +5360,15 @@ Giải thích: Phân phối cổ tức chỉ đơn thuần chuyển một phần
 
 #### Câu a1d-dividend-not-fixed · Chọn đáp án · Hiểu lầm phổ biến
 
-Bối cảnh: Bác Tâm, 63 tuổi, định mua DCDE vì nghĩ quỹ trả cổ tức mỗi năm một mức cố định, giống tiền lãi tiết kiệm để trang trải chi tiêu.
+Bối cảnh: Bác Tâm (63 tuổi) định mua DCDE vì tin rằng quỹ sẽ trả cổ tức tiền mặt cố định hằng năm giống như tiền lãi gửi tiết kiệm.
 
-Câu hỏi: Nhận định nào đúng về cổ tức DCDE?
+Câu hỏi: Nhận định nào dưới đây giải thích đúng về chính sách cổ tức của DCDE?
 
-- [ ] Mức cổ tức được cam kết trước, chỉ ngày trả là có thể thay đổi
-- [x] Mức và lịch chi trả theo phương án được duyệt và thông báo từng đợt
-- [ ] Cổ tức được trả hằng tháng, giống lãi tiền gửi
+- [ ] Mức cổ tức được cam kết cố định từ trước, chỉ có ngày chi trả là thay đổi
+- [x] Mức và lịch chi trả phụ thuộc vào phương án được phê duyệt và thông báo từng đợt
+- [ ] Cổ tức tiền mặt được trả đều đặn hằng tháng hệt như lãi tiết kiệm
 
-Giải thích: DCDE hướng đến phân phối tiền mặt nhưng không bảo đảm mức hay lịch cố định. Nếu cần dòng tiền đều, có thể lập kế hoạch bán định kỳ một phần CCQ thay vì trông vào cổ tức.
+Giải thích: DCDE hướng tới việc chi trả cổ tức tiền mặt nhưng không cam kết một mức cố định hay lịch trình cố định hằng năm. Nếu cần dòng tiền đều hằng tháng, bạn có thể lập kế hoạch bán định kỳ một phần chứng chỉ quỹ.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 104
 
@@ -5613,15 +5613,15 @@ Giải thích: Hiểu rõ hoàn cảnh bản thân trước rồi mới tiến h
 
 #### Câu a1d-referral-sell-fee · Chọn đáp án · Dự đoán
 
-Bối cảnh: Giả định cô Hoa mới giữ DCDS được 8 tháng. Nếu bán ngay để đổi quỹ, ngoài thuế TNCN 0,1% trên tổng tiền bán, cô còn chịu phí bán.
+Bối cảnh: Giả định cô Hoa mới nắm giữ DCDS được 8 tháng. Nếu cô quyết định bán ngay, cô sẽ chịu thuế TNCN 0,1% và phí bán.
 
-Câu hỏi: Phí bán cô Hoa phải trả là bao nhiêu?
+Câu hỏi: Mức phí bán áp dụng cho cô Hoa là bao nhiêu?
 
-- [ ] 0%, vì phí mua và bán đều miễn
-- [x] 1,5% giá trị bán
-- [ ] 2,5% giá trị bán
+- [ ] 0%, vì giao dịch được miễn phí
+- [x] 1,5% giá trị giao dịch bán
+- [ ] 2,5% giá trị giao dịch bán
 
-Giải thích: Phí bán giảm dần theo thời gian nắm giữ: trên 6 tháng đến 1 năm là 1,5%, giữ trên 2 năm là 0%. Đổi quỹ vội vàng có thể tốn phí, nên hãy rà soát kỹ trước khi bán.
+Giải thích: Phí bán DCDS giảm dần theo thời gian nắm giữ: từ 6 tháng đến 1 năm chịu phí 1,5%; nắm giữ trên 2 năm được miễn phí bán (0%).
 
 > Nguồn: Thư viện hỏi đáp Quỹ DC · Biểu phí & thuế
 
@@ -7191,15 +7191,15 @@ Nội dung: Tài khoản mở qua DragonX có hạn mức bán CCQ mặc định
 
 #### Câu a7l-limit-sum · Chọn đáp án · Dự đoán
 
-Bối cảnh: Giả định hạn mức bán đang hiển thị trên tài khoản chị Linh là 100 triệu đồng/tháng. Đầu tháng chị đã bán 70 triệu đồng, nay chị đặt thêm lệnh bán 45 triệu đồng.
+Bối cảnh: Giả định hạn mức bán trên tài khoản chị Linh là 100 triệu/tháng. Đầu tháng chị đã bán 70 triệu; nay chị đặt thêm lệnh bán 45 triệu đồng.
 
-Câu hỏi: Lệnh 45 triệu đồng sẽ ra sao?
+Câu hỏi: Lệnh bán 45 triệu đồng này sẽ được xử lý thế nào?
 
 - [ ] Được nhận, vì mỗi lệnh đều dưới 100 triệu đồng
 - [x] Báo vượt hạn mức, vì tổng giá trị bán trong tháng thành 115 triệu đồng
 - [ ] Được nhận, vì hạn mức tự tăng khi đã bán một lần
 
-Giải thích: Hạn mức tính trên tổng giá trị bán trong kỳ, gồm cả lệnh đã dùng hạn mức trước đó. Trước một lệnh lớn, cộng các lệnh trong tháng rồi so với hạn mức đang hiển thị.
+Giải thích: Hạn mức được tính cộng dồn trên tổng giá trị các lệnh bán đã thực hiện trong cùng một tháng. 70 + 45 = 115 triệu (vượt mốc 100 triệu) nên hệ thống sẽ báo lỗi.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 110
 
@@ -7755,15 +7755,15 @@ Giải thích: Địa điểm đặt văn phòng điều hành và địa chỉ 
 
 #### Câu a10d-no-cash-held · Chọn đáp án · Vì sao?
 
-Bối cảnh: Theo hướng dẫn trên DragonX, tiền mua DCDS của anh Sơn chuyển vào tài khoản của quỹ tại ngân hàng giám sát, không phải tài khoản của công ty Dragon Capital.
+Bối cảnh: Tiền đầu tư mua DCDS của anh Sơn được chuyển trực tiếp vào tài khoản mở tại Ngân hàng Giám sát chứ không chuyển vào tài khoản công ty Dragon Capital.
 
-Câu hỏi: Vì sao như vậy?
+Câu hỏi: Nguyên nhân vì sao lại có cơ chế này?
 
 - [ ] Vì ngân hàng giám sát bảo lãnh vốn cho nhà đầu tư
 - [x] Vì công ty quản lý ra quyết định đầu tư nhưng không giữ tiền của quỹ
 - [ ] Vì ngân hàng thu hộ phí quản lý cho công ty
 
-Giải thích: Tài sản quỹ được lưu ký tại ngân hàng giám sát, tách khỏi tài sản của công ty quản lý. Cơ chế này tăng minh bạch nhưng không bảo đảm vốn: NAV vẫn biến động theo thị trường.
+Giải thích: Đây là quy định tách biệt tài sản: Công ty quản lý quỹ chỉ đưa ra quyết định mua/bán, toàn bộ tiền và tài sản của quỹ do Ngân hàng Giám sát độc lập lưu ký. Cơ chế này tăng minh bạch nhưng không bảo đảm vốn: NAV vẫn biến động theo thị trường.
 
 > Nguồn: Thư viện hỏi đáp Quỹ DC · An toàn tài sản & pháp lý
 
@@ -7917,15 +7917,15 @@ Giải thích: Tất cả nhà đầu tư đều được hỗ trợ đầy đ�
 
 #### Câu a10d-weekend · Chọn đáp án · Ra quyết định
 
-Bối cảnh: 19:00 thứ Bảy, chị Hà thấy thông tin tài khoản nhận tiền trên DragonX hiển thị lạ. Giờ làm việc của DC là thứ 2 đến thứ 6, 9:00–12:00 và 13:30–17:30.
+Bối cảnh: 19:00 tối thứ Bảy, chị Hà thấy tài khoản hiển thị dấu hiệu bất thường. Giờ làm việc của DC là thứ 2 đến thứ 6, 9:00–12:00 và 13:30–17:30.
 
-Câu hỏi: Chị Hà nên làm gì?
+Câu hỏi: Chị Hà nên làm gì ngay lúc đó?
 
 - [ ] Gọi số "hỗ trợ 24/7" tìm thấy trên mạng xã hội
 - [x] Email ngay cho CSKH qua kênh chính thức và đổi PIN trên DragonX
 - [ ] Chờ sáng thứ Hai rồi mới làm bất cứ việc gì
 
-Giải thích: Ngoài giờ làm việc, email qua kênh chính thức vẫn lưu lại yêu cầu và thời điểm của bạn. Nghi lộ thông tin thì đổi PIN ngay, rồi gọi lại trong giờ làm việc nếu cần.
+Giải thích: Gửi email chính thức giúp ghi nhận mốc thời gian sự cố. Chủ động đổi mã PIN trên DragonX giúp ngăn chặn rủi ro trong lúc chờ tổng đài làm việc.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 99
 
@@ -7959,15 +7959,15 @@ Giải thích: Tiền chuyển thành công mới chỉ là bước khởi đầ
 
 #### Câu a10d-check-fifo · Chọn đáp án · Dự đoán
 
-Bối cảnh: Giả định bà Lý mua DCDS đều mỗi tháng từ tháng 1/2024. Tháng 3/2026, bà bán một số CCQ ít hơn số đã mua trong tháng 1/2024.
+Bối cảnh: Giả định bà Lý mua DCDS định kỳ hằng tháng từ tháng 1/2024. Tháng 3/2026, bà đặt lệnh bán một số lượng CCQ ít hơn tổng số CCQ mua trong lô tháng 1/2024.
 
-Câu hỏi: Lệnh bán này lấy từ lô nào?
+Câu hỏi: Lệnh bán này sẽ trích từ lô chứng chỉ quỹ nào?
 
 - [x] Lô tháng 1/2024, đã giữ hơn 2 năm nên miễn phí bán
 - [ ] Lô mua gần nhất, nên chịu mức phí bán cao nhất
 - [ ] Mỗi lô một ít, phí tính theo tuổi trung bình
 
-Giải thích: Theo nguyên tắc mua trước bán trước (FIFO), lô sớm nhất được bán trước và mỗi lô có tuổi riêng. Nếu bán nhiều hơn lô đầu, một lệnh có thể gồm nhiều lô với mức phí khác nhau.
+Giải thích: Hệ thống tự động áp dụng nguyên tắc Mua trước - Bán trước (FIFO). Lô tháng 1/2024 đã nắm giữ trên 2 năm nên được áp dụng mức phí bán 0%.
 
 > Nguồn: Tư vấn sản phẩm và hỗ trợ nhà đầu tư · Câu 10
 
