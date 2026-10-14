@@ -1,0 +1,754 @@
+<title>Rồng DC Academy Admin</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: staff console. Left rail = role-filtered menu; main column = one task per page. Same tokens as the learner app (theme D light, C dark). */
+:root {
+  --page: #F3F5F9; --surface: #FFFFFF; --sunken: #EEF1F6;
+  --ink: #0E1421; --muted: #5F6B80; --line: #E3E8F0; --line-strong: #C5CDDA;
+  --jade: #0B8A66; --jade-deep: #086A4F; --jade-soft: #DDF5EC;
+  --gold: #9A6206; --gold-soft: #FFF4DC;
+  --coral: #C4323E; --coral-deep: #A02430; --coral-soft: #FCE7E8;
+  --sky: #1D64B4; --sky-deep: #165094; --sky-soft: #E1EDFA;
+  --primary: #0E1421; --on-primary: #FFFFFF; --on-accent: #FFFFFF;
+  --hero: #0E1421; --hero-ink: #EEF2F8; --hero-muted: #8C97AB; --hero-accent: #4FD1A5;
+  --font: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --page: #0E1421; --surface: #161D2D; --sunken: #1C2435;
+  --ink: #EEF2F8; --muted: #8C97AB; --line: #24304A; --line-strong: #3A4760;
+  --jade: #4FD1A5; --jade-deep: #7BE0BF; --jade-soft: #163A31;
+  --gold: #E8B04B; --gold-soft: #2A2416;
+  --coral: #F06E76; --coral-deep: #F5969B; --coral-soft: #3A1A1E;
+  --sky: #60A5EB; --sky-deep: #8CBEF5; --sky-soft: #16283E;
+  --primary: #4FD1A5; --on-primary: #0E1421; --on-accent: #0E1421;
+  --hero: #1B2A3A; --hero-ink: #EEF2F8; --hero-muted: #8C97AB; --hero-accent: #4FD1A5;
+  color-scheme: dark;
+} }
+:root[data-theme="dark"] {
+  --page: #0E1421; --surface: #161D2D; --sunken: #1C2435;
+  --ink: #EEF2F8; --muted: #8C97AB; --line: #24304A; --line-strong: #3A4760;
+  --jade: #4FD1A5; --jade-deep: #7BE0BF; --jade-soft: #163A31;
+  --gold: #E8B04B; --gold-soft: #2A2416;
+  --coral: #F06E76; --coral-deep: #F5969B; --coral-soft: #3A1A1E;
+  --sky: #60A5EB; --sky-deep: #8CBEF5; --sky-soft: #16283E;
+  --primary: #4FD1A5; --on-primary: #0E1421; --on-accent: #0E1421;
+  --hero: #1B2A3A; --hero-ink: #EEF2F8; --hero-muted: #8C97AB; --hero-accent: #4FD1A5;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body { background: var(--page); color: var(--ink); font-family: var(--font); font-size: 14px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+button, input, select, textarea { font: inherit; color: inherit; }
+a { color: var(--sky-deep); }
+:focus-visible { outline: 2px solid var(--sky); outline-offset: 2px; }
+.num { font-variant-numeric: tabular-nums; }
+
+/* Prototype strip */
+.proto { background: var(--hero); color: var(--hero-ink); padding-block: 8px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; font-size: 12.5px; }
+.proto b { color: var(--hero-accent); letter-spacing: .08em; font-size: 11px; }
+.proto .seg { display: inline-flex; border: 1px solid #3A4760; border-radius: 999px; overflow: hidden; }
+.proto .seg button { background: transparent; border: 0; padding: 5px 12px; cursor: pointer; color: var(--hero-muted); font-weight: 600; }
+.proto .seg button[aria-pressed="true"] { background: var(--hero-accent); color: #0E1421; }
+.proto .sp { flex: 1; }
+.proto .lnk { background: none; border: 0; color: var(--hero-ink); text-decoration: underline; cursor: pointer; padding: 4px 0; }
+
+/* Shell */
+.shell { display: grid; grid-template-columns: 248px minmax(0, 1fr); min-height: calc(100% - 40px); }
+.rail { background: var(--surface); border-right: 1px solid var(--line); padding: 20px 14px; display: flex; flex-direction: column; gap: 4px; position: sticky; top: env(safe-area-inset-top, 0px); align-self: start; height: calc(100vh - 40px); overflow: auto; }
+.brand { display: flex; align-items: center; gap: 10px; padding: 0 8px 16px; border-bottom: 1px solid var(--line); margin-bottom: 10px; }
+.brand .mark { width: 34px; height: 34px; border-radius: 10px; background: var(--hero); color: var(--hero-accent); display: grid; place-items: center; font-weight: 800; font-size: 13px; }
+.brand div { display: flex; flex-direction: column; line-height: 1.25; }
+.brand strong { font-size: 14px; }
+.brand span { color: var(--muted); font-size: 12px; }
+.navlabel { font-size: 11px; font-weight: 700; letter-spacing: .08em; color: var(--muted); padding: 12px 10px 4px; text-transform: uppercase; }
+.nav { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 9px 10px; border-radius: 10px; color: var(--ink); text-decoration: none; font-weight: 600; }
+.nav:hover { background: var(--sunken); }
+.nav[aria-current="page"] { background: var(--jade-soft); color: var(--jade-deep); }
+.nav .count { font-size: 11.5px; font-weight: 700; background: var(--coral-soft); color: var(--coral-deep); border-radius: 999px; padding: 1px 8px; }
+.nav.later { color: var(--muted); font-weight: 500; }
+.nav.later::after { content: "Chưa xây"; flex: none; white-space: nowrap; font-size: 10.5px; border: 1px dashed var(--line-strong); border-radius: 999px; padding: 0 6px; }
+.me { margin-top: auto; padding: 12px 10px 0; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 2px; font-size: 13px; }
+.me a { text-decoration: none; font-weight: 700; color: var(--ink); }
+.me span { color: var(--muted); font-size: 12px; }
+.me button { align-self: flex-start; background: none; border: 0; padding: 4px 0; color: var(--muted); text-decoration: underline; cursor: pointer; }
+
+main { padding-block: 28px 64px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); min-width: 0; }
+.wrap { max-width: 1120px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px; padding-inline: 12px; }
+.crumb { font-size: 12px; color: var(--muted); font-weight: 600; letter-spacing: .04em; }
+h1 { font-size: 26px; font-weight: 800; letter-spacing: -.01em; }
+h2 { font-size: 16px; font-weight: 800; }
+.lede { color: var(--muted); max-width: 72ch; margin: 0; }
+
+/* Mobile: rail becomes a top strip */
+@media (max-width: 860px) {
+  .shell { grid-template-columns: minmax(0, 1fr); }
+  .rail { position: static; height: auto; flex-direction: row; overflow-x: auto; padding: 8px max(16px, env(safe-area-inset-right, 0px)) 8px max(16px, env(safe-area-inset-left, 0px)); border-right: 0; border-bottom: 1px solid var(--line); gap: 4px; }
+  .brand, .navlabel, .me, .nav.later { display: none; }
+  .nav { white-space: nowrap; }
+  .wrap { padding-inline: 0; }
+}
+
+/* Parts */
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
+.grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 700px) { .grid2, .grid3 { grid-template-columns: minmax(0, 1fr); } }
+.tile { display: flex; flex-direction: column; gap: 6px; text-decoration: none; color: var(--ink); }
+.tile:hover { border-color: var(--line-strong); }
+.tile .t { font-weight: 800; font-size: 15px; display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
+.tile p { margin: 0; color: var(--muted); font-size: 13px; }
+.big { font-size: 28px; font-weight: 800; line-height: 1; }
+.pill { display: inline-flex; align-items: center; gap: 4px; border-radius: 999px; padding: 2px 9px; font-size: 11.5px; font-weight: 700; white-space: nowrap; }
+.pill.bad { background: var(--coral-soft); color: var(--coral-deep); }
+.pill.ok { background: var(--jade-soft); color: var(--jade-deep); }
+.pill.warn { background: var(--gold-soft); color: var(--gold); }
+.pill.info { background: var(--sky-soft); color: var(--sky-deep); }
+.pill.quiet { background: var(--sunken); color: var(--muted); }
+.note { border-radius: 12px; padding: 12px 14px; font-size: 13px; }
+.note.warn { background: var(--gold-soft); }
+.note.bad { background: var(--coral-soft); color: var(--coral-deep); }
+.note.ok { background: var(--jade-soft); color: var(--jade-deep); }
+.note.info { background: var(--sky-soft); color: var(--sky-deep); }
+.note p { margin: 0; }
+.note ul { margin: 4px 0 0; padding-left: 18px; }
+
+.filters { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 12px; }
+.field { display: flex; flex-direction: column; gap: 4px; font-size: 12px; font-weight: 700; color: var(--muted); min-width: 0; }
+.field.grow { flex: 1; min-width: 180px; }
+.in { border: 1px solid var(--line-strong); background: var(--surface); border-radius: 10px; padding: 8px 10px; font-size: 13.5px; font-weight: 500; color: var(--ink); min-width: 0; width: 100%; }
+textarea.in { resize: vertical; line-height: 1.5; }
+.btn { border: 0; border-radius: 10px; padding: 9px 16px; font-weight: 700; cursor: pointer; font-size: 13.5px; }
+.btn.primary { background: var(--primary); color: var(--on-primary); }
+.btn.jade { background: var(--jade); color: var(--on-accent); }
+.btn.coral { background: var(--coral); color: var(--on-accent); }
+.btn.ghost { background: var(--surface); border: 1px solid var(--line-strong); }
+.btn.small { padding: 5px 10px; font-size: 12.5px; }
+.btn:disabled { opacity: .4; cursor: not-allowed; }
+.linkbtn { background: none; border: 0; color: var(--sky-deep); font-weight: 700; cursor: pointer; padding: 4px 0; text-decoration: underline; }
+
+.tablewrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.tablewrap table { min-width: 720px; }
+th { text-align: left; font-size: 11.5px; font-weight: 700; color: var(--muted); letter-spacing: .03em; padding: 10px 12px; border-bottom: 1px solid var(--line); white-space: nowrap; background: var(--sunken); }
+td { padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+.r { text-align: right; }
+.sub { display: block; color: var(--muted); font-size: 12px; }
+.mono { font-family: var(--mono); font-size: 12px; }
+.bar { height: 6px; background: var(--sunken); border-radius: 999px; overflow: hidden; margin-top: 6px; min-width: 70px; }
+.bar i { display: block; height: 100%; background: var(--jade); border-radius: 999px; }
+.bar i.low { background: var(--coral); }
+
+.item { display: flex; flex-direction: column; gap: 10px; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center; font-size: 12px; color: var(--muted); }
+.meta b { color: var(--ink); }
+.q { margin: 0; font-size: 14px; }
+.ans { white-space: pre-wrap; background: var(--sunken); border-radius: 10px; padding: 12px; margin: 0; font-size: 13.5px; }
+details > summary { cursor: pointer; font-weight: 700; color: var(--sky-deep); font-size: 13px; list-style: none; }
+details > summary::before { content: "▸ "; }
+details[open] > summary::before { content: "▾ "; }
+.inner { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
+.review { background: var(--sunken); border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 10px; }
+.radios { display: flex; flex-wrap: wrap; gap: 14px; font-weight: 600; }
+.radios label { display: flex; align-items: center; gap: 6px; cursor: pointer; }
+.hist { margin: 0; padding: 0; list-style: none; font-size: 12.5px; display: flex; flex-direction: column; gap: 4px; }
+.hist li { color: var(--muted); }
+.hist b { color: var(--ink); }
+.trail { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 13px; }
+.trail .step { background: var(--sunken); border-radius: 8px; padding: 4px 9px; }
+.trail .step b { display: block; font-size: 10.5px; color: var(--muted); font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.trail .arrow { color: var(--muted); }
+.trail .final { background: var(--jade-soft); color: var(--jade-deep); font-weight: 700; }
+
+/* Editor */
+.editor { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 20px; align-items: start; }
+@media (max-width: 980px) { .editor { grid-template-columns: minmax(0, 1fr); } }
+.picker { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+@media (max-width: 760px) { .picker { grid-template-columns: minmax(0, 1fr); } }
+.flabel { display: flex; justify-content: space-between; gap: 8px; font-size: 13px; font-weight: 800; margin-bottom: 4px; }
+.flabel span { font-weight: 500; color: var(--muted); font-size: 12px; }
+.flabel span.bad { color: var(--coral-deep); font-weight: 700; }
+.opt { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 8px; align-items: start; }
+.opt input[type="radio"] { margin-top: 11px; }
+.form { display: flex; flex-direction: column; gap: 14px; }
+.phone { position: sticky; top: 16px; border: 1px solid var(--line); border-radius: 28px; background: var(--page); padding: 18px 16px 20px; max-width: 380px; width: 100%; display: flex; flex-direction: column; gap: 12px; }
+.phone .ctx { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 12px; font-size: 13px; color: var(--muted); }
+.phone .ctx b { display: block; font-size: 11px; letter-spacing: .08em; color: var(--jade-deep); margin-bottom: 4px; }
+.phone h3 { font-size: 17px; font-weight: 800; line-height: 1.35; }
+.phone .choice { border: 1px solid var(--line-strong); border-radius: 12px; padding: 11px 12px; background: var(--surface); font-weight: 600; font-size: 13.5px; }
+.phone .choice.right { border: 2px solid var(--jade); background: var(--jade-soft); }
+.phone .insight { background: var(--hero); color: var(--hero-ink); border-radius: 14px; padding: 12px; font-size: 13px; }
+.phone .insight b { color: var(--hero-accent); display: block; font-size: 11px; letter-spacing: .08em; margin-bottom: 4px; }
+.diff { font-family: var(--mono); font-size: 12px; background: var(--sunken); border-radius: 10px; padding: 10px; overflow-x: auto; margin: 0; line-height: 1.6; white-space: pre-wrap; word-break: break-word; }
+.diff .add { background: var(--jade-soft); display: block; }
+.diff .del { background: var(--coral-soft); display: block; }
+.diff .hunk { color: var(--sky-deep); display: block; }
+
+.otp { background: var(--gold-soft); border-radius: 12px; padding: 12px; font-size: 13px; display: flex; flex-direction: column; gap: 6px; }
+.otp code { font-family: var(--mono); font-size: 16px; font-weight: 600; background: var(--surface); border-radius: 8px; padding: 4px 10px; align-self: flex-start; }
+
+/* Login */
+.login { min-height: calc(100vh - 40px); display: grid; place-items: center; padding: 24px max(16px, env(safe-area-inset-right, 0px)) 24px max(16px, env(safe-area-inset-left, 0px)); }
+.login .card { width: 100%; max-width: 400px; display: flex; flex-direction: column; gap: 14px; padding: 28px; }
+
+.toast { position: fixed; left: 50%; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--hero); color: var(--hero-ink); padding: 10px 16px; border-radius: 12px; font-size: 13px; font-weight: 600; max-width: calc(100% - 32px); box-shadow: 0 8px 24px rgba(14, 20, 33, .25); }
+@media (prefers-reduced-motion: no-preference) { .toast { animation: rise .2s ease-out; } @keyframes rise { from { transform: translate(-50%, 8px); opacity: 0; } } }
+</style>
+
+<div class="proto" role="region" aria-label="Điều khiển bản mẫu">
+  <b>BẢN MẪU</b>
+  <span>Xem với vai trò</span>
+  <span class="seg" id="roleSeg">
+    <button data-role="admin" aria-pressed="true">Quản trị</button>
+    <button data-role="content" aria-pressed="false">Nội dung</button>
+    <button data-role="compliance" aria-pressed="false">Tuân thủ</button>
+  </span>
+  <span class="sp"></span>
+  <span>Số liệu mẫu, không phải dữ liệu thật</span>
+  <button class="lnk" id="themeBtn">Đổi giao diện sáng/tối</button>
+</div>
+<div id="app"></div>
+<div id="toast" class="toast" role="status" hidden></div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---------- Policy (mirrors src/features/staff/roles.ts) ---------- */
+  var ROLES = {
+    admin: { label: "Quản trị", description: "Toàn quyền, quản lý tài khoản nhân viên" },
+    content: { label: "Nội dung", description: "Phân tích câu hỏi, trình soạn thảo" },
+    compliance: { label: "Tuân thủ", description: "Duyệt câu trả lời AI, kiểm tra hồ sơ rủi ro, nhật ký" }
+  };
+  var PERM = {
+    analytics: ["admin", "content", "compliance"], editor: ["admin", "content"],
+    "ai-review": ["admin", "compliance"], "risk-audit": ["admin", "compliance"],
+    "market-sim": ["admin", "content", "compliance"], "market-sim:all": ["admin"],
+    audit: ["admin", "compliance"], staff: ["admin"]
+  };
+  var NAV = [
+    { id: "analytics", label: "Phân tích câu hỏi", perm: "analytics" },
+    { id: "editor", label: "Trình soạn thảo", perm: "editor" },
+    { id: "ai-review", label: "Duyệt câu trả lời AI", perm: "ai-review" },
+    { id: "risk-audit", label: "Kiểm tra hồ sơ rủi ro", perm: "risk-audit" },
+    { id: "market-sim", label: "Mô phỏng thị trường giảm", perm: "market-sim" },
+    { id: "audit", label: "Nhật ký", perm: "audit" },
+    { id: "staff", label: "Tài khoản nhân viên", perm: "staff" }
+  ];
+  var LATER = [
+    { id: "later-learners", label: "Tra cứu học viên", text: "Tìm một học viên theo tên hiển thị hoặc mã DragonX để trả lời yêu cầu hỗ trợ. Chỉ xem, không sửa." },
+    { id: "later-notify", label: "Thông báo & MoEngage", text: "Xem sự kiện Academy đã gửi sang MoEngage và số người nhận theo từng chiến dịch. Soạn chiến dịch vẫn làm trong MoEngage." },
+    { id: "later-sso", label: "Đăng nhập một lần (SSO)", text: "Nhân viên đăng nhập bằng tài khoản công ty (OIDC) và xác thực hai lớp, thay cho mật khẩu riêng của Academy." }
+  ];
+  var AUDIT_ACTIONS = {
+    login: "Đăng nhập", "login-failed": "Đăng nhập thất bại", "login-locked": "Bị tạm khoá đăng nhập", logout: "Đăng xuất",
+    "password-change": "Đổi mật khẩu", "staff-create": "Tạo tài khoản", "staff-update": "Sửa tài khoản", "staff-reset": "Đặt lại mật khẩu",
+    review: "Duyệt", "content-edit": "Tạo bản sửa nội dung", "market-sim": "Gửi mô phỏng thị trường giảm", export: "Tải CSV"
+  };
+  var OUTCOMES = { ok: "Đạt", issue: "Cần sửa", escalated: "Chuyển cấp trên" };
+  var STATUS = { todo: "Chưa duyệt", ok: "Đạt", issue: "Cần sửa", escalated: "Chuyển cấp trên", all: "Tất cả" };
+  var AI_FLAGS = {
+    promise: "Có thể hứa hẹn lợi nhuận", "asks-secret": "Có thể hỏi OTP/PIN/mật khẩu",
+    "source-line": "Có dòng \"Nguồn:\" (đã tự xoá trước khi hiển thị)", "faq-number": "Nhắc số câu FAQ nội bộ"
+  };
+  var RISK_VIEWS = {
+    attention: "Cần xem (§5.2, cảnh báo ③, chọn cao hơn)",
+    "first-time-high-risk": "Nhà đầu tư lần đầu với hồ sơ Khá mạo hiểm hoặc Rất mạo hiểm",
+    "short-horizon-high-tolerance": "Thời gian đầu tư dưới 3 năm nhưng khả năng chấp nhận rủi ro cao",
+    inconsistency: "Câu trả lời có dấu hiệu mâu thuẫn",
+    "low-capacity-high-risk": "Năng lực tài chính thấp nhưng muốn đầu tư mạo hiểm",
+    "chose-higher": "Chọn hồ sơ cao hơn kết quả đánh giá (đã xác nhận)",
+    confirmed: "Đã xác nhận", unconfirmed: "Chưa xác nhận", all: "Tất cả"
+  };
+  var can = function (role, p) { return PERM[p].indexOf(role) >= 0; };
+
+  /* ---------- Sample data ---------- */
+  var SEGMENTS = [
+    { id: "my-plan", code: "TÔI", title: "Hiểu mình", units: [
+      { id: "u-b1", title: "Phần 1 · Khẩu vị rủi ro của tôi" }, { id: "u-b4", title: "Phần 4 · Sức mạnh lãi kép" },
+      { id: "u-b5", title: "Phần 5 · Kỷ luật và DCA" }, { id: "u-b6", title: "Phần 6 · Hiểu thị trường" } ] },
+    { id: "fund-types", code: "LOẠI", title: "Hiểu quỹ", units: [
+      { id: "u-c1", title: "Phần 1 · Quỹ đầu tư 101" }, { id: "u-c2", title: "Phần 2 · Quỹ thị trường tiền tệ" } ] },
+    { id: "dc-funds", code: "DC", title: "Quỹ DC & DragonX", units: [
+      { id: "u-a2", title: "Phần 2 · Đặt lệnh và dòng tiền" }, { id: "u-a3", title: "Phần 3 · Phí, thuế và thời gian nắm giữ" } ] }
+  ];
+  var QUESTIONS = [
+    { id: "b3-reactions-pause", type: "Trắc nghiệm", seg: "my-plan", unit: "u-b5", lesson: "Ba phản ứng khi quỹ giảm", prompt: "Vì sao việc \"chủ động phản ứng\" lại cho kết quả kém hơn việc góp đều?", attempts: 412, learners: 301, ft: 301, fc: 128, wrong: "Vì mỗi lần tạm dừng đều bị công ty quản lý quỹ phạt phí rất cao", wn: 121, ws: .52 },
+    { id: "b5d-invest-now-share", type: "Đoán số", seg: "my-plan", unit: "u-b5", lesson: "Ngày tốt nhất để đầu tư", prompt: "Phương án giải ngân ngay cho kết quả cao hơn trong bao nhiêu phần trăm số trường hợp?", attempts: 356, learners: 270, ft: 270, fc: 121, wrong: "50%", wn: 88, ws: .47 },
+    { id: "b4c-five-years", type: "Đoán số", seg: "my-plan", unit: "u-b4", lesson: "Ba năm đầu: lãi kép chưa thấy đâu", prompt: "Sau 5 năm, tổng giá trị tài khoản đạt khoảng bao nhiêu triệu đồng?", attempts: 388, learners: 295, ft: 295, fc: 142, wrong: "Khoảng 900 triệu", wn: 70, ws: .41 },
+    { id: "b1-want-wedding", type: "Trắc nghiệm", seg: "my-plan", unit: "u-b1", lesson: "Muốn chịu rủi ro và có thể chịu rủi ro", prompt: "Minh nên cân nhắc mức rủi ro nào cho khoản tiền này?", attempts: 640, learners: 512, ft: 512, fc: 301, wrong: "Rủi ro cao, vì Minh còn trẻ", wn: 160, ws: .63 },
+    { id: "b6m-loss-compare", type: "Trắc nghiệm", seg: "my-plan", unit: "u-b6", lesson: "Sau một năm thua lỗ", prompt: "Trước khi chuyển, chị nên kiểm tra điều gì?", attempts: 210, learners: 166, ft: 166, fc: 104, wrong: "Quỹ nào lãi nhiều nhất năm ngoái", wn: 41, ws: .55 },
+    { id: "c2m-vs-deposit-q", type: "Trắc nghiệm", seg: "fund-types", unit: "u-c2", lesson: "MMF hay tiền gửi kỳ hạn ngắn", prompt: "Khoản nào linh hoạt hơn khi chị cần rút trước hạn?", attempts: 290, learners: 233, ft: 233, fc: 168, wrong: "Tiền gửi 3 tháng", wn: 49, ws: .63 },
+    { id: "a3f-net-proceeds-q", type: "Đoán số", seg: "dc-funds", unit: "u-a3", lesson: "Bán thì bị khấu trừ những gì", prompt: "Anh nhận về khoảng bao nhiêu sau phí bán và thuế?", attempts: 174, learners: 140, ft: 140, fc: 109, wrong: "Đúng bằng giá trị NAV", wn: 22, ws: .71 },
+    { id: "b4c-small-base", type: "Trắc nghiệm", seg: "my-plan", unit: "u-b4", lesson: "Ba năm đầu: lãi kép chưa thấy đâu", prompt: "Nguyên nhân vì sao ở giai đoạn đầu phần lợi nhuận lại khó nhận biết?", attempts: 372, learners: 290, ft: 290, fc: 244, wrong: "Vì quỹ chưa đầu tư tiền của bạn", wn: 25, ws: .54 }
+  ];
+  var FUNNEL = [
+    { seg: "my-plan", unit: "u-b1", lesson: "Muốn chịu rủi ro và có thể chịu rủi ro", id: "b1-want-vs-can", s: 540, c: 498, m: 1.2 },
+    { seg: "my-plan", unit: "u-b4", lesson: "Ba năm đầu: lãi kép chưa thấy đâu", id: "b4c-first-three-years", s: 318, c: 262, m: 1.9 },
+    { seg: "my-plan", unit: "u-b5", lesson: "Ba phản ứng khi quỹ giảm", id: "b3-reactions", s: 344, c: 291, m: 1.6 },
+    { seg: "my-plan", unit: "u-b5", lesson: "Ngày tốt nhất để đầu tư", id: "b5d-best-day", s: 301, c: 158, m: 2.8 },
+    { seg: "my-plan", unit: "u-b6", lesson: "Sau một năm thua lỗ", id: "b6m-after-loss", s: 190, c: 151, m: 1.4 },
+    { seg: "fund-types", unit: "u-c2", lesson: "MMF hay tiền gửi kỳ hạn ngắn", id: "c2m-vs-deposit", s: 251, c: 226, m: 0.9 },
+    { seg: "dc-funds", unit: "u-a3", lesson: "Bán thì bị khấu trừ những gì", id: "a3f-net-proceeds", s: 152, c: 139, m: 0.7 }
+  ];
+  var AI = [
+    { id: 1842, at: "14/10 09:12", who: "Lan", ref: "a91f3c20", mode: "ai", flags: ["promise"], status: "todo", hist: [],
+      q: "Quỹ DCDS năm nay có chắc lãi 15% không em?",
+      a: "Chị Lan ơi, không quỹ cổ phiếu nào có thể chắc chắn mức lãi trong một năm, kể cả DCDS. Kết quả quá khứ không đảm bảo cho tương lai.\n\nĐiều chị có thể làm là xem lại mục tiêu và thời gian đến ngày cần tiền: với kỳ hạn trên 5 năm, biến động từng năm ít ảnh hưởng hơn đến kết quả cuối.\n\nNội dung giáo dục, không phải khuyến nghị đầu tư." },
+    { id: 1839, at: "14/10 08:47", who: "Minh", ref: "4c07be19", mode: "ai", flags: ["asks-secret"], status: "todo", hist: [],
+      q: "Em quên mã OTP lúc đặt lệnh, Rồng gửi lại giúp em được không?",
+      a: "Anh Minh ơi, Rồng không gửi hay hỏi mã OTP, PIN hoặc mật khẩu. Anh mở lại lệnh trên DragonX để nhận OTP mới qua tin nhắn. Nếu không nhận được, anh gọi tổng đài DragonX.\n\nĐừng chia sẻ OTP cho bất kỳ ai, kể cả người xưng là nhân viên Dragon Capital." },
+    { id: 1830, at: "13/10 21:05", who: "Hà", ref: "77e2a0d4", mode: "library", flags: ["source-line"], status: "todo", hist: [],
+      q: "Bán DCBF sau 1 năm có mất phí không?",
+      a: "Chị Hà ơi, phí bán phụ thuộc thời gian nắm giữ. Với DCBF, nắm giữ từ 12 tháng trở lên thì không mất phí bán; dưới 12 tháng có phí theo biểu phí hiện hành. Thuế thu nhập cá nhân 0,1% trên giá trị bán vẫn áp dụng.\n\nNội dung giáo dục, không phải khuyến nghị đầu tư." },
+    { id: 1824, at: "13/10 16:30", who: "Tuấn", ref: "0b5d9e61", mode: "ai", flags: ["promise", "faq-number"], status: "issue",
+      hist: [{ who: "Phạm Thu Trang", at: "13/10 17:02", out: "issue", note: "Câu \"gần như luôn tăng\" dễ hiểu thành hứa hẹn. Nhắc số FAQ nội bộ #42. Đã báo nhóm nội dung." }],
+      q: "Đầu tư định kỳ thì lúc nào cũng có lãi đúng không?",
+      a: "Anh Tuấn ơi, theo FAQ #42, đầu tư định kỳ dài hạn gần như luôn tăng vì bình quân giá vốn...\n\nNội dung giáo dục, không phải khuyến nghị đầu tư." },
+    { id: 1811, at: "12/10 10:14", who: "Vy", ref: "e3c61f8a", mode: "ai", flags: [], status: "ok",
+      hist: [{ who: "Phạm Thu Trang", at: "12/10 11:40", out: "ok", note: "" }],
+      q: "Quỹ mở khác gửi tiết kiệm ở điểm nào?",
+      a: "Chị Vy ơi, tiền gửi tiết kiệm có lãi suất cố định và được bảo hiểm tiền gửi. Quỹ mở đầu tư vào cổ phiếu, trái phiếu nên giá trị lên xuống theo thị trường và không cam kết lãi.\n\nNội dung giáo dục, không phải khuyến nghị đầu tư." }
+  ];
+  var RISK = [
+    { id: 512, at: "14/10 08:20", who: "Quang", ref: "5a2c19e0", fw: "v2.3", status: "todo", total: 27, scored: "Khá mạo hiểm", proposed: "Khá mạo hiểm", decision: "Đồng ý", final: "Khá mạo hiểm", ack: true,
+      flags: ["first-time-high-risk", "capacity-warning"], sections: "A 4 · B 11 · C 5 · D 1",
+      overrides: [], capacity: "Khoản đầu tư này chiếm trên 20% tổng tài sản của bạn. Với hồ sơ mạo hiểm, một đợt giảm mạnh có thể ảnh hưởng lớn đến tài chính của bạn.", inconsistency: "",
+      answers: [["Bạn dự kiến đầu tư trong bao lâu?", "5 – 10 năm", 4], ["Khi nghĩ về \"rủi ro đầu tư\", bạn liên tưởng đến điều gì?", "Cơ hội để đạt lợi nhuận cao", 4], ["Nếu danh mục giảm 15%, bạn sẽ làm gì?", "Mua thêm vì đây là cơ hội tốt", 4], ["Mức biến động mỗi năm bạn chấp nhận?", "Mạo hiểm: hơn ±15%", 5], ["Nguồn thu nhập của bạn?", "Lương cố định chiếm phần lớn", 3], ["Khoản đầu tư chiếm bao nhiêu tài sản?", "20 – 50%", 2], ["Kiến thức đầu tư của bạn?", "Chưa biết về đầu tư", 1]], hist: [] },
+    { id: 509, at: "13/10 19:44", who: "Ngọc", ref: "c81d4f72", fw: "v2.3", status: "todo", total: 19, scored: "Cân bằng", proposed: "Thận trọng", decision: "Chọn cao hơn", final: "Cân bằng", ack: true,
+      flags: ["chose-higher", "short-horizon-high-tolerance"], sections: "A 1 · B 10 · C 6 · D 2",
+      overrides: ["Bạn dự kiến đầu tư dưới 1 năm, nên hồ sơ tối đa là Thận trọng, bất kể tổng điểm."], capacity: "", inconsistency: "",
+      answers: [["Bạn dự kiến đầu tư trong bao lâu?", "Dưới 1 năm", 1], ["Khi nghĩ về \"rủi ro đầu tư\", bạn liên tưởng đến điều gì?", "Điều bình thường trong đầu tư", 3], ["Nếu danh mục giảm 15%, bạn sẽ làm gì?", "Mua thêm vì đây là cơ hội tốt", 4], ["Mức biến động mỗi năm bạn chấp nhận?", "Cân bằng: khoảng ±12%", 3], ["Nguồn thu nhập của bạn?", "Lương cố định chiếm phần lớn", 3], ["Khoản đầu tư chiếm bao nhiêu tài sản?", "5 – 20%", 3], ["Kiến thức đầu tư của bạn?", "Có kiến thức về đầu tư", 2]], hist: [] },
+    { id: 503, at: "12/10 14:02", who: "Bảo", ref: "19be07ad", fw: "v2.3", status: "escalated", total: 22, scored: "Cân bằng", proposed: "Cân bằng", decision: "Đồng ý", final: "Cân bằng", ack: false,
+      flags: ["inconsistency"], sections: "A 3 · B 9 · C 7 · D 3",
+      overrides: [], capacity: "", inconsistency: "Bạn chọn mức biến động chỉ khoảng ±5–7% mỗi năm, nhưng lại sẽ mua thêm khi danh mục giảm 15%. Hai câu trả lời này hơi mâu thuẫn.",
+      answers: [["Bạn dự kiến đầu tư trong bao lâu?", "3 – 5 năm", 3], ["Nếu danh mục giảm 15%, bạn sẽ làm gì?", "Mua thêm vì đây là cơ hội tốt", 4], ["Mức biến động mỗi năm bạn chấp nhận?", "An toàn: khoảng ±7%", 2]],
+      hist: [{ who: "Phạm Thu Trang", at: "12/10 15:30", out: "escalated", note: "Mâu thuẫn ④ nhưng học viên vẫn xác nhận. Chuyển trưởng bộ phận xem có cần liên hệ không." }] }
+  ];
+  var AUDIT = [
+    { at: "14/10 09:31", user: "trang.pham", action: "review", target: "ai#1824", detail: "outcome: issue" },
+    { at: "14/10 09:02", user: "admin", action: "staff-create", target: "minh.compliance", detail: "role: compliance" },
+    { at: "14/10 08:58", user: "lan.content", action: "content-edit", target: "b3-reactions-pause", detail: "fields: options, explain · PR #318" },
+    { at: "14/10 08:41", user: "lan.content", action: "login", target: "", detail: "" },
+    { at: "13/10 22:15", user: "unknown.user", action: "login-failed", target: "", detail: "lần 3/5" },
+    { at: "13/10 17:40", user: "trang.pham", action: "export", target: "ai-review", detail: "rows: 41 · status: issue" },
+    { at: "13/10 16:05", user: "admin", action: "market-sim", target: "preview", detail: "drop: 20 · audience: me" },
+    { at: "12/10 15:30", user: "trang.pham", action: "review", target: "risk#503", detail: "outcome: escalated" }
+  ];
+  var STAFF = [
+    { u: "admin", name: "Đoàn Duy", role: "admin", active: true, must: false, last: "14/10 09:00" },
+    { u: "lan.content", name: "Nguyễn Lan", role: "content", active: true, must: false, last: "14/10 08:41" },
+    { u: "minh.compliance", name: "Trần Minh", role: "compliance", active: true, must: true, last: "Chưa đăng nhập" },
+    { u: "trang.pham", name: "Phạm Thu Trang", role: "compliance", active: true, must: false, last: "14/10 09:20" },
+    { u: "quoc.intern", name: "Lê Quốc", role: "content", active: false, must: false, last: "02/09 16:12" }
+  ];
+  var ORIGINAL = {
+    id: "b3-reactions-pause", type: "select", pattern: "why",
+    context: "Người B đã 11 lần tạm dừng góp vốn trong 10 năm khi thấy thị trường có tin xấu. Kết quả cuối cùng vẫn thấp hơn Người A (người cứ góp đều).",
+    prompt: "Vì sao việc \"chủ động phản ứng\" lại cho kết quả kém hơn việc góp đều?",
+    options: ["Vì mỗi lần tạm dừng đều bị công ty quản lý quỹ phạt phí rất cao", "Vì những tháng tạm dừng chính là lúc giá chứng chỉ quỹ rẻ nhất, mua được nhiều nhất", "Vì người góp đều được quỹ ưu tiên áp dụng mức giá ưu đãi hơn"],
+    answer: 1,
+    explain: "Dừng nộp tiền khi thị trường giảm đồng nghĩa với việc bạn từ bỏ cơ hội mua chứng chỉ quỹ ở vùng giá rẻ. Kỷ luật góp đều giúp bạn tự động tận dụng các đợt sụt giảm của thị trường.",
+    source: "amdd-dcds-10y"
+  };
+  var PATTERNS = { predict: "Dự đoán", why: "Vì sao?", decide: "Ra quyết định", myth: "Hiểu lầm phổ biến" };
+  var SOURCES = { "amdd-dcds-10y": "10 năm đầu tư đều đặn vào DCDS", "dc-fee-table": "Biểu phí quỹ Dragon Capital", "dc-faq": "Thư viện hỏi đáp Quỹ DC" };
+  var MIN = 20, MAX = 320;
+
+  /* ---------- State ---------- */
+  var S = { role: "admin", signedIn: true, aiFilter: { status: "todo", flag: "any", q: "" }, riskFilter: { status: "todo", view: "attention" },
+    auditFilter: { user: "", action: "" }, an: { seg: "", unit: "" }, draft: clone(ORIGINAL), editResult: null, created: null, reset: null, simSent: null, pwMsg: null, prNo: 319 };
+  var ME = { admin: "Đoàn Duy", content: "Nguyễn Lan", compliance: "Phạm Thu Trang" };
+  var USER = { admin: "admin", content: "lan.content", compliance: "trang.pham" };
+
+  function clone(o) { return JSON.parse(JSON.stringify(o)); }
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" }[c]; }); }
+  function pct(x) { return x == null ? "—" : Math.round(x * 100) + "%"; }
+  function now() { var d = new Date(); var p = function (n) { return (n < 10 ? "0" : "") + n; }; return p(d.getDate()) + "/" + p(d.getMonth() + 1) + " " + p(d.getHours()) + ":" + p(d.getMinutes()); }
+  function toast(msg) { var t = document.getElementById("toast"); t.textContent = msg; t.hidden = false; clearTimeout(toast.t); toast.t = setTimeout(function () { t.hidden = true; }, 2600); }
+  function log(action, target, detail) { AUDIT.unshift({ at: now(), user: USER[S.role], action: action, target: target || "", detail: detail || "" }); }
+  function page() { var h = (location.hash || "").replace("#", ""); return h || "home"; }
+  function go(p) { if (location.hash !== "#" + p) location.hash = p; else render(); }
+  function counts() { return { ai: AI.filter(function (r) { return r.status === "todo" && r.flags.length; }).length, risk: RISK.filter(function (r) { return r.status === "todo"; }).length }; }
+
+  /* ---------- Shell ---------- */
+  function rail(cur) {
+    var c = counts();
+    var items = NAV.filter(function (n) { return can(S.role, n.perm); }).map(function (n) {
+      var badge = n.id === "ai-review" && c.ai ? '<span class="count">' + c.ai + "</span>" : n.id === "risk-audit" && c.risk ? '<span class="count">' + c.risk + "</span>" : "";
+      return '<a class="nav" href="#' + n.id + '"' + (cur === n.id ? ' aria-current="page"' : "") + "><span>" + esc(n.label) + "</span>" + badge + "</a>";
+    }).join("");
+    var later = LATER.map(function (n) { return '<a class="nav later" href="#' + n.id + '"' + (cur === n.id ? ' aria-current="page"' : "") + "><span>" + esc(n.label) + "</span></a>"; }).join("");
+    return '<nav class="rail" aria-label="Menu quản trị">' +
+      '<div class="brand"><span class="mark">DC</span><div><strong>Quản trị</strong><span>Rồng DC Academy</span></div></div>' +
+      '<a class="nav" href="#home"' + (cur === "home" ? ' aria-current="page"' : "") + "><span>Tổng quan</span></a>" + items +
+      '<div class="navlabel">Đề xuất tiếp theo</div>' + later +
+      '<div class="me"><a href="#account">' + esc(ME[S.role]) + "</a><span>" + esc(ROLES[S.role].label) + " · " + esc(USER[S.role]) + '</span><button data-act="logout">Đăng xuất</button></div></nav>';
+  }
+  function shell(cur, body) { return '<div class="shell">' + rail(cur) + '<main id="main"><div class="wrap">' + body + "</div></main></div>"; }
+  function head(crumb, title, lede) { return '<div><div class="crumb">' + esc(crumb) + '</div><h1>' + esc(title) + "</h1></div>" + (lede ? '<p class="lede">' + lede + "</p>" : ""); }
+  function badge(status, hist) {
+    if (status === "todo") return '<span class="pill quiet">Chưa duyệt</span>';
+    var last = hist[hist.length - 1];
+    var cls = status === "ok" ? "ok" : status === "issue" ? "bad" : "warn";
+    return '<span class="pill ' + cls + '">' + OUTCOMES[status] + (last ? " · " + esc(last.who) + " · " + esc(last.at) : "") + "</span>";
+  }
+  function history(h) {
+    if (!h.length) return "";
+    return '<ul class="hist">' + h.map(function (x) { return "<li><b>" + esc(OUTCOMES[x.out]) + "</b> · " + esc(x.who) + " · " + esc(x.at) + (x.note ? " · " + esc(x.note) : "") + "</li>"; }).join("") + "</ul>";
+  }
+  function reviewForm(kind, id) {
+    return '<form class="review" data-review="' + kind + '" data-id="' + id + '"><div class="radios" role="radiogroup" aria-label="Kết quả duyệt">' +
+      Object.keys(OUTCOMES).map(function (k, i) { return '<label><input type="radio" name="out-' + kind + id + '" value="' + k + '"' + (i === 0 ? " checked" : "") + ">" + OUTCOMES[k] + "</label>"; }).join("") +
+      '</div><label class="field">Ghi chú<textarea class="in" id="note-' + kind + id + '" rows="2" placeholder="Bắt buộc khi Cần sửa / Chuyển cấp trên"></textarea></label>' +
+      '<div style="display:flex;gap:12px;align-items:center"><button class="btn jade small" type="submit">Lưu kết quả</button><span class="msg" role="status"></span></div></form>';
+  }
+  function statusSelect(id, val) {
+    return '<label class="field">Trạng thái duyệt<select class="in" id="' + id + '">' + Object.keys(STATUS).map(function (k) { return '<option value="' + k + '"' + (k === val ? " selected" : "") + ">" + STATUS[k] + "</option>"; }).join("") + "</select></label>";
+  }
+  function csvBtn(what) { return '<button class="linkbtn" type="button" data-act="csv" data-what="' + what + '">Tải CSV</button>'; }
+
+  /* ---------- Pages ---------- */
+  function vLogin() {
+    return '<div class="login"><form class="card" id="loginForm"><div class="brand" style="border:0;padding:0;margin:0"><span class="mark">DC</span><div><strong>Quản trị</strong><span>Rồng DC Academy</span></div></div>' +
+      '<h1 style="font-size:22px">Đăng nhập nhân viên</h1>' +
+      '<label class="field">Tên đăng nhập<input class="in" id="lu" autocomplete="username" value="' + esc(USER[S.role]) + '"></label>' +
+      '<label class="field">Mật khẩu<input class="in" id="lp" type="password" autocomplete="current-password" value="••••••••••"></label>' +
+      '<button class="btn primary" type="submit">Đăng nhập</button>' +
+      '<p class="lede" style="font-size:12.5px">Sai mật khẩu 5 lần trong 15 phút sẽ tạm khoá tên đăng nhập 15 phút. Phiên đăng nhập kéo dài 12 giờ.</p></form></div>';
+  }
+
+  function vHome() {
+    var c = counts();
+    var cards = [
+      { id: "ai-review", t: "Duyệt câu trả lời AI", n: c.ai, txt: "Câu trả lời Hỏi Rồng có cờ cảnh báo, chưa duyệt. Lọc theo cờ, ngày, từ khoá; ghi kết quả và tải CSV." },
+      { id: "risk-audit", t: "Kiểm tra hồ sơ rủi ro", n: c.risk, txt: "Trường hợp cần xem (§5.2, cảnh báo ③, chọn cao hơn), chưa duyệt." },
+      { id: "analytics", t: "Phân tích câu hỏi", txt: "Tỷ lệ đúng lần đầu, đáp án sai phổ biến nhất, tỷ lệ hoàn thành từng bài." },
+      { id: "editor", t: "Trình soạn thảo", txt: "Sửa một câu hỏi, xem trước như học viên thấy, rồi tạo bản sửa." },
+      { id: "market-sim", t: "Mô phỏng thị trường giảm", txt: "Chỉ mô phỏng: xem trước lời nhắc \"[Mô phỏng] Thị trường giảm X%\". Gửi cho tất cả: chỉ quản trị viên." },
+      { id: "audit", t: "Nhật ký", txt: "Ai đã làm gì: đăng nhập, duyệt, sửa nội dung, gửi mô phỏng, thay đổi tài khoản." },
+      { id: "staff", t: "Tài khoản nhân viên", txt: "Tạo tài khoản, đổi vai trò, vô hiệu hoá, đặt lại mật khẩu." }
+    ].filter(function (x) { return can(S.role, x.id); });
+    var denied = S.denied ? '<div class="note bad" role="alert"><p><b>Vai trò của bạn không được mở trang đó.</b></p></div>' : "";
+    S.denied = false;
+    var tiles = cards.map(function (x) {
+      return '<a class="card tile" href="#' + x.id + '"><span class="t"><span>' + esc(x.t) + "</span>" + (x.n !== undefined ? '<span class="big num" style="color:var(' + (x.n ? "--coral-deep" : "--jade-deep") + ')">' + x.n + "</span>" : "") + "</span><p>" + esc(x.txt) + "</p></a>";
+    }).join("");
+    var pr = can(S.role, "editor") ? '<p class="lede" style="font-size:13px">Bản sửa nội dung: tạo pull request vào nhánh <b>main</b> của <b>icememine/dceducationgame</b> để Compliance duyệt.</p>' : "";
+    return shell("home", head("KHU VỰC QUẢN TRỊ", "Xin chào " + ME[S.role], "Vai trò <b>" + esc(ROLES[S.role].label) + "</b>: " + esc(ROLES[S.role].description) + ". Menu bên trái chỉ hiện những trang vai trò này được mở.") + denied + '<div class="grid2">' + tiles + "</div>" + pr);
+  }
+
+  function vAnalytics() {
+    var f = S.an;
+    var segOpts = '<option value="">Tất cả</option>' + SEGMENTS.map(function (s) { return '<option value="' + s.id + '"' + (f.seg === s.id ? " selected" : "") + ">" + s.code + " · " + s.title + "</option>"; }).join("");
+    var unitOpts = '<option value="">Tất cả</option>' + SEGMENTS.filter(function (s) { return !f.seg || s.id === f.seg; }).map(function (s) { return '<optgroup label="' + esc(s.title) + '">' + s.units.map(function (u) { return '<option value="' + u.id + '"' + (f.unit === u.id ? " selected" : "") + ">" + esc(u.title) + "</option>"; }).join("") + "</optgroup>"; }).join("");
+    var keep = function (x) { return (!f.seg || x.seg === f.seg) && (!f.unit || x.unit === f.unit); };
+    var unitTitle = function (id) { var t = ""; SEGMENTS.forEach(function (s) { s.units.forEach(function (u) { if (u.id === id) t = u.title; }); }); return t; };
+    var qs = QUESTIONS.filter(keep).sort(function (a, b) { return a.fc / a.ft - b.fc / b.ft; });
+    var qrows = qs.map(function (q) {
+      var acc = q.fc / q.ft, low = acc < .5;
+      return "<tr><td><button class=\"linkbtn mono\" data-act=\"edit\" data-id=\"" + q.id + "\"" + (can(S.role, "editor") ? "" : " disabled title=\"Vai trò này không mở được trình soạn thảo\"") + ">" + q.id + "</button><span class=\"sub\">" + q.type + "</span><span style=\"display:block;max-width:44ch\">" + esc(q.prompt) + "</span></td>" +
+        "<td><span class=\"sub\">" + esc(unitTitle(q.unit)) + "</span>" + esc(q.lesson) + "</td>" +
+        '<td class="r num">' + q.attempts + '</td><td class="r num">' + q.learners + "</td>" +
+        '<td class="r num"><b style="color:var(' + (low ? "--coral-deep" : "--ink") + ')">' + pct(acc) + '</b><span class="sub">' + q.fc + "/" + q.ft + '</span><div class="bar"><i class="' + (low ? "low" : "") + '" style="width:' + Math.round(acc * 100) + '%"></i></div></td>' +
+        '<td><span style="display:block;max-width:36ch">' + esc(q.wrong) + '</span><span class="sub">' + q.wn + " lượt · " + pct(q.ws) + " số lượt sai</span></td></tr>";
+    }).join("") || '<tr><td colspan="6">Chưa có dữ liệu.</td></tr>';
+    var frows = FUNNEL.filter(keep).map(function (r) {
+      var rate = r.c / r.s, low = rate < .6;
+      return '<tr><td class="sub">' + esc(unitTitle(r.unit)) + "</td><td>" + esc(r.lesson) + ' <span class="sub mono">' + r.id + '</span></td><td class="r num">' + r.s + '</td><td class="r num">' + r.c + '</td><td class="r num"><b style="color:var(' + (low ? "--coral-deep" : "--ink") + ')">' + pct(rate) + '</b><div class="bar"><i class="' + (low ? "low" : "") + '" style="width:' + Math.round(rate * 100) + '%"></i></div></td><td class="r num">' + r.m.toFixed(1) + "</td></tr>";
+    }).join("");
+    return shell("analytics", head("NỘI DUNG", "Phân tích câu hỏi") +
+      '<form class="card filters" id="anForm"><label class="field">Chủ đề<select class="in" id="anSeg">' + segOpts + '</select></label><label class="field">Phần<select class="in" id="anUnit">' + unitOpts + '</select></label>' +
+      ((f.seg || f.unit) ? '<button class="linkbtn" type="button" data-act="anClear">Bỏ lọc</button>' : "") + "</form>" +
+      '<section style="display:flex;flex-direction:column;gap:8px"><h2>Câu hỏi có chấm điểm (' + qs.length + ')</h2><p class="lede" style="font-size:13px">Đúng lần đầu = lần trả lời đầu tiên của mỗi học viên cho mỗi câu. Xếp từ thấp đến cao; dưới 50% tô đỏ. Bấm mã câu để mở trong trình soạn thảo.</p>' +
+      '<div class="tablewrap"><table><thead><tr><th>Câu</th><th>Bài</th><th class="r">Lượt</th><th class="r">Học viên</th><th class="r">Đúng lần đầu</th><th>Đáp án sai phổ biến nhất</th></tr></thead><tbody>' + qrows + "</tbody></table></div></section>" +
+      '<section style="display:flex;flex-direction:column;gap:8px"><h2>Tỷ lệ hoàn thành theo bài</h2><p class="lede" style="font-size:13px">Tính trên phiên học bài, bỏ qua ôn tập và kiểm tra xếp lớp. Dưới 60% tô đỏ. Số lỗi trung bình tính trên phiên đã hoàn thành.</p>' +
+      '<div class="tablewrap"><table><thead><tr><th>Phần</th><th>Bài</th><th class="r">Bắt đầu</th><th class="r">Hoàn thành</th><th class="r">Tỷ lệ</th><th class="r">Lỗi TB</th></tr></thead><tbody>' + frows + "</tbody></table></div></section>");
+  }
+
+  /* Editor */
+  function validate(d) {
+    var issues = [];
+    var len = function (k, label) { var n = (d[k] || "").length; if (n < MIN || n > MAX) issues.push({ path: k, msg: label + " cần " + MIN + "–" + MAX + " ký tự (hiện " + n + ")" }); };
+    len("context", "Bối cảnh"); len("explain", "Insight");
+    if (!d.prompt || !d.prompt.trim()) issues.push({ path: "prompt", msg: "Câu hỏi không được trống" });
+    d.options.forEach(function (o, i) { if (!o.trim()) issues.push({ path: "options." + i, msg: "Phương án " + (i + 1) + " không được trống" }); });
+    var seen = {}; d.options.forEach(function (o, i) { var k = o.trim().toLowerCase(); if (k && seen[k] !== undefined) issues.push({ path: "options." + i, msg: "Phương án " + (i + 1) + " trùng phương án " + (seen[k] + 1) }); seen[k] = i; });
+    if (/chắc chắn lãi|cam kết lợi nhuận|không bao giờ lỗ/i.test(d.options.join(" ") + d.explain)) issues.push({ path: "explain", msg: "Có cụm từ hứa hẹn lợi nhuận, Compliance không duyệt" });
+    return issues;
+  }
+  function changed(d) { return Object.keys(ORIGINAL).filter(function (k) { return JSON.stringify(d[k]) !== JSON.stringify(ORIGINAL[k]); }); }
+  function counter(k) { var n = (S.draft[k] || "").length, bad = n < MIN || n > MAX; return '<span class="' + (bad ? "bad" : "") + '" id="cnt-' + k + '">' + n + "/" + MIN + "–" + MAX + " ký tự</span>"; }
+  function vEditor() {
+    var d = S.draft;
+    var sel = function (id, label, opts, val) { return '<label class="field">' + label + '<select class="in" id="' + id + '">' + opts.map(function (o) { return '<option' + (o === val ? " selected" : "") + ">" + esc(o) + "</option>"; }).join("") + "</select></label>"; };
+    var picker = '<div class="card picker">' + sel("pk1", "Chủ đề", ["TÔI · Hiểu mình", "LOẠI · Hiểu quỹ", "DC · Quỹ DC & DragonX"], "TÔI · Hiểu mình") + sel("pk2", "Phần", ["Phần 4 · Sức mạnh lãi kép", "Phần 5 · Kỷ luật và DCA", "Phần 6 · Hiểu thị trường"], "Phần 5 · Kỷ luật và DCA") + sel("pk3", "Bài", ["Ngày tốt nhất để đầu tư", "Không cần đoán thị trường", "Ba phản ứng khi quỹ giảm"], "Ba phản ứng khi quỹ giảm") + sel("pk4", "Câu", ["b3-reactions-sim · Mô phỏng ba phản ứng", "b3-reactions-lowest · Ai thu về kết quả thấp nhất?", "b3-reactions-pause · Vì sao chủ động phản ứng…"], "b3-reactions-pause · Vì sao chủ động phản ứng…") + "</div>";
+    var opts = d.options.map(function (o, i) {
+      return '<div class="opt"><input type="radio" name="ans" value="' + i + '"' + (d.answer === i ? " checked" : "") + ' aria-label="Đáp án đúng: phương án ' + (i + 1) + '"><textarea class="in" rows="2" data-f="options.' + i + '" aria-label="Phương án ' + (i + 1) + '">' + esc(o) + '</textarea></div>';
+    }).join("");
+    var form = '<section class="form">' +
+      '<p class="lede" style="font-size:13px">Mã <b class="mono">' + d.id + "</b> · loại <b>" + d.type + "</b> (không đổi được: tiến độ học viên tham chiếu mã câu).</p>" +
+      '<label><div class="flabel">Dạng câu</div><select class="in" data-f="pattern">' + Object.keys(PATTERNS).map(function (k) { return '<option value="' + k + '"' + (d.pattern === k ? " selected" : "") + ">" + PATTERNS[k] + "</option>"; }).join("") + "</select></label>" +
+      '<label><div class="flabel">Bối cảnh (context)' + counter("context") + '</div><textarea class="in" rows="3" data-f="context">' + esc(d.context) + "</textarea></label>" +
+      '<label><div class="flabel">Câu hỏi</div><input class="in" data-f="prompt" value="' + esc(d.prompt) + '"></label>' +
+      '<div><div class="flabel">Phương án<span>chọn nút tròn ở đáp án đúng</span></div><div style="display:flex;flex-direction:column;gap:8px">' + opts + "</div></div>" +
+      '<label><div class="flabel">Insight (explain)' + counter("explain") + '</div><textarea class="in" rows="4" data-f="explain">' + esc(d.explain) + "</textarea></label>" +
+      '<label><div class="flabel">Nguồn</div><select class="in" data-f="source">' + Object.keys(SOURCES).map(function (k) { return '<option value="' + k + '"' + (d.source === k ? " selected" : "") + ">" + SOURCES[k] + "</option>"; }).join("") + "</select></label>" +
+      '<div id="valBox"></div>' +
+      '<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center"><button class="btn jade" type="button" data-act="submitEdit" id="submitEdit">Tạo bản sửa</button><button class="btn ghost" type="button" data-act="resetEdit" id="resetEdit">Khôi phục bản gốc</button><span class="sub">Sẽ mở một pull request trên GitHub để Compliance duyệt.</span></div>' +
+      '<div id="editResult"></div>' +
+      '<details><summary>JSON</summary><pre class="diff" id="jsonBox"></pre></details></section>';
+    var preview = '<section style="display:flex;flex-direction:column;gap:8px"><h2>Xem trước</h2><div class="phone" id="preview"></div></section>';
+    return shell("editor", head("NỘI DUNG", "Trình soạn thảo câu hỏi", "Chọn chủ đề, phần, bài rồi chọn câu. Mỗi bản sửa là một pull request; nội dung trên ứng dụng chỉ đổi khi pull request được duyệt và gộp.") +
+      picker + '<p class="crumb" style="margin:0">Hiểu mình › Phần 5 · Kỷ luật và DCA › Ba phản ứng khi quỹ giảm</p><div class="editor">' + form + preview + "</div>");
+  }
+  function editorSide() {
+    var d = S.draft, issues = validate(d), ch = changed(d);
+    var pv = document.getElementById("preview");
+    if (!pv) return;
+    pv.innerHTML = '<div class="ctx"><b>' + esc((PATTERNS[d.pattern] || "").toUpperCase()) + "</b>" + esc(d.context) + "</div><h3>" + esc(d.prompt) + "</h3>" +
+      d.options.map(function (o, i) { return '<div class="choice' + (i === d.answer ? " right" : "") + '">' + esc(o || "…") + "</div>"; }).join("") +
+      '<div class="insight"><b>INSIGHT</b>' + esc(d.explain) + '</div><span class="sub">Nguồn: ' + esc(SOURCES[d.source]) + "</span>";
+    document.getElementById("valBox").innerHTML = issues.length
+      ? '<div class="note bad"><p><b>Chưa hợp lệ (' + issues.length + " lỗi):</b></p><ul>" + issues.map(function (i) { return "<li>" + esc(i.path) + ": " + esc(i.msg) + "</li>"; }).join("") + "</ul></div>"
+      : '<div class="note ok"><p><b>Hợp lệ theo schema và công thức quiz.</b>' + (ch.length ? " Trường đã đổi: " + ch.join(", ") + "." : " Chưa có thay đổi.") + "</p></div>";
+    document.getElementById("submitEdit").disabled = !ch.length || issues.length > 0;
+    document.getElementById("resetEdit").disabled = !ch.length;
+    document.getElementById("jsonBox").textContent = JSON.stringify(d, null, 2);
+    ["context", "explain"].forEach(function (k) { var el = document.getElementById("cnt-" + k); if (el) el.outerHTML = counter(k); });
+    var r = document.getElementById("editResult");
+    if (S.editResult) {
+      r.innerHTML = '<div class="note ok"><p>Đã tạo pull request: <a href="#editor">github.com/icememine/dceducationgame/pull/' + S.editResult.no + '</a></p><p class="sub">Nhánh content/' + d.id + " · file content/segments/my-plan/b3-discipline.ts · trường đã đổi: " + esc(S.editResult.fields.join(", ")) + "</p></div>" +
+        '<pre class="diff">' + S.editResult.diff + "</pre>";
+    } else r.innerHTML = "";
+  }
+  function makeDiff(fields) {
+    var out = ['<span class="hunk">@@ content/segments/my-plan/b3-discipline.ts @@</span>'];
+    fields.forEach(function (k) {
+      var a = JSON.stringify(ORIGINAL[k]), b = JSON.stringify(S.draft[k]);
+      out.push('<span class="del">-          ' + esc(k) + ": " + esc(a) + ",</span>");
+      out.push('<span class="add">+          ' + esc(k) + ": " + esc(b) + ",</span>");
+    });
+    return out.join("");
+  }
+
+  function vAiReview() {
+    var f = S.aiFilter;
+    var rows = AI.filter(function (r) {
+      var st = f.status === "all" || r.status === f.status;
+      var fl = f.flag === "all" || (f.flag === "any" ? r.flags.length > 0 : f.flag === "none" ? !r.flags.length : r.flags.indexOf(f.flag) >= 0);
+      var q = !f.q || (r.q + " " + r.a).toLowerCase().indexOf(f.q.toLowerCase()) >= 0;
+      return st && fl && q;
+    });
+    var flagOpts = '<option value="any">Có ít nhất một cờ</option>' + Object.keys(AI_FLAGS).map(function (k) { return '<option value="' + k + '"' + (f.flag === k ? " selected" : "") + ">" + esc(AI_FLAGS[k]) + "</option>"; }).join("") + '<option value="none"' + (f.flag === "none" ? " selected" : "") + '>Không có cờ</option><option value="all"' + (f.flag === "all" ? " selected" : "") + ">Tất cả</option>";
+    var list = rows.map(function (r) {
+      return '<li class="card item"><div class="meta"><b class="mono">#' + r.id + "</b><span>" + r.at + "</span><span>" + esc(r.who) + " (…" + r.ref + ")</span><span>" + (r.mode === "ai" ? "Mô hình AI" : "Thư viện (không gọi mô hình)") + "</span>" + badge(r.status, r.hist) +
+        r.flags.map(function (x) { return '<span class="pill bad">' + esc(AI_FLAGS[x]) + "</span>"; }).join("") + '</div><p class="q"><b>Hỏi:</b> ' + esc(r.q) + "</p>" +
+        "<details><summary>Câu trả lời và duyệt</summary><div class=\"inner\"><p class=\"ans\">" + esc(r.a) + "</p>" + history(r.hist) + reviewForm("ai", r.id) + "</div></details></li>";
+    }).join("") || '<li class="card" style="color:var(--muted)">Không có câu trả lời nào khớp bộ lọc.</li>';
+    return shell("ai-review", head("TUÂN THỦ", "Duyệt câu trả lời AI (Hỏi Rồng)", "Mặc định: câu trả lời có cờ cảnh báo và chưa duyệt. Cờ do bộ kiểm tra tự động gắn; người duyệt quyết định cuối cùng. Mọi quyết định được giữ lại thành lịch sử.") +
+      '<form class="card filters" id="aiForm">' + statusSelect("aiStatus", f.status) + '<label class="field">Cờ cảnh báo<select class="in" id="aiFlag">' + flagOpts.replace('value="any">', 'value="any"' + (f.flag === "any" ? " selected" : "") + ">") + '</select></label><label class="field grow">Tìm trong câu hỏi/trả lời<input class="in" id="aiQ" value="' + esc(f.q) + '"></label><button class="btn primary small" type="submit">Lọc</button>' + csvBtn("ai-review") + "</form>" +
+      '<p style="margin:0;font-weight:700">' + rows.length + ' câu trả lời</p><ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px">' + list + "</ul>");
+  }
+
+  function vRisk() {
+    var f = S.riskFilter;
+    var rows = RISK.filter(function (r) {
+      var st = f.status === "all" || r.status === f.status;
+      var v = f.view === "all" || (f.view === "attention" ? r.flags.length > 0 : f.view === "confirmed" ? r.decision !== "Chưa xác nhận" : f.view === "unconfirmed" ? r.decision === "Chưa xác nhận" : r.flags.indexOf(f.view) >= 0);
+      return st && v;
+    });
+    var label = function (k) { return k === "capacity-warning" ? "Cảnh báo ③: khoản đầu tư chiếm phần lớn tài sản" : RISK_VIEWS[k]; };
+    var list = rows.map(function (r) {
+      return '<li class="card item"><div class="meta"><b class="mono">#' + r.id + "</b><span>" + r.at + "</span><span>" + esc(r.who) + " (…" + r.ref + ")</span><span>Khung " + r.fw + "</span>" + badge(r.status, r.hist) + "</div>" +
+        '<div class="trail"><span class="step"><b>Tổng điểm</b>' + r.total + '</span><span class="arrow">→</span><span class="step"><b>Theo điểm</b>' + r.scored + '</span><span class="arrow">→</span><span class="step"><b>Đề xuất</b>' + r.proposed + '</span><span class="arrow">→</span><span class="step"><b>Học viên</b>' + r.decision + '</span><span class="arrow">→</span><span class="step final"><b>Hồ sơ dùng</b>' + r.final + "</span>" + (r.ack ? '<span class="pill bad">Đã tick xác nhận rủi ro</span>' : "") + "</div>" +
+        '<div class="meta">' + r.flags.map(function (x) { return '<span class="pill bad">' + esc(label(x)) + "</span>"; }).join("") + "</div>" +
+        '<details><summary>Chi tiết điểm và duyệt</summary><div class="inner"><p style="margin:0">Điểm theo phần: ' + r.sections + "</p>" +
+        (r.overrides.length ? '<p style="margin:0">Điều chỉnh ①: ' + esc(r.overrides.join(" ")) + "</p>" : "") +
+        (r.capacity ? '<p style="margin:0">Cảnh báo ③: ' + esc(r.capacity) + "</p>" : "") + (r.inconsistency ? '<p style="margin:0">Mâu thuẫn ④: ' + esc(r.inconsistency) + "</p>" : "") +
+        '<div class="tablewrap"><table><thead><tr><th>Câu hỏi</th><th>Trả lời</th><th class="r">Điểm</th></tr></thead><tbody>' + r.answers.map(function (a) { return "<tr><td>" + esc(a[0]) + "</td><td>" + esc(a[1]) + '</td><td class="r num">' + a[2] + "</td></tr>"; }).join("") + "</tbody></table></div>" +
+        history(r.hist) + reviewForm("risk", r.id) + "</div></details></li>";
+    }).join("") || '<li class="card" style="color:var(--muted)">Không có kết quả nào khớp bộ lọc.</li>';
+    return shell("risk-audit", head("TUÂN THỦ", "Kiểm tra hồ sơ khẩu vị rủi ro", "Theo Risk Scoring Framework v2.3: điểm từng câu, quy tắc điều chỉnh ① ②, cảnh báo ③, mâu thuẫn ④, lựa chọn của học viên ở bước xác nhận (§5) và các trường hợp đặc biệt §5.2. Mặc định: các trường hợp cần xem, chưa duyệt.") +
+      '<form class="card filters" id="riskForm">' + statusSelect("riskStatus", f.status) + '<label class="field grow">Nhóm<select class="in" id="riskView">' + Object.keys(RISK_VIEWS).map(function (k) { return '<option value="' + k + '"' + (f.view === k ? " selected" : "") + ">" + esc(RISK_VIEWS[k]) + "</option>"; }).join("") + '</select></label><button class="btn primary small" type="submit">Lọc</button>' + csvBtn("risk-audit") + "</form>" +
+      '<p style="margin:0;font-weight:700">' + rows.length + ' kết quả</p><ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px">' + list + "</ul>");
+  }
+
+  function vSim() {
+    var all = can(S.role, "market-sim:all");
+    return shell("market-sim", head("MỌI VAI TRÒ", "Mô phỏng: thị trường giảm mạnh") +
+      '<div class="note warn"><p><b>Chỉ là mô phỏng.</b> Ứng dụng chưa có dữ liệu thị trường, nên thông báo này không bao giờ tự gửi theo diễn biến thật. Mọi tin đều có nhãn "[Mô phỏng]" và chỉ dẫn tới bài ôn kế hoạch, không gợi ý mua hay bán.</p></div>' +
+      '<div class="grid2"><div class="card" style="display:flex;flex-direction:column;gap:12px"><h2>Gửi thông báo mô phỏng</h2>' +
+      '<label class="field">Mức giảm mô phỏng<select class="in" id="simDrop"><option value="10">−10%</option><option value="15">−15%</option><option value="20" selected>−20%</option><option value="30">−30%</option></select></label>' +
+      '<fieldset style="border:0;padding:0;margin:0;display:flex;flex-direction:column;gap:6px"><legend class="field" style="margin-bottom:4px">Gửi tới</legend><label style="display:flex;gap:8px"><input type="radio" name="aud" value="me" checked> Trình duyệt này (xem trước trong mục Thông báo)</label>' +
+      (all ? '<label style="display:flex;gap:8px"><input type="radio" name="aud" value="all"> Tất cả học viên (buổi luyện tập)</label>' : '<span class="sub">Gửi tới tất cả học viên: chỉ quản trị viên.</span>') + "</fieldset>" +
+      '<button class="btn coral" type="button" data-act="sim" style="align-self:flex-start">Gửi thông báo mô phỏng</button>' + (S.simSent ? '<p role="status" style="margin:0;font-weight:700;color:var(--jade-deep)">' + esc(S.simSent) + "</p>" : "") + "</div>" +
+      '<div class="card" style="display:flex;flex-direction:column;gap:10px"><h2>Học viên sẽ thấy</h2><div class="phone" style="position:static"><div class="ctx" style="color:var(--ink)"><b>THÔNG BÁO</b><strong id="simTitle">[Mô phỏng] Thị trường giảm 20%: bạn sẽ làm gì?</strong><span class="sub" style="margin-top:4px">Đây là tình huống luyện tập, không phải tin thị trường thật. Ôn lại kế hoạch và thời gian đến ngày cần tiền trước khi quyết định.</span></div><span class="sub">Mở bài: /lesson/b3-reactions</span></div>' +
+      '<p class="sub">Khi Academy chạy trong DragonX, tin thật về thị trường gửi qua MoEngage sau khi Compliance duyệt; trang này chỉ để luyện tập.</p></div></div>');
+  }
+
+  function vAudit() {
+    var f = S.auditFilter;
+    var users = AUDIT.map(function (a) { return a.user; }).filter(function (u, i, arr) { return arr.indexOf(u) === i; }).sort();
+    var rows = AUDIT.filter(function (a) { return (!f.user || a.user === f.user) && (!f.action || a.action === f.action); });
+    return shell("audit", head("TUÂN THỦ", "Nhật ký quản trị", "Mọi đăng nhập (kể cả thất bại), duyệt, bản sửa nội dung, mô phỏng, tải CSV và thay đổi tài khoản. Không sửa hay xoá được.") +
+      '<form class="card filters" id="auditForm"><label class="field">Người dùng<select class="in" id="auUser"><option value="">Tất cả</option>' + users.map(function (u) { return '<option' + (f.user === u ? " selected" : "") + ">" + esc(u) + "</option>"; }).join("") + '</select></label><label class="field">Thao tác<select class="in" id="auAction"><option value="">Tất cả</option>' + Object.keys(AUDIT_ACTIONS).map(function (k) { return '<option value="' + k + '"' + (f.action === k ? " selected" : "") + ">" + AUDIT_ACTIONS[k] + "</option>"; }).join("") + '</select></label><button class="btn primary small" type="submit">Lọc</button>' + csvBtn("audit") + "</form>" +
+      '<div class="tablewrap"><table><thead><tr><th>Thời gian</th><th>Người dùng</th><th>Thao tác</th><th>Đối tượng</th><th>Chi tiết</th></tr></thead><tbody>' +
+      (rows.map(function (a) { var bad = a.action.indexOf("login-") === 0; return '<tr><td class="num" style="white-space:nowrap">' + a.at + "</td><td><b>" + esc(a.user) + "</b></td><td" + (bad ? ' style="color:var(--coral-deep);font-weight:700"' : "") + ">" + esc(AUDIT_ACTIONS[a.action] || a.action) + '</td><td class="mono">' + esc(a.target) + '</td><td class="sub">' + esc(a.detail) + "</td></tr>"; }).join("") || '<tr><td colspan="5">Không có mục nào.</td></tr>') + "</tbody></table></div>");
+  }
+
+  function otp(o) { return '<div class="otp" role="status"><span><b>' + esc(o.label) + "</b> cho <b>" + esc(o.u) + "</b>. Mật khẩu tạm (chỉ hiện một lần, người dùng phải đổi khi đăng nhập):</span><code>" + esc(o.pw) + "</code></div>"; }
+  function vStaff() {
+    var roleOpts = function (v) { return Object.keys(ROLES).map(function (k) { return '<option value="' + k + '"' + (k === v ? " selected" : "") + ">" + ROLES[k].label + "</option>"; }).join(""); };
+    var rows = STAFF.map(function (p, i) {
+      var me = p.u === USER[S.role];
+      return '<tr data-row="' + i + '"><td><b class="mono">' + esc(p.u) + "</b>" + (me ? ' <span class="sub" style="display:inline">(bạn)</span>' : "") + (!p.active ? ' <span class="pill quiet">đã vô hiệu</span>' : "") + "</td>" +
+        '<td><div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center"><input class="in" style="width:auto;min-width:150px" data-s="name" value="' + esc(p.name) + '" aria-label="Họ tên ' + esc(p.u) + '"><select class="in" style="width:auto" data-s="role" aria-label="Vai trò ' + esc(p.u) + '">' + roleOpts(p.role) + '</select><label style="display:flex;gap:6px;align-items:center;font-size:12.5px"><input type="checkbox" data-s="active"' + (p.active ? " checked" : "") + '>Đang hoạt động</label><button class="btn ghost small" data-act="saveStaff" data-i="' + i + '">Lưu</button><span class="smsg" role="status"></span></div></td>' +
+        '<td class="sub">' + esc(p.last) + (p.must ? "<br>Chờ đổi mật khẩu" : "") + "</td>" +
+        '<td><button class="btn ghost small" data-act="resetPw" data-i="' + i + '">Đặt lại mật khẩu</button>' + (S.reset && S.reset.i === i ? otp(S.reset) : "") + "</td></tr>";
+    }).join("");
+    return shell("staff", head("QUẢN TRỊ", "Tài khoản nhân viên") +
+      '<div class="grid3">' + Object.keys(ROLES).map(function (k) { return '<div class="card"><b>' + ROLES[k].label + '</b><p class="sub" style="margin:4px 0 0">' + ROLES[k].description + "</p></div>"; }).join("") + "</div>" +
+      '<form class="card" id="createForm" style="display:flex;flex-direction:column;gap:12px"><h2>Tạo tài khoản</h2><div class="filters"><label class="field">Tên đăng nhập<input class="in" id="nu" placeholder="vd: lan.nguyen"></label><label class="field">Họ tên<input class="in" id="nn"></label><label class="field">Vai trò<select class="in" id="nr">' + roleOpts("content") + '</select></label><button class="btn jade" type="submit">Tạo tài khoản</button></div><span id="createErr" role="alert" style="color:var(--coral-deep);font-weight:700;font-size:13px"></span>' + (S.created ? otp(S.created) : "") + "</form>" +
+      '<div class="tablewrap"><table><thead><tr><th>Tên đăng nhập</th><th>Họ tên · vai trò · trạng thái</th><th>Đăng nhập gần nhất</th><th>Mật khẩu</th></tr></thead><tbody>' + rows + "</tbody></table></div>" +
+      '<p class="sub">Tài khoản không bị xoá, chỉ vô hiệu hoá, để nhật ký và lịch sử duyệt luôn chỉ đúng người. Đổi vai trò, vô hiệu hoá hoặc đặt lại mật khẩu sẽ đăng xuất người đó ở mọi thiết bị. Phải luôn còn ít nhất một quản trị viên đang hoạt động.</p>');
+  }
+
+  function vAccount() {
+    return shell("account", head("TÀI KHOẢN CỦA TÔI", ME[S.role], "Tên đăng nhập <b class=\"mono\">" + esc(USER[S.role]) + "</b> · vai trò " + esc(ROLES[S.role].label) + ".") +
+      '<form class="card" id="pwForm" style="display:flex;flex-direction:column;gap:12px;max-width:440px"><h2>Đổi mật khẩu</h2><label class="field">Mật khẩu hiện tại<input class="in" type="password" id="pw0" autocomplete="current-password"></label><label class="field">Mật khẩu mới<input class="in" type="password" id="pw1" autocomplete="new-password"></label><label class="field">Nhập lại mật khẩu mới<input class="in" type="password" id="pw2" autocomplete="new-password"></label><p class="sub" style="margin:0">Ít nhất 10 ký tự, có cả chữ và số, không chứa tên đăng nhập.</p><button class="btn primary" type="submit" style="align-self:flex-start">Đổi mật khẩu</button>' + (S.pwMsg ? '<div class="note ' + S.pwMsg.cls + '"><p>' + esc(S.pwMsg.text) + "</p></div>" : "") + "</form>");
+  }
+
+  function vLater(id) {
+    var l = LATER.filter(function (x) { return x.id === id; })[0];
+    return shell(id, head("ĐỀ XUẤT TIẾP THEO · CHƯA XÂY", l.label) + '<div class="card" style="max-width:640px;display:flex;flex-direction:column;gap:8px"><p style="margin:0">' + esc(l.text) + '</p><p class="sub" style="margin:0">Trang này chưa có trong ứng dụng. Nằm trong danh sách "Not built yet" của docs/ADMIN_TEST.md.</p></div>');
+  }
+
+  /* ---------- Render ---------- */
+  function render() {
+    var app = document.getElementById("app");
+    var p = page();
+    if (!S.signedIn) { app.innerHTML = vLogin(); return; }
+    var nav = NAV.filter(function (n) { return n.id === p; })[0];
+    if (nav && !can(S.role, nav.perm)) { S.denied = true; go("home"); return; }
+    var views = { home: vHome, analytics: vAnalytics, editor: vEditor, "ai-review": vAiReview, "risk-audit": vRisk, "market-sim": vSim, audit: vAudit, staff: vStaff, account: vAccount };
+    if (views[p]) app.innerHTML = views[p]();
+    else if (p.indexOf("later-") === 0) app.innerHTML = vLater(p);
+    else app.innerHTML = vHome();
+    if (p === "editor") editorSide();
+    document.querySelectorAll("#roleSeg button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-role") === S.role)); });
+    window.scrollTo(0, 0);
+  }
+
+  /* ---------- Events ---------- */
+  document.addEventListener("click", function (e) {
+    var t = e.target.closest("[data-role],[data-act]");
+    if (!t) return;
+    var role = t.getAttribute("data-role");
+    if (role) { S.role = role; S.created = S.reset = S.simSent = S.pwMsg = null; render(); toast("Đang xem với vai trò " + ROLES[role].label); return; }
+    var act = t.getAttribute("data-act");
+    if (act === "logout") { log("logout"); S.signedIn = false; render(); }
+    if (act === "anClear") { S.an = { seg: "", unit: "" }; render(); }
+    if (act === "edit") { S.draft = clone(ORIGINAL); S.editResult = null; go("editor"); }
+    if (act === "csv") { log("export", t.getAttribute("data-what"), "bản mẫu"); toast("Bản mẫu: CSV có BOM UTF-8 để Excel đọc đúng tiếng Việt. Thao tác đã ghi vào Nhật ký."); }
+    if (act === "resetEdit") { S.draft = clone(ORIGINAL); S.editResult = null; render(); }
+    if (act === "submitEdit") {
+      var fields = changed(S.draft);
+      S.editResult = { no: S.prNo++, fields: fields, diff: makeDiff(fields) };
+      log("content-edit", S.draft.id, "fields: " + fields.join(", ") + " · PR #" + S.editResult.no);
+      editorSide(); toast("Đã tạo pull request #" + S.editResult.no);
+    }
+    if (act === "sim") {
+      var aud = (document.querySelector('input[name="aud"]:checked') || {}).value;
+      var drop = document.getElementById("simDrop").value;
+      S.simSent = aud === "all" ? "Đã gửi tới 1.284 học viên." : "Đã gửi tới trình duyệt này. Mở mục Thông báo để xem.";
+      log("market-sim", aud === "all" ? "all" : "preview", "drop: " + drop + " · audience: " + aud);
+      render();
+    }
+    if (act === "saveStaff") {
+      e.preventDefault();
+      var i = +t.getAttribute("data-i"), tr = t.closest("tr"), p = STAFF[i];
+      var role2 = tr.querySelector('[data-s="role"]').value, active = tr.querySelector('[data-s="active"]').checked, name = tr.querySelector('[data-s="name"]').value.trim();
+      var msg = tr.querySelector(".smsg");
+      var admins = STAFF.filter(function (x, k) { return k !== i && x.role === "admin" && x.active; }).length;
+      if (p.role === "admin" && (role2 !== "admin" || !active) && admins === 0) { msg.innerHTML = '<span style="color:var(--coral-deep);font-weight:700;font-size:12px">Phải còn ít nhất một quản trị viên đang hoạt động.</span>'; return; }
+      if (!name) { msg.innerHTML = '<span style="color:var(--coral-deep);font-weight:700;font-size:12px">Họ tên không được trống.</span>'; return; }
+      p.name = name; p.role = role2; p.active = active;
+      log("staff-update", p.u, "role: " + role2 + " · active: " + active);
+      render(); toast("Đã lưu " + p.u + ". Người đó đã bị đăng xuất ở mọi thiết bị.");
+    }
+    if (act === "resetPw") {
+      e.preventDefault();
+      var k = +t.getAttribute("data-i");
+      STAFF[k].must = true;
+      S.reset = { i: k, u: STAFF[k].u, pw: tempPw(), label: "Đã đặt lại mật khẩu" };
+      log("staff-reset", STAFF[k].u);
+      render();
+    }
+  });
+  function tempPw() { var c = "abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789", s = ""; for (var i = 0; i < 14; i++) s += c.charAt(Math.floor(Math.random() * c.length)); return s.slice(0, 4) + "-" + s.slice(4, 9) + "-" + s.slice(9); }
+
+  document.addEventListener("submit", function (e) {
+    var f = e.target; e.preventDefault();
+    if (f.id === "loginForm") { S.signedIn = true; log("login"); go("home"); }
+    if (f.id === "aiForm") { S.aiFilter = { status: document.getElementById("aiStatus").value, flag: document.getElementById("aiFlag").value, q: document.getElementById("aiQ").value.trim() }; render(); }
+    if (f.id === "riskForm") { S.riskFilter = { status: document.getElementById("riskStatus").value, view: document.getElementById("riskView").value }; render(); }
+    if (f.id === "auditForm") { S.auditFilter = { user: document.getElementById("auUser").value, action: document.getElementById("auAction").value }; render(); }
+    if (f.id === "createForm") {
+      var u = document.getElementById("nu").value.trim().toLowerCase(), n = document.getElementById("nn").value.trim(), r = document.getElementById("nr").value;
+      var err = !/^[a-z0-9._-]{3,32}$/.test(u) ? "Tên đăng nhập 3–32 ký tự: chữ thường, số, dấu chấm, gạch dưới, gạch ngang." : !n ? "Nhập họ tên." : STAFF.some(function (x) { return x.u === u; }) ? "Tên đăng nhập đã có." : "";
+      if (err) { document.getElementById("createErr").textContent = err; return; }
+      STAFF.push({ u: u, name: n, role: r, active: true, must: true, last: "Chưa đăng nhập" });
+      S.created = { u: u, pw: tempPw(), label: "Đã tạo tài khoản" }; S.reset = null;
+      log("staff-create", u, "role: " + r);
+      render();
+    }
+    if (f.id === "pwForm") {
+      var p1 = document.getElementById("pw1").value, p2 = document.getElementById("pw2").value, p0 = document.getElementById("pw0").value;
+      var bad = !p0 ? "Nhập mật khẩu hiện tại." : p1.length < 10 ? "Mật khẩu mới cần ít nhất 10 ký tự." : !(/[a-zA-Z]/.test(p1) && /\d/.test(p1)) ? "Mật khẩu mới cần có cả chữ và số." : p1.toLowerCase().indexOf(USER[S.role].split(".")[0]) >= 0 ? "Mật khẩu mới không được chứa tên đăng nhập." : p1 !== p2 ? "Hai lần nhập mật khẩu mới không khớp." : "";
+      S.pwMsg = bad ? { cls: "bad", text: bad } : { cls: "ok", text: "Đã đổi mật khẩu. Các phiên khác đã bị đăng xuất." };
+      if (!bad) log("password-change", USER[S.role]);
+      render();
+    }
+    var kind = f.getAttribute("data-review");
+    if (kind) {
+      var id = +f.getAttribute("data-id");
+      var out = (f.querySelector('input[type="radio"]:checked') || {}).value;
+      var note = f.querySelector("textarea").value.trim();
+      var msg = f.querySelector(".msg");
+      if (out !== "ok" && !note) { msg.innerHTML = '<span style="color:var(--coral-deep);font-weight:700">Cần ghi chú khi chọn ' + OUTCOMES[out] + ".</span>"; return; }
+      var row = (kind === "ai" ? AI : RISK).filter(function (x) { return x.id === id; })[0];
+      row.status = out; row.hist.push({ who: ME[S.role], at: now(), out: out, note: note });
+      log("review", kind + "#" + id, "outcome: " + out);
+      render(); toast("Đã lưu: " + OUTCOMES[out] + " cho #" + id);
+    }
+  });
+
+  document.addEventListener("input", function (e) {
+    var t = e.target, k = t.getAttribute && t.getAttribute("data-f");
+    if (k) {
+      if (k.indexOf("options.") === 0) S.draft.options[+k.split(".")[1]] = t.value; else S.draft[k] = t.value;
+      S.editResult = null; editorSide();
+    }
+  });
+  document.addEventListener("change", function (e) {
+    var t = e.target;
+    if (t.name === "ans") { S.draft.answer = +t.value; S.editResult = null; editorSide(); }
+    if (t.id === "anSeg") { S.an = { seg: t.value, unit: "" }; render(); }
+    if (t.id === "anUnit") { S.an.unit = t.value; render(); }
+    if (t.id === "simDrop") { var el = document.getElementById("simTitle"); if (el) el.textContent = "[Mô phỏng] Thị trường giảm " + t.value + "%: bạn sẽ làm gì?"; }
+    if (t.id && t.id.indexOf("pk") === 0) toast("Bản mẫu chỉ có một câu mẫu để sửa: b3-reactions-pause.");
+  });
+  document.getElementById("themeBtn").addEventListener("click", function () {
+    var r = document.documentElement, cur = r.getAttribute("data-theme");
+    var dark = cur ? cur === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+    r.setAttribute("data-theme", dark ? "light" : "dark");
+  });
+  window.addEventListener("hashchange", render);
+  render();
+})();
+</script>
